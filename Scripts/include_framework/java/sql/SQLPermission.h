@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/sql/SQLPermission.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSqlSQLPermission")
 #ifdef RESTRICT_JavaSqlSQLPermission
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaSecurityBasicPermission 1
 #define INCLUDE_JavaSecurityBasicPermission 1
-#include "../../java/security/BasicPermission.h"
+#include "java/security/BasicPermission.h"
 
 /*!
  @brief Legacy security code; do not use.

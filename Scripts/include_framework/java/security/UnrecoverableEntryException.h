@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/security/UnrecoverableEntryException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSecurityUnrecoverableEntryException")
 #ifdef RESTRICT_JavaSecurityUnrecoverableEntryException
@@ -21,7 +21,9 @@
 
 #define RESTRICT_JavaSecurityGeneralSecurityException 1
 #define INCLUDE_JavaSecurityGeneralSecurityException 1
-#include "../../java/security/GeneralSecurityException.h"
+#include "java/security/GeneralSecurityException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief This exception is thrown if an entry in the keystore cannot be recovered.
@@ -38,11 +40,18 @@
 
 /*!
  @brief Constructs an UnrecoverableEntryException with the specified detail
- message, which provides more information about why this exception
- has been thrown.
+  message, which provides more information about why this exception
+  has been thrown.
  @param msg the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)msg;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -50,9 +59,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaSecurityUnrecoverableEntryException)
 
 FOUNDATION_EXPORT void JavaSecurityUnrecoverableEntryException_init(JavaSecurityUnrecoverableEntryException *self);
 
-FOUNDATION_EXPORT JavaSecurityUnrecoverableEntryException *new_JavaSecurityUnrecoverableEntryException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityUnrecoverableEntryException *new_JavaSecurityUnrecoverableEntryException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityUnrecoverableEntryException *create_JavaSecurityUnrecoverableEntryException_init();
+FOUNDATION_EXPORT JavaSecurityUnrecoverableEntryException *create_JavaSecurityUnrecoverableEntryException_init(void);
 
 FOUNDATION_EXPORT void JavaSecurityUnrecoverableEntryException_initWithNSString_(JavaSecurityUnrecoverableEntryException *self, NSString *msg);
 

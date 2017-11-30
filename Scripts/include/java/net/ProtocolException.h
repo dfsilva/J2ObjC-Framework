@@ -23,9 +23,11 @@
 #define INCLUDE_JavaIoIOException 1
 #include "java/io/IOException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Thrown to indicate that there is an error in the underlying
- protocol, such as a TCP error.
+  protocol, such as a TCP error.
  @author Chris Warth
  @since JDK1.0
  */
@@ -40,16 +42,19 @@
 
 /*!
  @brief Constructs a new <code>ProtocolException</code> with the
- specified detail message.
- @param host   the detail message.
+  specified detail message.
+ @param host the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)host;
 
 /*!
-  
  */
 - (instancetype)initWithNSString:(NSString *)msg
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -63,15 +68,15 @@ FOUNDATION_EXPORT JavaNetProtocolException *create_JavaNetProtocolException_init
 
 FOUNDATION_EXPORT void JavaNetProtocolException_init(JavaNetProtocolException *self);
 
-FOUNDATION_EXPORT JavaNetProtocolException *new_JavaNetProtocolException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNetProtocolException *new_JavaNetProtocolException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNetProtocolException *create_JavaNetProtocolException_init();
+FOUNDATION_EXPORT JavaNetProtocolException *create_JavaNetProtocolException_init(void);
 
-FOUNDATION_EXPORT void JavaNetProtocolException_initWithNSString_withNSException_(JavaNetProtocolException *self, NSString *msg, NSException *cause);
+FOUNDATION_EXPORT void JavaNetProtocolException_initWithNSString_withJavaLangThrowable_(JavaNetProtocolException *self, NSString *msg, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaNetProtocolException *new_JavaNetProtocolException_initWithNSString_withNSException_(NSString *msg, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNetProtocolException *new_JavaNetProtocolException_initWithNSString_withJavaLangThrowable_(NSString *msg, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNetProtocolException *create_JavaNetProtocolException_initWithNSString_withNSException_(NSString *msg, NSException *cause);
+FOUNDATION_EXPORT JavaNetProtocolException *create_JavaNetProtocolException_initWithNSString_withJavaLangThrowable_(NSString *msg, JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNetProtocolException)
 

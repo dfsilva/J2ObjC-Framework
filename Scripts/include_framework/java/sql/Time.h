@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/sql/Time.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSqlTime")
 #ifdef RESTRICT_JavaSqlTime
@@ -21,17 +21,17 @@
 
 #define RESTRICT_JavaUtilDate 1
 #define INCLUDE_JavaUtilDate 1
-#include "../../java/util/Date.h"
+#include "java/util/Date.h"
 
 /*!
  @brief <P>A thin wrapper around the <code>java.util.Date</code> class that allows the JDBC
- API to identify this as an SQL <code>TIME</code> value.
+  API to identify this as an SQL <code>TIME</code> value.
  The <code>Time</code>
- class adds formatting and
- parsing operations to support the JDBC escape syntax for time
- values.
+  class adds formatting and
+  parsing operations to support the JDBC escape syntax for time
+  values. 
  <p>The date components should be set to the "zero epoch"
- value of January 1, 1970 and should not be accessed.
+  value of January 1, 1970 and should not be accessed.
  */
 @interface JavaSqlTime : JavaUtilDate
 
@@ -41,13 +41,13 @@
 
 /*!
  @brief Constructs a <code>Time</code> object initialized with the
- given values for the hour, minute, and second.
+  given values for the hour, minute, and second.
  The driver sets the date components to January 1, 1970.
- Any method that attempts to access the date components of a
- <code>Time</code> object will throw a
+  Any method that attempts to access the date components of a 
+ <code>Time</code> object will throw a 
  <code>java.lang.IllegalArgumentException</code>.
- <P>
- The result is undefined if a given argument is out of bounds.
+  <P>
+  The result is undefined if a given argument is out of bounds.
  @param hour 0 to 23
  @param minute 0 to 59
  @param second 0 to 59
@@ -58,64 +58,62 @@
 
 /*!
  @brief Constructs a <code>Time</code> object using a milliseconds time value.
- @param time milliseconds since January 1, 1970, 00:00:00 GMT;
- a negative number is milliseconds before
- January 1, 1970, 00:00:00 GMT
+ @param time milliseconds since January 1, 1970, 00:00:00 GMT;              a negative number is milliseconds before
+                 January 1, 1970, 00:00:00 GMT
  */
 - (instancetype)initWithLong:(jlong)time;
 
 /*!
- @exception java.lang.IllegalArgumentException if this
- method is invoked
+ @throw java.lang.IllegalArgumentExceptionif this
+            method is invoked
  - seealso: #setDate
  */
 - (jint)getDate __attribute__((deprecated));
 
 /*!
- @exception java.lang.IllegalArgumentException if this
- method is invoked
+ @throw java.lang.IllegalArgumentExceptionif this
+            method is invoked
  */
 - (jint)getDay __attribute__((deprecated));
 
 /*!
- @exception java.lang.IllegalArgumentException if this
- method is invoked
+ @throw java.lang.IllegalArgumentExceptionif this
+            method is invoked
  - seealso: #setMonth
  */
 - (jint)getMonth __attribute__((deprecated));
 
 /*!
- @exception java.lang.IllegalArgumentException if this
- method is invoked
+ @throw java.lang.IllegalArgumentExceptionif this
+            method is invoked
  - seealso: #setYear
  */
 - (jint)getYear __attribute__((deprecated));
 
 /*!
- @exception java.lang.IllegalArgumentException if this
- method is invoked
+ @throw java.lang.IllegalArgumentExceptionif this
+            method is invoked
  - seealso: #getDate
  */
 - (void)setDateWithInt:(jint)i __attribute__((deprecated));
 
 /*!
- @exception java.lang.IllegalArgumentException if this
- method is invoked
+ @throw java.lang.IllegalArgumentExceptionif this
+            method is invoked
  - seealso: #getMonth
  */
 - (void)setMonthWithInt:(jint)i __attribute__((deprecated));
 
 /*!
  @brief Sets a <code>Time</code> object using a milliseconds time value.
- @param time milliseconds since January 1, 1970, 00:00:00 GMT;
- a negative number is milliseconds before
- January 1, 1970, 00:00:00 GMT
+ @param time milliseconds since January 1, 1970, 00:00:00 GMT;              a negative number is milliseconds before
+                 January 1, 1970, 00:00:00 GMT
  */
 - (void)setTimeWithLong:(jlong)time;
 
 /*!
- @exception java.lang.IllegalArgumentException if this
- method is invoked
+ @throw java.lang.IllegalArgumentExceptionif this
+            method is invoked
  - seealso: #getYear
  */
 - (void)setYearWithInt:(jint)i __attribute__((deprecated));
@@ -133,15 +131,34 @@
  */
 + (JavaSqlTime *)valueOfWithNSString:(NSString *)s;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithInt:(jint)arg0
+                    withInt:(jint)arg1
+                    withInt:(jint)arg2
+                    withInt:(jint)arg3
+                    withInt:(jint)arg4 NS_UNAVAILABLE;
+
+- (instancetype)initWithInt:(jint)arg0
+                    withInt:(jint)arg1
+                    withInt:(jint)arg2
+                    withInt:(jint)arg3
+                    withInt:(jint)arg4
+                    withInt:(jint)arg5 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaSqlTime)
 
 /*!
  @brief Private serial version unique ID to ensure serialization
- compatibility.
+  compatibility.
  */
-inline jlong JavaSqlTime_get_serialVersionUID();
+inline jlong JavaSqlTime_get_serialVersionUID(void);
 #define JavaSqlTime_serialVersionUID 8397324403548013681LL
 J2OBJC_STATIC_FIELD_CONSTANT(JavaSqlTime, serialVersionUID, jlong)
 

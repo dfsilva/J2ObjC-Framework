@@ -23,12 +23,13 @@
 #define INCLUDE_JavaLangIllegalArgumentException 1
 #include "java/lang/IllegalArgumentException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Unchecked exception thrown when a format string contains an illegal syntax
- or a format specifier that is incompatible with the given arguments.
- Only
- explicit subtypes of this exception which correspond to specific errors
- should be instantiated.
+  or a format specifier that is incompatible with the given arguments.Only
+  explicit subtypes of this exception which correspond to specific errors
+  should be instantiated.
  @since 1.5
  */
 @interface JavaUtilIllegalFormatException : JavaLangIllegalArgumentException
@@ -37,15 +38,24 @@
 
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaUtilIllegalFormatException)
 
 FOUNDATION_EXPORT void JavaUtilIllegalFormatException_init(JavaUtilIllegalFormatException *self);
 
-FOUNDATION_EXPORT JavaUtilIllegalFormatException *new_JavaUtilIllegalFormatException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaUtilIllegalFormatException *new_JavaUtilIllegalFormatException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaUtilIllegalFormatException *create_JavaUtilIllegalFormatException_init();
+FOUNDATION_EXPORT JavaUtilIllegalFormatException *create_JavaUtilIllegalFormatException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaUtilIllegalFormatException)
 

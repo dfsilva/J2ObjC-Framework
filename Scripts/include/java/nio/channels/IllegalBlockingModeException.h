@@ -23,9 +23,11 @@
 #define INCLUDE_JavaLangIllegalStateException 1
 #include "java/lang/IllegalStateException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Unchecked exception thrown when a blocking-mode-specific operation
- is invoked upon a channel in the incorrect blocking mode.
+  is invoked upon a channel in the incorrect blocking mode.
  @since 1.4
  */
 @interface JavaNioChannelsIllegalBlockingModeException : JavaLangIllegalStateException
@@ -37,15 +39,24 @@
  */
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsIllegalBlockingModeException)
 
 FOUNDATION_EXPORT void JavaNioChannelsIllegalBlockingModeException_init(JavaNioChannelsIllegalBlockingModeException *self);
 
-FOUNDATION_EXPORT JavaNioChannelsIllegalBlockingModeException *new_JavaNioChannelsIllegalBlockingModeException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNioChannelsIllegalBlockingModeException *new_JavaNioChannelsIllegalBlockingModeException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNioChannelsIllegalBlockingModeException *create_JavaNioChannelsIllegalBlockingModeException_init();
+FOUNDATION_EXPORT JavaNioChannelsIllegalBlockingModeException *create_JavaNioChannelsIllegalBlockingModeException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsIllegalBlockingModeException)
 

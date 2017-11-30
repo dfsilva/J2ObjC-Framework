@@ -23,9 +23,11 @@
 #define INCLUDE_JavaSecurityGeneralSecurityException 1
 #include "java/security/GeneralSecurityException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief This exception is thrown when a particular security provider is
- requested but is not available in the environment.
+  requested but is not available in the environment.
  @author Benjamin Renaud
  */
 @interface JavaSecurityNoSuchProviderException : JavaSecurityGeneralSecurityException
@@ -33,21 +35,26 @@
 #pragma mark Public
 
 /*!
- @brief Constructs a NoSuchProviderException with no detail message.
- A
- detail message is a String that describes this particular
- exception.
+ @brief Constructs a NoSuchProviderException with no detail message.A
+  detail message is a String that describes this particular
+  exception.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a NoSuchProviderException with the specified detail
- message.
- A detail message is a String that describes this
- particular exception.
+  message.A detail message is a String that describes this
+  particular exception.
  @param msg the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)msg;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -55,9 +62,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaSecurityNoSuchProviderException)
 
 FOUNDATION_EXPORT void JavaSecurityNoSuchProviderException_init(JavaSecurityNoSuchProviderException *self);
 
-FOUNDATION_EXPORT JavaSecurityNoSuchProviderException *new_JavaSecurityNoSuchProviderException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityNoSuchProviderException *new_JavaSecurityNoSuchProviderException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityNoSuchProviderException *create_JavaSecurityNoSuchProviderException_init();
+FOUNDATION_EXPORT JavaSecurityNoSuchProviderException *create_JavaSecurityNoSuchProviderException_init(void);
 
 FOUNDATION_EXPORT void JavaSecurityNoSuchProviderException_initWithNSString_(JavaSecurityNoSuchProviderException *self, NSString *msg);
 

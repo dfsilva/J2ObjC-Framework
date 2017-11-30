@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/CloneNotSupportedException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangCloneNotSupportedException")
 #ifdef RESTRICT_JavaLangCloneNotSupportedException
@@ -21,20 +21,22 @@
 
 #define RESTRICT_JavaLangException 1
 #define INCLUDE_JavaLangException 1
-#include "../../java/lang/Exception.h"
+#include "java/lang/Exception.h"
+
+@class JavaLangThrowable;
 
 /*!
- @brief Thrown to indicate that the <code>clone</code> method in class
+ @brief Thrown to indicate that the <code>clone</code> method in class 
  <code>Object</code> has been called to clone an object, but that
- the object's class does not implement the <code>Cloneable</code>
- interface.
+  the object's class does not implement the <code>Cloneable</code>
+  interface.
  <p>
- Applications that override the <code>clone</code> method can also
- throw this exception to indicate that an object could not or
- should not be cloned.
+  Applications that override the <code>clone</code> method can also
+  throw this exception to indicate that an object could not or
+  should not be cloned.
  @author unascribed
  - seealso: java.lang.Cloneable
- - seealso: java.lang.Object#clone()
+ - seealso: java.lang.Object
  @since JDK1.0
  */
 @interface JavaLangCloneNotSupportedException : JavaLangException
@@ -43,16 +45,28 @@
 
 /*!
  @brief Constructs a <code>CloneNotSupportedException</code> with no
- detail message.
+  detail message.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a <code>CloneNotSupportedException</code> with the
- specified detail message.
- @param s   the detail message.
+  specified detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -60,9 +74,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangCloneNotSupportedException)
 
 FOUNDATION_EXPORT void JavaLangCloneNotSupportedException_init(JavaLangCloneNotSupportedException *self);
 
-FOUNDATION_EXPORT JavaLangCloneNotSupportedException *new_JavaLangCloneNotSupportedException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangCloneNotSupportedException *new_JavaLangCloneNotSupportedException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangCloneNotSupportedException *create_JavaLangCloneNotSupportedException_init();
+FOUNDATION_EXPORT JavaLangCloneNotSupportedException *create_JavaLangCloneNotSupportedException_init(void);
 
 FOUNDATION_EXPORT void JavaLangCloneNotSupportedException_initWithNSString_(JavaLangCloneNotSupportedException *self, NSString *s);
 

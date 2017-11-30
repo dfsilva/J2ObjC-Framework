@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/SecurityManager.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangSecurityManager")
 #ifdef RESTRICT_JavaLangSecurityManager
@@ -159,9 +159,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangSecurityManager)
 
 FOUNDATION_EXPORT void JavaLangSecurityManager_init(JavaLangSecurityManager *self);
 
-FOUNDATION_EXPORT JavaLangSecurityManager *new_JavaLangSecurityManager_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangSecurityManager *new_JavaLangSecurityManager_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangSecurityManager *create_JavaLangSecurityManager_init();
+FOUNDATION_EXPORT JavaLangSecurityManager *create_JavaLangSecurityManager_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangSecurityManager)
 

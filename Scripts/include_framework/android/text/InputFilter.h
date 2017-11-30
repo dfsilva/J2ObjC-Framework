@@ -3,7 +3,7 @@
 //  source: android/frameworks/base/core/java/android/text/InputFilter.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_AndroidTextInputFilter")
 #ifdef RESTRICT_AndroidTextInputFilter
@@ -30,25 +30,25 @@
 
 /*!
  @brief InputFilters can be attached to <code>Editable</code>s to constrain the
- changes that can be made to them.
+  changes that can be made to them.
  */
 @protocol AndroidTextInputFilter < JavaObject >
 
 /*!
  @brief This method is called when the buffer is going to replace the
- range <code>dstart &hellip; dend</code> of <code>dest</code>
- with the new text from the range <code>start &hellip; end</code>
- of <code>source</code>.
- Return the CharSequence that you would
- like to have placed there instead, including an empty string
- if appropriate, or <code>null</code> to accept the original
- replacement.  Be careful to not to reject 0-length replacements,
- as this is what happens when you delete text.  Also beware that
- you should not attempt to make any changes to <code>dest</code>
- from this method; you may only examine it for context.
- Note: If <var>source</var> is an instance of <code>Spanned</code> or
+  range <code>dstart &hellip; dend</code> of <code>dest</code>
+  with the new text from the range <code>start &hellip; end</code>
+  of <code>source</code>.Return the CharSequence that you would
+  like to have placed there instead, including an empty string
+  if appropriate, or <code>null</code> to accept the original
+  replacement.
+ Be careful to not to reject 0-length replacements,
+  as this is what happens when you delete text.  Also beware that
+  you should not attempt to make any changes to <code>dest</code>
+  from this method; you may only examine it for context. 
+  Note: If <var>source</var> is an instance of <code>Spanned</code> or 
  <code>Spannable</code>, the span objects in the <var>source</var> should be 
- copied into the filtered result (i.e. the non-null return value). 
+  copied into the filtered result (i.e. the non-null return value).  
  <code>TextUtils.copySpansFrom</code> can be used for convenience.
  */
 - (id<JavaLangCharSequence>)filterWithJavaLangCharSequence:(id<JavaLangCharSequence>)source
@@ -74,7 +74,7 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidTextInputFilter)
 
 /*!
  @brief This filter will capitalize all the lower case letters that are added
- through edits.
+  through edits.
  */
 @interface AndroidTextInputFilter_AllCaps : NSObject < AndroidTextInputFilter >
 
@@ -95,9 +95,9 @@ J2OBJC_EMPTY_STATIC_INIT(AndroidTextInputFilter_AllCaps)
 
 FOUNDATION_EXPORT void AndroidTextInputFilter_AllCaps_init(AndroidTextInputFilter_AllCaps *self);
 
-FOUNDATION_EXPORT AndroidTextInputFilter_AllCaps *new_AndroidTextInputFilter_AllCaps_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT AndroidTextInputFilter_AllCaps *new_AndroidTextInputFilter_AllCaps_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT AndroidTextInputFilter_AllCaps *create_AndroidTextInputFilter_AllCaps_init();
+FOUNDATION_EXPORT AndroidTextInputFilter_AllCaps *create_AndroidTextInputFilter_AllCaps_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(AndroidTextInputFilter_AllCaps)
 
@@ -111,7 +111,7 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidTextInputFilter_AllCaps)
 
 /*!
  @brief This filter will constrain edits not to make the length of the text
- greater than the specified length.
+  greater than the specified length.
  */
 @interface AndroidTextInputFilter_LengthFilter : NSObject < AndroidTextInputFilter >
 
@@ -125,6 +125,10 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidTextInputFilter_AllCaps)
                                     withAndroidTextSpanned:(id<AndroidTextSpanned>)dest
                                                    withInt:(jint)dstart
                                                    withInt:(jint)dend;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

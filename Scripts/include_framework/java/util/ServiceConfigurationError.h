@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/ServiceConfigurationError.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilServiceConfigurationError")
 #ifdef RESTRICT_JavaUtilServiceConfigurationError
@@ -21,22 +21,25 @@
 
 #define RESTRICT_JavaLangError 1
 #define INCLUDE_JavaLangError 1
-#include "../../java/lang/Error.h"
+#include "java/lang/Error.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Error thrown when something goes wrong while loading a service provider.
- <p> This error will be thrown in the following situations:
+ <p> This error will be thrown in the following situations: 
  <ul>
- <li> The format of a provider-configuration file violates the <a
- href="ServiceLoader.html#format">specification</a>; </li>
- <li> An <code>IOException</code> occurs while reading a
- provider-configuration file; </li>
- <li> A concrete provider class named in a provider-configuration file
- cannot be found; </li>
- <li> A concrete provider class is not a subclass of the service class;
- </li>
- <li> A concrete provider class cannot be instantiated; or
- <li> Some other kind of error occurs. </li>
+    <li> The format of a provider-configuration file violates the <a href="ServiceLoader.html#format">
+ specification</a>; </li>
+    <li> An <code>IOException</code> occurs while reading a
+    provider-configuration file; </li>
+    <li> A concrete provider class named in a provider-configuration file
+    cannot be found; </li>
+    <li> A concrete provider class is not a subclass of the service class;
+    </li>
+    <li> A concrete provider class cannot be instantiated; or
+    <li> Some other kind of error occurs. </li>
+  
  </ul>
  @author Mark Reinhold
  @since 1.6
@@ -47,18 +50,29 @@
 
 /*!
  @brief Constructs a new instance with the specified message.
- @param msg  The message, or <tt>null</tt> if there is no message
+ @param msg The message, or  <tt> null </tt>  if there is no message
  */
 - (instancetype)initWithNSString:(NSString *)msg;
 
 /*!
  @brief Constructs a new instance with the specified message and cause.
- @param msg  The message, or <tt>null</tt> if there is no message
- @param cause  The cause, or <tt>null</tt> if the cause is nonexistent
- or unknown
+ @param msg The message, or  <tt> null </tt>  if there is no message
+ @param cause The cause, or  <tt> null </tt>  if the cause is nonexistent
+                  or unknown
  */
 - (instancetype)initWithNSString:(NSString *)msg
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -70,11 +84,11 @@ FOUNDATION_EXPORT JavaUtilServiceConfigurationError *new_JavaUtilServiceConfigur
 
 FOUNDATION_EXPORT JavaUtilServiceConfigurationError *create_JavaUtilServiceConfigurationError_initWithNSString_(NSString *msg);
 
-FOUNDATION_EXPORT void JavaUtilServiceConfigurationError_initWithNSString_withNSException_(JavaUtilServiceConfigurationError *self, NSString *msg, NSException *cause);
+FOUNDATION_EXPORT void JavaUtilServiceConfigurationError_initWithNSString_withJavaLangThrowable_(JavaUtilServiceConfigurationError *self, NSString *msg, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaUtilServiceConfigurationError *new_JavaUtilServiceConfigurationError_initWithNSString_withNSException_(NSString *msg, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaUtilServiceConfigurationError *new_JavaUtilServiceConfigurationError_initWithNSString_withJavaLangThrowable_(NSString *msg, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaUtilServiceConfigurationError *create_JavaUtilServiceConfigurationError_initWithNSString_withNSException_(NSString *msg, NSException *cause);
+FOUNDATION_EXPORT JavaUtilServiceConfigurationError *create_JavaUtilServiceConfigurationError_initWithNSString_withJavaLangThrowable_(NSString *msg, JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaUtilServiceConfigurationError)
 

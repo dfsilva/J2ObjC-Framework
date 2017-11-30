@@ -23,12 +23,13 @@
 #define INCLUDE_JavaNetSocketException 1
 #include "java/net/SocketException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Signals that an error occurred while attempting to connect a
- socket to a remote address and port.
- Typically, the connection
- was refused remotely (e.g., no process is listening on the
- remote address/port).
+  socket to a remote address and port.Typically, the connection
+  was refused remotely (e.g., no process is listening on the
+  remote address/port).
  @since JDK1.1
  */
 @interface JavaNetConnectException : JavaNetSocketException
@@ -42,18 +43,21 @@
 
 /*!
  @brief Constructs a new ConnectException with the specified detail
- message as to why the connect error occurred.
+  message as to why the connect error occurred.
  A detail message is a String that gives a specific
- description of this error.
+  description of this error.
  @param msg the detail message
  */
 - (instancetype)initWithNSString:(NSString *)msg;
 
 /*!
-  
  */
 - (instancetype)initWithNSString:(NSString *)msg
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -67,15 +71,15 @@ FOUNDATION_EXPORT JavaNetConnectException *create_JavaNetConnectException_initWi
 
 FOUNDATION_EXPORT void JavaNetConnectException_init(JavaNetConnectException *self);
 
-FOUNDATION_EXPORT JavaNetConnectException *new_JavaNetConnectException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNetConnectException *new_JavaNetConnectException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNetConnectException *create_JavaNetConnectException_init();
+FOUNDATION_EXPORT JavaNetConnectException *create_JavaNetConnectException_init(void);
 
-FOUNDATION_EXPORT void JavaNetConnectException_initWithNSString_withNSException_(JavaNetConnectException *self, NSString *msg, NSException *cause);
+FOUNDATION_EXPORT void JavaNetConnectException_initWithNSString_withJavaLangThrowable_(JavaNetConnectException *self, NSString *msg, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaNetConnectException *new_JavaNetConnectException_initWithNSString_withNSException_(NSString *msg, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNetConnectException *new_JavaNetConnectException_initWithNSString_withJavaLangThrowable_(NSString *msg, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNetConnectException *create_JavaNetConnectException_initWithNSString_withNSException_(NSString *msg, NSException *cause);
+FOUNDATION_EXPORT JavaNetConnectException *create_JavaNetConnectException_initWithNSString_withJavaLangThrowable_(NSString *msg, JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNetConnectException)
 

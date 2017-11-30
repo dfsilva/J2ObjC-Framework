@@ -23,7 +23,7 @@
 
 /*!
  @brief An interface for filtering <code>File</code> objects based on their names
- or the directory they reside in.
+  or the directory they reside in.
  - seealso: File
  - seealso: File#list(FilenameFilter)
  */
@@ -31,13 +31,13 @@
 
 /*!
  @brief Indicates if a specific filename matches this filter.
- @param dir
- the directory in which the <code>filename</code> was found.
- @param filename
- the name of the file in <code>dir</code> to test.
+ @param dir the directory in which the 
+ <code>filename</code>  was found.
+ @param filename the name of the file in 
+ <code>dir</code>  to test.
  @return <code>true</code> if the filename matches the filter
- and can be included in the list, <code>false</code>
- otherwise.
+             and can be included in the list, <code>false</code>
+             otherwise.
  */
 - (jboolean)acceptWithJavaIoFile:(JavaIoFile *)dir
                     withNSString:(NSString *)filename;

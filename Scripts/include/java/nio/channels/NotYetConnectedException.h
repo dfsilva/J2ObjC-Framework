@@ -23,9 +23,11 @@
 #define INCLUDE_JavaLangIllegalStateException 1
 #include "java/lang/IllegalStateException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Unchecked exception thrown when an attempt is made to invoke an I/O
- operation upon a socket channel that is not yet connected.
+  operation upon a socket channel that is not yet connected.
  @since 1.4
  */
 @interface JavaNioChannelsNotYetConnectedException : JavaLangIllegalStateException
@@ -37,15 +39,24 @@
  */
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsNotYetConnectedException)
 
 FOUNDATION_EXPORT void JavaNioChannelsNotYetConnectedException_init(JavaNioChannelsNotYetConnectedException *self);
 
-FOUNDATION_EXPORT JavaNioChannelsNotYetConnectedException *new_JavaNioChannelsNotYetConnectedException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNioChannelsNotYetConnectedException *new_JavaNioChannelsNotYetConnectedException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNioChannelsNotYetConnectedException *create_JavaNioChannelsNotYetConnectedException_init();
+FOUNDATION_EXPORT JavaNioChannelsNotYetConnectedException *create_JavaNioChannelsNotYetConnectedException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsNotYetConnectedException)
 

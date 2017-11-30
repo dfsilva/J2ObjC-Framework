@@ -22,11 +22,11 @@
 #ifndef _JavaLangReflectMethod_H_
 #define _JavaLangReflectMethod_H_
 
-#import "../../../IOSMetadata.h"
-#import "../../../J2ObjC_common.h"
-#import "../../../java/lang/reflect/Executable.h"
-#import "../../../java/lang/reflect/GenericDeclaration.h"
-#import "../../../java/lang/reflect/Member.h"
+#import "IOSMetadata.h"
+#import "J2ObjC_common.h"
+#import "java/lang/reflect/Executable.h"
+#import "java/lang/reflect/GenericDeclaration.h"
+#import "java/lang/reflect/Member.h"
 
 @class IOSClass;
 @class IOSObjectArray;
@@ -66,6 +66,9 @@
 
 // Returns whether this is a default method.
 - (jboolean)isDefault;
+
+// Returns false, since the J2ObjC translator doesn't generate bridge methods.
+- (jboolean)isBridge;
 
 // Internal methods.
 - (NSMethodSignature *)getSignature;

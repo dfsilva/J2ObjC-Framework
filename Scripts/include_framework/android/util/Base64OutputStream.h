@@ -3,7 +3,7 @@
 //  source: android/frameworks/base/core/java/android/util/Base64OutputStream.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_AndroidUtilBase64OutputStream")
 #ifdef RESTRICT_AndroidUtilBase64OutputStream
@@ -21,14 +21,14 @@
 
 #define RESTRICT_JavaIoFilterOutputStream 1
 #define INCLUDE_JavaIoFilterOutputStream 1
-#include "../../java/io/FilterOutputStream.h"
+#include "java/io/FilterOutputStream.h"
 
 @class IOSByteArray;
 @class JavaIoOutputStream;
 
 /*!
  @brief An OutputStream that does Base64 encoding on the data written to
- it, writing the resulting data to another OutputStream.
+  it, writing the resulting data to another OutputStream.
  */
 @interface AndroidUtilBase64OutputStream : JavaIoFilterOutputStream
 
@@ -36,21 +36,21 @@
 
 /*!
  @brief Performs Base64 encoding on the data written to the stream,
- writing the encoded data to another OutputStream.
+  writing the encoded data to another OutputStream.
  @param outArg the OutputStream to write the encoded data to
- @param flags bit flags for controlling the encoder; see the
- constants in <code>Base64</code>
+ @param flags bit flags for controlling the encoder; see the         constants in 
+ <code>Base64</code>
  */
 - (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg
                                    withInt:(jint)flags;
 
 /*!
  @brief Performs Base64 encoding or decoding on the data written to the
- stream, writing the encoded/decoded data to another
- OutputStream.
+  stream, writing the encoded/decoded data to another
+  OutputStream.
  @param outArg the OutputStream to write the encoded data to
- @param flags bit flags for controlling the encoder; see the
- constants in <code>Base64</code>
+ @param flags bit flags for controlling the encoder; see the         constants in 
+ <code>Base64</code>
  @param encode true to encode, false to decode
  */
 - (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg
@@ -64,6 +64,10 @@
                    withInt:(jint)len;
 
 - (void)writeWithInt:(jint)b;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)arg0 NS_UNAVAILABLE;
 
 @end
 

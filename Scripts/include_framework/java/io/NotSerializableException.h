@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/NotSerializableException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoNotSerializableException")
 #ifdef RESTRICT_JavaIoNotSerializableException
@@ -21,12 +21,12 @@
 
 #define RESTRICT_JavaIoObjectStreamException 1
 #define INCLUDE_JavaIoObjectStreamException 1
-#include "../../java/io/ObjectStreamException.h"
+#include "java/io/ObjectStreamException.h"
 
 /*!
  @brief Thrown when an instance is required to have a Serializable interface.
  The serialization runtime or the class of the instance can throw
- this exception. The argument should be the name of the class.
+  this exception. The argument should be the name of the class.
  @author unascribed
  @since JDK1.1
  */
@@ -57,9 +57,9 @@ FOUNDATION_EXPORT JavaIoNotSerializableException *create_JavaIoNotSerializableEx
 
 FOUNDATION_EXPORT void JavaIoNotSerializableException_init(JavaIoNotSerializableException *self);
 
-FOUNDATION_EXPORT JavaIoNotSerializableException *new_JavaIoNotSerializableException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoNotSerializableException *new_JavaIoNotSerializableException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoNotSerializableException *create_JavaIoNotSerializableException_init();
+FOUNDATION_EXPORT JavaIoNotSerializableException *create_JavaIoNotSerializableException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaIoNotSerializableException)
 

@@ -28,7 +28,7 @@
 /*!
  @brief Marks a test that should run as part of the smoke tests.
  The <code>android.test.suitebuilder.SmokeTestSuiteBuilder</code>
- will run all tests with this annotation.
+  will run all tests with this annotation.
  */
 @protocol AndroidTestSuitebuilderAnnotationSmoke < JavaLangAnnotationAnnotation >
 
@@ -40,7 +40,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(AndroidTestSuitebuilderAnnotationSmoke)
 
-FOUNDATION_EXPORT id<AndroidTestSuitebuilderAnnotationSmoke> create_AndroidTestSuitebuilderAnnotationSmoke();
+FOUNDATION_EXPORT id<AndroidTestSuitebuilderAnnotationSmoke> create_AndroidTestSuitebuilderAnnotationSmoke(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(AndroidTestSuitebuilderAnnotationSmoke)
 

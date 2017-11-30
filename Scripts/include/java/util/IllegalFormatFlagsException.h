@@ -26,7 +26,7 @@
 /*!
  @brief Unchecked exception thrown when an illegal combination flags is given.
  <p> Unless otherwise specified, passing a <tt>null</tt> argument to any
- method or constructor in this class will cause a <code>NullPointerException</code>
+  method or constructor in this class will cause a <code>NullPointerException</code>
   to be thrown.
  @since 1.5
  */
@@ -36,8 +36,7 @@
 
 /*!
  @brief Constructs an instance of this class with the specified flags.
- @param f
- The set of format flags which contain an illegal combination
+ @param f The set of format flags which contain an illegal combination
  */
 - (instancetype)initWithNSString:(NSString *)f;
 
@@ -48,6 +47,10 @@
 - (NSString *)getFlags;
 
 - (NSString *)getMessage;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

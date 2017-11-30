@@ -20,13 +20,19 @@
 #define JavaIoFileDescriptor_
 
 /*!
- @brief Wraps a Unix file descriptor.
- It's possible to get the file descriptor used by some
- classes (such as <code>FileInputStream</code>, <code>FileOutputStream</code>,
- and <code>RandomAccessFile</code>), and then create new streams that point to the same
- file descriptor.
+ @brief Wraps a Unix file descriptor.It's possible to get the file descriptor used by some
+  classes (such as <code>FileInputStream</code>, <code>FileOutputStream</code>,
+  and <code>RandomAccessFile</code>), and then create new streams that point to the same
+  file descriptor.
  */
-@interface JavaIoFileDescriptor : NSObject
+@interface JavaIoFileDescriptor : NSObject {
+ @public
+  /*!
+   @brief The Unix file descriptor backing this FileDescriptor.
+   A value of -1 indicates that this FileDescriptor is invalid.
+   */
+  jint descriptor_;
+}
 
 + (JavaIoFileDescriptor *)in;
 
@@ -42,24 +48,26 @@
 - (instancetype)init;
 
 /*!
- @brief Returns the int fd.
- It's highly unlikely you should be calling this. Please discuss
- your needs with a libcore maintainer before using this method.
-  internal use only
+ @brief Returns the int fd.It's highly unlikely you should be calling this.
+ Please discuss
+  your needs with a libcore maintainer before using this method.
  */
 - (jint)getInt$;
 
 /*!
- @brief Sets the int fd.
- It's highly unlikely you should be calling this. Please discuss
- your needs with a libcore maintainer before using this method.
-  internal use only
+ */
+- (jboolean)isSocket$;
+
+/*!
+ @brief Sets the int fd.It's highly unlikely you should be calling this.
+ Please discuss
+  your needs with a libcore maintainer before using this method.
  */
 - (void)setInt$WithInt:(jint)fd;
 
 /*!
  @brief Ensures that data which is buffered within the underlying implementation
- is written out to the appropriate device before returning.
+  is written out to the appropriate device before returning.
  */
 - (void)sync;
 
@@ -77,7 +85,7 @@ J2OBJC_STATIC_INIT(JavaIoFileDescriptor)
 /*!
  @brief Corresponds to <code>stdin</code>.
  */
-inline JavaIoFileDescriptor *JavaIoFileDescriptor_get_in();
+inline JavaIoFileDescriptor *JavaIoFileDescriptor_get_in(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT JavaIoFileDescriptor *JavaIoFileDescriptor_in;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(JavaIoFileDescriptor, in, JavaIoFileDescriptor *)
@@ -85,7 +93,7 @@ J2OBJC_STATIC_FIELD_OBJ_FINAL(JavaIoFileDescriptor, in, JavaIoFileDescriptor *)
 /*!
  @brief Corresponds to <code>stdout</code>.
  */
-inline JavaIoFileDescriptor *JavaIoFileDescriptor_get_out();
+inline JavaIoFileDescriptor *JavaIoFileDescriptor_get_out(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT JavaIoFileDescriptor *JavaIoFileDescriptor_out;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(JavaIoFileDescriptor, out, JavaIoFileDescriptor *)
@@ -93,16 +101,16 @@ J2OBJC_STATIC_FIELD_OBJ_FINAL(JavaIoFileDescriptor, out, JavaIoFileDescriptor *)
 /*!
  @brief Corresponds to <code>stderr</code>.
  */
-inline JavaIoFileDescriptor *JavaIoFileDescriptor_get_err();
+inline JavaIoFileDescriptor *JavaIoFileDescriptor_get_err(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT JavaIoFileDescriptor *JavaIoFileDescriptor_err;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(JavaIoFileDescriptor, err, JavaIoFileDescriptor *)
 
 FOUNDATION_EXPORT void JavaIoFileDescriptor_init(JavaIoFileDescriptor *self);
 
-FOUNDATION_EXPORT JavaIoFileDescriptor *new_JavaIoFileDescriptor_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoFileDescriptor *new_JavaIoFileDescriptor_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoFileDescriptor *create_JavaIoFileDescriptor_init();
+FOUNDATION_EXPORT JavaIoFileDescriptor *create_JavaIoFileDescriptor_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaIoFileDescriptor)
 

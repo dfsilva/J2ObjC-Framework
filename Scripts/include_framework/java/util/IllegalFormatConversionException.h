@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/IllegalFormatConversionException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilIllegalFormatConversionException")
 #ifdef RESTRICT_JavaUtilIllegalFormatConversionException
@@ -21,15 +21,15 @@
 
 #define RESTRICT_JavaUtilIllegalFormatException 1
 #define INCLUDE_JavaUtilIllegalFormatException 1
-#include "../../java/util/IllegalFormatException.h"
+#include "java/util/IllegalFormatException.h"
 
 @class IOSClass;
 
 /*!
  @brief Unchecked exception thrown when the argument corresponding to the format
- specifier is of an incompatible type.
+  specifier is of an incompatible type.
  <p> Unless otherwise specified, passing a <tt>null</tt> argument to any
- method or constructor in this class will cause a <code>NullPointerException</code>
+  method or constructor in this class will cause a <code>NullPointerException</code>
   to be thrown.
  @since 1.5
  */
@@ -39,11 +39,9 @@
 
 /*!
  @brief Constructs an instance of this class with the mismatched conversion and
- the corresponding argument class.
- @param c
- Inapplicable conversion
- @param arg
- Class of the mismatched argument
+  the corresponding argument class.
+ @param c Inapplicable conversion
+ @param arg Class of the mismatched argument
  */
 - (instancetype)initWithChar:(jchar)c
                 withIOSClass:(IOSClass *)arg;
@@ -61,6 +59,10 @@
 - (jchar)getConversion;
 
 - (NSString *)getMessage;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

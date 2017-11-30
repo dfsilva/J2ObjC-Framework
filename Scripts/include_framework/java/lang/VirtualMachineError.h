@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/VirtualMachineError.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangVirtualMachineError")
 #ifdef RESTRICT_JavaLangVirtualMachineError
@@ -21,11 +21,13 @@
 
 #define RESTRICT_JavaLangError 1
 #define INCLUDE_JavaLangError 1
-#include "../../java/lang/Error.h"
+#include "java/lang/Error.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Thrown to indicate that the Java Virtual Machine is broken or has
- run out of resources necessary for it to continue operating.
+  run out of resources necessary for it to continue operating.
  @author Frank Yellin
  @since JDK1.0
  */
@@ -40,42 +42,40 @@
 
 /*!
  @brief Constructs a <code>VirtualMachineError</code> with the specified
- detail message.
- @param message   the detail message.
+  detail message.
+ @param message the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)message;
 
 /*!
  @brief Constructs a <code>VirtualMachineError</code> with the specified
- detail message and cause.
+  detail message and cause.
  <p>Note that the detail message
- associated with <code>cause</code> is <i>not</i> automatically
- incorporated in this error's detail message.
- @param message the detail message (which is saved for later retrieval
- by the <code>getMessage()</code> method).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is
- permitted, and indicates that the cause is nonexistent or
- unknown.)
+  associated with <code>cause</code> is <i>not</i> automatically
+  incorporated in this error's detail message.
+ @param message the detail message (which is saved for later retrieval          by the 
+ <code>getMessage()</code>  method).
+ @param cause the cause (which is saved for later retrieval by the          
+ <code>getCause()</code>  method).  (A <code>null</code>  value is          permitted, and indicates that the cause is nonexistent or
+           unknown.)
  @since 1.8
  */
 - (instancetype)initWithNSString:(NSString *)message
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Constructs an a <code>VirtualMachineError</code> with the specified
- cause and a detail message of <code>(cause==null ?
+  cause and a detail message of <code>(cause==null ?
  null :
- cause.toString())</code>
+  cause.toString())</code>
   (which typically contains the class and
- detail message of <code>cause</code>).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is
- permitted, and indicates that the cause is nonexistent or
- unknown.)
+  detail message of <code>cause</code>).
+ @param cause the cause (which is saved for later retrieval by the          
+ <code>getCause()</code>  method).  (A <code>null</code>  value is          permitted, and indicates that the cause is nonexistent or
+           unknown.)
  @since 1.8
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
 
 @end
 
@@ -85,9 +85,9 @@ FOUNDATION_EXPORT void JavaLangVirtualMachineError_init(JavaLangVirtualMachineEr
 
 FOUNDATION_EXPORT void JavaLangVirtualMachineError_initWithNSString_(JavaLangVirtualMachineError *self, NSString *message);
 
-FOUNDATION_EXPORT void JavaLangVirtualMachineError_initWithNSString_withNSException_(JavaLangVirtualMachineError *self, NSString *message, NSException *cause);
+FOUNDATION_EXPORT void JavaLangVirtualMachineError_initWithNSString_withJavaLangThrowable_(JavaLangVirtualMachineError *self, NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaLangVirtualMachineError_initWithNSException_(JavaLangVirtualMachineError *self, NSException *cause);
+FOUNDATION_EXPORT void JavaLangVirtualMachineError_initWithJavaLangThrowable_(JavaLangVirtualMachineError *self, JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangVirtualMachineError)
 

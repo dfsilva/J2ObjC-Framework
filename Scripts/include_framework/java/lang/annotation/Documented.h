@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/annotation/Documented.java
 //
 
-#include "../../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangAnnotationDocumented")
 #ifdef RESTRICT_JavaLangAnnotationDocumented
@@ -21,18 +21,18 @@
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
-#include "../../../java/lang/annotation/Annotation.h"
+#include "java/lang/annotation/Annotation.h"
 
 @class IOSClass;
 
 /*!
  @brief Indicates that annotations with a type are to be documented by javadoc
- and similar tools by default.
- This type should be used to annotate the
- declarations of types whose annotations affect the use of annotated
- elements by their clients.  If a type declaration is annotated with
- Documented, its annotations become part of the public API
- of the annotated elements.
+  and similar tools by default.This type should be used to annotate the
+  declarations of types whose annotations affect the use of annotated
+  elements by their clients.
+ If a type declaration is annotated with
+  Documented, its annotations become part of the public API
+  of the annotated elements.
  @author Joshua Bloch
  @since 1.5
  */
@@ -46,7 +46,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(JavaLangAnnotationDocumented)
 
-FOUNDATION_EXPORT id<JavaLangAnnotationDocumented> create_JavaLangAnnotationDocumented();
+FOUNDATION_EXPORT id<JavaLangAnnotationDocumented> create_JavaLangAnnotationDocumented(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangAnnotationDocumented)
 

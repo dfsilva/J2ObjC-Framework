@@ -25,11 +25,10 @@
 @protocol AndroidTextSpanned;
 
 /*!
- @brief A cached set of spans.
- Caches the result of <code>Spanned.getSpans(int,int,Class)</code> and then
- provides faster access to <code>Spanned.nextSpanTransition(int,int,Class)</code>.
+ @brief A cached set of spans.Caches the result of <code>int, Class)</code> and then
+  provides faster access to <code>int, Class)</code>.
  Fields are left public for a convenient direct access.
- Note that empty spans are ignored by this class.
+  Note that empty spans are ignored by this class.
  */
 @interface AndroidTextSpanSet : NSObject {
  @public
@@ -63,10 +62,14 @@
 - (instancetype)initWithIOSClass:(IOSClass *)type;
 
 /*!
- @brief Similar to <code>Spanned.nextSpanTransition(int,int,Class)</code>
+ @brief Similar to <code>int, Class)</code>
  */
 - (jint)getNextTransitionWithInt:(jint)start
                          withInt:(jint)limit;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

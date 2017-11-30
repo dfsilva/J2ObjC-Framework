@@ -23,8 +23,10 @@
 #define INCLUDE_JavaLangUnsupportedOperationException 1
 #include "java/lang/UnsupportedOperationException.h"
 
+@class JavaLangThrowable;
+
 /*!
- @brief Unchecked exception thrown when a content-mutation method such as
+ @brief Unchecked exception thrown when a content-mutation method such as 
  <tt>put</tt> or <tt>compact</tt> is invoked upon a read-only buffer.
  @since 1.4
  */
@@ -37,15 +39,24 @@
  */
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaNioReadOnlyBufferException)
 
 FOUNDATION_EXPORT void JavaNioReadOnlyBufferException_init(JavaNioReadOnlyBufferException *self);
 
-FOUNDATION_EXPORT JavaNioReadOnlyBufferException *new_JavaNioReadOnlyBufferException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNioReadOnlyBufferException *new_JavaNioReadOnlyBufferException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNioReadOnlyBufferException *create_JavaNioReadOnlyBufferException_init();
+FOUNDATION_EXPORT JavaNioReadOnlyBufferException *create_JavaNioReadOnlyBufferException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioReadOnlyBufferException)
 

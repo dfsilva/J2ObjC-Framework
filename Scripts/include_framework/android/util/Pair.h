@@ -3,7 +3,7 @@
 //  source: android/frameworks/base/core/java/android/util/Pair.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_AndroidUtilPair")
 #ifdef RESTRICT_AndroidUtilPair
@@ -20,10 +20,9 @@
 #define AndroidUtilPair_
 
 /*!
- @brief Container to ease passing around a tuple of two objects.
- This object provides a sensible
- implementation of equals(), returning true if equals() is true on each of the contained
- objects.
+ @brief Container to ease passing around a tuple of two objects.This object provides a sensible
+  implementation of equals(), returning true if equals() is true on each of the contained
+  objects.
  */
 @interface AndroidUtilPair : NSObject {
  @public
@@ -51,11 +50,11 @@
                            withId:(id)b;
 
 /*!
- @brief Checks the two objects for equality by delegating to their respective
+ @brief Checks the two objects for equality by delegating to their respective 
  <code>Object.equals(Object)</code> methods.
- @param o the <code>Pair</code> to which this one is to be checked for equality
+ @param o the <code>Pair</code>  to which this one is to be checked for equality
  @return true if the underlying objects of the Pair are both considered
- equal
+          equal
  */
 - (jboolean)isEqual:(id)o;
 
@@ -64,6 +63,10 @@
  @return a hashcode of the Pair
  */
 - (NSUInteger)hash;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

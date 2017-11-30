@@ -3,7 +3,7 @@
 //  source: android/frameworks/base/core/java/android/text/SpannableStringInternal.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_AndroidTextSpannableStringInternal")
 #ifdef RESTRICT_AndroidTextSpannableStringInternal
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangCharSequence 1
 #define INCLUDE_JavaLangCharSequence 1
-#include "../../java/lang/CharSequence.h"
+#include "java/lang/CharSequence.h"
 
 @class IOSCharArray;
 @class IOSClass;
@@ -55,7 +55,7 @@
 
 - (NSUInteger)hash;
 
-- (jint)length;
+- (jint)java_length;
 
 - (jint)nextSpanTransitionWithInt:(jint)start
                           withInt:(jint)limit
@@ -80,7 +80,7 @@
 
 J2OBJC_STATIC_INIT(AndroidTextSpannableStringInternal)
 
-inline IOSObjectArray *AndroidTextSpannableStringInternal_get_EMPTY();
+inline IOSObjectArray *AndroidTextSpannableStringInternal_get_EMPTY(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT IOSObjectArray *AndroidTextSpannableStringInternal_EMPTY;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(AndroidTextSpannableStringInternal, EMPTY, IOSObjectArray *)

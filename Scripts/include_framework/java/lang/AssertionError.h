@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/AssertionError.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangAssertionError")
 #ifdef RESTRICT_JavaLangAssertionError
@@ -21,21 +21,23 @@
 
 #define RESTRICT_JavaLangError 1
 #define INCLUDE_JavaLangError 1
-#include "../../java/lang/Error.h"
+#include "java/lang/Error.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Thrown to indicate that an assertion has failed.
  <p>The seven one-argument public constructors provided by this
- class ensure that the assertion error returned by the invocation:
+  class ensure that the assertion error returned by the invocation: 
  @code
 
-     new AssertionError(<i>expression</i>)
-  
+      new AssertionError(<i>expression</i>)
+   
 @endcode
- has as its detail message the <i>string conversion</i> of
- <i>expression</i> (as defined in section 15.18.1.1 of
+  has as its detail message the <i>string conversion</i> of 
+ <i>expression</i> (as defined in section 15.18.1.1 of 
  <cite>The Java&trade; Language Specification</cite>),
- regardless of the type of <i>expression</i>.
+  regardless of the type of <i>expression</i>.
  @since 1.4
  */
 @interface JavaLangAssertionError : JavaLangError
@@ -49,8 +51,8 @@
 
 /*!
  @brief Constructs an AssertionError with its detail message derived
- from the specified <code>boolean</code>, which is converted to
- a string as defined in section 15.18.1.1 of
+  from the specified <code>boolean</code>, which is converted to
+  a string as defined in section 15.18.1.1 of 
  <cite>The Java&trade; Language Specification</cite>.
  @param detailMessage value to be used in constructing detail message
  */
@@ -58,8 +60,8 @@
 
 /*!
  @brief Constructs an AssertionError with its detail message derived
- from the specified <code>char</code>, which is converted to a
- string as defined in section 15.18.1.1 of
+  from the specified <code>char</code>, which is converted to a
+  string as defined in section 15.18.1.1 of 
  <cite>The Java&trade; Language Specification</cite>.
  @param detailMessage value to be used in constructing detail message
  */
@@ -67,8 +69,8 @@
 
 /*!
  @brief Constructs an AssertionError with its detail message derived
- from the specified <code>double</code>, which is converted to a
- string as defined in section 15.18.1.1 of
+  from the specified <code>double</code>, which is converted to a
+  string as defined in section 15.18.1.1 of 
  <cite>The Java&trade; Language Specification</cite>.
  @param detailMessage value to be used in constructing detail message
  */
@@ -76,8 +78,8 @@
 
 /*!
  @brief Constructs an AssertionError with its detail message derived
- from the specified <code>float</code>, which is converted to a
- string as defined in section 15.18.1.1 of
+  from the specified <code>float</code>, which is converted to a
+  string as defined in section 15.18.1.1 of 
  <cite>The Java&trade; Language Specification</cite>.
  @param detailMessage value to be used in constructing detail message
  */
@@ -85,8 +87,8 @@
 
 /*!
  @brief Constructs an AssertionError with its detail message derived
- from the specified <code>int</code>, which is converted to a
- string as defined in section 15.18.1.1 of
+  from the specified <code>int</code>, which is converted to a
+  string as defined in section 15.18.1.1 of 
  <cite>The Java&trade; Language Specification</cite>.
  @param detailMessage value to be used in constructing detail message
  */
@@ -94,8 +96,8 @@
 
 /*!
  @brief Constructs an AssertionError with its detail message derived
- from the specified <code>long</code>, which is converted to a
- string as defined in section 15.18.1.1 of
+  from the specified <code>long</code>, which is converted to a
+  string as defined in section 15.18.1.1 of 
  <cite>The Java&trade; Language Specification</cite>.
  @param detailMessage value to be used in constructing detail message
  */
@@ -103,12 +105,12 @@
 
 /*!
  @brief Constructs an AssertionError with its detail message derived
- from the specified object, which is converted to a string as
- defined in section 15.18.1.1 of
+  from the specified object, which is converted to a string as
+  defined in section 15.18.1.1 of 
  <cite>The Java&trade; Language Specification</cite>.
  <p>
- If the specified object is an instance of <code>Throwable</code>, it
- becomes the <i>cause</i> of the newly constructed assertion error.
+  If the specified object is an instance of <code>Throwable</code>, it
+  becomes the <i>cause</i> of the newly constructed assertion error.
  @param detailMessage value to be used in constructing detail message
  - seealso: Throwable#getCause()
  */
@@ -116,16 +118,25 @@
 
 /*!
  @brief Constructs a new <code>AssertionError</code> with the specified
- detail message and cause.
- <p>Note that the detail message associated with
+  detail message and cause.
+ <p>Note that the detail message associated with 
  <code>cause</code> is <i>not</i> automatically incorporated in
- this error's detail message.
+  this error's detail message.
  @param message the detail message, may be <code>null</code>
  @param cause the cause, may be <code>null</code>
  @since 1.7
  */
 - (instancetype)initWithNSString:(NSString *)message
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -133,9 +144,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangAssertionError)
 
 FOUNDATION_EXPORT void JavaLangAssertionError_init(JavaLangAssertionError *self);
 
-FOUNDATION_EXPORT JavaLangAssertionError *new_JavaLangAssertionError_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangAssertionError *new_JavaLangAssertionError_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangAssertionError *create_JavaLangAssertionError_init();
+FOUNDATION_EXPORT JavaLangAssertionError *create_JavaLangAssertionError_init(void);
 
 FOUNDATION_EXPORT void JavaLangAssertionError_initWithId_(JavaLangAssertionError *self, id detailMessage);
 
@@ -179,11 +190,11 @@ FOUNDATION_EXPORT JavaLangAssertionError *new_JavaLangAssertionError_initWithDou
 
 FOUNDATION_EXPORT JavaLangAssertionError *create_JavaLangAssertionError_initWithDouble_(jdouble detailMessage);
 
-FOUNDATION_EXPORT void JavaLangAssertionError_initWithNSString_withNSException_(JavaLangAssertionError *self, NSString *message, NSException *cause);
+FOUNDATION_EXPORT void JavaLangAssertionError_initWithNSString_withJavaLangThrowable_(JavaLangAssertionError *self, NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaLangAssertionError *new_JavaLangAssertionError_initWithNSString_withNSException_(NSString *message, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangAssertionError *new_JavaLangAssertionError_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangAssertionError *create_JavaLangAssertionError_initWithNSString_withNSException_(NSString *message, NSException *cause);
+FOUNDATION_EXPORT JavaLangAssertionError *create_JavaLangAssertionError_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangAssertionError)
 

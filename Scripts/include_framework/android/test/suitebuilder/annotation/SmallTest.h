@@ -3,7 +3,7 @@
 //  source: android/frameworks/base/core/java/android/test/suitebuilder/annotation/SmallTest.java
 //
 
-#include "../../../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_AndroidTestSuitebuilderAnnotationSmallTest")
 #ifdef RESTRICT_AndroidTestSuitebuilderAnnotationSmallTest
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
-#include "../../../../java/lang/annotation/Annotation.h"
+#include "java/lang/annotation/Annotation.h"
 
 @class IOSClass;
 
@@ -38,7 +38,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(AndroidTestSuitebuilderAnnotationSmallTest)
 
-FOUNDATION_EXPORT id<AndroidTestSuitebuilderAnnotationSmallTest> create_AndroidTestSuitebuilderAnnotationSmallTest();
+FOUNDATION_EXPORT id<AndroidTestSuitebuilderAnnotationSmallTest> create_AndroidTestSuitebuilderAnnotationSmallTest(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(AndroidTestSuitebuilderAnnotationSmallTest)
 

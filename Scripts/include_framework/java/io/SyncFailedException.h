@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/SyncFailedException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoSyncFailedException")
 #ifdef RESTRICT_JavaIoSyncFailedException
@@ -21,12 +21,14 @@
 
 #define RESTRICT_JavaIoIOException 1
 #define INCLUDE_JavaIoIOException 1
-#include "../../java/io/IOException.h"
+#include "java/io/IOException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Signals that a sync operation has failed.
  @author Ken Arnold
- - seealso: java.io.FileDescriptor#sync
+ - seealso: java.io.FileDescriptor
  - seealso: java.io.IOException
  @since JDK1.1
  */
@@ -37,9 +39,18 @@
 /*!
  @brief Constructs an SyncFailedException with a detail message.
  A detail message is a String that describes this particular exception.
- @param desc  a String describing the exception.
+ @param desc a String describing the exception.
  */
 - (instancetype)initWithNSString:(NSString *)desc;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/InputMismatchException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilInputMismatchException")
 #ifdef RESTRICT_JavaUtilInputMismatchException
@@ -21,12 +21,12 @@
 
 #define RESTRICT_JavaUtilNoSuchElementException 1
 #define INCLUDE_JavaUtilNoSuchElementException 1
-#include "../../java/util/NoSuchElementException.h"
+#include "java/util/NoSuchElementException.h"
 
 /*!
  @brief Thrown by a <code>Scanner</code> to indicate that the token
- retrieved does not match the pattern for the expected type, or
- that the token is out of range for the expected type.
+  retrieved does not match the pattern for the expected type, or
+  that the token is out of range for the expected type.
  @author unascribed
  - seealso: java.util.Scanner
  @since 1.5
@@ -37,15 +37,15 @@
 
 /*!
  @brief Constructs an <code>InputMismatchException</code> with <tt>null</tt>
- as its error message string.
+  as its error message string.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs an <code>InputMismatchException</code>, saving a reference
- to the error message string <tt>s</tt> for later retrieval by the
+  to the error message string <tt>s</tt> for later retrieval by the 
  <tt>getMessage</tt> method.
- @param s   the detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
@@ -55,9 +55,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaUtilInputMismatchException)
 
 FOUNDATION_EXPORT void JavaUtilInputMismatchException_init(JavaUtilInputMismatchException *self);
 
-FOUNDATION_EXPORT JavaUtilInputMismatchException *new_JavaUtilInputMismatchException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaUtilInputMismatchException *new_JavaUtilInputMismatchException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaUtilInputMismatchException *create_JavaUtilInputMismatchException_init();
+FOUNDATION_EXPORT JavaUtilInputMismatchException *create_JavaUtilInputMismatchException_init(void);
 
 FOUNDATION_EXPORT void JavaUtilInputMismatchException_initWithNSString_(JavaUtilInputMismatchException *self, NSString *s);
 

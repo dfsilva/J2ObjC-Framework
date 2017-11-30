@@ -24,12 +24,13 @@
 #include "java/lang/RuntimeException.h"
 
 @class IOSClass;
+@class JavaLangThrowable;
 
 /*!
  @brief Thrown when an application tries to access an enum constant by name
- and the enum type contains no constant with the specified name.
- This exception can be thrown by the API used to read annotations
- reflectively
+  and the enum type contains no constant with the specified name.
+ This exception can be thrown by the used to read annotations
+  reflectively
  .
  @author Josh Bloch
  - seealso: java.lang.reflect.AnnotatedElement
@@ -41,7 +42,7 @@
 
 /*!
  @brief Constructs an <tt>EnumConstantNotPresentException</tt> for the
- specified constant.
+  specified constant.
  @param enumType the type of the missing enum constant
  @param constantName the name of the missing enum constant
  */
@@ -59,6 +60,22 @@
  @return the type of the missing enum constant
  */
 - (IOSClass *)enumType;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 

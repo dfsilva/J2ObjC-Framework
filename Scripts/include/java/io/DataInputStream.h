@@ -33,9 +33,9 @@
 /*!
  @brief Wraps an existing <code>InputStream</code> and reads big-endian typed data from it.
  Typically, this stream has been written by a DataOutputStream. Types that can
- be read include byte, 16-bit short, 32-bit int, 32-bit float, 64-bit long,
- 64-bit double, byte strings, and strings encoded in
- <code>modified UTF-8</code>.
+  be read include byte, 16-bit short, 32-bit int, 32-bit float, 64-bit long,
+  64-bit double, byte strings, and strings encoded in 
+ <code>UTF-8</code>.
  - seealso: DataOutputStream
  */
 @interface JavaIoDataInputStream : JavaIoFilterInputStream < JavaIoDataInput >
@@ -43,15 +43,14 @@
 #pragma mark Public
 
 /*!
- @brief Constructs a new DataInputStream on the InputStream <code>in</code>.
- All
- reads are then filtered through this stream. Note that data read by this
- stream is not in a human readable format and was most likely created by a
- DataOutputStream.
- <p><strong>Warning:</strong> passing a null source creates an invalid
+ @brief Constructs a new DataInputStream on the InputStream <code>in</code>.All
+  reads are then filtered through this stream.
+ Note that data read by this
+  stream is not in a human readable format and was most likely created by a
+  DataOutputStream. 
+ <p><strong>Warning:</strong> passing a null source creates an invalid 
  <code>DataInputStream</code>. All operations on such a stream will fail.
- @param inArg
- the source InputStream the filter reads from.
+ @param inArg the source InputStream the filter reads from.
  - seealso: DataOutputStream
  - seealso: RandomAccessFile
  */
@@ -98,15 +97,13 @@
 + (NSString *)readUTFWithJavaIoDataInput:(id<JavaIoDataInput>)inArg;
 
 /*!
- @brief Skips <code>count</code> number of bytes in this stream.
- Subsequent <code>read()</code>
+ @brief Skips <code>count</code> number of bytes in this stream.Subsequent <code>read()</code>
  s will not return these bytes unless <code>reset()</code> is used.
  This method will not throw an <code>EOFException</code> if the end of the
- input is reached before <code>count</code> bytes where skipped.
- @param count
- the number of bytes to skip.
+  input is reached before <code>count</code> bytes where skipped.
+ @param count the number of bytes to skip.
  @return the number of bytes actually skipped.
- @throws IOException
+ @throw IOException
  if a problem occurs during skipping.
  - seealso: #mark(int)
  - seealso: #reset()

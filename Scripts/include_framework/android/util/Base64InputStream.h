@@ -3,7 +3,7 @@
 //  source: android/frameworks/base/core/java/android/util/Base64InputStream.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_AndroidUtilBase64InputStream")
 #ifdef RESTRICT_AndroidUtilBase64InputStream
@@ -21,14 +21,14 @@
 
 #define RESTRICT_JavaIoFilterInputStream 1
 #define INCLUDE_JavaIoFilterInputStream 1
-#include "../../java/io/FilterInputStream.h"
+#include "java/io/FilterInputStream.h"
 
 @class IOSByteArray;
 @class JavaIoInputStream;
 
 /*!
  @brief An InputStream that does Base64 decoding on the data read through
- it.
+  it.
  */
 @interface AndroidUtilBase64InputStream : JavaIoFilterInputStream
 
@@ -36,20 +36,20 @@
 
 /*!
  @brief An InputStream that performs Base64 decoding on the data read
- from the wrapped stream.
+  from the wrapped stream.
  @param inArg the InputStream to read the source data from
- @param flags bit flags for controlling the decoder; see the
- constants in <code>Base64</code>
+ @param flags bit flags for controlling the decoder; see the         constants in 
+ <code>Base64</code>
  */
 - (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg
                                   withInt:(jint)flags;
 
 /*!
  @brief Performs Base64 encoding or decoding on the data read from the
- wrapped InputStream.
+  wrapped InputStream.
  @param inArg the InputStream to read the source data from
- @param flags bit flags for controlling the decoder; see the
- constants in <code>Base64</code>
+ @param flags bit flags for controlling the decoder; see the         constants in 
+ <code>Base64</code>
  @param encode true to encode, false to decode
  */
 - (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg
@@ -73,6 +73,10 @@
 - (void)reset;
 
 - (jlong)skipWithLong:(jlong)n;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)arg0 NS_UNAVAILABLE;
 
 @end
 

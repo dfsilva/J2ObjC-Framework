@@ -22,7 +22,7 @@
 
 @protocol JavaUtilIterator;
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 @protocol JavaUtilFunctionConsumer;
 @protocol JavaUtilIterator;

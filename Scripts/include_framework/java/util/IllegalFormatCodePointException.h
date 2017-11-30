@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/IllegalFormatCodePointException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilIllegalFormatCodePointException")
 #ifdef RESTRICT_JavaUtilIllegalFormatCodePointException
@@ -21,14 +21,14 @@
 
 #define RESTRICT_JavaUtilIllegalFormatException 1
 #define INCLUDE_JavaUtilIllegalFormatException 1
-#include "../../java/util/IllegalFormatException.h"
+#include "java/util/IllegalFormatException.h"
 
 /*!
  @brief Unchecked exception thrown when a character with an invalid Unicode code
- point as defined by <code>Character.isValidCodePoint</code> is passed to the
+  point as defined by <code>Character.isValidCodePoint</code> is passed to the 
  <code>Formatter</code>.
  <p> Unless otherwise specified, passing a <tt>null</tt> argument to any
- method or constructor in this class will cause a <code>NullPointerException</code>
+  method or constructor in this class will cause a <code>NullPointerException</code>
   to be thrown.
  @since 1.5
  */
@@ -38,9 +38,8 @@
 
 /*!
  @brief Constructs an instance of this class with the specified illegal code
- point as defined by <code>Character.isValidCodePoint</code>.
- @param c
- The illegal Unicode code point
+  point as defined by <code>Character.isValidCodePoint</code>.
+ @param c The illegal Unicode code point
  */
 - (instancetype)initWithInt:(jint)c;
 
@@ -52,6 +51,10 @@
 - (jint)getCodePoint;
 
 - (NSString *)getMessage;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/security/cert/CertificateParsingException.java
 //
 
-#include "../../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSecurityCertCertificateParsingException")
 #ifdef RESTRICT_JavaSecurityCertCertificateParsingException
@@ -21,13 +21,14 @@
 
 #define RESTRICT_JavaSecurityCertCertificateException 1
 #define INCLUDE_JavaSecurityCertCertificateException 1
-#include "../../../java/security/cert/CertificateException.h"
+#include "java/security/cert/CertificateException.h"
+
+@class JavaLangThrowable;
 
 /*!
- @brief Certificate Parsing Exception.
- This is thrown whenever an
- invalid DER-encoded certificate is parsed or unsupported DER features
- are found in the Certificate.
+ @brief Certificate Parsing Exception.This is thrown whenever an
+  invalid DER-encoded certificate is parsed or unsupported DER features
+  are found in the Certificate.
  @author Hemma Prafullchandra
  */
 @interface JavaSecurityCertCertificateParsingException : JavaSecurityCertCertificateException
@@ -35,48 +36,44 @@
 #pragma mark Public
 
 /*!
- @brief Constructs a CertificateParsingException with no detail message.
- A
- detail message is a String that describes this particular
- exception.
+ @brief Constructs a CertificateParsingException with no detail message.A
+  detail message is a String that describes this particular
+  exception.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a CertificateParsingException with the specified detail
- message.
- A detail message is a String that describes this
- particular exception.
+  message.A detail message is a String that describes this
+  particular exception.
  @param message the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)message;
 
 /*!
  @brief Creates a <code>CertificateParsingException</code> with the specified
- detail message and cause.
- @param message the detail message (which is saved for later retrieval
- by the <code>getMessage()</code> method).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+  detail message and cause.
+ @param message the detail message (which is saved for later retrieval         by the 
+ <code>getMessage()</code>  method).
+ @param cause the cause (which is saved for later retrieval by the         
+ <code>getCause()</code>  method).  (A <code>null</code>  value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.5
  */
 - (instancetype)initWithNSString:(NSString *)message
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Creates a <code>CertificateParsingException</code> with the
- specified cause and a detail message of
+  specified cause and a detail message of 
  <code>(cause==null ?
  null : cause.toString())</code>
- (which typically contains the class and detail message of
+  (which typically contains the class and detail message of 
  <code>cause</code>).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+ @param cause the cause (which is saved for later retrieval by the         
+ <code>getCause()</code>  method).  (A <code>null</code>  value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.5
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
 
 @end
 
@@ -84,9 +81,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaSecurityCertCertificateParsingException)
 
 FOUNDATION_EXPORT void JavaSecurityCertCertificateParsingException_init(JavaSecurityCertCertificateParsingException *self);
 
-FOUNDATION_EXPORT JavaSecurityCertCertificateParsingException *new_JavaSecurityCertCertificateParsingException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityCertCertificateParsingException *new_JavaSecurityCertCertificateParsingException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityCertCertificateParsingException *create_JavaSecurityCertCertificateParsingException_init();
+FOUNDATION_EXPORT JavaSecurityCertCertificateParsingException *create_JavaSecurityCertCertificateParsingException_init(void);
 
 FOUNDATION_EXPORT void JavaSecurityCertCertificateParsingException_initWithNSString_(JavaSecurityCertCertificateParsingException *self, NSString *message);
 
@@ -94,17 +91,17 @@ FOUNDATION_EXPORT JavaSecurityCertCertificateParsingException *new_JavaSecurityC
 
 FOUNDATION_EXPORT JavaSecurityCertCertificateParsingException *create_JavaSecurityCertCertificateParsingException_initWithNSString_(NSString *message);
 
-FOUNDATION_EXPORT void JavaSecurityCertCertificateParsingException_initWithNSString_withNSException_(JavaSecurityCertCertificateParsingException *self, NSString *message, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityCertCertificateParsingException_initWithNSString_withJavaLangThrowable_(JavaSecurityCertCertificateParsingException *self, NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityCertCertificateParsingException *new_JavaSecurityCertCertificateParsingException_initWithNSString_withNSException_(NSString *message, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityCertCertificateParsingException *new_JavaSecurityCertCertificateParsingException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityCertCertificateParsingException *create_JavaSecurityCertCertificateParsingException_initWithNSString_withNSException_(NSString *message, NSException *cause);
+FOUNDATION_EXPORT JavaSecurityCertCertificateParsingException *create_JavaSecurityCertCertificateParsingException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaSecurityCertCertificateParsingException_initWithNSException_(JavaSecurityCertCertificateParsingException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityCertCertificateParsingException_initWithJavaLangThrowable_(JavaSecurityCertCertificateParsingException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityCertCertificateParsingException *new_JavaSecurityCertCertificateParsingException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityCertCertificateParsingException *new_JavaSecurityCertCertificateParsingException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityCertCertificateParsingException *create_JavaSecurityCertCertificateParsingException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaSecurityCertCertificateParsingException *create_JavaSecurityCertCertificateParsingException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaSecurityCertCertificateParsingException)
 

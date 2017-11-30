@@ -3,7 +3,7 @@
 //  source: /Users/tball/src/j2objc/inject/javax_inject/build_result/java/javax/inject/Named.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxInjectNamed")
 #ifdef RESTRICT_JavaxInjectNamed
@@ -21,20 +21,20 @@
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
-#include "../../java/lang/annotation/Annotation.h"
+#include "java/lang/annotation/Annotation.h"
 
 @class IOSClass;
 
 /*!
  @brief String-based qualifier.
- <p>Example usage:
+ <p>Example usage: 
  @code
 
-   public class Car {
-     &#064;Inject <b>@@Named("driver")</b> Seat driverSeat;
-     &#064;Inject <b>@@Named("passenger")</b> Seat passengerSeat;
-     ...
-   
+    public class Car {
+          &#064;Inject <b>@@Named("driver")</b> Seat driverSeat;
+          &#064;Inject <b>@@Named("passenger")</b> Seat passengerSeat;
+      ...
+    }
 @endcode
  */
 @protocol JavaxInjectNamed < JavaLangAnnotationAnnotation >

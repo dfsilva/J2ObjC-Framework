@@ -42,13 +42,13 @@
 
 /*!
  @brief Return the offset of the selection edge or cursor, or -1 if
- there is no selection or cursor.
+  there is no selection or cursor.
  */
 + (jint)getSelectionEndWithJavaLangCharSequence:(id<JavaLangCharSequence>)text;
 
 /*!
  @brief Return the offset of the selection anchor or cursor, or -1 if
- there is no selection or cursor.
+  there is no selection or cursor.
  */
 + (jint)getSelectionStartWithJavaLangCharSequence:(id<JavaLangCharSequence>)text;
 
@@ -70,7 +70,7 @@
 
 /*!
  @brief Set the selection anchor to <code>start</code> and the selection edge
- to <code>stop</code>.
+  to <code>stop</code>.
  */
 + (void)setSelectionWithAndroidTextSpannable:(id<AndroidTextSpannable>)text
                                      withInt:(jint)start
@@ -80,12 +80,12 @@
 
 J2OBJC_STATIC_INIT(AndroidTextSelection)
 
-inline id AndroidTextSelection_get_SELECTION_START();
+inline id AndroidTextSelection_get_SELECTION_START(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT id AndroidTextSelection_SELECTION_START;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(AndroidTextSelection, SELECTION_START, id)
 
-inline id AndroidTextSelection_get_SELECTION_END();
+inline id AndroidTextSelection_get_SELECTION_END(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT id AndroidTextSelection_SELECTION_END;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(AndroidTextSelection, SELECTION_END, id)

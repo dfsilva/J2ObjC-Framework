@@ -3,7 +3,7 @@
 //  source: /Users/tball/src/j2objc/inject/javax_inject/build_result/java/javax/inject/Qualifier.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxInjectQualifier")
 #ifdef RESTRICT_JavaxInjectQualifier
@@ -21,38 +21,39 @@
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
-#include "../../java/lang/annotation/Annotation.h"
+#include "java/lang/annotation/Annotation.h"
 
 @class IOSClass;
 
 /*!
- @brief Identifies qualifier annotations.
- Anyone can define a new qualifier. A
- qualifier annotation:
+ @brief Identifies qualifier annotations.Anyone can define a new qualifier.
+ A
+  qualifier annotation: 
  <ul>
- <li>is annotated with <code>@@Qualifier</code>, <code>@@Retention(RUNTIME)</code>,
- and typically <code>@@Documented</code>.</li>
- <li>can have attributes.</li>
- <li>may be part of the public API, much like the dependency type, but
- unlike implementation types which needn't be part of the public
- API.</li>
- <li>may have restricted usage if annotated with <code>@@Target</code>. While
- this specification covers applying qualifiers to fields and
- parameters only, some injector configurations might use qualifier
- annotations in other places (on methods or classes for example).</li>
- </ul>
- <p>For example:
+    <li>is annotated with <code>@@Qualifier</code>, <code>@@Retention(RUNTIME)</code>,
+       and typically <code>@@Documented</code>.</li>
+    <li>can have attributes.</li>
+    <li>may be part of the public API, much like the dependency type, but
+       unlike implementation types which needn't be part of the public
+       API.</li>
+    <li>may have restricted usage if annotated with <code>@@Target</code>. While
+       this specification covers applying qualifiers to fields and
+       parameters only, some injector configurations might use qualifier
+       annotations in other places (on methods or classes for example).</li>
+  </ul>
+  
+ <p>For example: 
  @code
 
-   &#064;java.lang.annotation.Documented
-   &#064;java.lang.annotation.Retention(RUNTIME)
-   &#064;javax.inject.Qualifier
-   public @@interface Leather {
-     Color color() default Color.TAN;
-     public enum Color { RED, BLACK, TAN }
-   
+      &#064;java.lang.annotation.Documented
+      &#064;java.lang.annotation.Retention(RUNTIME)
+      &#064;javax.inject.Qualifier
+    public @@interface Leather {
+      Color color() default Color.TAN;
+      public enum Color { RED, BLACK, TAN }
+    }
 @endcode
- - seealso: javax.inject.Named @@Named
+ - seealso: javax.inject.Named@@Named
  */
 @protocol JavaxInjectQualifier < JavaLangAnnotationAnnotation >
 
@@ -64,7 +65,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(JavaxInjectQualifier)
 
-FOUNDATION_EXPORT id<JavaxInjectQualifier> create_JavaxInjectQualifier();
+FOUNDATION_EXPORT id<JavaxInjectQualifier> create_JavaxInjectQualifier(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaxInjectQualifier)
 

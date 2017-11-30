@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/java/io/FileInputStream.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoFileInputStream")
 #ifdef RESTRICT_JavaIoFileInputStream
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoInputStream 1
 #define INCLUDE_JavaIoInputStream 1
-#include "../../java/io/InputStream.h"
+#include "java/io/InputStream.h"
 
 @class IOSByteArray;
 @class JavaIoFile;
@@ -32,21 +32,22 @@
  @brief An input stream that reads bytes from a file.
  @code
      File file = ...
-   InputStream in = null;
-   try 
-     in = new BufferedInputStream(new FileInputStream(file));
-     ...
-   } finally {
-     if (in != null) {
-       in.close();
-     }
-   }
-  
+    InputStream in = null;
+    try {
+      in = new BufferedInputStream(new FileInputStream(file));
+      ...
+    } finally {
+      if (in != null) {
+        in.close();
+      }    }  
+ 
 @endcode
+  
  <p>This stream is <strong>not buffered</strong>. Most callers should wrap
- this stream with a <code>BufferedInputStream</code>.
+  this stream with a <code>BufferedInputStream</code>.
+  
  <p>Use <code>FileReader</code> to read characters, as opposed to bytes, from a
- file.
+  file.
  - seealso: BufferedInputStream
  - seealso: FileOutputStream
  */
@@ -56,18 +57,16 @@
 
 /*!
  @brief Constructs a new <code>FileInputStream</code> that reads from <code>file</code>.
- @param file
- the file from which this stream reads.
- @throws FileNotFoundException
+ @param file the file from which this stream reads.
+ @throw FileNotFoundException
  if <code>file</code> does not exist.
  */
 - (instancetype)initWithJavaIoFile:(JavaIoFile *)file;
 
 /*!
  @brief Constructs a new <code>FileInputStream</code> that reads from <code>fd</code>.
- @param fd
- the FileDescriptor from which this stream reads.
- @throws NullPointerException
+ @param fd the FileDescriptor from which this stream reads.
+ @throw NullPointerException
  if <code>fd</code> is <code>null</code>.
  */
 - (instancetype)initWithJavaIoFileDescriptor:(JavaIoFileDescriptor *)fd;
@@ -83,7 +82,7 @@
 
 /*!
  @brief Returns a read-only <code>FileChannel</code> that shares its position with
- this stream.
+  this stream.
  */
 - (JavaNioChannelsFileChannel *)getChannel;
 
@@ -104,11 +103,15 @@
 
 /*!
  @brief Ensures that all resources for this stream are released when it is about
- to be garbage collected.
- @throws IOException
+  to be garbage collected.
+ @throw IOException
  if an error occurs attempting to finalize this stream.
  */
-- (void)javaFinalize;
+- (void)java_finalize;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

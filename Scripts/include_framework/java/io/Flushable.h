@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/Flushable.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoFlushable")
 #ifdef RESTRICT_JavaIoFlushable
@@ -20,18 +20,17 @@
 #define JavaIoFlushable_
 
 /*!
- @brief A <tt>Flushable</tt> is a destination of data that can be flushed.
- The
- flush method is invoked to write any buffered output to the underlying
- stream.
+ @brief A <tt>Flushable</tt> is a destination of data that can be flushed.The
+  flush method is invoked to write any buffered output to the underlying
+  stream.
  @since 1.5
  */
 @protocol JavaIoFlushable < JavaObject >
 
 /*!
  @brief Flushes this stream by writing any buffered output to the underlying
- stream.
- @throws IOException If an I/O error occurs
+  stream.
+ @throw IOExceptionIf an I/O error occurs
  */
 - (void)flush;
 

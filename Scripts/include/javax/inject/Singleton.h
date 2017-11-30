@@ -26,9 +26,8 @@
 @class IOSClass;
 
 /*!
- @brief Identifies a type that the injector only instantiates once.
- Not inherited.
- - seealso: javax.inject.Scope @@Scope
+ @brief Identifies a type that the injector only instantiates once.Not inherited.
+ - seealso: javax.inject.Scope@@Scope
  */
 @protocol JavaxInjectSingleton < JavaLangAnnotationAnnotation >
 
@@ -40,7 +39,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(JavaxInjectSingleton)
 
-FOUNDATION_EXPORT id<JavaxInjectSingleton> create_JavaxInjectSingleton();
+FOUNDATION_EXPORT id<JavaxInjectSingleton> create_JavaxInjectSingleton(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaxInjectSingleton)
 

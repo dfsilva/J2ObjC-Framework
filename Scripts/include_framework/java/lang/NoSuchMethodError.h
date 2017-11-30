@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/NoSuchMethodError.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangNoSuchMethodError")
 #ifdef RESTRICT_JavaLangNoSuchMethodError
@@ -21,16 +21,16 @@
 
 #define RESTRICT_JavaLangIncompatibleClassChangeError 1
 #define INCLUDE_JavaLangIncompatibleClassChangeError 1
-#include "../../java/lang/IncompatibleClassChangeError.h"
+#include "java/lang/IncompatibleClassChangeError.h"
 
 /*!
  @brief Thrown if an application tries to call a specified method of a
- class (either static or instance), and that class no longer has a
- definition of that method.
+  class (either static or instance), and that class no longer has a
+  definition of that method.
  <p>
- Normally, this error is caught by the compiler; this error can
- only occur at run time if the definition of a class has
- incompatibly changed.
+  Normally, this error is caught by the compiler; this error can
+  only occur at run time if the definition of a class has
+  incompatibly changed.
  @author unascribed
  @since JDK1.0
  */
@@ -45,8 +45,8 @@
 
 /*!
  @brief Constructs a <code>NoSuchMethodError</code> with the
- specified detail message.
- @param s   the detail message.
+  specified detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
@@ -56,9 +56,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangNoSuchMethodError)
 
 FOUNDATION_EXPORT void JavaLangNoSuchMethodError_init(JavaLangNoSuchMethodError *self);
 
-FOUNDATION_EXPORT JavaLangNoSuchMethodError *new_JavaLangNoSuchMethodError_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangNoSuchMethodError *new_JavaLangNoSuchMethodError_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangNoSuchMethodError *create_JavaLangNoSuchMethodError_init();
+FOUNDATION_EXPORT JavaLangNoSuchMethodError *create_JavaLangNoSuchMethodError_init(void);
 
 FOUNDATION_EXPORT void JavaLangNoSuchMethodError_initWithNSString_(JavaLangNoSuchMethodError *self, NSString *s);
 

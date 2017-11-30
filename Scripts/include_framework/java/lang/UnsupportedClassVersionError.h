@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/UnsupportedClassVersionError.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangUnsupportedClassVersionError")
 #ifdef RESTRICT_JavaLangUnsupportedClassVersionError
@@ -21,12 +21,12 @@
 
 #define RESTRICT_JavaLangClassFormatError 1
 #define INCLUDE_JavaLangClassFormatError 1
-#include "../../java/lang/ClassFormatError.h"
+#include "java/lang/ClassFormatError.h"
 
 /*!
  @brief Thrown when the Java Virtual Machine attempts to read a class
- file and determines that the major and minor version numbers
- in the file are not supported.
+  file and determines that the major and minor version numbers
+  in the file are not supported.
  @since 1.2
  */
 @interface JavaLangUnsupportedClassVersionError : JavaLangClassFormatError
@@ -35,14 +35,14 @@
 
 /*!
  @brief Constructs a <code>UnsupportedClassVersionError</code>
- with no detail message.
+  with no detail message.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a <code>UnsupportedClassVersionError</code> with
- the specified detail message.
- @param s   the detail message.
+  the specified detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
@@ -52,9 +52,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangUnsupportedClassVersionError)
 
 FOUNDATION_EXPORT void JavaLangUnsupportedClassVersionError_init(JavaLangUnsupportedClassVersionError *self);
 
-FOUNDATION_EXPORT JavaLangUnsupportedClassVersionError *new_JavaLangUnsupportedClassVersionError_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangUnsupportedClassVersionError *new_JavaLangUnsupportedClassVersionError_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangUnsupportedClassVersionError *create_JavaLangUnsupportedClassVersionError_init();
+FOUNDATION_EXPORT JavaLangUnsupportedClassVersionError *create_JavaLangUnsupportedClassVersionError_init(void);
 
 FOUNDATION_EXPORT void JavaLangUnsupportedClassVersionError_initWithNSString_(JavaLangUnsupportedClassVersionError *self, NSString *s);
 

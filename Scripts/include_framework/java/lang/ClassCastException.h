@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/ClassCastException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangClassCastException")
 #ifdef RESTRICT_JavaLangClassCastException
@@ -21,18 +21,18 @@
 
 #define RESTRICT_JavaLangRuntimeException 1
 #define INCLUDE_JavaLangRuntimeException 1
-#include "../../java/lang/RuntimeException.h"
+#include "java/lang/RuntimeException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Thrown to indicate that the code has attempted to cast an object
- to a subclass of which it is not an instance.
- For example, the
- following code generates a <code>ClassCastException</code>:
- <p><blockquote>
-@code
+  to a subclass of which it is not an instance.For example, the
+  following code generates a <code>ClassCastException</code>:
+  <p><blockquote>@code
 
-     Object x = new Integer(0);
-     System.out.println((String)x);
+      Object x = new Integer(0);
+      System.out.println((String)x); 
   
 @endcode</blockquote>
  @author unascribed
@@ -49,10 +49,22 @@
 
 /*!
  @brief Constructs a <code>ClassCastException</code> with the specified
- detail message.
- @param s   the detail message.
+  detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -60,9 +72,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangClassCastException)
 
 FOUNDATION_EXPORT void JavaLangClassCastException_init(JavaLangClassCastException *self);
 
-FOUNDATION_EXPORT JavaLangClassCastException *new_JavaLangClassCastException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangClassCastException *new_JavaLangClassCastException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangClassCastException *create_JavaLangClassCastException_init();
+FOUNDATION_EXPORT JavaLangClassCastException *create_JavaLangClassCastException_init(void);
 
 FOUNDATION_EXPORT void JavaLangClassCastException_initWithNSString_(JavaLangClassCastException *self, NSString *s);
 

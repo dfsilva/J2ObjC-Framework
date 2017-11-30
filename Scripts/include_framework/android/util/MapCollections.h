@@ -3,7 +3,7 @@
 //  source: android/frameworks/base/core/java/android/util/MapCollections.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_AndroidUtilMapCollections")
 #ifdef RESTRICT_AndroidUtilMapCollections
@@ -29,7 +29,7 @@
 
 /*!
  @brief Helper for writing standard Java collection interfaces to a data
- structure like <code>ArrayMap</code>.
+  structure like <code>ArrayMap</code>.
  */
 @interface AndroidUtilMapCollections : NSObject {
  @public
@@ -98,6 +98,8 @@ J2OBJC_FIELD_SETTER(AndroidUtilMapCollections, mEntrySet_, AndroidUtilMapCollect
 J2OBJC_FIELD_SETTER(AndroidUtilMapCollections, mKeySet_, AndroidUtilMapCollections_KeySet *)
 J2OBJC_FIELD_SETTER(AndroidUtilMapCollections, mValues_, AndroidUtilMapCollections_ValuesCollection *)
 
+FOUNDATION_EXPORT void AndroidUtilMapCollections_init(AndroidUtilMapCollections *self);
+
 FOUNDATION_EXPORT jboolean AndroidUtilMapCollections_containsAllHelperWithJavaUtilMap_withJavaUtilCollection_(id<JavaUtilMap> map, id<JavaUtilCollection> collection);
 
 FOUNDATION_EXPORT jboolean AndroidUtilMapCollections_removeAllHelperWithJavaUtilMap_withJavaUtilCollection_(id<JavaUtilMap> map, id<JavaUtilCollection> collection);
@@ -105,8 +107,6 @@ FOUNDATION_EXPORT jboolean AndroidUtilMapCollections_removeAllHelperWithJavaUtil
 FOUNDATION_EXPORT jboolean AndroidUtilMapCollections_retainAllHelperWithJavaUtilMap_withJavaUtilCollection_(id<JavaUtilMap> map, id<JavaUtilCollection> collection);
 
 FOUNDATION_EXPORT jboolean AndroidUtilMapCollections_equalsSetHelperWithJavaUtilSet_withId_(id<JavaUtilSet> set, id object);
-
-FOUNDATION_EXPORT void AndroidUtilMapCollections_init(AndroidUtilMapCollections *self);
 
 J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilMapCollections)
 
@@ -117,7 +117,7 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilMapCollections)
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
-#include "../../java/util/Iterator.h"
+#include "java/util/Iterator.h"
 
 @class AndroidUtilMapCollections;
 @protocol JavaUtilFunctionConsumer;
@@ -143,6 +143,10 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilMapCollections)
 - (instancetype)initWithAndroidUtilMapCollections:(AndroidUtilMapCollections *)outer$
                                           withInt:(jint)offset;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(AndroidUtilMapCollections_ArrayIterator)
@@ -162,11 +166,11 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilMapCollections_ArrayIterator)
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
-#include "../../java/util/Iterator.h"
+#include "java/util/Iterator.h"
 
 #define RESTRICT_JavaUtilMap 1
 #define INCLUDE_JavaUtilMap_Entry 1
-#include "../../java/util/Map.h"
+#include "java/util/Map.h"
 
 @class AndroidUtilMapCollections;
 @protocol JavaUtilFunctionConsumer;
@@ -202,6 +206,10 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilMapCollections_ArrayIterator)
 
 - (instancetype)initWithAndroidUtilMapCollections:(AndroidUtilMapCollections *)outer$;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(AndroidUtilMapCollections_MapIterator)
@@ -221,7 +229,7 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilMapCollections_MapIterator)
 
 #define RESTRICT_JavaUtilSet 1
 #define INCLUDE_JavaUtilSet 1
-#include "../../java/util/Set.h"
+#include "java/util/Set.h"
 
 @class AndroidUtilMapCollections;
 @class IOSObjectArray;
@@ -271,6 +279,10 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilMapCollections_MapIterator)
 
 - (instancetype)initWithAndroidUtilMapCollections:(AndroidUtilMapCollections *)outer$;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(AndroidUtilMapCollections_EntrySet)
@@ -290,7 +302,7 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilMapCollections_EntrySet)
 
 #define RESTRICT_JavaUtilSet 1
 #define INCLUDE_JavaUtilSet 1
-#include "../../java/util/Set.h"
+#include "java/util/Set.h"
 
 @class AndroidUtilMapCollections;
 @class IOSObjectArray;
@@ -339,6 +351,10 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilMapCollections_EntrySet)
 
 - (instancetype)initWithAndroidUtilMapCollections:(AndroidUtilMapCollections *)outer$;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(AndroidUtilMapCollections_KeySet)
@@ -358,7 +374,7 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilMapCollections_KeySet)
 
 #define RESTRICT_JavaUtilCollection 1
 #define INCLUDE_JavaUtilCollection 1
-#include "../../java/util/Collection.h"
+#include "java/util/Collection.h"
 
 @class AndroidUtilMapCollections;
 @class IOSObjectArray;
@@ -401,6 +417,10 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilMapCollections_KeySet)
 #pragma mark Package-Private
 
 - (instancetype)initWithAndroidUtilMapCollections:(AndroidUtilMapCollections *)outer$;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

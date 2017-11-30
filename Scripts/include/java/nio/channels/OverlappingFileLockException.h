@@ -23,11 +23,13 @@
 #define INCLUDE_JavaLangIllegalStateException 1
 #include "java/lang/IllegalStateException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Unchecked exception thrown when an attempt is made to acquire a lock on a
- region of a file that overlaps a region already locked by the same Java
- virtual machine, or when another thread is already waiting to lock an
- overlapping region of the same file.
+  region of a file that overlaps a region already locked by the same Java
+  virtual machine, or when another thread is already waiting to lock an
+  overlapping region of the same file.
  @since 1.4
  */
 @interface JavaNioChannelsOverlappingFileLockException : JavaLangIllegalStateException
@@ -39,15 +41,24 @@
  */
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsOverlappingFileLockException)
 
 FOUNDATION_EXPORT void JavaNioChannelsOverlappingFileLockException_init(JavaNioChannelsOverlappingFileLockException *self);
 
-FOUNDATION_EXPORT JavaNioChannelsOverlappingFileLockException *new_JavaNioChannelsOverlappingFileLockException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNioChannelsOverlappingFileLockException *new_JavaNioChannelsOverlappingFileLockException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNioChannelsOverlappingFileLockException *create_JavaNioChannelsOverlappingFileLockException_init();
+FOUNDATION_EXPORT JavaNioChannelsOverlappingFileLockException *create_JavaNioChannelsOverlappingFileLockException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsOverlappingFileLockException)
 

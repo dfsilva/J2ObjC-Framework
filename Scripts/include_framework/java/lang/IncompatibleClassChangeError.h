@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/IncompatibleClassChangeError.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangIncompatibleClassChangeError")
 #ifdef RESTRICT_JavaLangIncompatibleClassChangeError
@@ -21,13 +21,14 @@
 
 #define RESTRICT_JavaLangLinkageError 1
 #define INCLUDE_JavaLangLinkageError 1
-#include "../../java/lang/LinkageError.h"
+#include "java/lang/LinkageError.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Thrown when an incompatible class change has occurred to some class
- definition.
- The definition of some class, on which the currently
- executing method depends, has since changed.
+  definition.The definition of some class, on which the currently
+  executing method depends, has since changed.
  @author unascribed
  @since JDK1.0
  */
@@ -37,16 +38,21 @@
 
 /*!
  @brief Constructs an <code>IncompatibleClassChangeError</code> with no
- detail message.
+  detail message.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs an <code>IncompatibleClassChangeError</code> with the
- specified detail message.
- @param s   the detail message.
+  specified detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -54,9 +60,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangIncompatibleClassChangeError)
 
 FOUNDATION_EXPORT void JavaLangIncompatibleClassChangeError_init(JavaLangIncompatibleClassChangeError *self);
 
-FOUNDATION_EXPORT JavaLangIncompatibleClassChangeError *new_JavaLangIncompatibleClassChangeError_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangIncompatibleClassChangeError *new_JavaLangIncompatibleClassChangeError_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangIncompatibleClassChangeError *create_JavaLangIncompatibleClassChangeError_init();
+FOUNDATION_EXPORT JavaLangIncompatibleClassChangeError *create_JavaLangIncompatibleClassChangeError_init(void);
 
 FOUNDATION_EXPORT void JavaLangIncompatibleClassChangeError_initWithNSString_(JavaLangIncompatibleClassChangeError *self, NSString *s);
 

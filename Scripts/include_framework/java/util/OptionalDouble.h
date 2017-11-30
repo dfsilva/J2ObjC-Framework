@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/OptionalDouble.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilOptionalDouble")
 #ifdef RESTRICT_JavaUtilOptionalDouble
@@ -25,13 +25,13 @@
 
 /*!
  @brief A container object which may or may not contain a <code>double</code> value.
- If a value is present, <code>isPresent()</code> will return <code>true</code> and
- <code>getAsDouble()</code> will return the value.
+ If a value is present, <code>isPresent()</code> will return <code>true</code> and 
+ <code>getAsDouble()</code> will return the value. 
  <p>Additional methods that depend on the presence or absence of a contained
- value are provided, such as <code>orElse()</code>
- (return a default value if value not present) and
+  value are provided, such as <code>orElse()</code>
+  (return a default value if value not present) and 
  <code>ifPresent()</code> (execute a block
- of code if the value is present).
+  of code if the value is present).
  @since 1.8
  */
 @interface JavaUtilOptionalDouble : NSObject
@@ -39,54 +39,48 @@
 #pragma mark Public
 
 /*!
- @brief Returns an empty <code>OptionalDouble</code> instance.
- No value is present for this
- OptionalDouble.
-  Though it may be tempting to do so, avoid testing if an object
- is empty by comparing with <code>==</code> against instances returned by
- <code>Option.empty()</code>. There is no guarantee that it is a singleton.
- Instead, use <code>isPresent()</code>.
+ @brief Returns an empty <code>OptionalDouble</code> instance.No value is present for this
+  OptionalDouble.
  @return an empty <code>OptionalDouble</code>.
  */
 + (JavaUtilOptionalDouble *)empty;
 
 /*!
- @brief Indicates whether some other object is "equal to" this OptionalDouble.
- The
- other object is considered equal if:
+ @brief Indicates whether some other object is "equal to" this OptionalDouble.The
+  other object is considered equal if: 
  <ul>
- <li>it is also an <code>OptionalDouble</code> and;
- <li>both instances have no value present or;
+  <li>it is also an <code>OptionalDouble</code> and; 
+ <li>both instances have no value present or; 
  <li>the present values are "equal to" each other via <code>Double.compare() == 0</code>.
  </ul>
  @param obj an object to be tested for equality
  @return {code true} if the other object is "equal to" this object
- otherwise <code>false</code>
+  otherwise <code>false</code>
  */
 - (jboolean)isEqual:(id)obj;
 
 /*!
  @brief If a value is present in this <code>OptionalDouble</code>, returns the value,
- otherwise throws <code>NoSuchElementException</code>.
+  otherwise throws <code>NoSuchElementException</code>.
  @return the value held by this <code>OptionalDouble</code>
- @throws NoSuchElementException if there is no value present
+ @throw NoSuchElementExceptionif there is no value present
  - seealso: OptionalDouble#isPresent()
  */
 - (jdouble)getAsDouble;
 
 /*!
  @brief Returns the hash code value of the present value, if any, or 0 (zero) if
- no value is present.
+  no value is present.
  @return hash code value of the present value or 0 if no value is present
  */
 - (NSUInteger)hash;
 
 /*!
  @brief Have the specified consumer accept the value if a value is present,
- otherwise do nothing.
+  otherwise do nothing.
  @param consumer block to be executed if a value is present
- @throws NullPointerException if value is present and <code>consumer</code> is
- null
+ @throw NullPointerExceptionif value is present and <code>consumer</code> is
+  null
  */
 - (void)ifPresentWithJavaUtilFunctionDoubleConsumer:(id<JavaUtilFunctionDoubleConsumer>)consumer;
 
@@ -112,39 +106,30 @@
 
 /*!
  @brief Return the value if present, otherwise invoke <code>other</code> and return
- the result of that invocation.
- @param other a <code>DoubleSupplier</code> whose result is returned if no value
- is present
+  the result of that invocation.
+ @param other a <code>DoubleSupplier</code>  whose result is returned if no value
+   is present
  @return the value if present otherwise the result of <code>other.getAsDouble()</code>
- @throws NullPointerException if value is not present and <code>other</code> is
- null
+ @throw NullPointerExceptionif value is not present and <code>other</code> is
+  null
  */
 - (jdouble)orElseGetWithJavaUtilFunctionDoubleSupplier:(id<JavaUtilFunctionDoubleSupplier>)other;
 
 /*!
  @brief Return the contained value, if present, otherwise throw an exception
- to be created by the provided supplier.
-  A method reference to the exception constructor with an empty
- argument list can be used as the supplier. For example,
- <code>IllegalStateException::new</code>
- @param exceptionSupplier The supplier which will return the exception to
- be thrown
+  to be created by the provided supplier.
+ @param exceptionSupplier The supplier which will return the exception to  be thrown
  @return the present value
- @throws X if there is no value present
- @throws NullPointerException if no value is present and
+ @throw Xif there is no value present
+ @throw NullPointerExceptionif no value is present and 
  <code>exceptionSupplier</code> is null
  */
 - (jdouble)orElseThrowWithJavaUtilFunctionSupplier:(id<JavaUtilFunctionSupplier>)exceptionSupplier;
 
 /*!
- @brief 
- Returns a non-empty string representation of this object suitable for
- debugging.
- The exact presentation format is unspecified and may vary
- between implementations and versions.
-  If a value is present the result must include its string
- representation in the result. Empty and present instances must be
- unambiguously differentiable.
+ @brief  Returns a non-empty string representation of this object suitable for
+  debugging.The exact presentation format is unspecified and may vary
+  between implementations and versions.
  @return the string representation of this instance
  */
 - (NSString *)description;
@@ -153,7 +138,7 @@
 
 J2OBJC_STATIC_INIT(JavaUtilOptionalDouble)
 
-FOUNDATION_EXPORT JavaUtilOptionalDouble *JavaUtilOptionalDouble_empty();
+FOUNDATION_EXPORT JavaUtilOptionalDouble *JavaUtilOptionalDouble_empty(void);
 
 FOUNDATION_EXPORT JavaUtilOptionalDouble *JavaUtilOptionalDouble_ofWithDouble_(jdouble value);
 

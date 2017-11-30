@@ -20,10 +20,9 @@
 #define JavaTextCharacterIterator_
 
 /*!
- @brief An interface for the bidirectional iteration over a group of characters.
- The
- iteration starts at the begin index in the group of characters and continues
- to one index before the end index.
+ @brief An interface for the bidirectional iteration over a group of characters.The
+  iteration starts at the begin index in the group of characters and continues
+  to one index before the end index.
  */
 @protocol JavaTextCharacterIterator < NSCopying, JavaObject >
 
@@ -37,13 +36,13 @@
 /*!
  @brief Returns the character at the current index.
  @return the current character, or <code>DONE</code> if the current index is
- past the beginning or end of the sequence.
+          past the beginning or end of the sequence.
  */
 - (jchar)current;
 
 /*!
  @brief Sets the current position to the begin index and returns the character at
- the new position.
+  the new position.
  @return the character at the begin index.
  */
 - (jchar)first;
@@ -68,7 +67,7 @@
 
 /*!
  @brief Sets the current position to the end index - 1 and returns the character
- at the new position.
+  at the new position.
  @return the character before the end index.
  */
 - (jchar)last;
@@ -76,27 +75,26 @@
 /*!
  @brief Increments the current index and returns the character at the new index.
  @return the character at the next index, or <code>DONE</code> if the next
- index would be past the end.
+          index would be past the end.
  */
 - (jchar)next;
 
 /*!
  @brief Decrements the current index and returns the character at the new index.
  @return the character at the previous index, or <code>DONE</code> if the
- previous index would be past the beginning.
+          previous index would be past the beginning.
  */
 - (jchar)previous;
 
 /*!
  @brief Sets the current index to a new position and returns the character at the
- new index.
- @param location
- the new index that this character iterator is set to.
+  new index.
+ @param location the new index that this character iterator is set to.
  @return the character at the new index, or <code>DONE</code> if the index is
- past the end.
- @throws IllegalArgumentException
+          past the end.
+ @throw IllegalArgumentException
  if <code>location</code> is less than the begin index or greater than
- the end index.
+          the end index.
  */
 - (jchar)setIndexWithInt:(jint)location;
 
@@ -112,9 +110,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaTextCharacterIterator)
 
 /*!
  @brief A constant which indicates that there is no character at the current
- index.
+  index.
  */
-inline jchar JavaTextCharacterIterator_get_DONE();
+inline jchar JavaTextCharacterIterator_get_DONE(void);
 #define JavaTextCharacterIterator_DONE 0xffff
 J2OBJC_STATIC_FIELD_CONSTANT(JavaTextCharacterIterator, DONE, jchar)
 

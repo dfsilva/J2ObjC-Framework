@@ -23,12 +23,13 @@
 #define INCLUDE_JavaNetSocketException 1
 #include "java/net/SocketException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Signals that an error occurred while attempting to connect a
- socket to a remote address and port.
- Typically, the remote
- host cannot be reached because of an intervening firewall, or
- if an intermediate router is down.
+  socket to a remote address and port.Typically, the remote
+  host cannot be reached because of an intervening firewall, or
+  if an intermediate router is down.
  @since JDK1.1
  */
 @interface JavaNetNoRouteToHostException : JavaNetSocketException
@@ -42,12 +43,19 @@
 
 /*!
  @brief Constructs a new NoRouteToHostException with the specified detail
- message as to why the remote host cannot be reached.
+  message as to why the remote host cannot be reached.
  A detail message is a String that gives a specific
- description of this error.
+  description of this error.
  @param msg the detail message
  */
 - (instancetype)initWithNSString:(NSString *)msg;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -61,9 +69,9 @@ FOUNDATION_EXPORT JavaNetNoRouteToHostException *create_JavaNetNoRouteToHostExce
 
 FOUNDATION_EXPORT void JavaNetNoRouteToHostException_init(JavaNetNoRouteToHostException *self);
 
-FOUNDATION_EXPORT JavaNetNoRouteToHostException *new_JavaNetNoRouteToHostException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNetNoRouteToHostException *new_JavaNetNoRouteToHostException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNetNoRouteToHostException *create_JavaNetNoRouteToHostException_init();
+FOUNDATION_EXPORT JavaNetNoRouteToHostException *create_JavaNetNoRouteToHostException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNetNoRouteToHostException)
 

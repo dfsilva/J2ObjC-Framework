@@ -23,10 +23,12 @@
 #define INCLUDE_JavaLangException 1
 #include "java/lang/Exception.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief The <code>GeneralSecurityException</code> class is a generic
- security exception class that provides type safety for all the
- security-related exception classes that extend from it.
+  security exception class that provides type safety for all the
+  security-related exception classes that extend from it.
  @author Jan Luehe
  */
 @interface JavaSecurityGeneralSecurityException : JavaLangException
@@ -40,38 +42,43 @@
 
 /*!
  @brief Constructs a GeneralSecurityException with the specified detail
- message.
+  message.
  A detail message is a String that describes this particular
- exception.
+  exception.
  @param msg the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)msg;
 
 /*!
  @brief Creates a <code>GeneralSecurityException</code> with the specified
- detail message and cause.
- @param message the detail message (which is saved for later retrieval
- by the <code>getMessage()</code> method).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+  detail message and cause.
+ @param message the detail message (which is saved for later retrieval         by the 
+ <code>getMessage()</code>  method).
+ @param cause the cause (which is saved for later retrieval by the         
+ <code>getCause()</code>  method).  (A  <tt> null </tt>  value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.5
  */
 - (instancetype)initWithNSString:(NSString *)message
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Creates a <code>GeneralSecurityException</code> with the specified cause
- and a detail message of <code>(cause==null ?
- null : cause.toString())</code>
- (which typically contains the class and detail message of
- <code>cause</code>).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+  and a detail message of <tt>(cause==null ?
+ null : cause.toString())</tt>
+  (which typically contains the class and detail message of 
+ <tt>cause</tt>).
+ @param cause the cause (which is saved for later retrieval by the         
+ <code>getCause()</code>  method).  (A  <tt> null </tt>  value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.5
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -79,9 +86,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaSecurityGeneralSecurityException)
 
 FOUNDATION_EXPORT void JavaSecurityGeneralSecurityException_init(JavaSecurityGeneralSecurityException *self);
 
-FOUNDATION_EXPORT JavaSecurityGeneralSecurityException *new_JavaSecurityGeneralSecurityException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityGeneralSecurityException *new_JavaSecurityGeneralSecurityException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityGeneralSecurityException *create_JavaSecurityGeneralSecurityException_init();
+FOUNDATION_EXPORT JavaSecurityGeneralSecurityException *create_JavaSecurityGeneralSecurityException_init(void);
 
 FOUNDATION_EXPORT void JavaSecurityGeneralSecurityException_initWithNSString_(JavaSecurityGeneralSecurityException *self, NSString *msg);
 
@@ -89,17 +96,17 @@ FOUNDATION_EXPORT JavaSecurityGeneralSecurityException *new_JavaSecurityGeneralS
 
 FOUNDATION_EXPORT JavaSecurityGeneralSecurityException *create_JavaSecurityGeneralSecurityException_initWithNSString_(NSString *msg);
 
-FOUNDATION_EXPORT void JavaSecurityGeneralSecurityException_initWithNSString_withNSException_(JavaSecurityGeneralSecurityException *self, NSString *message, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityGeneralSecurityException_initWithNSString_withJavaLangThrowable_(JavaSecurityGeneralSecurityException *self, NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityGeneralSecurityException *new_JavaSecurityGeneralSecurityException_initWithNSString_withNSException_(NSString *message, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityGeneralSecurityException *new_JavaSecurityGeneralSecurityException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityGeneralSecurityException *create_JavaSecurityGeneralSecurityException_initWithNSString_withNSException_(NSString *message, NSException *cause);
+FOUNDATION_EXPORT JavaSecurityGeneralSecurityException *create_JavaSecurityGeneralSecurityException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaSecurityGeneralSecurityException_initWithNSException_(JavaSecurityGeneralSecurityException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityGeneralSecurityException_initWithJavaLangThrowable_(JavaSecurityGeneralSecurityException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityGeneralSecurityException *new_JavaSecurityGeneralSecurityException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityGeneralSecurityException *new_JavaSecurityGeneralSecurityException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityGeneralSecurityException *create_JavaSecurityGeneralSecurityException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaSecurityGeneralSecurityException *create_JavaSecurityGeneralSecurityException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaSecurityGeneralSecurityException)
 

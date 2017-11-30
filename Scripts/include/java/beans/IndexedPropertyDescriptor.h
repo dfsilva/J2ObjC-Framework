@@ -32,30 +32,22 @@
 
 /*!
  @brief Constructs a new instance of <code>IndexedPropertyDescriptor</code>.
- @param propertyName
- the specified indexed property's name.
- @param beanClass
- the bean class.
- @throws IntrospectionException
+ @param propertyName the specified indexed property's name.
+ @param beanClass the bean class.
+ @throw IntrospectionException
  */
 - (instancetype)initWithNSString:(NSString *)propertyName
                     withIOSClass:(IOSClass *)beanClass;
 
 /*!
  @brief Constructs a new instance of <code>IndexedPropertyDescriptor</code>.
- @param propertyName
- the specified indexed property's name.
- @param beanClass
- the bean class
- @param getterName
- the name of the array getter
- @param setterName
- the name of the array setter
- @param indexedGetterName
- the name of the indexed getter.
- @param indexedSetterName
- the name of the indexed setter.
- @throws IntrospectionException
+ @param propertyName the specified indexed property's name.
+ @param beanClass the bean class
+ @param getterName the name of the array getter
+ @param setterName the name of the array setter
+ @param indexedGetterName the name of the indexed getter.
+ @param indexedSetterName the name of the indexed setter.
+ @throw IntrospectionException
  */
 - (instancetype)initWithNSString:(NSString *)propertyName
                     withIOSClass:(IOSClass *)beanClass
@@ -66,17 +58,12 @@
 
 /*!
  @brief Constructs a new instance of <code>IndexedPropertyDescriptor</code>.
- @param propertyName
- the specified indexed property's name.
- @param getter
- the array getter
- @param setter
- the array setter
- @param indexedGetter
- the indexed getter
- @param indexedSetter
- the indexed setter
- @throws IntrospectionException
+ @param propertyName the specified indexed property's name.
+ @param getter the array getter
+ @param setter the array setter
+ @param indexedGetter the indexed getter
+ @param indexedSetter the indexed setter
+ @throw IntrospectionException
  */
 - (instancetype)initWithNSString:(NSString *)propertyName
        withJavaLangReflectMethod:(JavaLangReflectMethod *)getter
@@ -86,13 +73,12 @@
 
 /*!
  @brief Determines if this <code>IndexedPropertyDescriptor</code> is equal to
- the specified object.
- Two <code>IndexedPropertyDescriptor</code> s are
- equal if the reader, indexed reader, writer, indexed writer, property
- types, indexed property type, property editor and flags are equal.
+  the specified object.Two <code>IndexedPropertyDescriptor</code> s are
+  equal if the reader, indexed reader, writer, indexed writer, property
+  types, indexed property type, property editor and flags are equal.
  @param obj
  @return true if this indexed property descriptor is equal to the
- specified object.
+          specified object.
  */
 - (jboolean)isEqual:(id)obj;
 
@@ -121,19 +107,28 @@
 
 /*!
  @brief Sets the indexed getter as the specified method.
- @param indexedGetter
- the specified indexed getter.
- @throws IntrospectionException
+ @param indexedGetter the specified indexed getter.
+ @throw IntrospectionException
  */
 - (void)setIndexedReadMethodWithJavaLangReflectMethod:(JavaLangReflectMethod *)indexedGetter;
 
 /*!
  @brief Sets the indexed setter as the specified method.
- @param indexedSetter
- the specified indexed setter.
- @throws IntrospectionException
+ @param indexedSetter the specified indexed setter.
+ @throw IntrospectionException
  */
 - (void)setIndexedWriteMethodWithJavaLangReflectMethod:(JavaLangReflectMethod *)indexedSetter;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithNSString:(NSString *)arg0
+                    withIOSClass:(IOSClass *)arg1
+                    withNSString:(NSString *)arg2
+                    withNSString:(NSString *)arg3 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+       withJavaLangReflectMethod:(JavaLangReflectMethod *)arg1
+       withJavaLangReflectMethod:(JavaLangReflectMethod *)arg2 NS_UNAVAILABLE;
 
 @end
 

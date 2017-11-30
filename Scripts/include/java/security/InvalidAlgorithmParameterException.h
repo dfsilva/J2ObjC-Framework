@@ -23,6 +23,8 @@
 #define INCLUDE_JavaSecurityGeneralSecurityException 1
 #include "java/security/GeneralSecurityException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief This is the exception for invalid or inappropriate algorithm parameters.
  @author Jan Luehe
@@ -36,47 +38,45 @@
 
 /*!
  @brief Constructs an InvalidAlgorithmParameterException with no detail
- message.
+  message.
  A detail message is a String that describes this particular
- exception.
+  exception.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs an InvalidAlgorithmParameterException with the specified
- detail message.
+  detail message.
  A detail message is a String that describes this
- particular exception.
+  particular exception.
  @param msg the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)msg;
 
 /*!
  @brief Creates a <code>InvalidAlgorithmParameterException</code> with the
- specified detail message and cause.
- @param message the detail message (which is saved for later retrieval
- by the <code>getMessage()</code> method).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+  specified detail message and cause.
+ @param message the detail message (which is saved for later retrieval         by the 
+ <code>getMessage()</code>  method).
+ @param cause the cause (which is saved for later retrieval by the         
+ <code>getCause()</code>  method).  (A  <tt> null </tt>  value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.5
  */
 - (instancetype)initWithNSString:(NSString *)message
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Creates a <code>InvalidAlgorithmParameterException</code> with the
- specified cause and a detail message of
- <code>(cause==null ?
- null : cause.toString())</code>
- (which typically contains the class and detail message of
- <code>cause</code>).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+  specified cause and a detail message of 
+ <tt>(cause==null ?
+ null : cause.toString())</tt>
+  (which typically contains the class and detail message of 
+ <tt>cause</tt>).
+ @param cause the cause (which is saved for later retrieval by the         
+ <code>getCause()</code>  method).  (A  <tt> null </tt>  value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.5
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
 
 @end
 
@@ -84,9 +84,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaSecurityInvalidAlgorithmParameterException)
 
 FOUNDATION_EXPORT void JavaSecurityInvalidAlgorithmParameterException_init(JavaSecurityInvalidAlgorithmParameterException *self);
 
-FOUNDATION_EXPORT JavaSecurityInvalidAlgorithmParameterException *new_JavaSecurityInvalidAlgorithmParameterException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityInvalidAlgorithmParameterException *new_JavaSecurityInvalidAlgorithmParameterException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityInvalidAlgorithmParameterException *create_JavaSecurityInvalidAlgorithmParameterException_init();
+FOUNDATION_EXPORT JavaSecurityInvalidAlgorithmParameterException *create_JavaSecurityInvalidAlgorithmParameterException_init(void);
 
 FOUNDATION_EXPORT void JavaSecurityInvalidAlgorithmParameterException_initWithNSString_(JavaSecurityInvalidAlgorithmParameterException *self, NSString *msg);
 
@@ -94,17 +94,17 @@ FOUNDATION_EXPORT JavaSecurityInvalidAlgorithmParameterException *new_JavaSecuri
 
 FOUNDATION_EXPORT JavaSecurityInvalidAlgorithmParameterException *create_JavaSecurityInvalidAlgorithmParameterException_initWithNSString_(NSString *msg);
 
-FOUNDATION_EXPORT void JavaSecurityInvalidAlgorithmParameterException_initWithNSString_withNSException_(JavaSecurityInvalidAlgorithmParameterException *self, NSString *message, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityInvalidAlgorithmParameterException_initWithNSString_withJavaLangThrowable_(JavaSecurityInvalidAlgorithmParameterException *self, NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityInvalidAlgorithmParameterException *new_JavaSecurityInvalidAlgorithmParameterException_initWithNSString_withNSException_(NSString *message, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityInvalidAlgorithmParameterException *new_JavaSecurityInvalidAlgorithmParameterException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityInvalidAlgorithmParameterException *create_JavaSecurityInvalidAlgorithmParameterException_initWithNSString_withNSException_(NSString *message, NSException *cause);
+FOUNDATION_EXPORT JavaSecurityInvalidAlgorithmParameterException *create_JavaSecurityInvalidAlgorithmParameterException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaSecurityInvalidAlgorithmParameterException_initWithNSException_(JavaSecurityInvalidAlgorithmParameterException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityInvalidAlgorithmParameterException_initWithJavaLangThrowable_(JavaSecurityInvalidAlgorithmParameterException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityInvalidAlgorithmParameterException *new_JavaSecurityInvalidAlgorithmParameterException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityInvalidAlgorithmParameterException *new_JavaSecurityInvalidAlgorithmParameterException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityInvalidAlgorithmParameterException *create_JavaSecurityInvalidAlgorithmParameterException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaSecurityInvalidAlgorithmParameterException *create_JavaSecurityInvalidAlgorithmParameterException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaSecurityInvalidAlgorithmParameterException)
 

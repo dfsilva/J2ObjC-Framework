@@ -21,26 +21,19 @@
 
 /*!
  @brief Type is the common superinterface for all types in the Java
- programming language.
- These include raw types, parameterized types,
- array types, type variables and primitive types.
+  programming language.These include raw types, parameterized types,
+  array types, type variables and primitive types.
  @since 1.5
  */
 @protocol JavaLangReflectType < JavaObject >
 
 /*!
  @brief Returns a string describing this type, including information
- about any type parameters.
-  The default implementation calls <code>toString</code>.
+  about any type parameters.
  @return a string describing this type
  @since 1.8
-  Pending tests
  */
 - (NSString *)getTypeName;
-
-@end
-
-@interface JavaLangReflectType : NSObject < JavaLangReflectType >
 
 @end
 

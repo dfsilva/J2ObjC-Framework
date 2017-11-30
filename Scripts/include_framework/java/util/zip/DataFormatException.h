@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/zip/DataFormatException.java
 //
 
-#include "../../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilZipDataFormatException")
 #ifdef RESTRICT_JavaUtilZipDataFormatException
@@ -21,7 +21,9 @@
 
 #define RESTRICT_JavaLangException 1
 #define INCLUDE_JavaLangException 1
-#include "../../../java/lang/Exception.h"
+#include "java/lang/Exception.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Signals that a data format error has occurred.
@@ -43,15 +45,27 @@
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaUtilZipDataFormatException)
 
 FOUNDATION_EXPORT void JavaUtilZipDataFormatException_init(JavaUtilZipDataFormatException *self);
 
-FOUNDATION_EXPORT JavaUtilZipDataFormatException *new_JavaUtilZipDataFormatException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaUtilZipDataFormatException *new_JavaUtilZipDataFormatException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaUtilZipDataFormatException *create_JavaUtilZipDataFormatException_init();
+FOUNDATION_EXPORT JavaUtilZipDataFormatException *create_JavaUtilZipDataFormatException_init(void);
 
 FOUNDATION_EXPORT void JavaUtilZipDataFormatException_initWithNSString_(JavaUtilZipDataFormatException *self, NSString *s);
 

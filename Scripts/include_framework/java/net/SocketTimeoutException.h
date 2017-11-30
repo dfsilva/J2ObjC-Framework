@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/net/SocketTimeoutException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNetSocketTimeoutException")
 #ifdef RESTRICT_JavaNetSocketTimeoutException
@@ -21,7 +21,9 @@
 
 #define RESTRICT_JavaIoInterruptedIOException 1
 #define INCLUDE_JavaIoInterruptedIOException 1
-#include "../../java/io/InterruptedIOException.h"
+#include "java/io/InterruptedIOException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Signals that a timeout has occurred on a socket read or accept.
@@ -38,21 +40,19 @@
 
 /*!
  @brief Constructs a new SocketTimeoutException with a detail
- message.
+  message.
  @param msg the detail message
  */
 - (instancetype)initWithNSString:(NSString *)msg;
 
 /*!
-  
  */
 - (instancetype)initWithNSString:(NSString *)msg
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
-  
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
 
 @end
 
@@ -66,21 +66,21 @@ FOUNDATION_EXPORT JavaNetSocketTimeoutException *create_JavaNetSocketTimeoutExce
 
 FOUNDATION_EXPORT void JavaNetSocketTimeoutException_init(JavaNetSocketTimeoutException *self);
 
-FOUNDATION_EXPORT JavaNetSocketTimeoutException *new_JavaNetSocketTimeoutException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNetSocketTimeoutException *new_JavaNetSocketTimeoutException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNetSocketTimeoutException *create_JavaNetSocketTimeoutException_init();
+FOUNDATION_EXPORT JavaNetSocketTimeoutException *create_JavaNetSocketTimeoutException_init(void);
 
-FOUNDATION_EXPORT void JavaNetSocketTimeoutException_initWithNSException_(JavaNetSocketTimeoutException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaNetSocketTimeoutException_initWithJavaLangThrowable_(JavaNetSocketTimeoutException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaNetSocketTimeoutException *new_JavaNetSocketTimeoutException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNetSocketTimeoutException *new_JavaNetSocketTimeoutException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNetSocketTimeoutException *create_JavaNetSocketTimeoutException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaNetSocketTimeoutException *create_JavaNetSocketTimeoutException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaNetSocketTimeoutException_initWithNSString_withNSException_(JavaNetSocketTimeoutException *self, NSString *msg, NSException *cause);
+FOUNDATION_EXPORT void JavaNetSocketTimeoutException_initWithNSString_withJavaLangThrowable_(JavaNetSocketTimeoutException *self, NSString *msg, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaNetSocketTimeoutException *new_JavaNetSocketTimeoutException_initWithNSString_withNSException_(NSString *msg, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNetSocketTimeoutException *new_JavaNetSocketTimeoutException_initWithNSString_withJavaLangThrowable_(NSString *msg, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNetSocketTimeoutException *create_JavaNetSocketTimeoutException_initWithNSString_withNSException_(NSString *msg, NSException *cause);
+FOUNDATION_EXPORT JavaNetSocketTimeoutException *create_JavaNetSocketTimeoutException_initWithNSString_withJavaLangThrowable_(NSString *msg, JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNetSocketTimeoutException)
 

@@ -21,9 +21,8 @@
 
 /*!
  @brief Used to indicate what kind of actions to take in case of encoding/decoding
- errors.
- Currently three actions are defined: <code>IGNORE</code>, <code>REPLACE</code>
- and <code>REPORT</code>.
+  errors.Currently three actions are defined: <code>IGNORE</code>, <code>REPLACE</code>
+  and <code>REPORT</code>.
  */
 @interface JavaNioCharsetCodingErrorAction : NSObject
 
@@ -41,6 +40,10 @@
  */
 - (NSString *)description;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_STATIC_INIT(JavaNioCharsetCodingErrorAction)
@@ -48,26 +51,26 @@ J2OBJC_STATIC_INIT(JavaNioCharsetCodingErrorAction)
 /*!
  @brief Denotes the action to ignore any errors.
  */
-inline JavaNioCharsetCodingErrorAction *JavaNioCharsetCodingErrorAction_get_IGNORE();
+inline JavaNioCharsetCodingErrorAction *JavaNioCharsetCodingErrorAction_get_IGNORE(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT JavaNioCharsetCodingErrorAction *JavaNioCharsetCodingErrorAction_IGNORE;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(JavaNioCharsetCodingErrorAction, IGNORE, JavaNioCharsetCodingErrorAction *)
 
 /*!
  @brief Denotes the action to fill in the output with a replacement character
- when malformed input or an unmappable character is encountered.
+  when malformed input or an unmappable character is encountered.
  */
-inline JavaNioCharsetCodingErrorAction *JavaNioCharsetCodingErrorAction_get_REPLACE();
+inline JavaNioCharsetCodingErrorAction *JavaNioCharsetCodingErrorAction_get_REPLACE(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT JavaNioCharsetCodingErrorAction *JavaNioCharsetCodingErrorAction_REPLACE;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(JavaNioCharsetCodingErrorAction, REPLACE, JavaNioCharsetCodingErrorAction *)
 
 /*!
  @brief Denotes the action to report the encountered error in an appropriate
- manner, for example to throw an exception or return an informative
- result.
+  manner, for example to throw an exception or return an informative
+  result.
  */
-inline JavaNioCharsetCodingErrorAction *JavaNioCharsetCodingErrorAction_get_REPORT();
+inline JavaNioCharsetCodingErrorAction *JavaNioCharsetCodingErrorAction_get_REPORT(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT JavaNioCharsetCodingErrorAction *JavaNioCharsetCodingErrorAction_REPORT;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(JavaNioCharsetCodingErrorAction, REPORT, JavaNioCharsetCodingErrorAction *)

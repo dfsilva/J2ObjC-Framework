@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/NoSuchFieldException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangNoSuchFieldException")
 #ifdef RESTRICT_JavaLangNoSuchFieldException
@@ -21,7 +21,9 @@
 
 #define RESTRICT_JavaLangReflectiveOperationException 1
 #define INCLUDE_JavaLangReflectiveOperationException 1
-#include "../../java/lang/ReflectiveOperationException.h"
+#include "java/lang/ReflectiveOperationException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Signals that the class doesn't have a field of a specified name.
@@ -43,15 +45,22 @@
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaLangNoSuchFieldException)
 
 FOUNDATION_EXPORT void JavaLangNoSuchFieldException_init(JavaLangNoSuchFieldException *self);
 
-FOUNDATION_EXPORT JavaLangNoSuchFieldException *new_JavaLangNoSuchFieldException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangNoSuchFieldException *new_JavaLangNoSuchFieldException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangNoSuchFieldException *create_JavaLangNoSuchFieldException_init();
+FOUNDATION_EXPORT JavaLangNoSuchFieldException *create_JavaLangNoSuchFieldException_init(void);
 
 FOUNDATION_EXPORT void JavaLangNoSuchFieldException_initWithNSString_(JavaLangNoSuchFieldException *self, NSString *s);
 

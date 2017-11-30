@@ -25,7 +25,7 @@
 
 /*!
  @brief Signals that an error of some sort has occurred while reading from
- or writing to a JAR file.
+  or writing to a JAR file.
  @author David Connelly
  @since 1.2
  */
@@ -50,9 +50,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaUtilJarJarException)
 
 FOUNDATION_EXPORT void JavaUtilJarJarException_init(JavaUtilJarJarException *self);
 
-FOUNDATION_EXPORT JavaUtilJarJarException *new_JavaUtilJarJarException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaUtilJarJarException *new_JavaUtilJarJarException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaUtilJarJarException *create_JavaUtilJarJarException_init();
+FOUNDATION_EXPORT JavaUtilJarJarException *create_JavaUtilJarJarException_init(void);
 
 FOUNDATION_EXPORT void JavaUtilJarJarException_initWithNSString_(JavaUtilJarJarException *self, NSString *s);
 

@@ -3,7 +3,7 @@
 //  source: Classes/javax/annotation/Resources.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxAnnotationResources")
 #ifdef RESTRICT_JavaxAnnotationResources
@@ -21,15 +21,14 @@
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
-#include "../../java/lang/annotation/Annotation.h"
+#include "java/lang/annotation/Annotation.h"
 
 @class IOSClass;
 @class IOSObjectArray;
 
 /*!
- @brief javax.annotation.Resources annotation.
- No code was referenced,
- created using just its public API.
+ @brief javax.annotation.Resources annotation.No code was referenced,
+  created using just its public API.
  */
 @protocol JavaxAnnotationResources < JavaLangAnnotationAnnotation >
 

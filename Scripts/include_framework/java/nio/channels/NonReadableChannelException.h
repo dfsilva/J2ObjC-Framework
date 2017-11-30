@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/nio/channels/NonReadableChannelException.java
 //
 
-#include "../../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNioChannelsNonReadableChannelException")
 #ifdef RESTRICT_JavaNioChannelsNonReadableChannelException
@@ -21,11 +21,13 @@
 
 #define RESTRICT_JavaLangIllegalStateException 1
 #define INCLUDE_JavaLangIllegalStateException 1
-#include "../../../java/lang/IllegalStateException.h"
+#include "java/lang/IllegalStateException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Unchecked exception thrown when an attempt is made to read
- from a channel that was not originally opened for reading.
+  from a channel that was not originally opened for reading.
  @since 1.4
  */
 @interface JavaNioChannelsNonReadableChannelException : JavaLangIllegalStateException
@@ -37,15 +39,24 @@
  */
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsNonReadableChannelException)
 
 FOUNDATION_EXPORT void JavaNioChannelsNonReadableChannelException_init(JavaNioChannelsNonReadableChannelException *self);
 
-FOUNDATION_EXPORT JavaNioChannelsNonReadableChannelException *new_JavaNioChannelsNonReadableChannelException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNioChannelsNonReadableChannelException *new_JavaNioChannelsNonReadableChannelException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNioChannelsNonReadableChannelException *create_JavaNioChannelsNonReadableChannelException_init();
+FOUNDATION_EXPORT JavaNioChannelsNonReadableChannelException *create_JavaNioChannelsNonReadableChannelException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsNonReadableChannelException)
 

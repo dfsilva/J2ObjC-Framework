@@ -3,7 +3,7 @@
 //  source: /Users/tball/src/j2objc/inject/javax_inject/build_result/java/javax/inject/Singleton.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxInjectSingleton")
 #ifdef RESTRICT_JavaxInjectSingleton
@@ -21,14 +21,13 @@
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
-#include "../../java/lang/annotation/Annotation.h"
+#include "java/lang/annotation/Annotation.h"
 
 @class IOSClass;
 
 /*!
- @brief Identifies a type that the injector only instantiates once.
- Not inherited.
- - seealso: javax.inject.Scope @@Scope
+ @brief Identifies a type that the injector only instantiates once.Not inherited.
+ - seealso: javax.inject.Scope@@Scope
  */
 @protocol JavaxInjectSingleton < JavaLangAnnotationAnnotation >
 
@@ -40,7 +39,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(JavaxInjectSingleton)
 
-FOUNDATION_EXPORT id<JavaxInjectSingleton> create_JavaxInjectSingleton();
+FOUNDATION_EXPORT id<JavaxInjectSingleton> create_JavaxInjectSingleton(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaxInjectSingleton)
 

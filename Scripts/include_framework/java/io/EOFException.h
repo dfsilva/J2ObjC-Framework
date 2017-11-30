@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/EOFException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoEOFException")
 #ifdef RESTRICT_JavaIoEOFException
@@ -21,15 +21,17 @@
 
 #define RESTRICT_JavaIoIOException 1
 #define INCLUDE_JavaIoIOException 1
-#include "../../java/io/IOException.h"
+#include "java/io/IOException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Signals that an end of file or end of stream has been reached
- unexpectedly during input.
+  unexpectedly during input.
  <p>
- This exception is mainly used by data input streams to signal end of
- stream. Note that many other input operations return a special value on
- end of stream rather than throwing an exception.
+  This exception is mainly used by data input streams to signal end of
+  stream. Note that many other input operations return a special value on
+  end of stream rather than throwing an exception. 
  <p>
  @author Frank Yellin
  - seealso: java.io.DataInputStream
@@ -42,19 +44,25 @@
 
 /*!
  @brief Constructs an <code>EOFException</code> with <code>null</code>
- as its error detail message.
+  as its error detail message.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs an <code>EOFException</code> with the specified detail
- message.
- The string <code>s</code> may later be retrieved by the
- <code><code>java.lang.Throwable.getMessage</code></code> method of class
+  message.The string <code>s</code> may later be retrieved by the 
+ <code><code>java.lang.Throwable</code></code> method of class 
  <code>java.lang.Throwable</code>.
- @param s   the detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -62,9 +70,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaIoEOFException)
 
 FOUNDATION_EXPORT void JavaIoEOFException_init(JavaIoEOFException *self);
 
-FOUNDATION_EXPORT JavaIoEOFException *new_JavaIoEOFException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoEOFException *new_JavaIoEOFException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoEOFException *create_JavaIoEOFException_init();
+FOUNDATION_EXPORT JavaIoEOFException *create_JavaIoEOFException_init(void);
 
 FOUNDATION_EXPORT void JavaIoEOFException_initWithNSString_(JavaIoEOFException *self, NSString *s);
 

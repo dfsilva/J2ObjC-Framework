@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/InstantiationError.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangInstantiationError")
 #ifdef RESTRICT_JavaLangInstantiationError
@@ -21,15 +21,15 @@
 
 #define RESTRICT_JavaLangIncompatibleClassChangeError 1
 #define INCLUDE_JavaLangIncompatibleClassChangeError 1
-#include "../../java/lang/IncompatibleClassChangeError.h"
+#include "java/lang/IncompatibleClassChangeError.h"
 
 /*!
  @brief Thrown when an application tries to use the Java <code>new</code>
- construct to instantiate an abstract class or an interface.
+  construct to instantiate an abstract class or an interface.
  <p>
- Normally, this error is caught by the compiler; this error can
- only occur at run time if the definition of a class has
- incompatibly changed.
+  Normally, this error is caught by the compiler; this error can
+  only occur at run time if the definition of a class has
+  incompatibly changed.
  @author unascribed
  @since JDK1.0
  */
@@ -44,8 +44,8 @@
 
 /*!
  @brief Constructs an <code>InstantiationError</code> with the specified
- detail message.
- @param s   the detail message.
+  detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
@@ -55,9 +55,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangInstantiationError)
 
 FOUNDATION_EXPORT void JavaLangInstantiationError_init(JavaLangInstantiationError *self);
 
-FOUNDATION_EXPORT JavaLangInstantiationError *new_JavaLangInstantiationError_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangInstantiationError *new_JavaLangInstantiationError_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangInstantiationError *create_JavaLangInstantiationError_init();
+FOUNDATION_EXPORT JavaLangInstantiationError *create_JavaLangInstantiationError_init(void);
 
 FOUNDATION_EXPORT void JavaLangInstantiationError_initWithNSString_(JavaLangInstantiationError *self, NSString *s);
 

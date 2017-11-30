@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/nio/channels/UnsupportedAddressTypeException.java
 //
 
-#include "../../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNioChannelsUnsupportedAddressTypeException")
 #ifdef RESTRICT_JavaNioChannelsUnsupportedAddressTypeException
@@ -21,11 +21,13 @@
 
 #define RESTRICT_JavaLangIllegalArgumentException 1
 #define INCLUDE_JavaLangIllegalArgumentException 1
-#include "../../../java/lang/IllegalArgumentException.h"
+#include "java/lang/IllegalArgumentException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Unchecked exception thrown when an attempt is made to bind or connect
- to a socket address of a type that is not supported.
+  to a socket address of a type that is not supported.
  @since 1.4
  */
 @interface JavaNioChannelsUnsupportedAddressTypeException : JavaLangIllegalArgumentException
@@ -37,15 +39,24 @@
  */
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsUnsupportedAddressTypeException)
 
 FOUNDATION_EXPORT void JavaNioChannelsUnsupportedAddressTypeException_init(JavaNioChannelsUnsupportedAddressTypeException *self);
 
-FOUNDATION_EXPORT JavaNioChannelsUnsupportedAddressTypeException *new_JavaNioChannelsUnsupportedAddressTypeException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNioChannelsUnsupportedAddressTypeException *new_JavaNioChannelsUnsupportedAddressTypeException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNioChannelsUnsupportedAddressTypeException *create_JavaNioChannelsUnsupportedAddressTypeException_init();
+FOUNDATION_EXPORT JavaNioChannelsUnsupportedAddressTypeException *create_JavaNioChannelsUnsupportedAddressTypeException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsUnsupportedAddressTypeException)
 

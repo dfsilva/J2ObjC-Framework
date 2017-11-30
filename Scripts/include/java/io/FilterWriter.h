@@ -28,10 +28,10 @@
 /*!
  @brief Abstract class for writing filtered character streams.
  The abstract class <code>FilterWriter</code> itself
- provides default methods that pass all requests to the
- contained stream. Subclasses of <code>FilterWriter</code>
- should override some of these methods and may also
- provide additional methods and fields.
+  provides default methods that pass all requests to the
+  contained stream. Subclasses of <code>FilterWriter</code>
+  should override some of these methods and may also
+  provide additional methods and fields.
  @author Mark Reinhold
  @since JDK1.1
  */
@@ -49,16 +49,16 @@
 
 /*!
  @brief Flushes the stream.
- @exception IOException  If an I/O error occurs
+ @throw IOExceptionIf an I/O error occurs
  */
 - (void)flush;
 
 /*!
  @brief Writes a portion of an array of characters.
- @param cbuf  Buffer of characters to be written
- @param off   Offset from which to start reading characters
- @param len   Number of characters to be written
- @exception IOException  If an I/O error occurs
+ @param cbuf Buffer of characters to be written
+ @param off Offset from which to start reading characters
+ @param len Number of characters to be written
+ @throw IOExceptionIf an I/O error occurs
  */
 - (void)writeWithCharArray:(IOSCharArray *)cbuf
                    withInt:(jint)off
@@ -66,16 +66,16 @@
 
 /*!
  @brief Writes a single character.
- @exception IOException  If an I/O error occurs
+ @throw IOExceptionIf an I/O error occurs
  */
 - (void)writeWithInt:(jint)c;
 
 /*!
  @brief Writes a portion of a string.
- @param str  String to be written
- @param off  Offset from which to start reading characters
- @param len  Number of characters to be written
- @exception IOException  If an I/O error occurs
+ @param str String to be written
+ @param off Offset from which to start reading characters
+ @param len Number of characters to be written
+ @throw IOExceptionIf an I/O error occurs
  */
 - (void)writeWithNSString:(NSString *)str
                   withInt:(jint)off
@@ -85,8 +85,8 @@
 
 /*!
  @brief Create a new filtered writer.
- @param outArg  a Writer object to provide the underlying stream.
- @throws NullPointerException if <code>out</code> is <code>null</code>
+ @param outArg a Writer object to provide the underlying stream.
+ @throw NullPointerExceptionif <code>out</code> is <code>null</code>
  */
 - (instancetype)initWithJavaIoWriter:(JavaIoWriter *)outArg;
 

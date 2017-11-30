@@ -25,12 +25,11 @@
 
 /*!
  @brief Thrown by <code>String</code> methods to indicate that an index
- is either negative or greater than the size of the string.
- For
- some methods such as the charAt method, this exception also is
- thrown when the index is equal to the size of the string.
+  is either negative or greater than the size of the string.For
+  some methods such as the charAt method, this exception also is
+  thrown when the index is equal to the size of the string.
  @author unascribed
- - seealso: java.lang.String#charAt(int)
+ - seealso: java.lang.String
  @since JDK1.0
  */
 @interface JavaLangStringIndexOutOfBoundsException : JavaLangIndexOutOfBoundsException
@@ -39,15 +38,15 @@
 
 /*!
  @brief Constructs a <code>StringIndexOutOfBoundsException</code> with no
- detail message.
+  detail message.
  @since JDK1.0.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a new <code>StringIndexOutOfBoundsException</code>
- class with an argument indicating the illegal index.
- @param index   the illegal index.
+  class with an argument indicating the illegal index.
+ @param index the illegal index.
  */
 - (instancetype)initWithInt:(jint)index;
 
@@ -66,8 +65,8 @@
 
 /*!
  @brief Constructs a <code>StringIndexOutOfBoundsException</code> with
- the specified detail message.
- @param s   the detail message.
+  the specified detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
@@ -90,9 +89,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangStringIndexOutOfBoundsException)
 
 FOUNDATION_EXPORT void JavaLangStringIndexOutOfBoundsException_init(JavaLangStringIndexOutOfBoundsException *self);
 
-FOUNDATION_EXPORT JavaLangStringIndexOutOfBoundsException *new_JavaLangStringIndexOutOfBoundsException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangStringIndexOutOfBoundsException *new_JavaLangStringIndexOutOfBoundsException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangStringIndexOutOfBoundsException *create_JavaLangStringIndexOutOfBoundsException_init();
+FOUNDATION_EXPORT JavaLangStringIndexOutOfBoundsException *create_JavaLangStringIndexOutOfBoundsException_init(void);
 
 FOUNDATION_EXPORT void JavaLangStringIndexOutOfBoundsException_initWithNSString_(JavaLangStringIndexOutOfBoundsException *self, NSString *s);
 

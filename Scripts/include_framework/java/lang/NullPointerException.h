@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/NullPointerException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangNullPointerException")
 #ifdef RESTRICT_JavaLangNullPointerException
@@ -21,27 +21,28 @@
 
 #define RESTRICT_JavaLangRuntimeException 1
 #define INCLUDE_JavaLangRuntimeException 1
-#include "../../java/lang/RuntimeException.h"
+#include "java/lang/RuntimeException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Thrown when an application attempts to use <code>null</code> in a
- case where an object is required.
- These include:
+  case where an object is required.These include: 
  <ul>
- <li>Calling the instance method of a <code>null</code> object.
- <li>Accessing or modifying the field of a <code>null</code> object.
- <li>Taking the length of <code>null</code> as if it were an array.
+  <li>Calling the instance method of a <code>null</code> object.
+ <li>Accessing or modifying the field of a <code>null</code> object. 
+ <li>Taking the length of <code>null</code> as if it were an array. 
  <li>Accessing or modifying the slots of <code>null</code> as if it
- were an array.
+      were an array. 
  <li>Throwing <code>null</code> as if it were a <code>Throwable</code>
- value.
+      value. 
  </ul>
- <p>
- Applications should throw instances of this class to indicate
- other illegal uses of the <code>null</code> object.
+  <p>
+  Applications should throw instances of this class to indicate
+  other illegal uses of the <code>null</code> object. 
  <code>NullPointerException</code> objects may be constructed by the
- virtual machine as if suppression were disabled and/or the
- stack trace was not writable
+  virtual machine as if were disabled and/or the
+  stack trace was not writable
  .
  @author unascribed
  @since JDK1.0
@@ -57,10 +58,22 @@
 
 /*!
  @brief Constructs a <code>NullPointerException</code> with the specified
- detail message.
- @param s   the detail message.
+  detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -68,9 +81,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangNullPointerException)
 
 FOUNDATION_EXPORT void JavaLangNullPointerException_init(JavaLangNullPointerException *self);
 
-FOUNDATION_EXPORT JavaLangNullPointerException *new_JavaLangNullPointerException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangNullPointerException *new_JavaLangNullPointerException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangNullPointerException *create_JavaLangNullPointerException_init();
+FOUNDATION_EXPORT JavaLangNullPointerException *create_JavaLangNullPointerException_init(void);
 
 FOUNDATION_EXPORT void JavaLangNullPointerException_initWithNSString_(JavaLangNullPointerException *self, NSString *s);
 

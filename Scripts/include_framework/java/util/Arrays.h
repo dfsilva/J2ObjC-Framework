@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/Arrays.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilArrays")
 #ifdef RESTRICT_JavaUtilArrays
@@ -50,21 +50,21 @@
 
 /*!
  @brief This class contains various methods for manipulating arrays (such as
- sorting and searching).
- This class also contains a static factory
- that allows arrays to be viewed as lists.
+  sorting and searching).This class also contains a static factory
+  that allows arrays to be viewed as lists.
  <p>The methods in this class all throw a <code>NullPointerException</code>,
- if the specified array reference is null, except where noted.
+  if the specified array reference is null, except where noted. 
  <p>The documentation for the methods contained in this class includes
- briefs description of the <i>implementations</i>. Such descriptions should
- be regarded as <i>implementation notes</i>, rather than parts of the
+  briefs description of the <i>implementations</i>. Such descriptions should
+  be regarded as <i>implementation notes</i>, rather than parts of the 
  <i>specification</i>. Implementors should feel free to substitute other
- algorithms, so long as the specification itself is adhered to. (For
- example, the algorithm used by <code>sort(Object[])</code> does not have to be
- a MergeSort, but it does have to be <i>stable</i>.)
- <p>This class is a member of the
- <a href="/../technotes/guides/collections/index.html">
- Java Collections Framework</a>.
+  algorithms, so long as the specification itself is adhered to. (For
+  example, the algorithm used by <code>sort(Object[])</code> does not have to be
+  a MergeSort, but it does have to be <i>stable</i>.)
+  
+ <p>This class is a member of the 
+ <a href="{@@docRoot}/../technotes/guides/collections/index.html">
+  Java Collections Framework</a>.
  @author Josh Bloch
  @author Neal Gafter
  @author John Rose
@@ -79,15 +79,16 @@
 /*!
  @brief Returns a fixed-size list backed by the specified array.
  (Changes to
- the returned list "write through" to the array.)  This method acts
- as bridge between array-based and collection-based APIs, in
- combination with <code>Collection.toArray</code>.  The returned list is
- serializable and implements <code>RandomAccess</code>.
+  the returned list "write through" to the array.)  This method acts
+  as bridge between array-based and collection-based APIs, in
+  combination with <code>Collection.toArray</code>.  The returned list is
+  serializable and implements <code>RandomAccess</code>.
+  
  <p>This method also provides a convenient way to create a fixed-size
- list initialized to contain several elements:
+  list initialized to contain several elements: 
  @code
 
-     List&lt;String&gt; stooges = Arrays.asList("Larry", "Moe", "Curly");
+      List&lt;String&gt; stooges = Arrays.asList("Larry", "Moe", "Curly"); 
   
 @endcode
  @param a the array by which the list will be backed
@@ -97,54 +98,53 @@
 
 /*!
  @brief Searches the specified array of bytes for the specified value using the
- binary search algorithm.
- The array must be sorted (as
- by the <code>sort(byte[])</code> method) prior to making this call.  If it
- is not sorted, the results are undefined.  If the array contains
- multiple elements with the specified value, there is no guarantee which
- one will be found.
+  binary search algorithm.The array must be sorted (as
+  by the <code>sort(byte[])</code> method) prior to making this call.
+ If it
+  is not sorted, the results are undefined.  If the array contains
+  multiple elements with the specified value, there is no guarantee which
+  one will be found.
  @param a the array to be searched
  @param key the value to be searched for
  @return index of the search key, if it is contained in the array;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element greater than the key, or <tt>a.length</tt> if all
- elements in the array are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element greater than the key, or <tt>a.length</tt> if all
+          elements in the array are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
  */
 + (jint)binarySearchWithByteArray:(IOSByteArray *)a
                          withByte:(jbyte)key;
 
 /*!
  @brief Searches a range of
- the specified array of bytes for the specified value using the
- binary search algorithm.
+  the specified array of bytes for the specified value using the
+  binary search algorithm.
  The range must be sorted (as
- by the <code>sort(byte[],int,int)</code> method)
- prior to making this call.  If it
- is not sorted, the results are undefined.  If the range contains
- multiple elements with the specified value, there is no guarantee which
- one will be found.
+  by the <code>int, int)</code> method)
+  prior to making this call.  If it
+  is not sorted, the results are undefined.  If the range contains
+  multiple elements with the specified value, there is no guarantee which
+  one will be found.
  @param a the array to be searched
- @param fromIndex the index of the first element (inclusive) to be
- searched
+ @param fromIndex the index of the first element (inclusive) to be           searched
  @param toIndex the index of the last element (exclusive) to be searched
  @param key the value to be searched for
  @return index of the search key, if it is contained in the array
- within the specified range;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element in the range greater than the key,
- or <tt>toIndex</tt> if all
- elements in the range are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
- @throws IllegalArgumentException
+          within the specified range;
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element in the range greater than the key,
+          or <tt>toIndex</tt> if all
+          elements in the range are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
+ @throw IllegalArgumentException
  if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0 or toIndex > a.length</code>
  @since 1.6
  */
@@ -155,54 +155,53 @@
 
 /*!
  @brief Searches the specified array of chars for the specified value using the
- binary search algorithm.
- The array must be sorted (as
- by the <code>sort(char[])</code> method) prior to making this call.  If it
- is not sorted, the results are undefined.  If the array contains
- multiple elements with the specified value, there is no guarantee which
- one will be found.
+  binary search algorithm.The array must be sorted (as
+  by the <code>sort(char[])</code> method) prior to making this call.
+ If it
+  is not sorted, the results are undefined.  If the array contains
+  multiple elements with the specified value, there is no guarantee which
+  one will be found.
  @param a the array to be searched
  @param key the value to be searched for
  @return index of the search key, if it is contained in the array;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element greater than the key, or <tt>a.length</tt> if all
- elements in the array are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element greater than the key, or <tt>a.length</tt> if all
+          elements in the array are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
  */
 + (jint)binarySearchWithCharArray:(IOSCharArray *)a
                          withChar:(jchar)key;
 
 /*!
  @brief Searches a range of
- the specified array of chars for the specified value using the
- binary search algorithm.
+  the specified array of chars for the specified value using the
+  binary search algorithm.
  The range must be sorted (as
- by the <code>sort(char[],int,int)</code> method)
- prior to making this call.  If it
- is not sorted, the results are undefined.  If the range contains
- multiple elements with the specified value, there is no guarantee which
- one will be found.
+  by the <code>int, int)</code> method)
+  prior to making this call.  If it
+  is not sorted, the results are undefined.  If the range contains
+  multiple elements with the specified value, there is no guarantee which
+  one will be found.
  @param a the array to be searched
- @param fromIndex the index of the first element (inclusive) to be
- searched
+ @param fromIndex the index of the first element (inclusive) to be           searched
  @param toIndex the index of the last element (exclusive) to be searched
  @param key the value to be searched for
  @return index of the search key, if it is contained in the array
- within the specified range;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element in the range greater than the key,
- or <tt>toIndex</tt> if all
- elements in the range are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
- @throws IllegalArgumentException
+          within the specified range;
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element in the range greater than the key,
+          or <tt>toIndex</tt> if all
+          elements in the range are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
+ @throw IllegalArgumentException
  if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0 or toIndex > a.length</code>
  @since 1.6
  */
@@ -213,56 +212,54 @@
 
 /*!
  @brief Searches the specified array of doubles for the specified value using
- the binary search algorithm.
- The array must be sorted
- (as by the <code>sort(double[])</code> method) prior to making this call.
+  the binary search algorithm.The array must be sorted
+  (as by the <code>sort(double[])</code> method) prior to making this call.
  If it is not sorted, the results are undefined.  If the array contains
- multiple elements with the specified value, there is no guarantee which
- one will be found.  This method considers all NaN values to be
- equivalent and equal.
+  multiple elements with the specified value, there is no guarantee which
+  one will be found.  This method considers all NaN values to be
+  equivalent and equal.
  @param a the array to be searched
  @param key the value to be searched for
  @return index of the search key, if it is contained in the array;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element greater than the key, or <tt>a.length</tt> if all
- elements in the array are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element greater than the key, or <tt>a.length</tt> if all
+          elements in the array are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
  */
 + (jint)binarySearchWithDoubleArray:(IOSDoubleArray *)a
                          withDouble:(jdouble)key;
 
 /*!
  @brief Searches a range of
- the specified array of doubles for the specified value using
- the binary search algorithm.
+  the specified array of doubles for the specified value using
+  the binary search algorithm.
  The range must be sorted
- (as by the <code>sort(double[],int,int)</code> method)
- prior to making this call.
- If it is not sorted, the results are undefined.  If the range contains
- multiple elements with the specified value, there is no guarantee which
- one will be found.  This method considers all NaN values to be
- equivalent and equal.
+  (as by the <code>int, int)</code> method)
+  prior to making this call.
+  If it is not sorted, the results are undefined.  If the range contains
+  multiple elements with the specified value, there is no guarantee which
+  one will be found.  This method considers all NaN values to be
+  equivalent and equal.
  @param a the array to be searched
- @param fromIndex the index of the first element (inclusive) to be
- searched
+ @param fromIndex the index of the first element (inclusive) to be           searched
  @param toIndex the index of the last element (exclusive) to be searched
  @param key the value to be searched for
  @return index of the search key, if it is contained in the array
- within the specified range;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element in the range greater than the key,
- or <tt>toIndex</tt> if all
- elements in the range are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
- @throws IllegalArgumentException
+          within the specified range;
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element in the range greater than the key,
+          or <tt>toIndex</tt> if all
+          elements in the range are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
+ @throw IllegalArgumentException
  if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0 or toIndex > a.length</code>
  @since 1.6
  */
@@ -273,56 +270,55 @@
 
 /*!
  @brief Searches the specified array of floats for the specified value using
- the binary search algorithm.
- The array must be sorted
- (as by the <code>sort(float[])</code> method) prior to making this call. If
- it is not sorted, the results are undefined. If the array contains
- multiple elements with the specified value, there is no guarantee which
- one will be found. This method considers all NaN values to be
- equivalent and equal.
+  the binary search algorithm.The array must be sorted
+  (as by the <code>sort(float[])</code> method) prior to making this call.
+ If
+  it is not sorted, the results are undefined. If the array contains
+  multiple elements with the specified value, there is no guarantee which
+  one will be found. This method considers all NaN values to be
+  equivalent and equal.
  @param a the array to be searched
  @param key the value to be searched for
  @return index of the search key, if it is contained in the array;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>. The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element greater than the key, or <tt>a.length</tt> if all
- elements in the array are less than the specified key. Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>. The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element greater than the key, or <tt>a.length</tt> if all
+          elements in the array are less than the specified key. Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
  */
 + (jint)binarySearchWithFloatArray:(IOSFloatArray *)a
                          withFloat:(jfloat)key;
 
 /*!
  @brief Searches a range of
- the specified array of floats for the specified value using
- the binary search algorithm.
+  the specified array of floats for the specified value using
+  the binary search algorithm.
  The range must be sorted
- (as by the <code>sort(float[],int,int)</code> method)
- prior to making this call. If
- it is not sorted, the results are undefined. If the range contains
- multiple elements with the specified value, there is no guarantee which
- one will be found. This method considers all NaN values to be
- equivalent and equal.
+  (as by the <code>int, int)</code> method)
+  prior to making this call. If
+  it is not sorted, the results are undefined. If the range contains
+  multiple elements with the specified value, there is no guarantee which
+  one will be found. This method considers all NaN values to be
+  equivalent and equal.
  @param a the array to be searched
- @param fromIndex the index of the first element (inclusive) to be
- searched
+ @param fromIndex the index of the first element (inclusive) to be           searched
  @param toIndex the index of the last element (exclusive) to be searched
  @param key the value to be searched for
  @return index of the search key, if it is contained in the array
- within the specified range;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>. The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element in the range greater than the key,
- or <tt>toIndex</tt> if all
- elements in the range are less than the specified key. Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
- @throws IllegalArgumentException
+          within the specified range;
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>. The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element in the range greater than the key,
+          or <tt>toIndex</tt> if all
+          elements in the range are less than the specified key. Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
+ @throw IllegalArgumentException
  if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0 or toIndex > a.length</code>
  @since 1.6
  */
@@ -333,54 +329,53 @@
 
 /*!
  @brief Searches the specified array of ints for the specified value using the
- binary search algorithm.
- The array must be sorted (as
- by the <code>sort(int[])</code> method) prior to making this call.  If it
- is not sorted, the results are undefined.  If the array contains
- multiple elements with the specified value, there is no guarantee which
- one will be found.
+  binary search algorithm.The array must be sorted (as
+  by the <code>sort(int[])</code> method) prior to making this call.
+ If it
+  is not sorted, the results are undefined.  If the array contains
+  multiple elements with the specified value, there is no guarantee which
+  one will be found.
  @param a the array to be searched
  @param key the value to be searched for
  @return index of the search key, if it is contained in the array;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element greater than the key, or <tt>a.length</tt> if all
- elements in the array are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element greater than the key, or <tt>a.length</tt> if all
+          elements in the array are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
  */
 + (jint)binarySearchWithIntArray:(IOSIntArray *)a
                          withInt:(jint)key;
 
 /*!
  @brief Searches a range of
- the specified array of ints for the specified value using the
- binary search algorithm.
+  the specified array of ints for the specified value using the
+  binary search algorithm.
  The range must be sorted (as
- by the <code>sort(int[],int,int)</code> method)
- prior to making this call.  If it
- is not sorted, the results are undefined.  If the range contains
- multiple elements with the specified value, there is no guarantee which
- one will be found.
+  by the <code>int, int)</code> method)
+  prior to making this call.  If it
+  is not sorted, the results are undefined.  If the range contains
+  multiple elements with the specified value, there is no guarantee which
+  one will be found.
  @param a the array to be searched
- @param fromIndex the index of the first element (inclusive) to be
- searched
+ @param fromIndex the index of the first element (inclusive) to be           searched
  @param toIndex the index of the last element (exclusive) to be searched
  @param key the value to be searched for
  @return index of the search key, if it is contained in the array
- within the specified range;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element in the range greater than the key,
- or <tt>toIndex</tt> if all
- elements in the range are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
- @throws IllegalArgumentException
+          within the specified range;
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element in the range greater than the key,
+          or <tt>toIndex</tt> if all
+          elements in the range are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
+ @throw IllegalArgumentException
  if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0 or toIndex > a.length</code>
  @since 1.6
  */
@@ -391,32 +386,31 @@
 
 /*!
  @brief Searches a range of
- the specified array of longs for the specified value using the
- binary search algorithm.
+  the specified array of longs for the specified value using the
+  binary search algorithm.
  The range must be sorted (as
- by the <code>sort(long[],int,int)</code> method)
- prior to making this call.  If it
- is not sorted, the results are undefined.  If the range contains
- multiple elements with the specified value, there is no guarantee which
- one will be found.
+  by the <code>int, int)</code> method)
+  prior to making this call.  If it
+  is not sorted, the results are undefined.  If the range contains
+  multiple elements with the specified value, there is no guarantee which
+  one will be found.
  @param a the array to be searched
- @param fromIndex the index of the first element (inclusive) to be
- searched
+ @param fromIndex the index of the first element (inclusive) to be           searched
  @param toIndex the index of the last element (exclusive) to be searched
  @param key the value to be searched for
  @return index of the search key, if it is contained in the array
- within the specified range;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element in the range greater than the key,
- or <tt>toIndex</tt> if all
- elements in the range are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
- @throws IllegalArgumentException
+          within the specified range;
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element in the range greater than the key,
+          or <tt>toIndex</tt> if all
+          elements in the range are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
+ @throw IllegalArgumentException
  if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0 or toIndex > a.length</code>
  @since 1.6
  */
@@ -427,62 +421,61 @@
 
 /*!
  @brief Searches the specified array of longs for the specified value using the
- binary search algorithm.
- The array must be sorted (as
- by the <code>sort(long[])</code> method) prior to making this call.  If it
- is not sorted, the results are undefined.  If the array contains
- multiple elements with the specified value, there is no guarantee which
- one will be found.
+  binary search algorithm.The array must be sorted (as
+  by the <code>sort(long[])</code> method) prior to making this call.
+ If it
+  is not sorted, the results are undefined.  If the array contains
+  multiple elements with the specified value, there is no guarantee which
+  one will be found.
  @param a the array to be searched
  @param key the value to be searched for
  @return index of the search key, if it is contained in the array;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element greater than the key, or <tt>a.length</tt> if all
- elements in the array are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element greater than the key, or <tt>a.length</tt> if all
+          elements in the array are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
  */
 + (jint)binarySearchWithLongArray:(IOSLongArray *)a
                          withLong:(jlong)key;
 
 /*!
  @brief Searches a range of
- the specified array for the specified object using the binary
- search algorithm.
+  the specified array for the specified object using the binary
+  search algorithm.
  The range must be sorted into ascending order
- according to the
- natural ordering
- of its elements (as by the
- <code>sort(Object[],int,int)</code> method) prior to making this
- call.  If it is not sorted, the results are undefined.
- (If the range contains elements that are not mutually comparable (for
- example, strings and integers), it <i>cannot</i> be sorted according
- to the natural ordering of its elements, hence results are undefined.)
- If the range contains multiple
- elements equal to the specified object, there is no guarantee which
- one will be found.
+  according to the 
+ ordering
+  of its elements (as by the 
+ <code>int, int)</code> method) prior to making this
+  call.  If it is not sorted, the results are undefined.
+  (If the range contains elements that are not mutually comparable (for
+  example, strings and integers), it <i>cannot</i> be sorted according
+  to the natural ordering of its elements, hence results are undefined.)
+  If the range contains multiple
+  elements equal to the specified object, there is no guarantee which
+  one will be found.
  @param a the array to be searched
- @param fromIndex the index of the first element (inclusive) to be
- searched
+ @param fromIndex the index of the first element (inclusive) to be           searched
  @param toIndex the index of the last element (exclusive) to be searched
  @param key the value to be searched for
  @return index of the search key, if it is contained in the array
- within the specified range;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element in the range greater than the key,
- or <tt>toIndex</tt> if all
- elements in the range are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
- @throws ClassCastException if the search key is not comparable to the
- elements of the array within the specified range.
- @throws IllegalArgumentException
+          within the specified range;
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element in the range greater than the key,
+          or <tt>toIndex</tt> if all
+          elements in the range are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
+ @throw ClassCastExceptionif the search key is not comparable to the
+          elements of the array within the specified range.
+ @throw IllegalArgumentException
  if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0 or toIndex > a.length</code>
  @since 1.6
  */
@@ -493,63 +486,61 @@
 
 /*!
  @brief Searches the specified array for the specified object using the binary
- search algorithm.
- The array must be sorted into ascending order
- according to the
- natural ordering
- of its elements (as by the
+  search algorithm.The array must be sorted into ascending order
+  according to the 
+ ordering
+  of its elements (as by the 
  <code>sort(Object[])</code> method) prior to making this call.
  If it is not sorted, the results are undefined.
- (If the array contains elements that are not mutually comparable (for
- example, strings and integers), it <i>cannot</i> be sorted according
- to the natural ordering of its elements, hence results are undefined.)
- If the array contains multiple
- elements equal to the specified object, there is no guarantee which
- one will be found.
+  (If the array contains elements that are not mutually comparable (for
+  example, strings and integers), it <i>cannot</i> be sorted according
+  to the natural ordering of its elements, hence results are undefined.)
+  If the array contains multiple
+  elements equal to the specified object, there is no guarantee which
+  one will be found.
  @param a the array to be searched
  @param key the value to be searched for
  @return index of the search key, if it is contained in the array;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element greater than the key, or <tt>a.length</tt> if all
- elements in the array are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
- @throws ClassCastException if the search key is not comparable to the
- elements of the array.
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element greater than the key, or <tt>a.length</tt> if all
+          elements in the array are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
+ @throw ClassCastExceptionif the search key is not comparable to the
+          elements of the array.
  */
 + (jint)binarySearchWithNSObjectArray:(IOSObjectArray *)a
                                withId:(id)key;
 
 /*!
  @brief Searches a range of
- the specified array of shorts for the specified value using
- the binary search algorithm.
+  the specified array of shorts for the specified value using
+  the binary search algorithm.
  The range must be sorted
- (as by the <code>sort(short[],int,int)</code> method)
- prior to making this call.  If
- it is not sorted, the results are undefined.  If the range contains
- multiple elements with the specified value, there is no guarantee which
- one will be found.
+  (as by the <code>int, int)</code> method)
+  prior to making this call.  If
+  it is not sorted, the results are undefined.  If the range contains
+  multiple elements with the specified value, there is no guarantee which
+  one will be found.
  @param a the array to be searched
- @param fromIndex the index of the first element (inclusive) to be
- searched
+ @param fromIndex the index of the first element (inclusive) to be           searched
  @param toIndex the index of the last element (exclusive) to be searched
  @param key the value to be searched for
  @return index of the search key, if it is contained in the array
- within the specified range;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element in the range greater than the key,
- or <tt>toIndex</tt> if all
- elements in the range are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
- @throws IllegalArgumentException
+          within the specified range;
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element in the range greater than the key,
+          or <tt>toIndex</tt> if all
+          elements in the range are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
+ @throw IllegalArgumentException
  if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0 or toIndex > a.length</code>
  @since 1.6
  */
@@ -560,62 +551,61 @@
 
 /*!
  @brief Searches the specified array of shorts for the specified value using
- the binary search algorithm.
- The array must be sorted
- (as by the <code>sort(short[])</code> method) prior to making this call.  If
- it is not sorted, the results are undefined.  If the array contains
- multiple elements with the specified value, there is no guarantee which
- one will be found.
+  the binary search algorithm.The array must be sorted
+  (as by the <code>sort(short[])</code> method) prior to making this call.
+ If
+  it is not sorted, the results are undefined.  If the array contains
+  multiple elements with the specified value, there is no guarantee which
+  one will be found.
  @param a the array to be searched
  @param key the value to be searched for
  @return index of the search key, if it is contained in the array;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element greater than the key, or <tt>a.length</tt> if all
- elements in the array are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element greater than the key, or <tt>a.length</tt> if all
+          elements in the array are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
  */
 + (jint)binarySearchWithShortArray:(IOSShortArray *)a
                          withShort:(jshort)key;
 
 /*!
  @brief Searches a range of
- the specified array for the specified object using the binary
- search algorithm.
+  the specified array for the specified object using the binary
+  search algorithm.
  The range must be sorted into ascending order
- according to the specified comparator (as by the
- <code>sort(T[], int, int, Comparator)</code>
- method) prior to making this call.
- If it is not sorted, the results are undefined.
- If the range contains multiple elements equal to the specified object,
- there is no guarantee which one will be found.
+  according to the specified comparator (as by the 
+ <code>int, int, Comparator)</code>
+  method) prior to making this call.
+  If it is not sorted, the results are undefined.
+  If the range contains multiple elements equal to the specified object,
+  there is no guarantee which one will be found.
  @param a the array to be searched
- @param fromIndex the index of the first element (inclusive) to be
- searched
+ @param fromIndex the index of the first element (inclusive) to be           searched
  @param toIndex the index of the last element (exclusive) to be searched
  @param key the value to be searched for
- @param c the comparator by which the array is ordered.  A
- <tt>null</tt> value indicates that the elements'
- natural ordering should be used.
+ @param c the comparator by which the array is ordered.  A         
+  <tt> null </tt>  value indicates that the elements'         
+ ordering  should be used.
  @return index of the search key, if it is contained in the array
- within the specified range;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element in the range greater than the key,
- or <tt>toIndex</tt> if all
- elements in the range are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
- @throws ClassCastException if the range contains elements that are not
- <i>mutually comparable</i> using the specified comparator,
- or the search key is not comparable to the
- elements in the range using this comparator.
- @throws IllegalArgumentException
+          within the specified range;
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element in the range greater than the key,
+          or <tt>toIndex</tt> if all
+          elements in the range are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
+ @throw ClassCastExceptionif the range contains elements that are not
+          <i>mutually comparable</i> using the specified comparator,
+          or the search key is not comparable to the
+          elements in the range using this comparator.
+ @throw IllegalArgumentException
  if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0 or toIndex > a.length</code>
  @since 1.6
  */
@@ -627,39 +617,39 @@
 
 /*!
  @brief Searches the specified array for the specified object using the binary
- search algorithm.
- The array must be sorted into ascending order
- according to the specified comparator (as by the
- <code>sort(T[], Comparator)</code>
- method) prior to making this call.  If it is
- not sorted, the results are undefined.
- If the array contains multiple
- elements equal to the specified object, there is no guarantee which one
- will be found.
+  search algorithm.The array must be sorted into ascending order
+  according to the specified comparator (as by the 
+ <code>Comparator)</code>
+  method) prior to making this call.
+ If it is
+  not sorted, the results are undefined.
+  If the array contains multiple
+  elements equal to the specified object, there is no guarantee which one
+  will be found.
  @param a the array to be searched
  @param key the value to be searched for
- @param c the comparator by which the array is ordered.  A
- <tt>null</tt> value indicates that the elements'
- natural ordering should be used.
+ @param c the comparator by which the array is ordered.  A         
+  <tt> null </tt>  value indicates that the elements'         
+ ordering  should be used.
  @return index of the search key, if it is contained in the array;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the array: the index of the first
- element greater than the key, or <tt>a.length</tt> if all
- elements in the array are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
- @throws ClassCastException if the array contains elements that are not
- <i>mutually comparable</i> using the specified comparator,
- or the search key is not comparable to the
- elements of the array using this comparator.
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the array: the index of the first
+          element greater than the key, or <tt>a.length</tt> if all
+          elements in the array are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
+ @throw ClassCastExceptionif the array contains elements that are not
+          <i>mutually comparable</i> using the specified comparator,
+          or the search key is not comparable to the
+          elements of the array using this comparator.
  */
 + (jint)binarySearchWithNSObjectArray:(IOSObjectArray *)a
                                withId:(id)key
                withJavaUtilComparator:(id<JavaUtilComparator>)c;
 
 /*!
- @brief Checks that the range described by <code>offset</code> and <code>count</code> doesn't exceed
+ @brief Checks that the range described by <code>offset</code> and <code>count</code> doesn't exceed 
  <code>arrayLength</code>.
  Android changed.
  */
@@ -669,19 +659,19 @@
 
 /*!
  @brief Copies the specified array, truncating or padding with <tt>false</tt> (if necessary)
- so the copy has the specified length.
- For all indices that are
- valid in both the original array and the copy, the two arrays will
- contain identical values.  For any indices that are valid in the
- copy but not the original, the copy will contain <tt>false</tt>.
- Such indices will exist if and only if the specified length
- is greater than that of the original array.
+  so the copy has the specified length.For all indices that are
+  valid in both the original array and the copy, the two arrays will
+  contain identical values.
+ For any indices that are valid in the
+  copy but not the original, the copy will contain <tt>false</tt>.
+  Such indices will exist if and only if the specified length
+  is greater than that of the original array.
  @param original the array to be copied
  @param newLength the length of the copy to be returned
  @return a copy of the original array, truncated or padded with false elements
- to obtain the specified length
- @throws NegativeArraySizeException if <tt>newLength</tt> is negative
- @throws NullPointerException if <tt>original</tt> is null
+      to obtain the specified length
+ @throw NegativeArraySizeExceptionif <tt>newLength</tt> is negative
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSBooleanArray *)copyOfWithBooleanArray:(IOSBooleanArray *)original
@@ -689,19 +679,19 @@
 
 /*!
  @brief Copies the specified array, truncating or padding with zeros (if necessary)
- so the copy has the specified length.
- For all indices that are
- valid in both the original array and the copy, the two arrays will
- contain identical values.  For any indices that are valid in the
- copy but not the original, the copy will contain <tt>(byte)0</tt>.
- Such indices will exist if and only if the specified length
- is greater than that of the original array.
+  so the copy has the specified length.For all indices that are
+  valid in both the original array and the copy, the two arrays will
+  contain identical values.
+ For any indices that are valid in the
+  copy but not the original, the copy will contain <tt>(byte)0</tt>.
+  Such indices will exist if and only if the specified length
+  is greater than that of the original array.
  @param original the array to be copied
  @param newLength the length of the copy to be returned
  @return a copy of the original array, truncated or padded with zeros
- to obtain the specified length
- @throws NegativeArraySizeException if <tt>newLength</tt> is negative
- @throws NullPointerException if <tt>original</tt> is null
+      to obtain the specified length
+ @throw NegativeArraySizeExceptionif <tt>newLength</tt> is negative
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSByteArray *)copyOfWithByteArray:(IOSByteArray *)original
@@ -709,19 +699,19 @@
 
 /*!
  @brief Copies the specified array, truncating or padding with null characters (if necessary)
- so the copy has the specified length.
- For all indices that are valid
- in both the original array and the copy, the two arrays will contain
- identical values.  For any indices that are valid in the copy but not
- the original, the copy will contain <tt>'\\u000'</tt>.  Such indices
- will exist if and only if the specified length is greater than that of
- the original array.
+  so the copy has the specified length.For all indices that are valid
+  in both the original array and the copy, the two arrays will contain
+  identical values.
+ For any indices that are valid in the copy but not
+  the original, the copy will contain <tt>'\\u000'</tt>.  Such indices
+  will exist if and only if the specified length is greater than that of
+  the original array.
  @param original the array to be copied
  @param newLength the length of the copy to be returned
  @return a copy of the original array, truncated or padded with null characters
- to obtain the specified length
- @throws NegativeArraySizeException if <tt>newLength</tt> is negative
- @throws NullPointerException if <tt>original</tt> is null
+      to obtain the specified length
+ @throw NegativeArraySizeExceptionif <tt>newLength</tt> is negative
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSCharArray *)copyOfWithCharArray:(IOSCharArray *)original
@@ -729,19 +719,19 @@
 
 /*!
  @brief Copies the specified array, truncating or padding with zeros (if necessary)
- so the copy has the specified length.
- For all indices that are
- valid in both the original array and the copy, the two arrays will
- contain identical values.  For any indices that are valid in the
- copy but not the original, the copy will contain <tt>0d</tt>.
- Such indices will exist if and only if the specified length
- is greater than that of the original array.
+  so the copy has the specified length.For all indices that are
+  valid in both the original array and the copy, the two arrays will
+  contain identical values.
+ For any indices that are valid in the
+  copy but not the original, the copy will contain <tt>0d</tt>.
+  Such indices will exist if and only if the specified length
+  is greater than that of the original array.
  @param original the array to be copied
  @param newLength the length of the copy to be returned
  @return a copy of the original array, truncated or padded with zeros
- to obtain the specified length
- @throws NegativeArraySizeException if <tt>newLength</tt> is negative
- @throws NullPointerException if <tt>original</tt> is null
+      to obtain the specified length
+ @throw NegativeArraySizeExceptionif <tt>newLength</tt> is negative
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSDoubleArray *)copyOfWithDoubleArray:(IOSDoubleArray *)original
@@ -749,19 +739,19 @@
 
 /*!
  @brief Copies the specified array, truncating or padding with zeros (if necessary)
- so the copy has the specified length.
- For all indices that are
- valid in both the original array and the copy, the two arrays will
- contain identical values.  For any indices that are valid in the
- copy but not the original, the copy will contain <tt>0f</tt>.
- Such indices will exist if and only if the specified length
- is greater than that of the original array.
+  so the copy has the specified length.For all indices that are
+  valid in both the original array and the copy, the two arrays will
+  contain identical values.
+ For any indices that are valid in the
+  copy but not the original, the copy will contain <tt>0f</tt>.
+  Such indices will exist if and only if the specified length
+  is greater than that of the original array.
  @param original the array to be copied
  @param newLength the length of the copy to be returned
  @return a copy of the original array, truncated or padded with zeros
- to obtain the specified length
- @throws NegativeArraySizeException if <tt>newLength</tt> is negative
- @throws NullPointerException if <tt>original</tt> is null
+      to obtain the specified length
+ @throw NegativeArraySizeExceptionif <tt>newLength</tt> is negative
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSFloatArray *)copyOfWithFloatArray:(IOSFloatArray *)original
@@ -769,19 +759,19 @@
 
 /*!
  @brief Copies the specified array, truncating or padding with zeros (if necessary)
- so the copy has the specified length.
- For all indices that are
- valid in both the original array and the copy, the two arrays will
- contain identical values.  For any indices that are valid in the
- copy but not the original, the copy will contain <tt>0</tt>.
- Such indices will exist if and only if the specified length
- is greater than that of the original array.
+  so the copy has the specified length.For all indices that are
+  valid in both the original array and the copy, the two arrays will
+  contain identical values.
+ For any indices that are valid in the
+  copy but not the original, the copy will contain <tt>0</tt>.
+  Such indices will exist if and only if the specified length
+  is greater than that of the original array.
  @param original the array to be copied
  @param newLength the length of the copy to be returned
  @return a copy of the original array, truncated or padded with zeros
- to obtain the specified length
- @throws NegativeArraySizeException if <tt>newLength</tt> is negative
- @throws NullPointerException if <tt>original</tt> is null
+      to obtain the specified length
+ @throw NegativeArraySizeExceptionif <tt>newLength</tt> is negative
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSIntArray *)copyOfWithIntArray:(IOSIntArray *)original
@@ -789,19 +779,19 @@
 
 /*!
  @brief Copies the specified array, truncating or padding with zeros (if necessary)
- so the copy has the specified length.
- For all indices that are
- valid in both the original array and the copy, the two arrays will
- contain identical values.  For any indices that are valid in the
- copy but not the original, the copy will contain <tt>0L</tt>.
- Such indices will exist if and only if the specified length
- is greater than that of the original array.
+  so the copy has the specified length.For all indices that are
+  valid in both the original array and the copy, the two arrays will
+  contain identical values.
+ For any indices that are valid in the
+  copy but not the original, the copy will contain <tt>0L</tt>.
+  Such indices will exist if and only if the specified length
+  is greater than that of the original array.
  @param original the array to be copied
  @param newLength the length of the copy to be returned
  @return a copy of the original array, truncated or padded with zeros
- to obtain the specified length
- @throws NegativeArraySizeException if <tt>newLength</tt> is negative
- @throws NullPointerException if <tt>original</tt> is null
+      to obtain the specified length
+ @throw NegativeArraySizeExceptionif <tt>newLength</tt> is negative
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSLongArray *)copyOfWithLongArray:(IOSLongArray *)original
@@ -809,19 +799,19 @@
 
 /*!
  @brief Copies the specified array, truncating or padding with zeros (if necessary)
- so the copy has the specified length.
- For all indices that are
- valid in both the original array and the copy, the two arrays will
- contain identical values.  For any indices that are valid in the
- copy but not the original, the copy will contain <tt>(short)0</tt>.
- Such indices will exist if and only if the specified length
- is greater than that of the original array.
+  so the copy has the specified length.For all indices that are
+  valid in both the original array and the copy, the two arrays will
+  contain identical values.
+ For any indices that are valid in the
+  copy but not the original, the copy will contain <tt>(short)0</tt>.
+  Such indices will exist if and only if the specified length
+  is greater than that of the original array.
  @param original the array to be copied
  @param newLength the length of the copy to be returned
  @return a copy of the original array, truncated or padded with zeros
- to obtain the specified length
- @throws NegativeArraySizeException if <tt>newLength</tt> is negative
- @throws NullPointerException if <tt>original</tt> is null
+      to obtain the specified length
+ @throw NegativeArraySizeExceptionif <tt>newLength</tt> is negative
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSShortArray *)copyOfWithShortArray:(IOSShortArray *)original
@@ -829,20 +819,20 @@
 
 /*!
  @brief Copies the specified array, truncating or padding with nulls (if necessary)
- so the copy has the specified length.
- For all indices that are
- valid in both the original array and the copy, the two arrays will
- contain identical values.  For any indices that are valid in the
- copy but not the original, the copy will contain <tt>null</tt>.
- Such indices will exist if and only if the specified length
- is greater than that of the original array.
- The resulting array is of exactly the same class as the original array.
+  so the copy has the specified length.For all indices that are
+  valid in both the original array and the copy, the two arrays will
+  contain identical values.
+ For any indices that are valid in the
+  copy but not the original, the copy will contain <tt>null</tt>.
+  Such indices will exist if and only if the specified length
+  is greater than that of the original array.
+  The resulting array is of exactly the same class as the original array.
  @param original the array to be copied
  @param newLength the length of the copy to be returned
  @return a copy of the original array, truncated or padded with nulls
- to obtain the specified length
- @throws NegativeArraySizeException if <tt>newLength</tt> is negative
- @throws NullPointerException if <tt>original</tt> is null
+      to obtain the specified length
+ @throw NegativeArraySizeExceptionif <tt>newLength</tt> is negative
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSObjectArray *)copyOfWithNSObjectArray:(IOSObjectArray *)original
@@ -850,24 +840,24 @@
 
 /*!
  @brief Copies the specified array, truncating or padding with nulls (if necessary)
- so the copy has the specified length.
- For all indices that are
- valid in both the original array and the copy, the two arrays will
- contain identical values.  For any indices that are valid in the
- copy but not the original, the copy will contain <tt>null</tt>.
- Such indices will exist if and only if the specified length
- is greater than that of the original array.
- The resulting array is of the class <tt>newType</tt>.
+  so the copy has the specified length.For all indices that are
+  valid in both the original array and the copy, the two arrays will
+  contain identical values.
+ For any indices that are valid in the
+  copy but not the original, the copy will contain <tt>null</tt>.
+  Such indices will exist if and only if the specified length
+  is greater than that of the original array.
+  The resulting array is of the class <tt>newType</tt>.
  @param original the array to be copied
  @param newLength the length of the copy to be returned
  @param newType the class of the copy to be returned
  @return a copy of the original array, truncated or padded with nulls
- to obtain the specified length
- @throws NegativeArraySizeException if <tt>newLength</tt> is negative
- @throws NullPointerException if <tt>original</tt> is null
- @throws ArrayStoreException if an element copied from
- <tt>original</tt> is not of a runtime type that can be stored in
- an array of class <tt>newType</tt>
+      to obtain the specified length
+ @throw NegativeArraySizeExceptionif <tt>newLength</tt> is negative
+ @throw NullPointerExceptionif <tt>original</tt> is null
+ @throw ArrayStoreExceptionif an element copied from
+      <tt>original</tt> is not of a runtime type that can be stored in
+      an array of class <tt>newType</tt>
  @since 1.6
  */
 + (IOSObjectArray *)copyOfWithNSObjectArray:(IOSObjectArray *)original
@@ -877,26 +867,25 @@
 /*!
  @brief Copies the specified range of the specified array into a new array.
  The initial index of the range (<tt>from</tt>) must lie between zero
- and <tt>original.length</tt>, inclusive.  The value at
+  and <tt>original.length</tt>, inclusive.  The value at 
  <tt>original[from]</tt> is placed into the initial element of the copy
- (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
- Values from subsequent elements in the original array are placed into
- subsequent elements in the copy.  The final index of the range
- (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
- may be greater than <tt>original.length</tt>, in which case
+  (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
+  Values from subsequent elements in the original array are placed into
+  subsequent elements in the copy.  The final index of the range
+  (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
+  may be greater than <tt>original.length</tt>, in which case 
  <tt>false</tt> is placed in all elements of the copy whose index is
- greater than or equal to <tt>original.length - from</tt>.  The length
- of the returned array will be <tt>to - from</tt>.
+  greater than or equal to <tt>original.length - from</tt>.  The length
+  of the returned array will be <tt>to - from</tt>.
  @param original the array from which a range is to be copied
  @param from the initial index of the range to be copied, inclusive
- @param to the final index of the range to be copied, exclusive.
- (This index may lie outside the array.)
+ @param to the final index of the range to be copied, exclusive.      (This index may lie outside the array.)
  @return a new array containing the specified range from the original array,
- truncated or padded with false elements to obtain the required length
- @throws ArrayIndexOutOfBoundsException if <code>from < 0</code>
- or <code>from > original.length</code>
- @throws IllegalArgumentException if <tt>from &gt; to</tt>
- @throws NullPointerException if <tt>original</tt> is null
+      truncated or padded with false elements to obtain the required length
+ @throw ArrayIndexOutOfBoundsExceptionif <code>from < 0</code>
+      or <code>from > original.length</code>
+ @throw IllegalArgumentExceptionif <tt>from &gt; to</tt>
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSBooleanArray *)copyOfRangeWithBooleanArray:(IOSBooleanArray *)original
@@ -906,26 +895,25 @@
 /*!
  @brief Copies the specified range of the specified array into a new array.
  The initial index of the range (<tt>from</tt>) must lie between zero
- and <tt>original.length</tt>, inclusive.  The value at
+  and <tt>original.length</tt>, inclusive.  The value at 
  <tt>original[from]</tt> is placed into the initial element of the copy
- (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
- Values from subsequent elements in the original array are placed into
- subsequent elements in the copy.  The final index of the range
- (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
- may be greater than <tt>original.length</tt>, in which case
+  (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
+  Values from subsequent elements in the original array are placed into
+  subsequent elements in the copy.  The final index of the range
+  (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
+  may be greater than <tt>original.length</tt>, in which case 
  <tt>(byte)0</tt> is placed in all elements of the copy whose index is
- greater than or equal to <tt>original.length - from</tt>.  The length
- of the returned array will be <tt>to - from</tt>.
+  greater than or equal to <tt>original.length - from</tt>.  The length
+  of the returned array will be <tt>to - from</tt>.
  @param original the array from which a range is to be copied
  @param from the initial index of the range to be copied, inclusive
- @param to the final index of the range to be copied, exclusive.
- (This index may lie outside the array.)
+ @param to the final index of the range to be copied, exclusive.      (This index may lie outside the array.)
  @return a new array containing the specified range from the original array,
- truncated or padded with zeros to obtain the required length
- @throws ArrayIndexOutOfBoundsException if <code>from < 0</code>
- or <code>from > original.length</code>
- @throws IllegalArgumentException if <tt>from &gt; to</tt>
- @throws NullPointerException if <tt>original</tt> is null
+      truncated or padded with zeros to obtain the required length
+ @throw ArrayIndexOutOfBoundsExceptionif <code>from < 0</code>
+      or <code>from > original.length</code>
+ @throw IllegalArgumentExceptionif <tt>from &gt; to</tt>
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSByteArray *)copyOfRangeWithByteArray:(IOSByteArray *)original
@@ -935,26 +923,25 @@
 /*!
  @brief Copies the specified range of the specified array into a new array.
  The initial index of the range (<tt>from</tt>) must lie between zero
- and <tt>original.length</tt>, inclusive.  The value at
+  and <tt>original.length</tt>, inclusive.  The value at 
  <tt>original[from]</tt> is placed into the initial element of the copy
- (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
- Values from subsequent elements in the original array are placed into
- subsequent elements in the copy.  The final index of the range
- (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
- may be greater than <tt>original.length</tt>, in which case
+  (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
+  Values from subsequent elements in the original array are placed into
+  subsequent elements in the copy.  The final index of the range
+  (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
+  may be greater than <tt>original.length</tt>, in which case 
  <tt>'\\u000'</tt> is placed in all elements of the copy whose index is
- greater than or equal to <tt>original.length - from</tt>.  The length
- of the returned array will be <tt>to - from</tt>.
+  greater than or equal to <tt>original.length - from</tt>.  The length
+  of the returned array will be <tt>to - from</tt>.
  @param original the array from which a range is to be copied
  @param from the initial index of the range to be copied, inclusive
- @param to the final index of the range to be copied, exclusive.
- (This index may lie outside the array.)
+ @param to the final index of the range to be copied, exclusive.      (This index may lie outside the array.)
  @return a new array containing the specified range from the original array,
- truncated or padded with null characters to obtain the required length
- @throws ArrayIndexOutOfBoundsException if <code>from < 0</code>
- or <code>from > original.length</code>
- @throws IllegalArgumentException if <tt>from &gt; to</tt>
- @throws NullPointerException if <tt>original</tt> is null
+      truncated or padded with null characters to obtain the required length
+ @throw ArrayIndexOutOfBoundsExceptionif <code>from < 0</code>
+      or <code>from > original.length</code>
+ @throw IllegalArgumentExceptionif <tt>from &gt; to</tt>
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSCharArray *)copyOfRangeWithCharArray:(IOSCharArray *)original
@@ -964,26 +951,25 @@
 /*!
  @brief Copies the specified range of the specified array into a new array.
  The initial index of the range (<tt>from</tt>) must lie between zero
- and <tt>original.length</tt>, inclusive.  The value at
+  and <tt>original.length</tt>, inclusive.  The value at 
  <tt>original[from]</tt> is placed into the initial element of the copy
- (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
- Values from subsequent elements in the original array are placed into
- subsequent elements in the copy.  The final index of the range
- (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
- may be greater than <tt>original.length</tt>, in which case
+  (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
+  Values from subsequent elements in the original array are placed into
+  subsequent elements in the copy.  The final index of the range
+  (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
+  may be greater than <tt>original.length</tt>, in which case 
  <tt>0d</tt> is placed in all elements of the copy whose index is
- greater than or equal to <tt>original.length - from</tt>.  The length
- of the returned array will be <tt>to - from</tt>.
+  greater than or equal to <tt>original.length - from</tt>.  The length
+  of the returned array will be <tt>to - from</tt>.
  @param original the array from which a range is to be copied
  @param from the initial index of the range to be copied, inclusive
- @param to the final index of the range to be copied, exclusive.
- (This index may lie outside the array.)
+ @param to the final index of the range to be copied, exclusive.      (This index may lie outside the array.)
  @return a new array containing the specified range from the original array,
- truncated or padded with zeros to obtain the required length
- @throws ArrayIndexOutOfBoundsException if <code>from < 0</code>
- or <code>from > original.length</code>
- @throws IllegalArgumentException if <tt>from &gt; to</tt>
- @throws NullPointerException if <tt>original</tt> is null
+      truncated or padded with zeros to obtain the required length
+ @throw ArrayIndexOutOfBoundsExceptionif <code>from < 0</code>
+      or <code>from > original.length</code>
+ @throw IllegalArgumentExceptionif <tt>from &gt; to</tt>
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSDoubleArray *)copyOfRangeWithDoubleArray:(IOSDoubleArray *)original
@@ -993,26 +979,25 @@
 /*!
  @brief Copies the specified range of the specified array into a new array.
  The initial index of the range (<tt>from</tt>) must lie between zero
- and <tt>original.length</tt>, inclusive.  The value at
+  and <tt>original.length</tt>, inclusive.  The value at 
  <tt>original[from]</tt> is placed into the initial element of the copy
- (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
- Values from subsequent elements in the original array are placed into
- subsequent elements in the copy.  The final index of the range
- (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
- may be greater than <tt>original.length</tt>, in which case
+  (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
+  Values from subsequent elements in the original array are placed into
+  subsequent elements in the copy.  The final index of the range
+  (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
+  may be greater than <tt>original.length</tt>, in which case 
  <tt>0f</tt> is placed in all elements of the copy whose index is
- greater than or equal to <tt>original.length - from</tt>.  The length
- of the returned array will be <tt>to - from</tt>.
+  greater than or equal to <tt>original.length - from</tt>.  The length
+  of the returned array will be <tt>to - from</tt>.
  @param original the array from which a range is to be copied
  @param from the initial index of the range to be copied, inclusive
- @param to the final index of the range to be copied, exclusive.
- (This index may lie outside the array.)
+ @param to the final index of the range to be copied, exclusive.      (This index may lie outside the array.)
  @return a new array containing the specified range from the original array,
- truncated or padded with zeros to obtain the required length
- @throws ArrayIndexOutOfBoundsException if <code>from < 0</code>
- or <code>from > original.length</code>
- @throws IllegalArgumentException if <tt>from &gt; to</tt>
- @throws NullPointerException if <tt>original</tt> is null
+      truncated or padded with zeros to obtain the required length
+ @throw ArrayIndexOutOfBoundsExceptionif <code>from < 0</code>
+      or <code>from > original.length</code>
+ @throw IllegalArgumentExceptionif <tt>from &gt; to</tt>
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSFloatArray *)copyOfRangeWithFloatArray:(IOSFloatArray *)original
@@ -1022,26 +1007,25 @@
 /*!
  @brief Copies the specified range of the specified array into a new array.
  The initial index of the range (<tt>from</tt>) must lie between zero
- and <tt>original.length</tt>, inclusive.  The value at
+  and <tt>original.length</tt>, inclusive.  The value at 
  <tt>original[from]</tt> is placed into the initial element of the copy
- (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
- Values from subsequent elements in the original array are placed into
- subsequent elements in the copy.  The final index of the range
- (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
- may be greater than <tt>original.length</tt>, in which case
+  (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
+  Values from subsequent elements in the original array are placed into
+  subsequent elements in the copy.  The final index of the range
+  (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
+  may be greater than <tt>original.length</tt>, in which case 
  <tt>0</tt> is placed in all elements of the copy whose index is
- greater than or equal to <tt>original.length - from</tt>.  The length
- of the returned array will be <tt>to - from</tt>.
+  greater than or equal to <tt>original.length - from</tt>.  The length
+  of the returned array will be <tt>to - from</tt>.
  @param original the array from which a range is to be copied
  @param from the initial index of the range to be copied, inclusive
- @param to the final index of the range to be copied, exclusive.
- (This index may lie outside the array.)
+ @param to the final index of the range to be copied, exclusive.      (This index may lie outside the array.)
  @return a new array containing the specified range from the original array,
- truncated or padded with zeros to obtain the required length
- @throws ArrayIndexOutOfBoundsException if <code>from < 0</code>
- or <code>from > original.length</code>
- @throws IllegalArgumentException if <tt>from &gt; to</tt>
- @throws NullPointerException if <tt>original</tt> is null
+      truncated or padded with zeros to obtain the required length
+ @throw ArrayIndexOutOfBoundsExceptionif <code>from < 0</code>
+      or <code>from > original.length</code>
+ @throw IllegalArgumentExceptionif <tt>from &gt; to</tt>
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSIntArray *)copyOfRangeWithIntArray:(IOSIntArray *)original
@@ -1051,26 +1035,25 @@
 /*!
  @brief Copies the specified range of the specified array into a new array.
  The initial index of the range (<tt>from</tt>) must lie between zero
- and <tt>original.length</tt>, inclusive.  The value at
+  and <tt>original.length</tt>, inclusive.  The value at 
  <tt>original[from]</tt> is placed into the initial element of the copy
- (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
- Values from subsequent elements in the original array are placed into
- subsequent elements in the copy.  The final index of the range
- (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
- may be greater than <tt>original.length</tt>, in which case
+  (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
+  Values from subsequent elements in the original array are placed into
+  subsequent elements in the copy.  The final index of the range
+  (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
+  may be greater than <tt>original.length</tt>, in which case 
  <tt>0L</tt> is placed in all elements of the copy whose index is
- greater than or equal to <tt>original.length - from</tt>.  The length
- of the returned array will be <tt>to - from</tt>.
+  greater than or equal to <tt>original.length - from</tt>.  The length
+  of the returned array will be <tt>to - from</tt>.
  @param original the array from which a range is to be copied
  @param from the initial index of the range to be copied, inclusive
- @param to the final index of the range to be copied, exclusive.
- (This index may lie outside the array.)
+ @param to the final index of the range to be copied, exclusive.      (This index may lie outside the array.)
  @return a new array containing the specified range from the original array,
- truncated or padded with zeros to obtain the required length
- @throws ArrayIndexOutOfBoundsException if <code>from < 0</code>
- or <code>from > original.length</code>
- @throws IllegalArgumentException if <tt>from &gt; to</tt>
- @throws NullPointerException if <tt>original</tt> is null
+      truncated or padded with zeros to obtain the required length
+ @throw ArrayIndexOutOfBoundsExceptionif <code>from < 0</code>
+      or <code>from > original.length</code>
+ @throw IllegalArgumentExceptionif <tt>from &gt; to</tt>
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSLongArray *)copyOfRangeWithLongArray:(IOSLongArray *)original
@@ -1080,26 +1063,25 @@
 /*!
  @brief Copies the specified range of the specified array into a new array.
  The initial index of the range (<tt>from</tt>) must lie between zero
- and <tt>original.length</tt>, inclusive.  The value at
+  and <tt>original.length</tt>, inclusive.  The value at 
  <tt>original[from]</tt> is placed into the initial element of the copy
- (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
- Values from subsequent elements in the original array are placed into
- subsequent elements in the copy.  The final index of the range
- (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
- may be greater than <tt>original.length</tt>, in which case
+  (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
+  Values from subsequent elements in the original array are placed into
+  subsequent elements in the copy.  The final index of the range
+  (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
+  may be greater than <tt>original.length</tt>, in which case 
  <tt>(short)0</tt> is placed in all elements of the copy whose index is
- greater than or equal to <tt>original.length - from</tt>.  The length
- of the returned array will be <tt>to - from</tt>.
+  greater than or equal to <tt>original.length - from</tt>.  The length
+  of the returned array will be <tt>to - from</tt>.
  @param original the array from which a range is to be copied
  @param from the initial index of the range to be copied, inclusive
- @param to the final index of the range to be copied, exclusive.
- (This index may lie outside the array.)
+ @param to the final index of the range to be copied, exclusive.      (This index may lie outside the array.)
  @return a new array containing the specified range from the original array,
- truncated or padded with zeros to obtain the required length
- @throws ArrayIndexOutOfBoundsException if <code>from < 0</code>
- or <code>from > original.length</code>
- @throws IllegalArgumentException if <tt>from &gt; to</tt>
- @throws NullPointerException if <tt>original</tt> is null
+      truncated or padded with zeros to obtain the required length
+ @throw ArrayIndexOutOfBoundsExceptionif <code>from < 0</code>
+      or <code>from > original.length</code>
+ @throw IllegalArgumentExceptionif <tt>from &gt; to</tt>
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSShortArray *)copyOfRangeWithShortArray:(IOSShortArray *)original
@@ -1109,28 +1091,27 @@
 /*!
  @brief Copies the specified range of the specified array into a new array.
  The initial index of the range (<tt>from</tt>) must lie between zero
- and <tt>original.length</tt>, inclusive.  The value at
+  and <tt>original.length</tt>, inclusive.  The value at 
  <tt>original[from]</tt> is placed into the initial element of the copy
- (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
- Values from subsequent elements in the original array are placed into
- subsequent elements in the copy.  The final index of the range
- (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
- may be greater than <tt>original.length</tt>, in which case
+  (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
+  Values from subsequent elements in the original array are placed into
+  subsequent elements in the copy.  The final index of the range
+  (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
+  may be greater than <tt>original.length</tt>, in which case 
  <tt>null</tt> is placed in all elements of the copy whose index is
- greater than or equal to <tt>original.length - from</tt>.  The length
- of the returned array will be <tt>to - from</tt>.
- <p>
- The resulting array is of exactly the same class as the original array.
+  greater than or equal to <tt>original.length - from</tt>.  The length
+  of the returned array will be <tt>to - from</tt>.
+  <p>
+  The resulting array is of exactly the same class as the original array.
  @param original the array from which a range is to be copied
  @param from the initial index of the range to be copied, inclusive
- @param to the final index of the range to be copied, exclusive.
- (This index may lie outside the array.)
+ @param to the final index of the range to be copied, exclusive.      (This index may lie outside the array.)
  @return a new array containing the specified range from the original array,
- truncated or padded with nulls to obtain the required length
- @throws ArrayIndexOutOfBoundsException if <code>from < 0</code>
- or <code>from > original.length</code>
- @throws IllegalArgumentException if <tt>from &gt; to</tt>
- @throws NullPointerException if <tt>original</tt> is null
+      truncated or padded with nulls to obtain the required length
+ @throw ArrayIndexOutOfBoundsExceptionif <code>from < 0</code>
+      or <code>from > original.length</code>
+ @throw IllegalArgumentExceptionif <tt>from &gt; to</tt>
+ @throw NullPointerExceptionif <tt>original</tt> is null
  @since 1.6
  */
 + (IOSObjectArray *)copyOfRangeWithNSObjectArray:(IOSObjectArray *)original
@@ -1140,31 +1121,30 @@
 /*!
  @brief Copies the specified range of the specified array into a new array.
  The initial index of the range (<tt>from</tt>) must lie between zero
- and <tt>original.length</tt>, inclusive.  The value at
+  and <tt>original.length</tt>, inclusive.  The value at 
  <tt>original[from]</tt> is placed into the initial element of the copy
- (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
- Values from subsequent elements in the original array are placed into
- subsequent elements in the copy.  The final index of the range
- (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
- may be greater than <tt>original.length</tt>, in which case
+  (unless <tt>from == original.length</tt> or <tt>from == to</tt>).
+  Values from subsequent elements in the original array are placed into
+  subsequent elements in the copy.  The final index of the range
+  (<tt>to</tt>), which must be greater than or equal to <tt>from</tt>,
+  may be greater than <tt>original.length</tt>, in which case 
  <tt>null</tt> is placed in all elements of the copy whose index is
- greater than or equal to <tt>original.length - from</tt>.  The length
- of the returned array will be <tt>to - from</tt>.
- The resulting array is of the class <tt>newType</tt>.
+  greater than or equal to <tt>original.length - from</tt>.  The length
+  of the returned array will be <tt>to - from</tt>.
+  The resulting array is of the class <tt>newType</tt>.
  @param original the array from which a range is to be copied
  @param from the initial index of the range to be copied, inclusive
- @param to the final index of the range to be copied, exclusive.
- (This index may lie outside the array.)
+ @param to the final index of the range to be copied, exclusive.      (This index may lie outside the array.)
  @param newType the class of the copy to be returned
  @return a new array containing the specified range from the original array,
- truncated or padded with nulls to obtain the required length
- @throws ArrayIndexOutOfBoundsException if <code>from < 0</code>
- or <code>from > original.length</code>
- @throws IllegalArgumentException if <tt>from &gt; to</tt>
- @throws NullPointerException if <tt>original</tt> is null
- @throws ArrayStoreException if an element copied from
- <tt>original</tt> is not of a runtime type that can be stored in
- an array of class <tt>newType</tt>.
+      truncated or padded with nulls to obtain the required length
+ @throw ArrayIndexOutOfBoundsExceptionif <code>from < 0</code>
+      or <code>from > original.length</code>
+ @throw IllegalArgumentExceptionif <tt>from &gt; to</tt>
+ @throw NullPointerExceptionif <tt>original</tt> is null
+ @throw ArrayStoreExceptionif an element copied from
+      <tt>original</tt> is not of a runtime type that can be stored in
+      an array of class <tt>newType</tt>.
  @since 1.6
  */
 + (IOSObjectArray *)copyOfRangeWithNSObjectArray:(IOSObjectArray *)original
@@ -1174,34 +1154,33 @@
 
 /*!
  @brief Returns <tt>true</tt> if the two specified arrays are <i>deeply
- equal</i> to one another.
- Unlike the <code>equals(Object[],Object[])</code>
- method, this method is appropriate for use with nested arrays of
- arbitrary depth.
- <p>Two array references are considered deeply equal if both
- are <tt>null</tt>, or if they refer to arrays that contain the same
- number of elements and all corresponding pairs of elements in the two
- arrays are deeply equal.
+  equal</i> to one another.Unlike the <code>equals(Object[],Object[])</code>
+  method, this method is appropriate for use with nested arrays of
+  arbitrary depth.
+ <p>Two array references are considered deeply equal if both are 
+ <tt>null</tt>, or if they refer to arrays that contain the same
+  number of elements and all corresponding pairs of elements in the two
+  arrays are deeply equal. 
  <p>Two possibly <tt>null</tt> elements <tt>e1</tt> and <tt>e2</tt> are
- deeply equal if any of the following conditions hold:
+  deeply equal if any of the following conditions hold: 
  <ul>
- <li> <tt>e1</tt> and <tt>e2</tt> are both arrays of object reference
- types, and <tt>Arrays.deepEquals(e1, e2) would return true</tt>
- <li> <tt>e1</tt> and <tt>e2</tt> are arrays of the same primitive
- type, and the appropriate overloading of
+     <li> <tt>e1</tt> and <tt>e2</tt> are both arrays of object reference
+          types, and <tt>Arrays.deepEquals(e1, e2) would return true</tt>
+     <li> <tt>e1</tt> and <tt>e2</tt> are arrays of the same primitive
+          type, and the appropriate overloading of         
  <tt>Arrays.equals(e1, e2)</tt> would return true.
- <li> <tt>e1 == e2</tt>
- <li> <tt>e1.equals(e2)</tt> would return true.
+     <li> <tt>e1 == e2</tt>
+     <li> <tt>e1.equals(e2)</tt> would return true. 
  </ul>
- Note that this definition permits <tt>null</tt> elements at any depth.
+  Note that this definition permits <tt>null</tt> elements at any depth. 
  <p>If either of the specified arrays contain themselves as elements
- either directly or indirectly through one or more levels of arrays,
- the behavior of this method is undefined.
+  either directly or indirectly through one or more levels of arrays,
+  the behavior of this method is undefined.
  @param a1 one array to be tested for equality
  @param a2 the other array to be tested for equality
  @return <tt>true</tt> if the two arrays are equal
  - seealso: #equals(Object[],Object[])
- - seealso: Objects#deepEquals(Object,Object)
+ - seealso: Objects#deepEquals(Object, Object)
  @since 1.5
  */
 + (jboolean)deepEqualsWithNSObjectArray:(IOSObjectArray *)a1
@@ -1209,26 +1188,26 @@
 
 /*!
  @brief Returns a hash code based on the "deep contents" of the specified
- array.
- If the array contains other arrays as elements, the
- hash code is based on their contents and so on, ad infinitum.
+  array.If the array contains other arrays as elements, the
+  hash code is based on their contents and so on, ad infinitum.
  It is therefore unacceptable to invoke this method on an array that
- contains itself as an element, either directly or indirectly through
- one or more levels of arrays.  The behavior of such an invocation is
- undefined.
- <p>For any two arrays <tt>a</tt> and <tt>b</tt> such that
- <tt>Arrays.deepEquals(a, b)</tt>, it is also the case that
+  contains itself as an element, either directly or indirectly through
+  one or more levels of arrays.  The behavior of such an invocation is
+  undefined. 
+ <p>For any two arrays <tt>a</tt> and <tt>b</tt> such that 
+ <tt>Arrays.deepEquals(a, b)</tt>, it is also the case that 
  <tt>Arrays.deepHashCode(a) == Arrays.deepHashCode(b)</tt>.
+  
  <p>The computation of the value returned by this method is similar to
- that of the value returned by <code>List.hashCode()</code> on a list
- containing the same elements as <tt>a</tt> in the same order, with one
- difference: If an element <tt>e</tt> of <tt>a</tt> is itself an array,
- its hash code is computed not by calling <tt>e.hashCode()</tt>, but as
- by calling the appropriate overloading of <tt>Arrays.hashCode(e)</tt>
- if <tt>e</tt> is an array of a primitive type, or as by calling
+  that of the value returned by <code>List.hashCode()</code> on a list
+  containing the same elements as <tt>a</tt> in the same order, with one
+  difference: If an element <tt>e</tt> of <tt>a</tt> is itself an array,
+  its hash code is computed not by calling <tt>e.hashCode()</tt>, but as
+  by calling the appropriate overloading of <tt>Arrays.hashCode(e)</tt>
+  if <tt>e</tt> is an array of a primitive type, or as by calling 
  <tt>Arrays.deepHashCode(e)</tt> recursively if <tt>e</tt> is an array
- of a reference type.  If <tt>a</tt> is <tt>null</tt>, this method
- returns 0.
+  of a reference type.  If <tt>a</tt> is <tt>null</tt>, this method
+  returns 0.
  @param a the array whose deep-content-based hash code to compute
  @return a deep-content-based hash code for <tt>a</tt>
  - seealso: #hashCode(Object[])
@@ -1238,28 +1217,29 @@
 
 /*!
  @brief Returns a string representation of the "deep contents" of the specified
- array.
- If the array contains other arrays as elements, the string
- representation contains their contents and so on.  This method is
- designed for converting multidimensional arrays to strings.
+  array.If the array contains other arrays as elements, the string
+  representation contains their contents and so on.
+ This method is
+  designed for converting multidimensional arrays to strings. 
  <p>The string representation consists of a list of the array's
- elements, enclosed in square brackets (<tt>"[]"</tt>).  Adjacent
- elements are separated by the characters <tt>", "</tt> (a comma
- followed by a space).  Elements are converted to strings as by
+  elements, enclosed in square brackets (<tt>"[]"</tt>).  Adjacent
+  elements are separated by the characters <tt>", "</tt> (a comma
+  followed by a space).  Elements are converted to strings as by 
  <tt>String.valueOf(Object)</tt>, unless they are themselves
- arrays.
+  arrays. 
  <p>If an element <tt>e</tt> is an array of a primitive type, it is
- converted to a string as by invoking the appropriate overloading of
+  converted to a string as by invoking the appropriate overloading of 
  <tt>Arrays.toString(e)</tt>.  If an element <tt>e</tt> is an array of a
- reference type, it is converted to a string as by invoking
- this method recursively.
+  reference type, it is converted to a string as by invoking
+  this method recursively. 
  <p>To avoid infinite recursion, if the specified array contains itself
- as an element, or contains an indirect reference to itself through one
- or more levels of arrays, the self-reference is converted to the string
+  as an element, or contains an indirect reference to itself through one
+  or more levels of arrays, the self-reference is converted to the string 
  <tt>"[...]"</tt>.  For example, an array containing only a reference
- to itself would be rendered as <tt>"[[...]]"</tt>.
+  to itself would be rendered as <tt>"[[...]]"</tt>.
+  
  <p>This method returns <tt>"null"</tt> if the specified array
- is <tt>null</tt>.
+  is <tt>null</tt>.
  @param a the array whose string representation to return
  @return a string representation of <tt>a</tt>
  - seealso: #toString(Object[])
@@ -1268,13 +1248,13 @@
 + (NSString *)deepToStringWithNSObjectArray:(IOSObjectArray *)a;
 
 /*!
- @brief Returns <tt>true</tt> if the two specified arrays of booleans are
- <i>equal</i> to one another.
- Two arrays are considered equal if both
- arrays contain the same number of elements, and all corresponding pairs
- of elements in the two arrays are equal.  In other words, two arrays
- are equal if they contain the same elements in the same order.  Also,
- two array references are considered equal if both are <tt>null</tt>.<p>
+ @brief Returns <tt>true</tt> if the two specified arrays of booleans are 
+ <i>equal</i> to one another.Two arrays are considered equal if both
+  arrays contain the same number of elements, and all corresponding pairs
+  of elements in the two arrays are equal.
+ In other words, two arrays
+  are equal if they contain the same elements in the same order.  Also,
+  two array references are considered equal if both are <tt>null</tt>.<p>
  @param a one array to be tested for equality
  @param a2 the other array to be tested for equality
  @return <tt>true</tt> if the two arrays are equal
@@ -1283,13 +1263,13 @@
                   withBooleanArray:(IOSBooleanArray *)a2;
 
 /*!
- @brief Returns <tt>true</tt> if the two specified arrays of bytes are
- <i>equal</i> to one another.
- Two arrays are considered equal if both
- arrays contain the same number of elements, and all corresponding pairs
- of elements in the two arrays are equal.  In other words, two arrays
- are equal if they contain the same elements in the same order.  Also,
- two array references are considered equal if both are <tt>null</tt>.<p>
+ @brief Returns <tt>true</tt> if the two specified arrays of bytes are 
+ <i>equal</i> to one another.Two arrays are considered equal if both
+  arrays contain the same number of elements, and all corresponding pairs
+  of elements in the two arrays are equal.
+ In other words, two arrays
+  are equal if they contain the same elements in the same order.  Also,
+  two array references are considered equal if both are <tt>null</tt>.<p>
  @param a one array to be tested for equality
  @param a2 the other array to be tested for equality
  @return <tt>true</tt> if the two arrays are equal
@@ -1298,13 +1278,13 @@
                   withByteArray:(IOSByteArray *)a2;
 
 /*!
- @brief Returns <tt>true</tt> if the two specified arrays of chars are
- <i>equal</i> to one another.
- Two arrays are considered equal if both
- arrays contain the same number of elements, and all corresponding pairs
- of elements in the two arrays are equal.  In other words, two arrays
- are equal if they contain the same elements in the same order.  Also,
- two array references are considered equal if both are <tt>null</tt>.<p>
+ @brief Returns <tt>true</tt> if the two specified arrays of chars are 
+ <i>equal</i> to one another.Two arrays are considered equal if both
+  arrays contain the same number of elements, and all corresponding pairs
+  of elements in the two arrays are equal.
+ In other words, two arrays
+  are equal if they contain the same elements in the same order.  Also,
+  two array references are considered equal if both are <tt>null</tt>.<p>
  @param a one array to be tested for equality
  @param a2 the other array to be tested for equality
  @return <tt>true</tt> if the two arrays are equal
@@ -1313,18 +1293,18 @@
                   withCharArray:(IOSCharArray *)a2;
 
 /*!
- @brief Returns <tt>true</tt> if the two specified arrays of doubles are
- <i>equal</i> to one another.
- Two arrays are considered equal if both
- arrays contain the same number of elements, and all corresponding pairs
- of elements in the two arrays are equal.  In other words, two arrays
- are equal if they contain the same elements in the same order.  Also,
- two array references are considered equal if both are <tt>null</tt>.<p>
- Two doubles <tt>d1</tt> and <tt>d2</tt> are considered equal if:
+ @brief Returns <tt>true</tt> if the two specified arrays of doubles are 
+ <i>equal</i> to one another.Two arrays are considered equal if both
+  arrays contain the same number of elements, and all corresponding pairs
+  of elements in the two arrays are equal.
+ In other words, two arrays
+  are equal if they contain the same elements in the same order.  Also,
+  two array references are considered equal if both are <tt>null</tt>.<p>
+  Two doubles <tt>d1</tt> and <tt>d2</tt> are considered equal if: 
  @code
     <tt>new Double(d1).equals(new Double(d2))</tt>
 @endcode
- (Unlike the <tt>==</tt> operator, this method considers
+  (Unlike the <tt>==</tt> operator, this method considers 
  <tt>NaN</tt> equals to itself, and 0.0d unequal to -0.0d.)
  @param a one array to be tested for equality
  @param a2 the other array to be tested for equality
@@ -1335,18 +1315,18 @@
                   withDoubleArray:(IOSDoubleArray *)a2;
 
 /*!
- @brief Returns <tt>true</tt> if the two specified arrays of floats are
- <i>equal</i> to one another.
- Two arrays are considered equal if both
- arrays contain the same number of elements, and all corresponding pairs
- of elements in the two arrays are equal.  In other words, two arrays
- are equal if they contain the same elements in the same order.  Also,
- two array references are considered equal if both are <tt>null</tt>.<p>
- Two floats <tt>f1</tt> and <tt>f2</tt> are considered equal if:
+ @brief Returns <tt>true</tt> if the two specified arrays of floats are 
+ <i>equal</i> to one another.Two arrays are considered equal if both
+  arrays contain the same number of elements, and all corresponding pairs
+  of elements in the two arrays are equal.
+ In other words, two arrays
+  are equal if they contain the same elements in the same order.  Also,
+  two array references are considered equal if both are <tt>null</tt>.<p>
+  Two floats <tt>f1</tt> and <tt>f2</tt> are considered equal if: 
  @code
     <tt>new Float(f1).equals(new Float(f2))</tt>
 @endcode
- (Unlike the <tt>==</tt> operator, this method considers
+  (Unlike the <tt>==</tt> operator, this method considers 
  <tt>NaN</tt> equals to itself, and 0.0f unequal to -0.0f.)
  @param a one array to be tested for equality
  @param a2 the other array to be tested for equality
@@ -1357,13 +1337,13 @@
                   withFloatArray:(IOSFloatArray *)a2;
 
 /*!
- @brief Returns <tt>true</tt> if the two specified arrays of ints are
- <i>equal</i> to one another.
- Two arrays are considered equal if both
- arrays contain the same number of elements, and all corresponding pairs
- of elements in the two arrays are equal.  In other words, two arrays
- are equal if they contain the same elements in the same order.  Also,
- two array references are considered equal if both are <tt>null</tt>.<p>
+ @brief Returns <tt>true</tt> if the two specified arrays of ints are 
+ <i>equal</i> to one another.Two arrays are considered equal if both
+  arrays contain the same number of elements, and all corresponding pairs
+  of elements in the two arrays are equal.
+ In other words, two arrays
+  are equal if they contain the same elements in the same order.  Also,
+  two array references are considered equal if both are <tt>null</tt>.<p>
  @param a one array to be tested for equality
  @param a2 the other array to be tested for equality
  @return <tt>true</tt> if the two arrays are equal
@@ -1372,13 +1352,13 @@
                   withIntArray:(IOSIntArray *)a2;
 
 /*!
- @brief Returns <tt>true</tt> if the two specified arrays of longs are
- <i>equal</i> to one another.
- Two arrays are considered equal if both
- arrays contain the same number of elements, and all corresponding pairs
- of elements in the two arrays are equal.  In other words, two arrays
- are equal if they contain the same elements in the same order.  Also,
- two array references are considered equal if both are <tt>null</tt>.<p>
+ @brief Returns <tt>true</tt> if the two specified arrays of longs are 
+ <i>equal</i> to one another.Two arrays are considered equal if both
+  arrays contain the same number of elements, and all corresponding pairs
+  of elements in the two arrays are equal.
+ In other words, two arrays
+  are equal if they contain the same elements in the same order.  Also,
+  two array references are considered equal if both are <tt>null</tt>.<p>
  @param a one array to be tested for equality
  @param a2 the other array to be tested for equality
  @return <tt>true</tt> if the two arrays are equal
@@ -1387,15 +1367,15 @@
                   withLongArray:(IOSLongArray *)a2;
 
 /*!
- @brief Returns <tt>true</tt> if the two specified arrays of Objects are
- <i>equal</i> to one another.
- The two arrays are considered equal if
- both arrays contain the same number of elements, and all corresponding
- pairs of elements in the two arrays are equal.  Two objects <tt>e1</tt>
- and <tt>e2</tt> are considered <i>equal</i> if <tt>(e1==null ? e2==null
- : e1.equals(e2))</tt>.  In other words, the two arrays are equal if
- they contain the same elements in the same order.  Also, two array
- references are considered equal if both are <tt>null</tt>.<p>
+ @brief Returns <tt>true</tt> if the two specified arrays of Objects are 
+ <i>equal</i> to one another.The two arrays are considered equal if
+  both arrays contain the same number of elements, and all corresponding
+  pairs of elements in the two arrays are equal.
+ Two objects <tt>e1</tt>
+  and <tt>e2</tt> are considered <i>equal</i> if <tt>(e1==null ? e2==null
+  : e1.equals(e2))</tt>.  In other words, the two arrays are equal if
+  they contain the same elements in the same order.  Also, two array
+  references are considered equal if both are <tt>null</tt>.<p>
  @param a one array to be tested for equality
  @param a2 the other array to be tested for equality
  @return <tt>true</tt> if the two arrays are equal
@@ -1404,13 +1384,13 @@
                   withNSObjectArray:(IOSObjectArray *)a2;
 
 /*!
- @brief Returns <tt>true</tt> if the two specified arrays of shorts are
- <i>equal</i> to one another.
- Two arrays are considered equal if both
- arrays contain the same number of elements, and all corresponding pairs
- of elements in the two arrays are equal.  In other words, two arrays
- are equal if they contain the same elements in the same order.  Also,
- two array references are considered equal if both are <tt>null</tt>.<p>
+ @brief Returns <tt>true</tt> if the two specified arrays of shorts are 
+ <i>equal</i> to one another.Two arrays are considered equal if both
+  arrays contain the same number of elements, and all corresponding pairs
+  of elements in the two arrays are equal.
+ In other words, two arrays
+  are equal if they contain the same elements in the same order.  Also,
+  two array references are considered equal if both are <tt>null</tt>.<p>
  @param a one array to be tested for equality
  @param a2 the other array to be tested for equality
  @return <tt>true</tt> if the two arrays are equal
@@ -1420,7 +1400,7 @@
 
 /*!
  @brief Assigns the specified boolean value to each element of the specified
- array of booleans.
+  array of booleans.
  @param a the array to be filled
  @param val the value to be stored in all elements of the array
  */
@@ -1429,20 +1409,18 @@
 
 /*!
  @brief Assigns the specified boolean value to each element of the specified
- range of the specified array of booleans.
- The range to be filled
- extends from index <tt>fromIndex</tt>, inclusive, to index
- <tt>toIndex</tt>, exclusive.  (If <tt>fromIndex==toIndex</tt>, the
- range to be filled is empty.)
+  range of the specified array of booleans.The range to be filled
+  extends from index <tt>fromIndex</tt>, inclusive, to index 
+ <tt>toIndex</tt>, exclusive.
+ (If <tt>fromIndex==toIndex</tt>, the
+  range to be filled is empty.)
  @param a the array to be filled
- @param fromIndex the index of the first element (inclusive) to be
- filled with the specified value
- @param toIndex the index of the last element (exclusive) to be
- filled with the specified value
+ @param fromIndex the index of the first element (inclusive) to be         filled with the specified value
+ @param toIndex the index of the last element (exclusive) to be         filled with the specified value
  @param val the value to be stored in all elements of the array
- @throws IllegalArgumentException if <tt>fromIndex &gt; toIndex</tt>
- @throws ArrayIndexOutOfBoundsException if <tt>fromIndex &lt; 0</tt> or
- <tt>toIndex &gt; a.length</tt>
+ @throw IllegalArgumentExceptionif <tt>fromIndex &gt; toIndex</tt>
+ @throw ArrayIndexOutOfBoundsExceptionif <tt>fromIndex &lt; 0</tt> or
+          <tt>toIndex &gt; a.length</tt>
  */
 + (void)fillWithBooleanArray:(IOSBooleanArray *)a
                      withInt:(jint)fromIndex
@@ -1451,7 +1429,7 @@
 
 /*!
  @brief Assigns the specified byte value to each element of the specified array
- of bytes.
+  of bytes.
  @param a the array to be filled
  @param val the value to be stored in all elements of the array
  */
@@ -1460,20 +1438,18 @@
 
 /*!
  @brief Assigns the specified byte value to each element of the specified
- range of the specified array of bytes.
- The range to be filled
- extends from index <tt>fromIndex</tt>, inclusive, to index
- <tt>toIndex</tt>, exclusive.  (If <tt>fromIndex==toIndex</tt>, the
- range to be filled is empty.)
+  range of the specified array of bytes.The range to be filled
+  extends from index <tt>fromIndex</tt>, inclusive, to index 
+ <tt>toIndex</tt>, exclusive.
+ (If <tt>fromIndex==toIndex</tt>, the
+  range to be filled is empty.)
  @param a the array to be filled
- @param fromIndex the index of the first element (inclusive) to be
- filled with the specified value
- @param toIndex the index of the last element (exclusive) to be
- filled with the specified value
+ @param fromIndex the index of the first element (inclusive) to be         filled with the specified value
+ @param toIndex the index of the last element (exclusive) to be         filled with the specified value
  @param val the value to be stored in all elements of the array
- @throws IllegalArgumentException if <tt>fromIndex &gt; toIndex</tt>
- @throws ArrayIndexOutOfBoundsException if <tt>fromIndex &lt; 0</tt> or
- <tt>toIndex &gt; a.length</tt>
+ @throw IllegalArgumentExceptionif <tt>fromIndex &gt; toIndex</tt>
+ @throw ArrayIndexOutOfBoundsExceptionif <tt>fromIndex &lt; 0</tt> or
+          <tt>toIndex &gt; a.length</tt>
  */
 + (void)fillWithByteArray:(IOSByteArray *)a
                   withInt:(jint)fromIndex
@@ -1482,7 +1458,7 @@
 
 /*!
  @brief Assigns the specified char value to each element of the specified array
- of chars.
+  of chars.
  @param a the array to be filled
  @param val the value to be stored in all elements of the array
  */
@@ -1491,20 +1467,18 @@
 
 /*!
  @brief Assigns the specified char value to each element of the specified
- range of the specified array of chars.
- The range to be filled
- extends from index <tt>fromIndex</tt>, inclusive, to index
- <tt>toIndex</tt>, exclusive.  (If <tt>fromIndex==toIndex</tt>, the
- range to be filled is empty.)
+  range of the specified array of chars.The range to be filled
+  extends from index <tt>fromIndex</tt>, inclusive, to index 
+ <tt>toIndex</tt>, exclusive.
+ (If <tt>fromIndex==toIndex</tt>, the
+  range to be filled is empty.)
  @param a the array to be filled
- @param fromIndex the index of the first element (inclusive) to be
- filled with the specified value
- @param toIndex the index of the last element (exclusive) to be
- filled with the specified value
+ @param fromIndex the index of the first element (inclusive) to be         filled with the specified value
+ @param toIndex the index of the last element (exclusive) to be         filled with the specified value
  @param val the value to be stored in all elements of the array
- @throws IllegalArgumentException if <tt>fromIndex &gt; toIndex</tt>
- @throws ArrayIndexOutOfBoundsException if <tt>fromIndex &lt; 0</tt> or
- <tt>toIndex &gt; a.length</tt>
+ @throw IllegalArgumentExceptionif <tt>fromIndex &gt; toIndex</tt>
+ @throw ArrayIndexOutOfBoundsExceptionif <tt>fromIndex &lt; 0</tt> or
+          <tt>toIndex &gt; a.length</tt>
  */
 + (void)fillWithCharArray:(IOSCharArray *)a
                   withInt:(jint)fromIndex
@@ -1513,7 +1487,7 @@
 
 /*!
  @brief Assigns the specified double value to each element of the specified
- array of doubles.
+  array of doubles.
  @param a the array to be filled
  @param val the value to be stored in all elements of the array
  */
@@ -1522,20 +1496,18 @@
 
 /*!
  @brief Assigns the specified double value to each element of the specified
- range of the specified array of doubles.
- The range to be filled
- extends from index <tt>fromIndex</tt>, inclusive, to index
- <tt>toIndex</tt>, exclusive.  (If <tt>fromIndex==toIndex</tt>, the
- range to be filled is empty.)
+  range of the specified array of doubles.The range to be filled
+  extends from index <tt>fromIndex</tt>, inclusive, to index 
+ <tt>toIndex</tt>, exclusive.
+ (If <tt>fromIndex==toIndex</tt>, the
+  range to be filled is empty.)
  @param a the array to be filled
- @param fromIndex the index of the first element (inclusive) to be
- filled with the specified value
- @param toIndex the index of the last element (exclusive) to be
- filled with the specified value
+ @param fromIndex the index of the first element (inclusive) to be         filled with the specified value
+ @param toIndex the index of the last element (exclusive) to be         filled with the specified value
  @param val the value to be stored in all elements of the array
- @throws IllegalArgumentException if <tt>fromIndex &gt; toIndex</tt>
- @throws ArrayIndexOutOfBoundsException if <tt>fromIndex &lt; 0</tt> or
- <tt>toIndex &gt; a.length</tt>
+ @throw IllegalArgumentExceptionif <tt>fromIndex &gt; toIndex</tt>
+ @throw ArrayIndexOutOfBoundsExceptionif <tt>fromIndex &lt; 0</tt> or
+          <tt>toIndex &gt; a.length</tt>
  */
 + (void)fillWithDoubleArray:(IOSDoubleArray *)a
                     withInt:(jint)fromIndex
@@ -1544,7 +1516,7 @@
 
 /*!
  @brief Assigns the specified float value to each element of the specified array
- of floats.
+  of floats.
  @param a the array to be filled
  @param val the value to be stored in all elements of the array
  */
@@ -1553,20 +1525,18 @@
 
 /*!
  @brief Assigns the specified float value to each element of the specified
- range of the specified array of floats.
- The range to be filled
- extends from index <tt>fromIndex</tt>, inclusive, to index
- <tt>toIndex</tt>, exclusive.  (If <tt>fromIndex==toIndex</tt>, the
- range to be filled is empty.)
+  range of the specified array of floats.The range to be filled
+  extends from index <tt>fromIndex</tt>, inclusive, to index 
+ <tt>toIndex</tt>, exclusive.
+ (If <tt>fromIndex==toIndex</tt>, the
+  range to be filled is empty.)
  @param a the array to be filled
- @param fromIndex the index of the first element (inclusive) to be
- filled with the specified value
- @param toIndex the index of the last element (exclusive) to be
- filled with the specified value
+ @param fromIndex the index of the first element (inclusive) to be         filled with the specified value
+ @param toIndex the index of the last element (exclusive) to be         filled with the specified value
  @param val the value to be stored in all elements of the array
- @throws IllegalArgumentException if <tt>fromIndex &gt; toIndex</tt>
- @throws ArrayIndexOutOfBoundsException if <tt>fromIndex &lt; 0</tt> or
- <tt>toIndex &gt; a.length</tt>
+ @throw IllegalArgumentExceptionif <tt>fromIndex &gt; toIndex</tt>
+ @throw ArrayIndexOutOfBoundsExceptionif <tt>fromIndex &lt; 0</tt> or
+          <tt>toIndex &gt; a.length</tt>
  */
 + (void)fillWithFloatArray:(IOSFloatArray *)a
                    withInt:(jint)fromIndex
@@ -1575,7 +1545,7 @@
 
 /*!
  @brief Assigns the specified int value to each element of the specified array
- of ints.
+  of ints.
  @param a the array to be filled
  @param val the value to be stored in all elements of the array
  */
@@ -1584,20 +1554,18 @@
 
 /*!
  @brief Assigns the specified int value to each element of the specified
- range of the specified array of ints.
- The range to be filled
- extends from index <tt>fromIndex</tt>, inclusive, to index
- <tt>toIndex</tt>, exclusive.  (If <tt>fromIndex==toIndex</tt>, the
- range to be filled is empty.)
+  range of the specified array of ints.The range to be filled
+  extends from index <tt>fromIndex</tt>, inclusive, to index 
+ <tt>toIndex</tt>, exclusive.
+ (If <tt>fromIndex==toIndex</tt>, the
+  range to be filled is empty.)
  @param a the array to be filled
- @param fromIndex the index of the first element (inclusive) to be
- filled with the specified value
- @param toIndex the index of the last element (exclusive) to be
- filled with the specified value
+ @param fromIndex the index of the first element (inclusive) to be         filled with the specified value
+ @param toIndex the index of the last element (exclusive) to be         filled with the specified value
  @param val the value to be stored in all elements of the array
- @throws IllegalArgumentException if <tt>fromIndex &gt; toIndex</tt>
- @throws ArrayIndexOutOfBoundsException if <tt>fromIndex &lt; 0</tt> or
- <tt>toIndex &gt; a.length</tt>
+ @throw IllegalArgumentExceptionif <tt>fromIndex &gt; toIndex</tt>
+ @throw ArrayIndexOutOfBoundsExceptionif <tt>fromIndex &lt; 0</tt> or
+          <tt>toIndex &gt; a.length</tt>
  */
 + (void)fillWithIntArray:(IOSIntArray *)a
                  withInt:(jint)fromIndex
@@ -1606,20 +1574,18 @@
 
 /*!
  @brief Assigns the specified long value to each element of the specified
- range of the specified array of longs.
- The range to be filled
- extends from index <tt>fromIndex</tt>, inclusive, to index
- <tt>toIndex</tt>, exclusive.  (If <tt>fromIndex==toIndex</tt>, the
- range to be filled is empty.)
+  range of the specified array of longs.The range to be filled
+  extends from index <tt>fromIndex</tt>, inclusive, to index 
+ <tt>toIndex</tt>, exclusive.
+ (If <tt>fromIndex==toIndex</tt>, the
+  range to be filled is empty.)
  @param a the array to be filled
- @param fromIndex the index of the first element (inclusive) to be
- filled with the specified value
- @param toIndex the index of the last element (exclusive) to be
- filled with the specified value
+ @param fromIndex the index of the first element (inclusive) to be         filled with the specified value
+ @param toIndex the index of the last element (exclusive) to be         filled with the specified value
  @param val the value to be stored in all elements of the array
- @throws IllegalArgumentException if <tt>fromIndex &gt; toIndex</tt>
- @throws ArrayIndexOutOfBoundsException if <tt>fromIndex &lt; 0</tt> or
- <tt>toIndex &gt; a.length</tt>
+ @throw IllegalArgumentExceptionif <tt>fromIndex &gt; toIndex</tt>
+ @throw ArrayIndexOutOfBoundsExceptionif <tt>fromIndex &lt; 0</tt> or
+          <tt>toIndex &gt; a.length</tt>
  */
 + (void)fillWithLongArray:(IOSLongArray *)a
                   withInt:(jint)fromIndex
@@ -1628,7 +1594,7 @@
 
 /*!
  @brief Assigns the specified long value to each element of the specified array
- of longs.
+  of longs.
  @param a the array to be filled
  @param val the value to be stored in all elements of the array
  */
@@ -1637,22 +1603,20 @@
 
 /*!
  @brief Assigns the specified Object reference to each element of the specified
- range of the specified array of Objects.
- The range to be filled
- extends from index <tt>fromIndex</tt>, inclusive, to index
- <tt>toIndex</tt>, exclusive.  (If <tt>fromIndex==toIndex</tt>, the
- range to be filled is empty.)
+  range of the specified array of Objects.The range to be filled
+  extends from index <tt>fromIndex</tt>, inclusive, to index 
+ <tt>toIndex</tt>, exclusive.
+ (If <tt>fromIndex==toIndex</tt>, the
+  range to be filled is empty.)
  @param a the array to be filled
- @param fromIndex the index of the first element (inclusive) to be
- filled with the specified value
- @param toIndex the index of the last element (exclusive) to be
- filled with the specified value
+ @param fromIndex the index of the first element (inclusive) to be         filled with the specified value
+ @param toIndex the index of the last element (exclusive) to be         filled with the specified value
  @param val the value to be stored in all elements of the array
- @throws IllegalArgumentException if <tt>fromIndex &gt; toIndex</tt>
- @throws ArrayIndexOutOfBoundsException if <tt>fromIndex &lt; 0</tt> or
- <tt>toIndex &gt; a.length</tt>
- @throws ArrayStoreException if the specified value is not of a
- runtime type that can be stored in the specified array
+ @throw IllegalArgumentExceptionif <tt>fromIndex &gt; toIndex</tt>
+ @throw ArrayIndexOutOfBoundsExceptionif <tt>fromIndex &lt; 0</tt> or
+          <tt>toIndex &gt; a.length</tt>
+ @throw ArrayStoreExceptionif the specified value is not of a
+          runtime type that can be stored in the specified array
  */
 + (void)fillWithNSObjectArray:(IOSObjectArray *)a
                       withInt:(jint)fromIndex
@@ -1661,31 +1625,29 @@
 
 /*!
  @brief Assigns the specified Object reference to each element of the specified
- array of Objects.
+  array of Objects.
  @param a the array to be filled
  @param val the value to be stored in all elements of the array
- @throws ArrayStoreException if the specified value is not of a
- runtime type that can be stored in the specified array
+ @throw ArrayStoreExceptionif the specified value is not of a
+          runtime type that can be stored in the specified array
  */
 + (void)fillWithNSObjectArray:(IOSObjectArray *)a
                        withId:(id)val;
 
 /*!
  @brief Assigns the specified short value to each element of the specified
- range of the specified array of shorts.
- The range to be filled
- extends from index <tt>fromIndex</tt>, inclusive, to index
- <tt>toIndex</tt>, exclusive.  (If <tt>fromIndex==toIndex</tt>, the
- range to be filled is empty.)
+  range of the specified array of shorts.The range to be filled
+  extends from index <tt>fromIndex</tt>, inclusive, to index 
+ <tt>toIndex</tt>, exclusive.
+ (If <tt>fromIndex==toIndex</tt>, the
+  range to be filled is empty.)
  @param a the array to be filled
- @param fromIndex the index of the first element (inclusive) to be
- filled with the specified value
- @param toIndex the index of the last element (exclusive) to be
- filled with the specified value
+ @param fromIndex the index of the first element (inclusive) to be         filled with the specified value
+ @param toIndex the index of the last element (exclusive) to be         filled with the specified value
  @param val the value to be stored in all elements of the array
- @throws IllegalArgumentException if <tt>fromIndex &gt; toIndex</tt>
- @throws ArrayIndexOutOfBoundsException if <tt>fromIndex &lt; 0</tt> or
- <tt>toIndex &gt; a.length</tt>
+ @throw IllegalArgumentExceptionif <tt>fromIndex &gt; toIndex</tt>
+ @throw ArrayIndexOutOfBoundsExceptionif <tt>fromIndex &lt; 0</tt> or
+          <tt>toIndex &gt; a.length</tt>
  */
 + (void)fillWithShortArray:(IOSShortArray *)a
                    withInt:(jint)fromIndex
@@ -1694,7 +1656,7 @@
 
 /*!
  @brief Assigns the specified short value to each element of the specified array
- of shorts.
+  of shorts.
  @param a the array to be filled
  @param val the value to be stored in all elements of the array
  */
@@ -1704,13 +1666,14 @@
 /*!
  @brief Returns a hash code based on the contents of the specified array.
  For any two <tt>boolean</tt> arrays <tt>a</tt> and <tt>b</tt>
- such that <tt>Arrays.equals(a, b)</tt>, it is also the case that
+  such that <tt>Arrays.equals(a, b)</tt>, it is also the case that 
  <tt>Arrays.hashCode(a) == Arrays.hashCode(b)</tt>.
+  
  <p>The value returned by this method is the same value that would be
- obtained by invoking the <code><tt>hashCode</tt></code>
- method on a <code>List</code> containing a sequence of <code>Boolean</code>
- instances representing the elements of <tt>a</tt> in the same order.
- If <tt>a</tt> is <tt>null</tt>, this method returns 0.
+  obtained by invoking the <code><tt>hashCode</tt></code>
+  method on a <code>List</code> containing a sequence of <code>Boolean</code>
+  instances representing the elements of <tt>a</tt> in the same order.
+  If <tt>a</tt> is <tt>null</tt>, this method returns 0.
  @param a the array whose hash value to compute
  @return a content-based hash code for <tt>a</tt>
  @since 1.5
@@ -1720,13 +1683,14 @@
 /*!
  @brief Returns a hash code based on the contents of the specified array.
  For any two <tt>byte</tt> arrays <tt>a</tt> and <tt>b</tt>
- such that <tt>Arrays.equals(a, b)</tt>, it is also the case that
+  such that <tt>Arrays.equals(a, b)</tt>, it is also the case that 
  <tt>Arrays.hashCode(a) == Arrays.hashCode(b)</tt>.
+  
  <p>The value returned by this method is the same value that would be
- obtained by invoking the <code><tt>hashCode</tt></code>
- method on a <code>List</code> containing a sequence of <code>Byte</code>
- instances representing the elements of <tt>a</tt> in the same order.
- If <tt>a</tt> is <tt>null</tt>, this method returns 0.
+  obtained by invoking the <code><tt>hashCode</tt></code>
+  method on a <code>List</code> containing a sequence of <code>Byte</code>
+  instances representing the elements of <tt>a</tt> in the same order.
+  If <tt>a</tt> is <tt>null</tt>, this method returns 0.
  @param a the array whose hash value to compute
  @return a content-based hash code for <tt>a</tt>
  @since 1.5
@@ -1736,13 +1700,14 @@
 /*!
  @brief Returns a hash code based on the contents of the specified array.
  For any two <tt>char</tt> arrays <tt>a</tt> and <tt>b</tt>
- such that <tt>Arrays.equals(a, b)</tt>, it is also the case that
+  such that <tt>Arrays.equals(a, b)</tt>, it is also the case that 
  <tt>Arrays.hashCode(a) == Arrays.hashCode(b)</tt>.
+  
  <p>The value returned by this method is the same value that would be
- obtained by invoking the <code><tt>hashCode</tt></code>
- method on a <code>List</code> containing a sequence of <code>Character</code>
- instances representing the elements of <tt>a</tt> in the same order.
- If <tt>a</tt> is <tt>null</tt>, this method returns 0.
+  obtained by invoking the <code><tt>hashCode</tt></code>
+  method on a <code>List</code> containing a sequence of <code>Character</code>
+  instances representing the elements of <tt>a</tt> in the same order.
+  If <tt>a</tt> is <tt>null</tt>, this method returns 0.
  @param a the array whose hash value to compute
  @return a content-based hash code for <tt>a</tt>
  @since 1.5
@@ -1752,13 +1717,14 @@
 /*!
  @brief Returns a hash code based on the contents of the specified array.
  For any two <tt>double</tt> arrays <tt>a</tt> and <tt>b</tt>
- such that <tt>Arrays.equals(a, b)</tt>, it is also the case that
+  such that <tt>Arrays.equals(a, b)</tt>, it is also the case that 
  <tt>Arrays.hashCode(a) == Arrays.hashCode(b)</tt>.
+  
  <p>The value returned by this method is the same value that would be
- obtained by invoking the <code><tt>hashCode</tt></code>
- method on a <code>List</code> containing a sequence of <code>Double</code>
- instances representing the elements of <tt>a</tt> in the same order.
- If <tt>a</tt> is <tt>null</tt>, this method returns 0.
+  obtained by invoking the <code><tt>hashCode</tt></code>
+  method on a <code>List</code> containing a sequence of <code>Double</code>
+  instances representing the elements of <tt>a</tt> in the same order.
+  If <tt>a</tt> is <tt>null</tt>, this method returns 0.
  @param a the array whose hash value to compute
  @return a content-based hash code for <tt>a</tt>
  @since 1.5
@@ -1768,13 +1734,14 @@
 /*!
  @brief Returns a hash code based on the contents of the specified array.
  For any two <tt>float</tt> arrays <tt>a</tt> and <tt>b</tt>
- such that <tt>Arrays.equals(a, b)</tt>, it is also the case that
+  such that <tt>Arrays.equals(a, b)</tt>, it is also the case that 
  <tt>Arrays.hashCode(a) == Arrays.hashCode(b)</tt>.
+  
  <p>The value returned by this method is the same value that would be
- obtained by invoking the <code><tt>hashCode</tt></code>
- method on a <code>List</code> containing a sequence of <code>Float</code>
- instances representing the elements of <tt>a</tt> in the same order.
- If <tt>a</tt> is <tt>null</tt>, this method returns 0.
+  obtained by invoking the <code><tt>hashCode</tt></code>
+  method on a <code>List</code> containing a sequence of <code>Float</code>
+  instances representing the elements of <tt>a</tt> in the same order.
+  If <tt>a</tt> is <tt>null</tt>, this method returns 0.
  @param a the array whose hash value to compute
  @return a content-based hash code for <tt>a</tt>
  @since 1.5
@@ -1784,13 +1751,14 @@
 /*!
  @brief Returns a hash code based on the contents of the specified array.
  For any two non-null <tt>int</tt> arrays <tt>a</tt> and <tt>b</tt>
- such that <tt>Arrays.equals(a, b)</tt>, it is also the case that
+  such that <tt>Arrays.equals(a, b)</tt>, it is also the case that 
  <tt>Arrays.hashCode(a) == Arrays.hashCode(b)</tt>.
+  
  <p>The value returned by this method is the same value that would be
- obtained by invoking the <code><tt>hashCode</tt></code>
- method on a <code>List</code> containing a sequence of <code>Integer</code>
- instances representing the elements of <tt>a</tt> in the same order.
- If <tt>a</tt> is <tt>null</tt>, this method returns 0.
+  obtained by invoking the <code><tt>hashCode</tt></code>
+  method on a <code>List</code> containing a sequence of <code>Integer</code>
+  instances representing the elements of <tt>a</tt> in the same order.
+  If <tt>a</tt> is <tt>null</tt>, this method returns 0.
  @param a the array whose hash value to compute
  @return a content-based hash code for <tt>a</tt>
  @since 1.5
@@ -1800,13 +1768,14 @@
 /*!
  @brief Returns a hash code based on the contents of the specified array.
  For any two <tt>long</tt> arrays <tt>a</tt> and <tt>b</tt>
- such that <tt>Arrays.equals(a, b)</tt>, it is also the case that
+  such that <tt>Arrays.equals(a, b)</tt>, it is also the case that 
  <tt>Arrays.hashCode(a) == Arrays.hashCode(b)</tt>.
+  
  <p>The value returned by this method is the same value that would be
- obtained by invoking the <code><tt>hashCode</tt></code>
- method on a <code>List</code> containing a sequence of <code>Long</code>
- instances representing the elements of <tt>a</tt> in the same order.
- If <tt>a</tt> is <tt>null</tt>, this method returns 0.
+  obtained by invoking the <code><tt>hashCode</tt></code>
+  method on a <code>List</code> containing a sequence of <code>Long</code>
+  instances representing the elements of <tt>a</tt> in the same order.
+  If <tt>a</tt> is <tt>null</tt>, this method returns 0.
  @param a the array whose hash value to compute
  @return a content-based hash code for <tt>a</tt>
  @since 1.5
@@ -1814,19 +1783,20 @@
 + (jint)hashCodeWithLongArray:(IOSLongArray *)a;
 
 /*!
- @brief Returns a hash code based on the contents of the specified array.
- If
- the array contains other arrays as elements, the hash code is based on
- their identities rather than their contents.  It is therefore
- acceptable to invoke this method on an array that contains itself as an
- element,  either directly or indirectly through one or more levels of
- arrays.
- <p>For any two arrays <tt>a</tt> and <tt>b</tt> such that
- <tt>Arrays.equals(a, b)</tt>, it is also the case that
+ @brief Returns a hash code based on the contents of the specified array.If
+  the array contains other arrays as elements, the hash code is based on
+  their identities rather than their contents.
+ It is therefore
+  acceptable to invoke this method on an array that contains itself as an
+  element,  either directly or indirectly through one or more levels of
+  arrays. 
+ <p>For any two arrays <tt>a</tt> and <tt>b</tt> such that 
+ <tt>Arrays.equals(a, b)</tt>, it is also the case that 
  <tt>Arrays.hashCode(a) == Arrays.hashCode(b)</tt>.
+  
  <p>The value returned by this method is equal to the value that would
- be returned by <tt>Arrays.asList(a).hashCode()</tt>, unless <tt>a</tt>
- is <tt>null</tt>, in which case <tt>0</tt> is returned.
+  be returned by <tt>Arrays.asList(a).hashCode()</tt>, unless <tt>a</tt>
+  is <tt>null</tt>, in which case <tt>0</tt> is returned.
  @param a the array whose content-based hash code to compute
  @return a content-based hash code for <tt>a</tt>
  - seealso: #deepHashCode(Object[])
@@ -1837,13 +1807,14 @@
 /*!
  @brief Returns a hash code based on the contents of the specified array.
  For any two <tt>short</tt> arrays <tt>a</tt> and <tt>b</tt>
- such that <tt>Arrays.equals(a, b)</tt>, it is also the case that
+  such that <tt>Arrays.equals(a, b)</tt>, it is also the case that 
  <tt>Arrays.hashCode(a) == Arrays.hashCode(b)</tt>.
+  
  <p>The value returned by this method is the same value that would be
- obtained by invoking the <code><tt>hashCode</tt></code>
- method on a <code>List</code> containing a sequence of <code>Short</code>
- instances representing the elements of <tt>a</tt> in the same order.
- If <tt>a</tt> is <tt>null</tt>, this method returns 0.
+  obtained by invoking the <code><tt>hashCode</tt></code>
+  method on a <code>List</code> containing a sequence of <code>Short</code>
+  instances representing the elements of <tt>a</tt> in the same order.
+  If <tt>a</tt> is <tt>null</tt>, this method returns 0.
  @param a the array whose hash value to compute
  @return a content-based hash code for <tt>a</tt>
  @since 1.5
@@ -1852,35 +1823,33 @@
 
 /*!
  @brief Cumulates, in parallel, each element of the given array in place,
- using the supplied function.
- For example if the array initially
- holds <code>[2.0, 1.0, 0.0, 3.0]</code> and the operation performs addition,
- then upon return the array holds <code>[2.0, 3.0, 3.0, 6.0]</code>.
+  using the supplied function.For example if the array initially
+  holds <code>[2.0, 1.0, 0.0, 3.0]</code> and the operation performs addition,
+  then upon return the array holds <code>[2.0, 3.0, 3.0, 6.0]</code>.
  Parallel prefix computation is usually more efficient than
- sequential loops for large arrays.
+  sequential loops for large arrays. 
  <p> Because floating-point operations may not be strictly associative,
- the returned result may not be identical to the value that would be
- obtained if the operation was performed sequentially.
+  the returned result may not be identical to the value that would be
+  obtained if the operation was performed sequentially.
  @param array the array, which is modified in-place by this method
  @param op a side-effect-free function to perform the cumulation
- @throws NullPointerException if the specified array or function is null
+ @throw NullPointerExceptionif the specified array or function is null
  @since 1.8
  */
 + (void)parallelPrefixWithDoubleArray:(IOSDoubleArray *)array
 withJavaUtilFunctionDoubleBinaryOperator:(id<JavaUtilFunctionDoubleBinaryOperator>)op;
 
 /*!
- @brief Performs <code>parallelPrefix(double[],DoubleBinaryOperator)</code>
- for the given subrange of the array.
+ @brief Performs <code>DoubleBinaryOperator)</code>
+  for the given subrange of the array.
  @param array the array
  @param fromIndex the index of the first element, inclusive
  @param toIndex the index of the last element, exclusive
- @param op a side-effect-free, associative function to perform the
- cumulation
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @param op a side-effect-free, associative function to perform the  cumulation
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > array.length</code>
- @throws NullPointerException if the specified array or function is null
+ @throw NullPointerExceptionif the specified array or function is null
  @since 1.8
  */
 + (void)parallelPrefixWithDoubleArray:(IOSDoubleArray *)array
@@ -1889,17 +1858,16 @@ withJavaUtilFunctionDoubleBinaryOperator:(id<JavaUtilFunctionDoubleBinaryOperato
 withJavaUtilFunctionDoubleBinaryOperator:(id<JavaUtilFunctionDoubleBinaryOperator>)op;
 
 /*!
- @brief Performs <code>parallelPrefix(int[],IntBinaryOperator)</code>
- for the given subrange of the array.
+ @brief Performs <code>IntBinaryOperator)</code>
+  for the given subrange of the array.
  @param array the array
  @param fromIndex the index of the first element, inclusive
  @param toIndex the index of the last element, exclusive
- @param op a side-effect-free, associative function to perform the
- cumulation
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @param op a side-effect-free, associative function to perform the  cumulation
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > array.length</code>
- @throws NullPointerException if the specified array or function is null
+ @throw NullPointerExceptionif the specified array or function is null
  @since 1.8
  */
 + (void)parallelPrefixWithIntArray:(IOSIntArray *)array
@@ -1909,33 +1877,30 @@ withJavaUtilFunctionIntBinaryOperator:(id<JavaUtilFunctionIntBinaryOperator>)op;
 
 /*!
  @brief Cumulates, in parallel, each element of the given array in place,
- using the supplied function.
- For example if the array initially
- holds <code>[2, 1, 0, 3]</code> and the operation performs addition,
- then upon return the array holds <code>[2, 3, 3, 6]</code>.
+  using the supplied function.For example if the array initially
+  holds <code>[2, 1, 0, 3]</code> and the operation performs addition,
+  then upon return the array holds <code>[2, 3, 3, 6]</code>.
  Parallel prefix computation is usually more efficient than
- sequential loops for large arrays.
+  sequential loops for large arrays.
  @param array the array, which is modified in-place by this method
- @param op a side-effect-free, associative function to perform the
- cumulation
- @throws NullPointerException if the specified array or function is null
+ @param op a side-effect-free, associative function to perform the  cumulation
+ @throw NullPointerExceptionif the specified array or function is null
  @since 1.8
  */
 + (void)parallelPrefixWithIntArray:(IOSIntArray *)array
 withJavaUtilFunctionIntBinaryOperator:(id<JavaUtilFunctionIntBinaryOperator>)op;
 
 /*!
- @brief Performs <code>parallelPrefix(long[],LongBinaryOperator)</code>
- for the given subrange of the array.
+ @brief Performs <code>LongBinaryOperator)</code>
+  for the given subrange of the array.
  @param array the array
  @param fromIndex the index of the first element, inclusive
  @param toIndex the index of the last element, exclusive
- @param op a side-effect-free, associative function to perform the
- cumulation
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @param op a side-effect-free, associative function to perform the  cumulation
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > array.length</code>
- @throws NullPointerException if the specified array or function is null
+ @throw NullPointerExceptionif the specified array or function is null
  @since 1.8
  */
 + (void)parallelPrefixWithLongArray:(IOSLongArray *)array
@@ -1945,16 +1910,14 @@ withJavaUtilFunctionLongBinaryOperator:(id<JavaUtilFunctionLongBinaryOperator>)o
 
 /*!
  @brief Cumulates, in parallel, each element of the given array in place,
- using the supplied function.
- For example if the array initially
- holds <code>[2, 1, 0, 3]</code> and the operation performs addition,
- then upon return the array holds <code>[2, 3, 3, 6]</code>.
+  using the supplied function.For example if the array initially
+  holds <code>[2, 1, 0, 3]</code> and the operation performs addition,
+  then upon return the array holds <code>[2, 3, 3, 6]</code>.
  Parallel prefix computation is usually more efficient than
- sequential loops for large arrays.
+  sequential loops for large arrays.
  @param array the array, which is modified in-place by this method
- @param op a side-effect-free, associative function to perform the
- cumulation
- @throws NullPointerException if the specified array or function is null
+ @param op a side-effect-free, associative function to perform the  cumulation
+ @throw NullPointerExceptionif the specified array or function is null
  @since 1.8
  */
 + (void)parallelPrefixWithLongArray:(IOSLongArray *)array
@@ -1962,33 +1925,30 @@ withJavaUtilFunctionLongBinaryOperator:(id<JavaUtilFunctionLongBinaryOperator>)o
 
 /*!
  @brief Cumulates, in parallel, each element of the given array in place,
- using the supplied function.
- For example if the array initially
- holds <code>[2, 1, 0, 3]</code> and the operation performs addition,
- then upon return the array holds <code>[2, 3, 3, 6]</code>.
+  using the supplied function.For example if the array initially
+  holds <code>[2, 1, 0, 3]</code> and the operation performs addition,
+  then upon return the array holds <code>[2, 3, 3, 6]</code>.
  Parallel prefix computation is usually more efficient than
- sequential loops for large arrays.
+  sequential loops for large arrays.
  @param array the array, which is modified in-place by this method
- @param op a side-effect-free, associative function to perform the
- cumulation
- @throws NullPointerException if the specified array or function is null
+ @param op a side-effect-free, associative function to perform the  cumulation
+ @throw NullPointerExceptionif the specified array or function is null
  @since 1.8
  */
 + (void)parallelPrefixWithNSObjectArray:(IOSObjectArray *)array
      withJavaUtilFunctionBinaryOperator:(id<JavaUtilFunctionBinaryOperator>)op;
 
 /*!
- @brief Performs <code>parallelPrefix(Object[],BinaryOperator)</code>
- for the given subrange of the array.
+ @brief Performs <code>BinaryOperator)</code>
+  for the given subrange of the array.
  @param array the array
  @param fromIndex the index of the first element, inclusive
  @param toIndex the index of the last element, exclusive
- @param op a side-effect-free, associative function to perform the
- cumulation
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @param op a side-effect-free, associative function to perform the  cumulation
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > array.length</code>
- @throws NullPointerException if the specified array or function is null
+ @throw NullPointerExceptionif the specified array or function is null
  @since 1.8
  */
 + (void)parallelPrefixWithNSObjectArray:(IOSObjectArray *)array
@@ -1998,14 +1958,13 @@ withJavaUtilFunctionLongBinaryOperator:(id<JavaUtilFunctionLongBinaryOperator>)o
 
 /*!
  @brief Set all elements of the specified array, in parallel, using the
- provided generator function to compute each element.
+  provided generator function to compute each element.
  <p>If the generator function throws an exception, an unchecked exception
- is thrown from <code>parallelSetAll</code> and the array is left in an
- indeterminate state.
+  is thrown from <code>parallelSetAll</code> and the array is left in an
+  indeterminate state.
  @param array array to be initialized
- @param generator a function accepting an index and producing the desired
- value for that position
- @throws NullPointerException if the generator is null
+ @param generator a function accepting an index and producing the desired         value for that position
+ @throw NullPointerExceptionif the generator is null
  @since 1.8
  */
 + (void)parallelSetAllWithDoubleArray:(IOSDoubleArray *)array
@@ -2013,14 +1972,13 @@ withJavaUtilFunctionIntToDoubleFunction:(id<JavaUtilFunctionIntToDoubleFunction>
 
 /*!
  @brief Set all elements of the specified array, in parallel, using the
- provided generator function to compute each element.
+  provided generator function to compute each element.
  <p>If the generator function throws an exception, an unchecked exception
- is thrown from <code>parallelSetAll</code> and the array is left in an
- indeterminate state.
+  is thrown from <code>parallelSetAll</code> and the array is left in an
+  indeterminate state.
  @param array array to be initialized
- @param generator a function accepting an index and producing the desired
- value for that position
- @throws NullPointerException if the generator is null
+ @param generator a function accepting an index and producing the desired  value for that position
+ @throw NullPointerExceptionif the generator is null
  @since 1.8
  */
 + (void)parallelSetAllWithIntArray:(IOSIntArray *)array
@@ -2028,14 +1986,13 @@ withJavaUtilFunctionIntUnaryOperator:(id<JavaUtilFunctionIntUnaryOperator>)gener
 
 /*!
  @brief Set all elements of the specified array, in parallel, using the
- provided generator function to compute each element.
+  provided generator function to compute each element.
  <p>If the generator function throws an exception, an unchecked exception
- is thrown from <code>parallelSetAll</code> and the array is left in an
- indeterminate state.
+  is thrown from <code>parallelSetAll</code> and the array is left in an
+  indeterminate state.
  @param array array to be initialized
- @param generator a function accepting an index and producing the desired
- value for that position
- @throws NullPointerException if the generator is null
+ @param generator a function accepting an index and producing the desired         value for that position
+ @throw NullPointerExceptionif the generator is null
  @since 1.8
  */
 + (void)parallelSetAllWithLongArray:(IOSLongArray *)array
@@ -2043,14 +2000,13 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 
 /*!
  @brief Set all elements of the specified array, in parallel, using the
- provided generator function to compute each element.
+  provided generator function to compute each element.
  <p>If the generator function throws an exception, an unchecked exception
- is thrown from <code>parallelSetAll</code> and the array is left in an
- indeterminate state.
+  is thrown from <code>parallelSetAll</code> and the array is left in an
+  indeterminate state.
  @param array array to be initialized
- @param generator a function accepting an index and producing the desired
- value for that position
- @throws NullPointerException if the generator is null
+ @param generator a function accepting an index and producing the desired         value for that position
+ @throw NullPointerExceptionif the generator is null
  @since 1.8
  */
 + (void)parallelSetAllWithNSObjectArray:(IOSObjectArray *)array
@@ -2058,16 +2014,6 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 
 /*!
  @brief Sorts the specified array into ascending numerical order.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a
- working space no greater than the size of the original array. The
- <code>ForkJoin common pool</code> is used to
- execute any parallel tasks.
  @param a the array to be sorted
  @since 1.8
  */
@@ -2076,23 +2022,13 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 /*!
  @brief Sorts the specified range of the array into ascending numerical order.
  The range to be sorted extends from the index <code>fromIndex</code>,
- inclusive, to the index <code>toIndex</code>, exclusive. If
+  inclusive, to the index <code>toIndex</code>, exclusive. If 
  <code>fromIndex == toIndex</code>, the range to be sorted is empty.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a working
- space no greater than the size of the specified range of the original
- array. The <code>ForkJoin common pool</code> is
- used to execute any parallel tasks.
  @param a the array to be sorted
  @param fromIndex the index of the first element, inclusive, to be sorted
  @param toIndex the index of the last element, exclusive, to be sorted
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > a.length</code>
  @since 1.8
  */
@@ -2102,16 +2038,6 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 
 /*!
  @brief Sorts the specified array into ascending numerical order.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a
- working space no greater than the size of the original array. The
- <code>ForkJoin common pool</code> is used to
- execute any parallel tasks.
  @param a the array to be sorted
  @since 1.8
  */
@@ -2120,23 +2046,13 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 /*!
  @brief Sorts the specified range of the array into ascending numerical order.
  The range to be sorted extends from the index <code>fromIndex</code>,
- inclusive, to the index <code>toIndex</code>, exclusive. If
+  inclusive, to the index <code>toIndex</code>, exclusive. If 
  <code>fromIndex == toIndex</code>, the range to be sorted is empty.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a working
- space no greater than the size of the specified range of the original
- array. The <code>ForkJoin common pool</code> is
- used to execute any parallel tasks.
  @param a the array to be sorted
  @param fromIndex the index of the first element, inclusive, to be sorted
  @param toIndex the index of the last element, exclusive, to be sorted
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > a.length</code>
  @since 1.8
  */
@@ -2147,22 +2063,12 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 /*!
  @brief Sorts the specified array into ascending numerical order.
  <p>The <code><</code> relation does not provide a total order on all double
- values: <code>-0.0d == 0.0d</code> is <code>true</code> and a <code>Double.NaN</code>
- value compares neither less than, greater than, nor equal to any value,
- even itself. This method uses the total order imposed by the method
- <code>Double.compareTo</code>: <code>-0.0d</code> is treated as less than value
+  values: <code>-0.0d == 0.0d</code> is <code>true</code> and a <code>Double.NaN</code>
+  value compares neither less than, greater than, nor equal to any value,
+  even itself. This method uses the total order imposed by the method 
+ <code>Double.compareTo</code>: <code>-0.0d</code> is treated as less than value 
  <code>0.0d</code> and <code>Double.NaN</code> is considered greater than any
- other value and all <code>Double.NaN</code> values are considered equal.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a
- working space no greater than the size of the original array. The
- <code>ForkJoin common pool</code> is used to
- execute any parallel tasks.
+  other value and all <code>Double.NaN</code> values are considered equal.
  @param a the array to be sorted
  @since 1.8
  */
@@ -2171,30 +2077,20 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 /*!
  @brief Sorts the specified range of the array into ascending numerical order.
  The range to be sorted extends from the index <code>fromIndex</code>,
- inclusive, to the index <code>toIndex</code>, exclusive. If
- <code>fromIndex == toIndex</code>, the range to be sorted is empty.
+  inclusive, to the index <code>toIndex</code>, exclusive. If 
+ <code>fromIndex == toIndex</code>, the range to be sorted is empty. 
  <p>The <code><</code> relation does not provide a total order on all double
- values: <code>-0.0d == 0.0d</code> is <code>true</code> and a <code>Double.NaN</code>
- value compares neither less than, greater than, nor equal to any value,
- even itself. This method uses the total order imposed by the method
- <code>Double.compareTo</code>: <code>-0.0d</code> is treated as less than value
+  values: <code>-0.0d == 0.0d</code> is <code>true</code> and a <code>Double.NaN</code>
+  value compares neither less than, greater than, nor equal to any value,
+  even itself. This method uses the total order imposed by the method 
+ <code>Double.compareTo</code>: <code>-0.0d</code> is treated as less than value 
  <code>0.0d</code> and <code>Double.NaN</code> is considered greater than any
- other value and all <code>Double.NaN</code> values are considered equal.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a working
- space no greater than the size of the specified range of the original
- array. The <code>ForkJoin common pool</code> is
- used to execute any parallel tasks.
+  other value and all <code>Double.NaN</code> values are considered equal.
  @param a the array to be sorted
  @param fromIndex the index of the first element, inclusive, to be sorted
  @param toIndex the index of the last element, exclusive, to be sorted
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > a.length</code>
  @since 1.8
  */
@@ -2205,22 +2101,12 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 /*!
  @brief Sorts the specified array into ascending numerical order.
  <p>The <code><</code> relation does not provide a total order on all float
- values: <code>-0.0f == 0.0f</code> is <code>true</code> and a <code>Float.NaN</code>
- value compares neither less than, greater than, nor equal to any value,
- even itself. This method uses the total order imposed by the method
- <code>Float.compareTo</code>: <code>-0.0f</code> is treated as less than value
+  values: <code>-0.0f == 0.0f</code> is <code>true</code> and a <code>Float.NaN</code>
+  value compares neither less than, greater than, nor equal to any value,
+  even itself. This method uses the total order imposed by the method 
+ <code>Float.compareTo</code>: <code>-0.0f</code> is treated as less than value 
  <code>0.0f</code> and <code>Float.NaN</code> is considered greater than any
- other value and all <code>Float.NaN</code> values are considered equal.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a
- working space no greater than the size of the original array. The
- <code>ForkJoin common pool</code> is used to
- execute any parallel tasks.
+  other value and all <code>Float.NaN</code> values are considered equal.
  @param a the array to be sorted
  @since 1.8
  */
@@ -2229,30 +2115,20 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 /*!
  @brief Sorts the specified range of the array into ascending numerical order.
  The range to be sorted extends from the index <code>fromIndex</code>,
- inclusive, to the index <code>toIndex</code>, exclusive. If
- <code>fromIndex == toIndex</code>, the range to be sorted is empty.
+  inclusive, to the index <code>toIndex</code>, exclusive. If 
+ <code>fromIndex == toIndex</code>, the range to be sorted is empty. 
  <p>The <code><</code> relation does not provide a total order on all float
- values: <code>-0.0f == 0.0f</code> is <code>true</code> and a <code>Float.NaN</code>
- value compares neither less than, greater than, nor equal to any value,
- even itself. This method uses the total order imposed by the method
- <code>Float.compareTo</code>: <code>-0.0f</code> is treated as less than value
+  values: <code>-0.0f == 0.0f</code> is <code>true</code> and a <code>Float.NaN</code>
+  value compares neither less than, greater than, nor equal to any value,
+  even itself. This method uses the total order imposed by the method 
+ <code>Float.compareTo</code>: <code>-0.0f</code> is treated as less than value 
  <code>0.0f</code> and <code>Float.NaN</code> is considered greater than any
- other value and all <code>Float.NaN</code> values are considered equal.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a working
- space no greater than the size of the specified range of the original
- array. The <code>ForkJoin common pool</code> is
- used to execute any parallel tasks.
+  other value and all <code>Float.NaN</code> values are considered equal.
  @param a the array to be sorted
  @param fromIndex the index of the first element, inclusive, to be sorted
  @param toIndex the index of the last element, exclusive, to be sorted
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > a.length</code>
  @since 1.8
  */
@@ -2262,16 +2138,6 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 
 /*!
  @brief Sorts the specified array into ascending numerical order.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a
- working space no greater than the size of the original array. The
- <code>ForkJoin common pool</code> is used to
- execute any parallel tasks.
  @param a the array to be sorted
  @since 1.8
  */
@@ -2280,23 +2146,13 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 /*!
  @brief Sorts the specified range of the array into ascending numerical order.
  The range to be sorted extends from the index <code>fromIndex</code>,
- inclusive, to the index <code>toIndex</code>, exclusive. If
+  inclusive, to the index <code>toIndex</code>, exclusive. If 
  <code>fromIndex == toIndex</code>, the range to be sorted is empty.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a working
- space no greater than the size of the specified range of the original
- array. The <code>ForkJoin common pool</code> is
- used to execute any parallel tasks.
  @param a the array to be sorted
  @param fromIndex the index of the first element, inclusive, to be sorted
  @param toIndex the index of the last element, exclusive, to be sorted
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > a.length</code>
  @since 1.8
  */
@@ -2306,16 +2162,6 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 
 /*!
  @brief Sorts the specified array into ascending numerical order.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a
- working space no greater than the size of the original array. The
- <code>ForkJoin common pool</code> is used to
- execute any parallel tasks.
  @param a the array to be sorted
  @since 1.8
  */
@@ -2324,23 +2170,13 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 /*!
  @brief Sorts the specified range of the array into ascending numerical order.
  The range to be sorted extends from the index <code>fromIndex</code>,
- inclusive, to the index <code>toIndex</code>, exclusive. If
+  inclusive, to the index <code>toIndex</code>, exclusive. If 
  <code>fromIndex == toIndex</code>, the range to be sorted is empty.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a working
- space no greater than the size of the specified range of the original
- array. The <code>ForkJoin common pool</code> is
- used to execute any parallel tasks.
  @param a the array to be sorted
  @param fromIndex the index of the first element, inclusive, to be sorted
  @param toIndex the index of the last element, exclusive, to be sorted
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > a.length</code>
  @since 1.8
  */
@@ -2350,16 +2186,6 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 
 /*!
  @brief Sorts the specified array into ascending numerical order.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a
- working space no greater than the size of the original array. The
- <code>ForkJoin common pool</code> is used to
- execute any parallel tasks.
  @param a the array to be sorted
  @since 1.8
  */
@@ -2368,23 +2194,13 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 /*!
  @brief Sorts the specified range of the array into ascending numerical order.
  The range to be sorted extends from the index <code>fromIndex</code>,
- inclusive, to the index <code>toIndex</code>, exclusive. If
+  inclusive, to the index <code>toIndex</code>, exclusive. If 
  <code>fromIndex == toIndex</code>, the range to be sorted is empty.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a working
- space no greater than the size of the specified range of the original
- array. The <code>ForkJoin common pool</code> is
- used to execute any parallel tasks.
  @param a the array to be sorted
  @param fromIndex the index of the first element, inclusive, to be sorted
  @param toIndex the index of the last element, exclusive, to be sorted
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > a.length</code>
  @since 1.8
  */
@@ -2394,29 +2210,19 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 
 /*!
  @brief Sorts the specified array of objects into ascending order, according
- to the natural ordering of its elements.
+  to the ordering of its elements.
  All elements in the array must implement the <code>Comparable</code>
- interface.  Furthermore, all elements in the array must be
+  interface.  Furthermore, all elements in the array must be 
  <i>mutually comparable</i> (that is, <code>e1.compareTo(e2)</code> must
- not throw a <code>ClassCastException</code> for any elements <code>e1</code>
- and <code>e2</code> in the array).
+  not throw a <code>ClassCastException</code> for any elements <code>e1</code>
+  and <code>e2</code> in the array). 
  <p>This sort is guaranteed to be <i>stable</i>:  equal elements will
- not be reordered as a result of the sort.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a
- working space no greater than the size of the original array. The
- <code>ForkJoin common pool</code> is used to
- execute any parallel tasks.
+  not be reordered as a result of the sort.
  @param a the array to be sorted
- @throws ClassCastException if the array contains elements that are not
- <i>mutually comparable</i> (for example, strings and integers)
- @throws IllegalArgumentException (optional) if the natural
- ordering of the array elements is found to violate the
+ @throw ClassCastExceptionif the array contains elements that are not
+          <i>mutually comparable</i> (for example, strings and integers)
+ @throw IllegalArgumentException(optional) if the natural
+          ordering of the array elements is found to violate the         
  <code>Comparable</code> contract
  @since 1.8
  */
@@ -2424,31 +2230,20 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 
 /*!
  @brief Sorts the specified array of objects according to the order induced by
- the specified comparator.
- All elements in the array must be
- <i>mutually comparable</i> by the specified comparator (that is,
+  the specified comparator.All elements in the array must be 
+ <i>mutually comparable</i> by the specified comparator (that is, 
  <code>c.compare(e1, e2)</code> must not throw a <code>ClassCastException</code>
- for any elements <code>e1</code> and <code>e2</code> in the array).
+  for any elements <code>e1</code> and <code>e2</code> in the array).
  <p>This sort is guaranteed to be <i>stable</i>:  equal elements will
- not be reordered as a result of the sort.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a
- working space no greater than the size of the original array. The
- <code>ForkJoin common pool</code> is used to
- execute any parallel tasks.
+  not be reordered as a result of the sort.
  @param a the array to be sorted
- @param cmp the comparator to determine the order of the array.  A
- <code>null</code> value indicates that the elements'
- natural ordering should be used.
- @throws ClassCastException if the array contains elements that are
- not <i>mutually comparable</i> using the specified comparator
- @throws IllegalArgumentException (optional) if the comparator is
- found to violate the <code>java.util.Comparator</code> contract
+ @param cmp the comparator to determine the order of the array.  A         
+ <code>null</code>  value indicates that the elements'         
+ ordering  should be used.
+ @throw ClassCastExceptionif the array contains elements that are
+          not <i>mutually comparable</i> using the specified comparator
+ @throw IllegalArgumentException(optional) if the comparator is
+          found to violate the <code>java.util.Comparator</code> contract
  @since 1.8
  */
 + (void)parallelSortWithNSObjectArray:(IOSObjectArray *)a
@@ -2456,41 +2251,29 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 
 /*!
  @brief Sorts the specified range of the specified array of objects into
- ascending order, according to the
- natural ordering of its
- elements.
- The range to be sorted extends from index
+  ascending order, according to the 
+ ordering of its
+  elements.The range to be sorted extends from index 
  <code>fromIndex</code>, inclusive, to index <code>toIndex</code>, exclusive.
  (If <code>fromIndex==toIndex</code>, the range to be sorted is empty.)  All
- elements in this range must implement the <code>Comparable</code>
- interface.  Furthermore, all elements in this range must be <i>mutually
- comparable</i> (that is, <code>e1.compareTo(e2)</code> must not throw a
- <code>ClassCastException</code> for any elements <code>e1</code> and
- <code>e2</code> in the array).
+  elements in this range must implement the <code>Comparable</code>
+  interface.  Furthermore, all elements in this range must be <i>mutually
+  comparable</i> (that is, <code>e1.compareTo(e2)</code> must not throw a 
+ <code>ClassCastException</code> for any elements <code>e1</code> and 
+ <code>e2</code> in the array). 
  <p>This sort is guaranteed to be <i>stable</i>:  equal elements will
- not be reordered as a result of the sort.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a working
- space no greater than the size of the specified range of the original
- array. The <code>ForkJoin common pool</code> is
- used to execute any parallel tasks.
+  not be reordered as a result of the sort.
  @param a the array to be sorted
- @param fromIndex the index of the first element (inclusive) to be
- sorted
+ @param fromIndex the index of the first element (inclusive) to be         sorted
  @param toIndex the index of the last element (exclusive) to be sorted
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code> or
- (optional) if the natural ordering of the array elements is
- found to violate the <code>Comparable</code> contract
- @throws ArrayIndexOutOfBoundsException if <code>fromIndex < 0</code> or
- <code>toIndex > a.length</code>
- @throws ClassCastException if the array contains elements that are
- not <i>mutually comparable</i> (for example, strings and
- integers).
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code> or
+          (optional) if the natural ordering of the array elements is
+          found to violate the <code>Comparable</code> contract
+ @throw ArrayIndexOutOfBoundsExceptionif <code>fromIndex < 0</code> or
+          <code>toIndex > a.length</code>
+ @throw ClassCastExceptionif the array contains elements that are
+          not <i>mutually comparable</i> (for example, strings and
+          integers).
  @since 1.8
  */
 + (void)parallelSortWithJavaLangComparableArray:(IOSObjectArray *)a
@@ -2499,41 +2282,30 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 
 /*!
  @brief Sorts the specified range of the specified array of objects according
- to the order induced by the specified comparator.
- The range to be
- sorted extends from index <code>fromIndex</code>, inclusive, to index
- <code>toIndex</code>, exclusive.  (If <code>fromIndex==toIndex</code>, the
- range to be sorted is empty.)  All elements in the range must be
- <i>mutually comparable</i> by the specified comparator (that is,
+  to the order induced by the specified comparator.The range to be
+  sorted extends from index <code>fromIndex</code>, inclusive, to index 
+ <code>toIndex</code>, exclusive.
+ (If <code>fromIndex==toIndex</code>, the
+  range to be sorted is empty.)  All elements in the range must be 
+ <i>mutually comparable</i> by the specified comparator (that is, 
  <code>c.compare(e1, e2)</code> must not throw a <code>ClassCastException</code>
- for any elements <code>e1</code> and <code>e2</code> in the range).
+  for any elements <code>e1</code> and <code>e2</code> in the range). 
  <p>This sort is guaranteed to be <i>stable</i>:  equal elements will
- not be reordered as a result of the sort.
-  The sorting algorithm is a parallel sort-merge that breaks the
- array into sub-arrays that are themselves sorted and then merged. When
- the sub-array length reaches a minimum granularity, the sub-array is
- sorted using the appropriate <code>Arrays.sort</code>
- method. If the length of the specified array is less than the minimum
- granularity, then it is sorted using the appropriate <code>Arrays.sort</code>
-  method. The algorithm requires a working
- space no greater than the size of the specified range of the original
- array. The <code>ForkJoin common pool</code> is
- used to execute any parallel tasks.
+  not be reordered as a result of the sort.
  @param a the array to be sorted
- @param fromIndex the index of the first element (inclusive) to be
- sorted
+ @param fromIndex the index of the first element (inclusive) to be         sorted
  @param toIndex the index of the last element (exclusive) to be sorted
- @param cmp the comparator to determine the order of the array.  A
- <code>null</code> value indicates that the elements'
- natural ordering should be used.
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code> or
- (optional) if the natural ordering of the array elements is
- found to violate the <code>Comparable</code> contract
- @throws ArrayIndexOutOfBoundsException if <code>fromIndex < 0</code> or
- <code>toIndex > a.length</code>
- @throws ClassCastException if the array contains elements that are
- not <i>mutually comparable</i> (for example, strings and
- integers).
+ @param cmp the comparator to determine the order of the array.  A         
+ <code>null</code>  value indicates that the elements'         
+ ordering  should be used.
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code> or
+          (optional) if the natural ordering of the array elements is
+          found to violate the <code>Comparable</code> contract
+ @throw ArrayIndexOutOfBoundsExceptionif <code>fromIndex < 0</code> or
+          <code>toIndex > a.length</code>
+ @throw ClassCastExceptionif the array contains elements that are
+          not <i>mutually comparable</i> (for example, strings and
+          integers).
  @since 1.8
  */
 + (void)parallelSortWithNSObjectArray:(IOSObjectArray *)a
@@ -2543,13 +2315,12 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 
 /*!
  @brief Set all elements of the specified array, using the provided
- generator function to compute each element.
+  generator function to compute each element.
  <p>If the generator function throws an exception, it is relayed to
- the caller and the array is left in an indeterminate state.
+  the caller and the array is left in an indeterminate state.
  @param array array to be initialized
- @param generator a function accepting an index and producing the desired
- value for that position
- @throws NullPointerException if the generator is null
+ @param generator a function accepting an index and producing the desired         value for that position
+ @throw NullPointerExceptionif the generator is null
  @since 1.8
  */
 + (void)setAllWithDoubleArray:(IOSDoubleArray *)array
@@ -2557,13 +2328,12 @@ withJavaUtilFunctionIntToDoubleFunction:(id<JavaUtilFunctionIntToDoubleFunction>
 
 /*!
  @brief Set all elements of the specified array, using the provided
- generator function to compute each element.
+  generator function to compute each element.
  <p>If the generator function throws an exception, it is relayed to
- the caller and the array is left in an indeterminate state.
+  the caller and the array is left in an indeterminate state.
  @param array array to be initialized
- @param generator a function accepting an index and producing the desired
- value for that position
- @throws NullPointerException if the generator is null
+ @param generator a function accepting an index and producing the desired         value for that position
+ @throw NullPointerExceptionif the generator is null
  @since 1.8
  */
 + (void)setAllWithIntArray:(IOSIntArray *)array
@@ -2571,13 +2341,12 @@ withJavaUtilFunctionIntUnaryOperator:(id<JavaUtilFunctionIntUnaryOperator>)gener
 
 /*!
  @brief Set all elements of the specified array, using the provided
- generator function to compute each element.
+  generator function to compute each element.
  <p>If the generator function throws an exception, it is relayed to
- the caller and the array is left in an indeterminate state.
+  the caller and the array is left in an indeterminate state.
  @param array array to be initialized
- @param generator a function accepting an index and producing the desired
- value for that position
- @throws NullPointerException if the generator is null
+ @param generator a function accepting an index and producing the desired         value for that position
+ @throw NullPointerExceptionif the generator is null
  @since 1.8
  */
 + (void)setAllWithLongArray:(IOSLongArray *)array
@@ -2585,13 +2354,12 @@ withJavaUtilFunctionIntToLongFunction:(id<JavaUtilFunctionIntToLongFunction>)gen
 
 /*!
  @brief Set all elements of the specified array, using the provided
- generator function to compute each element.
+  generator function to compute each element.
  <p>If the generator function throws an exception, it is relayed to
- the caller and the array is left in an indeterminate state.
+  the caller and the array is left in an indeterminate state.
  @param array array to be initialized
- @param generator a function accepting an index and producing the desired
- value for that position
- @throws NullPointerException if the generator is null
+ @param generator a function accepting an index and producing the desired         value for that position
+ @throw NullPointerExceptionif the generator is null
  @since 1.8
  */
 + (void)setAllWithNSObjectArray:(IOSObjectArray *)array
@@ -2600,30 +2368,30 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Sorts the specified array into ascending numerical order.
  <p>Implementation note: The sorting algorithm is a Dual-Pivot Quicksort
- by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
- offers O(n log(n)) performance on many data sets that cause other
- quicksorts to degrade to quadratic performance, and is typically
- faster than traditional (one-pivot) Quicksort implementations.
+  by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
+  offers O(n log(n)) performance on many data sets that cause other
+  quicksorts to degrade to quadratic performance, and is typically
+  faster than traditional (one-pivot) Quicksort implementations.
  @param a the array to be sorted
  */
 + (void)sortWithByteArray:(IOSByteArray *)a;
 
 /*!
- @brief Sorts the specified range of the array into ascending order.
- The range
- to be sorted extends from the index <code>fromIndex</code>, inclusive, to
- the index <code>toIndex</code>, exclusive. If <code>fromIndex == toIndex</code>,
- the range to be sorted is empty.
+ @brief Sorts the specified range of the array into ascending order.The range
+  to be sorted extends from the index <code>fromIndex</code>, inclusive, to
+  the index <code>toIndex</code>, exclusive.
+ If <code>fromIndex == toIndex</code>,
+  the range to be sorted is empty. 
  <p>Implementation note: The sorting algorithm is a Dual-Pivot Quicksort
- by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
- offers O(n log(n)) performance on many data sets that cause other
- quicksorts to degrade to quadratic performance, and is typically
- faster than traditional (one-pivot) Quicksort implementations.
+  by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
+  offers O(n log(n)) performance on many data sets that cause other
+  quicksorts to degrade to quadratic performance, and is typically
+  faster than traditional (one-pivot) Quicksort implementations.
  @param a the array to be sorted
  @param fromIndex the index of the first element, inclusive, to be sorted
  @param toIndex the index of the last element, exclusive, to be sorted
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > a.length</code>
  */
 + (void)sortWithByteArray:(IOSByteArray *)a
@@ -2633,30 +2401,30 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Sorts the specified array into ascending numerical order.
  <p>Implementation note: The sorting algorithm is a Dual-Pivot Quicksort
- by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
- offers O(n log(n)) performance on many data sets that cause other
- quicksorts to degrade to quadratic performance, and is typically
- faster than traditional (one-pivot) Quicksort implementations.
+  by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
+  offers O(n log(n)) performance on many data sets that cause other
+  quicksorts to degrade to quadratic performance, and is typically
+  faster than traditional (one-pivot) Quicksort implementations.
  @param a the array to be sorted
  */
 + (void)sortWithCharArray:(IOSCharArray *)a;
 
 /*!
- @brief Sorts the specified range of the array into ascending order.
- The range
- to be sorted extends from the index <code>fromIndex</code>, inclusive, to
- the index <code>toIndex</code>, exclusive. If <code>fromIndex == toIndex</code>,
- the range to be sorted is empty.
+ @brief Sorts the specified range of the array into ascending order.The range
+  to be sorted extends from the index <code>fromIndex</code>, inclusive, to
+  the index <code>toIndex</code>, exclusive.
+ If <code>fromIndex == toIndex</code>,
+  the range to be sorted is empty. 
  <p>Implementation note: The sorting algorithm is a Dual-Pivot Quicksort
- by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
- offers O(n log(n)) performance on many data sets that cause other
- quicksorts to degrade to quadratic performance, and is typically
- faster than traditional (one-pivot) Quicksort implementations.
+  by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
+  offers O(n log(n)) performance on many data sets that cause other
+  quicksorts to degrade to quadratic performance, and is typically
+  faster than traditional (one-pivot) Quicksort implementations.
  @param a the array to be sorted
  @param fromIndex the index of the first element, inclusive, to be sorted
  @param toIndex the index of the last element, exclusive, to be sorted
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > a.length</code>
  */
 + (void)sortWithCharArray:(IOSCharArray *)a
@@ -2666,44 +2434,44 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Sorts the specified array into ascending numerical order.
  <p>The <code><</code> relation does not provide a total order on all double
- values: <code>-0.0d == 0.0d</code> is <code>true</code> and a <code>Double.NaN</code>
- value compares neither less than, greater than, nor equal to any value,
- even itself. This method uses the total order imposed by the method
- <code>Double.compareTo</code>: <code>-0.0d</code> is treated as less than value
+  values: <code>-0.0d == 0.0d</code> is <code>true</code> and a <code>Double.NaN</code>
+  value compares neither less than, greater than, nor equal to any value,
+  even itself. This method uses the total order imposed by the method 
+ <code>Double.compareTo</code>: <code>-0.0d</code> is treated as less than value 
  <code>0.0d</code> and <code>Double.NaN</code> is considered greater than any
- other value and all <code>Double.NaN</code> values are considered equal.
+  other value and all <code>Double.NaN</code> values are considered equal. 
  <p>Implementation note: The sorting algorithm is a Dual-Pivot Quicksort
- by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
- offers O(n log(n)) performance on many data sets that cause other
- quicksorts to degrade to quadratic performance, and is typically
- faster than traditional (one-pivot) Quicksort implementations.
+  by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
+  offers O(n log(n)) performance on many data sets that cause other
+  quicksorts to degrade to quadratic performance, and is typically
+  faster than traditional (one-pivot) Quicksort implementations.
  @param a the array to be sorted
  */
 + (void)sortWithDoubleArray:(IOSDoubleArray *)a;
 
 /*!
- @brief Sorts the specified range of the array into ascending order.
- The range
- to be sorted extends from the index <code>fromIndex</code>, inclusive, to
- the index <code>toIndex</code>, exclusive. If <code>fromIndex == toIndex</code>,
- the range to be sorted is empty.
+ @brief Sorts the specified range of the array into ascending order.The range
+  to be sorted extends from the index <code>fromIndex</code>, inclusive, to
+  the index <code>toIndex</code>, exclusive.
+ If <code>fromIndex == toIndex</code>,
+  the range to be sorted is empty. 
  <p>The <code><</code> relation does not provide a total order on all double
- values: <code>-0.0d == 0.0d</code> is <code>true</code> and a <code>Double.NaN</code>
- value compares neither less than, greater than, nor equal to any value,
- even itself. This method uses the total order imposed by the method
- <code>Double.compareTo</code>: <code>-0.0d</code> is treated as less than value
+  values: <code>-0.0d == 0.0d</code> is <code>true</code> and a <code>Double.NaN</code>
+  value compares neither less than, greater than, nor equal to any value,
+  even itself. This method uses the total order imposed by the method 
+ <code>Double.compareTo</code>: <code>-0.0d</code> is treated as less than value 
  <code>0.0d</code> and <code>Double.NaN</code> is considered greater than any
- other value and all <code>Double.NaN</code> values are considered equal.
+  other value and all <code>Double.NaN</code> values are considered equal. 
  <p>Implementation note: The sorting algorithm is a Dual-Pivot Quicksort
- by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
- offers O(n log(n)) performance on many data sets that cause other
- quicksorts to degrade to quadratic performance, and is typically
- faster than traditional (one-pivot) Quicksort implementations.
+  by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
+  offers O(n log(n)) performance on many data sets that cause other
+  quicksorts to degrade to quadratic performance, and is typically
+  faster than traditional (one-pivot) Quicksort implementations.
  @param a the array to be sorted
  @param fromIndex the index of the first element, inclusive, to be sorted
  @param toIndex the index of the last element, exclusive, to be sorted
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > a.length</code>
  */
 + (void)sortWithDoubleArray:(IOSDoubleArray *)a
@@ -2713,44 +2481,44 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Sorts the specified array into ascending numerical order.
  <p>The <code><</code> relation does not provide a total order on all float
- values: <code>-0.0f == 0.0f</code> is <code>true</code> and a <code>Float.NaN</code>
- value compares neither less than, greater than, nor equal to any value,
- even itself. This method uses the total order imposed by the method
- <code>Float.compareTo</code>: <code>-0.0f</code> is treated as less than value
+  values: <code>-0.0f == 0.0f</code> is <code>true</code> and a <code>Float.NaN</code>
+  value compares neither less than, greater than, nor equal to any value,
+  even itself. This method uses the total order imposed by the method 
+ <code>Float.compareTo</code>: <code>-0.0f</code> is treated as less than value 
  <code>0.0f</code> and <code>Float.NaN</code> is considered greater than any
- other value and all <code>Float.NaN</code> values are considered equal.
+  other value and all <code>Float.NaN</code> values are considered equal. 
  <p>Implementation note: The sorting algorithm is a Dual-Pivot Quicksort
- by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
- offers O(n log(n)) performance on many data sets that cause other
- quicksorts to degrade to quadratic performance, and is typically
- faster than traditional (one-pivot) Quicksort implementations.
+  by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
+  offers O(n log(n)) performance on many data sets that cause other
+  quicksorts to degrade to quadratic performance, and is typically
+  faster than traditional (one-pivot) Quicksort implementations.
  @param a the array to be sorted
  */
 + (void)sortWithFloatArray:(IOSFloatArray *)a;
 
 /*!
- @brief Sorts the specified range of the array into ascending order.
- The range
- to be sorted extends from the index <code>fromIndex</code>, inclusive, to
- the index <code>toIndex</code>, exclusive. If <code>fromIndex == toIndex</code>,
- the range to be sorted is empty.
+ @brief Sorts the specified range of the array into ascending order.The range
+  to be sorted extends from the index <code>fromIndex</code>, inclusive, to
+  the index <code>toIndex</code>, exclusive.
+ If <code>fromIndex == toIndex</code>,
+  the range to be sorted is empty. 
  <p>The <code><</code> relation does not provide a total order on all float
- values: <code>-0.0f == 0.0f</code> is <code>true</code> and a <code>Float.NaN</code>
- value compares neither less than, greater than, nor equal to any value,
- even itself. This method uses the total order imposed by the method
- <code>Float.compareTo</code>: <code>-0.0f</code> is treated as less than value
+  values: <code>-0.0f == 0.0f</code> is <code>true</code> and a <code>Float.NaN</code>
+  value compares neither less than, greater than, nor equal to any value,
+  even itself. This method uses the total order imposed by the method 
+ <code>Float.compareTo</code>: <code>-0.0f</code> is treated as less than value 
  <code>0.0f</code> and <code>Float.NaN</code> is considered greater than any
- other value and all <code>Float.NaN</code> values are considered equal.
+  other value and all <code>Float.NaN</code> values are considered equal. 
  <p>Implementation note: The sorting algorithm is a Dual-Pivot Quicksort
- by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
- offers O(n log(n)) performance on many data sets that cause other
- quicksorts to degrade to quadratic performance, and is typically
- faster than traditional (one-pivot) Quicksort implementations.
+  by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
+  offers O(n log(n)) performance on many data sets that cause other
+  quicksorts to degrade to quadratic performance, and is typically
+  faster than traditional (one-pivot) Quicksort implementations.
  @param a the array to be sorted
  @param fromIndex the index of the first element, inclusive, to be sorted
  @param toIndex the index of the last element, exclusive, to be sorted
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > a.length</code>
  */
 + (void)sortWithFloatArray:(IOSFloatArray *)a
@@ -2760,30 +2528,30 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Sorts the specified array into ascending numerical order.
  <p>Implementation note: The sorting algorithm is a Dual-Pivot Quicksort
- by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
- offers O(n log(n)) performance on many data sets that cause other
- quicksorts to degrade to quadratic performance, and is typically
- faster than traditional (one-pivot) Quicksort implementations.
+  by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
+  offers O(n log(n)) performance on many data sets that cause other
+  quicksorts to degrade to quadratic performance, and is typically
+  faster than traditional (one-pivot) Quicksort implementations.
  @param a the array to be sorted
  */
 + (void)sortWithIntArray:(IOSIntArray *)a;
 
 /*!
- @brief Sorts the specified range of the array into ascending order.
- The range
- to be sorted extends from the index <code>fromIndex</code>, inclusive, to
- the index <code>toIndex</code>, exclusive. If <code>fromIndex == toIndex</code>,
- the range to be sorted is empty.
+ @brief Sorts the specified range of the array into ascending order.The range
+  to be sorted extends from the index <code>fromIndex</code>, inclusive, to
+  the index <code>toIndex</code>, exclusive.
+ If <code>fromIndex == toIndex</code>,
+  the range to be sorted is empty. 
  <p>Implementation note: The sorting algorithm is a Dual-Pivot Quicksort
- by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
- offers O(n log(n)) performance on many data sets that cause other
- quicksorts to degrade to quadratic performance, and is typically
- faster than traditional (one-pivot) Quicksort implementations.
+  by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
+  offers O(n log(n)) performance on many data sets that cause other
+  quicksorts to degrade to quadratic performance, and is typically
+  faster than traditional (one-pivot) Quicksort implementations.
  @param a the array to be sorted
  @param fromIndex the index of the first element, inclusive, to be sorted
  @param toIndex the index of the last element, exclusive, to be sorted
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > a.length</code>
  */
 + (void)sortWithIntArray:(IOSIntArray *)a
@@ -2793,30 +2561,30 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Sorts the specified array into ascending numerical order.
  <p>Implementation note: The sorting algorithm is a Dual-Pivot Quicksort
- by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
- offers O(n log(n)) performance on many data sets that cause other
- quicksorts to degrade to quadratic performance, and is typically
- faster than traditional (one-pivot) Quicksort implementations.
+  by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
+  offers O(n log(n)) performance on many data sets that cause other
+  quicksorts to degrade to quadratic performance, and is typically
+  faster than traditional (one-pivot) Quicksort implementations.
  @param a the array to be sorted
  */
 + (void)sortWithLongArray:(IOSLongArray *)a;
 
 /*!
- @brief Sorts the specified range of the array into ascending order.
- The range
- to be sorted extends from the index <code>fromIndex</code>, inclusive, to
- the index <code>toIndex</code>, exclusive. If <code>fromIndex == toIndex</code>,
- the range to be sorted is empty.
+ @brief Sorts the specified range of the array into ascending order.The range
+  to be sorted extends from the index <code>fromIndex</code>, inclusive, to
+  the index <code>toIndex</code>, exclusive.
+ If <code>fromIndex == toIndex</code>,
+  the range to be sorted is empty. 
  <p>Implementation note: The sorting algorithm is a Dual-Pivot Quicksort
- by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
- offers O(n log(n)) performance on many data sets that cause other
- quicksorts to degrade to quadratic performance, and is typically
- faster than traditional (one-pivot) Quicksort implementations.
+  by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
+  offers O(n log(n)) performance on many data sets that cause other
+  quicksorts to degrade to quadratic performance, and is typically
+  faster than traditional (one-pivot) Quicksort implementations.
  @param a the array to be sorted
  @param fromIndex the index of the first element, inclusive, to be sorted
  @param toIndex the index of the last element, exclusive, to be sorted
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > a.length</code>
  */
 + (void)sortWithLongArray:(IOSLongArray *)a
@@ -2825,90 +2593,88 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 
 /*!
  @brief Sorts the specified array of objects into ascending order, according
- to the natural ordering of its elements.
+  to the ordering of its elements.
  All elements in the array must implement the <code>Comparable</code>
- interface.  Furthermore, all elements in the array must be
+  interface.  Furthermore, all elements in the array must be 
  <i>mutually comparable</i> (that is, <code>e1.compareTo(e2)</code> must
- not throw a <code>ClassCastException</code> for any elements <code>e1</code>
- and <code>e2</code> in the array).
+  not throw a <code>ClassCastException</code> for any elements <code>e1</code>
+  and <code>e2</code> in the array). 
  <p>This sort is guaranteed to be <i>stable</i>:  equal elements will
- not be reordered as a result of the sort.
+  not be reordered as a result of the sort. 
  <p>Implementation note: This implementation is a stable, adaptive,
- iterative mergesort that requires far fewer than n lg(n) comparisons
- when the input array is partially sorted, while offering the
- performance of a traditional mergesort when the input array is
- randomly ordered.  If the input array is nearly sorted, the
- implementation requires approximately n comparisons.  Temporary
- storage requirements vary from a small constant for nearly sorted
- input arrays to n/2 object references for randomly ordered input
- arrays.
+  iterative mergesort that requires far fewer than n lg(n) comparisons
+  when the input array is partially sorted, while offering the
+  performance of a traditional mergesort when the input array is
+  randomly ordered.  If the input array is nearly sorted, the
+  implementation requires approximately n comparisons.  Temporary
+  storage requirements vary from a small constant for nearly sorted
+  input arrays to n/2 object references for randomly ordered input
+  arrays. 
  <p>The implementation takes equal advantage of ascending and
- descending order in its input array, and can take advantage of
- ascending and descending order in different parts of the the same
- input array.  It is well-suited to merging two or more sorted arrays:
- simply concatenate the arrays and sort the resulting array.
+  descending order in its input array, and can take advantage of
+  ascending and descending order in different parts of the the same
+  input array.  It is well-suited to merging two or more sorted arrays:
+  simply concatenate the arrays and sort the resulting array. 
  <p>The implementation was adapted from Tim Peters's list sort for Python
- (<a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt">
- TimSort</a>).  It uses techiques from Peter McIlroy's "Optimistic
- Sorting and Information Theoretic Complexity", in Proceedings of the
- Fourth Annual ACM-SIAM Symposium on Discrete Algorithms, pp 467-474,
- January 1993.
+  (<a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt">
+  TimSort</a>).  It uses techiques from Peter McIlroy's "Optimistic
+  Sorting and Information Theoretic Complexity", in Proceedings of the
+  Fourth Annual ACM-SIAM Symposium on Discrete Algorithms, pp 467-474,
+  January 1993.
  @param a the array to be sorted
- @throws ClassCastException if the array contains elements that are not
- <i>mutually comparable</i> (for example, strings and integers)
- @throws IllegalArgumentException (optional) if the natural
- ordering of the array elements is found to violate the
+ @throw ClassCastExceptionif the array contains elements that are not
+          <i>mutually comparable</i> (for example, strings and integers)
+ @throw IllegalArgumentException(optional) if the natural
+          ordering of the array elements is found to violate the         
  <code>Comparable</code> contract
  */
 + (void)sortWithNSObjectArray:(IOSObjectArray *)a;
 
 /*!
  @brief Sorts the specified range of the specified array of objects into
- ascending order, according to the
- natural ordering of its
- elements.
- The range to be sorted extends from index
+  ascending order, according to the 
+ ordering of its
+  elements.The range to be sorted extends from index 
  <code>fromIndex</code>, inclusive, to index <code>toIndex</code>, exclusive.
  (If <code>fromIndex==toIndex</code>, the range to be sorted is empty.)  All
- elements in this range must implement the <code>Comparable</code>
- interface.  Furthermore, all elements in this range must be <i>mutually
- comparable</i> (that is, <code>e1.compareTo(e2)</code> must not throw a
- <code>ClassCastException</code> for any elements <code>e1</code> and
- <code>e2</code> in the array).
+  elements in this range must implement the <code>Comparable</code>
+  interface.  Furthermore, all elements in this range must be <i>mutually
+  comparable</i> (that is, <code>e1.compareTo(e2)</code> must not throw a 
+ <code>ClassCastException</code> for any elements <code>e1</code> and 
+ <code>e2</code> in the array). 
  <p>This sort is guaranteed to be <i>stable</i>:  equal elements will
- not be reordered as a result of the sort.
+  not be reordered as a result of the sort. 
  <p>Implementation note: This implementation is a stable, adaptive,
- iterative mergesort that requires far fewer than n lg(n) comparisons
- when the input array is partially sorted, while offering the
- performance of a traditional mergesort when the input array is
- randomly ordered.  If the input array is nearly sorted, the
- implementation requires approximately n comparisons.  Temporary
- storage requirements vary from a small constant for nearly sorted
- input arrays to n/2 object references for randomly ordered input
- arrays.
+  iterative mergesort that requires far fewer than n lg(n) comparisons
+  when the input array is partially sorted, while offering the
+  performance of a traditional mergesort when the input array is
+  randomly ordered.  If the input array is nearly sorted, the
+  implementation requires approximately n comparisons.  Temporary
+  storage requirements vary from a small constant for nearly sorted
+  input arrays to n/2 object references for randomly ordered input
+  arrays. 
  <p>The implementation takes equal advantage of ascending and
- descending order in its input array, and can take advantage of
- ascending and descending order in different parts of the the same
- input array.  It is well-suited to merging two or more sorted arrays:
- simply concatenate the arrays and sort the resulting array.
+  descending order in its input array, and can take advantage of
+  ascending and descending order in different parts of the the same
+  input array.  It is well-suited to merging two or more sorted arrays:
+  simply concatenate the arrays and sort the resulting array. 
  <p>The implementation was adapted from Tim Peters's list sort for Python
- (<a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt">
- TimSort</a>).  It uses techiques from Peter McIlroy's "Optimistic
- Sorting and Information Theoretic Complexity", in Proceedings of the
- Fourth Annual ACM-SIAM Symposium on Discrete Algorithms, pp 467-474,
- January 1993.
+  (<a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt">
+  TimSort</a>).  It uses techiques from Peter McIlroy's "Optimistic
+  Sorting and Information Theoretic Complexity", in Proceedings of the
+  Fourth Annual ACM-SIAM Symposium on Discrete Algorithms, pp 467-474,
+  January 1993.
  @param a the array to be sorted
- @param fromIndex the index of the first element (inclusive) to be
- sorted
+ @param fromIndex the index of the first element (inclusive) to be         sorted
  @param toIndex the index of the last element (exclusive) to be sorted
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code> or
- (optional) if the natural ordering of the array elements is
- found to violate the <code>Comparable</code> contract
- @throws ArrayIndexOutOfBoundsException if <code>fromIndex < 0</code> or
- <code>toIndex > a.length</code>
- @throws ClassCastException if the array contains elements that are
- not <i>mutually comparable</i> (for example, strings and
- integers).
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code> or
+          (optional) if the natural ordering of the array elements is
+          found to violate the <code>Comparable</code> contract
+ @throw ArrayIndexOutOfBoundsExceptionif <code>fromIndex < 0</code> or
+          <code>toIndex > a.length</code>
+ @throw ClassCastExceptionif the array contains elements that are
+          not <i>mutually comparable</i> (for example, strings and
+          integers).
  */
 + (void)sortWithNSObjectArray:(IOSObjectArray *)a
                       withInt:(jint)fromIndex
@@ -2917,30 +2683,30 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Sorts the specified array into ascending numerical order.
  <p>Implementation note: The sorting algorithm is a Dual-Pivot Quicksort
- by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
- offers O(n log(n)) performance on many data sets that cause other
- quicksorts to degrade to quadratic performance, and is typically
- faster than traditional (one-pivot) Quicksort implementations.
+  by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
+  offers O(n log(n)) performance on many data sets that cause other
+  quicksorts to degrade to quadratic performance, and is typically
+  faster than traditional (one-pivot) Quicksort implementations.
  @param a the array to be sorted
  */
 + (void)sortWithShortArray:(IOSShortArray *)a;
 
 /*!
- @brief Sorts the specified range of the array into ascending order.
- The range
- to be sorted extends from the index <code>fromIndex</code>, inclusive, to
- the index <code>toIndex</code>, exclusive. If <code>fromIndex == toIndex</code>,
- the range to be sorted is empty.
+ @brief Sorts the specified range of the array into ascending order.The range
+  to be sorted extends from the index <code>fromIndex</code>, inclusive, to
+  the index <code>toIndex</code>, exclusive.
+ If <code>fromIndex == toIndex</code>,
+  the range to be sorted is empty. 
  <p>Implementation note: The sorting algorithm is a Dual-Pivot Quicksort
- by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
- offers O(n log(n)) performance on many data sets that cause other
- quicksorts to degrade to quadratic performance, and is typically
- faster than traditional (one-pivot) Quicksort implementations.
+  by Vladimir Yaroslavskiy, Jon Bentley, and Joshua Bloch. This algorithm
+  offers O(n log(n)) performance on many data sets that cause other
+  quicksorts to degrade to quadratic performance, and is typically
+  faster than traditional (one-pivot) Quicksort implementations.
  @param a the array to be sorted
  @param fromIndex the index of the first element, inclusive, to be sorted
  @param toIndex the index of the last element, exclusive, to be sorted
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code>
- @throws ArrayIndexOutOfBoundsException
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code>
+ @throw ArrayIndexOutOfBoundsException
  if <code>fromIndex < 0</code> or <code>toIndex > a.length</code>
  */
 + (void)sortWithShortArray:(IOSShortArray *)a
@@ -2949,91 +2715,89 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 
 /*!
  @brief Sorts the specified array of objects according to the order induced by
- the specified comparator.
- All elements in the array must be
- <i>mutually comparable</i> by the specified comparator (that is,
+  the specified comparator.All elements in the array must be 
+ <i>mutually comparable</i> by the specified comparator (that is, 
  <code>c.compare(e1, e2)</code> must not throw a <code>ClassCastException</code>
- for any elements <code>e1</code> and <code>e2</code> in the array).
+  for any elements <code>e1</code> and <code>e2</code> in the array).
  <p>This sort is guaranteed to be <i>stable</i>:  equal elements will
- not be reordered as a result of the sort.
+  not be reordered as a result of the sort. 
  <p>Implementation note: This implementation is a stable, adaptive,
- iterative mergesort that requires far fewer than n lg(n) comparisons
- when the input array is partially sorted, while offering the
- performance of a traditional mergesort when the input array is
- randomly ordered.  If the input array is nearly sorted, the
- implementation requires approximately n comparisons.  Temporary
- storage requirements vary from a small constant for nearly sorted
- input arrays to n/2 object references for randomly ordered input
- arrays.
+  iterative mergesort that requires far fewer than n lg(n) comparisons
+  when the input array is partially sorted, while offering the
+  performance of a traditional mergesort when the input array is
+  randomly ordered.  If the input array is nearly sorted, the
+  implementation requires approximately n comparisons.  Temporary
+  storage requirements vary from a small constant for nearly sorted
+  input arrays to n/2 object references for randomly ordered input
+  arrays. 
  <p>The implementation takes equal advantage of ascending and
- descending order in its input array, and can take advantage of
- ascending and descending order in different parts of the the same
- input array.  It is well-suited to merging two or more sorted arrays:
- simply concatenate the arrays and sort the resulting array.
+  descending order in its input array, and can take advantage of
+  ascending and descending order in different parts of the the same
+  input array.  It is well-suited to merging two or more sorted arrays:
+  simply concatenate the arrays and sort the resulting array. 
  <p>The implementation was adapted from Tim Peters's list sort for Python
- (<a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt">
- TimSort</a>).  It uses techiques from Peter McIlroy's "Optimistic
- Sorting and Information Theoretic Complexity", in Proceedings of the
- Fourth Annual ACM-SIAM Symposium on Discrete Algorithms, pp 467-474,
- January 1993.
+  (<a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt">
+  TimSort</a>).  It uses techiques from Peter McIlroy's "Optimistic
+  Sorting and Information Theoretic Complexity", in Proceedings of the
+  Fourth Annual ACM-SIAM Symposium on Discrete Algorithms, pp 467-474,
+  January 1993.
  @param a the array to be sorted
- @param c the comparator to determine the order of the array.  A
- <code>null</code> value indicates that the elements'
- natural ordering should be used.
- @throws ClassCastException if the array contains elements that are
- not <i>mutually comparable</i> using the specified comparator
- @throws IllegalArgumentException (optional) if the comparator is
- found to violate the <code>Comparator</code> contract
+ @param c the comparator to determine the order of the array.  A         
+ <code>null</code>  value indicates that the elements'         
+ ordering  should be used.
+ @throw ClassCastExceptionif the array contains elements that are
+          not <i>mutually comparable</i> using the specified comparator
+ @throw IllegalArgumentException(optional) if the comparator is
+          found to violate the <code>Comparator</code> contract
  */
 + (void)sortWithNSObjectArray:(IOSObjectArray *)a
        withJavaUtilComparator:(id<JavaUtilComparator>)c;
 
 /*!
  @brief Sorts the specified range of the specified array of objects according
- to the order induced by the specified comparator.
- The range to be
- sorted extends from index <code>fromIndex</code>, inclusive, to index
- <code>toIndex</code>, exclusive.  (If <code>fromIndex==toIndex</code>, the
- range to be sorted is empty.)  All elements in the range must be
- <i>mutually comparable</i> by the specified comparator (that is,
+  to the order induced by the specified comparator.The range to be
+  sorted extends from index <code>fromIndex</code>, inclusive, to index 
+ <code>toIndex</code>, exclusive.
+ (If <code>fromIndex==toIndex</code>, the
+  range to be sorted is empty.)  All elements in the range must be 
+ <i>mutually comparable</i> by the specified comparator (that is, 
  <code>c.compare(e1, e2)</code> must not throw a <code>ClassCastException</code>
- for any elements <code>e1</code> and <code>e2</code> in the range).
+  for any elements <code>e1</code> and <code>e2</code> in the range). 
  <p>This sort is guaranteed to be <i>stable</i>:  equal elements will
- not be reordered as a result of the sort.
+  not be reordered as a result of the sort. 
  <p>Implementation note: This implementation is a stable, adaptive,
- iterative mergesort that requires far fewer than n lg(n) comparisons
- when the input array is partially sorted, while offering the
- performance of a traditional mergesort when the input array is
- randomly ordered.  If the input array is nearly sorted, the
- implementation requires approximately n comparisons.  Temporary
- storage requirements vary from a small constant for nearly sorted
- input arrays to n/2 object references for randomly ordered input
- arrays.
+  iterative mergesort that requires far fewer than n lg(n) comparisons
+  when the input array is partially sorted, while offering the
+  performance of a traditional mergesort when the input array is
+  randomly ordered.  If the input array is nearly sorted, the
+  implementation requires approximately n comparisons.  Temporary
+  storage requirements vary from a small constant for nearly sorted
+  input arrays to n/2 object references for randomly ordered input
+  arrays. 
  <p>The implementation takes equal advantage of ascending and
- descending order in its input array, and can take advantage of
- ascending and descending order in different parts of the the same
- input array.  It is well-suited to merging two or more sorted arrays:
- simply concatenate the arrays and sort the resulting array.
+  descending order in its input array, and can take advantage of
+  ascending and descending order in different parts of the the same
+  input array.  It is well-suited to merging two or more sorted arrays:
+  simply concatenate the arrays and sort the resulting array. 
  <p>The implementation was adapted from Tim Peters's list sort for Python
- (<a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt">
- TimSort</a>).  It uses techiques from Peter McIlroy's "Optimistic
- Sorting and Information Theoretic Complexity", in Proceedings of the
- Fourth Annual ACM-SIAM Symposium on Discrete Algorithms, pp 467-474,
- January 1993.
+  (<a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt">
+  TimSort</a>).  It uses techiques from Peter McIlroy's "Optimistic
+  Sorting and Information Theoretic Complexity", in Proceedings of the
+  Fourth Annual ACM-SIAM Symposium on Discrete Algorithms, pp 467-474,
+  January 1993.
  @param a the array to be sorted
- @param fromIndex the index of the first element (inclusive) to be
- sorted
+ @param fromIndex the index of the first element (inclusive) to be         sorted
  @param toIndex the index of the last element (exclusive) to be sorted
- @param c the comparator to determine the order of the array.  A
- <code>null</code> value indicates that the elements'
- natural ordering should be used.
- @throws ClassCastException if the array contains elements that are not
- <i>mutually comparable</i> using the specified comparator.
- @throws IllegalArgumentException if <code>fromIndex > toIndex</code> or
- (optional) if the comparator is found to violate the
+ @param c the comparator to determine the order of the array.  A         
+ <code>null</code>  value indicates that the elements'         
+ ordering  should be used.
+ @throw ClassCastExceptionif the array contains elements that are not
+          <i>mutually comparable</i> using the specified comparator.
+ @throw IllegalArgumentExceptionif <code>fromIndex > toIndex</code> or
+          (optional) if the comparator is found to violate the         
  <code>Comparator</code> contract
- @throws ArrayIndexOutOfBoundsException if <code>fromIndex < 0</code> or
- <code>toIndex > a.length</code>
+ @throw ArrayIndexOutOfBoundsExceptionif <code>fromIndex < 0</code> or
+          <code>toIndex > a.length</code>
  */
 + (void)sortWithNSObjectArray:(IOSObjectArray *)a
                       withInt:(jint)fromIndex
@@ -3042,9 +2806,9 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 
 /*!
  @brief Returns a <code>Spliterator.OfDouble</code> covering all of the specified
- array.
+  array.
  <p>The spliterator reports <code>Spliterator.SIZED</code>,
- <code>Spliterator.SUBSIZED</code>, <code>Spliterator.ORDERED</code>, and
+  <code>Spliterator.SUBSIZED</code>, <code>Spliterator.ORDERED</code>, and 
  <code>Spliterator.IMMUTABLE</code>.
  @param array the array, assumed to be unmodified during use
  @return a spliterator for the array elements
@@ -3054,18 +2818,18 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 
 /*!
  @brief Returns a <code>Spliterator.OfDouble</code> covering the specified range of
- the specified array.
+  the specified array.
  <p>The spliterator reports <code>Spliterator.SIZED</code>,
- <code>Spliterator.SUBSIZED</code>, <code>Spliterator.ORDERED</code>, and
+  <code>Spliterator.SUBSIZED</code>, <code>Spliterator.ORDERED</code>, and 
  <code>Spliterator.IMMUTABLE</code>.
  @param array the array, assumed to be unmodified during use
  @param startInclusive the first index to cover, inclusive
  @param endExclusive index immediately past the last index to cover
  @return a spliterator for the array elements
- @throws ArrayIndexOutOfBoundsException if <code>startInclusive</code> is
- negative, <code>endExclusive</code> is less than
- <code>startInclusive</code>, or <code>endExclusive</code> is greater than
- the array size
+ @throw ArrayIndexOutOfBoundsExceptionif <code>startInclusive</code> is
+          negative, <code>endExclusive</code> is less than
+          <code>startInclusive</code>, or <code>endExclusive</code> is greater than
+          the array size
  @since 1.8
  */
 + (id<JavaUtilSpliterator_OfDouble>)spliteratorWithDoubleArray:(IOSDoubleArray *)array
@@ -3075,7 +2839,7 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Returns a <code>Spliterator.OfInt</code> covering all of the specified array.
  <p>The spliterator reports <code>Spliterator.SIZED</code>,
- <code>Spliterator.SUBSIZED</code>, <code>Spliterator.ORDERED</code>, and
+  <code>Spliterator.SUBSIZED</code>, <code>Spliterator.ORDERED</code>, and 
  <code>Spliterator.IMMUTABLE</code>.
  @param array the array, assumed to be unmodified during use
  @return a spliterator for the array elements
@@ -3085,18 +2849,18 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 
 /*!
  @brief Returns a <code>Spliterator.OfInt</code> covering the specified range of the
- specified array.
+  specified array.
  <p>The spliterator reports <code>Spliterator.SIZED</code>,
- <code>Spliterator.SUBSIZED</code>, <code>Spliterator.ORDERED</code>, and
+  <code>Spliterator.SUBSIZED</code>, <code>Spliterator.ORDERED</code>, and 
  <code>Spliterator.IMMUTABLE</code>.
  @param array the array, assumed to be unmodified during use
  @param startInclusive the first index to cover, inclusive
  @param endExclusive index immediately past the last index to cover
  @return a spliterator for the array elements
- @throws ArrayIndexOutOfBoundsException if <code>startInclusive</code> is
- negative, <code>endExclusive</code> is less than
- <code>startInclusive</code>, or <code>endExclusive</code> is greater than
- the array size
+ @throw ArrayIndexOutOfBoundsExceptionif <code>startInclusive</code> is
+          negative, <code>endExclusive</code> is less than
+          <code>startInclusive</code>, or <code>endExclusive</code> is greater than
+          the array size
  @since 1.8
  */
 + (id<JavaUtilSpliterator_OfInt>)spliteratorWithIntArray:(IOSIntArray *)array
@@ -3106,7 +2870,7 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Returns a <code>Spliterator.OfLong</code> covering all of the specified array.
  <p>The spliterator reports <code>Spliterator.SIZED</code>,
- <code>Spliterator.SUBSIZED</code>, <code>Spliterator.ORDERED</code>, and
+  <code>Spliterator.SUBSIZED</code>, <code>Spliterator.ORDERED</code>, and 
  <code>Spliterator.IMMUTABLE</code>.
  @param array the array, assumed to be unmodified during use
  @return the spliterator for the array elements
@@ -3116,18 +2880,18 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 
 /*!
  @brief Returns a <code>Spliterator.OfLong</code> covering the specified range of the
- specified array.
+  specified array.
  <p>The spliterator reports <code>Spliterator.SIZED</code>,
- <code>Spliterator.SUBSIZED</code>, <code>Spliterator.ORDERED</code>, and
+  <code>Spliterator.SUBSIZED</code>, <code>Spliterator.ORDERED</code>, and 
  <code>Spliterator.IMMUTABLE</code>.
  @param array the array, assumed to be unmodified during use
  @param startInclusive the first index to cover, inclusive
  @param endExclusive index immediately past the last index to cover
  @return a spliterator for the array elements
- @throws ArrayIndexOutOfBoundsException if <code>startInclusive</code> is
- negative, <code>endExclusive</code> is less than
- <code>startInclusive</code>, or <code>endExclusive</code> is greater than
- the array size
+ @throw ArrayIndexOutOfBoundsExceptionif <code>startInclusive</code> is
+          negative, <code>endExclusive</code> is less than
+          <code>startInclusive</code>, or <code>endExclusive</code> is greater than
+          the array size
  @since 1.8
  */
 + (id<JavaUtilSpliterator_OfLong>)spliteratorWithLongArray:(IOSLongArray *)array
@@ -3137,7 +2901,7 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Returns a <code>Spliterator</code> covering all of the specified array.
  <p>The spliterator reports <code>Spliterator.SIZED</code>,
- <code>Spliterator.SUBSIZED</code>, <code>Spliterator.ORDERED</code>, and
+  <code>Spliterator.SUBSIZED</code>, <code>Spliterator.ORDERED</code>, and 
  <code>Spliterator.IMMUTABLE</code>.
  @param array the array, assumed to be unmodified during use
  @return a spliterator for the array elements
@@ -3147,18 +2911,18 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 
 /*!
  @brief Returns a <code>Spliterator</code> covering the specified range of the
- specified array.
+  specified array.
  <p>The spliterator reports <code>Spliterator.SIZED</code>,
- <code>Spliterator.SUBSIZED</code>, <code>Spliterator.ORDERED</code>, and
+  <code>Spliterator.SUBSIZED</code>, <code>Spliterator.ORDERED</code>, and 
  <code>Spliterator.IMMUTABLE</code>.
  @param array the array, assumed to be unmodified during use
  @param startInclusive the first index to cover, inclusive
  @param endExclusive index immediately past the last index to cover
  @return a spliterator for the array elements
- @throws ArrayIndexOutOfBoundsException if <code>startInclusive</code> is
- negative, <code>endExclusive</code> is less than
- <code>startInclusive</code>, or <code>endExclusive</code> is greater than
- the array size
+ @throw ArrayIndexOutOfBoundsExceptionif <code>startInclusive</code> is
+          negative, <code>endExclusive</code> is less than
+          <code>startInclusive</code>, or <code>endExclusive</code> is greater than
+          the array size
  @since 1.8
  */
 + (id<JavaUtilSpliterator>)spliteratorWithNSObjectArray:(IOSObjectArray *)array
@@ -3167,7 +2931,7 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 
 /*!
  @brief Returns a sequential <code>DoubleStream</code> with the specified array as its
- source.
+  source.
  @param array the array, assumed to be unmodified during use
  @return a <code>DoubleStream</code> for the array
  @since 1.8
@@ -3176,15 +2940,15 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 
 /*!
  @brief Returns a sequential <code>DoubleStream</code> with the specified range of the
- specified array as its source.
+  specified array as its source.
  @param array the array, assumed to be unmodified during use
  @param startInclusive the first index to cover, inclusive
  @param endExclusive index immediately past the last index to cover
  @return a <code>DoubleStream</code> for the array range
- @throws ArrayIndexOutOfBoundsException if <code>startInclusive</code> is
- negative, <code>endExclusive</code> is less than
- <code>startInclusive</code>, or <code>endExclusive</code> is greater than
- the array size
+ @throw ArrayIndexOutOfBoundsExceptionif <code>startInclusive</code> is
+          negative, <code>endExclusive</code> is less than
+          <code>startInclusive</code>, or <code>endExclusive</code> is greater than
+          the array size
  @since 1.8
  */
 + (id<JavaUtilStreamDoubleStream>)streamWithDoubleArray:(IOSDoubleArray *)array
@@ -3193,7 +2957,7 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 
 /*!
  @brief Returns a sequential <code>IntStream</code> with the specified array as its
- source.
+  source.
  @param array the array, assumed to be unmodified during use
  @return an <code>IntStream</code> for the array
  @since 1.8
@@ -3202,15 +2966,15 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 
 /*!
  @brief Returns a sequential <code>IntStream</code> with the specified range of the
- specified array as its source.
+  specified array as its source.
  @param array the array, assumed to be unmodified during use
  @param startInclusive the first index to cover, inclusive
  @param endExclusive index immediately past the last index to cover
  @return an <code>IntStream</code> for the array range
- @throws ArrayIndexOutOfBoundsException if <code>startInclusive</code> is
- negative, <code>endExclusive</code> is less than
- <code>startInclusive</code>, or <code>endExclusive</code> is greater than
- the array size
+ @throw ArrayIndexOutOfBoundsExceptionif <code>startInclusive</code> is
+          negative, <code>endExclusive</code> is less than
+          <code>startInclusive</code>, or <code>endExclusive</code> is greater than
+          the array size
  @since 1.8
  */
 + (id<JavaUtilStreamIntStream>)streamWithIntArray:(IOSIntArray *)array
@@ -3219,7 +2983,7 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 
 /*!
  @brief Returns a sequential <code>LongStream</code> with the specified array as its
- source.
+  source.
  @param array the array, assumed to be unmodified during use
  @return a <code>LongStream</code> for the array
  @since 1.8
@@ -3228,15 +2992,15 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 
 /*!
  @brief Returns a sequential <code>LongStream</code> with the specified range of the
- specified array as its source.
+  specified array as its source.
  @param array the array, assumed to be unmodified during use
  @param startInclusive the first index to cover, inclusive
  @param endExclusive index immediately past the last index to cover
  @return a <code>LongStream</code> for the array range
- @throws ArrayIndexOutOfBoundsException if <code>startInclusive</code> is
- negative, <code>endExclusive</code> is less than
- <code>startInclusive</code>, or <code>endExclusive</code> is greater than
- the array size
+ @throw ArrayIndexOutOfBoundsExceptionif <code>startInclusive</code> is
+          negative, <code>endExclusive</code> is less than
+          <code>startInclusive</code>, or <code>endExclusive</code> is greater than
+          the array size
  @since 1.8
  */
 + (id<JavaUtilStreamLongStream>)streamWithLongArray:(IOSLongArray *)array
@@ -3245,7 +3009,7 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 
 /*!
  @brief Returns a sequential <code>Stream</code> with the specified array as its
- source.
+  source.
  @param array The array, assumed to be unmodified during use
  @return a <code>Stream</code> for the array
  @since 1.8
@@ -3254,15 +3018,15 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 
 /*!
  @brief Returns a sequential <code>Stream</code> with the specified range of the
- specified array as its source.
+  specified array as its source.
  @param array the array, assumed to be unmodified during use
  @param startInclusive the first index to cover, inclusive
  @param endExclusive index immediately past the last index to cover
  @return a <code>Stream</code> for the array range
- @throws ArrayIndexOutOfBoundsException if <code>startInclusive</code> is
- negative, <code>endExclusive</code> is less than
- <code>startInclusive</code>, or <code>endExclusive</code> is greater than
- the array size
+ @throw ArrayIndexOutOfBoundsExceptionif <code>startInclusive</code> is
+          negative, <code>endExclusive</code> is less than
+          <code>startInclusive</code>, or <code>endExclusive</code> is greater than
+          the array size
  @since 1.8
  */
 + (id<JavaUtilStreamStream>)streamWithNSObjectArray:(IOSObjectArray *)array
@@ -3272,10 +3036,10 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Returns a string representation of the contents of the specified array.
  The string representation consists of a list of the array's elements,
- enclosed in square brackets (<tt>"[]"</tt>).  Adjacent elements are
- separated by the characters <tt>", "</tt> (a comma followed by a
- space).  Elements are converted to strings as by
- <tt>String.valueOf(boolean)</tt>.  Returns <tt>"null"</tt> if
+  enclosed in square brackets (<tt>"[]"</tt>).  Adjacent elements are
+  separated by the characters <tt>", "</tt> (a comma followed by a
+  space).  Elements are converted to strings as by 
+ <tt>String.valueOf(boolean)</tt>.  Returns <tt>"null"</tt> if 
  <tt>a</tt> is <tt>null</tt>.
  @param a the array whose string representation to return
  @return a string representation of <tt>a</tt>
@@ -3286,10 +3050,10 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Returns a string representation of the contents of the specified array.
  The string representation consists of a list of the array's elements,
- enclosed in square brackets (<tt>"[]"</tt>).  Adjacent elements
- are separated by the characters <tt>", "</tt> (a comma followed
- by a space).  Elements are converted to strings as by
- <tt>String.valueOf(byte)</tt>.  Returns <tt>"null"</tt> if
+  enclosed in square brackets (<tt>"[]"</tt>).  Adjacent elements
+  are separated by the characters <tt>", "</tt> (a comma followed
+  by a space).  Elements are converted to strings as by 
+ <tt>String.valueOf(byte)</tt>.  Returns <tt>"null"</tt> if 
  <tt>a</tt> is <tt>null</tt>.
  @param a the array whose string representation to return
  @return a string representation of <tt>a</tt>
@@ -3300,11 +3064,11 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Returns a string representation of the contents of the specified array.
  The string representation consists of a list of the array's elements,
- enclosed in square brackets (<tt>"[]"</tt>).  Adjacent elements are
- separated by the characters <tt>", "</tt> (a comma followed by a
- space).  Elements are converted to strings as by
+  enclosed in square brackets (<tt>"[]"</tt>).  Adjacent elements are
+  separated by the characters <tt>", "</tt> (a comma followed by a
+  space).  Elements are converted to strings as by 
  <tt>String.valueOf(char)</tt>.  Returns <tt>"null"</tt> if <tt>a</tt>
- is <tt>null</tt>.
+  is <tt>null</tt>.
  @param a the array whose string representation to return
  @return a string representation of <tt>a</tt>
  @since 1.5
@@ -3314,11 +3078,11 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Returns a string representation of the contents of the specified array.
  The string representation consists of a list of the array's elements,
- enclosed in square brackets (<tt>"[]"</tt>).  Adjacent elements are
- separated by the characters <tt>", "</tt> (a comma followed by a
- space).  Elements are converted to strings as by
+  enclosed in square brackets (<tt>"[]"</tt>).  Adjacent elements are
+  separated by the characters <tt>", "</tt> (a comma followed by a
+  space).  Elements are converted to strings as by 
  <tt>String.valueOf(double)</tt>.  Returns <tt>"null"</tt> if <tt>a</tt>
- is <tt>null</tt>.
+  is <tt>null</tt>.
  @param a the array whose string representation to return
  @return a string representation of <tt>a</tt>
  @since 1.5
@@ -3328,11 +3092,11 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Returns a string representation of the contents of the specified array.
  The string representation consists of a list of the array's elements,
- enclosed in square brackets (<tt>"[]"</tt>).  Adjacent elements are
- separated by the characters <tt>", "</tt> (a comma followed by a
- space).  Elements are converted to strings as by
+  enclosed in square brackets (<tt>"[]"</tt>).  Adjacent elements are
+  separated by the characters <tt>", "</tt> (a comma followed by a
+  space).  Elements are converted to strings as by 
  <tt>String.valueOf(float)</tt>.  Returns <tt>"null"</tt> if <tt>a</tt>
- is <tt>null</tt>.
+  is <tt>null</tt>.
  @param a the array whose string representation to return
  @return a string representation of <tt>a</tt>
  @since 1.5
@@ -3342,10 +3106,10 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Returns a string representation of the contents of the specified array.
  The string representation consists of a list of the array's elements,
- enclosed in square brackets (<tt>"[]"</tt>).  Adjacent elements are
- separated by the characters <tt>", "</tt> (a comma followed by a
- space).  Elements are converted to strings as by
- <tt>String.valueOf(int)</tt>.  Returns <tt>"null"</tt> if <tt>a</tt> is
+  enclosed in square brackets (<tt>"[]"</tt>).  Adjacent elements are
+  separated by the characters <tt>", "</tt> (a comma followed by a
+  space).  Elements are converted to strings as by 
+ <tt>String.valueOf(int)</tt>.  Returns <tt>"null"</tt> if <tt>a</tt> is 
  <tt>null</tt>.
  @param a the array whose string representation to return
  @return a string representation of <tt>a</tt>
@@ -3356,11 +3120,11 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Returns a string representation of the contents of the specified array.
  The string representation consists of a list of the array's elements,
- enclosed in square brackets (<tt>"[]"</tt>).  Adjacent elements are
- separated by the characters <tt>", "</tt> (a comma followed by a
- space).  Elements are converted to strings as by
+  enclosed in square brackets (<tt>"[]"</tt>).  Adjacent elements are
+  separated by the characters <tt>", "</tt> (a comma followed by a
+  space).  Elements are converted to strings as by 
  <tt>String.valueOf(long)</tt>.  Returns <tt>"null"</tt> if <tt>a</tt>
- is <tt>null</tt>.
+  is <tt>null</tt>.
  @param a the array whose string representation to return
  @return a string representation of <tt>a</tt>
  @since 1.5
@@ -3370,12 +3134,12 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Returns a string representation of the contents of the specified array.
  If the array contains other arrays as elements, they are converted to
- strings by the <code>Object.toString</code> method inherited from
+  strings by the <code>Object.toString</code> method inherited from 
  <tt>Object</tt>, which describes their <i>identities</i> rather than
- their contents.
+  their contents. 
  <p>The value returned by this method is equal to the value that would
- be returned by <tt>Arrays.asList(a).toString()</tt>, unless <tt>a</tt>
- is <tt>null</tt>, in which case <tt>"null"</tt> is returned.
+  be returned by <tt>Arrays.asList(a).toString()</tt>, unless <tt>a</tt>
+  is <tt>null</tt>, in which case <tt>"null"</tt> is returned.
  @param a the array whose string representation to return
  @return a string representation of <tt>a</tt>
  - seealso: #deepToString(Object[])
@@ -3386,11 +3150,11 @@ withJavaUtilFunctionIntFunction:(id<JavaUtilFunctionIntFunction>)generator;
 /*!
  @brief Returns a string representation of the contents of the specified array.
  The string representation consists of a list of the array's elements,
- enclosed in square brackets (<tt>"[]"</tt>).  Adjacent elements are
- separated by the characters <tt>", "</tt> (a comma followed by a
- space).  Elements are converted to strings as by
+  enclosed in square brackets (<tt>"[]"</tt>).  Adjacent elements are
+  separated by the characters <tt>", "</tt> (a comma followed by a
+  space).  Elements are converted to strings as by 
  <tt>String.valueOf(short)</tt>.  Returns <tt>"null"</tt> if <tt>a</tt>
- is <tt>null</tt>.
+  is <tt>null</tt>.
  @param a the array whose string representation to return
  @return a string representation of <tt>a</tt>
  @since 1.5
@@ -3408,12 +3172,11 @@ J2OBJC_EMPTY_STATIC_INIT(JavaUtilArrays)
 
 /*!
  @brief The minimum array length below which a parallel sorting
- algorithm will not further partition the sorting task.
- Using
- smaller sizes typically results in memory contention across
- tasks that makes parallel speedups unlikely.
+  algorithm will not further partition the sorting task.Using
+  smaller sizes typically results in memory contention across
+  tasks that makes parallel speedups unlikely.
  */
-inline jint JavaUtilArrays_get_MIN_ARRAY_SORT_GRAN();
+inline jint JavaUtilArrays_get_MIN_ARRAY_SORT_GRAN(void);
 #define JavaUtilArrays_MIN_ARRAY_SORT_GRAN 8192
 J2OBJC_STATIC_FIELD_CONSTANT(JavaUtilArrays, MIN_ARRAY_SORT_GRAN, jint)
 
@@ -3740,7 +3503,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilArrays)
 
 #define RESTRICT_JavaUtilComparator 1
 #define INCLUDE_JavaUtilComparator 1
-#include "../../java/util/Comparator.h"
+#include "java/util/Comparator.h"
 
 @protocol JavaUtilFunctionFunction;
 @protocol JavaUtilFunctionToDoubleFunction;
@@ -3749,18 +3512,18 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilArrays)
 
 /*!
  @brief A comparator that implements the natural ordering of a group of
- mutually comparable elements.
- May be used when a supplied
- comparator is null. To simplify code-sharing within underlying
- implementations, the compare method only declares type Object
- for its second argument.
- Arrays class implementor's note: It is an empirical matter
- whether ComparableTimSort offers any performance benefit over
- TimSort used with this comparator.  If not, you are better off
- deleting or bypassing ComparableTimSort.  There is currently no
- empirical case for separating them for parallel sorting, so all
- public Object parallelSort methods use the same comparator
- based implementation.
+  mutually comparable elements.May be used when a supplied
+  comparator is null.
+ To simplify code-sharing within underlying
+  implementations, the compare method only declares type Object
+  for its second argument.
+  Arrays class implementor's note: It is an empirical matter
+  whether ComparableTimSort offers any performance benefit over
+  TimSort used with this comparator.  If not, you are better off
+  deleting or bypassing ComparableTimSort.  There is currently no
+  empirical case for separating them for parallel sorting, so all
+  public Object parallelSort methods use the same comparator
+  based implementation.
  */
 @interface JavaUtilArrays_NaturalOrder : NSObject < JavaUtilComparator >
 
@@ -3779,16 +3542,16 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilArrays)
 
 J2OBJC_STATIC_INIT(JavaUtilArrays_NaturalOrder)
 
-inline JavaUtilArrays_NaturalOrder *JavaUtilArrays_NaturalOrder_get_INSTANCE();
+inline JavaUtilArrays_NaturalOrder *JavaUtilArrays_NaturalOrder_get_INSTANCE(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT JavaUtilArrays_NaturalOrder *JavaUtilArrays_NaturalOrder_INSTANCE;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(JavaUtilArrays_NaturalOrder, INSTANCE, JavaUtilArrays_NaturalOrder *)
 
 FOUNDATION_EXPORT void JavaUtilArrays_NaturalOrder_init(JavaUtilArrays_NaturalOrder *self);
 
-FOUNDATION_EXPORT JavaUtilArrays_NaturalOrder *new_JavaUtilArrays_NaturalOrder_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaUtilArrays_NaturalOrder *new_JavaUtilArrays_NaturalOrder_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaUtilArrays_NaturalOrder *create_JavaUtilArrays_NaturalOrder_init();
+FOUNDATION_EXPORT JavaUtilArrays_NaturalOrder *create_JavaUtilArrays_NaturalOrder_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaUtilArrays_NaturalOrder)
 
@@ -3799,9 +3562,9 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilArrays_NaturalOrder)
 
 /*!
  @brief Old merge sort implementation can be selected (for
- compatibility with broken comparators) using a system property.
+  compatibility with broken comparators) using a system property.
  Cannot be a static boolean in the enclosing class due to
- circular dependencies. To be removed in a future release.
+  circular dependencies. To be removed in a future release.
  */
 @interface JavaUtilArrays_LegacyMergeSort : NSObject
 
@@ -3815,9 +3578,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaUtilArrays_LegacyMergeSort)
 
 FOUNDATION_EXPORT void JavaUtilArrays_LegacyMergeSort_init(JavaUtilArrays_LegacyMergeSort *self);
 
-FOUNDATION_EXPORT JavaUtilArrays_LegacyMergeSort *new_JavaUtilArrays_LegacyMergeSort_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaUtilArrays_LegacyMergeSort *new_JavaUtilArrays_LegacyMergeSort_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaUtilArrays_LegacyMergeSort *create_JavaUtilArrays_LegacyMergeSort_init();
+FOUNDATION_EXPORT JavaUtilArrays_LegacyMergeSort *create_JavaUtilArrays_LegacyMergeSort_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaUtilArrays_LegacyMergeSort)
 

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/UncheckedIOException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoUncheckedIOException")
 #ifdef RESTRICT_JavaIoUncheckedIOException
@@ -21,9 +21,10 @@
 
 #define RESTRICT_JavaLangRuntimeException 1
 #define INCLUDE_JavaLangRuntimeException 1
-#include "../../java/lang/RuntimeException.h"
+#include "java/lang/RuntimeException.h"
 
 @class JavaIoIOException;
+@class JavaLangThrowable;
 
 /*!
  @brief Wraps an <code>IOException</code> with an unchecked exception.
@@ -35,20 +36,19 @@
 
 /*!
  @brief Constructs an instance of this class.
- @param cause
- the <code>IOException</code>
- @throws NullPointerException
+ @param cause the 
+ <code>IOException</code>
+ @throw NullPointerException
  if the cause is <code>null</code>
  */
 - (instancetype)initWithJavaIoIOException:(JavaIoIOException *)cause;
 
 /*!
  @brief Constructs an instance of this class.
- @param message
- the detail message, can be null
- @param cause
- the <code>IOException</code>
- @throws NullPointerException
+ @param message the detail message, can be null
+ @param cause the 
+ <code>IOException</code>
+ @throw NullPointerException
  if the cause is <code>null</code>
  */
 - (instancetype)initWithNSString:(NSString *)message
@@ -60,9 +60,25 @@
  */
 - (JavaIoIOException *)getCause;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
+
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(JavaIoUncheckedIOException)
+J2OBJC_STATIC_INIT(JavaIoUncheckedIOException)
 
 FOUNDATION_EXPORT void JavaIoUncheckedIOException_initWithNSString_withJavaIoIOException_(JavaIoUncheckedIOException *self, NSString *message, JavaIoIOException *cause);
 

@@ -23,9 +23,11 @@
 #define INCLUDE_JavaLangVirtualMachineError 1
 #include "java/lang/VirtualMachineError.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Thrown when a stack overflow occurs because an application
- recurses too deeply.
+  recurses too deeply.
  @author unascribed
  @since JDK1.0
  */
@@ -40,10 +42,17 @@
 
 /*!
  @brief Constructs a <code>StackOverflowError</code> with the specified
- detail message.
- @param s   the detail message.
+  detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -51,9 +60,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangStackOverflowError)
 
 FOUNDATION_EXPORT void JavaLangStackOverflowError_init(JavaLangStackOverflowError *self);
 
-FOUNDATION_EXPORT JavaLangStackOverflowError *new_JavaLangStackOverflowError_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangStackOverflowError *new_JavaLangStackOverflowError_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangStackOverflowError *create_JavaLangStackOverflowError_init();
+FOUNDATION_EXPORT JavaLangStackOverflowError *create_JavaLangStackOverflowError_init(void);
 
 FOUNDATION_EXPORT void JavaLangStackOverflowError_initWithNSString_(JavaLangStackOverflowError *self, NSString *s);
 

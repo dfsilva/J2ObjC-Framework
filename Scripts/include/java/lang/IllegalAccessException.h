@@ -23,34 +23,36 @@
 #define INCLUDE_JavaLangReflectiveOperationException 1
 #include "java/lang/ReflectiveOperationException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief An IllegalAccessException is thrown when an application tries
- to reflectively create an instance (other than an array),
- set or get a field, or invoke a method, but the currently
- executing method does not have access to the definition of
- the specified class, field, method or constructor.
+  to reflectively create an instance (other than an array),
+  set or get a field, or invoke a method, but the currently
+  executing method does not have access to the definition of
+  the specified class, field, method or constructor.
  @author unascribed
  - seealso: Class#newInstance()
- - seealso: java.lang.reflect.Field#set(Object,Object)
- - seealso: java.lang.reflect.Field#setBoolean(Object,boolean)
- - seealso: java.lang.reflect.Field#setByte(Object,byte)
- - seealso: java.lang.reflect.Field#setShort(Object,short)
- - seealso: java.lang.reflect.Field#setChar(Object,char)
- - seealso: java.lang.reflect.Field#setInt(Object,int)
- - seealso: java.lang.reflect.Field#setLong(Object,long)
- - seealso: java.lang.reflect.Field#setFloat(Object,float)
- - seealso: java.lang.reflect.Field#setDouble(Object,double)
- - seealso: java.lang.reflect.Field#get(Object)
- - seealso: java.lang.reflect.Field#getBoolean(Object)
- - seealso: java.lang.reflect.Field#getByte(Object)
- - seealso: java.lang.reflect.Field#getShort(Object)
- - seealso: java.lang.reflect.Field#getChar(Object)
- - seealso: java.lang.reflect.Field#getInt(Object)
- - seealso: java.lang.reflect.Field#getLong(Object)
- - seealso: java.lang.reflect.Field#getFloat(Object)
- - seealso: java.lang.reflect.Field#getDouble(Object)
- - seealso: java.lang.reflect.Method#invoke(Object,Object[])
- - seealso: java.lang.reflect.Constructor#newInstance(Object[])
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Field
+ - seealso: java.lang.reflect.Method
+ - seealso: java.lang.reflect.Constructor
  @since JDK1.0
  */
 @interface JavaLangIllegalAccessException : JavaLangReflectiveOperationException
@@ -59,15 +61,22 @@
 
 /*!
  @brief Constructs an <code>IllegalAccessException</code> without a
- detail message.
+  detail message.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs an <code>IllegalAccessException</code> with a detail message.
- @param s   the detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -75,9 +84,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangIllegalAccessException)
 
 FOUNDATION_EXPORT void JavaLangIllegalAccessException_init(JavaLangIllegalAccessException *self);
 
-FOUNDATION_EXPORT JavaLangIllegalAccessException *new_JavaLangIllegalAccessException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangIllegalAccessException *new_JavaLangIllegalAccessException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangIllegalAccessException *create_JavaLangIllegalAccessException_init();
+FOUNDATION_EXPORT JavaLangIllegalAccessException *create_JavaLangIllegalAccessException_init(void);
 
 FOUNDATION_EXPORT void JavaLangIllegalAccessException_initWithNSString_(JavaLangIllegalAccessException *self, NSString *s);
 

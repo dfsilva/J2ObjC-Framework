@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/zip/ZipException.java
 //
 
-#include "../../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilZipZipException")
 #ifdef RESTRICT_JavaUtilZipZipException
@@ -21,7 +21,9 @@
 
 #define RESTRICT_JavaIoIOException 1
 #define INCLUDE_JavaIoIOException 1
-#include "../../../java/io/IOException.h"
+#include "java/io/IOException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Signals that a Zip exception of some sort has occurred.
@@ -35,16 +37,23 @@
 
 /*!
  @brief Constructs a <code>ZipException</code> with <code>null</code>
- as its error detail message.
+  as its error detail message.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a <code>ZipException</code> with the specified detail
- message.
- @param s   the detail message.
+  message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -52,9 +61,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaUtilZipZipException)
 
 FOUNDATION_EXPORT void JavaUtilZipZipException_init(JavaUtilZipZipException *self);
 
-FOUNDATION_EXPORT JavaUtilZipZipException *new_JavaUtilZipZipException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaUtilZipZipException *new_JavaUtilZipZipException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaUtilZipZipException *create_JavaUtilZipZipException_init();
+FOUNDATION_EXPORT JavaUtilZipZipException *create_JavaUtilZipZipException_init(void);
 
 FOUNDATION_EXPORT void JavaUtilZipZipException_initWithNSString_(JavaUtilZipZipException *self, NSString *s);
 

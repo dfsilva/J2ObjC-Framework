@@ -25,30 +25,30 @@
 
 /*!
  @brief An abstract wrapper class for an <code>EventListener</code> class
- which associates a set of additional parameters with the listener.
+  which associates a set of additional parameters with the listener.
  Subclasses must provide the storage and accessor methods
- for the additional arguments or parameters.
+  for the additional arguments or parameters. 
  <p>
- For example, a bean which supports named properties
- would have a two argument method signature for adding
- a <code>PropertyChangeListener</code> for a property:
+  For example, a bean which supports named properties
+  would have a two argument method signature for adding a 
+ <code>PropertyChangeListener</code> for a property: 
  @code
 
   public void addPropertyChangeListener(String propertyName,
-                                       PropertyChangeListener listener)
+                                        PropertyChangeListener listener) 
   
 @endcode
- If the bean also implemented the zero argument get listener method:
+  If the bean also implemented the zero argument get listener method: 
  @code
 
-  public PropertyChangeListener[] getPropertyChangeListeners()
+  public PropertyChangeListener[] getPropertyChangeListeners() 
   
 @endcode
- then the array may contain inner <code>PropertyChangeListeners</code>
- which are also <code>PropertyChangeListenerProxy</code> objects.
+  then the array may contain inner <code>PropertyChangeListeners</code>
+  which are also <code>PropertyChangeListenerProxy</code> objects. 
  <p>
- If the calling method is interested in retrieving the named property
- then it would have to test the element to see if it is a proxy class.
+  If the calling method is interested in retrieving the named property
+  then it would have to test the element to see if it is a proxy class.
  @since 1.4
  */
 @interface JavaUtilEventListenerProxy : NSObject < JavaUtilEventListener >
@@ -57,7 +57,7 @@
 
 /*!
  @brief Creates a proxy for the specified listener.
- @param listener  the listener object
+ @param listener the listener object
  */
 - (instancetype)initWithJavaUtilEventListener:(id<JavaUtilEventListener>)listener;
 

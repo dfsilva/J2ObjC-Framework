@@ -21,7 +21,7 @@
 
 /*!
  @brief This class stores an RFC 822-like name, address, and comment,
- and provides methods to convert them to quoted strings.
+  and provides methods to convert them to quoted strings.
  */
 @interface AndroidTextUtilRfc822Token : NSObject
 
@@ -29,7 +29,7 @@
 
 /*!
  @brief Creates a new Rfc822Token with the specified name, address,
- and comment.
+  and comment.
  */
 - (instancetype)initWithNSString:(NSString *)name
                     withNSString:(NSString *)address
@@ -56,24 +56,22 @@
 
 /*!
  @brief Returns the comment, with internal backslashes and parentheses
- preceded by backslashes.
- The outer parentheses themselves are
- not added by this method.
+  preceded by backslashes.The outer parentheses themselves are
+  not added by this method.
  */
 + (NSString *)quoteCommentWithNSString:(NSString *)comment;
 
 /*!
  @brief Returns the name, with internal backslashes and quotation marks
- preceded by backslashes.
- The outer quote marks themselves are not
- added by this method.
+  preceded by backslashes.The outer quote marks themselves are not
+  added by this method.
  */
 + (NSString *)quoteNameWithNSString:(NSString *)name;
 
 /*!
  @brief Returns the name, conservatively quoting it if there are any
- characters that are likely to cause trouble outside of a
- quoted string, or returning it literally if it seems safe.
+  characters that are likely to cause trouble outside of a
+  quoted string, or returning it literally if it seems safe.
  */
 + (NSString *)quoteNameIfNecessaryWithNSString:(NSString *)name;
 
@@ -94,10 +92,14 @@
 
 /*!
  @brief Returns the name (with quoting added if necessary),
- the comment (in parentheses), and the address (in angle brackets).
+  the comment (in parentheses), and the address (in angle brackets).
  This should be suitable for inclusion in an RFC 822 address list.
  */
 - (NSString *)description;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

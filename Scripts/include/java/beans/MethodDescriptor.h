@@ -35,34 +35,31 @@
 
 /*!
  @brief <p>
- Constructs an instance with the given <code>Method</code>.
- The
+  Constructs an instance with the given <code>Method</code>.
+ The 
  <code>getName()</code> is set as the name of the <code>method</code>
- passed.
+  passed. 
  </p>
- @param method
- The Method to set.
+ @param method The Method to set.
  */
 - (instancetype)initWithJavaLangReflectMethod:(JavaLangReflectMethod *)method;
 
 /*!
  @brief <p>
- Constructs an instance with the given <code>Method</code> and
+  Constructs an instance with the given <code>Method</code> and 
  <code>ParameterDescriptor</code>s.
  The <code>getName()</code> is set as the name
- of the <code>method</code> passed.
+  of the <code>method</code> passed. 
  </p>
- @param method
- The Method to set.
- @param parameterDescriptors
- An array of parameter descriptors.
+ @param method The Method to set.
+ @param parameterDescriptors An array of parameter descriptors.
  */
 - (instancetype)initWithJavaLangReflectMethod:(JavaLangReflectMethod *)method
         withJavaBeansParameterDescriptorArray:(IOSObjectArray *)parameterDescriptors;
 
 /*!
  @brief <p>
- Gets the method.
+  Gets the method.
  </p>
  @return A <code>Method</code> instance.
  */
@@ -70,16 +67,20 @@
 
 /*!
  @brief <p>
- Gets the parameter descriptors.
+  Gets the parameter descriptors.
  </p>
  @return An array of <code>ParameterDescriptor</code> instance or
- <code>null</code>.
+          <code>null</code>.
  */
 - (IOSObjectArray *)getParameterDescriptors;
 
 #pragma mark Package-Private
 
 - (void)mergeWithJavaBeansMethodDescriptor:(JavaBeansMethodDescriptor *)anotherMethod;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

@@ -26,9 +26,8 @@
 @class IOSClass;
 
 /*!
- @brief javax.annotation.PreDestroy annotation.
- No code was referenced,
- created using just its public API.
+ @brief javax.annotation.PreDestroy annotation.No code was referenced,
+  created using just its public API.
  */
 @protocol JavaxAnnotationPreDestroy < JavaLangAnnotationAnnotation >
 
@@ -40,7 +39,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(JavaxAnnotationPreDestroy)
 
-FOUNDATION_EXPORT id<JavaxAnnotationPreDestroy> create_JavaxAnnotationPreDestroy();
+FOUNDATION_EXPORT id<JavaxAnnotationPreDestroy> create_JavaxAnnotationPreDestroy(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaxAnnotationPreDestroy)
 

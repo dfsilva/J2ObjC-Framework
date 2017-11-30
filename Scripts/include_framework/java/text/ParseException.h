@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/text/ParseException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaTextParseException")
 #ifdef RESTRICT_JavaTextParseException
@@ -21,11 +21,13 @@
 
 #define RESTRICT_JavaLangException 1
 #define INCLUDE_JavaLangException 1
-#include "../../java/lang/Exception.h"
+#include "java/lang/Exception.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Signals that an error has been reached unexpectedly
- while parsing.
+  while parsing.
  - seealso: java.lang.Exception
  - seealso: java.text.Format
  - seealso: java.text.FieldPosition
@@ -37,7 +39,7 @@
 
 /*!
  @brief Constructs a ParseException with the specified detail message and
- offset.
+  offset.
  A detail message is a String that describes this particular exception.
  @param s the detail message
  @param errorOffset the position where the error is found while parsing.
@@ -50,6 +52,22 @@
  @return the position where the error was found
  */
 - (jint)getErrorOffset;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 

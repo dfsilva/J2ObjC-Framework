@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/nio/channels/AlreadyConnectedException.java
 //
 
-#include "../../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNioChannelsAlreadyConnectedException")
 #ifdef RESTRICT_JavaNioChannelsAlreadyConnectedException
@@ -21,7 +21,9 @@
 
 #define RESTRICT_JavaLangIllegalStateException 1
 #define INCLUDE_JavaLangIllegalStateException 1
-#include "../../../java/lang/IllegalStateException.h"
+#include "java/lang/IllegalStateException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Unchecked exception thrown when an attempt is made to connect a <code>SocketChannel</code>
@@ -37,15 +39,24 @@
  */
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsAlreadyConnectedException)
 
 FOUNDATION_EXPORT void JavaNioChannelsAlreadyConnectedException_init(JavaNioChannelsAlreadyConnectedException *self);
 
-FOUNDATION_EXPORT JavaNioChannelsAlreadyConnectedException *new_JavaNioChannelsAlreadyConnectedException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNioChannelsAlreadyConnectedException *new_JavaNioChannelsAlreadyConnectedException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNioChannelsAlreadyConnectedException *create_JavaNioChannelsAlreadyConnectedException_init();
+FOUNDATION_EXPORT JavaNioChannelsAlreadyConnectedException *create_JavaNioChannelsAlreadyConnectedException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsAlreadyConnectedException)
 

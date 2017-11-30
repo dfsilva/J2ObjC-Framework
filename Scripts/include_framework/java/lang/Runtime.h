@@ -3,7 +3,7 @@
 //  source: Classes/java/lang/Runtime.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangRuntime")
 #ifdef RESTRICT_JavaLangRuntime
@@ -22,9 +22,8 @@
 @class JavaLangThread;
 
 /*!
- @brief Simple iOS version of java.lang.Runtime.
- No code was shared, just its
- public API.
+ @brief Simple iOS version of java.lang.Runtime.No code was shared, just its
+  public API.
  @author Tom Ball
  */
 @interface JavaLangRuntime : NSObject
@@ -80,7 +79,7 @@
 
 J2OBJC_STATIC_INIT(JavaLangRuntime)
 
-FOUNDATION_EXPORT JavaLangRuntime *JavaLangRuntime_getRuntime();
+FOUNDATION_EXPORT JavaLangRuntime *JavaLangRuntime_getRuntime(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangRuntime)
 

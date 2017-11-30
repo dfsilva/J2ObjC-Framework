@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/ArrayStoreException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangArrayStoreException")
 #ifdef RESTRICT_JavaLangArrayStoreException
@@ -21,18 +21,18 @@
 
 #define RESTRICT_JavaLangRuntimeException 1
 #define INCLUDE_JavaLangRuntimeException 1
-#include "../../java/lang/RuntimeException.h"
+#include "java/lang/RuntimeException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Thrown to indicate that an attempt has been made to store the
- wrong type of object into an array of objects.
- For example, the
- following code generates an <code>ArrayStoreException</code>:
- <p><blockquote>
-@code
+  wrong type of object into an array of objects.For example, the
+  following code generates an <code>ArrayStoreException</code>:
+  <p><blockquote>@code
 
-     Object x[] = new String[3];
-     x[0] = new Integer(0);
+      Object x[] = new String[3];
+      x[0] = new Integer(0); 
   
 @endcode</blockquote>
  @author unascribed
@@ -49,10 +49,22 @@
 
 /*!
  @brief Constructs an <code>ArrayStoreException</code> with the specified
- detail message.
- @param s   the detail message.
+  detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -60,9 +72,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangArrayStoreException)
 
 FOUNDATION_EXPORT void JavaLangArrayStoreException_init(JavaLangArrayStoreException *self);
 
-FOUNDATION_EXPORT JavaLangArrayStoreException *new_JavaLangArrayStoreException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangArrayStoreException *new_JavaLangArrayStoreException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangArrayStoreException *create_JavaLangArrayStoreException_init();
+FOUNDATION_EXPORT JavaLangArrayStoreException *create_JavaLangArrayStoreException_init(void);
 
 FOUNDATION_EXPORT void JavaLangArrayStoreException_initWithNSString_(JavaLangArrayStoreException *self, NSString *s);
 

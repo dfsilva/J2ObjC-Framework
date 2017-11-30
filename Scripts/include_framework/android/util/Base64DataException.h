@@ -3,7 +3,7 @@
 //  source: android/frameworks/base/core/java/android/util/Base64DataException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_AndroidUtilBase64DataException")
 #ifdef RESTRICT_AndroidUtilBase64DataException
@@ -21,19 +21,29 @@
 
 #define RESTRICT_JavaIoIOException 1
 #define INCLUDE_JavaIoIOException 1
-#include "../../java/io/IOException.h"
+#include "java/io/IOException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief This exception is thrown by <code>Base64InputStream</code> or <code>Base64OutputStream</code>
- when an error is detected in the data being decoded.
- This allows problems with the base64 data
- to be disambiguated from errors in the underlying streams (e.g. actual connection errors.)
+  when an error is detected in the data being decoded.This allows problems with the base64 data
+  to be disambiguated from errors in the underlying streams (e.g. actual connection errors.)
  */
 @interface AndroidUtilBase64DataException : JavaIoIOException
 
 #pragma mark Public
 
 - (instancetype)initWithNSString:(NSString *)detailMessage;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 

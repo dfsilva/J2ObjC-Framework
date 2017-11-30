@@ -23,16 +23,18 @@
 #define INCLUDE_JavaLangRuntimeException 1
 #include "java/lang/RuntimeException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Thrown to indicate that a thread has attempted to wait on an
- object's monitor or to notify other threads waiting on an object's
- monitor without owning the specified monitor.
+  object's monitor or to notify other threads waiting on an object's
+  monitor without owning the specified monitor.
  @author unascribed
- - seealso: java.lang.Object#notify()
- - seealso: java.lang.Object#notifyAll()
- - seealso: java.lang.Object#wait()
- - seealso: java.lang.Object#wait(long)
- - seealso: java.lang.Object#wait(long,int)
+ - seealso: java.lang.Object
+ - seealso: java.lang.Object
+ - seealso: java.lang.Object
+ - seealso: java.lang.Object
+ - seealso: java.lang.Object
  @since JDK1.0
  */
 @interface JavaLangIllegalMonitorStateException : JavaLangRuntimeException
@@ -41,16 +43,28 @@
 
 /*!
  @brief Constructs an <code>IllegalMonitorStateException</code> with no
- detail message.
+  detail message.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs an <code>IllegalMonitorStateException</code> with the
- specified detail message.
- @param s   the detail message.
+  specified detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -58,9 +72,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangIllegalMonitorStateException)
 
 FOUNDATION_EXPORT void JavaLangIllegalMonitorStateException_init(JavaLangIllegalMonitorStateException *self);
 
-FOUNDATION_EXPORT JavaLangIllegalMonitorStateException *new_JavaLangIllegalMonitorStateException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangIllegalMonitorStateException *new_JavaLangIllegalMonitorStateException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangIllegalMonitorStateException *create_JavaLangIllegalMonitorStateException_init();
+FOUNDATION_EXPORT JavaLangIllegalMonitorStateException *create_JavaLangIllegalMonitorStateException_init(void);
 
 FOUNDATION_EXPORT void JavaLangIllegalMonitorStateException_initWithNSString_(JavaLangIllegalMonitorStateException *self, NSString *s);
 

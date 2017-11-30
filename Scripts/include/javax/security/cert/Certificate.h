@@ -23,16 +23,16 @@
 @protocol JavaSecurityPublicKey;
 
 /*!
- @brief Abstract class to represent identity certificates.
- It represents a way to
- verify the binding of a Principal and its public key. Examples are X.509,
- PGP, and SDSI.
+ @brief Abstract class to represent identity certificates.It represents a way to
+  verify the binding of a Principal and its public key.
+ Examples are X.509,
+  PGP, and SDSI. 
  <p>
- Note: This package is provided only for compatibility reasons.
- It contains a simplified version of the java.security.cert package that was
- previously used by JSSE (Java SSL package). All applications that do not have
- to be compatible with older versions of JSSE (that is before Java SDK 1.5)
- should only use java.security.cert.
+  Note: This package is provided only for compatibility reasons.
+  It contains a simplified version of the java.security.cert package that was
+  previously used by JSSE (Java SSL package). All applications that do not have
+  to be compatible with older versions of JSSE (that is before Java SDK 1.5)
+  should only use java.security.cert.
  */
 @interface JavaxSecurityCertCertificate : NSObject
 
@@ -44,13 +44,12 @@
 - (instancetype)init;
 
 /*!
- @brief Compares the argument to this Certificate.
- If both have the same bytes
- they are assumed to be equal.
- @param obj
- the <code>Certificate</code> to compare with this object
+ @brief Compares the argument to this Certificate.If both have the same bytes
+  they are assumed to be equal.
+ @param obj the 
+ <code>Certificate</code>  to compare with this object
  @return <code>true</code> if <code>obj</code> is the same as this
- <code>Certificate</code>, <code>false</code> otherwise
+          <code>Certificate</code>, <code>false</code> otherwise
  - seealso: #hashCode
  */
 - (jboolean)isEqual:(id)obj;
@@ -58,7 +57,7 @@
 /*!
  @brief Returns the encoded representation for this certificate.
  @return the encoded representation for this certificate.
- @throws CertificateEncodingException
+ @throw CertificateEncodingException
  if encoding fails.
  */
 - (IOSByteArray *)getEncoded;
@@ -70,10 +69,9 @@
 - (id<JavaSecurityPublicKey>)getPublicKey;
 
 /*!
- @brief Returns an integer hash code for the receiver.
- Any two objects which
- return <code>true</code> when passed to <code>equals</code> must answer
- the same value for this method.
+ @brief Returns an integer hash code for the receiver.Any two objects which
+  return <code>true</code> when passed to <code>equals</code> must answer
+  the same value for this method.
  @return the receiver's hash
  - seealso: #equals
  */
@@ -81,45 +79,41 @@
 
 /*!
  @brief Returns a string containing a concise, human-readable description of the
- receiver.
+  receiver.
  @return a printable representation for the receiver.
  */
 - (NSString *)description;
 
 /*!
  @brief Verifies that this certificate was signed with the given public key.
- @param key
- public key for which verification should be performed.
- @throws CertificateException
+ @param key public key for which verification should be performed.
+ @throw CertificateException
  if encoding errors are detected
- @throws NoSuchAlgorithmException
+ @throw NoSuchAlgorithmException
  if an unsupported algorithm is detected
- @throws InvalidKeyException
+ @throw InvalidKeyException
  if an invalid key is detected
- @throws NoSuchProviderException
+ @throw NoSuchProviderException
  if there is no default provider
- @throws SignatureException
+ @throw SignatureException
  if signature errors are detected
  */
 - (void)verifyWithJavaSecurityPublicKey:(id<JavaSecurityPublicKey>)key;
 
 /*!
- @brief Verifies that this certificate was signed with the given public key.
- Uses
- the signature algorithm given by the provider.
- @param key
- public key for which verification should be performed.
- @param sigProvider
- the name of the signature provider.
- @throws CertificateException
+ @brief Verifies that this certificate was signed with the given public key.Uses
+  the signature algorithm given by the provider.
+ @param key public key for which verification should be performed.
+ @param sigProvider the name of the signature provider.
+ @throw CertificateException
  if encoding errors are detected
- @throws NoSuchAlgorithmException
+ @throw NoSuchAlgorithmException
  if an unsupported algorithm is detected
- @throws InvalidKeyException
+ @throw InvalidKeyException
  if an invalid key is detected
- @throws NoSuchProviderException
+ @throw NoSuchProviderException
  if the specified provider does not exists.
- @throws SignatureException
+ @throw SignatureException
  if signature errors are detected
  */
 - (void)verifyWithJavaSecurityPublicKey:(id<JavaSecurityPublicKey>)key

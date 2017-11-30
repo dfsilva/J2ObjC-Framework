@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/StreamCorruptedException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoStreamCorruptedException")
 #ifdef RESTRICT_JavaIoStreamCorruptedException
@@ -21,11 +21,11 @@
 
 #define RESTRICT_JavaIoObjectStreamException 1
 #define INCLUDE_JavaIoObjectStreamException 1
-#include "../../java/io/ObjectStreamException.h"
+#include "java/io/ObjectStreamException.h"
 
 /*!
  @brief Thrown when control information that was read from an object stream
- violates internal consistency checks.
+  violates internal consistency checks.
  @author unascribed
  @since JDK1.1
  */
@@ -40,7 +40,7 @@
 
 /*!
  @brief Create a StreamCorruptedException and list a reason why thrown.
- @param reason  String describing the reason for the exception.
+ @param reason String describing the reason for the exception.
  */
 - (instancetype)initWithNSString:(NSString *)reason;
 
@@ -56,9 +56,9 @@ FOUNDATION_EXPORT JavaIoStreamCorruptedException *create_JavaIoStreamCorruptedEx
 
 FOUNDATION_EXPORT void JavaIoStreamCorruptedException_init(JavaIoStreamCorruptedException *self);
 
-FOUNDATION_EXPORT JavaIoStreamCorruptedException *new_JavaIoStreamCorruptedException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoStreamCorruptedException *new_JavaIoStreamCorruptedException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoStreamCorruptedException *create_JavaIoStreamCorruptedException_init();
+FOUNDATION_EXPORT JavaIoStreamCorruptedException *create_JavaIoStreamCorruptedException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaIoStreamCorruptedException)
 

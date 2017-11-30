@@ -23,10 +23,12 @@
 #define INCLUDE_JavaLangIllegalStateException 1
 #include "java/lang/IllegalStateException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Unchecked exception thrown when the formatter has been closed.
  <p> Unless otherwise specified, passing a <tt>null</tt> argument to any
- method or constructor in this class will cause a <code>NullPointerException</code>
+  method or constructor in this class will cause a <code>NullPointerException</code>
   to be thrown.
  @since 1.5
  */
@@ -39,15 +41,24 @@
  */
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaUtilFormatterClosedException)
 
 FOUNDATION_EXPORT void JavaUtilFormatterClosedException_init(JavaUtilFormatterClosedException *self);
 
-FOUNDATION_EXPORT JavaUtilFormatterClosedException *new_JavaUtilFormatterClosedException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaUtilFormatterClosedException *new_JavaUtilFormatterClosedException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaUtilFormatterClosedException *create_JavaUtilFormatterClosedException_init();
+FOUNDATION_EXPORT JavaUtilFormatterClosedException *create_JavaUtilFormatterClosedException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaUtilFormatterClosedException)
 

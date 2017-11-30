@@ -34,34 +34,31 @@
 
 /*!
  @brief <p>
- Constructs an instance with the bean's <code>Class</code>.
- The descriptor's
- <code>getName()</code> is set as the unqualified name of the
+  Constructs an instance with the bean's <code>Class</code>.
+ The descriptor's 
+ <code>getName()</code> is set as the unqualified name of the 
  <code>beanClass</code>.
- </p>
- @param beanClass
- The bean's Class.
+  </p>
+ @param beanClass The bean's Class.
  */
 - (instancetype)initWithIOSClass:(IOSClass *)beanClass;
 
 /*!
  @brief <p>
- Constructs an instance with the bean's <code>Class</code> and a customizer
+  Constructs an instance with the bean's <code>Class</code> and a customizer 
  <code>Class</code>.
  The descriptor's <code>getName()</code> is set as the
- unqualified name of the <code>beanClass</code>.
- </p>
- @param beanClass
- The bean's Class.
- @param customizerClass
- The bean's customizer Class.
+  unqualified name of the <code>beanClass</code>.
+  </p>
+ @param beanClass The bean's Class.
+ @param customizerClass The bean's customizer Class.
  */
 - (instancetype)initWithIOSClass:(IOSClass *)beanClass
                     withIOSClass:(IOSClass *)customizerClass;
 
 /*!
  @brief <p>
- Gets the bean's <code>Class</code>.
+  Gets the bean's <code>Class</code>.
  </p>
  @return A <code>Class</code> instance.
  */
@@ -69,11 +66,15 @@
 
 /*!
  @brief <p>
- Gets the bean's customizer <code>Class</code>/
- </p>
+  Gets the bean's customizer <code>Class</code>/
+  </p>
  @return A <code>Class</code> instance or <code>null</code>.
  */
 - (IOSClass *)getCustomizerClass;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

@@ -3,7 +3,7 @@
 //  source: apache_harmony/classlib/modules/beans/src/main/java/java/beans/PropertyDescriptor.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaBeansPropertyDescriptor")
 #ifdef RESTRICT_JavaBeansPropertyDescriptor
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaBeansFeatureDescriptor 1
 #define INCLUDE_JavaBeansFeatureDescriptor 1
-#include "../../java/beans/FeatureDescriptor.h"
+#include "java/beans/FeatureDescriptor.h"
 
 @class IOSClass;
 @class JavaLangReflectMethod;
@@ -29,7 +29,7 @@
 /*!
  @brief Describes one Java Bean property.
  NOTE: PropertyEditor support is not available in j2objc, since it depends
- on core AWT classes.
+  on core AWT classes.
  */
 @interface JavaBeansPropertyDescriptor : JavaBeansFeatureDescriptor {
  @public
@@ -83,6 +83,10 @@
 
 - (void)setWriteMethodWithIOSClass:(IOSClass *)beanClass
                       withNSString:(NSString *)setterName;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

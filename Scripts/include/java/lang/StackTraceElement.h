@@ -37,25 +37,24 @@
                          withInt:(jint)lineNumber;
 
 /*!
- @brief Returns true if the specified object is another
+ @brief Returns true if the specified object is another 
  <code>StackTraceElement</code> instance representing the same execution
- point as this instance.
- Two stack trace elements <code>a</code> and
- <code>b</code> are equal if and only if:
+  point as this instance.Two stack trace elements <code>a</code> and 
+ <code>b</code> are equal if and only if: 
  @code
 
-     equals(a.getFileName(), b.getFileName()) &&
-     a.getLineNumber() == b.getLineNumber()) &&
-     equals(a.getClassName(), b.getClassName()) &&
-     equals(a.getMethodName(), b.getMethodName())
+      equals(a.getFileName(), b.getFileName()) &&
+      a.getLineNumber() == b.getLineNumber()) &&
+      equals(a.getClassName(), b.getClassName()) &&
+      equals(a.getMethodName(), b.getMethodName()) 
   
 @endcode
- where <code>equals</code> has the semantics of <code>Objects.equals</code>
+  where <code>equals</code> has the semantics of <code>Objects.equals</code>
  .
  @param obj the object to be compared with this stack trace element.
  @return true if the specified object is another
- <code>StackTraceElement</code> instance representing the same
- execution point as this instance.
+          <code>StackTraceElement</code> instance representing the same
+          execution point as this instance.
  */
 - (jboolean)isEqual:(id)obj;
 
@@ -77,6 +76,10 @@
 #pragma mark Package-Private
 
 - (instancetype)initWithLong:(jlong)address;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

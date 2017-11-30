@@ -29,25 +29,26 @@
 @class JavaNioChannelsFileChannel;
 
 /*!
- @brief An output stream that writes bytes to a file.
- If the output file exists, it
- can be replaced or appended to. If it does not exist, a new file will be
- created.
+ @brief An output stream that writes bytes to a file.If the output file exists, it
+  can be replaced or appended to.
+ If it does not exist, a new file will be
+  created. 
  @code
      File file = ...
-   OutputStream out = null;
-   try 
-     out = new BufferedOutputStream(new FileOutputStream(file));
-     ...
-   } finally {
-     if (out != null) {
-       out.close();
-     }
-   }
-  
+    OutputStream out = null;
+    try {
+      out = new BufferedOutputStream(new FileOutputStream(file));
+      ...
+    } finally {
+      if (out != null) {
+        out.close();
+      }    }  
+ 
 @endcode
+  
  <p>This stream is <strong>not buffered</strong>. Most callers should wrap
- this stream with a <code>BufferedOutputStream</code>.
+  this stream with a <code>BufferedOutputStream</code>.
+  
  <p>Use <code>FileWriter</code> to write characters, as opposed to bytes, to a file.
  - seealso: BufferedOutputStream
  - seealso: FileInputStream
@@ -57,41 +58,39 @@
 #pragma mark Public
 
 /*!
- @brief Constructs a new <code>FileOutputStream</code> that writes to <code>file</code>.
- The file will be
- truncated if it exists, and created if it doesn't exist.
- @throws FileNotFoundException if file cannot be opened for writing.
+ @brief Constructs a new <code>FileOutputStream</code> that writes to <code>file</code>.The file will be
+  truncated if it exists, and created if it doesn't exist.
+ @throw FileNotFoundExceptionif file cannot be opened for writing.
  */
 - (instancetype)initWithJavaIoFile:(JavaIoFile *)file;
 
 /*!
  @brief Constructs a new <code>FileOutputStream</code> that writes to <code>file</code>.
  If <code>append</code> is true and the file already exists, it will be appended to; otherwise
- it will be truncated. The file will be created if it does not exist.
- @throws FileNotFoundException if the file cannot be opened for writing.
+  it will be truncated. The file will be created if it does not exist.
+ @throw FileNotFoundExceptionif the file cannot be opened for writing.
  */
 - (instancetype)initWithJavaIoFile:(JavaIoFile *)file
                        withBoolean:(jboolean)append;
 
 /*!
  @brief Constructs a new <code>FileOutputStream</code> that writes to <code>fd</code>.
- @throws NullPointerException if <code>fd</code> is null.
+ @throw NullPointerExceptionif <code>fd</code> is null.
  */
 - (instancetype)initWithJavaIoFileDescriptor:(JavaIoFileDescriptor *)fd;
 
 /*!
- @brief Constructs a new <code>FileOutputStream</code> that writes to <code>path</code>.
- The file will be
- truncated if it exists, and created if it doesn't exist.
- @throws FileNotFoundException if file cannot be opened for writing.
+ @brief Constructs a new <code>FileOutputStream</code> that writes to <code>path</code>.The file will be
+  truncated if it exists, and created if it doesn't exist.
+ @throw FileNotFoundExceptionif file cannot be opened for writing.
  */
 - (instancetype)initWithNSString:(NSString *)path;
 
 /*!
  @brief Constructs a new <code>FileOutputStream</code> that writes to <code>path</code>.
  If <code>append</code> is true and the file already exists, it will be appended to; otherwise
- it will be truncated. The file will be created if it does not exist.
- @throws FileNotFoundException if the file cannot be opened for writing.
+  it will be truncated. The file will be created if it does not exist.
+ @throw FileNotFoundExceptionif the file cannot be opened for writing.
  */
 - (instancetype)initWithNSString:(NSString *)path
                      withBoolean:(jboolean)append;
@@ -100,7 +99,7 @@
 
 /*!
  @brief Returns a write-only <code>FileChannel</code> that shares its position with
- this stream.
+  this stream.
  */
 - (JavaNioChannelsFileChannel *)getChannel;
 
@@ -117,7 +116,11 @@
 
 #pragma mark Protected
 
-- (void)javaFinalize;
+- (void)java_finalize;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

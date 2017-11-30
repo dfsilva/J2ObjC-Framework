@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/ArithmeticException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangArithmeticException")
 #ifdef RESTRICT_JavaLangArithmeticException
@@ -21,16 +21,17 @@
 
 #define RESTRICT_JavaLangRuntimeException 1
 #define INCLUDE_JavaLangRuntimeException 1
-#include "../../java/lang/RuntimeException.h"
+#include "java/lang/RuntimeException.h"
+
+@class JavaLangThrowable;
 
 /*!
- @brief Thrown when an exceptional arithmetic condition has occurred.
- For
- example, an integer "divide by zero" throws an
- instance of this class.
+ @brief Thrown when an exceptional arithmetic condition has occurred.For
+  example, an integer "divide by zero" throws an
+  instance of this class.
  <code>ArithmeticException</code> objects may be constructed by the
- virtual machine as if suppression were disabled and/or the
- stack trace was not writable
+  virtual machine as if were disabled and/or the
+  stack trace was not writable
  .
  @author unascribed
  @since JDK1.0
@@ -41,16 +42,28 @@
 
 /*!
  @brief Constructs an <code>ArithmeticException</code> with no detail
- message.
+  message.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs an <code>ArithmeticException</code> with the specified
- detail message.
- @param s   the detail message.
+  detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -58,9 +71,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangArithmeticException)
 
 FOUNDATION_EXPORT void JavaLangArithmeticException_init(JavaLangArithmeticException *self);
 
-FOUNDATION_EXPORT JavaLangArithmeticException *new_JavaLangArithmeticException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangArithmeticException *new_JavaLangArithmeticException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangArithmeticException *create_JavaLangArithmeticException_init();
+FOUNDATION_EXPORT JavaLangArithmeticException *create_JavaLangArithmeticException_init(void);
 
 FOUNDATION_EXPORT void JavaLangArithmeticException_initWithNSString_(JavaLangArithmeticException *self, NSString *s);
 

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/security/KeyManagementException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSecurityKeyManagementException")
 #ifdef RESTRICT_JavaSecurityKeyManagementException
@@ -21,19 +21,20 @@
 
 #define RESTRICT_JavaSecurityKeyException 1
 #define INCLUDE_JavaSecurityKeyException 1
-#include "../../java/security/KeyException.h"
+#include "java/security/KeyException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief This is the general key management exception for all operations
- dealing with key management.
- Examples of subclasses of
- KeyManagementException that developers might create for
- giving more detailed information could include:
+  dealing with key management.Examples of subclasses of
+  KeyManagementException that developers might create for
+  giving more detailed information could include: 
  <ul>
- <li>KeyIDConflictException
- <li>KeyAuthorizationFailureException
- <li>ExpiredKeyException
- </ul>
+  <li>KeyIDConflictException
+  <li>KeyAuthorizationFailureException
+  <li>ExpiredKeyException
+  </ul>
  @author Benjamin Renaud
  - seealso: Key
  - seealso: KeyException
@@ -43,47 +44,43 @@
 #pragma mark Public
 
 /*!
- @brief Constructs a KeyManagementException with no detail message.
- A
- detail message is a String that describes this particular
- exception.
+ @brief Constructs a KeyManagementException with no detail message.A
+  detail message is a String that describes this particular
+  exception.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a KeyManagementException with the specified detail
- message.
- A detail message is a String that describes this
- particular exception.
+  message.A detail message is a String that describes this
+  particular exception.
  @param msg the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)msg;
 
 /*!
  @brief Creates a <code>KeyManagementException</code> with the specified
- detail message and cause.
- @param message the detail message (which is saved for later retrieval
- by the <code>getMessage()</code> method).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+  detail message and cause.
+ @param message the detail message (which is saved for later retrieval         by the 
+ <code>getMessage()</code>  method).
+ @param cause the cause (which is saved for later retrieval by the         
+ <code>getCause()</code>  method).  (A  <tt> null </tt>  value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.5
  */
 - (instancetype)initWithNSString:(NSString *)message
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Creates a <code>KeyManagementException</code> with the specified cause
- and a detail message of <code>(cause==null ?
- null : cause.toString())</code>
- (which typically contains the class and detail message of
- <code>cause</code>).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+  and a detail message of <tt>(cause==null ?
+ null : cause.toString())</tt>
+  (which typically contains the class and detail message of 
+ <tt>cause</tt>).
+ @param cause the cause (which is saved for later retrieval by the         
+ <code>getCause()</code>  method).  (A  <tt> null </tt>  value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.5
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
 
 @end
 
@@ -91,9 +88,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaSecurityKeyManagementException)
 
 FOUNDATION_EXPORT void JavaSecurityKeyManagementException_init(JavaSecurityKeyManagementException *self);
 
-FOUNDATION_EXPORT JavaSecurityKeyManagementException *new_JavaSecurityKeyManagementException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityKeyManagementException *new_JavaSecurityKeyManagementException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityKeyManagementException *create_JavaSecurityKeyManagementException_init();
+FOUNDATION_EXPORT JavaSecurityKeyManagementException *create_JavaSecurityKeyManagementException_init(void);
 
 FOUNDATION_EXPORT void JavaSecurityKeyManagementException_initWithNSString_(JavaSecurityKeyManagementException *self, NSString *msg);
 
@@ -101,17 +98,17 @@ FOUNDATION_EXPORT JavaSecurityKeyManagementException *new_JavaSecurityKeyManagem
 
 FOUNDATION_EXPORT JavaSecurityKeyManagementException *create_JavaSecurityKeyManagementException_initWithNSString_(NSString *msg);
 
-FOUNDATION_EXPORT void JavaSecurityKeyManagementException_initWithNSString_withNSException_(JavaSecurityKeyManagementException *self, NSString *message, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityKeyManagementException_initWithNSString_withJavaLangThrowable_(JavaSecurityKeyManagementException *self, NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityKeyManagementException *new_JavaSecurityKeyManagementException_initWithNSString_withNSException_(NSString *message, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityKeyManagementException *new_JavaSecurityKeyManagementException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityKeyManagementException *create_JavaSecurityKeyManagementException_initWithNSString_withNSException_(NSString *message, NSException *cause);
+FOUNDATION_EXPORT JavaSecurityKeyManagementException *create_JavaSecurityKeyManagementException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaSecurityKeyManagementException_initWithNSException_(JavaSecurityKeyManagementException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityKeyManagementException_initWithJavaLangThrowable_(JavaSecurityKeyManagementException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityKeyManagementException *new_JavaSecurityKeyManagementException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityKeyManagementException *new_JavaSecurityKeyManagementException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityKeyManagementException *create_JavaSecurityKeyManagementException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaSecurityKeyManagementException *create_JavaSecurityKeyManagementException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaSecurityKeyManagementException)
 

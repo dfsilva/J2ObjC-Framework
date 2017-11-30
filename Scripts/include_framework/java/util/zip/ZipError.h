@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/zip/ZipError.java
 //
 
-#include "../../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilZipZipError")
 #ifdef RESTRICT_JavaUtilZipZipError
@@ -21,7 +21,9 @@
 
 #define RESTRICT_JavaLangInternalError 1
 #define INCLUDE_JavaLangInternalError 1
-#include "../../../java/lang/InternalError.h"
+#include "java/lang/InternalError.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Signals that an unrecoverable error has occurred.
@@ -34,9 +36,18 @@
 
 /*!
  @brief Constructs a ZipError with the given detail message.
- @param s the <code>String</code> containing a detail message
+ @param s the <code>String</code>  containing a detail message
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 

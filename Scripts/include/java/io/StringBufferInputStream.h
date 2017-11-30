@@ -27,12 +27,12 @@
 
 /*!
  @brief This class allows an application to create an input stream in
- which the bytes read are supplied by the contents of a string.
- Applications can also read bytes from a byte array by using a
+  which the bytes read are supplied by the contents of a string.
+ Applications can also read bytes from a byte array by using a 
  <code>ByteArrayInputStream</code>.
- <p>
- Only the low eight bits of each character in the string are used by
- this class.
+  <p>
+  Only the low eight bits of each character in the string are used by
+  this class.
  @author Arthur van Hoff
  - seealso: java.io.ByteArrayInputStream
  - seealso: java.io.StringReader
@@ -47,12 +47,12 @@ __attribute__((deprecated))
   NSString *buffer_;
   /*!
    @brief The index of the next character to read from the input stream buffer.
-   - seealso: java.io.StringBufferInputStream#buffer
+   - seealso: java.io.StringBufferInputStream
    */
   jint pos_;
   /*!
    @brief The number of valid characters in the input stream buffer.
-   - seealso: java.io.StringBufferInputStream#buffer
+   - seealso: java.io.StringBufferInputStream
    */
   jint count_;
 }
@@ -61,48 +61,48 @@ __attribute__((deprecated))
 
 /*!
  @brief Creates a string input stream to read data from the specified string.
- @param s   the underlying input buffer.
+ @param s the underlying input buffer.
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
 /*!
  @brief Returns the number of bytes that can be read from the input
- stream without blocking.
+  stream without blocking.
  @return the value of <code>count&nbsp;-&nbsp;pos</code>, which is the
- number of bytes remaining to be read from the input buffer.
+              number of bytes remaining to be read from the input buffer.
  */
 - (jint)available;
 
 /*!
- @brief Reads the next byte of data from this input stream.
- The value
- byte is returned as an <code>int</code> in the range
- <code>0</code> to <code>255</code>. If no byte is available
- because the end of the stream has been reached, the value
- <code>-1</code> is returned.
+ @brief Reads the next byte of data from this input stream.The value
+  byte is returned as an <code>int</code> in the range 
+ <code>0</code> to <code>255</code>.
+ If no byte is available
+  because the end of the stream has been reached, the value 
+ <code>-1</code> is returned. 
  <p>
- The <code>read</code> method of
+  The <code>read</code> method of 
  <code>StringBufferInputStream</code> cannot block. It returns the
- low eight bits of the next character in this input stream's buffer.
+  low eight bits of the next character in this input stream's buffer.
  @return the next byte of data, or <code>-1</code> if the end of the
- stream is reached.
+              stream is reached.
  */
 - (jint)read;
 
 /*!
  @brief Reads up to <code>len</code> bytes of data from this input stream
- into an array of bytes.
+  into an array of bytes.
  <p>
- The <code>read</code> method of
+  The <code>read</code> method of 
  <code>StringBufferInputStream</code> cannot block. It copies the
- low eight bits from the characters in this input stream's buffer into
- the byte array argument.
- @param b     the buffer into which the data is read.
- @param off   the start offset of the data.
- @param len   the maximum number of bytes read.
+  low eight bits from the characters in this input stream's buffer into
+  the byte array argument.
+ @param b the buffer into which the data is read.
+ @param off the start offset of the data.
+ @param len the maximum number of bytes read.
  @return the total number of bytes read into the buffer, or
- <code>-1</code> if there is no more data because the end of
- the stream has been reached.
+              <code>-1</code> if there is no more data because the end of
+              the stream has been reached.
  */
 - (jint)readWithByteArray:(IOSByteArray *)b
                   withInt:(jint)off
@@ -110,18 +110,21 @@ __attribute__((deprecated))
 
 /*!
  @brief Resets the input stream to begin reading from the first character
- of this input stream's underlying buffer.
+  of this input stream's underlying buffer.
  */
 - (void)reset;
 
 /*!
- @brief Skips <code>n</code> bytes of input from this input stream.
- Fewer
- bytes might be skipped if the end of the input stream is reached.
- @param n   the number of bytes to be skipped.
+ @brief Skips <code>n</code> bytes of input from this input stream.Fewer
+  bytes might be skipped if the end of the input stream is reached.
+ @param n the number of bytes to be skipped.
  @return the actual number of bytes skipped.
  */
 - (jlong)skipWithLong:(jlong)n;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

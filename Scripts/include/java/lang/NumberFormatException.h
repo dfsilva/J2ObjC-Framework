@@ -23,12 +23,14 @@
 #define INCLUDE_JavaLangIllegalArgumentException 1
 #include "java/lang/IllegalArgumentException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Thrown to indicate that the application has attempted to convert
- a string to one of the numeric types, but that the string does not
- have the appropriate format.
+  a string to one of the numeric types, but that the string does not
+  have the appropriate format.
  @author unascribed
- - seealso: java.lang.Integer#toString()
+ - seealso: java.lang.Integer
  @since JDK1.0
  */
 @interface JavaLangNumberFormatException : JavaLangIllegalArgumentException
@@ -44,8 +46,8 @@
 
 /*!
  @brief Constructs a <code>NumberFormatException</code> with the
- specified detail message.
- @param s   the detail message.
+  specified detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
@@ -53,24 +55,31 @@
 
 /*!
  @brief Factory method for making a <code>NumberFormatException</code>
- given the specified input which caused the error.
- @param s   the input causing the error
+  given the specified input which caused the error.
+ @param s the input causing the error
  */
 + (JavaLangNumberFormatException *)forInputStringWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaLangNumberFormatException)
 
-inline jlong JavaLangNumberFormatException_get_serialVersionUID();
+inline jlong JavaLangNumberFormatException_get_serialVersionUID(void);
 #define JavaLangNumberFormatException_serialVersionUID -2848938806368998894LL
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangNumberFormatException, serialVersionUID, jlong)
 
 FOUNDATION_EXPORT void JavaLangNumberFormatException_init(JavaLangNumberFormatException *self);
 
-FOUNDATION_EXPORT JavaLangNumberFormatException *new_JavaLangNumberFormatException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangNumberFormatException *new_JavaLangNumberFormatException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangNumberFormatException *create_JavaLangNumberFormatException_init();
+FOUNDATION_EXPORT JavaLangNumberFormatException *create_JavaLangNumberFormatException_init(void);
 
 FOUNDATION_EXPORT void JavaLangNumberFormatException_initWithNSString_(JavaLangNumberFormatException *self, NSString *s);
 

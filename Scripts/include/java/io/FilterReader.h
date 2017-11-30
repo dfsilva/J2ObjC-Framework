@@ -28,10 +28,10 @@
 /*!
  @brief Abstract class for reading filtered character streams.
  The abstract class <code>FilterReader</code> itself
- provides default methods that pass all requests to
- the contained stream. Subclasses of <code>FilterReader</code>
- should override some of these methods and may also provide
- additional methods and fields.
+  provides default methods that pass all requests to
+  the contained stream. Subclasses of <code>FilterReader</code>
+  should override some of these methods and may also provide
+  additional methods and fields.
  @author Mark Reinhold
  @since JDK1.1
  */
@@ -49,7 +49,7 @@
 
 /*!
  @brief Marks the present position in the stream.
- @exception IOException  If an I/O error occurs
+ @throw IOExceptionIf an I/O error occurs
  */
 - (void)markWithInt:(jint)readAheadLimit;
 
@@ -60,13 +60,13 @@
 
 /*!
  @brief Reads a single character.
- @exception IOException  If an I/O error occurs
+ @throw IOExceptionIf an I/O error occurs
  */
 - (jint)read;
 
 /*!
  @brief Reads characters into a portion of an array.
- @exception IOException  If an I/O error occurs
+ @throw IOExceptionIf an I/O error occurs
  */
 - (jint)readWithCharArray:(IOSCharArray *)cbuf
                   withInt:(jint)off
@@ -74,19 +74,19 @@
 
 /*!
  @brief Tells whether this stream is ready to be read.
- @exception IOException  If an I/O error occurs
+ @throw IOExceptionIf an I/O error occurs
  */
 - (jboolean)ready;
 
 /*!
  @brief Resets the stream.
- @exception IOException  If an I/O error occurs
+ @throw IOExceptionIf an I/O error occurs
  */
 - (void)reset;
 
 /*!
  @brief Skips characters.
- @exception IOException  If an I/O error occurs
+ @throw IOExceptionIf an I/O error occurs
  */
 - (jlong)skipWithLong:(jlong)n;
 
@@ -94,8 +94,8 @@
 
 /*!
  @brief Creates a new filtered reader.
- @param inArg  a Reader object providing the underlying stream.
- @throws NullPointerException if <code>in</code> is <code>null</code>
+ @param inArg a Reader object providing the underlying stream.
+ @throw NullPointerExceptionif <code>in</code> is <code>null</code>
  */
 - (instancetype)initWithJavaIoReader:(JavaIoReader *)inArg;
 

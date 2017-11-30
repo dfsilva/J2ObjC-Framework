@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/AutoCloseable.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangAutoCloseable")
 #ifdef RESTRICT_JavaLangAutoCloseable
@@ -28,32 +28,32 @@
 
 /*!
  @brief Closes this resource, relinquishing any underlying resources.
- This method is invoked automatically on objects managed by the
- <code>try</code>-with-resources statement.
+ This method is invoked automatically on objects managed by the 
+ <code>try</code>-with-resources statement. 
  <p>While this interface method is declared to throw <code>Exception</code>
  , implementers are <em>strongly</em> encouraged to
- declare concrete implementations of the <code>close</code> method to
- throw more specific exceptions, or to throw no exception at all
- if the close operation cannot fail.
+  declare concrete implementations of the <code>close</code> method to
+  throw more specific exceptions, or to throw no exception at all
+  if the close operation cannot fail. 
  <p><em>Implementers of this interface are also strongly advised
- to not have the <code>close</code> method throw <code>InterruptedException</code>
+  to not have the <code>close</code> method throw <code>InterruptedException</code>
  .</em>
- This exception interacts with a thread's interrupted status,
- and runtime misbehavior is likely to occur if an <code>InterruptedException</code>
+  This exception interacts with a thread's interrupted status,
+  and runtime misbehavior is likely to occur if an <code>InterruptedException</code>
   is suppressed
  .
- More generally, if it would cause problems for an
- exception to be suppressed, the <code>AutoCloseable.close</code>
- method should not throw it.
+  More generally, if it would cause problems for an
+  exception to be suppressed, the <code>AutoCloseable.close</code>
+  method should not throw it. 
  <p>Note that unlike the <code>close</code>
- method of <code>java.io.Closeable</code>, this <code>close</code> method
- is <em>not</em> required to be idempotent.  In other words,
- calling this <code>close</code> method more than once may have some
- visible side effect, unlike <code>Closeable.close</code> which is
- required to have no effect if called more than once.
- However, implementers of this interface are strongly encouraged
- to make their <code>close</code> methods idempotent.
- @throws Exception if this resource cannot be closed
+  method of <code>java.io.Closeable</code>, this <code>close</code> method
+  is <em>not</em> required to be idempotent.  In other words,
+  calling this <code>close</code> method more than once may have some
+  visible side effect, unlike <code>Closeable.close</code> which is
+  required to have no effect if called more than once.
+  However, implementers of this interface are strongly encouraged
+  to make their <code>close</code> methods idempotent.
+ @throw Exceptionif this resource cannot be closed
  */
 - (void)close;
 

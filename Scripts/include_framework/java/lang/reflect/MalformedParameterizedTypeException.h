@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/reflect/MalformedParameterizedTypeException.java
 //
 
-#include "../../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangReflectMalformedParameterizedTypeException")
 #ifdef RESTRICT_JavaLangReflectMalformedParameterizedTypeException
@@ -21,13 +21,15 @@
 
 #define RESTRICT_JavaLangRuntimeException 1
 #define INCLUDE_JavaLangRuntimeException 1
-#include "../../../java/lang/RuntimeException.h"
+#include "java/lang/RuntimeException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Thrown when a semantically malformed parameterized type is
- encountered by a reflective method that needs to instantiate it.
+  encountered by a reflective method that needs to instantiate it.
  For example, if the number of type arguments to a parameterized type
- is wrong.
+  is wrong.
  @since 1.5
  */
 @interface JavaLangReflectMalformedParameterizedTypeException : JavaLangRuntimeException
@@ -36,15 +38,29 @@
 
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaLangReflectMalformedParameterizedTypeException)
 
 FOUNDATION_EXPORT void JavaLangReflectMalformedParameterizedTypeException_init(JavaLangReflectMalformedParameterizedTypeException *self);
 
-FOUNDATION_EXPORT JavaLangReflectMalformedParameterizedTypeException *new_JavaLangReflectMalformedParameterizedTypeException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangReflectMalformedParameterizedTypeException *new_JavaLangReflectMalformedParameterizedTypeException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangReflectMalformedParameterizedTypeException *create_JavaLangReflectMalformedParameterizedTypeException_init();
+FOUNDATION_EXPORT JavaLangReflectMalformedParameterizedTypeException *create_JavaLangReflectMalformedParameterizedTypeException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangReflectMalformedParameterizedTypeException)
 

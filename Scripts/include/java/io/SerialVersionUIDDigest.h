@@ -26,9 +26,8 @@
 @class IOSByteArray;
 
 /*!
- @brief Dynamically loaded implementation for computing serialVersionUID hashes.
- Public so that users can
- add an explicit dependency to force load this class.
+ @brief Dynamically loaded implementation for computing serialVersionUID hashes.Public so that users can
+  add an explicit dependency to force load this class.
  */
 @interface JavaIoSerialVersionUIDDigest : NSObject < JavaIoObjectStreamClass_Digest >
 
@@ -46,9 +45,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaIoSerialVersionUIDDigest)
 
 FOUNDATION_EXPORT void JavaIoSerialVersionUIDDigest_init(JavaIoSerialVersionUIDDigest *self);
 
-FOUNDATION_EXPORT JavaIoSerialVersionUIDDigest *new_JavaIoSerialVersionUIDDigest_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoSerialVersionUIDDigest *new_JavaIoSerialVersionUIDDigest_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoSerialVersionUIDDigest *create_JavaIoSerialVersionUIDDigest_init();
+FOUNDATION_EXPORT JavaIoSerialVersionUIDDigest *create_JavaIoSerialVersionUIDDigest_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaIoSerialVersionUIDDigest)
 

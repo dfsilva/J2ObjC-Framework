@@ -26,7 +26,9 @@
  */
 @interface JavaBeansFeatureDescriptor : NSObject {
  @public
-  jboolean preferred_, hidden_, expert_;
+  jboolean preferred_;
+  jboolean hidden_;
+  jboolean expert_;
   NSString *shortDescription_;
   NSString *name_;
   NSString *displayName_;
@@ -36,14 +38,14 @@
 
 /*!
  @brief <p>
- Constructs an instance.
+  Constructs an instance.
  </p>
  */
 - (instancetype)init;
 
 /*!
  @brief <p>
- Enumerates the attribute names.
+  Enumerates the attribute names.
  </p>
  @return An instance of <code>Enumeration</code>.
  */
@@ -51,7 +53,7 @@
 
 /*!
  @brief <p>
- Gets the display name or <code>getName()</code> if not set.
+  Gets the display name or <code>getName()</code> if not set.
  </p>
  @return The display name.
  */
@@ -59,7 +61,7 @@
 
 /*!
  @brief <p>
- Gets the name.
+  Gets the name.
  </p>
  @return The name.
  */
@@ -67,7 +69,7 @@
 
 /*!
  @brief <p>
- Gets the short description or <code>getDisplayName()</code> if not set.
+  Gets the short description or <code>getDisplayName()</code> if not set.
  </p>
  @return The description.
  */
@@ -75,17 +77,16 @@
 
 /*!
  @brief <p>
- Gets the value associated with the named attribute.
+  Gets the value associated with the named attribute.
  </p>
- @param attributeName
- The name of the attribute to get a value for.
+ @param attributeName The name of the attribute to get a value for.
  @return The attribute's value.
  */
 - (id)getValueWithNSString:(NSString *)attributeName;
 
 /*!
  @brief <p>
- Indicates if this feature is an expert feature.
+  Indicates if this feature is an expert feature.
  </p>
  @return <code>true</code> if hidden, <code>false</code> otherwise.
  */
@@ -93,7 +94,7 @@
 
 /*!
  @brief <p>
- Indicates if this feature is hidden.
+  Indicates if this feature is hidden.
  </p>
  @return <code>true</code> if hidden, <code>false</code> otherwise.
  */
@@ -101,7 +102,7 @@
 
 /*!
  @brief <p>
- Indicates if this feature is preferred.
+  Indicates if this feature is preferred.
  </p>
  @return <code>true</code> if preferred, <code>false</code> otherwise.
  */
@@ -109,67 +110,61 @@
 
 /*!
  @brief <p>
- Sets the display name.
+  Sets the display name.
  </p>
- @param displayName
- The display name to set.
+ @param displayName The display name to set.
  */
 - (void)setDisplayNameWithNSString:(NSString *)displayName;
 
 /*!
  @brief <p>
- Sets the expert indicator.
+  Sets the expert indicator.
  </p>
- @param expert
- <code>true</code> if expert, <code>false</code> otherwise.
+ @param expert <code>
+  true </code>  if expert,  <code> false </code>  otherwise.
  */
 - (void)setExpertWithBoolean:(jboolean)expert;
 
 /*!
  @brief <p>
- Sets the hidden indicator.
+  Sets the hidden indicator.
  </p>
- @param hidden
- <code>true</code> if hidden, <code>false</code> otherwise.
+ @param hidden <code>
+  true </code>  if hidden,  <code> false </code>  otherwise.
  */
 - (void)setHiddenWithBoolean:(jboolean)hidden;
 
 /*!
  @brief <p>
- Sets the name.
+  Sets the name.
  </p>
- @param name
- The name to set.
+ @param name The name to set.
  */
 - (void)setNameWithNSString:(NSString *)name;
 
 /*!
  @brief <p>
- Sets the preferred indicator.
+  Sets the preferred indicator.
  </p>
- @param preferred
- <code>true</code> if preferred, <code>false</code>
- otherwise.
+ @param preferred <code>
+  true </code>  if preferred,  <code> false </code>             otherwise.
  */
 - (void)setPreferredWithBoolean:(jboolean)preferred;
 
 /*!
  @brief <p>
- Sets the short description.
+  Sets the short description.
  </p>
- @param text
- The description to set.
+ @param text The description to set.
  */
 - (void)setShortDescriptionWithNSString:(NSString *)text;
 
 /*!
  @brief <p>
- Sets the value for the named attribute.
+  Sets the value for the named attribute.
  </p>
- @param attributeName
- The name of the attribute to set a value with.
- @param value
- The value to set.
+ @param attributeName The name of the attribute to set a value with.
+ @param value The value to set.
  */
 - (void)setValueWithNSString:(NSString *)attributeName
                       withId:(id)value;
@@ -188,9 +183,9 @@ J2OBJC_FIELD_SETTER(JavaBeansFeatureDescriptor, displayName_, NSString *)
 
 FOUNDATION_EXPORT void JavaBeansFeatureDescriptor_init(JavaBeansFeatureDescriptor *self);
 
-FOUNDATION_EXPORT JavaBeansFeatureDescriptor *new_JavaBeansFeatureDescriptor_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaBeansFeatureDescriptor *new_JavaBeansFeatureDescriptor_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaBeansFeatureDescriptor *create_JavaBeansFeatureDescriptor_init();
+FOUNDATION_EXPORT JavaBeansFeatureDescriptor *create_JavaBeansFeatureDescriptor_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaBeansFeatureDescriptor)
 

@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/javax/security/cert/CertificateException.java
 //
 
-#include "../../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxSecurityCertCertificateException")
 #ifdef RESTRICT_JavaxSecurityCertCertificateException
@@ -21,16 +21,18 @@
 
 #define RESTRICT_JavaLangException 1
 #define INCLUDE_JavaLangException 1
-#include "../../../java/lang/Exception.h"
+#include "java/lang/Exception.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief The base class for all <code>Certificate</code> related exceptions.
  <p>
- Note: This package is provided only for compatibility reasons. It contains a
- simplified version of the java.security.cert package that was previously used
- by JSSE (Java SSL package). All applications that do not have to be
- compatible with older versions of JSSE (that is before Java SDK 1.5) should
- only use java.security.cert.
+  Note: This package is provided only for compatibility reasons. It contains a
+  simplified version of the java.security.cert package that was previously used
+  by JSSE (Java SSL package). All applications that do not have to be
+  compatible with older versions of JSSE (that is before Java SDK 1.5) should
+  only use java.security.cert.
  */
 @interface JavaxSecurityCertCertificateException : JavaLangException
 
@@ -43,10 +45,21 @@
 
 /*!
  @brief Creates a new <code>CertificateException</code> with the specified message.
- @param msg
- the detail message for the exception.
+ @param msg the detail message for the exception.
  */
 - (instancetype)initWithNSString:(NSString *)msg;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -60,9 +73,9 @@ FOUNDATION_EXPORT JavaxSecurityCertCertificateException *create_JavaxSecurityCer
 
 FOUNDATION_EXPORT void JavaxSecurityCertCertificateException_init(JavaxSecurityCertCertificateException *self);
 
-FOUNDATION_EXPORT JavaxSecurityCertCertificateException *new_JavaxSecurityCertCertificateException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaxSecurityCertCertificateException *new_JavaxSecurityCertCertificateException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaxSecurityCertCertificateException *create_JavaxSecurityCertCertificateException_init();
+FOUNDATION_EXPORT JavaxSecurityCertCertificateException *create_JavaxSecurityCertCertificateException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaxSecurityCertCertificateException)
 

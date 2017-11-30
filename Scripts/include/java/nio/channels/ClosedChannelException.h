@@ -23,13 +23,15 @@
 #define INCLUDE_JavaIoIOException 1
 #include "java/io/IOException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Checked exception thrown when an attempt is made to invoke or complete an
- I/O operation upon channel that is closed, or at least closed to that
- operation.
- That this exception is thrown does not necessarily imply that
- the channel is completely closed.  A socket channel whose write half has
- been shut down, for example, may still be open for reading.
+  I/O operation upon channel that is closed, or at least closed to that
+  operation.That this exception is thrown does not necessarily imply that
+  the channel is completely closed.
+ A socket channel whose write half has
+  been shut down, for example, may still be open for reading.
  @since 1.4
  */
 @interface JavaNioChannelsClosedChannelException : JavaIoIOException
@@ -41,15 +43,24 @@
  */
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsClosedChannelException)
 
 FOUNDATION_EXPORT void JavaNioChannelsClosedChannelException_init(JavaNioChannelsClosedChannelException *self);
 
-FOUNDATION_EXPORT JavaNioChannelsClosedChannelException *new_JavaNioChannelsClosedChannelException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNioChannelsClosedChannelException *new_JavaNioChannelsClosedChannelException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNioChannelsClosedChannelException *create_JavaNioChannelsClosedChannelException_init();
+FOUNDATION_EXPORT JavaNioChannelsClosedChannelException *create_JavaNioChannelsClosedChannelException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsClosedChannelException)
 

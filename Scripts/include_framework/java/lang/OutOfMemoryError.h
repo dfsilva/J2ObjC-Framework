@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/OutOfMemoryError.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangOutOfMemoryError")
 #ifdef RESTRICT_JavaLangOutOfMemoryError
@@ -21,15 +21,17 @@
 
 #define RESTRICT_JavaLangVirtualMachineError 1
 #define INCLUDE_JavaLangVirtualMachineError 1
-#include "../../java/lang/VirtualMachineError.h"
+#include "java/lang/VirtualMachineError.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Thrown when the Java Virtual Machine cannot allocate an object
- because it is out of memory, and no more memory could be made
- available by the garbage collector.
+  because it is out of memory, and no more memory could be made
+  available by the garbage collector.
  <code>OutOfMemoryError</code> objects may be constructed by the virtual
- machine as if suppression were disabled and/or the stack trace was not
- writable
+  machine as if were disabled and/or the stack trace was not
+  writable
  .
  @author unascribed
  @since JDK1.0
@@ -45,10 +47,17 @@
 
 /*!
  @brief Constructs an <code>OutOfMemoryError</code> with the specified
- detail message.
- @param s   the detail message.
+  detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -56,9 +65,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangOutOfMemoryError)
 
 FOUNDATION_EXPORT void JavaLangOutOfMemoryError_init(JavaLangOutOfMemoryError *self);
 
-FOUNDATION_EXPORT JavaLangOutOfMemoryError *new_JavaLangOutOfMemoryError_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangOutOfMemoryError *new_JavaLangOutOfMemoryError_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangOutOfMemoryError *create_JavaLangOutOfMemoryError_init();
+FOUNDATION_EXPORT JavaLangOutOfMemoryError *create_JavaLangOutOfMemoryError_init(void);
 
 FOUNDATION_EXPORT void JavaLangOutOfMemoryError_initWithNSString_(JavaLangOutOfMemoryError *self, NSString *s);
 

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/NoSuchFieldError.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangNoSuchFieldError")
 #ifdef RESTRICT_JavaLangNoSuchFieldError
@@ -21,15 +21,15 @@
 
 #define RESTRICT_JavaLangIncompatibleClassChangeError 1
 #define INCLUDE_JavaLangIncompatibleClassChangeError 1
-#include "../../java/lang/IncompatibleClassChangeError.h"
+#include "java/lang/IncompatibleClassChangeError.h"
 
 /*!
  @brief Thrown if an application tries to access or modify a specified
- field of an object, and that object no longer has that field.
+  field of an object, and that object no longer has that field.
  <p>
- Normally, this error is caught by the compiler; this error can
- only occur at run time if the definition of a class has
- incompatibly changed.
+  Normally, this error is caught by the compiler; this error can
+  only occur at run time if the definition of a class has
+  incompatibly changed.
  @author unascribed
  @since JDK1.0
  */
@@ -44,8 +44,8 @@
 
 /*!
  @brief Constructs a <code>NoSuchFieldError</code> with the specified
- detail message.
- @param s   the detail message.
+  detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
@@ -55,9 +55,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangNoSuchFieldError)
 
 FOUNDATION_EXPORT void JavaLangNoSuchFieldError_init(JavaLangNoSuchFieldError *self);
 
-FOUNDATION_EXPORT JavaLangNoSuchFieldError *new_JavaLangNoSuchFieldError_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangNoSuchFieldError *new_JavaLangNoSuchFieldError_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangNoSuchFieldError *create_JavaLangNoSuchFieldError_init();
+FOUNDATION_EXPORT JavaLangNoSuchFieldError *create_JavaLangNoSuchFieldError_init(void);
 
 FOUNDATION_EXPORT void JavaLangNoSuchFieldError_initWithNSString_(JavaLangNoSuchFieldError *self, NSString *s);
 

@@ -23,15 +23,17 @@
 #define INCLUDE_JavaLangReflectiveOperationException 1
 #include "java/lang/ReflectiveOperationException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief InvocationTargetException is a checked exception that wraps
- an exception thrown by an invoked method or constructor.
+  an exception thrown by an invoked method or constructor.
  <p>As of release 1.4, this exception has been retrofitted to conform to
- the general purpose exception-chaining mechanism.  The "target exception"
- that is provided at construction time and accessed via the
+  the general purpose exception-chaining mechanism.  The "target exception"
+  that is provided at construction time and accessed via the 
  <code>getTargetException()</code> method is now known as the <i>cause</i>,
- and may be accessed via the <code>Throwable.getCause()</code> method,
- as well as the aforementioned "legacy method."
+  and may be accessed via the <code>Throwable.getCause()</code> method,
+  as well as the aforementioned "legacy method."
  - seealso: Method
  - seealso: Constructor
  */
@@ -43,41 +45,48 @@
  @brief Constructs a InvocationTargetException with a target exception.
  @param target the target exception
  */
-- (instancetype)initWithNSException:(NSException *)target;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)target;
 
 /*!
  @brief Constructs a InvocationTargetException with a target exception
- and a detail message.
+  and a detail message.
  @param target the target exception
- @param s      the detail message
+ @param s the detail message
  */
-- (instancetype)initWithNSException:(NSException *)target
-                       withNSString:(NSString *)s;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)target
+                             withNSString:(NSString *)s;
 
 /*!
  @brief Returns the cause of this exception (the thrown target exception,
- which may be <code>null</code>).
+  which may be <code>null</code>).
  @return the cause of this exception.
  @since 1.4
  */
-- (NSException *)getCause;
+- (JavaLangThrowable *)getCause;
 
 /*!
  @brief Get the thrown target exception.
  <p>This method predates the general-purpose exception chaining facility.
- The <code>Throwable.getCause()</code> method is now the preferred means of
- obtaining this information.
+  The <code>Throwable.getCause()</code> method is now the preferred means of
+  obtaining this information.
  @return the thrown target exception (cause of this exception).
  */
-- (NSException *)getTargetException;
+- (JavaLangThrowable *)getTargetException;
 
 #pragma mark Protected
 
 /*!
- @brief Constructs an <code>InvocationTargetException</code> with
+ @brief Constructs an <code>InvocationTargetException</code> with 
  <code>null</code> as the target exception.
  */
 - (instancetype)init;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -85,21 +94,21 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangReflectInvocationTargetException)
 
 FOUNDATION_EXPORT void JavaLangReflectInvocationTargetException_init(JavaLangReflectInvocationTargetException *self);
 
-FOUNDATION_EXPORT JavaLangReflectInvocationTargetException *new_JavaLangReflectInvocationTargetException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangReflectInvocationTargetException *new_JavaLangReflectInvocationTargetException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangReflectInvocationTargetException *create_JavaLangReflectInvocationTargetException_init();
+FOUNDATION_EXPORT JavaLangReflectInvocationTargetException *create_JavaLangReflectInvocationTargetException_init(void);
 
-FOUNDATION_EXPORT void JavaLangReflectInvocationTargetException_initWithNSException_(JavaLangReflectInvocationTargetException *self, NSException *target);
+FOUNDATION_EXPORT void JavaLangReflectInvocationTargetException_initWithJavaLangThrowable_(JavaLangReflectInvocationTargetException *self, JavaLangThrowable *target);
 
-FOUNDATION_EXPORT JavaLangReflectInvocationTargetException *new_JavaLangReflectInvocationTargetException_initWithNSException_(NSException *target) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangReflectInvocationTargetException *new_JavaLangReflectInvocationTargetException_initWithJavaLangThrowable_(JavaLangThrowable *target) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangReflectInvocationTargetException *create_JavaLangReflectInvocationTargetException_initWithNSException_(NSException *target);
+FOUNDATION_EXPORT JavaLangReflectInvocationTargetException *create_JavaLangReflectInvocationTargetException_initWithJavaLangThrowable_(JavaLangThrowable *target);
 
-FOUNDATION_EXPORT void JavaLangReflectInvocationTargetException_initWithNSException_withNSString_(JavaLangReflectInvocationTargetException *self, NSException *target, NSString *s);
+FOUNDATION_EXPORT void JavaLangReflectInvocationTargetException_initWithJavaLangThrowable_withNSString_(JavaLangReflectInvocationTargetException *self, JavaLangThrowable *target, NSString *s);
 
-FOUNDATION_EXPORT JavaLangReflectInvocationTargetException *new_JavaLangReflectInvocationTargetException_initWithNSException_withNSString_(NSException *target, NSString *s) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangReflectInvocationTargetException *new_JavaLangReflectInvocationTargetException_initWithJavaLangThrowable_withNSString_(JavaLangThrowable *target, NSString *s) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangReflectInvocationTargetException *create_JavaLangReflectInvocationTargetException_initWithNSException_withNSString_(NSException *target, NSString *s);
+FOUNDATION_EXPORT JavaLangReflectInvocationTargetException *create_JavaLangReflectInvocationTargetException_initWithJavaLangThrowable_withNSString_(JavaLangThrowable *target, NSString *s);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangReflectInvocationTargetException)
 

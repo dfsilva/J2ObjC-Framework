@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/Deprecated.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangDeprecated")
 #ifdef RESTRICT_JavaLangDeprecated
@@ -21,16 +21,15 @@
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
-#include "../../java/lang/annotation/Annotation.h"
+#include "java/lang/annotation/Annotation.h"
 
 @class IOSClass;
 
 /*!
  @brief A program element annotated &#64;Deprecated is one that programmers
- are discouraged from using, typically because it is dangerous,
- or because a better alternative exists.
- Compilers warn when a
- deprecated program element is used or overridden in non-deprecated code.
+  are discouraged from using, typically because it is dangerous,
+  or because a better alternative exists.Compilers warn when a
+  deprecated program element is used or overridden in non-deprecated code.
  @author Neal Gafter
  @since 1.5
  */
@@ -44,7 +43,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(JavaLangDeprecated)
 
-FOUNDATION_EXPORT id<JavaLangDeprecated> create_JavaLangDeprecated();
+FOUNDATION_EXPORT id<JavaLangDeprecated> create_JavaLangDeprecated(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangDeprecated)
 

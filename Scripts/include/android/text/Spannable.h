@@ -23,24 +23,21 @@
 #define INCLUDE_AndroidTextSpanned 1
 #include "android/text/Spanned.h"
 
-@protocol JavaUtilStreamIntStream;
-
 /*!
  @brief This is the interface for text to which markup objects can be
- attached and detached.
- Not all Spannable classes have mutable text;
- see <code>Editable</code> for that.
+  attached and detached.Not all Spannable classes have mutable text;
+  see <code>Editable</code> for that.
  */
 @protocol AndroidTextSpannable < AndroidTextSpanned, JavaObject >
 
 /*!
  @brief Attach the specified markup object to the range <code>start&hellip;end</code>
- of the text, or move the object to that range if it was already
- attached elsewhere.
- See <code>Spanned</code> for an explanation of
- what the flags mean.  The object can be one that has meaning only
- within your application, or it can be one that the text system will
- use to affect text display or behavior.  Some noteworthy ones are
+  of the text, or move the object to that range if it was already
+  attached elsewhere.See <code>Spanned</code> for an explanation of
+  what the flags mean.
+ The object can be one that has meaning only
+  within your application, or it can be one that the text system will
+  use to affect text display or behavior.  Some noteworthy ones are 
  <code>android.text.TextWatcher</code> and <code>android.text.SpanWatcher</code>.
  */
 - (void)setSpanWithId:(id)what
@@ -50,15 +47,10 @@
 
 /*!
  @brief Remove the specified object from the range of text to which it
- was attached, if any.
- It is OK to remove an object that was never
- attached in the first place.
+  was attached, if any.It is OK to remove an object that was never
+  attached in the first place.
  */
 - (void)removeSpanWithId:(id)what;
-
-@end
-
-@interface AndroidTextSpannable : NSObject < AndroidTextSpannable >
 
 @end
 
@@ -75,9 +67,8 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidTextSpannable)
 @protocol JavaLangCharSequence;
 
 /*!
- @brief Factory used by TextView to create new Spannables.
- You can subclass
- it to provide something other than SpannableString.
+ @brief Factory used by TextView to create new Spannables.You can subclass
+  it to provide something other than SpannableString.
  */
 @interface AndroidTextSpannable_Factory : NSObject
 
@@ -100,13 +91,13 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidTextSpannable)
 
 J2OBJC_STATIC_INIT(AndroidTextSpannable_Factory)
 
-FOUNDATION_EXPORT AndroidTextSpannable_Factory *AndroidTextSpannable_Factory_getInstance();
-
 FOUNDATION_EXPORT void AndroidTextSpannable_Factory_init(AndroidTextSpannable_Factory *self);
 
-FOUNDATION_EXPORT AndroidTextSpannable_Factory *new_AndroidTextSpannable_Factory_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT AndroidTextSpannable_Factory *new_AndroidTextSpannable_Factory_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT AndroidTextSpannable_Factory *create_AndroidTextSpannable_Factory_init();
+FOUNDATION_EXPORT AndroidTextSpannable_Factory *create_AndroidTextSpannable_Factory_init(void);
+
+FOUNDATION_EXPORT AndroidTextSpannable_Factory *AndroidTextSpannable_Factory_getInstance(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(AndroidTextSpannable_Factory)
 

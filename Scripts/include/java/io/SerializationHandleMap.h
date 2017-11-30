@@ -22,7 +22,7 @@
 /*!
  @brief A specialization of IdentityHashMap<Object, int> for use when serializing objects.
  We need to assign each object we write an int 'handle' (densely packed but not starting
- at zero), and use the same handle any time we write the same object again.
+  at zero), and use the same handle any time we write the same object again.
  */
 @interface JavaIoSerializationHandleMap : NSObject
 
@@ -45,9 +45,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaIoSerializationHandleMap)
 
 FOUNDATION_EXPORT void JavaIoSerializationHandleMap_init(JavaIoSerializationHandleMap *self);
 
-FOUNDATION_EXPORT JavaIoSerializationHandleMap *new_JavaIoSerializationHandleMap_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoSerializationHandleMap *new_JavaIoSerializationHandleMap_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoSerializationHandleMap *create_JavaIoSerializationHandleMap_init();
+FOUNDATION_EXPORT JavaIoSerializationHandleMap *create_JavaIoSerializationHandleMap_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaIoSerializationHandleMap)
 

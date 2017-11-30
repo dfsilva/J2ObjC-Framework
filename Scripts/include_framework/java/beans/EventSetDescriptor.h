@@ -3,7 +3,7 @@
 //  source: apache_harmony/classlib/modules/beans/src/main/java/java/beans/EventSetDescriptor.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaBeansEventSetDescriptor")
 #ifdef RESTRICT_JavaBeansEventSetDescriptor
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaBeansFeatureDescriptor 1
 #define INCLUDE_JavaBeansFeatureDescriptor 1
-#include "../../java/beans/FeatureDescriptor.h"
+#include "java/beans/FeatureDescriptor.h"
 
 @class IOSClass;
 @class IOSObjectArray;
@@ -93,6 +93,10 @@ withJavaBeansMethodDescriptorArray:(IOSObjectArray *)listenerMethodDescriptors
 #pragma mark Package-Private
 
 - (void)mergeWithJavaBeansEventSetDescriptor:(JavaBeansEventSetDescriptor *)event;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

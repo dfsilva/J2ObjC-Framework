@@ -23,13 +23,15 @@
 #define INCLUDE_JavaLangRuntimeException 1
 #include "java/lang/RuntimeException.h"
 
+@class JavaLangThrowable;
+
 /*!
- @brief Thrown by the <code>nextElement</code> method of an
+ @brief Thrown by the <code>nextElement</code> method of an 
  <code>Enumeration</code> to indicate that there are no more
- elements in the enumeration.
+  elements in the enumeration.
  @author unascribed
  - seealso: java.util.Enumeration
- - seealso: java.util.Enumeration#nextElement()
+ - seealso: java.util.Enumeration
  @since JDK1.0
  */
 @interface JavaUtilNoSuchElementException : JavaLangRuntimeException
@@ -38,17 +40,29 @@
 
 /*!
  @brief Constructs a <code>NoSuchElementException</code> with <tt>null</tt>
- as its error message string.
+  as its error message string.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a <code>NoSuchElementException</code>, saving a reference
- to the error message string <tt>s</tt> for later retrieval by the
+  to the error message string <tt>s</tt> for later retrieval by the 
  <tt>getMessage</tt> method.
- @param s   the detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -56,9 +70,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaUtilNoSuchElementException)
 
 FOUNDATION_EXPORT void JavaUtilNoSuchElementException_init(JavaUtilNoSuchElementException *self);
 
-FOUNDATION_EXPORT JavaUtilNoSuchElementException *new_JavaUtilNoSuchElementException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaUtilNoSuchElementException *new_JavaUtilNoSuchElementException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaUtilNoSuchElementException *create_JavaUtilNoSuchElementException_init();
+FOUNDATION_EXPORT JavaUtilNoSuchElementException *create_JavaUtilNoSuchElementException_init(void);
 
 FOUNDATION_EXPORT void JavaUtilNoSuchElementException_initWithNSString_(JavaUtilNoSuchElementException *self, NSString *s);
 

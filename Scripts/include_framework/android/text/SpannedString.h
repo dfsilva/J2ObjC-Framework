@@ -3,7 +3,7 @@
 //  source: android/frameworks/base/core/java/android/text/SpannedString.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_AndroidTextSpannedString")
 #ifdef RESTRICT_AndroidTextSpannedString
@@ -21,24 +21,24 @@
 
 #define RESTRICT_AndroidTextSpannableStringInternal 1
 #define INCLUDE_AndroidTextSpannableStringInternal 1
-#include "../../android/text/SpannableStringInternal.h"
+#include "android/text/SpannableStringInternal.h"
 
 #define RESTRICT_JavaLangCharSequence 1
 #define INCLUDE_JavaLangCharSequence 1
-#include "../../java/lang/CharSequence.h"
+#include "java/lang/CharSequence.h"
 
 #define RESTRICT_AndroidTextGetChars 1
 #define INCLUDE_AndroidTextGetChars 1
-#include "../../android/text/GetChars.h"
+#include "android/text/GetChars.h"
 
 #define RESTRICT_AndroidTextSpanned 1
 #define INCLUDE_AndroidTextSpanned 1
-#include "../../android/text/Spanned.h"
+#include "android/text/Spanned.h"
 
 /*!
  @brief This is the class for text whose content and markup are immutable.
  For mutable markup, see <code>SpannableString</code>; for mutable text,
- see <code>SpannableStringBuilder</code>.
+  see <code>SpannableStringBuilder</code>.
  */
 @interface AndroidTextSpannedString : AndroidTextSpannableStringInternal < JavaLangCharSequence, AndroidTextGetChars, AndroidTextSpanned >
 

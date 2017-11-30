@@ -3,7 +3,7 @@
 //  source: apache_harmony/classlib/modules/beans/src/main/java/java/beans/SimpleBeanInfo.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaBeansSimpleBeanInfo")
 #ifdef RESTRICT_JavaBeansSimpleBeanInfo
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaBeansBeanInfo 1
 #define INCLUDE_JavaBeansBeanInfo 1
-#include "../../java/beans/BeanInfo.h"
+#include "java/beans/BeanInfo.h"
 
 @class IOSObjectArray;
 @class JavaBeansBeanDescriptor;
@@ -52,9 +52,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaBeansSimpleBeanInfo)
 
 FOUNDATION_EXPORT void JavaBeansSimpleBeanInfo_init(JavaBeansSimpleBeanInfo *self);
 
-FOUNDATION_EXPORT JavaBeansSimpleBeanInfo *new_JavaBeansSimpleBeanInfo_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaBeansSimpleBeanInfo *new_JavaBeansSimpleBeanInfo_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaBeansSimpleBeanInfo *create_JavaBeansSimpleBeanInfo_init();
+FOUNDATION_EXPORT JavaBeansSimpleBeanInfo *create_JavaBeansSimpleBeanInfo_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaBeansSimpleBeanInfo)
 

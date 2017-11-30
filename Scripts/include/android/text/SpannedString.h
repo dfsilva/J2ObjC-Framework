@@ -38,7 +38,7 @@
 /*!
  @brief This is the class for text whose content and markup are immutable.
  For mutable markup, see <code>SpannableString</code>; for mutable text,
- see <code>SpannableStringBuilder</code>.
+  see <code>SpannableStringBuilder</code>.
  */
 @interface AndroidTextSpannedString : AndroidTextSpannableStringInternal < JavaLangCharSequence, AndroidTextGetChars, AndroidTextSpanned >
 

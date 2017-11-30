@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/IllformedLocaleException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilIllformedLocaleException")
 #ifdef RESTRICT_JavaUtilIllformedLocaleException
@@ -21,11 +21,13 @@
 
 #define RESTRICT_JavaLangRuntimeException 1
 #define INCLUDE_JavaLangRuntimeException 1
-#include "../../java/lang/RuntimeException.h"
+#include "java/lang/RuntimeException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Thrown by methods in <code>Locale</code> and <code>Locale.Builder</code> to
- indicate that an argument is not a well-formed BCP 47 tag.
+  indicate that an argument is not a well-formed BCP 47 tag.
  - seealso: Locale
  @since 1.7
  */
@@ -35,24 +37,24 @@
 
 /*!
  @brief Constructs a new <code>IllformedLocaleException</code> with no
- detail message and -1 as the error index.
+  detail message and -1 as the error index.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a new <code>IllformedLocaleException</code> with the
- given message and -1 as the error index.
+  given message and -1 as the error index.
  @param message the message
  */
 - (instancetype)initWithNSString:(NSString *)message;
 
 /*!
  @brief Constructs a new <code>IllformedLocaleException</code> with the
- given message and the error index.
- The error index is the approximate
- offset from the start of the ill-formed value to the point where the
- parse first detected an error.  A negative error index value indicates
- either the error index is not applicable or unknown.
+  given message and the error index.The error index is the approximate
+  offset from the start of the ill-formed value to the point where the
+  parse first detected an error.
+ A negative error index value indicates
+  either the error index is not applicable or unknown.
  @param message the message
  @param errorIndex the index
  */
@@ -60,12 +62,23 @@
                          withInt:(jint)errorIndex;
 
 /*!
- @brief Returns the index where the error was found.
- A negative value indicates
- either the error index is not applicable or unknown.
+ @brief Returns the index where the error was found.A negative value indicates
+  either the error index is not applicable or unknown.
  @return the error index
  */
 - (jint)getErrorIndex;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -73,9 +86,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaUtilIllformedLocaleException)
 
 FOUNDATION_EXPORT void JavaUtilIllformedLocaleException_init(JavaUtilIllformedLocaleException *self);
 
-FOUNDATION_EXPORT JavaUtilIllformedLocaleException *new_JavaUtilIllformedLocaleException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaUtilIllformedLocaleException *new_JavaUtilIllformedLocaleException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaUtilIllformedLocaleException *create_JavaUtilIllformedLocaleException_init();
+FOUNDATION_EXPORT JavaUtilIllformedLocaleException *create_JavaUtilIllformedLocaleException_init(void);
 
 FOUNDATION_EXPORT void JavaUtilIllformedLocaleException_initWithNSString_(JavaUtilIllformedLocaleException *self, NSString *message);
 

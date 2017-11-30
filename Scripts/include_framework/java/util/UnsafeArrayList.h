@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/java/util/UnsafeArrayList.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilUnsafeArrayList")
 #ifdef RESTRICT_JavaUtilUnsafeArrayList
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilAbstractList 1
 #define INCLUDE_JavaUtilAbstractList 1
-#include "../../java/util/AbstractList.h"
+#include "java/util/AbstractList.h"
 
 @class IOSClass;
 @class IOSObjectArray;
@@ -45,6 +45,10 @@
 - (jint)size;
 
 #pragma mark Package-Private
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

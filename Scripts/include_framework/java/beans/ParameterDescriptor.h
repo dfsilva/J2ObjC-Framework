@@ -3,7 +3,7 @@
 //  source: apache_harmony/classlib/modules/beans/src/main/java/java/beans/ParameterDescriptor.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaBeansParameterDescriptor")
 #ifdef RESTRICT_JavaBeansParameterDescriptor
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaBeansFeatureDescriptor 1
 #define INCLUDE_JavaBeansFeatureDescriptor 1
-#include "../../java/beans/FeatureDescriptor.h"
+#include "java/beans/FeatureDescriptor.h"
 
 @interface JavaBeansParameterDescriptor : JavaBeansFeatureDescriptor
 
@@ -35,9 +35,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaBeansParameterDescriptor)
 
 FOUNDATION_EXPORT void JavaBeansParameterDescriptor_init(JavaBeansParameterDescriptor *self);
 
-FOUNDATION_EXPORT JavaBeansParameterDescriptor *new_JavaBeansParameterDescriptor_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaBeansParameterDescriptor *new_JavaBeansParameterDescriptor_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaBeansParameterDescriptor *create_JavaBeansParameterDescriptor_init();
+FOUNDATION_EXPORT JavaBeansParameterDescriptor *create_JavaBeansParameterDescriptor_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaBeansParameterDescriptor)
 

@@ -23,6 +23,8 @@
 #define INCLUDE_JavaSecurityGeneralSecurityException 1
 #include "java/security/GeneralSecurityException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief This is the generic Message Digest exception.
  @author Benjamin Renaud
@@ -34,45 +36,43 @@
 /*!
  @brief Constructs a DigestException with no detail message.
  (A
- detail message is a String that describes this particular
- exception.)
+  detail message is a String that describes this particular
+  exception.)
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a DigestException with the specified detail
- message.
+  message.
  (A detail message is a String that describes this
- particular exception.)
+  particular exception.)
  @param msg the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)msg;
 
 /*!
  @brief Creates a <code>DigestException</code> with the specified
- detail message and cause.
- @param message the detail message (which is saved for later retrieval
- by the <code>getMessage()</code> method).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+  detail message and cause.
+ @param message the detail message (which is saved for later retrieval         by the 
+ <code>getMessage()</code>  method).
+ @param cause the cause (which is saved for later retrieval by the         
+ <code>getCause()</code>  method).  (A  <tt> null </tt>  value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.5
  */
 - (instancetype)initWithNSString:(NSString *)message
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Creates a <code>DigestException</code> with the specified cause
- and a detail message of <code>(cause==null ?
- null : cause.toString())</code>
- (which typically contains the class and detail message of
- <code>cause</code>).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+  and a detail message of <tt>(cause==null ?
+ null : cause.toString())</tt>
+  (which typically contains the class and detail message of 
+ <tt>cause</tt>).
+ @param cause the cause (which is saved for later retrieval by the         
+ <code>getCause()</code>  method).  (A  <tt> null </tt>  value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.5
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
 
 @end
 
@@ -80,9 +80,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaSecurityDigestException)
 
 FOUNDATION_EXPORT void JavaSecurityDigestException_init(JavaSecurityDigestException *self);
 
-FOUNDATION_EXPORT JavaSecurityDigestException *new_JavaSecurityDigestException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityDigestException *new_JavaSecurityDigestException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityDigestException *create_JavaSecurityDigestException_init();
+FOUNDATION_EXPORT JavaSecurityDigestException *create_JavaSecurityDigestException_init(void);
 
 FOUNDATION_EXPORT void JavaSecurityDigestException_initWithNSString_(JavaSecurityDigestException *self, NSString *msg);
 
@@ -90,17 +90,17 @@ FOUNDATION_EXPORT JavaSecurityDigestException *new_JavaSecurityDigestException_i
 
 FOUNDATION_EXPORT JavaSecurityDigestException *create_JavaSecurityDigestException_initWithNSString_(NSString *msg);
 
-FOUNDATION_EXPORT void JavaSecurityDigestException_initWithNSString_withNSException_(JavaSecurityDigestException *self, NSString *message, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityDigestException_initWithNSString_withJavaLangThrowable_(JavaSecurityDigestException *self, NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityDigestException *new_JavaSecurityDigestException_initWithNSString_withNSException_(NSString *message, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityDigestException *new_JavaSecurityDigestException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityDigestException *create_JavaSecurityDigestException_initWithNSString_withNSException_(NSString *message, NSException *cause);
+FOUNDATION_EXPORT JavaSecurityDigestException *create_JavaSecurityDigestException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaSecurityDigestException_initWithNSException_(JavaSecurityDigestException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityDigestException_initWithJavaLangThrowable_(JavaSecurityDigestException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityDigestException *new_JavaSecurityDigestException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityDigestException *new_JavaSecurityDigestException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityDigestException *create_JavaSecurityDigestException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaSecurityDigestException *create_JavaSecurityDigestException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaSecurityDigestException)
 

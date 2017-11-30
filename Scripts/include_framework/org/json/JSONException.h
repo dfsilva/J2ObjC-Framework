@@ -3,7 +3,7 @@
 //  source: android/libcore/json/src/main/java/org/json/JSONException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_OrgJsonJSONException")
 #ifdef RESTRICT_OrgJsonJSONException
@@ -21,31 +21,33 @@
 
 #define RESTRICT_JavaLangException 1
 #define INCLUDE_JavaLangException 1
-#include "../../java/lang/Exception.h"
+#include "java/lang/Exception.h"
+
+@class JavaLangThrowable;
 
 /*!
- @brief Thrown to indicate a problem with the JSON API.
- Such problems include:
+ @brief Thrown to indicate a problem with the JSON API.Such problems include: 
  <ul>
- <li>Attempts to parse or construct malformed documents
- <li>Use of null as a name
- <li>Use of numeric types not available to JSON, such as <code>NaNs</code>
+    <li>Attempts to parse or construct malformed documents
+    <li>Use of null as a name
+    <li>Use of numeric types not available to JSON, such as <code>NaNs</code>
   or <code>infinities</code>.
  <li>Lookups using an out of range index or nonexistent name
- <li>Type mismatches on lookups
+    <li>Type mismatches on lookups 
  </ul>
+  
  <p>Although this is a checked exception, it is rarely recoverable. Most
- callers should simply wrap this exception in an unchecked exception and
- rethrow:
+  callers should simply wrap this exception in an unchecked exception and
+  rethrow: 
  @code
   public JSONArray toJSONObject() {
-     try {
-         JSONObject result = new JSONObject();
-         ...
-     } catch (JSONException e) {
-         throw new RuntimeException(e);
-     }
-  
+      try {
+          JSONObject result = new JSONObject();
+          ...
+      } catch (JSONException e) {
+          throw new RuntimeException(e);
+      }    }
+ 
 @endcode
  */
 @interface OrgJsonJSONException : JavaLangException
@@ -53,6 +55,20 @@
 #pragma mark Public
 
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 

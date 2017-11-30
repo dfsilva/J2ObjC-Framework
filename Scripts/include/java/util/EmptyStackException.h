@@ -23,9 +23,11 @@
 #define INCLUDE_JavaLangRuntimeException 1
 #include "java/lang/RuntimeException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Thrown by methods in the <code>Stack</code> class to indicate
- that the stack is empty.
+  that the stack is empty.
  @author Jonathan Payne
  - seealso: java.util.Stack
  @since JDK1.0
@@ -36,9 +38,23 @@
 
 /*!
  @brief Constructs a new <code>EmptyStackException</code> with <tt>null</tt>
- as its error message string.
+  as its error message string.
  */
 - (instancetype)init;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -46,9 +62,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaUtilEmptyStackException)
 
 FOUNDATION_EXPORT void JavaUtilEmptyStackException_init(JavaUtilEmptyStackException *self);
 
-FOUNDATION_EXPORT JavaUtilEmptyStackException *new_JavaUtilEmptyStackException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaUtilEmptyStackException *new_JavaUtilEmptyStackException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaUtilEmptyStackException *create_JavaUtilEmptyStackException_init();
+FOUNDATION_EXPORT JavaUtilEmptyStackException *create_JavaUtilEmptyStackException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaUtilEmptyStackException)
 

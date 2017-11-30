@@ -28,18 +28,19 @@
 #include "java/beans/PropertyChangeListener.h"
 
 @class JavaBeansPropertyChangeEvent;
+@protocol JavaUtilEventListener;
 
 /*!
  @brief A class which extends the <code>EventListenerProxy</code>
- specifically for adding a <code>PropertyChangeListener</code>
- with a "bound" property.
+  specifically for adding a <code>PropertyChangeListener</code>
+  with a "bound" property.
  Instances of this class can be added
- as <code>PropertyChangeListener</code>s to a bean
- which supports firing property change events.
+  as <code>PropertyChangeListener</code>s to a bean
+  which supports firing property change events. 
  <p>
- If the object has a <code>getPropertyChangeListeners</code> method
- then the array returned could be a mixture of <code>PropertyChangeListener</code>
- and <code>PropertyChangeListenerProxy</code> objects.
+  If the object has a <code>getPropertyChangeListeners</code> method
+  then the array returned could be a mixture of <code>PropertyChangeListener</code>
+  and <code>PropertyChangeListenerProxy</code> objects.
  - seealso: java.util.EventListenerProxy
  - seealso: PropertyChangeSupport#getPropertyChangeListeners
  @since 1.4
@@ -50,9 +51,9 @@
 
 /*!
  @brief Constructor which binds the <code>PropertyChangeListener</code>
- to a specific property.
- @param propertyName  the name of the property to listen on
- @param listener      the listener object
+  to a specific property.
+ @param propertyName the name of the property to listen on
+ @param listener the listener object
  */
 - (instancetype)initWithNSString:(NSString *)propertyName
 withJavaBeansPropertyChangeListener:(id<JavaBeansPropertyChangeListener>)listener;
@@ -67,9 +68,13 @@ withJavaBeansPropertyChangeListener:(id<JavaBeansPropertyChangeListener>)listene
 
 /*!
  @brief Forwards the property change event to the listener delegate.
- @param event  the property change event
+ @param event the property change event
  */
 - (void)propertyChangeWithJavaBeansPropertyChangeEvent:(JavaBeansPropertyChangeEvent *)event;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaUtilEventListener:(id<JavaUtilEventListener>)arg0 NS_UNAVAILABLE;
 
 @end
 

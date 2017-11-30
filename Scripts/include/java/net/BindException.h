@@ -23,11 +23,12 @@
 #define INCLUDE_JavaNetSocketException 1
 #include "java/net/SocketException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Signals that an error occurred while attempting to bind a
- socket to a local address and port.
- Typically, the port is
- in use, or the requested local address could not be assigned.
+  socket to a local address and port.Typically, the port is
+  in use, or the requested local address could not be assigned.
  @since JDK1.1
  */
 @interface JavaNetBindException : JavaNetSocketException
@@ -41,18 +42,21 @@
 
 /*!
  @brief Constructs a new BindException with the specified detail
- message as to why the bind error occurred.
+  message as to why the bind error occurred.
  A detail message is a String that gives a specific
- description of this error.
+  description of this error.
  @param msg the detail message
  */
 - (instancetype)initWithNSString:(NSString *)msg;
 
 /*!
-  
  */
 - (instancetype)initWithNSString:(NSString *)msg
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -66,15 +70,15 @@ FOUNDATION_EXPORT JavaNetBindException *create_JavaNetBindException_initWithNSSt
 
 FOUNDATION_EXPORT void JavaNetBindException_init(JavaNetBindException *self);
 
-FOUNDATION_EXPORT JavaNetBindException *new_JavaNetBindException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNetBindException *new_JavaNetBindException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNetBindException *create_JavaNetBindException_init();
+FOUNDATION_EXPORT JavaNetBindException *create_JavaNetBindException_init(void);
 
-FOUNDATION_EXPORT void JavaNetBindException_initWithNSString_withNSException_(JavaNetBindException *self, NSString *msg, NSException *cause);
+FOUNDATION_EXPORT void JavaNetBindException_initWithNSString_withJavaLangThrowable_(JavaNetBindException *self, NSString *msg, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaNetBindException *new_JavaNetBindException_initWithNSString_withNSException_(NSString *msg, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNetBindException *new_JavaNetBindException_initWithNSString_withJavaLangThrowable_(NSString *msg, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNetBindException *create_JavaNetBindException_initWithNSString_withNSException_(NSString *msg, NSException *cause);
+FOUNDATION_EXPORT JavaNetBindException *create_JavaNetBindException_initWithNSString_withJavaLangThrowable_(NSString *msg, JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNetBindException)
 

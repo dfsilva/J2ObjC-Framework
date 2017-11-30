@@ -3,7 +3,7 @@
 //  source: Classes/javax/annotation/Resource.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxAnnotationResource")
 #ifdef RESTRICT_JavaxAnnotationResource
@@ -16,20 +16,24 @@
 #pragma clang diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (JavaxAnnotationResource_) && (INCLUDE_ALL_JavaxAnnotationResource || defined(INCLUDE_JavaxAnnotationResource))
 #define JavaxAnnotationResource_
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
-#include "../../java/lang/annotation/Annotation.h"
+#include "java/lang/annotation/Annotation.h"
 
 @class IOSClass;
 @class JavaxAnnotationResource_AuthenticationType;
 
 /*!
- @brief javax.annotation.Resource annotation.
- No code was referenced,
- created using just its public API.
+ @brief javax.annotation.Resource annotation.No code was referenced,
+  created using just its public API.
  */
 @protocol JavaxAnnotationResource < JavaLangAnnotationAnnotation >
 
@@ -67,7 +71,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaxAnnotationResource)
 
 #define RESTRICT_JavaLangEnum 1
 #define INCLUDE_JavaLangEnum 1
-#include "../../java/lang/Enum.h"
+#include "java/lang/Enum.h"
 
 @class IOSObjectArray;
 
@@ -76,7 +80,7 @@ typedef NS_ENUM(NSUInteger, JavaxAnnotationResource_AuthenticationType_Enum) {
   JavaxAnnotationResource_AuthenticationType_Enum_CONTAINER = 1,
 };
 
-@interface JavaxAnnotationResource_AuthenticationType : JavaLangEnum < NSCopying >
+@interface JavaxAnnotationResource_AuthenticationType : JavaLangEnum
 
 + (JavaxAnnotationResource_AuthenticationType * __nonnull)APPLICATION;
 
@@ -90,7 +94,6 @@ typedef NS_ENUM(NSUInteger, JavaxAnnotationResource_AuthenticationType_Enum) {
 
 #pragma mark Package-Private
 
-- (id)copyWithZone:(NSZone *)zone;
 - (JavaxAnnotationResource_AuthenticationType_Enum)toNSEnum;
 
 @end
@@ -100,13 +103,13 @@ J2OBJC_STATIC_INIT(JavaxAnnotationResource_AuthenticationType)
 /*! INTERNAL ONLY - Use enum accessors declared below. */
 FOUNDATION_EXPORT JavaxAnnotationResource_AuthenticationType *JavaxAnnotationResource_AuthenticationType_values_[];
 
-inline JavaxAnnotationResource_AuthenticationType *JavaxAnnotationResource_AuthenticationType_get_APPLICATION();
+inline JavaxAnnotationResource_AuthenticationType *JavaxAnnotationResource_AuthenticationType_get_APPLICATION(void);
 J2OBJC_ENUM_CONSTANT(JavaxAnnotationResource_AuthenticationType, APPLICATION)
 
-inline JavaxAnnotationResource_AuthenticationType *JavaxAnnotationResource_AuthenticationType_get_CONTAINER();
+inline JavaxAnnotationResource_AuthenticationType *JavaxAnnotationResource_AuthenticationType_get_CONTAINER(void);
 J2OBJC_ENUM_CONSTANT(JavaxAnnotationResource_AuthenticationType, CONTAINER)
 
-FOUNDATION_EXPORT IOSObjectArray *JavaxAnnotationResource_AuthenticationType_values();
+FOUNDATION_EXPORT IOSObjectArray *JavaxAnnotationResource_AuthenticationType_values(void);
 
 FOUNDATION_EXPORT JavaxAnnotationResource_AuthenticationType *JavaxAnnotationResource_AuthenticationType_valueOfWithNSString_(NSString *name);
 
@@ -116,6 +119,10 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaxAnnotationResource_AuthenticationType)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 
 #pragma clang diagnostic pop
 #pragma pop_macro("INCLUDE_ALL_JavaxAnnotationResource")

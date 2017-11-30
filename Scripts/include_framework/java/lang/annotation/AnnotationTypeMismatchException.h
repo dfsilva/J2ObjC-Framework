@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/annotation/AnnotationTypeMismatchException.java
 //
 
-#include "../../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangAnnotationAnnotationTypeMismatchException")
 #ifdef RESTRICT_JavaLangAnnotationAnnotationTypeMismatchException
@@ -21,16 +21,17 @@
 
 #define RESTRICT_JavaLangRuntimeException 1
 #define INCLUDE_JavaLangRuntimeException 1
-#include "../../../java/lang/RuntimeException.h"
+#include "java/lang/RuntimeException.h"
 
 @class JavaLangReflectMethod;
+@class JavaLangThrowable;
 
 /*!
  @brief Thrown to indicate that a program has attempted to access an element of
- an annotation whose type has changed after the annotation was compiled
- (or serialized).
- This exception can be thrown by the API used to read annotations
- reflectively
+  an annotation whose type has changed after the annotation was compiled
+  (or serialized).
+ This exception can be thrown by the used to read annotations
+  reflectively
  .
  @author Josh Bloch
  - seealso: java.lang.reflect.AnnotatedElement
@@ -42,11 +43,10 @@
 
 /*!
  @brief Constructs an AnnotationTypeMismatchException for the specified
- annotation type element and found data type.
- @param element the <tt>Method</tt> object for the annotation element
- @param foundType the (erroneous) type of data found in the annotation.
- This string may, but is not required to, contain the value
- as well.  The exact format of the string is unspecified.
+  annotation type element and found data type.
+ @param element the  <tt> Method </tt>  object for the annotation element
+ @param foundType the (erroneous) type of data found in the annotation.         This string may, but is not required to, contain the value
+          as well.  The exact format of the string is unspecified.
  */
 - (instancetype)initWithJavaLangReflectMethod:(JavaLangReflectMethod *)element
                                  withNSString:(NSString *)foundType;
@@ -60,10 +60,26 @@
 /*!
  @brief Returns the type of data found in the incorrectly typed element.
  The returned string may, but is not required to, contain the value
- as well.  The exact format of the string is unspecified.
+  as well.  The exact format of the string is unspecified.
  @return the type of data found in the incorrectly typed element
  */
 - (NSString *)foundType;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 

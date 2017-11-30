@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/PipedWriter.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoPipedWriter")
 #ifdef RESTRICT_JavaIoPipedWriter
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoWriter 1
 #define INCLUDE_JavaIoWriter 1
-#include "../../java/io/Writer.h"
+#include "java/io/Writer.h"
 
 @class IOSCharArray;
 @class JavaIoPipedReader;
@@ -37,82 +37,76 @@
 
 /*!
  @brief Creates a piped writer that is not yet connected to a
- piped reader.
- It must be connected to a piped reader,
- either by the receiver or the sender, before being used.
- - seealso: java.io.PipedReader#connect(java.io.PipedWriter)
- - seealso: java.io.PipedWriter#connect(java.io.PipedReader)
+  piped reader.It must be connected to a piped reader,
+  either by the receiver or the sender, before being used.
+ - seealso: java.io.PipedReader
+ - seealso: java.io.PipedWriter
  */
 - (instancetype)init;
 
 /*!
  @brief Creates a piped writer connected to the specified piped
- reader.
- Data characters written to this stream will then be
- available as input from <code>snk</code>.
- @param snk   The piped reader to connect to.
- @exception IOException  if an I/O error occurs.
+  reader.Data characters written to this stream will then be
+  available as input from <code>snk</code>.
+ @param snk The piped reader to connect to.
+ @throw IOExceptionif an I/O error occurs.
  */
 - (instancetype)initWithJavaIoPipedReader:(JavaIoPipedReader *)snk;
 
 /*!
  @brief Closes this piped output stream and releases any system resources
- associated with this stream.
- This stream may no longer be used for
- writing characters.
- @exception IOException  if an I/O error occurs.
+  associated with this stream.This stream may no longer be used for
+  writing characters.
+ @throw IOExceptionif an I/O error occurs.
  */
 - (void)close;
 
 /*!
- @brief Connects this piped writer to a receiver.
- If this object
- is already connected to some other piped reader, an
+ @brief Connects this piped writer to a receiver.If this object
+  is already connected to some other piped reader, an 
  <code>IOException</code> is thrown.
  <p>
- If <code>snk</code> is an unconnected piped reader and
+  If <code>snk</code> is an unconnected piped reader and 
  <code>src</code> is an unconnected piped writer, they may
- be connected by either the call:
- <blockquote>
-@code
+  be connected by either the call: 
+ <blockquote>@code
 
-  
+  src.connect(snk)
 @endcode</blockquote>
- or the call:
- <blockquote>
-@code
+  or the call: 
+ <blockquote>@code
 
-  
+  snk.connect(src)
 @endcode</blockquote>
- The two calls have the same effect.
- @param snk   the piped reader to connect to.
- @exception IOException  if an I/O error occurs.
+  The two calls have the same effect.
+ @param snk the piped reader to connect to.
+ @throw IOExceptionif an I/O error occurs.
  */
 - (void)connectWithJavaIoPipedReader:(JavaIoPipedReader *)snk;
 
 /*!
  @brief Flushes this output stream and forces any buffered output characters
- to be written out.
+  to be written out.
  This will notify any readers that characters are waiting in the pipe.
- @exception IOException  if the pipe is closed, or an I/O error occurs.
+ @throw IOExceptionif the pipe is closed, or an I/O error occurs.
  */
 - (void)flush;
 
 /*!
  @brief Writes <code>len</code> characters from the specified character array
- starting at offset <code>off</code> to this piped output stream.
+  starting at offset <code>off</code> to this piped output stream.
  This method blocks until all the characters are written to the output
- stream.
- If a thread was reading data characters from the connected piped input
- stream, but the thread is no longer alive, then an
+  stream.
+  If a thread was reading data characters from the connected piped input
+  stream, but the thread is no longer alive, then an 
  <code>IOException</code> is thrown.
- @param cbuf  the data.
- @param off   the start offset in the data.
- @param len   the number of characters to write.
- @exception IOException  if the pipe is
- <a href=PipedOutputStream.html#BROKEN> <code>broken</code></a>,
- <code>unconnected</code>, closed
- or an I/O error occurs.
+ @param cbuf the data.
+ @param off the start offset in the data.
+ @param len the number of characters to write.
+ @throw IOExceptionif the pipe is
+           <a href=PipedOutputStream.html#BROKEN> <code>broken</code></a>,
+           <code>unconnected</code>, closed
+           or an I/O error occurs.
  */
 - (void)writeWithCharArray:(IOSCharArray *)cbuf
                    withInt:(jint)off
@@ -121,17 +115,21 @@
 /*!
  @brief Writes the specified <code>char</code> to the piped output stream.
  If a thread was reading data characters from the connected piped input
- stream, but the thread is no longer alive, then an
- <code>IOException</code> is thrown.
+  stream, but the thread is no longer alive, then an 
+ <code>IOException</code> is thrown. 
  <p>
- Implements the <code>write</code> method of <code>Writer</code>.
- @param c   the <code>char</code> to be written.
- @exception IOException  if the pipe is
- <a href=PipedOutputStream.html#BROKEN> <code>broken</code></a>,
- <code>unconnected</code>, closed
- or an I/O error occurs.
+  Implements the <code>write</code> method of <code>Writer</code>.
+ @param c the  <code> char </code>  to be written.
+ @throw IOExceptionif the pipe is
+           <a href=PipedOutputStream.html#BROKEN> <code>broken</code></a>,
+           <code>unconnected</code>, closed
+           or an I/O error occurs.
  */
 - (void)writeWithInt:(jint)c;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithId:(id)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -145,9 +143,9 @@ FOUNDATION_EXPORT JavaIoPipedWriter *create_JavaIoPipedWriter_initWithJavaIoPipe
 
 FOUNDATION_EXPORT void JavaIoPipedWriter_init(JavaIoPipedWriter *self);
 
-FOUNDATION_EXPORT JavaIoPipedWriter *new_JavaIoPipedWriter_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoPipedWriter *new_JavaIoPipedWriter_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoPipedWriter *create_JavaIoPipedWriter_init();
+FOUNDATION_EXPORT JavaIoPipedWriter *create_JavaIoPipedWriter_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaIoPipedWriter)
 

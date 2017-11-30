@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/InterruptedException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangInterruptedException")
 #ifdef RESTRICT_JavaLangInterruptedException
@@ -21,28 +21,30 @@
 
 #define RESTRICT_JavaLangException 1
 #define INCLUDE_JavaLangException 1
-#include "../../java/lang/Exception.h"
+#include "java/lang/Exception.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief Thrown when a thread is waiting, sleeping, or otherwise occupied,
- and the thread is interrupted, either before or during the activity.
+  and the thread is interrupted, either before or during the activity.
  Occasionally a method may wish to test whether the current
- thread has been interrupted, and if so, to immediately throw
- this exception.  The following code can be used to achieve
- this effect:
+  thread has been interrupted, and if so, to immediately throw
+  this exception.  The following code can be used to achieve
+  this effect: 
  @code
 
-  if (Thread.interrupted())  // Clears interrupted status!
-      throw new InterruptedException();
+   if (Thread.interrupted())  // Clears interrupted status!
+       throw new InterruptedException(); 
   
 @endcode
  @author Frank Yellin
- - seealso: java.lang.Object#wait()
- - seealso: java.lang.Object#wait(long)
- - seealso: java.lang.Object#wait(long,int)
- - seealso: java.lang.Thread#sleep(long)
- - seealso: java.lang.Thread#interrupt()
- - seealso: java.lang.Thread#interrupted()
+ - seealso: java.lang.Object
+ - seealso: java.lang.Object
+ - seealso: java.lang.Object
+ - seealso: java.lang.Thread
+ - seealso: java.lang.Thread
+ - seealso: java.lang.Thread
  @since JDK1.0
  */
 @interface JavaLangInterruptedException : JavaLangException
@@ -56,10 +58,22 @@
 
 /*!
  @brief Constructs an <code>InterruptedException</code> with the
- specified detail message.
- @param s   the detail message.
+  specified detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -67,9 +81,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangInterruptedException)
 
 FOUNDATION_EXPORT void JavaLangInterruptedException_init(JavaLangInterruptedException *self);
 
-FOUNDATION_EXPORT JavaLangInterruptedException *new_JavaLangInterruptedException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangInterruptedException *new_JavaLangInterruptedException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangInterruptedException *create_JavaLangInterruptedException_init();
+FOUNDATION_EXPORT JavaLangInterruptedException *create_JavaLangInterruptedException_init(void);
 
 FOUNDATION_EXPORT void JavaLangInterruptedException_initWithNSString_(JavaLangInterruptedException *self, NSString *s);
 

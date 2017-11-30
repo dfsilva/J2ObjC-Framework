@@ -3,7 +3,7 @@
 //  source: Classes/com/google/j2objc/net/NSErrorException.java
 //
 
-#include "../../../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_ComGoogleJ2objcNetNSErrorException")
 #ifdef RESTRICT_ComGoogleJ2objcNetNSErrorException
@@ -21,11 +21,13 @@
 
 #define RESTRICT_JavaLangRuntimeException 1
 #define INCLUDE_JavaLangRuntimeException 1
-#include "../../../../java/lang/RuntimeException.h"
+#include "java/lang/RuntimeException.h"
+
+@class JavaLangThrowable;
 
 /*!
  @brief A wrapper class for an NSError, which is documented here:
- https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/
+  https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSError_Class/
  */
 @interface ComGoogleJ2objcNetNSErrorException : JavaLangRuntimeException
 
@@ -50,7 +52,7 @@
 
 /*!
  @brief Returns the failing URL string, or null if not defined
- by this NSError.
+  by this NSError.
  */
 - (NSString *)getFailingURLString;
 
@@ -58,6 +60,22 @@
  @brief Returns the native NSError instance.
  */
 - (id)getNSError;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 

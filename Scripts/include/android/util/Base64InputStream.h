@@ -28,7 +28,7 @@
 
 /*!
  @brief An InputStream that does Base64 decoding on the data read through
- it.
+  it.
  */
 @interface AndroidUtilBase64InputStream : JavaIoFilterInputStream
 
@@ -36,20 +36,20 @@
 
 /*!
  @brief An InputStream that performs Base64 decoding on the data read
- from the wrapped stream.
+  from the wrapped stream.
  @param inArg the InputStream to read the source data from
- @param flags bit flags for controlling the decoder; see the
- constants in <code>Base64</code>
+ @param flags bit flags for controlling the decoder; see the         constants in 
+ <code>Base64</code>
  */
 - (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg
                                   withInt:(jint)flags;
 
 /*!
  @brief Performs Base64 encoding or decoding on the data read from the
- wrapped InputStream.
+  wrapped InputStream.
  @param inArg the InputStream to read the source data from
- @param flags bit flags for controlling the decoder; see the
- constants in <code>Base64</code>
+ @param flags bit flags for controlling the decoder; see the         constants in 
+ <code>Base64</code>
  @param encode true to encode, false to decode
  */
 - (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg
@@ -73,6 +73,10 @@
 - (void)reset;
 
 - (jlong)skipWithLong:(jlong)n;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)arg0 NS_UNAVAILABLE;
 
 @end
 

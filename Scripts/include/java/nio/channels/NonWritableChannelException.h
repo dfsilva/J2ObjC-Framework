@@ -23,9 +23,11 @@
 #define INCLUDE_JavaLangIllegalStateException 1
 #include "java/lang/IllegalStateException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Unchecked exception thrown when an attempt is made to write
- to a channel that was not originally opened for writing.
+  to a channel that was not originally opened for writing.
  @since 1.4
  */
 @interface JavaNioChannelsNonWritableChannelException : JavaLangIllegalStateException
@@ -37,15 +39,24 @@
  */
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsNonWritableChannelException)
 
 FOUNDATION_EXPORT void JavaNioChannelsNonWritableChannelException_init(JavaNioChannelsNonWritableChannelException *self);
 
-FOUNDATION_EXPORT JavaNioChannelsNonWritableChannelException *new_JavaNioChannelsNonWritableChannelException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNioChannelsNonWritableChannelException *new_JavaNioChannelsNonWritableChannelException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNioChannelsNonWritableChannelException *create_JavaNioChannelsNonWritableChannelException_init();
+FOUNDATION_EXPORT JavaNioChannelsNonWritableChannelException *create_JavaNioChannelsNonWritableChannelException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsNonWritableChannelException)
 

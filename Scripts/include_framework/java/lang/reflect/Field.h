@@ -22,10 +22,10 @@
 #ifndef _JavaLangReflectField_H_
 #define _JavaLangReflectField_H_
 
-#import "../../../java/lang/reflect/AccessibleObject.h"
-#import "../../../IOSMetadata.h"
-#import "../../../J2ObjC_common.h"
-#import "../../../java/lang/reflect/Member.h"
+#import "java\lang\reflect/AccessibleObject.h"
+#import "IOSMetadata.h"
+#import "J2ObjC_common.h"
+#import "java/lang/reflect/Member.h"
 #import <objc/runtime.h>
 
 @class IOSClass;
@@ -83,7 +83,7 @@
 - (id<JavaLangReflectType>)getGenericType;
 
 // Should only be used by sun.misc.Unsafe.
-- (int)unsafeOffset;
+- (jlong)unsafeOffset;
 
 @end
 

@@ -27,10 +27,9 @@
 
 /*!
  @brief A program element annotated &#64;Deprecated is one that programmers
- are discouraged from using, typically because it is dangerous,
- or because a better alternative exists.
- Compilers warn when a
- deprecated program element is used or overridden in non-deprecated code.
+  are discouraged from using, typically because it is dangerous,
+  or because a better alternative exists.Compilers warn when a
+  deprecated program element is used or overridden in non-deprecated code.
  @author Neal Gafter
  @since 1.5
  */
@@ -44,7 +43,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(JavaLangDeprecated)
 
-FOUNDATION_EXPORT id<JavaLangDeprecated> create_JavaLangDeprecated();
+FOUNDATION_EXPORT id<JavaLangDeprecated> create_JavaLangDeprecated(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangDeprecated)
 

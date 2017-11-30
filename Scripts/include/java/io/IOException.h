@@ -23,11 +23,12 @@
 #define INCLUDE_JavaLangException 1
 #include "java/lang/Exception.h"
 
+@class JavaLangThrowable;
+
 /*!
- @brief Signals that an I/O exception of some sort has occurred.
- This
- class is the general class of exceptions produced by failed or
- interrupted I/O operations.
+ @brief Signals that an I/O exception of some sort has occurred.This
+  class is the general class of exceptions produced by failed or
+  interrupted I/O operations.
  @author unascribed
  - seealso: java.io.InputStream
  - seealso: java.io.OutputStream
@@ -41,64 +42,69 @@
 
 /*!
  @brief Constructs an <code>IOException</code> with <code>null</code>
- as its error detail message.
+  as its error detail message.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs an <code>IOException</code> with the specified detail message.
- @param message
- The detail message (which is saved for later retrieval
- by the <code>getMessage()</code> method)
+ @param message The detail message (which is saved for later retrieval
+          by the 
+ <code>getMessage()</code>  method)
  */
 - (instancetype)initWithNSString:(NSString *)message;
 
 /*!
  @brief Constructs an <code>IOException</code> with the specified detail message
- and cause.
- <p> Note that the detail message associated with <code>cause</code> is
+  and cause.
+ <p> Note that the detail message associated with <code>cause</code> is 
  <i>not</i> automatically incorporated into this exception's detail
- message.
- @param message
- The detail message (which is saved for later retrieval
- by the <code>getMessage()</code> method)
- @param cause
- The cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A null value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+  message.
+ @param message The detail message (which is saved for later retrieval
+          by the 
+ <code>getMessage()</code>  method)
+ @param cause The cause (which is saved for later retrieval by the
+          <code>getCause()</code>
+   method).  (A null value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.6
  */
 - (instancetype)initWithNSString:(NSString *)message
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Constructs an <code>IOException</code> with the specified cause and a
- detail message of <code>(cause==null ?
+  detail message of <code>(cause==null ?
  null : cause.toString())</code>
- (which typically contains the class and detail message of <code>cause</code>).
+  (which typically contains the class and detail message of <code>cause</code>).
  This constructor is useful for IO exceptions that are little more
- than wrappers for other throwables.
- @param cause
- The cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A null value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+  than wrappers for other throwables.
+ @param cause The cause (which is saved for later retrieval by the
+          <code>getCause()</code>
+   method).  (A null value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.6
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaIoIOException)
 
-inline jlong JavaIoIOException_get_serialVersionUID();
+inline jlong JavaIoIOException_get_serialVersionUID(void);
 #define JavaIoIOException_serialVersionUID 7818375828146090155LL
 J2OBJC_STATIC_FIELD_CONSTANT(JavaIoIOException, serialVersionUID, jlong)
 
 FOUNDATION_EXPORT void JavaIoIOException_init(JavaIoIOException *self);
 
-FOUNDATION_EXPORT JavaIoIOException *new_JavaIoIOException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoIOException *new_JavaIoIOException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoIOException *create_JavaIoIOException_init();
+FOUNDATION_EXPORT JavaIoIOException *create_JavaIoIOException_init(void);
 
 FOUNDATION_EXPORT void JavaIoIOException_initWithNSString_(JavaIoIOException *self, NSString *message);
 
@@ -106,17 +112,17 @@ FOUNDATION_EXPORT JavaIoIOException *new_JavaIoIOException_initWithNSString_(NSS
 
 FOUNDATION_EXPORT JavaIoIOException *create_JavaIoIOException_initWithNSString_(NSString *message);
 
-FOUNDATION_EXPORT void JavaIoIOException_initWithNSString_withNSException_(JavaIoIOException *self, NSString *message, NSException *cause);
+FOUNDATION_EXPORT void JavaIoIOException_initWithNSString_withJavaLangThrowable_(JavaIoIOException *self, NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaIoIOException *new_JavaIoIOException_initWithNSString_withNSException_(NSString *message, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoIOException *new_JavaIoIOException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoIOException *create_JavaIoIOException_initWithNSString_withNSException_(NSString *message, NSException *cause);
+FOUNDATION_EXPORT JavaIoIOException *create_JavaIoIOException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaIoIOException_initWithNSException_(JavaIoIOException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaIoIOException_initWithJavaLangThrowable_(JavaIoIOException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaIoIOException *new_JavaIoIOException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoIOException *new_JavaIoIOException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoIOException *create_JavaIoIOException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaIoIOException *create_JavaIoIOException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaIoIOException)
 

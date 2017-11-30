@@ -23,15 +23,16 @@
 #define INCLUDE_JavaLangIllegalArgumentException 1
 #include "java/lang/IllegalArgumentException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Thrown to indicate that a thread is not in an appropriate state
- for the requested operation.
- See, for example, the
- <code>suspend</code> and <code>resume</code> methods in class
+  for the requested operation.See, for example, the 
+ <code>suspend</code> and <code>resume</code> methods in class 
  <code>Thread</code>.
  @author unascribed
- - seealso: java.lang.Thread#resume()
- - seealso: java.lang.Thread#suspend()
+ - seealso: java.lang.Thread
+ - seealso: java.lang.Thread
  @since JDK1.0
  */
 @interface JavaLangIllegalThreadStateException : JavaLangIllegalArgumentException
@@ -40,16 +41,23 @@
 
 /*!
  @brief Constructs an <code>IllegalThreadStateException</code> with no
- detail message.
+  detail message.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs an <code>IllegalThreadStateException</code> with the
- specified detail message.
- @param s   the detail message.
+  specified detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -57,9 +65,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangIllegalThreadStateException)
 
 FOUNDATION_EXPORT void JavaLangIllegalThreadStateException_init(JavaLangIllegalThreadStateException *self);
 
-FOUNDATION_EXPORT JavaLangIllegalThreadStateException *new_JavaLangIllegalThreadStateException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangIllegalThreadStateException *new_JavaLangIllegalThreadStateException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangIllegalThreadStateException *create_JavaLangIllegalThreadStateException_init();
+FOUNDATION_EXPORT JavaLangIllegalThreadStateException *create_JavaLangIllegalThreadStateException_init(void);
 
 FOUNDATION_EXPORT void JavaLangIllegalThreadStateException_initWithNSString_(JavaLangIllegalThreadStateException *self, NSString *s);
 

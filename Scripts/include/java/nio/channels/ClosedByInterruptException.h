@@ -25,10 +25,9 @@
 
 /*!
  @brief Checked exception received by a thread when another thread interrupts it
- while it is blocked in an I/O operation upon a channel.
- Before this
- exception is thrown the channel will have been closed and the interrupt
- status of the previously-blocked thread will have been set.
+  while it is blocked in an I/O operation upon a channel.Before this
+  exception is thrown the channel will have been closed and the interrupt
+  status of the previously-blocked thread will have been set.
  @since 1.4
  */
 @interface JavaNioChannelsClosedByInterruptException : JavaNioChannelsAsynchronousCloseException
@@ -46,9 +45,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsClosedByInterruptException)
 
 FOUNDATION_EXPORT void JavaNioChannelsClosedByInterruptException_init(JavaNioChannelsClosedByInterruptException *self);
 
-FOUNDATION_EXPORT JavaNioChannelsClosedByInterruptException *new_JavaNioChannelsClosedByInterruptException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNioChannelsClosedByInterruptException *new_JavaNioChannelsClosedByInterruptException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNioChannelsClosedByInterruptException *create_JavaNioChannelsClosedByInterruptException_init();
+FOUNDATION_EXPORT JavaNioChannelsClosedByInterruptException *create_JavaNioChannelsClosedByInterruptException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsClosedByInterruptException)
 

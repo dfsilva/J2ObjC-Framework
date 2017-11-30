@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/java/io/FileWriter.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoFileWriter")
 #ifdef RESTRICT_JavaIoFileWriter
@@ -21,18 +21,21 @@
 
 #define RESTRICT_JavaIoOutputStreamWriter 1
 #define INCLUDE_JavaIoOutputStreamWriter 1
-#include "../../java/io/OutputStreamWriter.h"
+#include "java/io/OutputStreamWriter.h"
 
 @class JavaIoFile;
 @class JavaIoFileDescriptor;
+@class JavaIoOutputStream;
+@class JavaNioCharsetCharset;
+@class JavaNioCharsetCharsetEncoder;
 
 /*!
  @brief A specialized <code>Writer</code> that writes to a file in the file system.
  All write requests made by calling methods in this class are directly
- forwarded to the equivalent function of the underlying operating system.
- Since this may induce some performance penalty, in particular if many small
- write requests are made, a FileWriter is often wrapped by a
- BufferedWriter.
+  forwarded to the equivalent function of the underlying operating system.
+  Since this may induce some performance penalty, in particular if many small
+  write requests are made, a FileWriter is often wrapped by a
+  BufferedWriter.
  - seealso: BufferedWriter
  - seealso: FileReader
  */
@@ -42,23 +45,19 @@
 
 /*!
  @brief Creates a FileWriter using the File <code>file</code>.
- @param file
- the non-null File to write bytes to.
- @throws IOException
+ @param file the non-null File to write bytes to.
+ @throw IOException
  if <code>file</code> cannot be opened for writing.
  */
 - (instancetype)initWithJavaIoFile:(JavaIoFile *)file;
 
 /*!
- @brief Creates a FileWriter using the File <code>file</code>.
- The parameter
+ @brief Creates a FileWriter using the File <code>file</code>.The parameter 
  <code>append</code> determines whether or not the file is opened and appended
- to or just opened and overwritten.
- @param file
- the non-null File to write bytes to.
- @param append
- indicates whether or not to append to an existing file.
- @throws IOException
+  to or just opened and overwritten.
+ @param file the non-null File to write bytes to.
+ @param append indicates whether or not to append to an existing file.
+ @throw IOException
  if the <code>file</code> cannot be opened for writing.
  */
 - (instancetype)initWithJavaIoFile:(JavaIoFile *)file
@@ -66,34 +65,42 @@
 
 /*!
  @brief Creates a FileWriter using the existing FileDescriptor <code>fd</code>.
- @param fd
- the non-null FileDescriptor to write bytes to.
+ @param fd the non-null FileDescriptor to write bytes to.
  */
 - (instancetype)initWithJavaIoFileDescriptor:(JavaIoFileDescriptor *)fd;
 
 /*!
  @brief Creates a FileWriter using the platform dependent <code>filename</code>.
- @param filename
- the non-null name of the file to write bytes to.
- @throws IOException
+ @param filename the non-null name of the file to write bytes to.
+ @throw IOException
  if the file cannot be opened for writing.
  */
 - (instancetype)initWithNSString:(NSString *)filename;
 
 /*!
- @brief Creates a FileWriter using the platform dependent <code>filename</code>.
- The
- parameter <code>append</code> determines whether or not the file is opened and
- appended to or just opened and overwritten.
- @param filename
- the non-null name of the file to write bytes to.
- @param append
- indicates whether or not to append to an existing file.
- @throws IOException
+ @brief Creates a FileWriter using the platform dependent <code>filename</code>.The
+  parameter <code>append</code> determines whether or not the file is opened and
+  appended to or just opened and overwritten.
+ @param filename the non-null name of the file to write bytes to.
+ @param append indicates whether or not to append to an existing file.
+ @throw IOException
  if the <code>file</code> cannot be opened for writing.
  */
 - (instancetype)initWithNSString:(NSString *)filename
                      withBoolean:(jboolean)append;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)arg0
+                 withJavaNioCharsetCharset:(JavaNioCharsetCharset *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)arg0
+          withJavaNioCharsetCharsetEncoder:(JavaNioCharsetCharsetEncoder *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)arg0
+                              withNSString:(NSString *)arg1 NS_UNAVAILABLE;
 
 @end
 

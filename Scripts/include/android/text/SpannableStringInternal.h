@@ -55,7 +55,7 @@
 
 - (NSUInteger)hash;
 
-- (jint)length;
+- (jint)java_length;
 
 - (jint)nextSpanTransitionWithInt:(jint)start
                           withInt:(jint)limit
@@ -80,7 +80,7 @@
 
 J2OBJC_STATIC_INIT(AndroidTextSpannableStringInternal)
 
-inline IOSObjectArray *AndroidTextSpannableStringInternal_get_EMPTY();
+inline IOSObjectArray *AndroidTextSpannableStringInternal_get_EMPTY(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT IOSObjectArray *AndroidTextSpannableStringInternal_EMPTY;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(AndroidTextSpannableStringInternal, EMPTY, IOSObjectArray *)

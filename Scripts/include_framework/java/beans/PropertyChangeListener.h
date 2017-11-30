@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/beans/PropertyChangeListener.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaBeansPropertyChangeListener")
 #ifdef RESTRICT_JavaBeansPropertyChangeListener
@@ -21,22 +21,20 @@
 
 #define RESTRICT_JavaUtilEventListener 1
 #define INCLUDE_JavaUtilEventListener 1
-#include "../../java/util/EventListener.h"
+#include "java/util/EventListener.h"
 
 @class JavaBeansPropertyChangeEvent;
 
 /*!
  @brief A "PropertyChange" event gets fired whenever a bean changes a "bound"
- property.
- You can register a PropertyChangeListener with a source
- bean so as to be notified of any bound property updates.
+  property.You can register a PropertyChangeListener with a source
+  bean so as to be notified of any bound property updates.
  */
 @protocol JavaBeansPropertyChangeListener < JavaUtilEventListener, JavaObject >
 
 /*!
  @brief This method gets called when a bound property is changed.
- @param evt A PropertyChangeEvent object describing the event source
- and the property that has changed.
+ @param evt A PropertyChangeEvent object describing the event source           and the property that has changed.
  */
 - (void)propertyChangeWithJavaBeansPropertyChangeEvent:(JavaBeansPropertyChangeEvent *)evt;
 

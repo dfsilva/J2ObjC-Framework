@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/nio/charset/UnmappableCharacterException.java
 //
 
-#include "../../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNioCharsetUnmappableCharacterException")
 #ifdef RESTRICT_JavaNioCharsetUnmappableCharacterException
@@ -21,12 +21,12 @@
 
 #define RESTRICT_JavaNioCharsetCharacterCodingException 1
 #define INCLUDE_JavaNioCharsetCharacterCodingException 1
-#include "../../../java/nio/charset/CharacterCodingException.h"
+#include "java/nio/charset/CharacterCodingException.h"
 
 /*!
  @brief Checked exception thrown when an input character (or byte) sequence
- is valid but cannot be mapped to an output byte (or character)
- sequence.
+  is valid but cannot be mapped to an output byte (or character)
+  sequence.
  @since 1.4
  */
 @interface JavaNioCharsetUnmappableCharacterException : JavaNioCharsetCharacterCodingException
@@ -35,7 +35,7 @@
 
 /*!
  @brief Constructs an <code>UnmappableCharacterException</code> with the
- given length.
+  given length.
  @param inputLength the length of the input
  */
 - (instancetype)initWithInt:(jint)inputLength;
@@ -51,6 +51,10 @@
  @return the message
  */
 - (NSString *)getMessage;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

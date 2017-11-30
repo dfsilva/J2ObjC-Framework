@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/NotActiveException.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoNotActiveException")
 #ifdef RESTRICT_JavaIoNotActiveException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoObjectStreamException 1
 #define INCLUDE_JavaIoObjectStreamException 1
-#include "../../java/io/ObjectStreamException.h"
+#include "java/io/ObjectStreamException.h"
 
 /*!
  @brief Thrown when serialization or deserialization is not active.
@@ -39,7 +39,7 @@
 
 /*!
  @brief Constructor to create a new NotActiveException with the reason given.
- @param reason  a String describing the reason for the exception.
+ @param reason a String describing the reason for the exception.
  */
 - (instancetype)initWithNSString:(NSString *)reason;
 
@@ -55,9 +55,9 @@ FOUNDATION_EXPORT JavaIoNotActiveException *create_JavaIoNotActiveException_init
 
 FOUNDATION_EXPORT void JavaIoNotActiveException_init(JavaIoNotActiveException *self);
 
-FOUNDATION_EXPORT JavaIoNotActiveException *new_JavaIoNotActiveException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoNotActiveException *new_JavaIoNotActiveException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoNotActiveException *create_JavaIoNotActiveException_init();
+FOUNDATION_EXPORT JavaIoNotActiveException *create_JavaIoNotActiveException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaIoNotActiveException)
 

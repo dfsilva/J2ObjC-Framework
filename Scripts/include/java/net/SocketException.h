@@ -23,6 +23,8 @@
 #define INCLUDE_JavaIoIOException 1
 #include "java/io/IOException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Thrown to indicate that there is an error creating or accessing a Socket.
  @author Jonathan Payne
@@ -39,21 +41,19 @@
 
 /*!
  @brief Constructs a new <code>SocketException</code> with the
- specified detail message.
+  specified detail message.
  @param msg the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)msg;
 
 /*!
-  
  */
 - (instancetype)initWithNSString:(NSString *)msg
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
-  
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
 
 @end
 
@@ -67,21 +67,21 @@ FOUNDATION_EXPORT JavaNetSocketException *create_JavaNetSocketException_initWith
 
 FOUNDATION_EXPORT void JavaNetSocketException_init(JavaNetSocketException *self);
 
-FOUNDATION_EXPORT JavaNetSocketException *new_JavaNetSocketException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNetSocketException *new_JavaNetSocketException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNetSocketException *create_JavaNetSocketException_init();
+FOUNDATION_EXPORT JavaNetSocketException *create_JavaNetSocketException_init(void);
 
-FOUNDATION_EXPORT void JavaNetSocketException_initWithNSException_(JavaNetSocketException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaNetSocketException_initWithJavaLangThrowable_(JavaNetSocketException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaNetSocketException *new_JavaNetSocketException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNetSocketException *new_JavaNetSocketException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNetSocketException *create_JavaNetSocketException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaNetSocketException *create_JavaNetSocketException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaNetSocketException_initWithNSString_withNSException_(JavaNetSocketException *self, NSString *msg, NSException *cause);
+FOUNDATION_EXPORT void JavaNetSocketException_initWithNSString_withJavaLangThrowable_(JavaNetSocketException *self, NSString *msg, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaNetSocketException *new_JavaNetSocketException_initWithNSString_withNSException_(NSString *msg, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNetSocketException *new_JavaNetSocketException_initWithNSString_withJavaLangThrowable_(NSString *msg, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNetSocketException *create_JavaNetSocketException_initWithNSString_withNSException_(NSString *msg, NSException *cause);
+FOUNDATION_EXPORT JavaNetSocketException *create_JavaNetSocketException_initWithNSString_withJavaLangThrowable_(NSString *msg, JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNetSocketException)
 

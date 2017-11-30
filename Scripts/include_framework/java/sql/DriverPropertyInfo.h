@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/sql/DriverPropertyInfo.java
 //
 
-#include "../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSqlDriverPropertyInfo")
 #ifdef RESTRICT_JavaSqlDriverPropertyInfo
@@ -23,11 +23,11 @@
 
 /*!
  @brief <p>Driver properties for making a connection.
- The
+ The 
  <code>DriverPropertyInfo</code> class is of interest only to advanced programmers
- who need to interact with a Driver via the method
+  who need to interact with a Driver via the method 
  <code>getDriverProperties</code> to discover
- and supply properties for connections.
+  and supply properties for connections.
  */
 @interface JavaSqlDriverPropertyInfo : NSObject {
  @public
@@ -41,23 +41,22 @@
   NSString *description__;
   /*!
    @brief The <code>required</code> field is <code>true</code> if a value must be
- supplied for this property
- during <code>Driver.connect</code> and <code>false</code> otherwise.
+  supplied for this property
+  during <code>Driver.connect</code> and <code>false</code> otherwise.
    */
   jboolean required_;
   /*!
    @brief The <code>value</code> field specifies the current value of
- the property, based on a combination of the information
- supplied to the method <code>getPropertyInfo</code>, the
- Java environment, and the driver-supplied default values.
-   This field
- may be null if no value is known.
+  the property, based on a combination of the information
+  supplied to the method <code>getPropertyInfo</code>, the
+  Java environment, and the driver-supplied default values.This field
+  may be null if no value is known.
    */
   NSString *value_;
   /*!
-   @brief An array of possible values if the value for the field
+   @brief An array of possible values if the value for the field 
  <code>DriverPropertyInfo.value</code> may be selected
- from a particular set of values; otherwise null.
+  from a particular set of values; otherwise null.
    */
   IOSObjectArray *choices_;
 }
@@ -66,15 +65,18 @@
 
 /*!
  @brief Constructs a <code>DriverPropertyInfo</code> object with a  given
- name and value.
- The <code>description</code> and <code>choices</code>
- are intialized to <code>null</code> and <code>required</code> is initialized
- to <code>false</code>.
+  name and value.The <code>description</code> and <code>choices</code>
+  are intialized to <code>null</code> and <code>required</code> is initialized
+  to <code>false</code>.
  @param name the name of the property
  @param value the current value, which may be null
  */
 - (instancetype)initWithNSString:(NSString *)name
                     withNSString:(NSString *)value;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

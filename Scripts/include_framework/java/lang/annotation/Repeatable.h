@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/annotation/Repeatable.java
 //
 
-#include "../../../J2ObjC_header.h"
+#include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangAnnotationRepeatable")
 #ifdef RESTRICT_JavaLangAnnotationRepeatable
@@ -21,20 +21,17 @@
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
-#include "../../../java/lang/annotation/Annotation.h"
+#include "java/lang/annotation/Annotation.h"
 
 @class IOSClass;
 
 /*!
  @brief The annotation type <code>java.lang.annotation.Repeatable</code> is
- used to indicate that the annotation type whose declaration it
- (meta-)annotates is <em>repeatable</em>.
- The value of
+  used to indicate that the annotation type whose declaration it
+  (meta-)annotates is <em>repeatable</em>.The value of 
  <code>@@Repeatable</code> indicates the <em>containing annotation
- type</em> for the repeatable annotation type.
+  type</em> for the repeatable annotation type.
  @since 1.8
-  9.6 Annotation Types
-  9.7 Annotations
  */
 @protocol JavaLangAnnotationRepeatable < JavaLangAnnotationAnnotation >
 
