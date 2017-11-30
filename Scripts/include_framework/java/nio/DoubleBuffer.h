@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/nio/DoubleBuffer.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNioDoubleBuffer")
 #ifdef RESTRICT_JavaNioDoubleBuffer
@@ -21,11 +21,11 @@
 
 #define RESTRICT_JavaNioBuffer 1
 #define INCLUDE_JavaNioBuffer 1
-#include "java/nio/Buffer.h"
+#include "../../java/nio/Buffer.h"
 
 #define RESTRICT_JavaLangComparable 1
 #define INCLUDE_JavaLangComparable 1
-#include "java/lang/Comparable.h"
+#include "../../java/lang/Comparable.h"
 
 @class IOSDoubleArray;
 @class JavaNioByteOrder;

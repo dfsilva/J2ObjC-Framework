@@ -23,10 +23,12 @@
 #define INCLUDE_JavaIoIOException 1
 #include "../../java/io/IOException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Thrown to indicate that a HTTP request needs to be retried
- but cannot be retried automatically, due to streaming mode
- being enabled.
+  but cannot be retried automatically, due to streaming mode
+  being enabled.
  @author Michael McMahon
  @since 1.5
  */
@@ -36,19 +38,19 @@
 
 /*!
  @brief Constructs a new <code>HttpRetryException</code> from the
- specified response code and exception detail message
- @param detail   the detail message.
- @param code   the HTTP response code from server.
+  specified response code and exception detail message
+ @param detail the detail message.
+ @param code the HTTP response code from server.
  */
 - (instancetype)initWithNSString:(NSString *)detail
                          withInt:(jint)code;
 
 /*!
  @brief Constructs a new <code>HttpRetryException</code> with detail message
- responseCode and the contents of the Location response header field.
- @param detail   the detail message.
- @param code   the HTTP response code from server.
- @param location   the URL to be redirected to
+  responseCode and the contents of the Location response header field.
+ @param detail the detail message.
+ @param code the HTTP response code from server.
+ @param location the URL to be redirected to
  */
 - (instancetype)initWithNSString:(NSString *)detail
                          withInt:(jint)code
@@ -56,14 +58,14 @@
 
 /*!
  @brief Returns the value of the Location header field if the
- error resulted from redirection.
+  error resulted from redirection.
  @return The location string
  */
 - (NSString *)getLocation;
 
 /*!
  @brief Returns a string explaining why the http request could
- not be retried.
+  not be retried.
  @return The reason string
  */
 - (NSString *)getReason;
@@ -73,6 +75,17 @@
  @return The http response code.
  */
 - (jint)responseCode;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 

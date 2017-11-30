@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/nio/channels/ServerSocketChannel.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNioChannelsServerSocketChannel")
 #ifdef RESTRICT_JavaNioChannelsServerSocketChannel
@@ -21,11 +21,11 @@
 
 #define RESTRICT_JavaNioChannelsSpiAbstractSelectableChannel 1
 #define INCLUDE_JavaNioChannelsSpiAbstractSelectableChannel 1
-#include "java/nio/channels/spi/AbstractSelectableChannel.h"
+#include "../../../java/nio/channels/spi/AbstractSelectableChannel.h"
 
 #define RESTRICT_JavaNioChannelsNetworkChannel 1
 #define INCLUDE_JavaNioChannelsNetworkChannel 1
-#include "java/nio/channels/NetworkChannel.h"
+#include "../../../java/nio/channels/NetworkChannel.h"
 
 @class JavaNetServerSocket;
 @class JavaNetSocketAddress;

@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/java/io/RandomAccessFile.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoRandomAccessFile")
 #ifdef RESTRICT_JavaIoRandomAccessFile
@@ -21,15 +21,15 @@
 
 #define RESTRICT_JavaIoDataInput 1
 #define INCLUDE_JavaIoDataInput 1
-#include "java/io/DataInput.h"
+#include "../../java/io/DataInput.h"
 
 #define RESTRICT_JavaIoDataOutput 1
 #define INCLUDE_JavaIoDataOutput 1
-#include "java/io/DataOutput.h"
+#include "../../java/io/DataOutput.h"
 
 #define RESTRICT_JavaIoCloseable 1
 #define INCLUDE_JavaIoCloseable 1
-#include "java/io/Closeable.h"
+#include "../../java/io/Closeable.h"
 
 @class IOSByteArray;
 @class JavaIoFile;

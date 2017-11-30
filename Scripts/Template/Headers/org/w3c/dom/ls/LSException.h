@@ -23,18 +23,19 @@
 #define INCLUDE_JavaLangRuntimeException 1
 #include "../../../../java/lang/RuntimeException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Parser or write operations may throw an <code>LSException</code> if the
- processing is stopped.
- The processing can be stopped due to a
- <code>DOMError</code> with a severity of
- <code>DOMError.SEVERITY_FATAL_ERROR</code> or a non recovered
- <code>DOMError.SEVERITY_ERROR</code>, or if
+  processing is stopped.The processing can be stopped due to a 
+ <code>DOMError</code> with a severity of 
+ <code>DOMError.SEVERITY_FATAL_ERROR</code> or a non recovered 
+ <code>DOMError.SEVERITY_ERROR</code>, or if 
  <code>DOMErrorHandler.handleError()</code> returned <code>false</code>.
- <p ><b>Note:</b>  As suggested in the definition of the constants in the
+ <p><b>Note:</b>  As suggested in the definition of the constants in the 
  <code>DOMError</code> interface, a DOM implementation may choose to
- continue after a fatal error, but the resulting DOM tree is then
- implementation dependent.
+  continue after a fatal error, but the resulting DOM tree is then
+  implementation dependent. 
  <p>See also the <a href='http://www.w3.org/TR/2004/REC-DOM-Level-3-LS-20040407'>Document Object Model (DOM) Level 3 Load
  and Save Specification</a>.
  */
@@ -52,23 +53,39 @@
 - (instancetype)initWithShort:(jshort)code
                  withNSString:(NSString *)message;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(OrgW3cDomLsLSException)
 
 /*!
- @brief If an attempt was made to load a document, or an XML Fragment, using
+ @brief If an attempt was made to load a document, or an XML Fragment, using 
  <code>LSParser</code> and the processing has been stopped.
  */
-inline jshort OrgW3cDomLsLSException_get_PARSE_ERR();
+inline jshort OrgW3cDomLsLSException_get_PARSE_ERR(void);
 #define OrgW3cDomLsLSException_PARSE_ERR 81
 J2OBJC_STATIC_FIELD_CONSTANT(OrgW3cDomLsLSException, PARSE_ERR, jshort)
 
 /*!
- @brief If an attempt was made to serialize a <code>Node</code> using
+ @brief If an attempt was made to serialize a <code>Node</code> using 
  <code>LSSerializer</code> and the processing has been stopped.
  */
-inline jshort OrgW3cDomLsLSException_get_SERIALIZE_ERR();
+inline jshort OrgW3cDomLsLSException_get_SERIALIZE_ERR(void);
 #define OrgW3cDomLsLSException_SERIALIZE_ERR 82
 J2OBJC_STATIC_FIELD_CONSTANT(OrgW3cDomLsLSException, SERIALIZE_ERR, jshort)
 

@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/org/w3c/dom/NamedNodeMap.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_OrgW3cDomNamedNodeMap")
 #ifdef RESTRICT_OrgW3cDomNamedNodeMap

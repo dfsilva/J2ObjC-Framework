@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/AbstractQueue.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilAbstractQueue")
 #ifdef RESTRICT_JavaUtilAbstractQueue
@@ -21,11 +21,11 @@
 
 #define RESTRICT_JavaUtilAbstractCollection 1
 #define INCLUDE_JavaUtilAbstractCollection 1
-#include "java/util/AbstractCollection.h"
+#include "../../java/util/AbstractCollection.h"
 
 #define RESTRICT_JavaUtilQueue 1
 #define INCLUDE_JavaUtilQueue 1
-#include "java/util/Queue.h"
+#include "../../java/util/Queue.h"
 
 @protocol JavaUtilCollection;
 

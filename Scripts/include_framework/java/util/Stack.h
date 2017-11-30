@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/Stack.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilStack")
 #ifdef RESTRICT_JavaUtilStack
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilVector 1
 #define INCLUDE_JavaUtilVector 1
-#include "java/util/Vector.h"
+#include "../../java/util/Vector.h"
 
 @protocol JavaUtilCollection;
 

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/sql/BatchUpdateException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSqlBatchUpdateException")
 #ifdef RESTRICT_JavaSqlBatchUpdateException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaSqlSQLException 1
 #define INCLUDE_JavaSqlSQLException 1
-#include "java/sql/SQLException.h"
+#include "../../java/sql/SQLException.h"
 
 @class IOSIntArray;
 @class JavaLangThrowable;

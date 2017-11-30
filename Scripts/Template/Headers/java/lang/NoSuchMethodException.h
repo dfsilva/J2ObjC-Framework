@@ -23,6 +23,8 @@
 #define INCLUDE_JavaLangReflectiveOperationException 1
 #include "../../java/lang/ReflectiveOperationException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Thrown when a particular method cannot be found.
  @author unascribed
@@ -39,9 +41,16 @@
 
 /*!
  @brief Constructs a <code>NoSuchMethodException</code> with a detail message.
- @param s   the detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -49,9 +58,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangNoSuchMethodException)
 
 FOUNDATION_EXPORT void JavaLangNoSuchMethodException_init(JavaLangNoSuchMethodException *self);
 
-FOUNDATION_EXPORT JavaLangNoSuchMethodException *new_JavaLangNoSuchMethodException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangNoSuchMethodException *new_JavaLangNoSuchMethodException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangNoSuchMethodException *create_JavaLangNoSuchMethodException_init();
+FOUNDATION_EXPORT JavaLangNoSuchMethodException *create_JavaLangNoSuchMethodException_init(void);
 
 FOUNDATION_EXPORT void JavaLangNoSuchMethodException_initWithNSString_(JavaLangNoSuchMethodException *self, NSString *s);
 

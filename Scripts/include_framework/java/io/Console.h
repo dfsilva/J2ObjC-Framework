@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/java/io/Console.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoConsole")
 #ifdef RESTRICT_JavaIoConsole
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoFlushable 1
 #define INCLUDE_JavaIoFlushable 1
-#include "java/io/Flushable.h"
+#include "../../java/io/Flushable.h"
 
 @class IOSCharArray;
 @class IOSObjectArray;

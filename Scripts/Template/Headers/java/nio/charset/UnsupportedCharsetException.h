@@ -23,9 +23,11 @@
 #define INCLUDE_JavaLangIllegalArgumentException 1
 #include "../../../java/lang/IllegalArgumentException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Unchecked exception thrown when no support is available
- for a requested charset.
+  for a requested charset.
  @since 1.4
  */
 @interface JavaNioCharsetUnsupportedCharsetException : JavaLangIllegalArgumentException
@@ -35,8 +37,7 @@
 /*!
  @brief Constructs an instance of this class.
  </p>
- @param charsetName
- The name of the unsupported charset
+ @param charsetName The name of the unsupported charset
  */
 - (instancetype)initWithNSString:(NSString *)charsetName;
 
@@ -46,6 +47,15 @@
  @return The name of the unsupported charset
  */
 - (NSString *)getCharsetName;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 

@@ -25,7 +25,7 @@
 
 /*!
  @brief Thrown when control information that was read from an object stream
- violates internal consistency checks.
+  violates internal consistency checks.
  @author unascribed
  @since JDK1.1
  */
@@ -40,7 +40,7 @@
 
 /*!
  @brief Create a StreamCorruptedException and list a reason why thrown.
- @param reason  String describing the reason for the exception.
+ @param reason String describing the reason for the exception.
  */
 - (instancetype)initWithNSString:(NSString *)reason;
 
@@ -56,9 +56,9 @@ FOUNDATION_EXPORT JavaIoStreamCorruptedException *create_JavaIoStreamCorruptedEx
 
 FOUNDATION_EXPORT void JavaIoStreamCorruptedException_init(JavaIoStreamCorruptedException *self);
 
-FOUNDATION_EXPORT JavaIoStreamCorruptedException *new_JavaIoStreamCorruptedException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoStreamCorruptedException *new_JavaIoStreamCorruptedException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoStreamCorruptedException *create_JavaIoStreamCorruptedException_init();
+FOUNDATION_EXPORT JavaIoStreamCorruptedException *create_JavaIoStreamCorruptedException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaIoStreamCorruptedException)
 

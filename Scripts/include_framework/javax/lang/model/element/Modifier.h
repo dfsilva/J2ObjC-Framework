@@ -3,7 +3,7 @@
 //  source: Classes/javax/lang/model/element/Modifier.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxLangModelElementModifier")
 #ifdef RESTRICT_JavaxLangModelElementModifier
@@ -26,7 +26,7 @@
 
 #define RESTRICT_JavaLangEnum 1
 #define INCLUDE_JavaLangEnum 1
-#include "java/lang/Enum.h"
+#include "../../../../java/lang/Enum.h"
 
 @class IOSObjectArray;
 

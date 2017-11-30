@@ -35,9 +35,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaBeansParameterDescriptor)
 
 FOUNDATION_EXPORT void JavaBeansParameterDescriptor_init(JavaBeansParameterDescriptor *self);
 
-FOUNDATION_EXPORT JavaBeansParameterDescriptor *new_JavaBeansParameterDescriptor_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaBeansParameterDescriptor *new_JavaBeansParameterDescriptor_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaBeansParameterDescriptor *create_JavaBeansParameterDescriptor_init();
+FOUNDATION_EXPORT JavaBeansParameterDescriptor *create_JavaBeansParameterDescriptor_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaBeansParameterDescriptor)
 

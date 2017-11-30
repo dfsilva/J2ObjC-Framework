@@ -23,17 +23,16 @@
 
 /*!
  @brief An interface for filtering <code>File</code> objects based on their names
- or other information.
+  or other information.
  - seealso: File#listFiles(FileFilter)
  */
 @protocol JavaIoFileFilter < JavaObject >
 
 /*!
  @brief Indicating whether a specific file should be included in a pathname list.
- @param pathname
- the abstract file to check.
+ @param pathname the abstract file to check.
  @return <code>true</code> if the file should be included, <code>false</code>
- otherwise.
+          otherwise.
  */
 - (jboolean)acceptWithJavaIoFile:(JavaIoFile *)pathname;
 

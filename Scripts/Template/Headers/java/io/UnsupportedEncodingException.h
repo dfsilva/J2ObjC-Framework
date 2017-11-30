@@ -23,6 +23,8 @@
 #define INCLUDE_JavaIoIOException 1
 #include "../../java/io/IOException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief The Character Encoding is not supported.
  @author Asmus Freytag
@@ -43,15 +45,22 @@
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaIoUnsupportedEncodingException)
 
 FOUNDATION_EXPORT void JavaIoUnsupportedEncodingException_init(JavaIoUnsupportedEncodingException *self);
 
-FOUNDATION_EXPORT JavaIoUnsupportedEncodingException *new_JavaIoUnsupportedEncodingException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoUnsupportedEncodingException *new_JavaIoUnsupportedEncodingException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoUnsupportedEncodingException *create_JavaIoUnsupportedEncodingException_init();
+FOUNDATION_EXPORT JavaIoUnsupportedEncodingException *create_JavaIoUnsupportedEncodingException_init(void);
 
 FOUNDATION_EXPORT void JavaIoUnsupportedEncodingException_initWithNSString_(JavaIoUnsupportedEncodingException *self, NSString *s);
 

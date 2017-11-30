@@ -25,8 +25,8 @@
 
 /*!
  @brief Checked exception thrown when an input byte sequence is not legal for given
- charset, or an input character sequence is not a legal sixteen-bit Unicode
- sequence.
+  charset, or an input character sequence is not a legal sixteen-bit Unicode
+  sequence.
  @since 1.4
  */
 @interface JavaNioCharsetMalformedInputException : JavaNioCharsetCharacterCodingException
@@ -35,7 +35,7 @@
 
 /*!
  @brief Constructs an <code>MalformedInputException</code> with the given
- length.
+  length.
  @param inputLength the length of the input
  */
 - (instancetype)initWithInt:(jint)inputLength;
@@ -51,6 +51,10 @@
  @return the message
  */
 - (NSString *)getMessage;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

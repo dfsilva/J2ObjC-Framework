@@ -19,22 +19,25 @@
 #if !defined (JavaLangException_) && (INCLUDE_ALL_JavaLangException || defined(INCLUDE_JavaLangException))
 #define JavaLangException_
 
+#define RESTRICT_JavaLangThrowable 1
+#define INCLUDE_JavaLangThrowable 1
+#include "../../java/lang/Throwable.h"
+
 /*!
- @brief The class <code>Exception</code> and its subclasses are a form of
+ @brief The class <code>Exception</code> and its subclasses are a form of 
  <code>Throwable</code> that indicates conditions that a reasonable
- application might want to catch.
+  application might want to catch.
  <p>The class <code>Exception</code> and any subclasses that are not also
- subclasses of <code>RuntimeException</code> are <em>checked
- exceptions</em>.  Checked exceptions need to be declared in a
- method or constructor's <code>throws</code> clause if they can be thrown
- by the execution of the method or constructor and propagate outside
- the method or constructor boundary.
+  subclasses of <code>RuntimeException</code> are <em>checked
+  exceptions</em>.  Checked exceptions need to be declared in a
+  method or constructor's <code>throws</code> clause if they can be thrown
+  by the execution of the method or constructor and propagate outside
+  the method or constructor boundary.
  @author Frank Yellin
  - seealso: java.lang.Error
-  11.2 Compile-Time Checking of Exceptions
  @since JDK1.0
  */
-@interface JavaLangException : NSException
+@interface JavaLangException : JavaLangThrowable
 
 + (jlong)serialVersionUID;
 
@@ -43,70 +46,65 @@
 /*!
  @brief Constructs a new exception with <code>null</code> as its detail message.
  The cause is not initialized, and may subsequently be initialized by a
- call to <code>initCause</code>.
+  call to <code>initCause</code>.
  */
 - (instancetype)init;
 
 /*!
- @brief Constructs a new exception with the specified detail message.
- The
- cause is not initialized, and may subsequently be initialized by
- a call to <code>initCause</code>.
- @param message   the detail message. The detail message is saved for
- later retrieval by the <code>getMessage()</code> method.
+ @brief Constructs a new exception with the specified detail message.The
+  cause is not initialized, and may subsequently be initialized by
+  a call to <code>initCause</code>.
+ @param message the detail message. The detail message is saved for           later retrieval by the 
+ <code>getMessage()</code>  method.
  */
 - (instancetype)initWithNSString:(NSString *)message;
 
 /*!
  @brief Constructs a new exception with the specified detail message and
- cause.
- <p>Note that the detail message associated with
+  cause.
+ <p>Note that the detail message associated with 
  <code>cause</code> is <i>not</i> automatically incorporated in
- this exception's detail message.
- @param message the detail message (which is saved for later retrieval
- by the <code>getMessage()</code> method).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <tt>null</tt> value is
- permitted, and indicates that the cause is nonexistent or
- unknown.)
+  this exception's detail message.
+ @param message the detail message (which is saved for later retrieval          by the 
+ <code>getMessage()</code>  method).
+ @param cause the cause (which is saved for later retrieval by the          
+ <code>getCause()</code>  method).  (A  <tt> null </tt>  value is          permitted, and indicates that the cause is nonexistent or
+           unknown.)
  @since 1.4
  */
 - (instancetype)initWithNSString:(NSString *)message
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Constructs a new exception with the specified cause and a detail
- message of <tt>(cause==null ?
+  message of <tt>(cause==null ?
  null : cause.toString())</tt> (which
- typically contains the class and detail message of <tt>cause</tt>).
+  typically contains the class and detail message of <tt>cause</tt>).
  This constructor is useful for exceptions that are little more than
- wrappers for other throwables (for example, <code>java.security.PrivilegedActionException</code>
+  wrappers for other throwables (for example, <code>java.security.PrivilegedActionException</code>
  ).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <tt>null</tt> value is
- permitted, and indicates that the cause is nonexistent or
- unknown.)
+ @param cause the cause (which is saved for later retrieval by the          
+ <code>getCause()</code>  method).  (A  <tt> null </tt>  value is          permitted, and indicates that the cause is nonexistent or
+           unknown.)
  @since 1.4
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
 
 #pragma mark Protected
 
 /*!
  @brief Constructs a new exception with the specified detail message,
- cause, suppression enabled or disabled, and writable stack
- trace enabled or disabled.
+  cause, suppression enabled or disabled, and writable stack
+  trace enabled or disabled.
  @param message the detail message.
- @param cause the cause.  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
- @param enableSuppression whether or not suppression is enabled
- or disabled
- @param writableStackTrace whether or not the stack trace should
- be writable
+ @param cause the cause.  (A <code>null</code>  value is permitted,
+   and indicates that the cause is nonexistent or unknown.)
+ @param enableSuppression whether or not suppression is enabled                           or disabled
+ @param writableStackTrace whether or not the stack trace should                            be writable
  @since 1.7
  */
 - (instancetype)initWithNSString:(NSString *)message
-                 withNSException:(NSException *)cause
+           withJavaLangThrowable:(JavaLangThrowable *)cause
                      withBoolean:(jboolean)enableSuppression
                      withBoolean:(jboolean)writableStackTrace;
 
@@ -114,15 +112,15 @@
 
 J2OBJC_EMPTY_STATIC_INIT(JavaLangException)
 
-inline jlong JavaLangException_get_serialVersionUID();
+inline jlong JavaLangException_get_serialVersionUID(void);
 #define JavaLangException_serialVersionUID -3387516993124229948LL
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangException, serialVersionUID, jlong)
 
 FOUNDATION_EXPORT void JavaLangException_init(JavaLangException *self);
 
-FOUNDATION_EXPORT JavaLangException *new_JavaLangException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangException *new_JavaLangException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangException *create_JavaLangException_init();
+FOUNDATION_EXPORT JavaLangException *create_JavaLangException_init(void);
 
 FOUNDATION_EXPORT void JavaLangException_initWithNSString_(JavaLangException *self, NSString *message);
 
@@ -130,23 +128,23 @@ FOUNDATION_EXPORT JavaLangException *new_JavaLangException_initWithNSString_(NSS
 
 FOUNDATION_EXPORT JavaLangException *create_JavaLangException_initWithNSString_(NSString *message);
 
-FOUNDATION_EXPORT void JavaLangException_initWithNSString_withNSException_(JavaLangException *self, NSString *message, NSException *cause);
+FOUNDATION_EXPORT void JavaLangException_initWithNSString_withJavaLangThrowable_(JavaLangException *self, NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaLangException *new_JavaLangException_initWithNSString_withNSException_(NSString *message, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangException *new_JavaLangException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangException *create_JavaLangException_initWithNSString_withNSException_(NSString *message, NSException *cause);
+FOUNDATION_EXPORT JavaLangException *create_JavaLangException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaLangException_initWithNSException_(JavaLangException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaLangException_initWithJavaLangThrowable_(JavaLangException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaLangException *new_JavaLangException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangException *new_JavaLangException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangException *create_JavaLangException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaLangException *create_JavaLangException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaLangException_initWithNSString_withNSException_withBoolean_withBoolean_(JavaLangException *self, NSString *message, NSException *cause, jboolean enableSuppression, jboolean writableStackTrace);
+FOUNDATION_EXPORT void JavaLangException_initWithNSString_withJavaLangThrowable_withBoolean_withBoolean_(JavaLangException *self, NSString *message, JavaLangThrowable *cause, jboolean enableSuppression, jboolean writableStackTrace);
 
-FOUNDATION_EXPORT JavaLangException *new_JavaLangException_initWithNSString_withNSException_withBoolean_withBoolean_(NSString *message, NSException *cause, jboolean enableSuppression, jboolean writableStackTrace) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangException *new_JavaLangException_initWithNSString_withJavaLangThrowable_withBoolean_withBoolean_(NSString *message, JavaLangThrowable *cause, jboolean enableSuppression, jboolean writableStackTrace) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangException *create_JavaLangException_initWithNSString_withNSException_withBoolean_withBoolean_(NSString *message, NSException *cause, jboolean enableSuppression, jboolean writableStackTrace);
+FOUNDATION_EXPORT JavaLangException *create_JavaLangException_initWithNSString_withJavaLangThrowable_withBoolean_withBoolean_(NSString *message, JavaLangThrowable *cause, jboolean enableSuppression, jboolean writableStackTrace);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangException)
 

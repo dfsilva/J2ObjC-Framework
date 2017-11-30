@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/InvalidObjectException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoInvalidObjectException")
 #ifdef RESTRICT_JavaIoInvalidObjectException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoObjectStreamException 1
 #define INCLUDE_JavaIoObjectStreamException 1
-#include "java/io/ObjectStreamException.h"
+#include "../../java/io/ObjectStreamException.h"
 
 /*!
  @brief Indicates that one or more deserialized objects failed validation

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/security/UnrecoverableKeyException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSecurityUnrecoverableKeyException")
 #ifdef RESTRICT_JavaSecurityUnrecoverableKeyException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaSecurityUnrecoverableEntryException 1
 #define INCLUDE_JavaSecurityUnrecoverableEntryException 1
-#include "java/security/UnrecoverableEntryException.h"
+#include "../../java/security/UnrecoverableEntryException.h"
 
 /*!
  @brief This exception is thrown if a key in the keystore cannot be recovered.

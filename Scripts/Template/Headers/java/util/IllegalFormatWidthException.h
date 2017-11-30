@@ -25,7 +25,7 @@
 
 /*!
  @brief Unchecked exception thrown when the format width is a negative value other
- than <tt>-1</tt> or is otherwise unsupported.
+  than <tt>-1</tt> or is otherwise unsupported.
  @since 1.5
  */
 @interface JavaUtilIllegalFormatWidthException : JavaUtilIllegalFormatException
@@ -34,8 +34,7 @@
 
 /*!
  @brief Constructs an instance of this class with the specified width.
- @param w
- The width
+ @param w The width
  */
 - (instancetype)initWithInt:(jint)w;
 
@@ -46,6 +45,10 @@
  @return The width
  */
 - (jint)getWidth;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

@@ -27,17 +27,16 @@
 
 /*!
  @brief An "IndexedPropertyChange" event gets delivered whenever a component that
- conforms to the JavaBeans&trade; specification (a "bean") changes a bound
- indexed property.
- This class is an extension of <code>PropertyChangeEvent</code>
- but contains the index of the property that has changed.
+  conforms to the JavaBeans&trade; specification (a "bean") changes a bound
+  indexed property.This class is an extension of <code>PropertyChangeEvent</code>
+  but contains the index of the property that has changed.
  <P>
- Null values may be provided for the old and the new values if their
- true values are not known.
+  Null values may be provided for the old and the new values if their
+  true values are not known. 
  <P>
- An event source may send a null object as the name to indicate that an
- arbitrary set of if its properties have changed.  In this case the
- old and new values should also be null.
+  An event source may send a null object as the name to indicate that an
+  arbitrary set of if its properties have changed.  In this case the
+  old and new values should also be null.
  @since 1.5
  @author Mark Davidson
  */
@@ -47,11 +46,10 @@
 
 /*!
  @brief Constructs a new <code>IndexedPropertyChangeEvent</code> object.
- @param source  The bean that fired the event.
- @param propertyName  The programmatic name of the property that
- was changed.
- @param oldValue      The old value of the property.
- @param newValue      The new value of the property.
+ @param source The bean that fired the event.
+ @param propertyName The programmatic name of the property that              was changed.
+ @param oldValue The old value of the property.
+ @param newValue The new value of the property.
  @param index index of the property element that was changed.
  */
 - (instancetype)initWithId:(id)source
@@ -63,13 +61,20 @@
 /*!
  @brief Gets the index of the property that was changed.
  @return The index specifying the property element that was
- changed.
+          changed.
  */
 - (jint)getIndex;
 
 #pragma mark Package-Private
 
 - (void)appendToWithJavaLangStringBuilder:(JavaLangStringBuilder *)sb;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithId:(id)arg0
+              withNSString:(NSString *)arg1
+                    withId:(id)arg2
+                    withId:(id)arg3 NS_UNAVAILABLE;
 
 @end
 

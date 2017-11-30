@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/beans/PropertyChangeEvent.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaBeansPropertyChangeEvent")
 #ifdef RESTRICT_JavaBeansPropertyChangeEvent
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilEventObject 1
 #define INCLUDE_JavaUtilEventObject 1
-#include "java/util/EventObject.h"
+#include "../../java/util/EventObject.h"
 
 @class JavaLangStringBuilder;
 

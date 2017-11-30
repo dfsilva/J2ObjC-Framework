@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/AbstractList.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilAbstractList")
 #ifdef RESTRICT_JavaUtilAbstractList
@@ -27,11 +27,11 @@
 
 #define RESTRICT_JavaUtilAbstractCollection 1
 #define INCLUDE_JavaUtilAbstractCollection 1
-#include "java/util/AbstractCollection.h"
+#include "../../java/util/AbstractCollection.h"
 
 #define RESTRICT_JavaUtilList 1
 #define INCLUDE_JavaUtilList 1
-#include "java/util/List.h"
+#include "../../java/util/List.h"
 
 @protocol JavaUtilCollection;
 @protocol JavaUtilComparator;
@@ -449,7 +449,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilSubList)
 
 #define RESTRICT_JavaUtilRandomAccess 1
 #define INCLUDE_JavaUtilRandomAccess 1
-#include "java/util/RandomAccess.h"
+#include "../../java/util/RandomAccess.h"
 
 @class JavaUtilAbstractList;
 @protocol JavaUtilList;

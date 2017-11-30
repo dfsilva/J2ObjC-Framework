@@ -16,6 +16,11 @@
 #pragma clang diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (JavaLangThread_) && (INCLUDE_ALL_JavaLangThread || defined(INCLUDE_JavaLangThread))
 #define JavaLangThread_
 
@@ -28,16 +33,17 @@
 @class JavaLangThreadGroup;
 @class JavaLangThreadLocal_ThreadLocalMap;
 @class JavaLangThread_State;
+@class JavaLangThrowable;
 @protocol JavaLangThread_UncaughtExceptionHandler;
 @protocol JavaUtilMap;
+@protocol SunNioChInterruptible;
 
 /*!
  @brief Simplified iOS version of java.lang.Thread, based on Apache Harmony source
- (both luni-kernel and vmcore).
- This class uses pthread for thread creation
- and maintains a pthread handle for using other pthread functionality.
+  (both luni-kernel and vmcore).This class uses pthread for thread creation
+  and maintains a pthread handle for using other pthread functionality.
  pthread's thread local mechanism (pthread_setspecific) is used to associate
- this wrapper object with the current thread.
+  this wrapper object with the current thread.
  @author Tom Ball, Keith Stanger
  */
 @interface JavaLangThread : NSObject < JavaLangRunnable > {
@@ -45,11 +51,27 @@
   jboolean interrupted_;
   JavaLangThreadLocal_ThreadLocalMap *threadLocals_;
   JavaLangThreadLocal_ThreadLocalMap *inheritableThreadLocals_;
+  volatile_jint state_;
   /*!
    @brief The object the thread is waiting on (normally null).
    */
   id blocker_;
+  jlong threadLocalRandomSeed_;
+  jint threadLocalRandomProbe_;
+  jint threadLocalRandomSecondarySeed_;
 }
+
++ (jint)STATE_NEW;
+
++ (jint)STATE_RUNNABLE;
+
++ (jint)STATE_BLOCKED;
+
++ (jint)STATE_WAITING;
+
++ (jint)STATE_TIMED_WAITING;
+
++ (jint)STATE_TERMINATED;
 
 + (jint)MAX_PRIORITY;
 
@@ -61,32 +83,29 @@
 
 /*!
  @brief Constructs a new Thread with no runnable object and a newly generated
- name.
- The new Thread will belong to the same ThreadGroup as the Thread
- calling this constructor.
+  name.The new Thread will belong to the same ThreadGroup as the Thread
+  calling this constructor.
  - seealso: java.lang.ThreadGroup
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a new Thread with a runnable object and a newly generated
- name.
- The new Thread will belong to the same ThreadGroup as the Thread
- calling this constructor.
- @param runnable a java.lang.Runnable whose method <code>run</code> will
- be executed by the new Thread
+  name.The new Thread will belong to the same ThreadGroup as the Thread
+  calling this constructor.
+ @param runnable a java.lang.Runnable whose method  <code> run </code>  will
+          be executed by the new Thread
  - seealso: java.lang.ThreadGroup
  - seealso: java.lang.Runnable
  */
 - (instancetype)initWithJavaLangRunnable:(id<JavaLangRunnable>)runnable;
 
 /*!
- @brief Constructs a new Thread with a runnable object and name provided.
- The new
- Thread will belong to the same ThreadGroup as the Thread calling this
- constructor.
- @param runnable a java.lang.Runnable whose method <code>run</code> will
- be executed by the new Thread
+ @brief Constructs a new Thread with a runnable object and name provided.The new
+  Thread will belong to the same ThreadGroup as the Thread calling this
+  constructor.
+ @param runnable a java.lang.Runnable whose method  <code> run </code>  will
+          be executed by the new Thread
  @param threadName Name for the Thread being created
  - seealso: java.lang.ThreadGroup
  - seealso: java.lang.Runnable
@@ -97,7 +116,7 @@
 /*!
  @brief Constructs a new Thread with no runnable object and the name provided.
  The new Thread will belong to the same ThreadGroup as the Thread calling
- this constructor.
+  this constructor.
  @param threadName Name for the Thread being created
  - seealso: java.lang.ThreadGroup
  - seealso: java.lang.Runnable
@@ -106,15 +125,14 @@
 
 /*!
  @brief Constructs a new Thread with a runnable object and a newly generated
- name.
- The new Thread will belong to the ThreadGroup passed as parameter.
+  name.The new Thread will belong to the ThreadGroup passed as parameter.
  @param group ThreadGroup to which the new Thread will belong
- @param runnable a java.lang.Runnable whose method <code>run</code> will
- be executed by the new Thread
- @throws SecurityException if <code>group.checkAccess()</code> fails
- with a SecurityException
- @throws IllegalThreadStateException if <code>group.destroy()</code> has
- already been done
+ @param runnable a java.lang.Runnable whose method  <code> run </code>  will
+          be executed by the new Thread
+ @throw SecurityExceptionif <code>group.checkAccess()</code> fails
+          with a SecurityException
+ @throw IllegalThreadStateExceptionif <code>group.destroy()</code> has
+          already been done
  - seealso: java.lang.ThreadGroup
  - seealso: java.lang.Runnable
  - seealso: java.lang.SecurityException
@@ -125,15 +143,15 @@
 
 /*!
  @brief Constructs a new Thread with a runnable object, the given name and
- belonging to the ThreadGroup passed as parameter.
+  belonging to the ThreadGroup passed as parameter.
  @param group ThreadGroup to which the new Thread will belong
- @param runnable a java.lang.Runnable whose method <code>run</code> will
- be executed by the new Thread
+ @param runnable a java.lang.Runnable whose method  <code> run </code>  will
+          be executed by the new Thread
  @param threadName Name for the Thread being created
- @throws SecurityException if <code>group.checkAccess()</code> fails
- with a SecurityException
- @throws IllegalThreadStateException if <code>group.destroy()</code> has
- already been done
+ @throw SecurityExceptionif <code>group.checkAccess()</code> fails
+          with a SecurityException
+ @throw IllegalThreadStateExceptionif <code>group.destroy()</code> has
+          already been done
  - seealso: java.lang.ThreadGroup
  - seealso: java.lang.Runnable
  - seealso: java.lang.SecurityException
@@ -145,16 +163,16 @@
 
 /*!
  @brief Constructs a new Thread with a runnable object, the given name and
- belonging to the ThreadGroup passed as parameter.
+  belonging to the ThreadGroup passed as parameter.
  @param group ThreadGroup to which the new Thread will belong
- @param runnable a java.lang.Runnable whose method <code>run</code> will
- be executed by the new Thread
+ @param runnable a java.lang.Runnable whose method  <code> run </code>  will
+          be executed by the new Thread
  @param threadName Name for the Thread being created
  @param stack Platform dependent stack size
- @throws SecurityException if <code>group.checkAccess()</code> fails
- with a SecurityException
- @throws IllegalThreadStateException if <code>group.destroy()</code> has
- already been done
+ @throw SecurityExceptionif <code>group.checkAccess()</code> fails
+          with a SecurityException
+ @throw IllegalThreadStateExceptionif <code>group.destroy()</code> has
+          already been done
  - seealso: java.lang.ThreadGroup
  - seealso: java.lang.Runnable
  - seealso: java.lang.SecurityException
@@ -167,13 +185,13 @@
 
 /*!
  @brief Constructs a new Thread with no runnable object, the given name and
- belonging to the ThreadGroup passed as parameter.
+  belonging to the ThreadGroup passed as parameter.
  @param group ThreadGroup to which the new Thread will belong
  @param threadName Name for the Thread being created
- @throws SecurityException if <code>group.checkAccess()</code> fails
- with a SecurityException
- @throws IllegalThreadStateException if <code>group.destroy()</code> has
- already been done
+ @throw SecurityExceptionif <code>group.checkAccess()</code> fails
+          with a SecurityException
+ @throw IllegalThreadStateExceptionif <code>group.destroy()</code> has
+          already been done
  - seealso: java.lang.ThreadGroup
  - seealso: java.lang.SecurityException
  - seealso: java.lang.SecurityManager
@@ -182,6 +200,11 @@
                                withNSString:(NSString *)threadName;
 
 + (jint)activeCount;
+
+/*!
+ @brief Set the IOBlocker field; invoked from java.nio code.
+ */
+- (void)blockedOnWithSunNioChInterruptible:(id<SunNioChInterruptible>)b;
 
 - (void)checkAccess;
 
@@ -193,7 +216,7 @@
 
 /*!
  @brief Prints to the standard error stream a text representation of the current
- stack for this Thread.
+  stack for this Thread.
  - seealso: Throwable#printStackTrace()
  */
 + (void)dumpStack;
@@ -214,9 +237,9 @@
 
 /*!
  @brief Returns the default exception handler that's executed when uncaught
- exception terminates a thread.
+  exception terminates a thread.
  @return an <code>UncaughtExceptionHandler</code> or <code>null</code> if
- none exists.
+          none exists.
  */
 + (id<JavaLangThread_UncaughtExceptionHandler>)getDefaultUncaughtExceptionHandler;
 
@@ -234,49 +257,48 @@
 
 /*!
  @brief Returns the handler invoked when this thread abruptly terminates
- due to an uncaught exception.
- If this thread has not had an
- uncaught exception handler explicitly set then this thread's
+  due to an uncaught exception.If this thread has not had an
+  uncaught exception handler explicitly set then this thread's 
  <tt>ThreadGroup</tt> object is returned, unless this thread
- has terminated, in which case <tt>null</tt> is returned.
+  has terminated, in which case <tt>null</tt> is returned.
  @since 1.5
  */
 - (id<JavaLangThread_UncaughtExceptionHandler>)getUncaughtExceptionHandler;
 
 /*!
  @brief Indicates whether the current Thread has a monitor lock on the specified
- object.
+  object.
  @param object the object to test for the monitor lock
  @return true if the current thread has a monitor lock on the specified
- object; false otherwise
+          object; false otherwise
  */
 + (jboolean)holdsLockWithId:(id)object;
 
 /*!
- @brief Posts an interrupt request to this <code>Thread</code>.
- Unless the caller is
- the <code>currentThread()</code>, the method <code>checkAccess()</code> is called
- for the installed <code>SecurityManager</code>, if any. This may result in a
+ @brief Posts an interrupt request to this <code>Thread</code>.Unless the caller is the 
+ <code>currentThread()</code>, the method <code>checkAccess()</code> is called
+  for the installed <code>SecurityManager</code>, if any.
+ This may result in a 
  <code>SecurityException</code> being thrown. The further behavior depends on
- the state of this <code>Thread</code>:
- <ul>
- <li>
- <code>Thread</code>s blocked in one of <code>Object</code>'s <code>wait()</code> methods
- or one of <code>Thread</code>'s <code>join()</code> or <code>sleep()</code> methods will
- be woken up, their interrupt status will be cleared, and they receive an
+  the state of this <code>Thread</code>:
+  <ul>
+  <li>
+  <code>Thread</code>s blocked in one of <code>Object</code>'s <code>wait()</code> methods
+  or one of <code>Thread</code>'s <code>join()</code> or <code>sleep()</code> methods will
+  be woken up, their interrupt status will be cleared, and they receive an 
  <code>InterruptedException</code>.
- <li>
- <code>Thread</code>s blocked in an I/O operation of an
+  <li>
+  <code>Thread</code>s blocked in an I/O operation of an 
  <code>java.nio.channels.InterruptibleChannel</code> will have their interrupt
- status set and receive an
+  status set and receive an 
  <code>java.nio.channels.ClosedByInterruptException</code>. Also, the channel
- will be closed.
+  will be closed. 
  <li>
- <code>Thread</code>s blocked in a <code>java.nio.channels.Selector</code> will have
- their interrupt status set and return immediately. They don't receive an
- exception in this case.
+  <code>Thread</code>s blocked in a <code>java.nio.channels.Selector</code> will have
+  their interrupt status set and return immediately. They don't receive an
+  exception in this case. 
  <ul>
- @throws SecurityException
+ @throw SecurityException
  if <code>checkAccess()</code> fails with a SecurityException
  - seealso: java.lang.SecurityException
  - seealso: java.lang.SecurityManager
@@ -286,11 +308,10 @@
 - (void)interrupt;
 
 /*!
- @brief Returns a <code>boolean</code> indicating whether the current Thread (
+ @brief Returns a <code>boolean</code> indicating whether the current Thread ( 
  <code>currentThread()</code>) has a pending interrupt request (<code>
- true</code>) or not (<code>false</code>).
- It also has the side-effect of
- clearing the flag.
+  true</code>) or not (<code>false</code>).It also has the side-effect of
+  clearing the flag.
  @return a <code>boolean</code> indicating the interrupt status
  - seealso: Thread#currentThread
  - seealso: Thread#interrupt
@@ -304,7 +325,7 @@
 
 /*!
  @brief Returns a <code>boolean</code> indicating whether the receiver has a
- pending interrupt request (<code>true</code>) or not (
+  pending interrupt request (<code>true</code>) or not ( 
  <code>false</code>)
  @return a <code>boolean</code> indicating the interrupt status
  - seealso: Thread#interrupt
@@ -314,9 +335,9 @@
 
 /*!
  @brief Blocks the current Thread (<code>Thread.currentThread()</code>) until
- the receiver finishes its execution and dies.
- @throws InterruptedException if <code>interrupt()</code> was called for
- the receiver while it was in the <code>join()</code> call
+  the receiver finishes its execution and dies.
+ @throw InterruptedExceptionif <code>interrupt()</code> was called for
+          the receiver while it was in the <code>join()</code> call
  - seealso: Object#notifyAll
  - seealso: java.lang.ThreadDeath
  */
@@ -324,11 +345,11 @@
 
 /*!
  @brief Blocks the current Thread (<code>Thread.currentThread()</code>) until
- the receiver finishes its execution and dies or the specified timeout
- expires, whatever happens first.
+  the receiver finishes its execution and dies or the specified timeout
+  expires, whatever happens first.
  @param millis The maximum time to wait (in milliseconds).
- @throws InterruptedException if <code>interrupt()</code> was called for
- the receiver while it was in the <code>join()</code> call
+ @throw InterruptedExceptionif <code>interrupt()</code> was called for
+          the receiver while it was in the <code>join()</code> call
  - seealso: Object#notifyAll
  - seealso: java.lang.ThreadDeath
  */
@@ -336,12 +357,12 @@
 
 /*!
  @brief Blocks the current Thread (<code>Thread.currentThread()</code>) until
- the receiver finishes its execution and dies or the specified timeout
- expires, whatever happens first.
+  the receiver finishes its execution and dies or the specified timeout
+  expires, whatever happens first.
  @param millis The maximum time to wait (in milliseconds).
  @param nanos Extra nanosecond precision
- @throws InterruptedException if <code>interrupt()</code> was called for
- the receiver while it was in the <code>join()</code> call
+ @throw InterruptedExceptionif <code>interrupt()</code> was called for
+          the receiver while it was in the <code>join()</code> call
  - seealso: Object#notifyAll
  - seealso: java.lang.ThreadDeath
  */
@@ -350,61 +371,57 @@
 
 /*!
  @brief Parks the current thread for a particular number of nanoseconds, or
- indefinitely.
- If not indefinitely, this method unparks the thread
- after the given number of nanoseconds if no other thread unparks it
- first. If the thread has been "preemptively unparked," this method
- cancels that unparking and returns immediately. This method may
- also return spuriously (that is, without the thread being told to
- unpark and without the indicated amount of time elapsing).
+  indefinitely.If not indefinitely, this method unparks the thread
+  after the given number of nanoseconds if no other thread unparks it
+  first.
+ If the thread has been "preemptively unparked," this method
+  cancels that unparking and returns immediately. This method may
+  also return spuriously (that is, without the thread being told to
+  unpark and without the indicated amount of time elapsing). 
  <p>See <code>java.util.concurrent.locks.LockSupport</code> for more
- in-depth information of the behavior of this method.</p>
+  in-depth information of the behavior of this method.</p>
+  
  <p>This method must only be called when <code>this</code> is the current
- thread.
- @param nanos number of nanoseconds to park for or <code>0</code>
- to park indefinitely
- @throws IllegalArgumentException thrown if <code>nanos &lt; 0</code>
-  for Unsafe
+  thread.
+ @param nanos number of nanoseconds to park for or  <code> 0 </code>
+   to park indefinitely
+ @throw IllegalArgumentExceptionthrown if <code>nanos &lt; 0</code>
  */
 - (void)parkFor$WithLong:(jlong)nanos;
 
 /*!
- @brief Parks the current thread until the specified system time.
- This
- method attempts to unpark the current thread immediately after
+ @brief Parks the current thread until the specified system time.This
+  method attempts to unpark the current thread immediately after 
  <code>System.currentTimeMillis()</code> reaches the specified
- value, if no other thread unparks it first. If the thread has
- been "preemptively unparked," this method cancels that
- unparking and returns immediately. This method may also return
- spuriously (that is, without the thread being told to unpark
- and without the indicated amount of time elapsing).
+  value, if no other thread unparks it first.
+ If the thread has
+  been "preemptively unparked," this method cancels that
+  unparking and returns immediately. This method may also return
+  spuriously (that is, without the thread being told to unpark
+  and without the indicated amount of time elapsing). 
  <p>See <code>java.util.concurrent.locks.LockSupport</code> for more
- in-depth information of the behavior of this method.</p>
+  in-depth information of the behavior of this method.</p>
+  
  <p>This method must only be called when <code>this</code> is the
- current thread.
- @param time the time after which the thread should be unparked,
- in absolute milliseconds-since-the-epoch
-  for Unsafe
+  current thread.
+ @param time the time after which the thread should be unparked,  in absolute milliseconds-since-the-epoch
  */
 - (void)parkUntil$WithLong:(jlong)time;
 
 /*!
  @brief Removes <code>interruptAction</code> so it is not invoked upon interruption.
- @param interruptAction the pushed action, used to check that the call
- stack is correctly nested.
-  used by NIO
+ @param interruptAction the pushed action, used to check that the call      stack is correctly nested.
  */
 - (void)popInterruptAction$WithJavaLangRunnable:(id<JavaLangRunnable>)interruptAction;
 
 /*!
- @brief Adds a runnable to be invoked upon interruption.
- If this thread has
- already been interrupted, the runnable will be invoked immediately. The
- action should be idempotent as it may be invoked multiple times for a
- single interruption.
- <p>Each call to this method must be matched with a corresponding call to
+ @brief Adds a runnable to be invoked upon interruption.If this thread has
+  already been interrupted, the runnable will be invoked immediately.
+ The
+  action should be idempotent as it may be invoked multiple times for a
+  single interruption. 
+ <p>Each call to this method must be matched with a corresponding call to 
  <code>popInterruptAction$</code>.
-  used by NIO
  */
 - (void)pushInterruptAction$WithJavaLangRunnable:(id<JavaLangRunnable>)interruptAction;
 
@@ -417,11 +434,9 @@
 - (void)setDaemonWithBoolean:(jboolean)isDaemon;
 
 /*!
- @brief Sets the default uncaught exception handler.
- This handler is invoked in
- case any Thread dies due to an unhandled exception.
- @param handler
- The handler to set or null.
+ @brief Sets the default uncaught exception handler.This handler is invoked in
+  case any Thread dies due to an unhandled exception.
+ @param handler The handler to set or null.
  */
 + (void)setDefaultUncaughtExceptionHandlerWithJavaLangThread_UncaughtExceptionHandler:(id<JavaLangThread_UncaughtExceptionHandler>)handler;
 
@@ -431,15 +446,15 @@
 
 /*!
  @brief Set the handler invoked when this thread abruptly terminates
- due to an uncaught exception.
+  due to an uncaught exception.
  <p>A thread can take full control of how it responds to uncaught
- exceptions by having its uncaught exception handler explicitly set.
- If no such handler is set then the thread's <tt>ThreadGroup</tt>
- object acts as its handler.
- @param eh the object to use as this thread's uncaught exception
- handler. If <tt>null</tt> then this thread has no explicit handler.
- @throws SecurityException  if the current thread is not allowed to
- modify this thread.
+  exceptions by having its uncaught exception handler explicitly set.
+  If no such handler is set then the thread's <tt>ThreadGroup</tt>
+  object acts as its handler.
+ @param eh the object to use as this thread's uncaught exception  handler. If 
+  <tt> null </tt>  then this thread has no explicit handler.
+ @throw SecurityExceptionif the current thread is not allowed to
+           modify this thread.
  - seealso: #setDefaultUncaughtExceptionHandler
  - seealso: ThreadGroup#uncaughtException
  @since 1.5
@@ -455,33 +470,33 @@
 
 - (void)stop __attribute__((deprecated));
 
-- (void)stopWithNSException:(NSException *)obj __attribute__((deprecated));
+- (void)stopWithJavaLangThrowable:(JavaLangThrowable *)obj __attribute__((deprecated));
 
 - (void)suspend __attribute__((deprecated));
 
 - (NSString *)description;
 
 /*!
- @brief Unparks this thread.
- This unblocks the thread it if it was
- previously parked, or indicates that the thread is "preemptively
- unparked" if it wasn't already parked. The latter means that the
- next time the thread is told to park, it will merely clear its
- latent park bit and carry on without blocking.
+ @brief Unparks this thread.This unblocks the thread it if it was
+  previously parked, or indicates that the thread is "preemptively
+  unparked" if it wasn't already parked.
+ The latter means that the
+  next time the thread is told to park, it will merely clear its
+  latent park bit and carry on without blocking. 
  <p>See <code>java.util.concurrent.locks.LockSupport</code> for more
- in-depth information of the behavior of this method.</p>
-  for Unsafe
+  in-depth information of the behavior of this method.</p>
  */
 - (void)unpark$;
 
 /*!
  @brief Causes the calling Thread to yield execution time to another Thread that
- is ready to run.
- The actual scheduling is implementation-dependent.
+  is ready to run.The actual scheduling is implementation-dependent.
  */
 + (void)yield;
 
 #pragma mark Package-Private
+
+- (void)exit;
 
 @end
 
@@ -491,38 +506,62 @@ J2OBJC_FIELD_SETTER(JavaLangThread, threadLocals_, JavaLangThreadLocal_ThreadLoc
 J2OBJC_FIELD_SETTER(JavaLangThread, inheritableThreadLocals_, JavaLangThreadLocal_ThreadLocalMap *)
 J2OBJC_FIELD_SETTER(JavaLangThread, blocker_, id)
 
+inline jint JavaLangThread_get_STATE_NEW(void);
+#define JavaLangThread_STATE_NEW 0
+J2OBJC_STATIC_FIELD_CONSTANT(JavaLangThread, STATE_NEW, jint)
+
+inline jint JavaLangThread_get_STATE_RUNNABLE(void);
+#define JavaLangThread_STATE_RUNNABLE 1
+J2OBJC_STATIC_FIELD_CONSTANT(JavaLangThread, STATE_RUNNABLE, jint)
+
+inline jint JavaLangThread_get_STATE_BLOCKED(void);
+#define JavaLangThread_STATE_BLOCKED 2
+J2OBJC_STATIC_FIELD_CONSTANT(JavaLangThread, STATE_BLOCKED, jint)
+
+inline jint JavaLangThread_get_STATE_WAITING(void);
+#define JavaLangThread_STATE_WAITING 3
+J2OBJC_STATIC_FIELD_CONSTANT(JavaLangThread, STATE_WAITING, jint)
+
+inline jint JavaLangThread_get_STATE_TIMED_WAITING(void);
+#define JavaLangThread_STATE_TIMED_WAITING 4
+J2OBJC_STATIC_FIELD_CONSTANT(JavaLangThread, STATE_TIMED_WAITING, jint)
+
+inline jint JavaLangThread_get_STATE_TERMINATED(void);
+#define JavaLangThread_STATE_TERMINATED 5
+J2OBJC_STATIC_FIELD_CONSTANT(JavaLangThread, STATE_TERMINATED, jint)
+
 /*!
  @brief <p>
- The maximum priority value allowed for a thread.
+  The maximum priority value allowed for a thread.
  </p>
  */
-inline jint JavaLangThread_get_MAX_PRIORITY();
+inline jint JavaLangThread_get_MAX_PRIORITY(void);
 #define JavaLangThread_MAX_PRIORITY 10
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangThread, MAX_PRIORITY, jint)
 
 /*!
  @brief <p>
- The minimum priority value allowed for a thread.
+  The minimum priority value allowed for a thread.
  </p>
  */
-inline jint JavaLangThread_get_MIN_PRIORITY();
+inline jint JavaLangThread_get_MIN_PRIORITY(void);
 #define JavaLangThread_MIN_PRIORITY 1
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangThread, MIN_PRIORITY, jint)
 
 /*!
  @brief <p>
- The normal (default) priority value assigned to threads.
+  The normal (default) priority value assigned to threads.
  </p>
  */
-inline jint JavaLangThread_get_NORM_PRIORITY();
+inline jint JavaLangThread_get_NORM_PRIORITY(void);
 #define JavaLangThread_NORM_PRIORITY 5
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangThread, NORM_PRIORITY, jint)
 
 FOUNDATION_EXPORT void JavaLangThread_init(JavaLangThread *self);
 
-FOUNDATION_EXPORT JavaLangThread *new_JavaLangThread_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangThread *new_JavaLangThread_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangThread *create_JavaLangThread_init();
+FOUNDATION_EXPORT JavaLangThread *create_JavaLangThread_init(void);
 
 FOUNDATION_EXPORT void JavaLangThread_initWithJavaLangRunnable_(JavaLangThread *self, id<JavaLangRunnable> runnable);
 
@@ -566,29 +605,29 @@ FOUNDATION_EXPORT JavaLangThread *new_JavaLangThread_initWithJavaLangThreadGroup
 
 FOUNDATION_EXPORT JavaLangThread *create_JavaLangThread_initWithJavaLangThreadGroup_withNSString_(JavaLangThreadGroup *group, NSString *threadName);
 
-FOUNDATION_EXPORT JavaLangThread *JavaLangThread_currentThread();
+FOUNDATION_EXPORT JavaLangThread *JavaLangThread_currentThread(void);
 
-FOUNDATION_EXPORT jint JavaLangThread_activeCount();
+FOUNDATION_EXPORT jint JavaLangThread_activeCount(void);
 
-FOUNDATION_EXPORT void JavaLangThread_dumpStack();
+FOUNDATION_EXPORT void JavaLangThread_dumpStack(void);
 
 FOUNDATION_EXPORT jint JavaLangThread_enumerateWithJavaLangThreadArray_(IOSObjectArray *threads);
 
-FOUNDATION_EXPORT jboolean JavaLangThread_interrupted();
+FOUNDATION_EXPORT jboolean JavaLangThread_interrupted(void);
 
 FOUNDATION_EXPORT void JavaLangThread_sleepWithLong_(jlong millis);
 
 FOUNDATION_EXPORT void JavaLangThread_sleepWithLong_withInt_(jlong millis, jint nanos);
 
-FOUNDATION_EXPORT void JavaLangThread_yield();
+FOUNDATION_EXPORT void JavaLangThread_yield(void);
 
 FOUNDATION_EXPORT jboolean JavaLangThread_holdsLockWithId_(id object);
 
-FOUNDATION_EXPORT id<JavaLangThread_UncaughtExceptionHandler> JavaLangThread_getDefaultUncaughtExceptionHandler();
+FOUNDATION_EXPORT id<JavaLangThread_UncaughtExceptionHandler> JavaLangThread_getDefaultUncaughtExceptionHandler(void);
 
 FOUNDATION_EXPORT void JavaLangThread_setDefaultUncaughtExceptionHandlerWithJavaLangThread_UncaughtExceptionHandler_(id<JavaLangThread_UncaughtExceptionHandler> handler);
 
-FOUNDATION_EXPORT id<JavaUtilMap> JavaLangThread_getAllStackTraces();
+FOUNDATION_EXPORT id<JavaUtilMap> JavaLangThread_getAllStackTraces(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangThread)
 
@@ -613,11 +652,10 @@ typedef NS_ENUM(NSUInteger, JavaLangThread_State_Enum) {
 };
 
 /*!
- @brief A representation of a thread's state.
- A given thread may only be in one
- state at a time.
+ @brief A representation of a thread's state.A given thread may only be in one
+  state at a time.
  */
-@interface JavaLangThread_State : JavaLangEnum < NSCopying >
+@interface JavaLangThread_State : JavaLangEnum
 
 + (JavaLangThread_State * __nonnull)NEW;
 
@@ -639,7 +677,6 @@ typedef NS_ENUM(NSUInteger, JavaLangThread_State_Enum) {
 
 #pragma mark Package-Private
 
-- (id)copyWithZone:(NSZone *)zone;
 - (JavaLangThread_State_Enum)toNSEnum;
 
 @end
@@ -652,40 +689,40 @@ FOUNDATION_EXPORT JavaLangThread_State *JavaLangThread_State_values_[];
 /*!
  @brief The thread has been created, but has never been started.
  */
-inline JavaLangThread_State *JavaLangThread_State_get_NEW();
+inline JavaLangThread_State *JavaLangThread_State_get_NEW(void);
 J2OBJC_ENUM_CONSTANT(JavaLangThread_State, NEW)
 
 /*!
  @brief The thread may be run.
  */
-inline JavaLangThread_State *JavaLangThread_State_get_RUNNABLE();
+inline JavaLangThread_State *JavaLangThread_State_get_RUNNABLE(void);
 J2OBJC_ENUM_CONSTANT(JavaLangThread_State, RUNNABLE)
 
 /*!
  @brief The thread is blocked and waiting for a lock.
  */
-inline JavaLangThread_State *JavaLangThread_State_get_BLOCKED();
+inline JavaLangThread_State *JavaLangThread_State_get_BLOCKED(void);
 J2OBJC_ENUM_CONSTANT(JavaLangThread_State, BLOCKED)
 
 /*!
  @brief The thread is waiting.
  */
-inline JavaLangThread_State *JavaLangThread_State_get_WAITING();
+inline JavaLangThread_State *JavaLangThread_State_get_WAITING(void);
 J2OBJC_ENUM_CONSTANT(JavaLangThread_State, WAITING)
 
 /*!
  @brief The thread is waiting for a specified amount of time.
  */
-inline JavaLangThread_State *JavaLangThread_State_get_TIMED_WAITING();
+inline JavaLangThread_State *JavaLangThread_State_get_TIMED_WAITING(void);
 J2OBJC_ENUM_CONSTANT(JavaLangThread_State, TIMED_WAITING)
 
 /*!
  @brief The thread has been terminated.
  */
-inline JavaLangThread_State *JavaLangThread_State_get_TERMINATED();
+inline JavaLangThread_State *JavaLangThread_State_get_TERMINATED(void);
 J2OBJC_ENUM_CONSTANT(JavaLangThread_State, TERMINATED)
 
-FOUNDATION_EXPORT IOSObjectArray *JavaLangThread_State_values();
+FOUNDATION_EXPORT IOSObjectArray *JavaLangThread_State_values(void);
 
 FOUNDATION_EXPORT JavaLangThread_State *JavaLangThread_State_valueOfWithNSString_(NSString *name);
 
@@ -699,11 +736,12 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaLangThread_State)
 #define JavaLangThread_UncaughtExceptionHandler_
 
 @class JavaLangThread;
+@class JavaLangThrowable;
 
 @protocol JavaLangThread_UncaughtExceptionHandler < JavaObject >
 
 - (void)uncaughtExceptionWithJavaLangThread:(JavaLangThread *)t
-                            withNSException:(NSException *)e;
+                      withJavaLangThrowable:(JavaLangThrowable *)e;
 
 @end
 
@@ -713,6 +751,10 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaLangThread_UncaughtExceptionHandler)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 
 #pragma clang diagnostic pop
 #pragma pop_macro("INCLUDE_ALL_JavaLangThread")

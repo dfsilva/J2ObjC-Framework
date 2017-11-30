@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/java/nio/charset/CodingErrorAction.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNioCharsetCodingErrorAction")
 #ifdef RESTRICT_JavaNioCharsetCodingErrorAction

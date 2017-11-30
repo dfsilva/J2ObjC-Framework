@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/java/io/PipedInputStream.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoPipedInputStream")
 #ifdef RESTRICT_JavaIoPipedInputStream
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoInputStream 1
 #define INCLUDE_JavaIoInputStream 1
-#include "java/io/InputStream.h"
+#include "../../java/io/InputStream.h"
 
 @class IOSByteArray;
 @class JavaIoPipedOutputStream;

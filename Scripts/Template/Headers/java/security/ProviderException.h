@@ -23,11 +23,13 @@
 #define INCLUDE_JavaLangRuntimeException 1
 #include "../../java/lang/RuntimeException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief A runtime exception for Provider exceptions (such as
- misconfiguration errors or unrecoverable internal errors),
- which may be subclassed by Providers to
- throw specialized, provider-specific runtime errors.
+  misconfiguration errors or unrecoverable internal errors),
+  which may be subclassed by Providers to
+  throw specialized, provider-specific runtime errors.
  @author Benjamin Renaud
  */
 @interface JavaSecurityProviderException : JavaLangRuntimeException
@@ -35,47 +37,50 @@
 #pragma mark Public
 
 /*!
- @brief Constructs a ProviderException with no detail message.
- A
- detail message is a String that describes this particular
- exception.
+ @brief Constructs a ProviderException with no detail message.A
+  detail message is a String that describes this particular
+  exception.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a ProviderException with the specified detail
- message.
- A detail message is a String that describes this
- particular exception.
+  message.A detail message is a String that describes this
+  particular exception.
  @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
 /*!
  @brief Creates a <code>ProviderException</code> with the specified
- detail message and cause.
- @param message the detail message (which is saved for later retrieval
- by the <code>getMessage()</code> method).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+  detail message and cause.
+ @param message the detail message (which is saved for later retrieval         by the 
+ <code>getMessage()</code>  method).
+ @param cause the cause (which is saved for later retrieval by the         
+ <code>getCause()</code>  method).  (A  <tt> null </tt>  value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.5
  */
 - (instancetype)initWithNSString:(NSString *)message
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Creates a <code>ProviderException</code> with the specified cause
- and a detail message of <code>(cause==null ?
- null : cause.toString())</code>
- (which typically contains the class and detail message of
- <code>cause</code>).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+  and a detail message of <tt>(cause==null ?
+ null : cause.toString())</tt>
+  (which typically contains the class and detail message of 
+ <tt>cause</tt>).
+ @param cause the cause (which is saved for later retrieval by the         
+ <code>getCause()</code>  method).  (A  <tt> null </tt>  value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.5
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -83,9 +88,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaSecurityProviderException)
 
 FOUNDATION_EXPORT void JavaSecurityProviderException_init(JavaSecurityProviderException *self);
 
-FOUNDATION_EXPORT JavaSecurityProviderException *new_JavaSecurityProviderException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityProviderException *new_JavaSecurityProviderException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityProviderException *create_JavaSecurityProviderException_init();
+FOUNDATION_EXPORT JavaSecurityProviderException *create_JavaSecurityProviderException_init(void);
 
 FOUNDATION_EXPORT void JavaSecurityProviderException_initWithNSString_(JavaSecurityProviderException *self, NSString *s);
 
@@ -93,17 +98,17 @@ FOUNDATION_EXPORT JavaSecurityProviderException *new_JavaSecurityProviderExcepti
 
 FOUNDATION_EXPORT JavaSecurityProviderException *create_JavaSecurityProviderException_initWithNSString_(NSString *s);
 
-FOUNDATION_EXPORT void JavaSecurityProviderException_initWithNSString_withNSException_(JavaSecurityProviderException *self, NSString *message, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityProviderException_initWithNSString_withJavaLangThrowable_(JavaSecurityProviderException *self, NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityProviderException *new_JavaSecurityProviderException_initWithNSString_withNSException_(NSString *message, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityProviderException *new_JavaSecurityProviderException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityProviderException *create_JavaSecurityProviderException_initWithNSString_withNSException_(NSString *message, NSException *cause);
+FOUNDATION_EXPORT JavaSecurityProviderException *create_JavaSecurityProviderException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaSecurityProviderException_initWithNSException_(JavaSecurityProviderException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityProviderException_initWithJavaLangThrowable_(JavaSecurityProviderException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityProviderException *new_JavaSecurityProviderException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityProviderException *new_JavaSecurityProviderException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityProviderException *create_JavaSecurityProviderException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaSecurityProviderException *create_JavaSecurityProviderException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaSecurityProviderException)
 

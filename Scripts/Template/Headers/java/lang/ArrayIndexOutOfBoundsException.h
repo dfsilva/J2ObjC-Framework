@@ -25,9 +25,8 @@
 
 /*!
  @brief Thrown to indicate that an array has been accessed with an
- illegal index.
- The index is either negative or greater than or
- equal to the size of the array.
+  illegal index.The index is either negative or greater than or
+  equal to the size of the array.
  @author unascribed
  @since JDK1.0
  */
@@ -37,14 +36,14 @@
 
 /*!
  @brief Constructs an <code>ArrayIndexOutOfBoundsException</code> with no
- detail message.
+  detail message.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a new <code>ArrayIndexOutOfBoundsException</code>
- class with an argument indicating the illegal index.
- @param index   the illegal index.
+  class with an argument indicating the illegal index.
+ @param index the illegal index.
  */
 - (instancetype)initWithInt:(jint)index;
 
@@ -63,8 +62,8 @@
 
 /*!
  @brief Constructs an <code>ArrayIndexOutOfBoundsException</code> class
- with the specified detail message.
- @param s   the detail message.
+  with the specified detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
@@ -74,9 +73,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangArrayIndexOutOfBoundsException)
 
 FOUNDATION_EXPORT void JavaLangArrayIndexOutOfBoundsException_init(JavaLangArrayIndexOutOfBoundsException *self);
 
-FOUNDATION_EXPORT JavaLangArrayIndexOutOfBoundsException *new_JavaLangArrayIndexOutOfBoundsException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangArrayIndexOutOfBoundsException *new_JavaLangArrayIndexOutOfBoundsException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangArrayIndexOutOfBoundsException *create_JavaLangArrayIndexOutOfBoundsException_init();
+FOUNDATION_EXPORT JavaLangArrayIndexOutOfBoundsException *create_JavaLangArrayIndexOutOfBoundsException_init(void);
 
 FOUNDATION_EXPORT void JavaLangArrayIndexOutOfBoundsException_initWithInt_(JavaLangArrayIndexOutOfBoundsException *self, jint index);
 

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/org/xml/sax/helpers/LocatorImpl.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_OrgXmlSaxHelpersLocatorImpl")
 #ifdef RESTRICT_OrgXmlSaxHelpersLocatorImpl
@@ -21,7 +21,7 @@
 
 #define RESTRICT_OrgXmlSaxLocator 1
 #define INCLUDE_OrgXmlSaxLocator 1
-#include "org/xml/sax/Locator.h"
+#include "../../../../org/xml/sax/Locator.h"
 
 /*!
  @brief Provide an optional convenience implementation of Locator.

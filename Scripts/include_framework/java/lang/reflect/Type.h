@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/reflect/Type.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangReflectType")
 #ifdef RESTRICT_JavaLangReflectType

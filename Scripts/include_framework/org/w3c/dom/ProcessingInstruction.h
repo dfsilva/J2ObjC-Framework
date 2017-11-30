@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/org/w3c/dom/ProcessingInstruction.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_OrgW3cDomProcessingInstruction")
 #ifdef RESTRICT_OrgW3cDomProcessingInstruction
@@ -21,7 +21,7 @@
 
 #define RESTRICT_OrgW3cDomNode 1
 #define INCLUDE_OrgW3cDomNode 1
-#include "org/w3c/dom/Node.h"
+#include "../../../org/w3c/dom/Node.h"
 
 /*!
  @brief The <code>ProcessingInstruction</code> interface represents a "processing

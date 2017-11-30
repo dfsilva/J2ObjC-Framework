@@ -20,17 +20,16 @@
 #define JavaIoObjectInputValidation_
 
 /*!
- @brief A callback interface for post-deserialization checks on objects.
- Allows, for
- example, the validation of a whole graph of objects after all of them have
- been loaded.
- - seealso: ObjectInputStream#registerValidation(ObjectInputValidation,int)
+ @brief A callback interface for post-deserialization checks on objects.Allows, for
+  example, the validation of a whole graph of objects after all of them have
+  been loaded.
+ - seealso: ObjectInputStream#registerValidation(ObjectInputValidation, int)
  */
 @protocol JavaIoObjectInputValidation < JavaObject >
 
 /*!
  @brief Validates this object.
- @throws InvalidObjectException
+ @throw InvalidObjectException
  if this object fails to validate itself.
  */
 - (void)validateObject;

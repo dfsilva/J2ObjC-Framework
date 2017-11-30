@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/Properties.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilProperties")
 #ifdef RESTRICT_JavaUtilProperties
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilHashtable 1
 #define INCLUDE_JavaUtilHashtable 1
-#include "java/util/Hashtable.h"
+#include "../../java/util/Hashtable.h"
 
 @class JavaIoInputStream;
 @class JavaIoOutputStream;

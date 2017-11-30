@@ -26,7 +26,7 @@
 /*!
  @brief Unchecked exception thrown when a conversion and flag are incompatible.
  <p> Unless otherwise specified, passing a <tt>null</tt> argument to any
- method or constructor in this class will cause a <code>NullPointerException</code>
+  method or constructor in this class will cause a <code>NullPointerException</code>
   to be thrown.
  @since 1.5
  */
@@ -36,11 +36,9 @@
 
 /*!
  @brief Constructs an instance of this class with the specified flag
- and conversion.
- @param f
- The flag
- @param c
- The conversion
+  and conversion.
+ @param f The flag
+ @param c The conversion
  */
 - (instancetype)initWithNSString:(NSString *)f
                         withChar:(jchar)c;
@@ -58,6 +56,10 @@
 - (NSString *)getFlags;
 
 - (NSString *)getMessage;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

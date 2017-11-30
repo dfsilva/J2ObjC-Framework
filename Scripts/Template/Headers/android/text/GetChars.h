@@ -24,28 +24,23 @@
 #include "../../java/lang/CharSequence.h"
 
 @class IOSCharArray;
-@protocol JavaUtilStreamIntStream;
 
 /*!
  @brief Please implement this interface if your CharSequence has a
- getChars() method like the one in String that is faster than
- calling charAt() multiple times.
+  getChars() method like the one in String that is faster than
+  calling charAt() multiple times.
  */
 @protocol AndroidTextGetChars < JavaLangCharSequence, JavaObject >
 
 /*!
  @brief Exactly like String.getChars(): copy chars <code>start</code>
- through <code>end - 1</code> from this CharSequence into <code>dest</code>
- beginning at offset <code>destoff</code>.
+  through <code>end - 1</code> from this CharSequence into <code>dest</code>
+  beginning at offset <code>destoff</code>.
  */
 - (void)getCharsWithInt:(jint)start
                 withInt:(jint)end
           withCharArray:(IOSCharArray *)dest
                 withInt:(jint)destoff;
-
-@end
-
-@interface AndroidTextGetChars : NSObject < AndroidTextGetChars >
 
 @end
 

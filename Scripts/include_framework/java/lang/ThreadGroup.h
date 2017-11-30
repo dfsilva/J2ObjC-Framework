@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/ThreadGroup.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangThreadGroup")
 #ifdef RESTRICT_JavaLangThreadGroup
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangThread 1
 #define INCLUDE_JavaLangThread_UncaughtExceptionHandler 1
-#include "java/lang/Thread.h"
+#include "../../java/lang/Thread.h"
 
 @class IOSObjectArray;
 @class JavaIoPrintStream;

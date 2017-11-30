@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/ForkJoinWorkerThread.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentForkJoinWorkerThread")
 #ifdef RESTRICT_JavaUtilConcurrentForkJoinWorkerThread
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangThread 1
 #define INCLUDE_JavaLangThread 1
-#include "java/lang/Thread.h"
+#include "../../../java/lang/Thread.h"
 
 @class JavaLangThreadGroup;
 @class JavaLangThrowable;

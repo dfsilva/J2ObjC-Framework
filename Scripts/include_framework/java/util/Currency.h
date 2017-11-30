@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/java/util/Currency.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilCurrency")
 #ifdef RESTRICT_JavaUtilCurrency
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../java/io/Serializable.h"
 
 @class JavaUtilLocale;
 @protocol JavaUtilSet;

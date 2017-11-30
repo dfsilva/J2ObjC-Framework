@@ -23,63 +23,34 @@
 #define INCLUDE_JavaLangException 1
 #include "../../java/lang/Exception.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Legacy security code; do not use.
- This exception is thrown by
- <code>doPrivileged(PrivilegedExceptionAction)</code> and
- <code>doPrivileged(PrivilegedExceptionAction,
- AccessControlContext context)</code>
-  to indicate
- that the action being performed threw a checked exception.  The exception
- thrown by the action can be obtained by calling the
- <code>getException</code> method.  In effect, an
- <code>PrivilegedActionException</code> is a "wrapper"
- for an exception thrown by a privileged action.
- <p>As of release 1.4, this exception has been retrofitted to conform to
- the general purpose exception-chaining mechanism.  The "exception thrown
- by the privileged computation" that is provided at construction time and
- accessed via the <code>getException()</code> method is now known as the
- <i>cause</i>, and may be accessed via the <code>Throwable.getCause()</code>
- method, as well as the aforementioned "legacy method."
- - seealso: PrivilegedExceptionAction
- - seealso: AccessController#doPrivileged(PrivilegedExceptionAction)
- - seealso: AccessController#doPrivileged(PrivilegedExceptionAction,AccessControlContext)
  */
 @interface JavaSecurityPrivilegedActionException : JavaLangException
 
 #pragma mark Public
 
-/*!
- @brief Constructs a new PrivilegedActionException &quot;wrapping&quot;
- the specific Exception.
- @param exception The exception thrown
- */
 - (instancetype)initWithJavaLangException:(JavaLangException *)exception;
 
-/*!
- @brief Returns the cause of this exception (the exception thrown by
- the privileged computation that resulted in this
- <code>PrivilegedActionException</code>).
- @return the cause of this exception.
- @since 1.4
- */
-- (NSException *)getCause;
-
-/*!
- @brief Returns the exception thrown by the privileged computation that
- resulted in this <code>PrivilegedActionException</code>.
- <p>This method predates the general-purpose exception chaining facility.
- The <code>Throwable.getCause()</code> method is now the preferred means of
- obtaining this information.
- @return the exception thrown by the privileged computation that
- resulted in this <code>PrivilegedActionException</code>.
- - seealso: PrivilegedExceptionAction
- - seealso: AccessController#doPrivileged(PrivilegedExceptionAction)
- - seealso: AccessController#doPrivileged(PrivilegedExceptionAction,AccessControlContext)
- */
 - (JavaLangException *)getException;
 
-- (NSString *)description;
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 

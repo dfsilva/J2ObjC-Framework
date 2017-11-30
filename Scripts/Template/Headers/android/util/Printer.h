@@ -21,14 +21,13 @@
 
 /*!
  @brief Simple interface for printing text, allowing redirection to various
- targets.
+  targets.
  */
 @protocol AndroidUtilPrinter < JavaObject >
 
 /*!
- @brief Write a line of text to the output.
- There is no need to terminate
- the given string with a newline.
+ @brief Write a line of text to the output.There is no need to terminate
+  the given string with a newline.
  */
 - (void)printlnWithNSString:(NSString *)x;
 

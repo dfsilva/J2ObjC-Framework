@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/LinkedTransferQueue.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentLinkedTransferQueue")
 #ifdef RESTRICT_JavaUtilConcurrentLinkedTransferQueue
@@ -21,15 +21,15 @@
 
 #define RESTRICT_JavaUtilAbstractQueue 1
 #define INCLUDE_JavaUtilAbstractQueue 1
-#include "java/util/AbstractQueue.h"
+#include "../../../java/util/AbstractQueue.h"
 
 #define RESTRICT_JavaUtilConcurrentTransferQueue 1
 #define INCLUDE_JavaUtilConcurrentTransferQueue 1
-#include "java/util/concurrent/TransferQueue.h"
+#include "../../../java/util/concurrent/TransferQueue.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 @class IOSObjectArray;
 @class JavaUtilConcurrentLinkedTransferQueue_Node;
@@ -475,7 +475,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentLinkedTransferQueue_Node)
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
-#include "java/util/Iterator.h"
+#include "../../../java/util/Iterator.h"
 
 @class JavaUtilConcurrentLinkedTransferQueue;
 @protocol JavaUtilFunctionConsumer;
@@ -517,7 +517,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentLinkedTransferQueue_Itr)
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../../java/util/Spliterator.h"
 
 @class JavaUtilConcurrentLinkedTransferQueue;
 @class JavaUtilConcurrentLinkedTransferQueue_Node;

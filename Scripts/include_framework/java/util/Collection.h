@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/Collection.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilCollection")
 #ifdef RESTRICT_JavaUtilCollection
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangIterable 1
 #define INCLUDE_JavaLangIterable 1
-#include "java/lang/Iterable.h"
+#include "../../java/lang/Iterable.h"
 
 @class IOSObjectArray;
 @protocol JavaUtilFunctionPredicate;

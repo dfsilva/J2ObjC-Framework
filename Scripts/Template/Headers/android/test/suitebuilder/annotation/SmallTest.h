@@ -38,7 +38,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(AndroidTestSuitebuilderAnnotationSmallTest)
 
-FOUNDATION_EXPORT id<AndroidTestSuitebuilderAnnotationSmallTest> create_AndroidTestSuitebuilderAnnotationSmallTest();
+FOUNDATION_EXPORT id<AndroidTestSuitebuilderAnnotationSmallTest> create_AndroidTestSuitebuilderAnnotationSmallTest(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(AndroidTestSuitebuilderAnnotationSmallTest)
 

@@ -27,9 +27,8 @@
 @class IOSObjectArray;
 
 /*!
- @brief javax.annotation.Resources annotation.
- No code was referenced,
- created using just its public API.
+ @brief javax.annotation.Resources annotation.No code was referenced,
+  created using just its public API.
  */
 @protocol JavaxAnnotationResources < JavaLangAnnotationAnnotation >
 

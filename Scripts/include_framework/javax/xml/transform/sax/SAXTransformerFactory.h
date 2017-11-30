@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/javax/xml/transform/sax/SAXTransformerFactory.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxXmlTransformSaxSAXTransformerFactory")
 #ifdef RESTRICT_JavaxXmlTransformSaxSAXTransformerFactory
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaxXmlTransformTransformerFactory 1
 #define INCLUDE_JavaxXmlTransformTransformerFactory 1
-#include "javax/xml/transform/TransformerFactory.h"
+#include "../../../../javax/xml/transform/TransformerFactory.h"
 
 @protocol JavaxXmlTransformSaxTemplatesHandler;
 @protocol JavaxXmlTransformSaxTransformerHandler;

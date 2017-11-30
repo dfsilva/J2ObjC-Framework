@@ -25,16 +25,16 @@
 
 /*!
  @brief <P>A thin wrapper around a millisecond value that allows
- JDBC to identify this as an SQL <code>DATE</code> value.
+  JDBC to identify this as an SQL <code>DATE</code> value.
  A
- milliseconds value represents the number of milliseconds that
- have passed since January 1, 1970 00:00:00.000 GMT.
+  milliseconds value represents the number of milliseconds that
+  have passed since January 1, 1970 00:00:00.000 GMT. 
  <p>
- To conform with the definition of SQL <code>DATE</code>, the
- millisecond values wrapped by a <code>java.sql.Date</code> instance
- must be 'normalized' by setting the
- hours, minutes, seconds, and milliseconds to zero in the particular
- time zone with which the instance is associated.
+  To conform with the definition of SQL <code>DATE</code>, the
+  millisecond values wrapped by a <code>java.sql.Date</code> instance
+  must be 'normalized' by setting the
+  hours, minutes, seconds, and milliseconds to zero in the particular
+  time zone with which the instance is associated.
  */
 @interface JavaSqlDate : JavaUtilDate
 
@@ -44,11 +44,10 @@
 
 /*!
  @brief Constructs a <code>Date</code> object initialized with the given
- year, month, and day.
+  year, month, and day.
  <P>
- The result is undefined if a given argument is out of bounds.
- @param year the year minus 1900; must be 0 to 8099. (Note that
- 8099 is 9999 minus 1900.)
+  The result is undefined if a given argument is out of bounds.
+ @param year the year minus 1900; must be 0 to 8099. (Note that         8099 is 9999 minus 1900.)
  @param month 0 to 11
  @param day 1 to 31
  */
@@ -58,65 +57,62 @@
 
 /*!
  @brief Constructs a <code>Date</code> object using the given milliseconds
- time value.
- If the given milliseconds value contains time
- information, the driver will set the time components to the
- time in the default time zone (the time zone of the Java virtual
- machine running the application) that corresponds to zero GMT.
- @param date milliseconds since January 1, 1970, 00:00:00 GMT not
- to exceed the milliseconds representation for the year 8099.
- A negative number indicates the number of milliseconds
- before January 1, 1970, 00:00:00 GMT.
+  time value.If the given milliseconds value contains time
+  information, the driver will set the time components to the
+  time in the default time zone (the time zone of the Java virtual
+  machine running the application) that corresponds to zero GMT.
+ @param date milliseconds since January 1, 1970, 00:00:00 GMT not         to exceed the milliseconds representation for the year 8099.
+          A negative number indicates the number of milliseconds
+          before January 1, 1970, 00:00:00 GMT.
  */
 - (instancetype)initWithLong:(jlong)date;
 
 /*!
- @exception java.lang.IllegalArgumentException if this method is invoked
+ @throw java.lang.IllegalArgumentExceptionif this method is invoked
  - seealso: #setHours
  */
 - (jint)getHours __attribute__((deprecated));
 
 /*!
- @exception java.lang.IllegalArgumentException if this method is invoked
+ @throw java.lang.IllegalArgumentExceptionif this method is invoked
  - seealso: #setMinutes
  */
 - (jint)getMinutes __attribute__((deprecated));
 
 /*!
- @exception java.lang.IllegalArgumentException if this method is invoked
+ @throw java.lang.IllegalArgumentExceptionif this method is invoked
  - seealso: #setSeconds
  */
 - (jint)getSeconds __attribute__((deprecated));
 
 /*!
- @exception java.lang.IllegalArgumentException if this method is invoked
+ @throw java.lang.IllegalArgumentExceptionif this method is invoked
  - seealso: #getHours
  */
 - (void)setHoursWithInt:(jint)i __attribute__((deprecated));
 
 /*!
- @exception java.lang.IllegalArgumentException if this method is invoked
+ @throw java.lang.IllegalArgumentExceptionif this method is invoked
  - seealso: #getMinutes
  */
 - (void)setMinutesWithInt:(jint)i __attribute__((deprecated));
 
 /*!
- @exception java.lang.IllegalArgumentException if this method is invoked
+ @throw java.lang.IllegalArgumentExceptionif this method is invoked
  - seealso: #getSeconds
  */
 - (void)setSecondsWithInt:(jint)i __attribute__((deprecated));
 
 /*!
  @brief Sets an existing <code>Date</code> object
- using the given milliseconds time value.
+  using the given milliseconds time value.
  If the given milliseconds value contains time information,
- the driver will set the time components to the
- time in the default time zone (the time zone of the Java virtual
- machine running the application) that corresponds to zero GMT.
- @param date milliseconds since January 1, 1970, 00:00:00 GMT not
- to exceed the milliseconds representation for the year 8099.
- A negative number indicates the number of milliseconds
- before January 1, 1970, 00:00:00 GMT.
+  the driver will set the time components to the
+  time in the default time zone (the time zone of the Java virtual
+  machine running the application) that corresponds to zero GMT.
+ @param date milliseconds since January 1, 1970, 00:00:00 GMT not         to exceed the milliseconds representation for the year 8099.
+          A negative number indicates the number of milliseconds
+          before January 1, 1970, 00:00:00 GMT.
  */
 - (void)setTimeWithLong:(jlong)date;
 
@@ -128,17 +124,36 @@
 - (NSString *)description;
 
 /*!
- @brief Converts a string in JDBC date escape format to
- a <code>Date</code> value.
- @param s a <code>String</code> object representing a date in
- in the format "yyyy-[m]m-[d]d". The leading zero for <code>mm</code>
- and <code>dd</code> may also be omitted.
+ @brief Converts a string in JDBC date escape format to a 
+ <code>Date</code> value.
+ @param s a  <code> String </code>  object representing a date in
+          in the format "yyyy-[m]m-[d]d". The leading zero for  <code> mm </code>
+   and  <code> dd </code>  may also be omitted.
  @return a <code>java.sql.Date</code> object representing the
- given date
- @throws IllegalArgumentException if the date given is not in the
- JDBC date escape format (yyyy-[m]m-[d]d)
+          given date
+ @throw IllegalArgumentExceptionif the date given is not in the
+          JDBC date escape format (yyyy-[m]m-[d]d)
  */
 + (JavaSqlDate *)valueOfWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithInt:(jint)arg0
+                    withInt:(jint)arg1
+                    withInt:(jint)arg2
+                    withInt:(jint)arg3
+                    withInt:(jint)arg4 NS_UNAVAILABLE;
+
+- (instancetype)initWithInt:(jint)arg0
+                    withInt:(jint)arg1
+                    withInt:(jint)arg2
+                    withInt:(jint)arg3
+                    withInt:(jint)arg4
+                    withInt:(jint)arg5 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -146,9 +161,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaSqlDate)
 
 /*!
  @brief Private serial version unique ID to ensure serialization
- compatibility.
+  compatibility.
  */
-inline jlong JavaSqlDate_get_serialVersionUID();
+inline jlong JavaSqlDate_get_serialVersionUID(void);
 #define JavaSqlDate_serialVersionUID 1511598038487230103LL
 J2OBJC_STATIC_FIELD_CONSTANT(JavaSqlDate, serialVersionUID, jlong)
 

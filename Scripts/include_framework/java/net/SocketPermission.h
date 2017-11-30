@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/net/SocketPermission.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNetSocketPermission")
 #ifdef RESTRICT_JavaNetSocketPermission
@@ -21,11 +21,11 @@
 
 #define RESTRICT_JavaSecurityPermission 1
 #define INCLUDE_JavaSecurityPermission 1
-#include "java/security/Permission.h"
+#include "../../java/security/Permission.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../java/io/Serializable.h"
 
 /*!
  @brief Legacy security code; do not use.

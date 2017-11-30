@@ -23,21 +23,23 @@
 #define INCLUDE_JavaLangError 1
 #include "../../java/lang/Error.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief An instance of <code>ThreadDeath</code> is thrown in the victim thread
- when the (deprecated) <code>Thread.stop()</code> method is invoked.
+  when the (deprecated) <code>Thread.stop()</code> method is invoked.
  <p>An application should catch instances of this class only if it
- must clean up after being terminated asynchronously.  If
+  must clean up after being terminated asynchronously.  If 
  <code>ThreadDeath</code> is caught by a method, it is important that it
- be rethrown so that the thread actually dies.
- <p>The top-level error
- handler
+  be rethrown so that the thread actually dies. 
+ <p>The error
+  handler
   does not print out a message if <code>ThreadDeath</code> is
- never caught.
- <p>The class <code>ThreadDeath</code> is specifically a subclass of
+  never caught. 
+ <p>The class <code>ThreadDeath</code> is specifically a subclass of 
  <code>Error</code> rather than <code>Exception</code>, even though it is a
- "normal occurrence", because many applications catch all
- occurrences of <code>Exception</code> and then discard the exception.
+  "normal occurrence", because many applications catch all
+  occurrences of <code>Exception</code> and then discard the exception.
  @since JDK1.0
  */
 @interface JavaLangThreadDeath : JavaLangError
@@ -46,15 +48,29 @@
 
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaLangThreadDeath)
 
 FOUNDATION_EXPORT void JavaLangThreadDeath_init(JavaLangThreadDeath *self);
 
-FOUNDATION_EXPORT JavaLangThreadDeath *new_JavaLangThreadDeath_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangThreadDeath *new_JavaLangThreadDeath_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangThreadDeath *create_JavaLangThreadDeath_init();
+FOUNDATION_EXPORT JavaLangThreadDeath *create_JavaLangThreadDeath_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangThreadDeath)
 

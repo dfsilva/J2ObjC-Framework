@@ -26,7 +26,7 @@
 /*!
  @brief Unchecked exception thrown when an unknown conversion is given.
  <p> Unless otherwise specified, passing a <tt>null</tt> argument to
- any method or constructor in this class will cause a <code>NullPointerException</code>
+  any method or constructor in this class will cause a <code>NullPointerException</code>
   to be thrown.
  @since 1.5
  */
@@ -36,8 +36,7 @@
 
 /*!
  @brief Constructs an instance of this class with the unknown conversion.
- @param s
- Unknown conversion
+ @param s Unknown conversion
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
@@ -48,6 +47,10 @@
 - (NSString *)getConversion;
 
 - (NSString *)getMessage;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

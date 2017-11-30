@@ -3,7 +3,7 @@
 //  source: /Users/tball/src/j2objc/inject/javax_inject/build_result/java/javax/inject/Qualifier.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxInjectQualifier")
 #ifdef RESTRICT_JavaxInjectQualifier
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
-#include "java/lang/annotation/Annotation.h"
+#include "../../java/lang/annotation/Annotation.h"
 
 @class IOSClass;
 

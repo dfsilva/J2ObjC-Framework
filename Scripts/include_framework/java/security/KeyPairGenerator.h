@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/security/KeyPairGenerator.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSecurityKeyPairGenerator")
 #ifdef RESTRICT_JavaSecurityKeyPairGenerator
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaSecurityKeyPairGeneratorSpi 1
 #define INCLUDE_JavaSecurityKeyPairGeneratorSpi 1
-#include "java/security/KeyPairGeneratorSpi.h"
+#include "../../java/security/KeyPairGeneratorSpi.h"
 
 @class JavaSecurityKeyPair;
 @class JavaSecurityProvider;

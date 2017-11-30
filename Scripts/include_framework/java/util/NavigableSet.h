@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/NavigableSet.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilNavigableSet")
 #ifdef RESTRICT_JavaUtilNavigableSet
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilSortedSet 1
 #define INCLUDE_JavaUtilSortedSet 1
-#include "java/util/SortedSet.h"
+#include "../../java/util/SortedSet.h"
 
 @protocol JavaUtilIterator;
 

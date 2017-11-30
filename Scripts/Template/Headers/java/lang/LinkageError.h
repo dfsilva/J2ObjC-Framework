@@ -23,10 +23,12 @@
 #define INCLUDE_JavaLangError 1
 #include "../../java/lang/Error.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Subclasses of <code>LinkageError</code> indicate that a class has
- some dependency on another class; however, the latter class has
- incompatibly changed after the compilation of the former class.
+  some dependency on another class; however, the latter class has
+  incompatibly changed after the compilation of the former class.
  @author Frank Yellin
  @since JDK1.0
  */
@@ -41,20 +43,29 @@
 
 /*!
  @brief Constructs a <code>LinkageError</code> with the specified detail
- message.
- @param s   the detail message.
+  message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
 /*!
  @brief Constructs a <code>LinkageError</code> with the specified detail
- message and cause.
- @param s     the detail message.
+  message and cause.
+ @param s the detail message.
  @param cause the cause, may be <code>null</code>
  @since 1.7
  */
 - (instancetype)initWithNSString:(NSString *)s
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -62,9 +73,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangLinkageError)
 
 FOUNDATION_EXPORT void JavaLangLinkageError_init(JavaLangLinkageError *self);
 
-FOUNDATION_EXPORT JavaLangLinkageError *new_JavaLangLinkageError_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangLinkageError *new_JavaLangLinkageError_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangLinkageError *create_JavaLangLinkageError_init();
+FOUNDATION_EXPORT JavaLangLinkageError *create_JavaLangLinkageError_init(void);
 
 FOUNDATION_EXPORT void JavaLangLinkageError_initWithNSString_(JavaLangLinkageError *self, NSString *s);
 
@@ -72,11 +83,11 @@ FOUNDATION_EXPORT JavaLangLinkageError *new_JavaLangLinkageError_initWithNSStrin
 
 FOUNDATION_EXPORT JavaLangLinkageError *create_JavaLangLinkageError_initWithNSString_(NSString *s);
 
-FOUNDATION_EXPORT void JavaLangLinkageError_initWithNSString_withNSException_(JavaLangLinkageError *self, NSString *s, NSException *cause);
+FOUNDATION_EXPORT void JavaLangLinkageError_initWithNSString_withJavaLangThrowable_(JavaLangLinkageError *self, NSString *s, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaLangLinkageError *new_JavaLangLinkageError_initWithNSString_withNSException_(NSString *s, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangLinkageError *new_JavaLangLinkageError_initWithNSString_withJavaLangThrowable_(NSString *s, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangLinkageError *create_JavaLangLinkageError_initWithNSString_withNSException_(NSString *s, NSException *cause);
+FOUNDATION_EXPORT JavaLangLinkageError *create_JavaLangLinkageError_initWithNSString_withJavaLangThrowable_(NSString *s, JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangLinkageError)
 

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/javax/xml/parsers/ParserConfigurationException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxXmlParsersParserConfigurationException")
 #ifdef RESTRICT_JavaxXmlParsersParserConfigurationException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangException 1
 #define INCLUDE_JavaLangException 1
-#include "java/lang/Exception.h"
+#include "../../../java/lang/Exception.h"
 
 @class JavaLangThrowable;
 

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/sql/ResultSetMetaData.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSqlResultSetMetaData")
 #ifdef RESTRICT_JavaSqlResultSetMetaData
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaSqlWrapper 1
 #define INCLUDE_JavaSqlWrapper 1
-#include "java/sql/Wrapper.h"
+#include "../../java/sql/Wrapper.h"
 
 /*!
  @brief An object that can be used to get information about the types

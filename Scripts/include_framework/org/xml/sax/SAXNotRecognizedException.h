@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/org/xml/sax/SAXNotRecognizedException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_OrgXmlSaxSAXNotRecognizedException")
 #ifdef RESTRICT_OrgXmlSaxSAXNotRecognizedException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_OrgXmlSaxSAXException 1
 #define INCLUDE_OrgXmlSaxSAXException 1
-#include "org/xml/sax/SAXException.h"
+#include "../../../org/xml/sax/SAXException.h"
 
 @class JavaLangException;
 

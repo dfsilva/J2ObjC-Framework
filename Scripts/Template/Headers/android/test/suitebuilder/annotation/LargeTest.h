@@ -38,7 +38,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(AndroidTestSuitebuilderAnnotationLargeTest)
 
-FOUNDATION_EXPORT id<AndroidTestSuitebuilderAnnotationLargeTest> create_AndroidTestSuitebuilderAnnotationLargeTest();
+FOUNDATION_EXPORT id<AndroidTestSuitebuilderAnnotationLargeTest> create_AndroidTestSuitebuilderAnnotationLargeTest(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(AndroidTestSuitebuilderAnnotationLargeTest)
 

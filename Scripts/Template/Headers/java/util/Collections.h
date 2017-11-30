@@ -85,30 +85,31 @@
 
 /*!
  @brief This class consists exclusively of static methods that operate on or return
- collections.
- It contains polymorphic algorithms that operate on
- collections, "wrappers", which return a new collection backed by a
- specified collection, and a few other odds and ends.
+  collections.It contains polymorphic algorithms that operate on
+  collections, "wrappers", which return a new collection backed by a
+  specified collection, and a few other odds and ends.
  <p>The methods of this class all throw a <tt>NullPointerException</tt>
- if the collections or class objects provided to them are null.
+  if the collections or class objects provided to them are null. 
  <p>The documentation for the polymorphic algorithms contained in this class
- generally includes a brief description of the <i>implementation</i>.  Such
- descriptions should be regarded as <i>implementation notes</i>, rather than
- parts of the <i>specification</i>.  Implementors should feel free to
- substitute other algorithms, so long as the specification itself is adhered
- to.  (For example, the algorithm used by <tt>sort</tt> does not have to be
- a mergesort, but it does have to be <i>stable</i>.)
+  generally includes a brief description of the <i>implementation</i>.  Such
+  descriptions should be regarded as <i>implementation notes</i>, rather than
+  parts of the <i>specification</i>.  Implementors should feel free to
+  substitute other algorithms, so long as the specification itself is adhered
+  to.  (For example, the algorithm used by <tt>sort</tt> does not have to be
+  a mergesort, but it does have to be <i>stable</i>.)
+  
  <p>The "destructive" algorithms contained in this class, that is, the
- algorithms that modify the collection on which they operate, are specified
- to throw <tt>UnsupportedOperationException</tt> if the collection does not
- support the appropriate mutation primitive(s), such as the <tt>set</tt>
- method.  These algorithms may, but are not required to, throw this
- exception if an invocation would have no effect on the collection.  For
- example, invoking the <tt>sort</tt> method on an unmodifiable list that is
- already sorted may or may not throw <tt>UnsupportedOperationException</tt>.
- <p>This class is a member of the
- <a href="/../technotes/guides/collections/index.html">
- Java Collections Framework</a>.
+  algorithms that modify the collection on which they operate, are specified
+  to throw <tt>UnsupportedOperationException</tt> if the collection does not
+  support the appropriate mutation primitive(s), such as the <tt>set</tt>
+  method.  These algorithms may, but are not required to, throw this
+  exception if an invocation would have no effect on the collection.  For
+  example, invoking the <tt>sort</tt> method on an unmodifiable list that is
+  already sorted may or may not throw <tt>UnsupportedOperationException</tt>.
+  
+ <p>This class is a member of the 
+ <a href="{@@docRoot}/../technotes/guides/collections/index.html">
+  Java Collections Framework</a>.
  @author Josh Bloch
  @author Neal Gafter
  - seealso: Collection
@@ -130,26 +131,26 @@
 /*!
  @brief Adds all of the specified elements to the specified collection.
  Elements to be added may be specified individually or as an array.
- The behavior of this convenience method is identical to that of
+  The behavior of this convenience method is identical to that of 
  <tt>c.addAll(Arrays.asList(elements))</tt>, but this method is likely
- to run significantly faster under most implementations.
+  to run significantly faster under most implementations. 
  <p>When elements are specified individually, this method provides a
- convenient way to add a few elements to an existing collection:
+  convenient way to add a few elements to an existing collection: 
  @code
 
-     Collections.addAll(flavors, "Peaches 'n Plutonium", "Rocky Racoon");
+      Collections.addAll(flavors, "Peaches 'n Plutonium", "Rocky Racoon"); 
   
 @endcode
- @param c the collection into which <tt>elements</tt> are to be inserted
- @param elements the elements to insert into <tt>c</tt>
+ @param c the collection into which  <tt> elements </tt>  are to be inserted
+ @param elements the elements to insert into  <tt> c </tt>
  @return <tt>true</tt> if the collection changed as a result of the call
- @throws UnsupportedOperationException if <tt>c</tt> does not support
- the <tt>add</tt> operation
- @throws NullPointerException if <tt>elements</tt> contains one or more
- null values and <tt>c</tt> does not permit null elements, or
- if <tt>c</tt> or <tt>elements</tt> are <tt>null</tt>
- @throws IllegalArgumentException if some property of a value in
- <tt>elements</tt> prevents it from being added to <tt>c</tt>
+ @throw UnsupportedOperationExceptionif <tt>c</tt> does not support
+          the <tt>add</tt> operation
+ @throw NullPointerExceptionif <tt>elements</tt> contains one or more
+          null values and <tt>c</tt> does not permit null elements, or
+          if <tt>c</tt> or <tt>elements</tt> are <tt>null</tt>
+ @throw IllegalArgumentExceptionif some property of a value in
+          <tt>elements</tt> prevents it from being added to <tt>c</tt>
  - seealso: Collection#addAll(Collection)
  @since 1.5
  */
@@ -157,17 +158,17 @@
                        withNSObjectArray:(IOSObjectArray *)elements;
 
 /*!
- @brief Returns a view of a <code>Deque</code> as a Last-in-first-out (Lifo)
- <code>Queue</code>.
- Method <tt>add</tt> is mapped to <tt>push</tt>,
- <tt>remove</tt> is mapped to <tt>pop</tt> and so on. This
- view can be useful when you would like to use a method
- requiring a <tt>Queue</tt> but you need Lifo ordering.
+ @brief Returns a view of a <code>Deque</code> as a Last-in-first-out (Lifo) 
+ <code>Queue</code>.Method <tt>add</tt> is mapped to <tt>push</tt>,
+  <tt>remove</tt> is mapped to <tt>pop</tt> and so on.
+ This
+  view can be useful when you would like to use a method
+  requiring a <tt>Queue</tt> but you need Lifo ordering. 
  <p>Each method invocation on the queue returned by this method
- results in exactly one method invocation on the backing deque, with
- one exception.  The <code>addAll</code> method is
- implemented as a sequence of <code>addFirst</code>
- invocations on the backing deque.
+  results in exactly one method invocation on the backing deque, with
+  one exception.  The <code>addAll</code> method is
+  implemented as a sequence of <code>addFirst</code>
+  invocations on the backing deque.
  @param deque the deque
  @return the queue
  @since 1.6
@@ -176,68 +177,68 @@
 
 /*!
  @brief Searches the specified list for the specified object using the binary
- search algorithm.
- The list must be sorted into ascending order
- according to the natural ordering of its
- elements (as by the <code>sort(List)</code> method) prior to making this
- call.  If it is not sorted, the results are undefined.  If the list
- contains multiple elements equal to the specified object, there is no
- guarantee which one will be found.
+  search algorithm.The list must be sorted into ascending order
+  according to the ordering of its
+  elements (as by the <code>sort(List)</code> method) prior to making this
+  call.
+ If it is not sorted, the results are undefined.  If the list
+  contains multiple elements equal to the specified object, there is no
+  guarantee which one will be found. 
  <p>This method runs in log(n) time for a "random access" list (which
- provides near-constant-time positional access).  If the specified list
- does not implement the <code>RandomAccess</code> interface and is large,
- this method will do an iterator-based binary search that performs
- O(n) link traversals and O(log n) element comparisons.
+  provides near-constant-time positional access).  If the specified list
+  does not implement the <code>RandomAccess</code> interface and is large,
+  this method will do an iterator-based binary search that performs
+  O(n) link traversals and O(log n) element comparisons.
  @param list the list to be searched.
  @param key the key to be searched for.
  @return the index of the search key, if it is contained in the list;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the list: the index of the first
- element greater than the key, or <tt>list.size()</tt> if all
- elements in the list are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
- @throws ClassCastException if the list contains elements that are not
- <i>mutually comparable</i> (for example, strings and
- integers), or the search key is not mutually comparable
- with the elements of the list.
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the list: the index of the first
+          element greater than the key, or <tt>list.size()</tt> if all
+          elements in the list are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
+ @throw ClassCastExceptionif the list contains elements that are not
+          <i>mutually comparable</i> (for example, strings and
+          integers), or the search key is not mutually comparable
+          with the elements of the list.
  */
 + (jint)binarySearchWithJavaUtilList:(id<JavaUtilList>)list
                               withId:(id)key;
 
 /*!
  @brief Searches the specified list for the specified object using the binary
- search algorithm.
- The list must be sorted into ascending order
- according to the specified comparator (as by the
- <code>sort(List, Comparator)</code>
- method), prior to making this call.  If it is
- not sorted, the results are undefined.  If the list contains multiple
- elements equal to the specified object, there is no guarantee which one
- will be found.
+  search algorithm.The list must be sorted into ascending order
+  according to the specified comparator (as by the 
+ <code>Comparator)</code>
+  method), prior to making this call.
+ If it is
+  not sorted, the results are undefined.  If the list contains multiple
+  elements equal to the specified object, there is no guarantee which one
+  will be found. 
  <p>This method runs in log(n) time for a "random access" list (which
- provides near-constant-time positional access).  If the specified list
- does not implement the <code>RandomAccess</code> interface and is large,
- this method will do an iterator-based binary search that performs
- O(n) link traversals and O(log n) element comparisons.
+  provides near-constant-time positional access).  If the specified list
+  does not implement the <code>RandomAccess</code> interface and is large,
+  this method will do an iterator-based binary search that performs
+  O(n) link traversals and O(log n) element comparisons.
  @param list the list to be searched.
  @param key the key to be searched for.
- @param c the comparator by which the list is ordered.
- A <tt>null</tt> value indicates that the elements'
- natural ordering should be used.
+ @param c the comparator by which the list is ordered.          A 
+  <tt> null </tt>  value indicates that the elements'          
+ ordering  should be used.
  @return the index of the search key, if it is contained in the list;
- otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
- <i>insertion point</i> is defined as the point at which the
- key would be inserted into the list: the index of the first
- element greater than the key, or <tt>list.size()</tt> if all
- elements in the list are less than the specified key.  Note
- that this guarantees that the return value will be &gt;= 0 if
- and only if the key is found.
- @throws ClassCastException if the list contains elements that are not
- <i>mutually comparable</i> using the specified comparator,
- or the search key is not mutually comparable with the
- elements of the list using this comparator.
+          otherwise, <tt>(-(<i>insertion point</i>) - 1)</tt>.  The
+          <i>insertion point</i> is defined as the point at which the
+          key would be inserted into the list: the index of the first
+          element greater than the key, or <tt>list.size()</tt> if all
+          elements in the list are less than the specified key.  Note
+          that this guarantees that the return value will be &gt;= 0 if
+          and only if the key is found.
+ @throw ClassCastExceptionif the list contains elements that are not
+          <i>mutually comparable</i> using the specified comparator,
+          or the search key is not mutually comparable with the
+          elements of the list using this comparator.
  */
 + (jint)binarySearchWithJavaUtilList:(id<JavaUtilList>)list
                               withId:(id)key
@@ -246,56 +247,55 @@
 /*!
  @brief Returns a dynamically typesafe view of the specified collection.
  Any attempt to insert an element of the wrong type will result in an
- immediate <code>ClassCastException</code>.  Assuming a collection
- contains no incorrectly typed elements prior to the time a
- dynamically typesafe view is generated, and that all subsequent
- access to the collection takes place through the view, it is
+  immediate <code>ClassCastException</code>.  Assuming a collection
+  contains no incorrectly typed elements prior to the time a
+  dynamically typesafe view is generated, and that all subsequent
+  access to the collection takes place through the view, it is 
  <i>guaranteed</i> that the collection cannot contain an incorrectly
- typed element.
+  typed element. 
  <p>The generics mechanism in the language provides compile-time
- (static) type checking, but it is possible to defeat this mechanism
- with unchecked casts.  Usually this is not a problem, as the compiler
- issues warnings on all such unchecked operations.  There are, however,
- times when static type checking alone is not sufficient.  For example,
- suppose a collection is passed to a third-party library and it is
- imperative that the library code not corrupt the collection by
- inserting an element of the wrong type.
+  (static) type checking, but it is possible to defeat this mechanism
+  with unchecked casts.  Usually this is not a problem, as the compiler
+  issues warnings on all such unchecked operations.  There are, however,
+  times when static type checking alone is not sufficient.  For example,
+  suppose a collection is passed to a third-party library and it is
+  imperative that the library code not corrupt the collection by
+  inserting an element of the wrong type. 
  <p>Another use of dynamically typesafe views is debugging.  Suppose a
- program fails with a <code>ClassCastException</code>, indicating that an
- incorrectly typed element was put into a parameterized collection.
- Unfortunately, the exception can occur at any time after the erroneous
- element is inserted, so it typically provides little or no information
- as to the real source of the problem.  If the problem is reproducible,
- one can quickly determine its source by temporarily modifying the
- program to wrap the collection with a dynamically typesafe view.
- For example, this declaration:
- @code
-     Collection<String> c = new HashSet<>();
+  program fails with a <code>ClassCastException</code>, indicating that an
+  incorrectly typed element was put into a parameterized collection.
+  Unfortunately, the exception can occur at any time after the erroneous
+  element is inserted, so it typically provides little or no information
+  as to the real source of the problem.  If the problem is reproducible,
+  one can quickly determine its source by temporarily modifying the
+  program to wrap the collection with a dynamically typesafe view.
+  For example, this declaration:
+   @code
+     Collection<String> c = new HashSet<>(); 
  
 @endcode
- may be replaced temporarily by this one:
- @code
+  may be replaced temporarily by this one:
+   @code
      Collection<String> c = Collections.checkedCollection(
-         new HashSet<>(), String.class);
+          new HashSet<>(), String.class); 
  
 @endcode
- Running the program again will cause it to fail at the point where
- an incorrectly typed element is inserted into the collection, clearly
- identifying the source of the problem.  Once the problem is fixed, the
- modified declaration may be reverted back to the original.
+  Running the program again will cause it to fail at the point where
+  an incorrectly typed element is inserted into the collection, clearly
+  identifying the source of the problem.  Once the problem is fixed, the
+  modified declaration may be reverted back to the original. 
  <p>The returned collection does <i>not</i> pass the hashCode and equals
- operations through to the backing collection, but relies on
+  operations through to the backing collection, but relies on 
  <code>Object</code>'s <code>equals</code> and <code>hashCode</code> methods.  This
- is necessary to preserve the contracts of these operations in the case
- that the backing collection is a set or a list.
+  is necessary to preserve the contracts of these operations in the case
+  that the backing collection is a set or a list. 
  <p>The returned collection will be serializable if the specified
- collection is serializable.
+  collection is serializable. 
  <p>Since <code>null</code> is considered to be a value of any reference
- type, the returned collection permits insertion of null elements
- whenever the backing collection does.
- @param c the collection for which a dynamically typesafe view is to be
- returned
- @param type the type of element that <code>c</code> is permitted to hold
+  type, the returned collection permits insertion of null elements
+  whenever the backing collection does.
+ @param c the collection for which a dynamically typesafe view is to be           returned
+ @param type the type of element that <code>c</code>  is permitted to hold
  @return a dynamically typesafe view of the specified collection
  @since 1.5
  */
@@ -305,22 +305,21 @@
 /*!
  @brief Returns a dynamically typesafe view of the specified list.
  Any attempt to insert an element of the wrong type will result in
- an immediate <code>ClassCastException</code>.  Assuming a list contains
- no incorrectly typed elements prior to the time a dynamically typesafe
- view is generated, and that all subsequent access to the list
- takes place through the view, it is <i>guaranteed</i> that the
- list cannot contain an incorrectly typed element.
+  an immediate <code>ClassCastException</code>.  Assuming a list contains
+  no incorrectly typed elements prior to the time a dynamically typesafe
+  view is generated, and that all subsequent access to the list
+  takes place through the view, it is <i>guaranteed</i> that the
+  list cannot contain an incorrectly typed element. 
  <p>A discussion of the use of dynamically typesafe views may be
- found in the documentation for the <code>checkedCollection</code>
-  method.
+  found in the documentation for the <code>checkedCollection</code>
+  method. 
  <p>The returned list will be serializable if the specified list
- is serializable.
+  is serializable. 
  <p>Since <code>null</code> is considered to be a value of any reference
- type, the returned list permits insertion of null elements whenever
- the backing list does.
- @param list the list for which a dynamically typesafe view is to be
- returned
- @param type the type of element that <code>list</code> is permitted to hold
+  type, the returned list permits insertion of null elements whenever
+  the backing list does.
+ @param list the list for which a dynamically typesafe view is to be              returned
+ @param type the type of element that <code>list</code>  is permitted to hold
  @return a dynamically typesafe view of the specified list
  @since 1.5
  */
@@ -330,29 +329,28 @@
 /*!
  @brief Returns a dynamically typesafe view of the specified map.
  Any attempt to insert a mapping whose key or value have the wrong
- type will result in an immediate <code>ClassCastException</code>.
- Similarly, any attempt to modify the value currently associated with
- a key will result in an immediate <code>ClassCastException</code>,
- whether the modification is attempted directly through the map
- itself, or through a <code>Map.Entry</code> instance obtained from the
- map's <code>entry set</code> view.
+  type will result in an immediate <code>ClassCastException</code>.
+  Similarly, any attempt to modify the value currently associated with
+  a key will result in an immediate <code>ClassCastException</code>,
+  whether the modification is attempted directly through the map
+  itself, or through a <code>Map.Entry</code> instance obtained from the
+  map's <code>set</code> view. 
  <p>Assuming a map contains no incorrectly typed keys or values
- prior to the time a dynamically typesafe view is generated, and
- that all subsequent access to the map takes place through the view
- (or one of its collection views), it is <i>guaranteed</i> that the
- map cannot contain an incorrectly typed key or value.
+  prior to the time a dynamically typesafe view is generated, and
+  that all subsequent access to the map takes place through the view
+  (or one of its collection views), it is <i>guaranteed</i> that the
+  map cannot contain an incorrectly typed key or value. 
  <p>A discussion of the use of dynamically typesafe views may be
- found in the documentation for the <code>checkedCollection</code>
-  method.
+  found in the documentation for the <code>checkedCollection</code>
+  method. 
  <p>The returned map will be serializable if the specified map is
- serializable.
+  serializable. 
  <p>Since <code>null</code> is considered to be a value of any reference
- type, the returned map permits insertion of null keys or values
- whenever the backing map does.
- @param m the map for which a dynamically typesafe view is to be
- returned
- @param keyType the type of key that <code>m</code> is permitted to hold
- @param valueType the type of value that <code>m</code> is permitted to hold
+  type, the returned map permits insertion of null keys or values
+  whenever the backing map does.
+ @param m the map for which a dynamically typesafe view is to be           returned
+ @param keyType the type of key that <code>m</code>  is permitted to hold
+ @param valueType the type of value that <code>m</code>  is permitted to hold
  @return a dynamically typesafe view of the specified map
  @since 1.5
  */
@@ -363,22 +361,21 @@
 /*!
  @brief Returns a dynamically typesafe view of the specified set.
  Any attempt to insert an element of the wrong type will result in
- an immediate <code>ClassCastException</code>.  Assuming a set contains
- no incorrectly typed elements prior to the time a dynamically typesafe
- view is generated, and that all subsequent access to the set
- takes place through the view, it is <i>guaranteed</i> that the
- set cannot contain an incorrectly typed element.
+  an immediate <code>ClassCastException</code>.  Assuming a set contains
+  no incorrectly typed elements prior to the time a dynamically typesafe
+  view is generated, and that all subsequent access to the set
+  takes place through the view, it is <i>guaranteed</i> that the
+  set cannot contain an incorrectly typed element. 
  <p>A discussion of the use of dynamically typesafe views may be
- found in the documentation for the <code>checkedCollection</code>
-  method.
+  found in the documentation for the <code>checkedCollection</code>
+  method. 
  <p>The returned set will be serializable if the specified set is
- serializable.
+  serializable. 
  <p>Since <code>null</code> is considered to be a value of any reference
- type, the returned set permits insertion of null elements whenever
- the backing set does.
- @param s the set for which a dynamically typesafe view is to be
- returned
- @param type the type of element that <code>s</code> is permitted to hold
+  type, the returned set permits insertion of null elements whenever
+  the backing set does.
+ @param s the set for which a dynamically typesafe view is to be           returned
+ @param type the type of element that <code>s</code>  is permitted to hold
  @return a dynamically typesafe view of the specified set
  @since 1.5
  */
@@ -388,29 +385,28 @@
 /*!
  @brief Returns a dynamically typesafe view of the specified sorted map.
  Any attempt to insert a mapping whose key or value have the wrong
- type will result in an immediate <code>ClassCastException</code>.
- Similarly, any attempt to modify the value currently associated with
- a key will result in an immediate <code>ClassCastException</code>,
- whether the modification is attempted directly through the map
- itself, or through a <code>Map.Entry</code> instance obtained from the
- map's <code>entry set</code> view.
+  type will result in an immediate <code>ClassCastException</code>.
+  Similarly, any attempt to modify the value currently associated with
+  a key will result in an immediate <code>ClassCastException</code>,
+  whether the modification is attempted directly through the map
+  itself, or through a <code>Map.Entry</code> instance obtained from the
+  map's <code>set</code> view. 
  <p>Assuming a map contains no incorrectly typed keys or values
- prior to the time a dynamically typesafe view is generated, and
- that all subsequent access to the map takes place through the view
- (or one of its collection views), it is <i>guaranteed</i> that the
- map cannot contain an incorrectly typed key or value.
+  prior to the time a dynamically typesafe view is generated, and
+  that all subsequent access to the map takes place through the view
+  (or one of its collection views), it is <i>guaranteed</i> that the
+  map cannot contain an incorrectly typed key or value. 
  <p>A discussion of the use of dynamically typesafe views may be
- found in the documentation for the <code>checkedCollection</code>
-  method.
+  found in the documentation for the <code>checkedCollection</code>
+  method. 
  <p>The returned map will be serializable if the specified map is
- serializable.
+  serializable. 
  <p>Since <code>null</code> is considered to be a value of any reference
- type, the returned map permits insertion of null keys or values
- whenever the backing map does.
- @param m the map for which a dynamically typesafe view is to be
- returned
- @param keyType the type of key that <code>m</code> is permitted to hold
- @param valueType the type of value that <code>m</code> is permitted to hold
+  type, the returned map permits insertion of null keys or values
+  whenever the backing map does.
+ @param m the map for which a dynamically typesafe view is to be           returned
+ @param keyType the type of key that <code>m</code>  is permitted to hold
+ @param valueType the type of value that <code>m</code>  is permitted to hold
  @return a dynamically typesafe view of the specified map
  @since 1.5
  */
@@ -421,23 +417,22 @@
 /*!
  @brief Returns a dynamically typesafe view of the specified sorted set.
  Any attempt to insert an element of the wrong type will result in an
- immediate <code>ClassCastException</code>.  Assuming a sorted set
- contains no incorrectly typed elements prior to the time a
- dynamically typesafe view is generated, and that all subsequent
- access to the sorted set takes place through the view, it is
+  immediate <code>ClassCastException</code>.  Assuming a sorted set
+  contains no incorrectly typed elements prior to the time a
+  dynamically typesafe view is generated, and that all subsequent
+  access to the sorted set takes place through the view, it is 
  <i>guaranteed</i> that the sorted set cannot contain an incorrectly
- typed element.
+  typed element. 
  <p>A discussion of the use of dynamically typesafe views may be
- found in the documentation for the <code>checkedCollection</code>
-  method.
+  found in the documentation for the <code>checkedCollection</code>
+  method. 
  <p>The returned sorted set will be serializable if the specified sorted
- set is serializable.
+  set is serializable. 
  <p>Since <code>null</code> is considered to be a value of any reference
- type, the returned sorted set permits insertion of null elements
- whenever the backing sorted set does.
- @param s the sorted set for which a dynamically typesafe view is to be
- returned
- @param type the type of element that <code>s</code> is permitted to hold
+  type, the returned sorted set permits insertion of null elements
+  whenever the backing sorted set does.
+ @param s the sorted set for which a dynamically typesafe view is to be           returned
+ @param type the type of element that <code>s</code>  is permitted to hold
  @return a dynamically typesafe view of the specified sorted set
  @since 1.5
  */
@@ -445,107 +440,108 @@
                                                   withIOSClass:(IOSClass *)type;
 
 /*!
- @brief Copies all of the elements from one list into another.
- After the
- operation, the index of each copied element in the destination list
- will be identical to its index in the source list.  The destination
- list must be at least as long as the source list.  If it is longer, the
- remaining elements in the destination list are unaffected. <p>
- This method runs in linear time.
+ @brief Copies all of the elements from one list into another.After the
+  operation, the index of each copied element in the destination list
+  will be identical to its index in the source list.
+ The destination
+  list must be at least as long as the source list.  If it is longer, the
+  remaining elements in the destination list are unaffected. <p>
+  This method runs in linear time.
  @param dest The destination list.
  @param src The source list.
- @throws IndexOutOfBoundsException if the destination list is too small
- to contain the entire source List.
- @throws UnsupportedOperationException if the destination list's
- list-iterator does not support the <tt>set</tt> operation.
+ @throw IndexOutOfBoundsExceptionif the destination list is too small
+          to contain the entire source List.
+ @throw UnsupportedOperationExceptionif the destination list's
+          list-iterator does not support the <tt>set</tt> operation.
  */
 + (void)copy__WithJavaUtilList:(id<JavaUtilList>)dest
               withJavaUtilList:(id<JavaUtilList>)src OBJC_METHOD_FAMILY_NONE;
 
 /*!
  @brief Returns <code>true</code> if the two specified collections have no
- elements in common.
+  elements in common.
  <p>Care must be exercised if this method is used on collections that
- do not comply with the general contract for <code>Collection</code>.
- Implementations may elect to iterate over either collection and test
- for containment in the other collection (or to perform any equivalent
- computation).  If either collection uses a nonstandard equality test
- (as does a <code>SortedSet</code> whose ordering is not <em>compatible with
- equals</em>, or the key set of an <code>IdentityHashMap</code>), both
- collections must use the same nonstandard equality test, or the
- result of this method is undefined.
+  do not comply with the general contract for <code>Collection</code>.
+  Implementations may elect to iterate over either collection and test
+  for containment in the other collection (or to perform any equivalent
+  computation).  If either collection uses a nonstandard equality test
+  (as does a <code>SortedSet</code> whose ordering is not <em>compatible with
+  equals</em>, or the key set of an <code>IdentityHashMap</code>), both
+  collections must use the same nonstandard equality test, or the
+  result of this method is undefined. 
  <p>Care must also be exercised when using collections that have
- restrictions on the elements that they may contain. Collection
- implementations are allowed to throw exceptions for any operation
- involving elements they deem ineligible. For absolute safety the
- specified collections should contain only elements which are
- eligible elements for both collections.
+  restrictions on the elements that they may contain. Collection
+  implementations are allowed to throw exceptions for any operation
+  involving elements they deem ineligible. For absolute safety the
+  specified collections should contain only elements which are
+  eligible elements for both collections. 
  <p>Note that it is permissible to pass the same collection in both
- parameters, in which case the method will return <code>true</code> if and
- only if the collection is empty.
+  parameters, in which case the method will return <code>true</code> if and
+  only if the collection is empty.
  @param c1 a collection
  @param c2 a collection
  @return <code>true</code> if the two specified collections have no
- elements in common.
- @throws NullPointerException if either collection is <code>null</code>.
- @throws NullPointerException if one collection contains a <code>null</code>
- element and <code>null</code> is not an eligible element for the other collection.
- (<a href="Collection.html#optional-restrictions">optional</a>)
- @throws ClassCastException if one collection contains an element that is
- of a type which is ineligible for the other collection.
- (<a href="Collection.html#optional-restrictions">optional</a>)
+  elements in common.
+ @throw NullPointerExceptionif either collection is <code>null</code>.
+ @throw NullPointerExceptionif one collection contains a <code>null</code>
+  element and <code>null</code> is not an eligible element for the other collection.
+  (<a href="Collection.html#optional-restrictions">optional</a>)
+ @throw ClassCastExceptionif one collection contains an element that is
+  of a type which is ineligible for the other collection.
+  (<a href="Collection.html#optional-restrictions">optional</a>)
  @since 1.5
  */
 + (jboolean)disjointWithJavaUtilCollection:(id<JavaUtilCollection>)c1
                     withJavaUtilCollection:(id<JavaUtilCollection>)c2;
 
 /*!
- @brief Returns an enumeration that has no elements.
- More precisely,
+ @brief Returns an enumeration that has no elements.More precisely, 
  <ul>
- <li><code>hasMoreElements</code> always
- returns <code>false</code>.</li>
- <li> <code>nextElement</code> always throws
+  <li><code>hasMoreElements</code> always
+  returns <code>false</code>.
+ </li>
+  <li> <code>nextElement</code> always throws 
  <code>NoSuchElementException</code>.</li>
- </ul>
+  </ul>
+  
  <p>Implementations of this method are permitted, but not
- required, to return the same object from multiple invocations.
+  required, to return the same object from multiple invocations.
  @return an empty enumeration
  @since 1.7
  */
 + (id<JavaUtilEnumeration>)emptyEnumeration;
 
 /*!
- @brief Returns an iterator that has no elements.
- More precisely,
+ @brief Returns an iterator that has no elements.More precisely, 
  <ul>
- <li><code>hasNext</code> always returns <code>false</code>
+  <li><code>hasNext</code> always returns <code>false</code>
+ .
+ </li>
+  <li><code>next</code> always throws <code>NoSuchElementException</code>
  .</li>
- <li><code>next</code> always throws <code>NoSuchElementException</code>
+  <li><code>remove</code> always throws <code>IllegalStateException</code>
  .</li>
- <li><code>remove</code> always throws <code>IllegalStateException</code>
- .</li>
- </ul>
+  </ul>
+  
  <p>Implementations of this method are permitted, but not
- required, to return the same object from multiple invocations.
+  required, to return the same object from multiple invocations.
  @return an empty iterator
  @since 1.7
  */
 + (id<JavaUtilIterator>)emptyIterator;
 
 /*!
- @brief Returns an empty list (immutable).
- This list is serializable.
- <p>This example illustrates the type-safe way to obtain an empty list:
+ @brief Returns an empty list (immutable).This list is serializable.
+ <p>This example illustrates the type-safe way to obtain an empty list: 
  @code
 
-     List&lt;String&gt; s = Collections.emptyList();
+      List&lt;String&gt; s = Collections.emptyList(); 
   
 @endcode
- Implementation note:  Implementations of this method need not
- create a separate <tt>List</tt> object for each call.   Using this
- method is likely to have comparable cost to using the like-named
- field.  (Unlike this method, the field does not provide type safety.)
+  Implementation note:  Implementations of this method need not
+  create a separate <tt>List</tt> object for each call.   Using this
+  method is likely to have comparable cost to using the like-named
+  field.  (Unlike this method, the field does not provide type safety.)
  @return an empty immutable list
  - seealso: #EMPTY_LIST
  @since 1.5
@@ -553,43 +549,39 @@
 + (id<JavaUtilList>)emptyList;
 
 /*!
- @brief Returns a list iterator that has no elements.
- More precisely,
+ @brief Returns a list iterator that has no elements.More precisely, 
  <ul>
- <li><code>hasNext</code> and <code>hasPrevious</code>
+  <li><code>hasNext</code> and <code>hasPrevious</code>
   always return <code>false</code>
- .</li>
- <li><code>next</code> and <code>previous</code>
+ .
+ </li>
+  <li><code>next</code> and <code>previous</code>
   always throw <code>NoSuchElementException</code>.</li>
- <li><code>remove</code> and <code>set</code>
+  <li><code>remove</code> and <code>set</code>
   always throw <code>IllegalStateException</code>.</li>
- <li><code>add</code> always throws <code>UnsupportedOperationException</code>
+  <li><code>add</code> always throws <code>UnsupportedOperationException</code>
  .</li>
- <li><code>nextIndex</code> always returns
+  <li><code>nextIndex</code> always returns 
  <code>0</code>.</li>
- <li><code>previousIndex</code> always
- returns <code>-1</code>.</li>
- </ul>
+  <li><code>previousIndex</code> always
+  returns <code>-1</code>.</li>
+  </ul>
+  
  <p>Implementations of this method are permitted, but not
- required, to return the same object from multiple invocations.
+  required, to return the same object from multiple invocations.
  @return an empty list iterator
  @since 1.7
  */
 + (id<JavaUtilListIterator>)emptyListIterator;
 
 /*!
- @brief Returns an empty map (immutable).
- This map is serializable.
- <p>This example illustrates the type-safe way to obtain an empty map:
+ @brief Returns an empty map (immutable).This map is serializable.
+ <p>This example illustrates the type-safe way to obtain an empty map: 
  @code
 
-     Map&lt;String, Date&gt; s = Collections.emptyMap();
+      Map&lt;String, Date&gt; s = Collections.emptyMap(); 
   
 @endcode
-  Implementations of this method need not create a separate
- <code>Map</code> object for each call.  Using this method is likely to have
- comparable cost to using the like-named field.  (Unlike this method, the
- field does not provide type safety.)
  @return an empty map
  - seealso: #EMPTY_MAP
  @since 1.5
@@ -597,19 +589,14 @@
 + (id<JavaUtilMap>)emptyMap;
 
 /*!
- @brief Returns an empty set (immutable).
- This set is serializable.
- Unlike the like-named field, this method is parameterized.
- <p>This example illustrates the type-safe way to obtain an empty set:
+ @brief Returns an empty set (immutable).This set is serializable.
+ Unlike the like-named field, this method is parameterized. 
+ <p>This example illustrates the type-safe way to obtain an empty set: 
  @code
 
-     Set&lt;String&gt; s = Collections.emptySet();
+      Set&lt;String&gt; s = Collections.emptySet(); 
   
 @endcode
-  Implementations of this method need not create a separate
- <code>Set</code> object for each call.  Using this method is likely to have
- comparable cost to using the like-named field.  (Unlike this method, the
- field does not provide type safety.)
  @return the empty set
  - seealso: #EMPTY_SET
  @since 1.5
@@ -617,10 +604,9 @@
 + (id<JavaUtilSet>)emptySet;
 
 /*!
- @brief Returns an enumeration over the specified collection.
- This provides
- interoperability with legacy APIs that require an enumeration
- as input.
+ @brief Returns an enumeration over the specified collection.This provides
+  interoperability with legacy APIs that require an enumeration
+  as input.
  @param c the collection for which an enumeration is to be returned.
  @return an enumeration over the specified collection.
  - seealso: Enumeration
@@ -629,28 +615,28 @@
 
 /*!
  @brief Replaces all of the elements of the specified list with the specified
- element.
+  element.
  <p>
- This method runs in linear time.
+  This method runs in linear time.
  @param list the list to be filled with the specified element.
  @param obj The element with which to fill the specified list.
- @throws UnsupportedOperationException if the specified list or its
- list-iterator does not support the <tt>set</tt> operation.
+ @throw UnsupportedOperationExceptionif the specified list or its
+          list-iterator does not support the <tt>set</tt> operation.
  */
 + (void)fillWithJavaUtilList:(id<JavaUtilList>)list
                       withId:(id)obj;
 
 /*!
  @brief Returns the number of elements in the specified collection equal to the
- specified object.
- More formally, returns the number of elements
- <tt>e</tt> in the collection such that
- <tt>(o == null ? e == null : o.equals(e))</tt>.
- @param c the collection in which to determine the frequency
- of <tt>o</tt>
+  specified object.More formally, returns the number of elements 
+ <tt>e</tt> in the collection such that 
+ <tt>(o == null ?
+ e == null : o.equals(e))</tt>.
+ @param c the collection in which to determine the frequency      of 
+  <tt> o </tt>
  @param o the object whose frequency is to be determined
  @return the number of elements in <code>c</code> equal to <code>o</code>
- @throws NullPointerException if <tt>c</tt> is null
+ @throw NullPointerExceptionif <tt>c</tt> is null
  @since 1.5
  */
 + (jint)frequencyWithJavaUtilCollection:(id<JavaUtilCollection>)c
@@ -658,21 +644,23 @@
 
 /*!
  @brief Returns the starting position of the first occurrence of the specified
- target list within the specified source list, or -1 if there is no
- such occurrence.
- More formally, returns the lowest index <tt>i</tt>
- such that <code>source.subList(i, i+target.size()).equals(target)</code>,
- or -1 if there is no such index.  (Returns -1 if
+  target list within the specified source list, or -1 if there is no
+  such occurrence.More formally, returns the lowest index <tt>i</tt>
+  such that <code>source.subList(i, i+target.size()).equals(target)</code>,
+  or -1 if there is no such index.
+ (Returns -1 if 
  <code>target.size() > source.size()</code>)
+  
  <p>This implementation uses the "brute force" technique of scanning
- over the source list, looking for a match with the target at each
- location in turn.
- @param source the list in which to search for the first occurrence
- of <tt>target</tt>.
- @param target the list to search for as a subList of <tt>source</tt>.
+  over the source list, looking for a match with the target at each
+  location in turn.
+ @param source the list in which to search for the first occurrence         of 
+  <tt> target </tt> .
+ @param target the list to search for as a subList of  <tt> source </tt>
+  .
  @return the starting position of the first occurrence of the specified
- target list within the specified source list, or -1 if there
- is no such occurrence.
+          target list within the specified source list, or -1 if there
+          is no such occurrence.
  @since 1.4
  */
 + (jint)indexOfSubListWithJavaUtilList:(id<JavaUtilList>)source
@@ -680,21 +668,23 @@
 
 /*!
  @brief Returns the starting position of the last occurrence of the specified
- target list within the specified source list, or -1 if there is no such
- occurrence.
- More formally, returns the highest index <tt>i</tt>
- such that <code>source.subList(i, i+target.size()).equals(target)</code>,
- or -1 if there is no such index.  (Returns -1 if
+  target list within the specified source list, or -1 if there is no such
+  occurrence.More formally, returns the highest index <tt>i</tt>
+  such that <code>source.subList(i, i+target.size()).equals(target)</code>,
+  or -1 if there is no such index.
+ (Returns -1 if 
  <code>target.size() > source.size()</code>)
+  
  <p>This implementation uses the "brute force" technique of iterating
- over the source list, looking for a match with the target at each
- location in turn.
- @param source the list in which to search for the last occurrence
- of <tt>target</tt>.
- @param target the list to search for as a subList of <tt>source</tt>.
+  over the source list, looking for a match with the target at each
+  location in turn.
+ @param source the list in which to search for the last occurrence         of 
+  <tt> target </tt> .
+ @param target the list to search for as a subList of  <tt> source </tt>
+  .
  @return the starting position of the last occurrence of the specified
- target list within the specified source list, or -1 if there
- is no such occurrence.
+          target list within the specified source list, or -1 if there
+          is no such occurrence.
  @since 1.4
  */
 + (jint)lastIndexOfSubListWithJavaUtilList:(id<JavaUtilList>)source
@@ -702,15 +692,13 @@
 
 /*!
  @brief Returns an array list containing the elements returned by the
- specified enumeration in the order they are returned by the
- enumeration.
- This method provides interoperability between
- legacy APIs that return enumerations and new APIs that require
- collections.
- @param e enumeration providing elements for the returned
- array list
+  specified enumeration in the order they are returned by the
+  enumeration.This method provides interoperability between
+  legacy APIs that return enumerations and new APIs that require
+  collections.
+ @param e enumeration providing elements for the returned           array list
  @return an array list containing the elements returned
- by the specified enumeration.
+          by the specified enumeration.
  @since 1.4
  - seealso: Enumeration
  - seealso: ArrayList
@@ -718,92 +706,90 @@
 + (JavaUtilArrayList *)listWithJavaUtilEnumeration:(id<JavaUtilEnumeration>)e;
 
 /*!
- @brief Returns the maximum element of the given collection, according to the
- <i>natural ordering</i> of its elements.
- All elements in the
- collection must implement the <tt>Comparable</tt> interface.
+ @brief Returns the maximum element of the given collection, according to the 
+ <i>natural ordering</i> of its elements.All elements in the
+  collection must implement the <tt>Comparable</tt> interface.
  Furthermore, all elements in the collection must be <i>mutually
- comparable</i> (that is, <tt>e1.compareTo(e2)</tt> must not throw a
- <tt>ClassCastException</tt> for any elements <tt>e1</tt> and
+  comparable</i> (that is, <tt>e1.compareTo(e2)</tt> must not throw a 
+ <tt>ClassCastException</tt> for any elements <tt>e1</tt> and 
  <tt>e2</tt> in the collection).<p>
- This method iterates over the entire collection, hence it requires
- time proportional to the size of the collection.
+  This method iterates over the entire collection, hence it requires
+  time proportional to the size of the collection.
  @param coll the collection whose maximum element is to be determined.
  @return the maximum element of the given collection, according
- to the <i>natural ordering</i> of its elements.
- @throws ClassCastException if the collection contains elements that are
- not <i>mutually comparable</i> (for example, strings and
- integers).
- @throws NoSuchElementException if the collection is empty.
+          to the <i>natural ordering</i> of its elements.
+ @throw ClassCastExceptionif the collection contains elements that are
+          not <i>mutually comparable</i> (for example, strings and
+          integers).
+ @throw NoSuchElementExceptionif the collection is empty.
  - seealso: Comparable
  */
 + (id<JavaLangComparable>)maxWithJavaUtilCollection:(id<JavaUtilCollection>)coll;
 
 /*!
  @brief Returns the maximum element of the given collection, according to the
- order induced by the specified comparator.
- All elements in the
- collection must be <i>mutually comparable</i> by the specified
- comparator (that is, <tt>comp.compare(e1, e2)</tt> must not throw a
- <tt>ClassCastException</tt> for any elements <tt>e1</tt> and
- <tt>e2</tt> in the collection).<p>
- This method iterates over the entire collection, hence it requires
- time proportional to the size of the collection.
+  order induced by the specified comparator.All elements in the
+  collection must be <i>mutually comparable</i> by the specified
+  comparator (that is, <tt>comp.compare(e1, e2)</tt> must not throw a 
+ <tt>ClassCastException</tt> for any elements <tt>e1</tt> and 
+ <tt>e2</tt> in the collection).
+ <p>
+  This method iterates over the entire collection, hence it requires
+  time proportional to the size of the collection.
  @param coll the collection whose maximum element is to be determined.
- @param comp the comparator with which to determine the maximum element.
- A <tt>null</tt> value indicates that the elements' <i>natural
- ordering</i> should be used.
+ @param comp the comparator with which to determine the maximum element.          A 
+  <tt> null </tt>  value indicates that the elements'  <i> natural         ordering
+  </i>  should be used.
  @return the maximum element of the given collection, according
- to the specified comparator.
- @throws ClassCastException if the collection contains elements that are
- not <i>mutually comparable</i> using the specified comparator.
- @throws NoSuchElementException if the collection is empty.
+          to the specified comparator.
+ @throw ClassCastExceptionif the collection contains elements that are
+          not <i>mutually comparable</i> using the specified comparator.
+ @throw NoSuchElementExceptionif the collection is empty.
  - seealso: Comparable
  */
 + (id)maxWithJavaUtilCollection:(id<JavaUtilCollection>)coll
          withJavaUtilComparator:(id<JavaUtilComparator>)comp;
 
 /*!
- @brief Returns the minimum element of the given collection, according to the
- <i>natural ordering</i> of its elements.
- All elements in the
- collection must implement the <tt>Comparable</tt> interface.
+ @brief Returns the minimum element of the given collection, according to the 
+ <i>natural ordering</i> of its elements.All elements in the
+  collection must implement the <tt>Comparable</tt> interface.
  Furthermore, all elements in the collection must be <i>mutually
- comparable</i> (that is, <tt>e1.compareTo(e2)</tt> must not throw a
- <tt>ClassCastException</tt> for any elements <tt>e1</tt> and
+  comparable</i> (that is, <tt>e1.compareTo(e2)</tt> must not throw a 
+ <tt>ClassCastException</tt> for any elements <tt>e1</tt> and 
  <tt>e2</tt> in the collection).<p>
- This method iterates over the entire collection, hence it requires
- time proportional to the size of the collection.
+  This method iterates over the entire collection, hence it requires
+  time proportional to the size of the collection.
  @param coll the collection whose minimum element is to be determined.
  @return the minimum element of the given collection, according
- to the <i>natural ordering</i> of its elements.
- @throws ClassCastException if the collection contains elements that are
- not <i>mutually comparable</i> (for example, strings and
- integers).
- @throws NoSuchElementException if the collection is empty.
+          to the <i>natural ordering</i> of its elements.
+ @throw ClassCastExceptionif the collection contains elements that are
+          not <i>mutually comparable</i> (for example, strings and
+          integers).
+ @throw NoSuchElementExceptionif the collection is empty.
  - seealso: Comparable
  */
 + (id<JavaLangComparable>)minWithJavaUtilCollection:(id<JavaUtilCollection>)coll;
 
 /*!
  @brief Returns the minimum element of the given collection, according to the
- order induced by the specified comparator.
- All elements in the
- collection must be <i>mutually comparable</i> by the specified
- comparator (that is, <tt>comp.compare(e1, e2)</tt> must not throw a
- <tt>ClassCastException</tt> for any elements <tt>e1</tt> and
- <tt>e2</tt> in the collection).<p>
- This method iterates over the entire collection, hence it requires
- time proportional to the size of the collection.
+  order induced by the specified comparator.All elements in the
+  collection must be <i>mutually comparable</i> by the specified
+  comparator (that is, <tt>comp.compare(e1, e2)</tt> must not throw a 
+ <tt>ClassCastException</tt> for any elements <tt>e1</tt> and 
+ <tt>e2</tt> in the collection).
+ <p>
+  This method iterates over the entire collection, hence it requires
+  time proportional to the size of the collection.
  @param coll the collection whose minimum element is to be determined.
- @param comp the comparator with which to determine the minimum element.
- A <tt>null</tt> value indicates that the elements' <i>natural
- ordering</i> should be used.
+ @param comp the comparator with which to determine the minimum element.          A 
+  <tt> null </tt>  value indicates that the elements'  <i> natural          ordering
+  </i>  should be used.
  @return the minimum element of the given collection, according
- to the specified comparator.
- @throws ClassCastException if the collection contains elements that are
- not <i>mutually comparable</i> using the specified comparator.
- @throws NoSuchElementException if the collection is empty.
+          to the specified comparator.
+ @throw ClassCastExceptionif the collection contains elements that are
+          not <i>mutually comparable</i> using the specified comparator.
+ @throw NoSuchElementExceptionif the collection is empty.
  - seealso: Comparable
  */
 + (id)minWithJavaUtilCollection:(id<JavaUtilCollection>)coll
@@ -811,49 +797,50 @@
 
 /*!
  @brief Returns an immutable list consisting of <tt>n</tt> copies of the
- specified object.
- The newly allocated data object is tiny (it contains
- a single reference to the data object).  This method is useful in
- combination with the <tt>List.addAll</tt> method to grow lists.
- The returned list is serializable.
+  specified object.The newly allocated data object is tiny (it contains
+  a single reference to the data object).
+ This method is useful in
+  combination with the <tt>List.addAll</tt> method to grow lists.
+  The returned list is serializable.
  @param n the number of elements in the returned list.
  @param o the element to appear repeatedly in the returned list.
  @return an immutable list consisting of <tt>n</tt> copies of the
- specified object.
- @throws IllegalArgumentException if <code>n < 0</code>
+          specified object.
+ @throw IllegalArgumentExceptionif <code>n < 0</code>
  - seealso: List#addAll(Collection)
- - seealso: List#addAll(int,Collection)
+ - seealso: List#addAll(int, Collection)
  */
 + (id<JavaUtilList>)nCopiesWithInt:(jint)n
                             withId:(id)o;
 
 /*!
- @brief Returns a set backed by the specified map.
- The resulting set displays
- the same ordering, concurrency, and performance characteristics as the
- backing map.  In essence, this factory method provides a <code>Set</code>
- implementation corresponding to any <code>Map</code> implementation.  There
- is no need to use this method on a <code>Map</code> implementation that
- already has a corresponding <code>Set</code> implementation (such as <code>HashMap</code>
+ @brief Returns a set backed by the specified map.The resulting set displays
+  the same ordering, concurrency, and performance characteristics as the
+  backing map.
+ In essence, this factory method provides a <code>Set</code>
+  implementation corresponding to any <code>Map</code> implementation.  There
+  is no need to use this method on a <code>Map</code> implementation that
+  already has a corresponding <code>Set</code> implementation (such as <code>HashMap</code>
   or <code>TreeMap</code>).
+  
  <p>Each method invocation on the set returned by this method results in
- exactly one method invocation on the backing map or its <tt>keySet</tt>
- view, with one exception.  The <tt>addAll</tt> method is implemented
- as a sequence of <tt>put</tt> invocations on the backing map.
+  exactly one method invocation on the backing map or its <tt>keySet</tt>
+  view, with one exception.  The <tt>addAll</tt> method is implemented
+  as a sequence of <tt>put</tt> invocations on the backing map. 
  <p>The specified map must be empty at the time this method is invoked,
- and should not be accessed directly after this method returns.  These
- conditions are ensured if the map is created empty, passed directly
- to this method, and no reference to the map is retained, as illustrated
- in the following code fragment:
+  and should not be accessed directly after this method returns.  These
+  conditions are ensured if the map is created empty, passed directly
+  to this method, and no reference to the map is retained, as illustrated
+  in the following code fragment: 
  @code
 
-    Set&lt;Object&gt; weakHashSet = Collections.newSetFromMap(
-        new WeakHashMap&lt;Object, Boolean&gt;());
-  
+     Set&lt;Object&gt; weakHashSet = Collections.newSetFromMap(
+         new WeakHashMap&lt;Object, Boolean&gt;());
+   
 @endcode
  @param map the backing map
  @return the set backed by the map
- @throws IllegalArgumentException if <tt>map</tt> is not empty
+ @throw IllegalArgumentExceptionif <tt>map</tt> is not empty
  @since 1.6
  */
 + (id<JavaUtilSet>)newSetFromMapWithJavaUtilMap:(id<JavaUtilMap>)map OBJC_METHOD_FAMILY_NONE;
@@ -861,18 +848,18 @@
 /*!
  @brief Replaces all occurrences of one specified value in a list with another.
  More formally, replaces with <tt>newVal</tt> each element <tt>e</tt>
- in <tt>list</tt> such that
+  in <tt>list</tt> such that 
  <tt>(oldVal==null ? e==null : oldVal.equals(e))</tt>.
- (This method has no effect on the size of the list.)
+  (This method has no effect on the size of the list.)
  @param list the list in which replacement is to occur.
  @param oldVal the old value to be replaced.
- @param newVal the new value with which <tt>oldVal</tt> is to be
- replaced.
+ @param newVal the new value with which  <tt> oldVal </tt>  is to be
+          replaced.
  @return <tt>true</tt> if <tt>list</tt> contained one or more elements
- <tt>e</tt> such that
- <tt>(oldVal==null ?  e==null : oldVal.equals(e))</tt>.
- @throws UnsupportedOperationException if the specified list or
- its list-iterator does not support the <tt>set</tt> operation.
+          <tt>e</tt> such that
+          <tt>(oldVal==null ?  e==null : oldVal.equals(e))</tt>.
+ @throw UnsupportedOperationExceptionif the specified list or
+          its list-iterator does not support the <tt>set</tt> operation.
  @since 1.4
  */
 + (jboolean)replaceAllWithJavaUtilList:(id<JavaUtilList>)list
@@ -882,49 +869,47 @@
 /*!
  @brief Reverses the order of the elements in the specified list.
  <p>
- This method runs in linear time.
+  This method runs in linear time.
  @param list the list whose elements are to be reversed.
- @throws UnsupportedOperationException if the specified list or
- its list-iterator does not support the <tt>set</tt> operation.
+ @throw UnsupportedOperationExceptionif the specified list or
+          its list-iterator does not support the <tt>set</tt> operation.
  */
 + (void)reverseWithJavaUtilList:(id<JavaUtilList>)list;
 
 /*!
  @brief Returns a comparator that imposes the reverse of the <em>natural
- ordering</em> on a collection of objects that implement the
+  ordering</em> on a collection of objects that implement the 
  <code>Comparable</code> interface.
  (The natural ordering is the ordering
- imposed by the objects' own <code>compareTo</code> method.)  This enables a
- simple idiom for sorting (or maintaining) collections (or arrays) of
- objects that implement the <code>Comparable</code> interface in
- reverse-natural-order.  For example, suppose <code>a</code> is an array of
- strings. Then: 
-@code
+  imposed by the objects' own <code>compareTo</code> method.)  This enables a
+  simple idiom for sorting (or maintaining) collections (or arrays) of
+  objects that implement the <code>Comparable</code> interface in
+  reverse-natural-order.  For example, suppose <code>a</code> is an array of
+  strings. Then: @code
 
-          Arrays.sort(a, Collections.reverseOrder());
+           Arrays.sort(a, Collections.reverseOrder()); 
   
 @endcode sorts the array in reverse-lexicographic (alphabetical) order.<p>
- The returned comparator is serializable.
+  The returned comparator is serializable.
  @return A comparator that imposes the reverse of the <i>natural
- ordering</i> on a collection of objects that implement
- the <tt>Comparable</tt> interface.
+          ordering</i> on a collection of objects that implement
+          the <tt>Comparable</tt> interface.
  - seealso: Comparable
  */
 + (id<JavaUtilComparator>)reverseOrder;
 
 /*!
  @brief Returns a comparator that imposes the reverse ordering of the specified
- comparator.
- If the specified comparator is <code>null</code>, this method is
- equivalent to <code>reverseOrder()</code> (in other words, it returns a
- comparator that imposes the reverse of the <em>natural ordering</em> on
- a collection of objects that implement the Comparable interface).
+  comparator.If the specified comparator is <code>null</code>, this method is
+  equivalent to <code>reverseOrder()</code> (in other words, it returns a
+  comparator that imposes the reverse of the <em>natural ordering</em> on
+  a collection of objects that implement the Comparable interface).
  <p>The returned comparator is serializable (assuming the specified
- comparator is also serializable or <code>null</code>).
- @param cmp a comparator who's ordering is to be reversed by the returned
- comparator or <code>null</code>
+  comparator is also serializable or <code>null</code>).
+ @param cmp a comparator who's ordering is to be reversed by the returned  comparator or 
+ <code>null</code>
  @return A comparator that imposes the reverse ordering of the
- specified comparator.
+          specified comparator.
  @since 1.5
  */
 + (id<JavaUtilComparator>)reverseOrderWithJavaUtilComparator:(id<JavaUtilComparator>)cmp;
@@ -932,55 +917,57 @@
 /*!
  @brief Rotates the elements in the specified list by the specified distance.
  After calling this method, the element at index <tt>i</tt> will be
- the element previously at index <tt>(i - distance)</tt> mod
+  the element previously at index <tt>(i - distance)</tt> mod 
  <tt>list.size()</tt>, for all values of <tt>i</tt> between <tt>0</tt>
- and <tt>list.size()-1</tt>, inclusive.  (This method has no effect on
- the size of the list.)
+  and <tt>list.size()-1</tt>, inclusive.  (This method has no effect on
+  the size of the list.) 
  <p>For example, suppose <tt>list</tt> comprises<tt> [t, a, n, k, s]</tt>.
- After invoking <tt>Collections.rotate(list, 1)</tt> (or
- <tt>Collections.rotate(list, -4)</tt>), <tt>list</tt> will comprise
+  After invoking <tt>Collections.rotate(list, 1)</tt> (or 
+ <tt>Collections.rotate(list, -4)</tt>), <tt>list</tt> will comprise 
  <tt>[s, t, a, n, k]</tt>.
+  
  <p>Note that this method can usefully be applied to sublists to
- move one or more elements within a list while preserving the
- order of the remaining elements.  For example, the following idiom
- moves the element at index <tt>j</tt> forward to position
+  move one or more elements within a list while preserving the
+  order of the remaining elements.  For example, the following idiom
+  moves the element at index <tt>j</tt> forward to position 
  <tt>k</tt> (which must be greater than or equal to <tt>j</tt>):
- @code
+  @code
 
-     Collections.rotate(list.subList(j, k+1), -1);
+      Collections.rotate(list.subList(j, k+1), -1); 
   
 @endcode
- To make this concrete, suppose <tt>list</tt> comprises
+  To make this concrete, suppose <tt>list</tt> comprises 
  <tt>[a, b, c, d, e]</tt>.  To move the element at index <tt>1</tt>
- (<tt>b</tt>) forward two positions, perform the following invocation:
+  (<tt>b</tt>) forward two positions, perform the following invocation: 
  @code
 
-     Collections.rotate(l.subList(1, 4), -1);
+      Collections.rotate(l.subList(1, 4), -1); 
   
 @endcode
- The resulting list is <tt>[a, c, d, b, e]</tt>.
+  The resulting list is <tt>[a, c, d, b, e]</tt>.
+  
  <p>To move more than one element forward, increase the absolute value
- of the rotation distance.  To move elements backward, use a positive
- shift distance.
+  of the rotation distance.  To move elements backward, use a positive
+  shift distance. 
  <p>If the specified list is small or implements the <code>RandomAccess</code>
   interface, this implementation exchanges the first
- element into the location it should go, and then repeatedly exchanges
- the displaced element into the location it should go until a displaced
- element is swapped into the first element.  If necessary, the process
- is repeated on the second and successive elements, until the rotation
- is complete.  If the specified list is large and doesn't implement the
+  element into the location it should go, and then repeatedly exchanges
+  the displaced element into the location it should go until a displaced
+  element is swapped into the first element.  If necessary, the process
+  is repeated on the second and successive elements, until the rotation
+  is complete.  If the specified list is large and doesn't implement the 
  <tt>RandomAccess</tt> interface, this implementation breaks the
- list into two sublist views around index <tt>-distance mod size</tt>.
- Then the <code>reverse(List)</code> method is invoked on each sublist view,
- and finally it is invoked on the entire list.  For a more complete
- description of both algorithms, see Section 2.3 of Jon Bentley's
+  list into two sublist views around index <tt>-distance mod size</tt>.
+  Then the <code>reverse(List)</code> method is invoked on each sublist view,
+  and finally it is invoked on the entire list.  For a more complete
+  description of both algorithms, see Section 2.3 of Jon Bentley's 
  <i>Programming Pearls</i> (Addison-Wesley, 1986).
  @param list the list to be rotated.
- @param distance the distance to rotate the list.  There are no
- constraints on this value; it may be zero, negative, or
- greater than <tt>list.size()</tt>.
- @throws UnsupportedOperationException if the specified list or
- its list-iterator does not support the <tt>set</tt> operation.
+ @param distance the distance to rotate the list.  There are no         constraints on this value; it may be zero, negative, or
+          greater than 
+  <tt> list.size() </tt> .
+ @throw UnsupportedOperationExceptionif the specified list or
+          its list-iterator does not support the <tt>set</tt> operation.
  @since 1.4
  */
 + (void)rotateWithJavaUtilList:(id<JavaUtilList>)list
@@ -988,51 +975,50 @@
 
 /*!
  @brief Randomly permutes the specified list using a default source of
- randomness.
- All permutations occur with approximately equal
- likelihood.
+  randomness.All permutations occur with approximately equal
+  likelihood.
  <p>The hedge "approximately" is used in the foregoing description because
- default source of randomness is only approximately an unbiased source
- of independently chosen bits. If it were a perfect source of randomly
- chosen bits, then the algorithm would choose permutations with perfect
- uniformity.
+  default source of randomness is only approximately an unbiased source
+  of independently chosen bits. If it were a perfect source of randomly
+  chosen bits, then the algorithm would choose permutations with perfect
+  uniformity. 
  <p>This implementation traverses the list backwards, from the last
- element up to the second, repeatedly swapping a randomly selected element
- into the "current position".  Elements are randomly selected from the
- portion of the list that runs from the first element to the current
- position, inclusive.
+  element up to the second, repeatedly swapping a randomly selected element
+  into the "current position".  Elements are randomly selected from the
+  portion of the list that runs from the first element to the current
+  position, inclusive. 
  <p>This method runs in linear time.  If the specified list does not
- implement the <code>RandomAccess</code> interface and is large, this
- implementation dumps the specified list into an array before shuffling
- it, and dumps the shuffled array back into the list.  This avoids the
- quadratic behavior that would result from shuffling a "sequential
- access" list in place.
+  implement the <code>RandomAccess</code> interface and is large, this
+  implementation dumps the specified list into an array before shuffling
+  it, and dumps the shuffled array back into the list.  This avoids the
+  quadratic behavior that would result from shuffling a "sequential
+  access" list in place.
  @param list the list to be shuffled.
- @throws UnsupportedOperationException if the specified list or
- its list-iterator does not support the <tt>set</tt> operation.
+ @throw UnsupportedOperationExceptionif the specified list or
+          its list-iterator does not support the <tt>set</tt> operation.
  */
 + (void)shuffleWithJavaUtilList:(id<JavaUtilList>)list;
 
 /*!
  @brief Randomly permute the specified list using the specified source of
- randomness.
- All permutations occur with equal likelihood
- assuming that the source of randomness is fair.<p>
- This implementation traverses the list backwards, from the last element
- up to the second, repeatedly swapping a randomly selected element into
- the "current position".  Elements are randomly selected from the
- portion of the list that runs from the first element to the current
- position, inclusive.<p>
- This method runs in linear time.  If the specified list does not
- implement the <code>RandomAccess</code> interface and is large, this
- implementation dumps the specified list into an array before shuffling
- it, and dumps the shuffled array back into the list.  This avoids the
- quadratic behavior that would result from shuffling a "sequential
- access" list in place.
+  randomness.All permutations occur with equal likelihood
+  assuming that the source of randomness is fair.
+ <p>
+  This implementation traverses the list backwards, from the last element
+  up to the second, repeatedly swapping a randomly selected element into
+  the "current position".  Elements are randomly selected from the
+  portion of the list that runs from the first element to the current
+  position, inclusive.<p>
+  This method runs in linear time.  If the specified list does not
+  implement the <code>RandomAccess</code> interface and is large, this
+  implementation dumps the specified list into an array before shuffling
+  it, and dumps the shuffled array back into the list.  This avoids the
+  quadratic behavior that would result from shuffling a "sequential
+  access" list in place.
  @param list the list to be shuffled.
  @param rnd the source of randomness to use to shuffle the list.
- @throws UnsupportedOperationException if the specified list or its
- list-iterator does not support the <tt>set</tt> operation.
+ @throw UnsupportedOperationExceptionif the specified list or its
+          list-iterator does not support the <tt>set</tt> operation.
  */
 + (void)shuffleWithJavaUtilList:(id<JavaUtilList>)list
              withJavaUtilRandom:(JavaUtilRandom *)rnd;
@@ -1056,109 +1042,108 @@
 
 /*!
  @brief Returns an immutable map, mapping only the specified key to the
- specified value.
- The returned map is serializable.
+  specified value.The returned map is serializable.
  @param key the sole key to be stored in the returned map.
- @param value the value to which the returned map maps <tt>key</tt>.
+ @param value the value to which the returned map maps  <tt> key </tt>
+  .
  @return an immutable map containing only the specified key-value
- mapping.
+          mapping.
  @since 1.3
  */
 + (id<JavaUtilMap>)singletonMapWithId:(id)key
                                withId:(id)value;
 
 /*!
- @brief Sorts the specified list into ascending order, according to the
- natural ordering of its elements.
+ @brief Sorts the specified list into ascending order, according to the 
+ ordering of its elements.
  All elements in the list must implement the <code>Comparable</code>
- interface.  Furthermore, all elements in the list must be
+  interface.  Furthermore, all elements in the list must be 
  <i>mutually comparable</i> (that is, <code>e1.compareTo(e2)</code>
- must not throw a <code>ClassCastException</code> for any elements
- <code>e1</code> and <code>e2</code> in the list).
+  must not throw a <code>ClassCastException</code> for any elements 
+ <code>e1</code> and <code>e2</code> in the list). 
  <p>This sort is guaranteed to be <i>stable</i>:  equal elements will
- not be reordered as a result of the sort.
- <p>The specified list must be modifiable, but need not be resizable.
+  not be reordered as a result of the sort. 
+ <p>The specified list must be modifiable, but need not be resizable. 
  <p>Implementation note: This implementation is a stable, adaptive,
- iterative mergesort that requires far fewer than n lg(n) comparisons
- when the input array is partially sorted, while offering the
- performance of a traditional mergesort when the input array is
- randomly ordered.  If the input array is nearly sorted, the
- implementation requires approximately n comparisons.  Temporary
- storage requirements vary from a small constant for nearly sorted
- input arrays to n/2 object references for randomly ordered input
- arrays.
+  iterative mergesort that requires far fewer than n lg(n) comparisons
+  when the input array is partially sorted, while offering the
+  performance of a traditional mergesort when the input array is
+  randomly ordered.  If the input array is nearly sorted, the
+  implementation requires approximately n comparisons.  Temporary
+  storage requirements vary from a small constant for nearly sorted
+  input arrays to n/2 object references for randomly ordered input
+  arrays. 
  <p>The implementation takes equal advantage of ascending and
- descending order in its input array, and can take advantage of
- ascending and descending order in different parts of the same
- input array.  It is well-suited to merging two or more sorted arrays:
- simply concatenate the arrays and sort the resulting array.
+  descending order in its input array, and can take advantage of
+  ascending and descending order in different parts of the same
+  input array.  It is well-suited to merging two or more sorted arrays:
+  simply concatenate the arrays and sort the resulting array. 
  <p>The implementation was adapted from Tim Peters's list sort for Python
- (<a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt">
- TimSort</a>).  It uses techniques from Peter McIlroy's "Optimistic
- Sorting and Information Theoretic Complexity", in Proceedings of the
- Fourth Annual ACM-SIAM Symposium on Discrete Algorithms, pp 467-474,
- January 1993.
+  (<a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt">
+  TimSort</a>).  It uses techniques from Peter McIlroy's "Optimistic
+  Sorting and Information Theoretic Complexity", in Proceedings of the
+  Fourth Annual ACM-SIAM Symposium on Discrete Algorithms, pp 467-474,
+  January 1993. 
  <p>This implementation dumps the specified list into an array, sorts
- the array, and iterates over the list resetting each element
- from the corresponding position in the array.  This avoids the
- n<sup>2</sup> log(n) performance that would result from attempting
- to sort a linked list in place.
+  the array, and iterates over the list resetting each element
+  from the corresponding position in the array.  This avoids the
+  n<sup>2</sup> log(n) performance that would result from attempting
+  to sort a linked list in place.
  @param list the list to be sorted.
- @throws ClassCastException if the list contains elements that are not
- <i>mutually comparable</i> (for example, strings and integers).
- @throws UnsupportedOperationException if the specified list's
- list-iterator does not support the <code>set</code> operation.
- @throws IllegalArgumentException (optional) if the implementation
- detects that the natural ordering of the list elements is
- found to violate the <code>Comparable</code> contract
+ @throw ClassCastExceptionif the list contains elements that are not
+          <i>mutually comparable</i> (for example, strings and integers).
+ @throw UnsupportedOperationExceptionif the specified list's
+          list-iterator does not support the <code>set</code> operation.
+ @throw IllegalArgumentException(optional) if the implementation
+          detects that the natural ordering of the list elements is
+          found to violate the <code>Comparable</code> contract
  */
 + (void)sortWithJavaUtilList:(id<JavaUtilList>)list;
 
 /*!
  @brief Sorts the specified list according to the order induced by the
- specified comparator.
- All elements in the list must be <i>mutually
- comparable</i> using the specified comparator (that is,
+  specified comparator.All elements in the list must be <i>mutually
+  comparable</i> using the specified comparator (that is, 
  <code>c.compare(e1, e2)</code> must not throw a <code>ClassCastException</code>
- for any elements <code>e1</code> and <code>e2</code> in the list).
+  for any elements <code>e1</code> and <code>e2</code> in the list).
  <p>This sort is guaranteed to be <i>stable</i>:  equal elements will
- not be reordered as a result of the sort.
- <p>The specified list must be modifiable, but need not be resizable.
+  not be reordered as a result of the sort. 
+ <p>The specified list must be modifiable, but need not be resizable. 
  <p>Implementation note: This implementation is a stable, adaptive,
- iterative mergesort that requires far fewer than n lg(n) comparisons
- when the input array is partially sorted, while offering the
- performance of a traditional mergesort when the input array is
- randomly ordered.  If the input array is nearly sorted, the
- implementation requires approximately n comparisons.  Temporary
- storage requirements vary from a small constant for nearly sorted
- input arrays to n/2 object references for randomly ordered input
- arrays.
+  iterative mergesort that requires far fewer than n lg(n) comparisons
+  when the input array is partially sorted, while offering the
+  performance of a traditional mergesort when the input array is
+  randomly ordered.  If the input array is nearly sorted, the
+  implementation requires approximately n comparisons.  Temporary
+  storage requirements vary from a small constant for nearly sorted
+  input arrays to n/2 object references for randomly ordered input
+  arrays. 
  <p>The implementation takes equal advantage of ascending and
- descending order in its input array, and can take advantage of
- ascending and descending order in different parts of the same
- input array.  It is well-suited to merging two or more sorted arrays:
- simply concatenate the arrays and sort the resulting array.
+  descending order in its input array, and can take advantage of
+  ascending and descending order in different parts of the same
+  input array.  It is well-suited to merging two or more sorted arrays:
+  simply concatenate the arrays and sort the resulting array. 
  <p>The implementation was adapted from Tim Peters's list sort for Python
- (<a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt">
- TimSort</a>).  It uses techniques from Peter McIlroy's "Optimistic
- Sorting and Information Theoretic Complexity", in Proceedings of the
- Fourth Annual ACM-SIAM Symposium on Discrete Algorithms, pp 467-474,
- January 1993.
+  (<a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt">
+  TimSort</a>).  It uses techniques from Peter McIlroy's "Optimistic
+  Sorting and Information Theoretic Complexity", in Proceedings of the
+  Fourth Annual ACM-SIAM Symposium on Discrete Algorithms, pp 467-474,
+  January 1993. 
  <p>This implementation dumps the specified list into an array, sorts
- the array, and iterates over the list resetting each element
- from the corresponding position in the array.  This avoids the
- n<sup>2</sup> log(n) performance that would result from attempting
- to sort a linked list in place.
+  the array, and iterates over the list resetting each element
+  from the corresponding position in the array.  This avoids the
+  n<sup>2</sup> log(n) performance that would result from attempting
+  to sort a linked list in place.
  @param list the list to be sorted.
- @param c the comparator to determine the order of the list.  A
- <code>null</code> value indicates that the elements' <i>natural
- ordering</i> should be used.
- @throws ClassCastException if the list contains elements that are not
- <i>mutually comparable</i> using the specified comparator.
- @throws UnsupportedOperationException if the specified list's
- list-iterator does not support the <code>set</code> operation.
- @throws IllegalArgumentException (optional) if the comparator is
- found to violate the <code>Comparator</code> contract
+ @param c the comparator to determine the order of the list.  A         
+ <code>null</code>  value indicates that the elements'  <i> natural         ordering
+  </i>  should be used.
+ @throw ClassCastExceptionif the list contains elements that are not
+          <i>mutually comparable</i> using the specified comparator.
+ @throw UnsupportedOperationExceptionif the specified list's
+          list-iterator does not support the <code>set</code> operation.
+ @throw IllegalArgumentException(optional) if the comparator is
+          found to violate the <code>Comparator</code> contract
  */
 + (void)sortWithJavaUtilList:(id<JavaUtilList>)list
       withJavaUtilComparator:(id<JavaUtilComparator>)c;
@@ -1166,13 +1151,13 @@
 /*!
  @brief Swaps the elements at the specified positions in the specified list.
  (If the specified positions are equal, invoking this method leaves
- the list unchanged.)
+  the list unchanged.)
  @param list The list in which to swap elements.
  @param i the index of one element to be swapped.
  @param j the index of the other element to be swapped.
- @throws IndexOutOfBoundsException if either <tt>i</tt> or <tt>j</tt>
- is out of range (i &lt; 0 || i &gt;= list.size()
- || j &lt; 0 || j &gt;= list.size()).
+ @throw IndexOutOfBoundsExceptionif either <tt>i</tt> or <tt>j</tt>
+          is out of range (i &lt; 0 || i &gt;= list.size()
+          || j &lt; 0 || j &gt;= list.size()).
  @since 1.4
  */
 + (void)swapWithJavaUtilList:(id<JavaUtilList>)list
@@ -1181,32 +1166,32 @@
 
 /*!
  @brief Returns a synchronized (thread-safe) collection backed by the specified
- collection.
- In order to guarantee serial access, it is critical that
+  collection.In order to guarantee serial access, it is critical that 
  <strong>all</strong> access to the backing collection is accomplished
- through the returned collection.<p>
- It is imperative that the user manually synchronize on the returned
- collection when traversing it via <code>Iterator</code>, <code>Spliterator</code>
- or <code>Stream</code>:
- @code
+  through the returned collection.
+ <p>
+  It is imperative that the user manually synchronize on the returned
+  collection when traversing it via <code>Iterator</code>, <code>Spliterator</code>
+  or <code>Stream</code>:
+  @code
 
-  Collection c = Collections.synchronizedCollection(myCollection);
-     ...
-  synchronized (c) {
-      Iterator i = c.iterator(); // Must be in the synchronized block
-      while (i.hasNext())
-         foo(i.next());
-  }
+   Collection c = Collections.synchronizedCollection(myCollection);
+      ...
+   synchronized (c) {
+       Iterator i = c.iterator(); // Must be in the synchronized block
+       while (i.hasNext())
+          foo(i.next());
+   } 
   
 @endcode
- Failure to follow this advice may result in non-deterministic behavior.
+  Failure to follow this advice may result in non-deterministic behavior. 
  <p>The returned collection does <i>not</i> pass the <code>hashCode</code>
- and <code>equals</code> operations through to the backing collection, but
- relies on <code>Object</code>'s equals and hashCode methods.  This is
- necessary to preserve the contracts of these operations in the case
- that the backing collection is a set or a list.<p>
- The returned collection will be serializable if the specified collection
- is serializable.
+  and <code>equals</code> operations through to the backing collection, but
+  relies on <code>Object</code>'s equals and hashCode methods.  This is
+  necessary to preserve the contracts of these operations in the case
+  that the backing collection is a set or a list.<p>
+  The returned collection will be serializable if the specified collection
+  is serializable.
  @param c the collection to be "wrapped" in a synchronized collection.
  @return a synchronized view of the specified collection.
  */
@@ -1214,26 +1199,26 @@
 
 /*!
  @brief Returns a synchronized (thread-safe) list backed by the specified
- list.
- In order to guarantee serial access, it is critical that
+  list.In order to guarantee serial access, it is critical that 
  <strong>all</strong> access to the backing list is accomplished
- through the returned list.<p>
- It is imperative that the user manually synchronize on the returned
- list when iterating over it:
+  through the returned list.
+ <p>
+  It is imperative that the user manually synchronize on the returned
+  list when iterating over it: 
  @code
 
-  List list = Collections.synchronizedList(new ArrayList());
-      ...
-  synchronized (list) {
-      Iterator i = list.iterator(); // Must be in synchronized block
-      while (i.hasNext())
-          foo(i.next());
-  }
+   List list = Collections.synchronizedList(new ArrayList());
+       ...
+   synchronized (list) {
+       Iterator i = list.iterator(); // Must be in synchronized block
+       while (i.hasNext())
+           foo(i.next());
+   } 
   
 @endcode
- Failure to follow this advice may result in non-deterministic behavior.
+  Failure to follow this advice may result in non-deterministic behavior. 
  <p>The returned list will be serializable if the specified list is
- serializable.
+  serializable.
  @param list the list to be "wrapped" in a synchronized list.
  @return a synchronized view of the specified list.
  */
@@ -1241,28 +1226,28 @@
 
 /*!
  @brief Returns a synchronized (thread-safe) map backed by the specified
- map.
- In order to guarantee serial access, it is critical that
+  map.In order to guarantee serial access, it is critical that 
  <strong>all</strong> access to the backing map is accomplished
- through the returned map.<p>
- It is imperative that the user manually synchronize on the returned
- map when iterating over any of its collection views:
+  through the returned map.
+ <p>
+  It is imperative that the user manually synchronize on the returned
+  map when iterating over any of its collection views: 
  @code
 
-  Map m = Collections.synchronizedMap(new HashMap());
-      ...
-  Set s = m.keySet();  // Needn't be in synchronized block
-      ...
-  synchronized (m) {  // Synchronizing on m, not s!
-      Iterator i = s.iterator(); // Must be in synchronized block
-      while (i.hasNext())
-          foo(i.next());
-  }
+   Map m = Collections.synchronizedMap(new HashMap());
+       ...
+   Set s = m.keySet();  // Needn't be in synchronized block
+       ...
+   synchronized (m) {  // Synchronizing on m, not s!
+       Iterator i = s.iterator(); // Must be in synchronized block
+       while (i.hasNext())
+           foo(i.next());
+   } 
   
 @endcode
- Failure to follow this advice may result in non-deterministic behavior.
+  Failure to follow this advice may result in non-deterministic behavior. 
  <p>The returned map will be serializable if the specified map is
- serializable.
+  serializable.
  @param m the map to be "wrapped" in a synchronized map.
  @return a synchronized view of the specified map.
  */
@@ -1270,26 +1255,26 @@
 
 /*!
  @brief Returns a synchronized (thread-safe) set backed by the specified
- set.
- In order to guarantee serial access, it is critical that
+  set.In order to guarantee serial access, it is critical that 
  <strong>all</strong> access to the backing set is accomplished
- through the returned set.<p>
- It is imperative that the user manually synchronize on the returned
- set when iterating over it:
+  through the returned set.
+ <p>
+  It is imperative that the user manually synchronize on the returned
+  set when iterating over it: 
  @code
 
-  Set s = Collections.synchronizedSet(new HashSet());
-      ...
-  synchronized (s) {
-      Iterator i = s.iterator(); // Must be in the synchronized block
-      while (i.hasNext())
-          foo(i.next());
-  }
+   Set s = Collections.synchronizedSet(new HashSet());
+       ...
+   synchronized (s) {
+       Iterator i = s.iterator(); // Must be in the synchronized block
+       while (i.hasNext())
+           foo(i.next());
+   } 
   
 @endcode
- Failure to follow this advice may result in non-deterministic behavior.
+  Failure to follow this advice may result in non-deterministic behavior. 
  <p>The returned set will be serializable if the specified set is
- serializable.
+  serializable.
  @param s the set to be "wrapped" in a synchronized set.
  @return a synchronized view of the specified set.
  */
@@ -1297,45 +1282,45 @@
 
 /*!
  @brief Returns a synchronized (thread-safe) sorted map backed by the specified
- sorted map.
- In order to guarantee serial access, it is critical that
+  sorted map.In order to guarantee serial access, it is critical that 
  <strong>all</strong> access to the backing sorted map is accomplished
- through the returned sorted map (or its views).<p>
- It is imperative that the user manually synchronize on the returned
- sorted map when iterating over any of its collection views, or the
- collections views of any of its <tt>subMap</tt>, <tt>headMap</tt> or
- <tt>tailMap</tt> views.
+  through the returned sorted map (or its views).
+ <p>
+  It is imperative that the user manually synchronize on the returned
+  sorted map when iterating over any of its collection views, or the
+  collections views of any of its <tt>subMap</tt>, <tt>headMap</tt> or 
+ <tt>tailMap</tt> views. 
  @code
 
-  SortedMap m = Collections.synchronizedSortedMap(new TreeMap());
-      ...
-  Set s = m.keySet();  // Needn't be in synchronized block
-      ...
-  synchronized (m) {  // Synchronizing on m, not s!
-      Iterator i = s.iterator(); // Must be in synchronized block
-      while (i.hasNext())
-          foo(i.next());
-  }
+   SortedMap m = Collections.synchronizedSortedMap(new TreeMap());
+       ...
+   Set s = m.keySet();  // Needn't be in synchronized block
+       ...
+   synchronized (m) {  // Synchronizing on m, not s!
+       Iterator i = s.iterator(); // Must be in synchronized block
+       while (i.hasNext())
+           foo(i.next());
+   } 
   
 @endcode
- or:
+  or: 
  @code
 
-  SortedMap m = Collections.synchronizedSortedMap(new TreeMap());
-  SortedMap m2 = m.subMap(foo, bar);
-      ...
-  Set s2 = m2.keySet();  // Needn't be in synchronized block
-      ...
-  synchronized (m) {  // Synchronizing on m, not m2 or s2!
-      Iterator i = s.iterator(); // Must be in synchronized block
-      while (i.hasNext())
-          foo(i.next());
-  }
+   SortedMap m = Collections.synchronizedSortedMap(new TreeMap());
+   SortedMap m2 = m.subMap(foo, bar);
+       ...
+   Set s2 = m2.keySet();  // Needn't be in synchronized block
+       ...
+   synchronized (m) {  // Synchronizing on m, not m2 or s2!
+       Iterator i = s.iterator(); // Must be in synchronized block
+       while (i.hasNext())
+           foo(i.next());
+   } 
   
 @endcode
- Failure to follow this advice may result in non-deterministic behavior.
+  Failure to follow this advice may result in non-deterministic behavior. 
  <p>The returned sorted map will be serializable if the specified
- sorted map is serializable.
+  sorted map is serializable.
  @param m the sorted map to be "wrapped" in a synchronized sorted map.
  @return a synchronized view of the specified sorted map.
  */
@@ -1343,76 +1328,75 @@
 
 /*!
  @brief Returns a synchronized (thread-safe) sorted set backed by the specified
- sorted set.
- In order to guarantee serial access, it is critical that
+  sorted set.In order to guarantee serial access, it is critical that 
  <strong>all</strong> access to the backing sorted set is accomplished
- through the returned sorted set (or its views).<p>
- It is imperative that the user manually synchronize on the returned
- sorted set when iterating over it or any of its <tt>subSet</tt>,
- <tt>headSet</tt>, or <tt>tailSet</tt> views.
+  through the returned sorted set (or its views).
+ <p>
+  It is imperative that the user manually synchronize on the returned
+  sorted set when iterating over it or any of its <tt>subSet</tt>,
+  <tt>headSet</tt>, or <tt>tailSet</tt> views. 
  @code
 
-  SortedSet s = Collections.synchronizedSortedSet(new TreeSet());
-      ...
-  synchronized (s) {
-      Iterator i = s.iterator(); // Must be in the synchronized block
-      while (i.hasNext())
-          foo(i.next());
-  }
+   SortedSet s = Collections.synchronizedSortedSet(new TreeSet());
+       ...
+   synchronized (s) {
+       Iterator i = s.iterator(); // Must be in the synchronized block
+       while (i.hasNext())
+           foo(i.next());
+   } 
   
 @endcode
- or:
+  or: 
  @code
 
-  SortedSet s = Collections.synchronizedSortedSet(new TreeSet());
-  SortedSet s2 = s.headSet(foo);
-      ...
-  synchronized (s) {  // Note: s, not s2!!!
-      Iterator i = s2.iterator(); // Must be in the synchronized block
-      while (i.hasNext())
-          foo(i.next());
-  }
+   SortedSet s = Collections.synchronizedSortedSet(new TreeSet());
+   SortedSet s2 = s.headSet(foo);
+       ...
+   synchronized (s) {  // Note: s, not s2!!!
+       Iterator i = s2.iterator(); // Must be in the synchronized block
+       while (i.hasNext())
+           foo(i.next());
+   } 
   
 @endcode
- Failure to follow this advice may result in non-deterministic behavior.
+  Failure to follow this advice may result in non-deterministic behavior. 
  <p>The returned sorted set will be serializable if the specified
- sorted set is serializable.
+  sorted set is serializable.
  @param s the sorted set to be "wrapped" in a synchronized sorted set.
  @return a synchronized view of the specified sorted set.
  */
 + (id<JavaUtilSortedSet>)synchronizedSortedSetWithJavaUtilSortedSet:(id<JavaUtilSortedSet>)s;
 
 /*!
- @brief Returns an unmodifiable view of the specified collection.
- This method
- allows modules to provide users with "read-only" access to internal
- collections.  Query operations on the returned collection "read through"
- to the specified collection, and attempts to modify the returned
- collection, whether direct or via its iterator, result in an
+ @brief Returns an unmodifiable view of the specified collection.This method
+  allows modules to provide users with "read-only" access to internal
+  collections.
+ Query operations on the returned collection "read through"
+  to the specified collection, and attempts to modify the returned
+  collection, whether direct or via its iterator, result in an 
  <tt>UnsupportedOperationException</tt>.<p>
- The returned collection does <i>not</i> pass the hashCode and equals
- operations through to the backing collection, but relies on
+  The returned collection does <i>not</i> pass the hashCode and equals
+  operations through to the backing collection, but relies on 
  <tt>Object</tt>'s <tt>equals</tt> and <tt>hashCode</tt> methods.  This
- is necessary to preserve the contracts of these operations in the case
- that the backing collection is a set or a list.<p>
- The returned collection will be serializable if the specified collection
- is serializable.
- @param c the collection for which an unmodifiable view is to be
- returned.
+  is necessary to preserve the contracts of these operations in the case
+  that the backing collection is a set or a list.<p>
+  The returned collection will be serializable if the specified collection
+  is serializable.
+ @param c the collection for which an unmodifiable view is to be          returned.
  @return an unmodifiable view of the specified collection.
  */
 + (id<JavaUtilCollection>)unmodifiableCollectionWithJavaUtilCollection:(id<JavaUtilCollection>)c;
 
 /*!
- @brief Returns an unmodifiable view of the specified list.
- This method allows
- modules to provide users with "read-only" access to internal
- lists.  Query operations on the returned list "read through" to the
- specified list, and attempts to modify the returned list, whether
- direct or via its iterator, result in an
+ @brief Returns an unmodifiable view of the specified list.This method allows
+  modules to provide users with "read-only" access to internal
+  lists.
+ Query operations on the returned list "read through" to the
+  specified list, and attempts to modify the returned list, whether
+  direct or via its iterator, result in an 
  <tt>UnsupportedOperationException</tt>.<p>
- The returned list will be serializable if the specified list
- is serializable. Similarly, the returned list will implement
+  The returned list will be serializable if the specified list
+  is serializable. Similarly, the returned list will implement 
  <code>RandomAccess</code> if the specified list does.
  @param list the list for which an unmodifiable view is to be returned.
  @return an unmodifiable view of the specified list.
@@ -1420,64 +1404,61 @@
 + (id<JavaUtilList>)unmodifiableListWithJavaUtilList:(id<JavaUtilList>)list;
 
 /*!
- @brief Returns an unmodifiable view of the specified map.
- This method
- allows modules to provide users with "read-only" access to internal
- maps.  Query operations on the returned map "read through"
- to the specified map, and attempts to modify the returned
- map, whether direct or via its collection views, result in an
+ @brief Returns an unmodifiable view of the specified map.This method
+  allows modules to provide users with "read-only" access to internal
+  maps.
+ Query operations on the returned map "read through"
+  to the specified map, and attempts to modify the returned
+  map, whether direct or via its collection views, result in an 
  <tt>UnsupportedOperationException</tt>.<p>
- The returned map will be serializable if the specified map
- is serializable.
+  The returned map will be serializable if the specified map
+  is serializable.
  @param m the map for which an unmodifiable view is to be returned.
  @return an unmodifiable view of the specified map.
  */
 + (id<JavaUtilMap>)unmodifiableMapWithJavaUtilMap:(id<JavaUtilMap>)m;
 
 /*!
- @brief Returns an unmodifiable view of the specified set.
- This method allows
- modules to provide users with "read-only" access to internal sets.
+ @brief Returns an unmodifiable view of the specified set.This method allows
+  modules to provide users with "read-only" access to internal sets.
  Query operations on the returned set "read through" to the specified
- set, and attempts to modify the returned set, whether direct or via its
- iterator, result in an <tt>UnsupportedOperationException</tt>.<p>
- The returned set will be serializable if the specified set
- is serializable.
+  set, and attempts to modify the returned set, whether direct or via its
+  iterator, result in an <tt>UnsupportedOperationException</tt>.<p>
+  The returned set will be serializable if the specified set
+  is serializable.
  @param s the set for which an unmodifiable view is to be returned.
  @return an unmodifiable view of the specified set.
  */
 + (id<JavaUtilSet>)unmodifiableSetWithJavaUtilSet:(id<JavaUtilSet>)s;
 
 /*!
- @brief Returns an unmodifiable view of the specified sorted map.
- This method
- allows modules to provide users with "read-only" access to internal
- sorted maps.  Query operations on the returned sorted map "read through"
- to the specified sorted map.  Attempts to modify the returned
- sorted map, whether direct, via its collection views, or via its
+ @brief Returns an unmodifiable view of the specified sorted map.This method
+  allows modules to provide users with "read-only" access to internal
+  sorted maps.
+ Query operations on the returned sorted map "read through"
+  to the specified sorted map.  Attempts to modify the returned
+  sorted map, whether direct, via its collection views, or via its 
  <tt>subMap</tt>, <tt>headMap</tt>, or <tt>tailMap</tt> views, result in
- an <tt>UnsupportedOperationException</tt>.<p>
- The returned sorted map will be serializable if the specified sorted map
- is serializable.
- @param m the sorted map for which an unmodifiable view is to be
- returned.
+  an <tt>UnsupportedOperationException</tt>.<p>
+  The returned sorted map will be serializable if the specified sorted map
+  is serializable.
+ @param m the sorted map for which an unmodifiable view is to be         returned.
  @return an unmodifiable view of the specified sorted map.
  */
 + (id<JavaUtilSortedMap>)unmodifiableSortedMapWithJavaUtilSortedMap:(id<JavaUtilSortedMap>)m;
 
 /*!
- @brief Returns an unmodifiable view of the specified sorted set.
- This method
- allows modules to provide users with "read-only" access to internal
- sorted sets.  Query operations on the returned sorted set "read
- through" to the specified sorted set.  Attempts to modify the returned
- sorted set, whether direct, via its iterator, or via its
+ @brief Returns an unmodifiable view of the specified sorted set.This method
+  allows modules to provide users with "read-only" access to internal
+  sorted sets.
+ Query operations on the returned sorted set "read
+  through" to the specified sorted set.  Attempts to modify the returned
+  sorted set, whether direct, via its iterator, or via its 
  <tt>subSet</tt>, <tt>headSet</tt>, or <tt>tailSet</tt> views, result in
- an <tt>UnsupportedOperationException</tt>.<p>
- The returned sorted set will be serializable if the specified sorted set
- is serializable.
- @param s the sorted set for which an unmodifiable view is to be
- returned.
+  an <tt>UnsupportedOperationException</tt>.<p>
+  The returned sorted set will be serializable if the specified sorted set
+  is serializable.
+ @param s the sorted set for which an unmodifiable view is to be         returned.
  @return an unmodifiable view of the specified sorted set.
  */
 + (id<JavaUtilSortedSet>)unmodifiableSortedSetWithJavaUtilSortedSet:(id<JavaUtilSortedSet>)s;
@@ -1515,32 +1496,29 @@
 J2OBJC_STATIC_INIT(JavaUtilCollections)
 
 /*!
- @brief The empty set (immutable).
- This set is serializable.
+ @brief The empty set (immutable).This set is serializable.
  - seealso: #emptySet()
  */
-inline id<JavaUtilSet> JavaUtilCollections_get_EMPTY_SET();
+inline id<JavaUtilSet> JavaUtilCollections_get_EMPTY_SET(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT id<JavaUtilSet> JavaUtilCollections_EMPTY_SET;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(JavaUtilCollections, EMPTY_SET, id<JavaUtilSet>)
 
 /*!
- @brief The empty list (immutable).
- This list is serializable.
+ @brief The empty list (immutable).This list is serializable.
  - seealso: #emptyList()
  */
-inline id<JavaUtilList> JavaUtilCollections_get_EMPTY_LIST();
+inline id<JavaUtilList> JavaUtilCollections_get_EMPTY_LIST(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT id<JavaUtilList> JavaUtilCollections_EMPTY_LIST;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(JavaUtilCollections, EMPTY_LIST, id<JavaUtilList>)
 
 /*!
- @brief The empty map (immutable).
- This map is serializable.
+ @brief The empty map (immutable).This map is serializable.
  - seealso: #emptyMap()
  @since 1.3
  */
-inline id<JavaUtilMap> JavaUtilCollections_get_EMPTY_MAP();
+inline id<JavaUtilMap> JavaUtilCollections_get_EMPTY_MAP(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT id<JavaUtilMap> JavaUtilCollections_EMPTY_MAP;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(JavaUtilCollections, EMPTY_MAP, id<JavaUtilMap>)
@@ -1625,17 +1603,17 @@ FOUNDATION_EXPORT id<JavaUtilMap> JavaUtilCollections_checkedMapWithJavaUtilMap_
 
 FOUNDATION_EXPORT id<JavaUtilSortedMap> JavaUtilCollections_checkedSortedMapWithJavaUtilSortedMap_withIOSClass_withIOSClass_(id<JavaUtilSortedMap> m, IOSClass *keyType, IOSClass *valueType);
 
-FOUNDATION_EXPORT id<JavaUtilIterator> JavaUtilCollections_emptyIterator();
+FOUNDATION_EXPORT id<JavaUtilIterator> JavaUtilCollections_emptyIterator(void);
 
-FOUNDATION_EXPORT id<JavaUtilListIterator> JavaUtilCollections_emptyListIterator();
+FOUNDATION_EXPORT id<JavaUtilListIterator> JavaUtilCollections_emptyListIterator(void);
 
-FOUNDATION_EXPORT id<JavaUtilEnumeration> JavaUtilCollections_emptyEnumeration();
+FOUNDATION_EXPORT id<JavaUtilEnumeration> JavaUtilCollections_emptyEnumeration(void);
 
-FOUNDATION_EXPORT id<JavaUtilSet> JavaUtilCollections_emptySet();
+FOUNDATION_EXPORT id<JavaUtilSet> JavaUtilCollections_emptySet(void);
 
-FOUNDATION_EXPORT id<JavaUtilList> JavaUtilCollections_emptyList();
+FOUNDATION_EXPORT id<JavaUtilList> JavaUtilCollections_emptyList(void);
 
-FOUNDATION_EXPORT id<JavaUtilMap> JavaUtilCollections_emptyMap();
+FOUNDATION_EXPORT id<JavaUtilMap> JavaUtilCollections_emptyMap(void);
 
 FOUNDATION_EXPORT id<JavaUtilSet> JavaUtilCollections_singletonWithId_(id o);
 
@@ -1649,7 +1627,7 @@ FOUNDATION_EXPORT id<JavaUtilMap> JavaUtilCollections_singletonMapWithId_withId_
 
 FOUNDATION_EXPORT id<JavaUtilList> JavaUtilCollections_nCopiesWithInt_withId_(jint n, id o);
 
-FOUNDATION_EXPORT id<JavaUtilComparator> JavaUtilCollections_reverseOrder();
+FOUNDATION_EXPORT id<JavaUtilComparator> JavaUtilCollections_reverseOrder(void);
 
 FOUNDATION_EXPORT id<JavaUtilComparator> JavaUtilCollections_reverseOrderWithJavaUtilComparator_(id<JavaUtilComparator> cmp);
 
@@ -1692,7 +1670,6 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections)
 @protocol JavaUtilStreamStream;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_UnmodifiableCollection : NSObject < JavaUtilCollection, JavaIoSerializable > {
  @public
@@ -1743,6 +1720,10 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections)
 
 - (instancetype)initWithJavaUtilCollection:(id<JavaUtilCollection>)c;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaUtilCollections_UnmodifiableCollection)
@@ -1770,8 +1751,9 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_UnmodifiableCollection)
 #define INCLUDE_JavaIoSerializable 1
 #include "../../java/io/Serializable.h"
 
+@protocol JavaUtilCollection;
+
 /*!
-  include
  */
 @interface JavaUtilCollections_UnmodifiableSet : JavaUtilCollections_UnmodifiableCollection < JavaUtilSet, JavaIoSerializable >
 
@@ -1784,6 +1766,10 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_UnmodifiableCollection)
 #pragma mark Package-Private
 
 - (instancetype)initWithJavaUtilSet:(id<JavaUtilSet>)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaUtilCollection:(id<JavaUtilCollection>)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -1811,9 +1797,9 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_UnmodifiableSet)
 #include "../../java/io/Serializable.h"
 
 @protocol JavaUtilComparator;
+@protocol JavaUtilSet;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_UnmodifiableSortedSet : JavaUtilCollections_UnmodifiableSet < JavaUtilSortedSet, JavaIoSerializable >
 
@@ -1835,6 +1821,10 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_UnmodifiableSet)
 #pragma mark Package-Private
 
 - (instancetype)initWithJavaUtilSortedSet:(id<JavaUtilSortedSet>)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaUtilSet:(id<JavaUtilSet>)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -1863,7 +1853,6 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_UnmodifiableSortedSet)
 @protocol JavaUtilListIterator;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_UnmodifiableList : JavaUtilCollections_UnmodifiableCollection < JavaUtilList > {
  @public
@@ -1908,6 +1897,10 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_UnmodifiableSortedSet)
 
 - (instancetype)initWithJavaUtilList:(id<JavaUtilList>)list;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaUtilCollection:(id<JavaUtilCollection>)arg0 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaUtilCollections_UnmodifiableList)
@@ -1934,7 +1927,6 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_UnmodifiableList)
 @protocol JavaUtilList;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_UnmodifiableRandomAccessList : JavaUtilCollections_UnmodifiableList < JavaUtilRandomAccess >
 
@@ -1979,7 +1971,6 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_UnmodifiableRandomAccessList)
 @protocol JavaUtilSet;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_UnmodifiableMap : NSObject < JavaUtilMap, JavaIoSerializable >
 
@@ -2079,9 +2070,9 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_UnmodifiableMap)
 #include "../../java/io/Serializable.h"
 
 @protocol JavaUtilComparator;
+@protocol JavaUtilMap;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_UnmodifiableSortedMap : JavaUtilCollections_UnmodifiableMap < JavaUtilSortedMap, JavaIoSerializable >
 
@@ -2103,6 +2094,10 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_UnmodifiableMap)
 #pragma mark Package-Private
 
 - (instancetype)initWithJavaUtilSortedMap:(id<JavaUtilSortedMap>)m;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaUtilMap:(id<JavaUtilMap>)arg0 NS_UNAVAILABLE;
 
 @end
 
@@ -2137,7 +2132,6 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_UnmodifiableSortedMap)
 @protocol JavaUtilStreamStream;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_SynchronizedCollection : NSObject < JavaUtilCollection, JavaIoSerializable > {
  @public
@@ -2192,6 +2186,10 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_UnmodifiableSortedMap)
 - (instancetype)initWithJavaUtilCollection:(id<JavaUtilCollection>)c
                                     withId:(id)mutex;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaUtilCollections_SynchronizedCollection)
@@ -2222,8 +2220,9 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_SynchronizedCollection)
 #define INCLUDE_JavaUtilSet 1
 #include "../../java/util/Set.h"
 
+@protocol JavaUtilCollection;
+
 /*!
-  include
  */
 @interface JavaUtilCollections_SynchronizedSet : JavaUtilCollections_SynchronizedCollection < JavaUtilSet >
 
@@ -2239,6 +2238,13 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_SynchronizedCollection)
 
 - (instancetype)initWithJavaUtilSet:(id<JavaUtilSet>)s
                              withId:(id)mutex;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaUtilCollection:(id<JavaUtilCollection>)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaUtilCollection:(id<JavaUtilCollection>)arg0
+                                    withId:(id)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -2268,9 +2274,9 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_SynchronizedSet)
 #include "../../java/util/SortedSet.h"
 
 @protocol JavaUtilComparator;
+@protocol JavaUtilSet;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_SynchronizedSortedSet : JavaUtilCollections_SynchronizedSet < JavaUtilSortedSet >
 
@@ -2295,6 +2301,13 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_SynchronizedSet)
 
 - (instancetype)initWithJavaUtilSortedSet:(id<JavaUtilSortedSet>)s
                                    withId:(id)mutex;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaUtilSet:(id<JavaUtilSet>)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaUtilSet:(id<JavaUtilSet>)arg0
+                             withId:(id)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -2329,7 +2342,6 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_SynchronizedSortedSet)
 @protocol JavaUtilListIterator;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_SynchronizedList : JavaUtilCollections_SynchronizedCollection < JavaUtilList > {
  @public
@@ -2377,6 +2389,13 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_SynchronizedSortedSet)
 - (instancetype)initWithJavaUtilList:(id<JavaUtilList>)list
                               withId:(id)mutex;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaUtilCollection:(id<JavaUtilCollection>)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaUtilCollection:(id<JavaUtilCollection>)arg0
+                                    withId:(id)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaUtilCollections_SynchronizedList)
@@ -2409,7 +2428,6 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_SynchronizedList)
 @protocol JavaUtilList;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_SynchronizedRandomAccessList : JavaUtilCollections_SynchronizedList < JavaUtilRandomAccess >
 
@@ -2463,7 +2481,6 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_SynchronizedRandomAccessList)
 @protocol JavaUtilSet;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_SynchronizedMap : NSObject < JavaUtilMap, JavaIoSerializable > {
  @public
@@ -2573,9 +2590,9 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_SynchronizedMap)
 #include "../../java/util/SortedMap.h"
 
 @protocol JavaUtilComparator;
+@protocol JavaUtilMap;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_SynchronizedSortedMap : JavaUtilCollections_SynchronizedMap < JavaUtilSortedMap >
 
@@ -2600,6 +2617,13 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_SynchronizedMap)
 
 - (instancetype)initWithJavaUtilSortedMap:(id<JavaUtilSortedMap>)m
                                    withId:(id)mutex;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaUtilMap:(id<JavaUtilMap>)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaUtilMap:(id<JavaUtilMap>)arg0
+                             withId:(id)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -2641,7 +2665,6 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_SynchronizedSortedMap)
 @protocol JavaUtilStreamStream;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_CheckedCollection : NSObject < JavaUtilCollection, JavaIoSerializable > {
  @public
@@ -2698,6 +2721,10 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_SynchronizedSortedMap)
 
 - (void)typeCheckWithId:(id)o;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaUtilCollections_CheckedCollection)
@@ -2727,9 +2754,9 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_CheckedCollection)
 #include "../../java/io/Serializable.h"
 
 @class IOSClass;
+@protocol JavaUtilCollection;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_CheckedSet : JavaUtilCollections_CheckedCollection < JavaUtilSet, JavaIoSerializable >
 
@@ -2743,6 +2770,11 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_CheckedCollection)
 
 - (instancetype)initWithJavaUtilSet:(id<JavaUtilSet>)s
                        withIOSClass:(IOSClass *)elementType;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaUtilCollection:(id<JavaUtilCollection>)arg0
+                              withIOSClass:(IOSClass *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -2771,9 +2803,9 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_CheckedSet)
 
 @class IOSClass;
 @protocol JavaUtilComparator;
+@protocol JavaUtilSet;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_CheckedSortedSet : JavaUtilCollections_CheckedSet < JavaUtilSortedSet, JavaIoSerializable >
 
@@ -2796,6 +2828,11 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_CheckedSet)
 
 - (instancetype)initWithJavaUtilSortedSet:(id<JavaUtilSortedSet>)s
                              withIOSClass:(IOSClass *)type;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaUtilSet:(id<JavaUtilSet>)arg0
+                       withIOSClass:(IOSClass *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -2825,7 +2862,6 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_CheckedSortedSet)
 @protocol JavaUtilListIterator;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_CheckedList : JavaUtilCollections_CheckedCollection < JavaUtilList > {
  @public
@@ -2857,11 +2893,10 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_CheckedSortedSet)
 - (id)removeWithInt:(jint)index;
 
 /*!
- 
- @throws ClassCastException if the class of an element returned by the
- operator prevents it from being added to this collection. The
- exception may be thrown after some elements of the list have
- already been replaced.
+ @throw ClassCastExceptionif the class of an element returned by the
+          operator prevents it from being added to this collection. The
+          exception may be thrown after some elements of the list have
+          already been replaced.
  */
 - (void)replaceAllWithJavaUtilFunctionUnaryOperator:(id<JavaUtilFunctionUnaryOperator>)operator_;
 
@@ -2877,6 +2912,11 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_CheckedSortedSet)
 
 - (instancetype)initWithJavaUtilList:(id<JavaUtilList>)list
                         withIOSClass:(IOSClass *)type;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaUtilCollection:(id<JavaUtilCollection>)arg0
+                              withIOSClass:(IOSClass *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -2905,7 +2945,6 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_CheckedList)
 @protocol JavaUtilList;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_CheckedRandomAccessList : JavaUtilCollections_CheckedList < JavaUtilRandomAccess >
 
@@ -2952,7 +2991,6 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_CheckedRandomAccessList)
 @protocol JavaUtilSet;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_CheckedMap : NSObject < JavaUtilMap, JavaIoSerializable > {
  @public
@@ -3059,9 +3097,9 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_CheckedMap)
 
 @class IOSClass;
 @protocol JavaUtilComparator;
+@protocol JavaUtilMap;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_CheckedSortedMap : JavaUtilCollections_CheckedMap < JavaUtilSortedMap, JavaIoSerializable >
 
@@ -3085,6 +3123,12 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_CheckedMap)
 - (instancetype)initWithJavaUtilSortedMap:(id<JavaUtilSortedMap>)m
                              withIOSClass:(IOSClass *)keyType
                              withIOSClass:(IOSClass *)valueType;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaUtilMap:(id<JavaUtilMap>)arg0
+                       withIOSClass:(IOSClass *)arg1
+                       withIOSClass:(IOSClass *)arg2 NS_UNAVAILABLE;
 
 @end
 
@@ -3125,7 +3169,6 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_CheckedSortedMap)
 @protocol JavaUtilStreamStream;
 
 /*!
-  include
  */
 @interface JavaUtilCollections_AsLIFOQueue : JavaUtilAbstractQueue < JavaUtilQueue, JavaIoSerializable >
 
@@ -3180,6 +3223,10 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilCollections_CheckedSortedMap)
 #pragma mark Package-Private
 
 - (instancetype)initWithJavaUtilDeque:(id<JavaUtilDeque>)q;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

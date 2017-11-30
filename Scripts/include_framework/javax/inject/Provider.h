@@ -3,7 +3,7 @@
 //  source: /Users/tball/src/j2objc/inject/javax_inject/build_result/java/javax/inject/Provider.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxInjectProvider")
 #ifdef RESTRICT_JavaxInjectProvider

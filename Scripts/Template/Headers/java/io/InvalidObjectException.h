@@ -25,8 +25,7 @@
 
 /*!
  @brief Indicates that one or more deserialized objects failed validation
- tests.
- The argument should provide the reason for the failure.
+  tests.The argument should provide the reason for the failure.
  - seealso: ObjectInputValidation
  @since JDK1.1
  @author unascribed
@@ -42,6 +41,10 @@
  - seealso: ObjectInputValidation
  */
 - (instancetype)initWithNSString:(NSString *)reason;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

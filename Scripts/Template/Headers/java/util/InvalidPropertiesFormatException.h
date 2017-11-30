@@ -23,18 +23,19 @@
 #define INCLUDE_JavaIoIOException 1
 #include "../../java/io/IOException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Thrown to indicate that an operation could not complete because
- the input did not conform to the appropriate XML document type
- for a collection of properties, as per the <code>Properties</code>
- specification.
+  the input did not conform to the appropriate XML document type
+  for a collection of properties, as per the <code>Properties</code>
+  specification.
  <p>
- Note, that although InvalidPropertiesFormatException inherits Serializable
- interface from Exception, it is not intended to be Serializable. Appropriate
- serialization methods are implemented to throw NotSerializableException.
+  Note, that although InvalidPropertiesFormatException inherits Serializable
+  interface from Exception, it is not intended to be Serializable. Appropriate
+  serialization methods are implemented to throw NotSerializableException.
  - seealso: Properties
  @since 1.5
-  exclude
  */
 @interface JavaUtilInvalidPropertiesFormatException : JavaIoIOException
 
@@ -42,29 +43,36 @@
 
 /*!
  @brief Constructs an InvalidPropertiesFormatException with the specified
- detail message.
- @param message   the detail message. The detail message is saved for
- later retrieval by the <code>Throwable.getMessage()</code> method.
+  detail message.
+ @param message the detail message. The detail message is saved for           later retrieval by the 
+ <code>Throwable.getMessage()</code>  method.
  */
 - (instancetype)initWithNSString:(NSString *)message;
 
 /*!
  @brief Constructs an InvalidPropertiesFormatException with the specified
- cause.
- @param cause the cause (which is saved for later retrieval by the
- <code>Throwable.getCause()</code> method).
+  cause.
+ @param cause the cause (which is saved for later retrieval by the          
+ <code>Throwable.getCause()</code>  method).
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaUtilInvalidPropertiesFormatException)
 
-FOUNDATION_EXPORT void JavaUtilInvalidPropertiesFormatException_initWithNSException_(JavaUtilInvalidPropertiesFormatException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaUtilInvalidPropertiesFormatException_initWithJavaLangThrowable_(JavaUtilInvalidPropertiesFormatException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaUtilInvalidPropertiesFormatException *new_JavaUtilInvalidPropertiesFormatException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaUtilInvalidPropertiesFormatException *new_JavaUtilInvalidPropertiesFormatException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaUtilInvalidPropertiesFormatException *create_JavaUtilInvalidPropertiesFormatException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaUtilInvalidPropertiesFormatException *create_JavaUtilInvalidPropertiesFormatException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
 FOUNDATION_EXPORT void JavaUtilInvalidPropertiesFormatException_initWithNSString_(JavaUtilInvalidPropertiesFormatException *self, NSString *message);
 

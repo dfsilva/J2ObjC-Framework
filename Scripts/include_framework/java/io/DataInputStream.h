@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/java/io/DataInputStream.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoDataInputStream")
 #ifdef RESTRICT_JavaIoDataInputStream
@@ -21,11 +21,11 @@
 
 #define RESTRICT_JavaIoFilterInputStream 1
 #define INCLUDE_JavaIoFilterInputStream 1
-#include "java/io/FilterInputStream.h"
+#include "../../java/io/FilterInputStream.h"
 
 #define RESTRICT_JavaIoDataInput 1
 #define INCLUDE_JavaIoDataInput 1
-#include "java/io/DataInput.h"
+#include "../../java/io/DataInput.h"
 
 @class IOSByteArray;
 @class JavaIoInputStream;

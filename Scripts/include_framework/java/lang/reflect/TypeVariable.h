@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/reflect/TypeVariable.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangReflectTypeVariable")
 #ifdef RESTRICT_JavaLangReflectTypeVariable
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangReflectType 1
 #define INCLUDE_JavaLangReflectType 1
-#include "java/lang/reflect/Type.h"
+#include "../../../java/lang/reflect/Type.h"
 
 @class IOSObjectArray;
 @protocol JavaLangReflectGenericDeclaration;

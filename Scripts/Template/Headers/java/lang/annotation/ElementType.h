@@ -16,6 +16,11 @@
 #pragma clang diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (JavaLangAnnotationElementType_) && (INCLUDE_ALL_JavaLangAnnotationElementType || defined(INCLUDE_JavaLangAnnotationElementType))
 #define JavaLangAnnotationElementType_
 
@@ -39,16 +44,15 @@ typedef NS_ENUM(NSUInteger, JavaLangAnnotationElementType_Enum) {
 };
 
 /*!
- @brief A program element type.
- The constants of this enumerated type
- provide a simple classification of the declared elements in a
- Java program.
+ @brief A program element type.The constants of this enumerated type
+  provide a simple classification of the declared elements in a
+  Java program.
  <p>These constants are used with the <code>Target</code> meta-annotation type
- to specify where it is legal to use an annotation type.
+  to specify where it is legal to use an annotation type.
  @author Joshua Bloch
  @since 1.5
  */
-@interface JavaLangAnnotationElementType : JavaLangEnum < NSCopying >
+@interface JavaLangAnnotationElementType : JavaLangEnum
 
 + (JavaLangAnnotationElementType * __nonnull)TYPE;
 
@@ -78,7 +82,6 @@ typedef NS_ENUM(NSUInteger, JavaLangAnnotationElementType_Enum) {
 
 #pragma mark Package-Private
 
-- (id)copyWithZone:(NSZone *)zone;
 - (JavaLangAnnotationElementType_Enum)toNSEnum;
 
 @end
@@ -91,68 +94,66 @@ FOUNDATION_EXPORT JavaLangAnnotationElementType *JavaLangAnnotationElementType_v
 /*!
  @brief Class, interface (including annotation type), or enum declaration
  */
-inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_TYPE();
+inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_TYPE(void);
 J2OBJC_ENUM_CONSTANT(JavaLangAnnotationElementType, TYPE)
 
 /*!
  @brief Field declaration (includes enum constants)
  */
-inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_FIELD();
+inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_FIELD(void);
 J2OBJC_ENUM_CONSTANT(JavaLangAnnotationElementType, FIELD)
 
 /*!
  @brief Method declaration
  */
-inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_METHOD();
+inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_METHOD(void);
 J2OBJC_ENUM_CONSTANT(JavaLangAnnotationElementType, METHOD)
 
 /*!
  @brief Formal parameter declaration
  */
-inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_PARAMETER();
+inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_PARAMETER(void);
 J2OBJC_ENUM_CONSTANT(JavaLangAnnotationElementType, PARAMETER)
 
 /*!
  @brief Constructor declaration
  */
-inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_CONSTRUCTOR();
+inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_CONSTRUCTOR(void);
 J2OBJC_ENUM_CONSTANT(JavaLangAnnotationElementType, CONSTRUCTOR)
 
 /*!
  @brief Local variable declaration
  */
-inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_LOCAL_VARIABLE();
+inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_LOCAL_VARIABLE(void);
 J2OBJC_ENUM_CONSTANT(JavaLangAnnotationElementType, LOCAL_VARIABLE)
 
 /*!
  @brief Annotation type declaration
  */
-inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_ANNOTATION_TYPE();
+inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_ANNOTATION_TYPE(void);
 J2OBJC_ENUM_CONSTANT(JavaLangAnnotationElementType, ANNOTATION_TYPE)
 
 /*!
  @brief Package declaration
  */
-inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_PACKAGE();
+inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_PACKAGE(void);
 J2OBJC_ENUM_CONSTANT(JavaLangAnnotationElementType, PACKAGE)
 
 /*!
  @brief Type parameter declaration
  @since 1.8
-  1.8
  */
-inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_TYPE_PARAMETER();
+inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_TYPE_PARAMETER(void);
 J2OBJC_ENUM_CONSTANT(JavaLangAnnotationElementType, TYPE_PARAMETER)
 
 /*!
  @brief Use of a type
  @since 1.8
-  1.8
  */
-inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_TYPE_USE();
+inline JavaLangAnnotationElementType *JavaLangAnnotationElementType_get_TYPE_USE(void);
 J2OBJC_ENUM_CONSTANT(JavaLangAnnotationElementType, TYPE_USE)
 
-FOUNDATION_EXPORT IOSObjectArray *JavaLangAnnotationElementType_values();
+FOUNDATION_EXPORT IOSObjectArray *JavaLangAnnotationElementType_values(void);
 
 FOUNDATION_EXPORT JavaLangAnnotationElementType *JavaLangAnnotationElementType_valueOfWithNSString_(NSString *name);
 
@@ -162,6 +163,10 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaLangAnnotationElementType)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 
 #pragma clang diagnostic pop
 #pragma pop_macro("INCLUDE_ALL_JavaLangAnnotationElementType")

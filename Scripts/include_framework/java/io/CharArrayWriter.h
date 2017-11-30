@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/CharArrayWriter.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoCharArrayWriter")
 #ifdef RESTRICT_JavaIoCharArrayWriter
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoWriter 1
 #define INCLUDE_JavaIoWriter 1
-#include "java/io/Writer.h"
+#include "../../java/io/Writer.h"
 
 @class IOSCharArray;
 @protocol JavaLangCharSequence;

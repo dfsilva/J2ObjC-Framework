@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/SimpleTimeZone.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilSimpleTimeZone")
 #ifdef RESTRICT_JavaUtilSimpleTimeZone
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilTimeZone 1
 #define INCLUDE_JavaUtilTimeZone 1
-#include "java/util/TimeZone.h"
+#include "../../java/util/TimeZone.h"
 
 @class IOSIntArray;
 @class JavaUtilDate;

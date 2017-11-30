@@ -23,25 +23,27 @@
 #define INCLUDE_JavaIoIOException 1
 #include "../../java/io/IOException.h"
 
+@class JavaLangThrowable;
+
 /*!
- @brief Signals that an I/O operation has been interrupted.
- An
- <code>InterruptedIOException</code> is thrown to indicate that an
- input or output transfer has been terminated because the thread
- performing it was interrupted. The field <code>bytesTransferred</code>
- indicates how many bytes were successfully transferred before
- the interruption occurred.
+ @brief Signals that an I/O operation has been interrupted.An
+  <code>InterruptedIOException</code> is thrown to indicate that an
+  input or output transfer has been terminated because the thread
+  performing it was interrupted.
+ The field <code>bytesTransferred</code>
+  indicates how many bytes were successfully transferred before
+  the interruption occurred.
  @author unascribed
  - seealso: java.io.InputStream
  - seealso: java.io.OutputStream
- - seealso: java.lang.Thread#interrupt()
+ - seealso: java.lang.Thread
  @since JDK1.0
  */
 @interface JavaIoInterruptedIOException : JavaIoIOException {
  @public
   /*!
    @brief Reports how many bytes had been transferred as part of the I/O
- operation before it was interrupted.
+  operation before it was interrupted.
    */
   jint bytesTransferred_;
 }
@@ -49,33 +51,30 @@
 #pragma mark Public
 
 /*!
- @brief Constructs an <code>InterruptedIOException</code> with
+ @brief Constructs an <code>InterruptedIOException</code> with 
  <code>null</code> as its error detail message.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs an <code>InterruptedIOException</code> with the
- specified detail message.
- The string <code>s</code> can be
- retrieved later by the
- <code><code>java.lang.Throwable.getMessage</code></code>
- method of class <code>java.lang.Throwable</code>.
- @param s   the detail message.
+  specified detail message.The string <code>s</code> can be
+  retrieved later by the 
+ <code><code>java.lang.Throwable</code></code>
+  method of class <code>java.lang.Throwable</code>.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
 /*!
  @brief Constructs a new instance with given detail message and cause.
-  internal use only
  */
 - (instancetype)initWithNSString:(NSString *)detailMessage
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
-  
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
 
 @end
 
@@ -83,9 +82,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaIoInterruptedIOException)
 
 FOUNDATION_EXPORT void JavaIoInterruptedIOException_init(JavaIoInterruptedIOException *self);
 
-FOUNDATION_EXPORT JavaIoInterruptedIOException *new_JavaIoInterruptedIOException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoInterruptedIOException *new_JavaIoInterruptedIOException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoInterruptedIOException *create_JavaIoInterruptedIOException_init();
+FOUNDATION_EXPORT JavaIoInterruptedIOException *create_JavaIoInterruptedIOException_init(void);
 
 FOUNDATION_EXPORT void JavaIoInterruptedIOException_initWithNSString_(JavaIoInterruptedIOException *self, NSString *s);
 
@@ -93,17 +92,17 @@ FOUNDATION_EXPORT JavaIoInterruptedIOException *new_JavaIoInterruptedIOException
 
 FOUNDATION_EXPORT JavaIoInterruptedIOException *create_JavaIoInterruptedIOException_initWithNSString_(NSString *s);
 
-FOUNDATION_EXPORT void JavaIoInterruptedIOException_initWithNSException_(JavaIoInterruptedIOException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaIoInterruptedIOException_initWithJavaLangThrowable_(JavaIoInterruptedIOException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaIoInterruptedIOException *new_JavaIoInterruptedIOException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoInterruptedIOException *new_JavaIoInterruptedIOException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoInterruptedIOException *create_JavaIoInterruptedIOException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaIoInterruptedIOException *create_JavaIoInterruptedIOException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaIoInterruptedIOException_initWithNSString_withNSException_(JavaIoInterruptedIOException *self, NSString *detailMessage, NSException *cause);
+FOUNDATION_EXPORT void JavaIoInterruptedIOException_initWithNSString_withJavaLangThrowable_(JavaIoInterruptedIOException *self, NSString *detailMessage, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaIoInterruptedIOException *new_JavaIoInterruptedIOException_initWithNSString_withNSException_(NSString *detailMessage, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoInterruptedIOException *new_JavaIoInterruptedIOException_initWithNSString_withJavaLangThrowable_(NSString *detailMessage, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoInterruptedIOException *create_JavaIoInterruptedIOException_initWithNSString_withNSException_(NSString *detailMessage, NSException *cause);
+FOUNDATION_EXPORT JavaIoInterruptedIOException *create_JavaIoInterruptedIOException_initWithNSString_withJavaLangThrowable_(NSString *detailMessage, JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaIoInterruptedIOException)
 

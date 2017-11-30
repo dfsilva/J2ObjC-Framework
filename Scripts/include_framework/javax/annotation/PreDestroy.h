@@ -3,7 +3,7 @@
 //  source: Classes/javax/annotation/PreDestroy.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxAnnotationPreDestroy")
 #ifdef RESTRICT_JavaxAnnotationPreDestroy
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
-#include "java/lang/annotation/Annotation.h"
+#include "../../java/lang/annotation/Annotation.h"
 
 @class IOSClass;
 

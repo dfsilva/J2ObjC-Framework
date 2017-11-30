@@ -3,7 +3,7 @@
 //  source: Classes/java/lang/StackTraceElement.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangStackTraceElement")
 #ifdef RESTRICT_JavaLangStackTraceElement
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../java/io/Serializable.h"
 
 /*!
  @brief Simple iOS version of java.lang.StackTraceElement.

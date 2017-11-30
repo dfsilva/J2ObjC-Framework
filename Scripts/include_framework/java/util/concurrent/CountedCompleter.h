@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/CountedCompleter.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentCountedCompleter")
 #ifdef RESTRICT_JavaUtilConcurrentCountedCompleter
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilConcurrentForkJoinTask 1
 #define INCLUDE_JavaUtilConcurrentForkJoinTask 1
-#include "java/util/concurrent/ForkJoinTask.h"
+#include "../../../java/util/concurrent/ForkJoinTask.h"
 
 @class JavaLangThrowable;
 

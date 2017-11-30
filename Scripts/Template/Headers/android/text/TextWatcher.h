@@ -28,16 +28,16 @@
 
 /*!
  @brief When an object of a type is attached to an Editable, its methods will
- be called when the text is changed.
+  be called when the text is changed.
  */
 @protocol AndroidTextTextWatcher < AndroidTextNoCopySpan, JavaObject >
 
 /*!
  @brief This method is called to notify you that, within <code>s</code>,
- the <code>count</code> characters beginning at <code>start</code>
- are about to be replaced by new text with length <code>after</code>.
+  the <code>count</code> characters beginning at <code>start</code>
+  are about to be replaced by new text with length <code>after</code>.
  It is an error to attempt to make changes to <code>s</code> from
- this callback.
+  this callback.
  */
 - (void)beforeTextChangedWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
                                           withInt:(jint)start
@@ -46,10 +46,10 @@
 
 /*!
  @brief This method is called to notify you that, within <code>s</code>,
- the <code>count</code> characters beginning at <code>start</code>
- have just replaced old text that had length <code>before</code>.
+  the <code>count</code> characters beginning at <code>start</code>
+  have just replaced old text that had length <code>before</code>.
  It is an error to attempt to make changes to <code>s</code> from
- this callback.
+  this callback.
  */
 - (void)onTextChangedWithJavaLangCharSequence:(id<JavaLangCharSequence>)s
                                       withInt:(jint)start
@@ -57,18 +57,18 @@
                                       withInt:(jint)count;
 
 /*!
- @brief This method is called to notify you that, somewhere within
+ @brief This method is called to notify you that, somewhere within 
  <code>s</code>, the text has been changed.
  It is legitimate to make further changes to <code>s</code> from
- this callback, but be careful not to get yourself into an infinite
- loop, because any changes you make will cause this method to be
- called again recursively.
- (You are not told where the change took place because other
- afterTextChanged() methods may already have made other changes
- and invalidated the offsets.  But if you need to know here,
- you can use <code>Spannable.setSpan</code> in <code>onTextChanged</code>
- to mark your place and then look up from here where the span
- ended up.
+  this callback, but be careful not to get yourself into an infinite
+  loop, because any changes you make will cause this method to be
+  called again recursively.
+  (You are not told where the change took place because other
+  afterTextChanged() methods may already have made other changes
+  and invalidated the offsets.  But if you need to know here,
+  you can use <code>Spannable.setSpan</code> in <code>onTextChanged</code>
+  to mark your place and then look up from here where the span
+  ended up.
  */
 - (void)afterTextChangedWithAndroidTextEditable:(id<AndroidTextEditable>)s;
 

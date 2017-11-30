@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/net/Proxy.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNetProxy")
 #ifdef RESTRICT_JavaNetProxy
@@ -134,7 +134,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaNetProxy)
 
 #define RESTRICT_JavaLangEnum 1
 #define INCLUDE_JavaLangEnum 1
-#include "java/lang/Enum.h"
+#include "../../java/lang/Enum.h"
 
 @class IOSObjectArray;
 

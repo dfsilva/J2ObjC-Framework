@@ -3,7 +3,7 @@
 //  source: apache_harmony/classlib/modules/beans/src/main/java/java/beans/ParameterDescriptor.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaBeansParameterDescriptor")
 #ifdef RESTRICT_JavaBeansParameterDescriptor
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaBeansFeatureDescriptor 1
 #define INCLUDE_JavaBeansFeatureDescriptor 1
-#include "java/beans/FeatureDescriptor.h"
+#include "../../java/beans/FeatureDescriptor.h"
 
 @interface JavaBeansParameterDescriptor : JavaBeansFeatureDescriptor
 

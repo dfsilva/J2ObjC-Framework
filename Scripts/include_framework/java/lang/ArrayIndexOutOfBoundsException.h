@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/ArrayIndexOutOfBoundsException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangArrayIndexOutOfBoundsException")
 #ifdef RESTRICT_JavaLangArrayIndexOutOfBoundsException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangIndexOutOfBoundsException 1
 #define INCLUDE_JavaLangIndexOutOfBoundsException 1
-#include "java/lang/IndexOutOfBoundsException.h"
+#include "../../java/lang/IndexOutOfBoundsException.h"
 
 /*!
  @brief Thrown to indicate that an array has been accessed with an

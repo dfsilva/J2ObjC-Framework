@@ -3,7 +3,7 @@
 //  source: android/frameworks/base/core/java/android/text/Spanned.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_AndroidTextSpanned")
 #ifdef RESTRICT_AndroidTextSpanned
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangCharSequence 1
 #define INCLUDE_JavaLangCharSequence 1
-#include "java/lang/CharSequence.h"
+#include "../../java/lang/CharSequence.h"
 
 @class IOSClass;
 @class IOSObjectArray;

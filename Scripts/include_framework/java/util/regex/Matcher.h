@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/regex/Matcher.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilRegexMatcher")
 #ifdef RESTRICT_JavaUtilRegexMatcher
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilRegexMatchResult 1
 #define INCLUDE_JavaUtilRegexMatchResult 1
-#include "java/util/regex/MatchResult.h"
+#include "../../../java/util/regex/MatchResult.h"
 
 @class JavaLangStringBuffer;
 @class JavaUtilRegexPattern;
@@ -684,7 +684,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilRegexMatcher)
 
 #define RESTRICT_JavaUtilRegexMatchResult 1
 #define INCLUDE_JavaUtilRegexMatchResult 1
-#include "java/util/regex/MatchResult.h"
+#include "../../../java/util/regex/MatchResult.h"
 
 @class IOSIntArray;
 

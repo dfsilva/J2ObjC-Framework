@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/LinkedBlockingQueue.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentLinkedBlockingQueue")
 #ifdef RESTRICT_JavaUtilConcurrentLinkedBlockingQueue
@@ -21,15 +21,15 @@
 
 #define RESTRICT_JavaUtilAbstractQueue 1
 #define INCLUDE_JavaUtilAbstractQueue 1
-#include "java/util/AbstractQueue.h"
+#include "../../../java/util/AbstractQueue.h"
 
 #define RESTRICT_JavaUtilConcurrentBlockingQueue 1
 #define INCLUDE_JavaUtilConcurrentBlockingQueue 1
-#include "java/util/concurrent/BlockingQueue.h"
+#include "../../../java/util/concurrent/BlockingQueue.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 @class IOSObjectArray;
 @class JavaUtilConcurrentLinkedBlockingQueue_Node;
@@ -368,7 +368,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentLinkedBlockingQueue_Node)
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../../java/util/Spliterator.h"
 
 @class JavaUtilConcurrentLinkedBlockingQueue;
 @class JavaUtilConcurrentLinkedBlockingQueue_Node;

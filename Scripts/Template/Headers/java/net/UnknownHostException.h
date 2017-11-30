@@ -23,6 +23,8 @@
 #define INCLUDE_JavaIoIOException 1
 #include "../../java/io/IOException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Thrown to indicate that the IP address of a host could not be determined.
  @author Jonathan Payne
@@ -34,16 +36,23 @@
 
 /*!
  @brief Constructs a new <code>UnknownHostException</code> with no detail
- message.
+  message.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a new <code>UnknownHostException</code> with the
- specified detail message.
- @param host   the detail message.
+  specified detail message.
+ @param host the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)host;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -57,9 +66,9 @@ FOUNDATION_EXPORT JavaNetUnknownHostException *create_JavaNetUnknownHostExceptio
 
 FOUNDATION_EXPORT void JavaNetUnknownHostException_init(JavaNetUnknownHostException *self);
 
-FOUNDATION_EXPORT JavaNetUnknownHostException *new_JavaNetUnknownHostException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNetUnknownHostException *new_JavaNetUnknownHostException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNetUnknownHostException *create_JavaNetUnknownHostException_init();
+FOUNDATION_EXPORT JavaNetUnknownHostException *create_JavaNetUnknownHostException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNetUnknownHostException)
 

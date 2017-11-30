@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/PrintStream.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoPrintStream")
 #ifdef RESTRICT_JavaIoPrintStream
@@ -21,15 +21,15 @@
 
 #define RESTRICT_JavaIoFilterOutputStream 1
 #define INCLUDE_JavaIoFilterOutputStream 1
-#include "java/io/FilterOutputStream.h"
+#include "../../java/io/FilterOutputStream.h"
 
 #define RESTRICT_JavaLangAppendable 1
 #define INCLUDE_JavaLangAppendable 1
-#include "java/lang/Appendable.h"
+#include "../../java/lang/Appendable.h"
 
 #define RESTRICT_JavaIoCloseable 1
 #define INCLUDE_JavaIoCloseable 1
-#include "java/io/Closeable.h"
+#include "../../java/io/Closeable.h"
 
 @class IOSByteArray;
 @class IOSCharArray;

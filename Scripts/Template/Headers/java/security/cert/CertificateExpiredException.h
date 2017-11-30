@@ -23,12 +23,13 @@
 #define INCLUDE_JavaSecurityCertCertificateException 1
 #include "../../../java/security/cert/CertificateException.h"
 
+@class JavaLangThrowable;
+
 /*!
- @brief Certificate Expired Exception.
- This is thrown whenever the current
- <code>Date</code> or the specified <code>Date</code> is after the
+ @brief Certificate Expired Exception.This is thrown whenever the current 
+ <code>Date</code> or the specified <code>Date</code> is after the 
  <code>notAfter</code> date/time specified in the validity period
- of the certificate.
+  of the certificate.
  @author Hemma Prafullchandra
  */
 @interface JavaSecurityCertCertificateExpiredException : JavaSecurityCertCertificateException
@@ -36,21 +37,26 @@
 #pragma mark Public
 
 /*!
- @brief Constructs a CertificateExpiredException with no detail message.
- A
- detail message is a String that describes this particular
- exception.
+ @brief Constructs a CertificateExpiredException with no detail message.A
+  detail message is a String that describes this particular
+  exception.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a CertificateExpiredException with the specified detail
- message.
- A detail message is a String that describes this
- particular exception.
+  message.A detail message is a String that describes this
+  particular exception.
  @param message the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)message;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -58,9 +64,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaSecurityCertCertificateExpiredException)
 
 FOUNDATION_EXPORT void JavaSecurityCertCertificateExpiredException_init(JavaSecurityCertCertificateExpiredException *self);
 
-FOUNDATION_EXPORT JavaSecurityCertCertificateExpiredException *new_JavaSecurityCertCertificateExpiredException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityCertCertificateExpiredException *new_JavaSecurityCertCertificateExpiredException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityCertCertificateExpiredException *create_JavaSecurityCertCertificateExpiredException_init();
+FOUNDATION_EXPORT JavaSecurityCertCertificateExpiredException *create_JavaSecurityCertCertificateExpiredException_init(void);
 
 FOUNDATION_EXPORT void JavaSecurityCertCertificateExpiredException_initWithNSString_(JavaSecurityCertCertificateExpiredException *self, NSString *message);
 

@@ -23,17 +23,18 @@
 #define INCLUDE_JavaLangSecurityException 1
 #include "../../java/lang/SecurityException.h"
 
+@class JavaLangThrowable;
 @class JavaSecurityPermission;
 
 /*!
  @brief <p> This exception is thrown by the AccessController to indicate
- that a requested access (to a critical system resource such as the
- file system or the network) is denied.
+  that a requested access (to a critical system resource such as the
+  file system or the network) is denied.
  <p> The reason to deny access can vary.  For example, the requested
- permission might be of an incorrect type,  contain an invalid
- value, or request access that is not allowed according to the
- security policy.  Such information should be given whenever
- possible at the time the exception is thrown.
+  permission might be of an incorrect type,  contain an invalid
+  value, or request access that is not allowed according to the
+  security policy.  Such information should be given whenever
+  possible at the time the exception is thrown.
  @author Li Gong
  @author Roland Schemers
  */
@@ -43,27 +44,36 @@
 
 /*!
  @brief Constructs an <code>AccessControlException</code> with the
- specified, detailed message.
- @param s   the detail message.
+  specified, detailed message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
 /*!
  @brief Constructs an <code>AccessControlException</code> with the
- specified, detailed message, and the requested permission that caused
- the exception.
- @param s   the detail message.
- @param p   the permission that caused the exception.
+  specified, detailed message, and the requested permission that caused
+  the exception.
+ @param s the detail message.
+ @param p the permission that caused the exception.
  */
 - (instancetype)initWithNSString:(NSString *)s
       withJavaSecurityPermission:(JavaSecurityPermission *)p;
 
 /*!
- @brief Gets the Permission object associated with this exception, or
- null if there was no corresponding Permission object.
+ @brief Gets the Permission object associated with this exeception, or
+  null if there was no corresponding Permission object.
  @return the Permission object.
  */
 - (JavaSecurityPermission *)getPermission;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 

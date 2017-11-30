@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/Semaphore.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentSemaphore")
 #ifdef RESTRICT_JavaUtilConcurrentSemaphore
@@ -27,7 +27,7 @@
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 @class JavaUtilConcurrentTimeUnit;
 @protocol JavaUtilCollection;
@@ -541,7 +541,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentSemaphore)
 
 #define RESTRICT_JavaUtilConcurrentLocksAbstractQueuedSynchronizer 1
 #define INCLUDE_JavaUtilConcurrentLocksAbstractQueuedSynchronizer 1
-#include "java/util/concurrent/locks/AbstractQueuedSynchronizer.h"
+#include "../../../java/util/concurrent/locks/AbstractQueuedSynchronizer.h"
 
 /*!
  @brief Synchronization implementation for semaphore.Uses AQS state

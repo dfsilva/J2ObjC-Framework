@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/NotActiveException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoNotActiveException")
 #ifdef RESTRICT_JavaIoNotActiveException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoObjectStreamException 1
 #define INCLUDE_JavaIoObjectStreamException 1
-#include "java/io/ObjectStreamException.h"
+#include "../../java/io/ObjectStreamException.h"
 
 /*!
  @brief Thrown when serialization or deserialization is not active.

@@ -24,6 +24,7 @@
 #include "../../java/lang/Exception.h"
 
 @class JavaBeansPropertyChangeEvent;
+@class JavaLangThrowable;
 
 /*!
  @brief Indicates that a proposed property change is unacceptable.
@@ -34,23 +35,37 @@
 
 /*!
  @brief <p>
- Constructs an instance with a message and the change event.
+  Constructs an instance with a message and the change event.
  </p>
- @param message
- A description of the veto.
- @param event
- The event that was vetoed.
+ @param message A description of the veto.
+ @param event The event that was vetoed.
  */
 - (instancetype)initWithNSString:(NSString *)message
 withJavaBeansPropertyChangeEvent:(JavaBeansPropertyChangeEvent *)event;
 
 /*!
  @brief <p>
- Gets the property change event.
+  Gets the property change event.
  </p>
  @return An instance of <code>PropertyChangeEvent</code>
  */
 - (JavaBeansPropertyChangeEvent *)getPropertyChangeEvent;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 

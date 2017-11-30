@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/sql/Savepoint.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSqlSavepoint")
 #ifdef RESTRICT_JavaSqlSavepoint

@@ -16,6 +16,11 @@
 #pragma clang diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (JavaSqlClientInfoStatus_) && (INCLUDE_ALL_JavaSqlClientInfoStatus || defined(INCLUDE_JavaSqlClientInfoStatus))
 #define JavaSqlClientInfoStatus_
 
@@ -34,10 +39,10 @@ typedef NS_ENUM(NSUInteger, JavaSqlClientInfoStatus_Enum) {
 
 /*!
  @brief Enumeration for status of the reason that a property could not be set
- via a call to <code>Connection.setClientInfo</code>
+  via a call to <code>Connection.setClientInfo</code>
  @since 1.6
  */
-@interface JavaSqlClientInfoStatus : JavaLangEnum < NSCopying >
+@interface JavaSqlClientInfoStatus : JavaLangEnum
 
 + (JavaSqlClientInfoStatus * __nonnull)REASON_UNKNOWN;
 
@@ -55,7 +60,6 @@ typedef NS_ENUM(NSUInteger, JavaSqlClientInfoStatus_Enum) {
 
 #pragma mark Package-Private
 
-- (id)copyWithZone:(NSZone *)zone;
 - (JavaSqlClientInfoStatus_Enum)toNSEnum;
 
 @end
@@ -69,32 +73,32 @@ FOUNDATION_EXPORT JavaSqlClientInfoStatus *JavaSqlClientInfoStatus_values_[];
  @brief The client info property could not be set for some unknown reason
  @since 1.6
  */
-inline JavaSqlClientInfoStatus *JavaSqlClientInfoStatus_get_REASON_UNKNOWN();
+inline JavaSqlClientInfoStatus *JavaSqlClientInfoStatus_get_REASON_UNKNOWN(void);
 J2OBJC_ENUM_CONSTANT(JavaSqlClientInfoStatus, REASON_UNKNOWN)
 
 /*!
  @brief The client info property name specified was not a recognized property
- name.
+  name.
  @since 1.6
  */
-inline JavaSqlClientInfoStatus *JavaSqlClientInfoStatus_get_REASON_UNKNOWN_PROPERTY();
+inline JavaSqlClientInfoStatus *JavaSqlClientInfoStatus_get_REASON_UNKNOWN_PROPERTY(void);
 J2OBJC_ENUM_CONSTANT(JavaSqlClientInfoStatus, REASON_UNKNOWN_PROPERTY)
 
 /*!
  @brief The value specified for the client info property was not valid.
  @since 1.6
  */
-inline JavaSqlClientInfoStatus *JavaSqlClientInfoStatus_get_REASON_VALUE_INVALID();
+inline JavaSqlClientInfoStatus *JavaSqlClientInfoStatus_get_REASON_VALUE_INVALID(void);
 J2OBJC_ENUM_CONSTANT(JavaSqlClientInfoStatus, REASON_VALUE_INVALID)
 
 /*!
  @brief The value specified for the client info property was too large.
  @since 1.6
  */
-inline JavaSqlClientInfoStatus *JavaSqlClientInfoStatus_get_REASON_VALUE_TRUNCATED();
+inline JavaSqlClientInfoStatus *JavaSqlClientInfoStatus_get_REASON_VALUE_TRUNCATED(void);
 J2OBJC_ENUM_CONSTANT(JavaSqlClientInfoStatus, REASON_VALUE_TRUNCATED)
 
-FOUNDATION_EXPORT IOSObjectArray *JavaSqlClientInfoStatus_values();
+FOUNDATION_EXPORT IOSObjectArray *JavaSqlClientInfoStatus_values(void);
 
 FOUNDATION_EXPORT JavaSqlClientInfoStatus *JavaSqlClientInfoStatus_valueOfWithNSString_(NSString *name);
 
@@ -104,6 +108,10 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaSqlClientInfoStatus)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 
 #pragma clang diagnostic pop
 #pragma pop_macro("INCLUDE_ALL_JavaSqlClientInfoStatus")

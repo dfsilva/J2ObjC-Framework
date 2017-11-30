@@ -27,9 +27,9 @@
 
 /*!
  @brief Use this annotation on test classes or test methods that should not be included in a test
- suite.
- If the annotation appears on the class then no tests in that class will be included. If
- the annotation appears only on a test method then only that method will be excluded.
+  suite.If the annotation appears on the class then no tests in that class will be included.
+ If
+  the annotation appears only on a test method then only that method will be excluded.
  */
 @protocol AndroidTestSuitebuilderAnnotationSuppress < JavaLangAnnotationAnnotation >
 
@@ -41,7 +41,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(AndroidTestSuitebuilderAnnotationSuppress)
 
-FOUNDATION_EXPORT id<AndroidTestSuitebuilderAnnotationSuppress> create_AndroidTestSuitebuilderAnnotationSuppress();
+FOUNDATION_EXPORT id<AndroidTestSuitebuilderAnnotationSuppress> create_AndroidTestSuitebuilderAnnotationSuppress(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(AndroidTestSuitebuilderAnnotationSuppress)
 

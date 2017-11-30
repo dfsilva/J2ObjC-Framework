@@ -23,19 +23,21 @@
 #define INCLUDE_JavaLangException 1
 #include "../../java/lang/Exception.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief <p>
- The <code> TooManyListenersException </code> Exception is used as part of
- the Java Event model to annotate and implement a unicast special case of
- a multicast Event Source.
+  The <code> TooManyListenersException </code> Exception is used as part of
+  the Java Event model to annotate and implement a unicast special case of
+  a multicast Event Source.
  </p>
- <p>
- The presence of a "throws TooManyListenersException" clause on any given
- concrete implementation of the normally multicast "void addXyzEventListener"
- event listener registration pattern is used to annotate that interface as
- implementing a unicast Listener special case, that is, that one and only
- one Listener may be registered on the particular event listener source
- concurrently.
+  <p>
+  The presence of a "throws TooManyListenersException" clause on any given
+  concrete implementation of the normally multicast "void addXyzEventListener"
+  event listener registration pattern is used to annotate that interface as
+  implementing a unicast Listener special case, that is, that one and only
+  one Listener may be registered on the particular event listener source
+  concurrently. 
  </p>
  - seealso: java.util.EventObject
  - seealso: java.util.EventListener
@@ -59,15 +61,27 @@
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaUtilTooManyListenersException)
 
 FOUNDATION_EXPORT void JavaUtilTooManyListenersException_init(JavaUtilTooManyListenersException *self);
 
-FOUNDATION_EXPORT JavaUtilTooManyListenersException *new_JavaUtilTooManyListenersException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaUtilTooManyListenersException *new_JavaUtilTooManyListenersException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaUtilTooManyListenersException *create_JavaUtilTooManyListenersException_init();
+FOUNDATION_EXPORT JavaUtilTooManyListenersException *create_JavaUtilTooManyListenersException_init(void);
 
 FOUNDATION_EXPORT void JavaUtilTooManyListenersException_initWithNSString_(JavaUtilTooManyListenersException *self, NSString *s);
 

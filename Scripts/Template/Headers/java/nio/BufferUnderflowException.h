@@ -23,9 +23,11 @@
 #define INCLUDE_JavaLangRuntimeException 1
 #include "../../java/lang/RuntimeException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Unchecked exception thrown when a relative <i>get</i> operation reaches
- the source buffer's limit.
+  the source buffer's limit.
  @since 1.4
  */
 @interface JavaNioBufferUnderflowException : JavaLangRuntimeException
@@ -37,15 +39,29 @@
  */
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaNioBufferUnderflowException)
 
 FOUNDATION_EXPORT void JavaNioBufferUnderflowException_init(JavaNioBufferUnderflowException *self);
 
-FOUNDATION_EXPORT JavaNioBufferUnderflowException *new_JavaNioBufferUnderflowException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNioBufferUnderflowException *new_JavaNioBufferUnderflowException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNioBufferUnderflowException *create_JavaNioBufferUnderflowException_init();
+FOUNDATION_EXPORT JavaNioBufferUnderflowException *create_JavaNioBufferUnderflowException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioBufferUnderflowException)
 

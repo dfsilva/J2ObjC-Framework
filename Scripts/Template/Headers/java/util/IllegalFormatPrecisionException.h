@@ -24,9 +24,9 @@
 #include "../../java/util/IllegalFormatException.h"
 
 /*!
- @brief Unchecked exception thrown when the precision is a negative value other than
+ @brief Unchecked exception thrown when the precision is a negative value other than 
  <tt>-1</tt>, the conversion does not support a precision, or the value is
- otherwise unsupported.
+  otherwise unsupported.
  @since 1.5
  */
 @interface JavaUtilIllegalFormatPrecisionException : JavaUtilIllegalFormatException
@@ -35,8 +35,7 @@
 
 /*!
  @brief Constructs an instance of this class with the specified precision.
- @param p
- The precision
+ @param p The precision
  */
 - (instancetype)initWithInt:(jint)p;
 
@@ -47,6 +46,10 @@
  @return The precision
  */
 - (jint)getPrecision;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

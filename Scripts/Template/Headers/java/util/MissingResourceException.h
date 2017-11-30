@@ -23,6 +23,8 @@
 #define INCLUDE_JavaLangRuntimeException 1
 #include "../../java/lang/RuntimeException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Signals that a resource is missing.
  - seealso: java.lang.Exception
@@ -60,27 +62,38 @@
 #pragma mark Package-Private
 
 /*!
- @brief Constructs a <code>MissingResourceException</code> with
+ @brief Constructs a <code>MissingResourceException</code> with 
  <code>message</code>, <code>className</code>, <code>key</code>,
- and <code>cause</code>.
- This constructor is package private for
- use by <code>ResourceBundle.getBundle</code>.
- @param message
- the detail message
- @param className_
- the name of the resource class
- @param key
- the key for the missing resource.
- @param cause
- the cause (which is saved for later retrieval by the
- <code>Throwable.getCause()</code> method). (A null value is
- permitted, and indicates that the cause is nonexistent
- or unknown.)
+  and <code>cause</code>.This constructor is package private for
+  use by <code>ResourceBundle.getBundle</code>.
+ @param message the detail message
+ @param className_ the name of the resource class
+ @param key the key for the missing resource.
+ @param cause the cause (which is saved for later retrieval by the
+           {@@link Throwable.getCause()
+  } method). (A null value is         permitted, and indicates that the cause is nonexistent
+          or unknown.)
  */
 - (instancetype)initWithNSString:(NSString *)message
                     withNSString:(NSString *)className_
                     withNSString:(NSString *)key
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
@@ -92,11 +105,11 @@ FOUNDATION_EXPORT JavaUtilMissingResourceException *new_JavaUtilMissingResourceE
 
 FOUNDATION_EXPORT JavaUtilMissingResourceException *create_JavaUtilMissingResourceException_initWithNSString_withNSString_withNSString_(NSString *s, NSString *className_, NSString *key);
 
-FOUNDATION_EXPORT void JavaUtilMissingResourceException_initWithNSString_withNSString_withNSString_withNSException_(JavaUtilMissingResourceException *self, NSString *message, NSString *className_, NSString *key, NSException *cause);
+FOUNDATION_EXPORT void JavaUtilMissingResourceException_initWithNSString_withNSString_withNSString_withJavaLangThrowable_(JavaUtilMissingResourceException *self, NSString *message, NSString *className_, NSString *key, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaUtilMissingResourceException *new_JavaUtilMissingResourceException_initWithNSString_withNSString_withNSString_withNSException_(NSString *message, NSString *className_, NSString *key, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaUtilMissingResourceException *new_JavaUtilMissingResourceException_initWithNSString_withNSString_withNSString_withJavaLangThrowable_(NSString *message, NSString *className_, NSString *key, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaUtilMissingResourceException *create_JavaUtilMissingResourceException_initWithNSString_withNSString_withNSString_withNSException_(NSString *message, NSString *className_, NSString *key, NSException *cause);
+FOUNDATION_EXPORT JavaUtilMissingResourceException *create_JavaUtilMissingResourceException_initWithNSString_withNSString_withNSString_withJavaLangThrowable_(NSString *message, NSString *className_, NSString *key, JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaUtilMissingResourceException)
 

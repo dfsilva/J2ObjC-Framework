@@ -3,7 +3,7 @@
 //  source: android/libcore/json/src/main/java/org/json/JSON.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_OrgJsonJSON")
 #ifdef RESTRICT_OrgJsonJSON

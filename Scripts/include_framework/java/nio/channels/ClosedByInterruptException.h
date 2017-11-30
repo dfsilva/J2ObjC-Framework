@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/nio/channels/ClosedByInterruptException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNioChannelsClosedByInterruptException")
 #ifdef RESTRICT_JavaNioChannelsClosedByInterruptException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaNioChannelsAsynchronousCloseException 1
 #define INCLUDE_JavaNioChannelsAsynchronousCloseException 1
-#include "java/nio/channels/AsynchronousCloseException.h"
+#include "../../../java/nio/channels/AsynchronousCloseException.h"
 
 /*!
  @brief Checked exception received by a thread when another thread interrupts it

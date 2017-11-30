@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/ConcurrentSkipListMap.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentConcurrentSkipListMap")
 #ifdef RESTRICT_JavaUtilConcurrentConcurrentSkipListMap
@@ -51,15 +51,15 @@
 
 #define RESTRICT_JavaUtilAbstractMap 1
 #define INCLUDE_JavaUtilAbstractMap 1
-#include "java/util/AbstractMap.h"
+#include "../../../java/util/AbstractMap.h"
 
 #define RESTRICT_JavaUtilConcurrentConcurrentNavigableMap 1
 #define INCLUDE_JavaUtilConcurrentConcurrentNavigableMap 1
-#include "java/util/concurrent/ConcurrentNavigableMap.h"
+#include "../../../java/util/concurrent/ConcurrentNavigableMap.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 @class JavaUtilAbstractMap_SimpleImmutableEntry;
 @class JavaUtilConcurrentConcurrentSkipListMap_EntrySpliterator;
@@ -1019,7 +1019,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentSkipListMap_HeadIndex)
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
-#include "java/util/Iterator.h"
+#include "../../../java/util/Iterator.h"
 
 @class JavaUtilConcurrentConcurrentSkipListMap;
 @class JavaUtilConcurrentConcurrentSkipListMap_Node;
@@ -1169,11 +1169,11 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentSkipListMap_EntryIterator
 
 #define RESTRICT_JavaUtilAbstractSet 1
 #define INCLUDE_JavaUtilAbstractSet 1
-#include "java/util/AbstractSet.h"
+#include "../../../java/util/AbstractSet.h"
 
 #define RESTRICT_JavaUtilNavigableSet 1
 #define INCLUDE_JavaUtilNavigableSet 1
-#include "java/util/NavigableSet.h"
+#include "../../../java/util/NavigableSet.h"
 
 @class IOSObjectArray;
 @protocol JavaUtilComparator;
@@ -1277,7 +1277,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentSkipListMap_KeySet)
 
 #define RESTRICT_JavaUtilAbstractCollection 1
 #define INCLUDE_JavaUtilAbstractCollection 1
-#include "java/util/AbstractCollection.h"
+#include "../../../java/util/AbstractCollection.h"
 
 @class IOSObjectArray;
 @protocol JavaUtilConcurrentConcurrentNavigableMap;
@@ -1339,7 +1339,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentSkipListMap_Values)
 
 #define RESTRICT_JavaUtilAbstractSet 1
 #define INCLUDE_JavaUtilAbstractSet 1
-#include "java/util/AbstractSet.h"
+#include "../../../java/util/AbstractSet.h"
 
 @class IOSObjectArray;
 @protocol JavaUtilConcurrentConcurrentNavigableMap;
@@ -1405,15 +1405,15 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentSkipListMap_EntrySet)
 
 #define RESTRICT_JavaUtilAbstractMap 1
 #define INCLUDE_JavaUtilAbstractMap 1
-#include "java/util/AbstractMap.h"
+#include "../../../java/util/AbstractMap.h"
 
 #define RESTRICT_JavaUtilConcurrentConcurrentNavigableMap 1
 #define INCLUDE_JavaUtilConcurrentConcurrentNavigableMap 1
-#include "java/util/concurrent/ConcurrentNavigableMap.h"
+#include "../../../java/util/concurrent/ConcurrentNavigableMap.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 @class JavaUtilConcurrentConcurrentSkipListMap;
 @class JavaUtilConcurrentConcurrentSkipListMap_Node;
@@ -1643,11 +1643,11 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentSkipListMap_SubMap)
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
-#include "java/util/Iterator.h"
+#include "../../../java/util/Iterator.h"
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../../java/util/Spliterator.h"
 
 @class JavaUtilConcurrentConcurrentSkipListMap_Node;
 @class JavaUtilConcurrentConcurrentSkipListMap_SubMap;
@@ -1869,7 +1869,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentSkipListMap_CSLMSpliterat
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../../java/util/Spliterator.h"
 
 @class JavaUtilConcurrentConcurrentSkipListMap_Index;
 @class JavaUtilConcurrentConcurrentSkipListMap_Node;
@@ -1917,7 +1917,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentSkipListMap_KeySpliterato
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../../java/util/Spliterator.h"
 
 @class JavaUtilConcurrentConcurrentSkipListMap_Index;
 @class JavaUtilConcurrentConcurrentSkipListMap_Node;
@@ -1963,7 +1963,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentSkipListMap_ValueSplitera
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../../java/util/Spliterator.h"
 
 @class JavaUtilConcurrentConcurrentSkipListMap_Index;
 @class JavaUtilConcurrentConcurrentSkipListMap_Node;

@@ -25,8 +25,8 @@
 
 /*!
  @brief Thrown when a syntactically malformed signature attribute is
- encountered by a reflective method that needs to interpret the
- generic signature information for a type, method or constructor.
+  encountered by a reflective method that needs to interpret the
+  generic signature information for a type, method or constructor.
  @since 1.5
  */
 @interface JavaLangReflectGenericSignatureFormatError : JavaLangClassFormatError
@@ -35,15 +35,19 @@
 
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaLangReflectGenericSignatureFormatError)
 
 FOUNDATION_EXPORT void JavaLangReflectGenericSignatureFormatError_init(JavaLangReflectGenericSignatureFormatError *self);
 
-FOUNDATION_EXPORT JavaLangReflectGenericSignatureFormatError *new_JavaLangReflectGenericSignatureFormatError_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangReflectGenericSignatureFormatError *new_JavaLangReflectGenericSignatureFormatError_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangReflectGenericSignatureFormatError *create_JavaLangReflectGenericSignatureFormatError_init();
+FOUNDATION_EXPORT JavaLangReflectGenericSignatureFormatError *create_JavaLangReflectGenericSignatureFormatError_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangReflectGenericSignatureFormatError)
 

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/StackOverflowError.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangStackOverflowError")
 #ifdef RESTRICT_JavaLangStackOverflowError
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangVirtualMachineError 1
 #define INCLUDE_JavaLangVirtualMachineError 1
-#include "java/lang/VirtualMachineError.h"
+#include "../../java/lang/VirtualMachineError.h"
 
 @class JavaLangThrowable;
 

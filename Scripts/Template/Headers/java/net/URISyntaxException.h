@@ -23,9 +23,11 @@
 #define INCLUDE_JavaLangException 1
 #include "../../java/lang/Exception.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Checked exception thrown to indicate that a string could not be parsed as a
- URI reference.
+  URI reference.
  @author Mark Reinhold
  - seealso: URI
  @since 1.4
@@ -35,12 +37,11 @@
 #pragma mark Public
 
 /*!
- @brief Constructs an instance from the given input string and reason.
- The
- resulting object will have an error index of <code>-1</code>.
- @param input   The input string
- @param reason  A string explaining why the input could not be parsed
- @throws NullPointerException
+ @brief Constructs an instance from the given input string and reason.The
+  resulting object will have an error index of <code>-1</code>.
+ @param input The input string
+ @param reason A string explaining why the input could not be parsed
+ @throw NullPointerException
  If either the input or reason strings are <code>null</code>
  */
 - (instancetype)initWithNSString:(NSString *)input
@@ -48,14 +49,14 @@
 
 /*!
  @brief Constructs an instance from the given input string, reason, and error
- index.
- @param input   The input string
- @param reason  A string explaining why the input could not be parsed
- @param index   The index at which the parse error occurred,
- or <code>-1</code> if the index is not known
- @throws NullPointerException
+  index.
+ @param input The input string
+ @param reason A string explaining why the input could not be parsed
+ @param index The index at which the parse error occurred,                  or 
+ <code>-1</code>  if the index is not known
+ @throw NullPointerException
  If either the input or reason strings are <code>null</code>
- @throws IllegalArgumentException
+ @throw IllegalArgumentException
  If the error index is less than <code>-1</code>
  */
 - (instancetype)initWithNSString:(NSString *)input
@@ -64,7 +65,7 @@
 
 /*!
  @brief Returns an index into the input string of the position at which the
- parse error occurred, or <code>-1</code> if this position is not known.
+  parse error occurred, or <code>-1</code> if this position is not known.
  @return The error index
  */
 - (jint)getIndex;
@@ -76,13 +77,13 @@
 - (NSString *)getInput;
 
 /*!
- @brief Returns a string describing the parse error.
- The resulting string
- consists of the reason string followed by a colon character
- (<code>':'</code>), a space, and the input string.  If the error index is
- defined then the string <code>" at index "</code> followed by the index, in
- decimal, is inserted after the reason string and before the colon
- character.
+ @brief Returns a string describing the parse error.The resulting string
+  consists of the reason string followed by a colon character
+  (<code>':'</code>), a space, and the input string.
+ If the error index is
+  defined then the string <code>" at index "</code> followed by the index, in
+  decimal, is inserted after the reason string and before the colon
+  character.
  @return A string describing the parse error
  */
 - (NSString *)getMessage;
@@ -92,6 +93,22 @@
  @return The reason string
  */
 - (NSString *)getReason;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 

@@ -23,8 +23,8 @@
 
 /*!
  @brief The <code>Void</code> class is an uninstantiable placeholder class to hold a
- reference to the <code>Class</code> object representing the Java keyword
- void.
+  reference to the <code>Class</code> object representing the Java keyword
+  void.
  @author unascribed
  @since JDK1.1
  */
@@ -38,9 +38,9 @@ J2OBJC_STATIC_INIT(JavaLangVoid)
 
 /*!
  @brief The <code>Class</code> object representing the pseudo-type corresponding to
- the keyword <code>void</code>.
+  the keyword <code>void</code>.
  */
-inline IOSClass *JavaLangVoid_get_TYPE();
+inline IOSClass *JavaLangVoid_get_TYPE(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT IOSClass *JavaLangVoid_TYPE;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(JavaLangVoid, TYPE, IOSClass *)

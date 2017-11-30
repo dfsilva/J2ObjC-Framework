@@ -3,7 +3,7 @@
 //  source: Classes/javax/annotation/Resource.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxAnnotationResource")
 #ifdef RESTRICT_JavaxAnnotationResource
@@ -26,7 +26,7 @@
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
-#include "java/lang/annotation/Annotation.h"
+#include "../../java/lang/annotation/Annotation.h"
 
 @class IOSClass;
 @class JavaxAnnotationResource_AuthenticationType;
@@ -71,7 +71,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaxAnnotationResource)
 
 #define RESTRICT_JavaLangEnum 1
 #define INCLUDE_JavaLangEnum 1
-#include "java/lang/Enum.h"
+#include "../../java/lang/Enum.h"
 
 @class IOSObjectArray;
 

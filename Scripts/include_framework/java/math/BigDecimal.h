@@ -3,7 +3,7 @@
 //  source: openjdk/src/share/classes/java/math/BigDecimal.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaMathBigDecimal")
 #ifdef RESTRICT_JavaMathBigDecimal
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangComparable 1
 #define INCLUDE_JavaLangComparable 1
-#include "java/lang/Comparable.h"
+#include "../../java/lang/Comparable.h"
 
 @class IOSCharArray;
 @class IOSObjectArray;

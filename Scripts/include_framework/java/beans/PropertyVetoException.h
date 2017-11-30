@@ -3,7 +3,7 @@
 //  source: apache_harmony/classlib/modules/beans/src/main/java/java/beans/PropertyVetoException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaBeansPropertyVetoException")
 #ifdef RESTRICT_JavaBeansPropertyVetoException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangException 1
 #define INCLUDE_JavaLangException 1
-#include "java/lang/Exception.h"
+#include "../../java/lang/Exception.h"
 
 @class JavaBeansPropertyChangeEvent;
 @class JavaLangThrowable;

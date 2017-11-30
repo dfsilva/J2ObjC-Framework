@@ -23,9 +23,11 @@
 #define INCLUDE_JavaLangIllegalStateException 1
 #include "../../../java/lang/IllegalStateException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Unchecked exception thrown when an attempt is made to use
- a selection key that is no longer valid.
+  a selection key that is no longer valid.
  @since 1.4
  */
 @interface JavaNioChannelsCancelledKeyException : JavaLangIllegalStateException
@@ -37,15 +39,24 @@
  */
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsCancelledKeyException)
 
 FOUNDATION_EXPORT void JavaNioChannelsCancelledKeyException_init(JavaNioChannelsCancelledKeyException *self);
 
-FOUNDATION_EXPORT JavaNioChannelsCancelledKeyException *new_JavaNioChannelsCancelledKeyException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNioChannelsCancelledKeyException *new_JavaNioChannelsCancelledKeyException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNioChannelsCancelledKeyException *create_JavaNioChannelsCancelledKeyException_init();
+FOUNDATION_EXPORT JavaNioChannelsCancelledKeyException *create_JavaNioChannelsCancelledKeyException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsCancelledKeyException)
 

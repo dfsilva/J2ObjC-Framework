@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/java/nio/charset/Charset.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNioCharsetCharset")
 #ifdef RESTRICT_JavaNioCharsetCharset
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangComparable 1
 #define INCLUDE_JavaLangComparable 1
-#include "java/lang/Comparable.h"
+#include "../../../java/lang/Comparable.h"
 
 @class IOSObjectArray;
 @class JavaNioByteBuffer;

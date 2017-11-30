@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/sql/Connection.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSqlConnection")
 #ifdef RESTRICT_JavaSqlConnection
@@ -21,11 +21,11 @@
 
 #define RESTRICT_JavaSqlWrapper 1
 #define INCLUDE_JavaSqlWrapper 1
-#include "java/sql/Wrapper.h"
+#include "../../java/sql/Wrapper.h"
 
 #define RESTRICT_JavaLangAutoCloseable 1
 #define INCLUDE_JavaLangAutoCloseable 1
-#include "java/lang/AutoCloseable.h"
+#include "../../java/lang/AutoCloseable.h"
 
 @class IOSIntArray;
 @class IOSObjectArray;

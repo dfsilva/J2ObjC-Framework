@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/javax/net/ssl/SSLServerSocketFactory.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxNetSslSSLServerSocketFactory")
 #ifdef RESTRICT_JavaxNetSslSSLServerSocketFactory
@@ -24,7 +24,7 @@
 
 #define RESTRICT_JavaxNetServerSocketFactory 1
 #define INCLUDE_JavaxNetServerSocketFactory 1
-#include "javax/net/ServerSocketFactory.h"
+#include "../../../javax/net/ServerSocketFactory.h"
 
 @class IOSObjectArray;
 

@@ -54,19 +54,19 @@
 
 J2OBJC_EMPTY_STATIC_INIT(JavaBeansBeanInfo)
 
-inline jint JavaBeansBeanInfo_get_ICON_COLOR_16x16();
+inline jint JavaBeansBeanInfo_get_ICON_COLOR_16x16(void);
 #define JavaBeansBeanInfo_ICON_COLOR_16x16 1
 J2OBJC_STATIC_FIELD_CONSTANT(JavaBeansBeanInfo, ICON_COLOR_16x16, jint)
 
-inline jint JavaBeansBeanInfo_get_ICON_COLOR_32x32();
+inline jint JavaBeansBeanInfo_get_ICON_COLOR_32x32(void);
 #define JavaBeansBeanInfo_ICON_COLOR_32x32 2
 J2OBJC_STATIC_FIELD_CONSTANT(JavaBeansBeanInfo, ICON_COLOR_32x32, jint)
 
-inline jint JavaBeansBeanInfo_get_ICON_MONO_16x16();
+inline jint JavaBeansBeanInfo_get_ICON_MONO_16x16(void);
 #define JavaBeansBeanInfo_ICON_MONO_16x16 3
 J2OBJC_STATIC_FIELD_CONSTANT(JavaBeansBeanInfo, ICON_MONO_16x16, jint)
 
-inline jint JavaBeansBeanInfo_get_ICON_MONO_32x32();
+inline jint JavaBeansBeanInfo_get_ICON_MONO_32x32(void);
 #define JavaBeansBeanInfo_ICON_MONO_32x32 4
 J2OBJC_STATIC_FIELD_CONSTANT(JavaBeansBeanInfo, ICON_MONO_32x32, jint)
 

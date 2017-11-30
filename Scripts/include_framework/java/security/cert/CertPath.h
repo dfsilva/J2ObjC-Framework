@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/security/cert/CertPath.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSecurityCertCertPath")
 #ifdef RESTRICT_JavaSecurityCertCertPath
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 @class IOSByteArray;
 @protocol JavaUtilIterator;
@@ -238,7 +238,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaSecurityCertCertPath)
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 @class IOSByteArray;
 

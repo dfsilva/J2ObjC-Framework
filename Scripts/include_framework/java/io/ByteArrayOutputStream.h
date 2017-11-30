@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/ByteArrayOutputStream.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoByteArrayOutputStream")
 #ifdef RESTRICT_JavaIoByteArrayOutputStream
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoOutputStream 1
 #define INCLUDE_JavaIoOutputStream 1
-#include "java/io/OutputStream.h"
+#include "../../java/io/OutputStream.h"
 
 @class IOSByteArray;
 

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/PipedReader.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoPipedReader")
 #ifdef RESTRICT_JavaIoPipedReader
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoReader 1
 #define INCLUDE_JavaIoReader 1
-#include "java/io/Reader.h"
+#include "../../java/io/Reader.h"
 
 @class IOSCharArray;
 @class JavaIoPipedWriter;

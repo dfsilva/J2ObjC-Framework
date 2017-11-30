@@ -23,10 +23,10 @@
 
 /*!
  @brief Defines an interface for classes that are able to write big-endian typed data to some
- target.
- Typically, this data can be read in by a class which implements
- DataInput. Types that can be written include byte, 16-bit short, 32-bit int,
- 32-bit float, 64-bit long, 64-bit double, byte strings, and <code>MUTF-8</code>
+  target.Typically, this data can be read in by a class which implements
+  DataInput.
+ Types that can be written include byte, 16-bit short, 32-bit int,
+  32-bit float, 64-bit long, 64-bit double, byte strings, and <code>MUTF-8</code>
   encoded strings.
  - seealso: DataOutputStream
  - seealso: RandomAccessFile
@@ -35,24 +35,22 @@
 
 /*!
  @brief Writes the entire contents of the byte array <code>buffer</code> to this
- stream.
- @param buffer
- the buffer to write.
- @throws IOException
+  stream.
+ @param buffer the buffer to write.
+ @throw IOException
  if an I/O error occurs while writing.
  */
 - (void)writeWithByteArray:(IOSByteArray *)buffer;
 
 /*!
  @brief Writes <code>count</code> bytes from the byte array <code>buffer</code> starting at
- offset <code>index</code>.
- @param buffer
- the buffer to write.
- @param offset
- the index of the first byte in <code>buffer</code> to write.
- @param count
- the number of bytes from the <code>buffer</code> to write.
- @throws IOException
+  offset <code>index</code>.
+ @param buffer the buffer to write.
+ @param offset the index of the first byte in 
+ <code>buffer</code>  to write.
+ @param count the number of bytes from the 
+ <code>buffer</code>  to write.
+ @throw IOException
  if an I/O error occurs while writing.
  */
 - (void)writeWithByteArray:(IOSByteArray *)buffer
@@ -61,9 +59,8 @@
 
 /*!
  @brief Writes the specified 8-bit byte.
- @param oneByte
- the byte to write.
- @throws IOException
+ @param oneByte the byte to write.
+ @throw IOException
  if an I/O error occurs while writing.
  - seealso: DataInput#readByte()
  */
@@ -71,9 +68,8 @@
 
 /*!
  @brief Writes the specified boolean.
- @param val
- the boolean value to write.
- @throws IOException
+ @param val the boolean value to write.
+ @throw IOException
  if an I/O error occurs while writing.
  - seealso: DataInput#readBoolean()
  */
@@ -81,9 +77,8 @@
 
 /*!
  @brief Writes the specified 8-bit byte.
- @param val
- the byte value to write.
- @throws IOException
+ @param val the byte value to write.
+ @throw IOException
  if an I/O error occurs while writing.
  - seealso: DataInput#readByte()
  - seealso: DataInput#readUnsignedByte()
@@ -92,20 +87,17 @@
 
 /*!
  @brief Writes the low order 8-bit bytes from the specified string.
- @param str
- the string containing the bytes to write.
- @throws IOException
+ @param str the string containing the bytes to write.
+ @throw IOException
  if an I/O error occurs while writing.
  */
 - (void)writeBytesWithNSString:(NSString *)str;
 
 /*!
- @brief Writes the specified 16-bit character in big-endian order.
- Only the two least significant
- bytes of the integer <code>oneByte</code> are written.
- @param val
- the character to write.
- @throws IOException
+ @brief Writes the specified 16-bit character in big-endian order.Only the two least significant
+  bytes of the integer <code>oneByte</code> are written.
+ @param val the character to write.
+ @throw IOException
  if an I/O error occurs while writing.
  - seealso: DataInput#readChar()
  */
@@ -113,33 +105,28 @@
 
 /*!
  @brief Writes the 16-bit characters contained in <code>str</code> in big-endian order.
- @param str
- the string that contains the characters to write.
- @throws IOException
+ @param str the string that contains the characters to write.
+ @throw IOException
  if an I/O error occurs while writing.
  - seealso: DataInput#readChar()
  */
 - (void)writeCharsWithNSString:(NSString *)str;
 
 /*!
- @brief Writes the specified 64-bit double in big-endian order.
- The resulting output is the eight
- bytes returned by <code>Double.doubleToLongBits(double)</code>.
- @param val
- the double to write.
- @throws IOException
+ @brief Writes the specified 64-bit double in big-endian order.The resulting output is the eight
+  bytes returned by <code>Double.doubleToLongBits(double)</code>.
+ @param val the double to write.
+ @throw IOException
  if an I/O error occurs while writing.
  - seealso: DataInput#readDouble()
  */
 - (void)writeDoubleWithDouble:(jdouble)val;
 
 /*!
- @brief Writes the specified 32-bit float in big-endian order.
- The resulting output is the four bytes
- returned by <code>Float.floatToIntBits(float)</code>.
- @param val
- the float to write.
- @throws IOException
+ @brief Writes the specified 32-bit float in big-endian order.The resulting output is the four bytes
+  returned by <code>Float.floatToIntBits(float)</code>.
+ @param val the float to write.
+ @throw IOException
  if an I/O error occurs while writing.
  - seealso: DataInput#readFloat()
  */
@@ -147,9 +134,8 @@
 
 /*!
  @brief Writes the specified 32-bit int in big-endian order.
- @param val
- the int to write.
- @throws IOException
+ @param val the int to write.
+ @throw IOException
  if an I/O error occurs while writing.
  - seealso: DataInput#readInt()
  */
@@ -157,21 +143,18 @@
 
 /*!
  @brief Writes the specified 64-bit long in big-endian order.
- @param val
- the long to write.
- @throws IOException
+ @param val the long to write.
+ @throw IOException
  if an I/O error occurs while writing.
  - seealso: DataInput#readLong()
  */
 - (void)writeLongWithLong:(jlong)val;
 
 /*!
- @brief Writes the specified 16-bit short in big-endian order.
- Only the lower two bytes of <code>val</code>
+ @brief Writes the specified 16-bit short in big-endian order.Only the lower two bytes of <code>val</code>
   are written.
- @param val
- the short to write.
- @throws IOException
+ @param val the short to write.
+ @throw IOException
  if an I/O error occurs while writing.
  - seealso: DataInput#readShort()
  - seealso: DataInput#readUnsignedShort()
@@ -179,10 +162,10 @@
 - (void)writeShortWithInt:(jint)val;
 
 /*!
- @brief Writes the specified string encoded in <code>modified UTF-8</code>.
- @param str
- the string to write encoded in <code>modified UTF-8</code>.
- @throws IOException
+ @brief Writes the specified string encoded in <code>UTF-8</code>.
+ @param str the string to write encoded in 
+ <code>UTF-8</code> .
+ @throw IOException
  if an I/O error occurs while writing.
  - seealso: DataInput#readUTF()
  */

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/RecursiveAction.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentRecursiveAction")
 #ifdef RESTRICT_JavaUtilConcurrentRecursiveAction
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilConcurrentForkJoinTask 1
 #define INCLUDE_JavaUtilConcurrentForkJoinTask 1
-#include "java/util/concurrent/ForkJoinTask.h"
+#include "../../../java/util/concurrent/ForkJoinTask.h"
 
 @class JavaLangVoid;
 @class JavaUtilConcurrentTimeUnit;

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/jar/JarException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilJarJarException")
 #ifdef RESTRICT_JavaUtilJarJarException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilZipZipException 1
 #define INCLUDE_JavaUtilZipZipException 1
-#include "java/util/zip/ZipException.h"
+#include "../../../java/util/zip/ZipException.h"
 
 /*!
  @brief Signals that an error of some sort has occurred while reading from

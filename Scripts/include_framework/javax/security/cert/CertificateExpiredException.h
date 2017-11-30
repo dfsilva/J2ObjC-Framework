@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/javax/security/cert/CertificateExpiredException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxSecurityCertCertificateExpiredException")
 #ifdef RESTRICT_JavaxSecurityCertCertificateExpiredException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaxSecurityCertCertificateException 1
 #define INCLUDE_JavaxSecurityCertCertificateException 1
-#include "javax/security/cert/CertificateException.h"
+#include "../../../javax/security/cert/CertificateException.h"
 
 /*!
  @brief The exception that is thrown when a <code>Certificate</code> has expired.

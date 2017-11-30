@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/ThreadPoolExecutor.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentThreadPoolExecutor")
 #ifdef RESTRICT_JavaUtilConcurrentThreadPoolExecutor
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilConcurrentAbstractExecutorService 1
 #define INCLUDE_JavaUtilConcurrentAbstractExecutorService 1
-#include "java/util/concurrent/AbstractExecutorService.h"
+#include "../../../java/util/concurrent/AbstractExecutorService.h"
 
 @class JavaLangThread;
 @class JavaLangThrowable;
@@ -645,7 +645,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentThreadPoolExecutor)
 
 #define RESTRICT_JavaUtilConcurrentRejectedExecutionHandler 1
 #define INCLUDE_JavaUtilConcurrentRejectedExecutionHandler 1
-#include "java/util/concurrent/RejectedExecutionHandler.h"
+#include "../../../java/util/concurrent/RejectedExecutionHandler.h"
 
 @class JavaUtilConcurrentThreadPoolExecutor;
 @protocol JavaLangRunnable;
@@ -693,7 +693,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentThreadPoolExecutor_CallerRunsPolicy
 
 #define RESTRICT_JavaUtilConcurrentRejectedExecutionHandler 1
 #define INCLUDE_JavaUtilConcurrentRejectedExecutionHandler 1
-#include "java/util/concurrent/RejectedExecutionHandler.h"
+#include "../../../java/util/concurrent/RejectedExecutionHandler.h"
 
 @class JavaUtilConcurrentThreadPoolExecutor;
 @protocol JavaLangRunnable;
@@ -739,7 +739,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentThreadPoolExecutor_AbortPolicy)
 
 #define RESTRICT_JavaUtilConcurrentRejectedExecutionHandler 1
 #define INCLUDE_JavaUtilConcurrentRejectedExecutionHandler 1
-#include "java/util/concurrent/RejectedExecutionHandler.h"
+#include "../../../java/util/concurrent/RejectedExecutionHandler.h"
 
 @class JavaUtilConcurrentThreadPoolExecutor;
 @protocol JavaLangRunnable;
@@ -784,7 +784,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentThreadPoolExecutor_DiscardPolicy)
 
 #define RESTRICT_JavaUtilConcurrentRejectedExecutionHandler 1
 #define INCLUDE_JavaUtilConcurrentRejectedExecutionHandler 1
-#include "java/util/concurrent/RejectedExecutionHandler.h"
+#include "../../../java/util/concurrent/RejectedExecutionHandler.h"
 
 @class JavaUtilConcurrentThreadPoolExecutor;
 @protocol JavaLangRunnable;

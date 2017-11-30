@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/javax/security/cert/CertificateEncodingException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxSecurityCertCertificateEncodingException")
 #ifdef RESTRICT_JavaxSecurityCertCertificateEncodingException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaxSecurityCertCertificateException 1
 #define INCLUDE_JavaxSecurityCertCertificateException 1
-#include "javax/security/cert/CertificateException.h"
+#include "../../../javax/security/cert/CertificateException.h"
 
 /*!
  @brief The exception that is thrown when an error occurs while a <code>Certificate</code>

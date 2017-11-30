@@ -3,7 +3,7 @@
 //  source: android/frameworks/base/core/java/android/util/Base64OutputStream.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_AndroidUtilBase64OutputStream")
 #ifdef RESTRICT_AndroidUtilBase64OutputStream
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoFilterOutputStream 1
 #define INCLUDE_JavaIoFilterOutputStream 1
-#include "java/io/FilterOutputStream.h"
+#include "../../java/io/FilterOutputStream.h"
 
 @class IOSByteArray;
 @class JavaIoOutputStream;

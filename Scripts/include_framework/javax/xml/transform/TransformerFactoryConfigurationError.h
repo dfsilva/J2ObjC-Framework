@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/javax/xml/transform/TransformerFactoryConfigurationError.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxXmlTransformTransformerFactoryConfigurationError")
 #ifdef RESTRICT_JavaxXmlTransformTransformerFactoryConfigurationError
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangError 1
 #define INCLUDE_JavaLangError 1
-#include "java/lang/Error.h"
+#include "../../../java/lang/Error.h"
 
 @class JavaLangException;
 @class JavaLangThrowable;

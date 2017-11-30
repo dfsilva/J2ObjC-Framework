@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/ScheduledThreadPoolExecutor.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentScheduledThreadPoolExecutor")
 #ifdef RESTRICT_JavaUtilConcurrentScheduledThreadPoolExecutor
@@ -21,11 +21,11 @@
 
 #define RESTRICT_JavaUtilConcurrentThreadPoolExecutor 1
 #define INCLUDE_JavaUtilConcurrentThreadPoolExecutor 1
-#include "java/util/concurrent/ThreadPoolExecutor.h"
+#include "../../../java/util/concurrent/ThreadPoolExecutor.h"
 
 #define RESTRICT_JavaUtilConcurrentScheduledExecutorService 1
 #define INCLUDE_JavaUtilConcurrentScheduledExecutorService 1
-#include "java/util/concurrent/ScheduledExecutorService.h"
+#include "../../../java/util/concurrent/ScheduledExecutorService.h"
 
 @class JavaUtilConcurrentTimeUnit;
 @protocol JavaLangRunnable;
@@ -484,11 +484,11 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentScheduledThreadPoolExecutor)
 
 #define RESTRICT_JavaUtilAbstractQueue 1
 #define INCLUDE_JavaUtilAbstractQueue 1
-#include "java/util/AbstractQueue.h"
+#include "../../../java/util/AbstractQueue.h"
 
 #define RESTRICT_JavaUtilConcurrentBlockingQueue 1
 #define INCLUDE_JavaUtilConcurrentBlockingQueue 1
-#include "java/util/concurrent/BlockingQueue.h"
+#include "../../../java/util/concurrent/BlockingQueue.h"
 
 @class IOSObjectArray;
 @class JavaUtilConcurrentTimeUnit;

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/RejectedExecutionException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentRejectedExecutionException")
 #ifdef RESTRICT_JavaUtilConcurrentRejectedExecutionException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangRuntimeException 1
 #define INCLUDE_JavaLangRuntimeException 1
-#include "java/lang/RuntimeException.h"
+#include "../../../java/lang/RuntimeException.h"
 
 @class JavaLangThrowable;
 

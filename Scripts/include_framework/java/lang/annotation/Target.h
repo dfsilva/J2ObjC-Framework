@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/annotation/Target.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangAnnotationTarget")
 #ifdef RESTRICT_JavaLangAnnotationTarget
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangAnnotationAnnotation 1
 #define INCLUDE_JavaLangAnnotationAnnotation 1
-#include "java/lang/annotation/Annotation.h"
+#include "../../../java/lang/annotation/Annotation.h"
 
 @class IOSClass;
 @class IOSObjectArray;

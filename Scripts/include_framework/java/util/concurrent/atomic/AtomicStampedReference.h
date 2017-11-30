@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/atomic/AtomicStampedReference.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentAtomicAtomicStampedReference")
 #ifdef RESTRICT_JavaUtilConcurrentAtomicAtomicStampedReference

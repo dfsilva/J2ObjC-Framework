@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/jar/JarOutputStream.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilJarJarOutputStream")
 #ifdef RESTRICT_JavaUtilJarJarOutputStream
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilZipZipOutputStream 1
 #define INCLUDE_JavaUtilZipZipOutputStream 1
-#include "java/util/zip/ZipOutputStream.h"
+#include "../../../java/util/zip/ZipOutputStream.h"
 
 @class JavaIoOutputStream;
 @class JavaNioCharsetCharset;

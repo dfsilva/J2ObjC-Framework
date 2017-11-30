@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/org/w3c/dom/NodeList.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_OrgW3cDomNodeList")
 #ifdef RESTRICT_OrgW3cDomNodeList

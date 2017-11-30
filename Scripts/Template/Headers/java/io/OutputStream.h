@@ -31,20 +31,19 @@
 
 /*!
  @brief This abstract class is the superclass of all classes representing
- an output stream of bytes.
- An output stream accepts output bytes
- and sends them to some sink.
+  an output stream of bytes.An output stream accepts output bytes
+  and sends them to some sink.
  <p>
- Applications that need to define a subclass of
+  Applications that need to define a subclass of 
  <code>OutputStream</code> must always provide at least a method
- that writes one byte of output.
+  that writes one byte of output.
  @author Arthur van Hoff
  - seealso: java.io.BufferedOutputStream
  - seealso: java.io.ByteArrayOutputStream
  - seealso: java.io.DataOutputStream
  - seealso: java.io.FilterOutputStream
  - seealso: java.io.InputStream
- - seealso: java.io.OutputStream#write(int)
+ - seealso: java.io.OutputStream
  @since JDK1.0
  */
 @interface JavaIoOutputStream : NSObject < JavaIoCloseable, JavaIoFlushable >
@@ -55,13 +54,13 @@
 
 /*!
  @brief Closes this output stream and releases any system resources
- associated with this stream.
- The general contract of <code>close</code>
- is that it closes the output stream. A closed stream cannot perform
- output operations and cannot be reopened.
+  associated with this stream.The general contract of <code>close</code>
+  is that it closes the output stream.
+ A closed stream cannot perform
+  output operations and cannot be reopened. 
  <p>
- The <code>close</code> method of <code>OutputStream</code> does nothing.
- @exception IOException  if an I/O error occurs.
+  The <code>close</code> method of <code>OutputStream</code> does nothing.
+ @throw IOExceptionif an I/O error occurs.
  */
 - (void)close;
 
@@ -69,61 +68,60 @@
 
 /*!
  @brief Writes <code>b.length</code> bytes from the specified byte array
- to this output stream.
- The general contract for <code>write(b)</code>
- is that it should have exactly the same effect as the call
+  to this output stream.The general contract for <code>write(b)</code>
+  is that it should have exactly the same effect as the call 
  <code>write(b, 0, b.length)</code>.
- @param b   the data.
- @exception IOException  if an I/O error occurs.
- - seealso: java.io.OutputStream#write(byte[],int,int)
+ @param b the data.
+ @throw IOExceptionif an I/O error occurs.
+ - seealso: java.io.OutputStream
  */
 - (void)writeWithByteArray:(IOSByteArray *)b;
 
 /*!
  @brief Writes <code>len</code> bytes from the specified byte array
- starting at offset <code>off</code> to this output stream.
+  starting at offset <code>off</code> to this output stream.
  The general contract for <code>write(b, off, len)</code> is that
- some of the bytes in the array <code>b</code> are written to the
- output stream in order; element <code>b[off]</code> is the first
- byte written and <code>b[off+len-1]</code> is the last byte written
- by this operation.
+  some of the bytes in the array <code>b</code> are written to the
+  output stream in order; element <code>b[off]</code> is the first
+  byte written and <code>b[off+len-1]</code> is the last byte written
+  by this operation. 
  <p>
- The <code>write</code> method of <code>OutputStream</code> calls
- the write method of one argument on each of the bytes to be
- written out. Subclasses are encouraged to override this method and
- provide a more efficient implementation.
+  The <code>write</code> method of <code>OutputStream</code> calls
+  the write method of one argument on each of the bytes to be
+  written out. Subclasses are encouraged to override this method and
+  provide a more efficient implementation. 
  <p>
- If <code>b</code> is <code>null</code>, a
- <code>NullPointerException</code> is thrown.
+  If <code>b</code> is <code>null</code>, a 
+ <code>NullPointerException</code> is thrown. 
  <p>
- If <code>off</code> is negative, or <code>len</code> is negative, or
- <code>off+len</code> is greater than the length of the array
+  If <code>off</code> is negative, or <code>len</code> is negative, or 
+ <code>off+len</code> is greater than the length of the array 
  <code>b</code>, then an <tt>IndexOutOfBoundsException</tt> is thrown.
- @param b     the data.
- @param off   the start offset in the data.
- @param len   the number of bytes to write.
- @exception IOException  if an I/O error occurs. In particular,
- an <code>IOException</code> is thrown if the output
- stream is closed.
+ @param b the data.
+ @param off the start offset in the data.
+ @param len the number of bytes to write.
+ @throw IOExceptionif an I/O error occurs. In particular,
+              an <code>IOException</code> is thrown if the output
+              stream is closed.
  */
 - (void)writeWithByteArray:(IOSByteArray *)b
                    withInt:(jint)off
                    withInt:(jint)len;
 
 /*!
- @brief Writes the specified byte to this output stream.
- The general
- contract for <code>write</code> is that one byte is written
- to the output stream. The byte to be written is the eight
- low-order bits of the argument <code>b</code>. The 24
- high-order bits of <code>b</code> are ignored.
+ @brief Writes the specified byte to this output stream.The general
+  contract for <code>write</code> is that one byte is written
+  to the output stream.
+ The byte to be written is the eight
+  low-order bits of the argument <code>b</code>. The 24
+  high-order bits of <code>b</code> are ignored. 
  <p>
- Subclasses of <code>OutputStream</code> must provide an
- implementation for this method.
- @param b   the <code>byte</code>.
- @exception IOException  if an I/O error occurs. In particular,
- an <code>IOException</code> may be thrown if the
- output stream has been closed.
+  Subclasses of <code>OutputStream</code> must provide an
+  implementation for this method.
+ @param b the  <code> byte </code> .
+ @throw IOExceptionif an I/O error occurs. In particular,
+              an <code>IOException</code> may be thrown if the
+              output stream has been closed.
  */
 - (void)writeWithInt:(jint)b;
 

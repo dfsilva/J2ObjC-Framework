@@ -23,10 +23,12 @@
 #define INCLUDE_JavaLangIllegalStateException 1
 #include "../../../java/lang/IllegalStateException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Unchecked exception thrown when an attempt is made to connect a <code>SocketChannel</code>
   for which a non-blocking connection operation is already in
- progress.
+  progress.
  @since 1.4
  */
 @interface JavaNioChannelsConnectionPendingException : JavaLangIllegalStateException
@@ -38,15 +40,24 @@
  */
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsConnectionPendingException)
 
 FOUNDATION_EXPORT void JavaNioChannelsConnectionPendingException_init(JavaNioChannelsConnectionPendingException *self);
 
-FOUNDATION_EXPORT JavaNioChannelsConnectionPendingException *new_JavaNioChannelsConnectionPendingException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNioChannelsConnectionPendingException *new_JavaNioChannelsConnectionPendingException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNioChannelsConnectionPendingException *create_JavaNioChannelsConnectionPendingException_init();
+FOUNDATION_EXPORT JavaNioChannelsConnectionPendingException *create_JavaNioChannelsConnectionPendingException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsConnectionPendingException)
 

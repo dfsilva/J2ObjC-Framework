@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/security/cert/CertPathValidatorException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSecurityCertCertPathValidatorException")
 #ifdef RESTRICT_JavaSecurityCertCertPathValidatorException
@@ -29,7 +29,7 @@
 
 #define RESTRICT_JavaSecurityGeneralSecurityException 1
 #define INCLUDE_JavaSecurityGeneralSecurityException 1
-#include "java/security/GeneralSecurityException.h"
+#include "../../../java/security/GeneralSecurityException.h"
 
 @class JavaLangThrowable;
 @class JavaSecurityCertCertPath;
@@ -225,7 +225,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaSecurityCertCertPathValidatorException)
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 /*!
  @brief The reason the validation algorithm failed.
@@ -246,7 +246,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaSecurityCertCertPathValidatorException_Reason)
 
 #define RESTRICT_JavaLangEnum 1
 #define INCLUDE_JavaLangEnum 1
-#include "java/lang/Enum.h"
+#include "../../../java/lang/Enum.h"
 
 @class IOSObjectArray;
 

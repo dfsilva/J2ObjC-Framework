@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/java/io/FileDescriptor.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoFileDescriptor")
 #ifdef RESTRICT_JavaIoFileDescriptor

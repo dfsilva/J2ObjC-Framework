@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/security/spec/RSAMultiPrimePrivateCrtKeySpec.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSecuritySpecRSAMultiPrimePrivateCrtKeySpec")
 #ifdef RESTRICT_JavaSecuritySpecRSAMultiPrimePrivateCrtKeySpec
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaSecuritySpecRSAPrivateKeySpec 1
 #define INCLUDE_JavaSecuritySpecRSAPrivateKeySpec 1
-#include "java/security/spec/RSAPrivateKeySpec.h"
+#include "../../../java/security/spec/RSAPrivateKeySpec.h"
 
 @class IOSObjectArray;
 @class JavaMathBigInteger;

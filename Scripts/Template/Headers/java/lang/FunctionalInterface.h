@@ -27,31 +27,29 @@
 
 /*!
  @brief An informative annotation type used to indicate that an interface
- type declaration is intended to be a <i>functional interface</i> as
- defined by the Java Language Specification.
+  type declaration is intended to be a <i>functional interface</i> as
+  defined by the Java Language Specification.
  Conceptually, a functional interface has exactly one abstract
- method.  Since default methods
+  method.  Since methods
   have an implementation, they are not abstract.  If
- an interface declares an abstract method overriding one of the
- public methods of <code>java.lang.Object</code>, that also does
+  an interface declares an abstract method overriding one of the
+  public methods of <code>java.lang.Object</code>, that also does 
  <em>not</em> count toward the interface's abstract method count
- since any implementation of the interface will have an
- implementation from <code>java.lang.Object</code> or elsewhere.
+  since any implementation of the interface will have an
+  implementation from <code>java.lang.Object</code> or elsewhere. 
  <p>Note that instances of functional interfaces can be created with
- lambda expressions, method references, or constructor references.
+  lambda expressions, method references, or constructor references. 
  <p>If a type is annotated with this annotation type, compilers are
- required to generate an error message unless:
+  required to generate an error message unless: 
  <ul>
- <li> The type is an interface type and not an annotation type, enum, or class.
- <li> The annotated type satisfies the requirements of a functional interface.
+  <li> The type is an interface type and not an annotation type, enum, or class. 
+ <li> The annotated type satisfies the requirements of a functional interface. 
  </ul>
+  
  <p>However, the compiler will treat any interface meeting the
- definition of a functional interface as a functional interface
- regardless of whether or not a <code>FunctionalInterface</code>
- annotation is present on the interface declaration.
-  4.3.2. The Class Object
-  9.8 Functional Interfaces
-  9.4.3 Interface Method Body
+  definition of a functional interface as a functional interface
+  regardless of whether or not a <code>FunctionalInterface</code>
+  annotation is present on the interface declaration.
  @since 1.8
  */
 @protocol JavaLangFunctionalInterface < JavaLangAnnotationAnnotation >
@@ -64,7 +62,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(JavaLangFunctionalInterface)
 
-FOUNDATION_EXPORT id<JavaLangFunctionalInterface> create_JavaLangFunctionalInterface();
+FOUNDATION_EXPORT id<JavaLangFunctionalInterface> create_JavaLangFunctionalInterface(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangFunctionalInterface)
 

@@ -3,7 +3,7 @@
 //  source: android/libcore/json/src/main/java/org/json/JSONStringer.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_OrgJsonJSONStringer")
 #ifdef RESTRICT_OrgJsonJSONStringer
@@ -196,7 +196,7 @@ J2OBJC_TYPE_LITERAL_HEADER(OrgJsonJSONStringer)
 
 #define RESTRICT_JavaLangEnum 1
 #define INCLUDE_JavaLangEnum 1
-#include "java/lang/Enum.h"
+#include "../../java/lang/Enum.h"
 
 @class IOSObjectArray;
 

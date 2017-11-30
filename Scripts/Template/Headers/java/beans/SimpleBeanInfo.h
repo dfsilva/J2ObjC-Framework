@@ -52,9 +52,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaBeansSimpleBeanInfo)
 
 FOUNDATION_EXPORT void JavaBeansSimpleBeanInfo_init(JavaBeansSimpleBeanInfo *self);
 
-FOUNDATION_EXPORT JavaBeansSimpleBeanInfo *new_JavaBeansSimpleBeanInfo_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaBeansSimpleBeanInfo *new_JavaBeansSimpleBeanInfo_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaBeansSimpleBeanInfo *create_JavaBeansSimpleBeanInfo_init();
+FOUNDATION_EXPORT JavaBeansSimpleBeanInfo *create_JavaBeansSimpleBeanInfo_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaBeansSimpleBeanInfo)
 

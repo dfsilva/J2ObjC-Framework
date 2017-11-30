@@ -23,9 +23,11 @@
 #define INCLUDE_JavaLangException 1
 #include "../../java/lang/Exception.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Common superclass of exceptions thrown by reflective operations in
- core reflection.
+  core reflection.
  - seealso: LinkageError
  @since 1.7
  */
@@ -37,62 +39,66 @@
 
 /*!
  @brief Constructs a new exception with <code>null</code> as its detail
- message.
- The cause is not initialized, and may subsequently be
- initialized by a call to <code>initCause</code>.
+  message.The cause is not initialized, and may subsequently be
+  initialized by a call to <code>initCause</code>.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a new exception with the specified detail message.
  The cause is not initialized, and may subsequently be
- initialized by a call to <code>initCause</code>.
- @param message   the detail message. The detail message is saved for
- later retrieval by the <code>getMessage()</code> method.
+  initialized by a call to <code>initCause</code>.
+ @param message the detail message. The detail message is saved for           later retrieval by the 
+ <code>getMessage()</code>  method.
  */
 - (instancetype)initWithNSString:(NSString *)message;
 
 /*!
  @brief Constructs a new exception with the specified detail message
- and cause.
- <p>Note that the detail message associated with
+  and cause.
+ <p>Note that the detail message associated with 
  <code>cause</code> is <em>not</em> automatically incorporated in
- this exception's detail message.
- @param message the detail message (which is saved for later retrieval
- by the <code>getMessage()</code> method).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is
- permitted, and indicates that the cause is nonexistent or
- unknown.)
+  this exception's detail message.
+ @param message the detail message (which is saved for later retrieval          by the 
+ <code>getMessage()</code>  method).
+ @param cause the cause (which is saved for later retrieval by the          
+ <code>getCause()</code>  method).  (A <code>null</code>  value is          permitted, and indicates that the cause is nonexistent or
+           unknown.)
  */
 - (instancetype)initWithNSString:(NSString *)message
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Constructs a new exception with the specified cause and a detail
- message of <code>(cause==null ?
+  message of <code>(cause==null ?
  null : cause.toString())</code> (which
- typically contains the class and detail message of <code>cause</code>).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is
- permitted, and indicates that the cause is nonexistent or
- unknown.)
+  typically contains the class and detail message of <code>cause</code>).
+ @param cause the cause (which is saved for later retrieval by the          
+ <code>getCause()</code>  method).  (A <code>null</code>  value is          permitted, and indicates that the cause is nonexistent or
+           unknown.)
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaLangReflectiveOperationException)
 
-inline jlong JavaLangReflectiveOperationException_get_serialVersionUID();
+inline jlong JavaLangReflectiveOperationException_get_serialVersionUID(void);
 #define JavaLangReflectiveOperationException_serialVersionUID 123456789LL
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectiveOperationException, serialVersionUID, jlong)
 
 FOUNDATION_EXPORT void JavaLangReflectiveOperationException_init(JavaLangReflectiveOperationException *self);
 
-FOUNDATION_EXPORT JavaLangReflectiveOperationException *new_JavaLangReflectiveOperationException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangReflectiveOperationException *new_JavaLangReflectiveOperationException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangReflectiveOperationException *create_JavaLangReflectiveOperationException_init();
+FOUNDATION_EXPORT JavaLangReflectiveOperationException *create_JavaLangReflectiveOperationException_init(void);
 
 FOUNDATION_EXPORT void JavaLangReflectiveOperationException_initWithNSString_(JavaLangReflectiveOperationException *self, NSString *message);
 
@@ -100,17 +106,17 @@ FOUNDATION_EXPORT JavaLangReflectiveOperationException *new_JavaLangReflectiveOp
 
 FOUNDATION_EXPORT JavaLangReflectiveOperationException *create_JavaLangReflectiveOperationException_initWithNSString_(NSString *message);
 
-FOUNDATION_EXPORT void JavaLangReflectiveOperationException_initWithNSString_withNSException_(JavaLangReflectiveOperationException *self, NSString *message, NSException *cause);
+FOUNDATION_EXPORT void JavaLangReflectiveOperationException_initWithNSString_withJavaLangThrowable_(JavaLangReflectiveOperationException *self, NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaLangReflectiveOperationException *new_JavaLangReflectiveOperationException_initWithNSString_withNSException_(NSString *message, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangReflectiveOperationException *new_JavaLangReflectiveOperationException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangReflectiveOperationException *create_JavaLangReflectiveOperationException_initWithNSString_withNSException_(NSString *message, NSException *cause);
+FOUNDATION_EXPORT JavaLangReflectiveOperationException *create_JavaLangReflectiveOperationException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaLangReflectiveOperationException_initWithNSException_(JavaLangReflectiveOperationException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaLangReflectiveOperationException_initWithJavaLangThrowable_(JavaLangReflectiveOperationException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaLangReflectiveOperationException *new_JavaLangReflectiveOperationException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangReflectiveOperationException *new_JavaLangReflectiveOperationException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangReflectiveOperationException *create_JavaLangReflectiveOperationException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaLangReflectiveOperationException *create_JavaLangReflectiveOperationException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangReflectiveOperationException)
 

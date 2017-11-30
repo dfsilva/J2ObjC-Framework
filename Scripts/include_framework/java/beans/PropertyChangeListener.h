@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/beans/PropertyChangeListener.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaBeansPropertyChangeListener")
 #ifdef RESTRICT_JavaBeansPropertyChangeListener
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilEventListener 1
 #define INCLUDE_JavaUtilEventListener 1
-#include "java/util/EventListener.h"
+#include "../../java/util/EventListener.h"
 
 @class JavaBeansPropertyChangeEvent;
 

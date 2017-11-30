@@ -27,14 +27,14 @@
 
 /*!
  @brief String-based qualifier.
- <p>Example usage:
+ <p>Example usage: 
  @code
 
-   public class Car {
-     &#064;Inject <b>@@Named("driver")</b> Seat driverSeat;
-     &#064;Inject <b>@@Named("passenger")</b> Seat passengerSeat;
-     ...
-   
+    public class Car {
+          &#064;Inject <b>@@Named("driver")</b> Seat driverSeat;
+          &#064;Inject <b>@@Named("passenger")</b> Seat passengerSeat;
+      ...
+    }
 @endcode
  */
 @protocol JavaxInjectNamed < JavaLangAnnotationAnnotation >

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/text/Format.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaTextFormat")
 #ifdef RESTRICT_JavaTextFormat
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../java/io/Serializable.h"
 
 @class IOSObjectArray;
 @class JavaLangStringBuffer;
@@ -287,7 +287,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaTextFormat)
 
 #define RESTRICT_JavaTextAttributedCharacterIterator 1
 #define INCLUDE_JavaTextAttributedCharacterIterator_Attribute 1
-#include "java/text/AttributedCharacterIterator.h"
+#include "../../java/text/AttributedCharacterIterator.h"
 
 /*!
  @brief Defines constants that are used as attribute keys in the 

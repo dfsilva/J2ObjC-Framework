@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/java/text/Collator.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaTextCollator")
 #ifdef RESTRICT_JavaTextCollator
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilComparator 1
 #define INCLUDE_JavaUtilComparator 1
-#include "java/util/Comparator.h"
+#include "../../java/util/Comparator.h"
 
 @class IOSObjectArray;
 @class JavaTextCollationKey;

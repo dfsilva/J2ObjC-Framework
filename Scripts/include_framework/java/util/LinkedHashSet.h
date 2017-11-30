@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/LinkedHashSet.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilLinkedHashSet")
 #ifdef RESTRICT_JavaUtilLinkedHashSet
@@ -21,15 +21,15 @@
 
 #define RESTRICT_JavaUtilHashSet 1
 #define INCLUDE_JavaUtilHashSet 1
-#include "java/util/HashSet.h"
+#include "../../java/util/HashSet.h"
 
 #define RESTRICT_JavaUtilSet 1
 #define INCLUDE_JavaUtilSet 1
-#include "java/util/Set.h"
+#include "../../java/util/Set.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../java/io/Serializable.h"
 
 @protocol JavaUtilCollection;
 @protocol JavaUtilSpliterator;

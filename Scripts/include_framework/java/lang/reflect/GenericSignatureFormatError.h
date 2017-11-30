@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/reflect/GenericSignatureFormatError.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangReflectGenericSignatureFormatError")
 #ifdef RESTRICT_JavaLangReflectGenericSignatureFormatError
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangClassFormatError 1
 #define INCLUDE_JavaLangClassFormatError 1
-#include "java/lang/ClassFormatError.h"
+#include "../../../java/lang/ClassFormatError.h"
 
 /*!
  @brief Thrown when a syntactically malformed signature attribute is

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/SynchronousQueue.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentSynchronousQueue")
 #ifdef RESTRICT_JavaUtilConcurrentSynchronousQueue
@@ -33,15 +33,15 @@
 
 #define RESTRICT_JavaUtilAbstractQueue 1
 #define INCLUDE_JavaUtilAbstractQueue 1
-#include "java/util/AbstractQueue.h"
+#include "../../../java/util/AbstractQueue.h"
 
 #define RESTRICT_JavaUtilConcurrentBlockingQueue 1
 #define INCLUDE_JavaUtilConcurrentBlockingQueue 1
-#include "java/util/concurrent/BlockingQueue.h"
+#include "../../../java/util/concurrent/BlockingQueue.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 @class IOSObjectArray;
 @class JavaUtilConcurrentTimeUnit;
@@ -716,7 +716,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentSynchronousQueue_TransferQueue_QNod
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 @interface JavaUtilConcurrentSynchronousQueue_WaitQueue : NSObject < JavaIoSerializable >
 

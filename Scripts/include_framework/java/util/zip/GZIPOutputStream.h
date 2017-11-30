@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/zip/GZIPOutputStream.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilZipGZIPOutputStream")
 #ifdef RESTRICT_JavaUtilZipGZIPOutputStream
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilZipDeflaterOutputStream 1
 #define INCLUDE_JavaUtilZipDeflaterOutputStream 1
-#include "java/util/zip/DeflaterOutputStream.h"
+#include "../../../java/util/zip/DeflaterOutputStream.h"
 
 @class IOSByteArray;
 @class JavaIoOutputStream;

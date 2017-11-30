@@ -23,6 +23,8 @@
 #define INCLUDE_JavaLangError 1
 #include "../../java/lang/Error.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Thrown when a serious I/O error has occurred.
  @author Xueming Shen
@@ -33,26 +35,39 @@
 #pragma mark Public
 
 /*!
- @brief Constructs a new instance of IOError with the specified cause.
- The
- IOError is created with the detail message of
- <tt>(cause==null ? null : cause.toString())</tt> (which typically
- contains the class and detail message of cause).
- @param cause
- The cause of this error, or <tt>null</tt> if the cause
- is not known
+ @brief Constructs a new instance of IOError with the specified cause.The
+  IOError is created with the detail message of 
+ <tt>(cause==null ?
+ null : cause.toString())</tt> (which typically
+  contains the class and detail message of cause).
+ @param cause The cause of this error, or 
+  <tt> null </tt>  if the cause          is not known
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaIoIOError)
 
-FOUNDATION_EXPORT void JavaIoIOError_initWithNSException_(JavaIoIOError *self, NSException *cause);
+FOUNDATION_EXPORT void JavaIoIOError_initWithJavaLangThrowable_(JavaIoIOError *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaIoIOError *new_JavaIoIOError_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoIOError *new_JavaIoIOError_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoIOError *create_JavaIoIOError_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaIoIOError *create_JavaIoIOError_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaIoIOError)
 

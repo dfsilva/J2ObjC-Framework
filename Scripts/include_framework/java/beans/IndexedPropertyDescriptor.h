@@ -3,7 +3,7 @@
 //  source: apache_harmony/classlib/modules/beans/src/main/java/java/beans/IndexedPropertyDescriptor.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaBeansIndexedPropertyDescriptor")
 #ifdef RESTRICT_JavaBeansIndexedPropertyDescriptor
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaBeansPropertyDescriptor 1
 #define INCLUDE_JavaBeansPropertyDescriptor 1
-#include "java/beans/PropertyDescriptor.h"
+#include "../../java/beans/PropertyDescriptor.h"
 
 @class IOSClass;
 @class JavaLangReflectMethod;

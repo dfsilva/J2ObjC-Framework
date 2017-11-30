@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/EnumConstantNotPresentException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangEnumConstantNotPresentException")
 #ifdef RESTRICT_JavaLangEnumConstantNotPresentException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangRuntimeException 1
 #define INCLUDE_JavaLangRuntimeException 1
-#include "java/lang/RuntimeException.h"
+#include "../../java/lang/RuntimeException.h"
 
 @class IOSClass;
 @class JavaLangThrowable;

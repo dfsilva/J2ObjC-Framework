@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/StringTokenizer.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilStringTokenizer")
 #ifdef RESTRICT_JavaUtilStringTokenizer
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilEnumeration 1
 #define INCLUDE_JavaUtilEnumeration 1
-#include "java/util/Enumeration.h"
+#include "../../java/util/Enumeration.h"
 
 /*!
  @brief The string tokenizer class allows an application to break a

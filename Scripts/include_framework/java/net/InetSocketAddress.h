@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/net/InetSocketAddress.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNetInetSocketAddress")
 #ifdef RESTRICT_JavaNetInetSocketAddress
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaNetSocketAddress 1
 #define INCLUDE_JavaNetSocketAddress 1
-#include "java/net/SocketAddress.h"
+#include "../../java/net/SocketAddress.h"
 
 @class JavaNetInetAddress;
 

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/SortedSet.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilSortedSet")
 #ifdef RESTRICT_JavaUtilSortedSet
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilSet 1
 #define INCLUDE_JavaUtilSet 1
-#include "java/util/Set.h"
+#include "../../java/util/Set.h"
 
 @protocol JavaUtilComparator;
 @protocol JavaUtilSpliterator;

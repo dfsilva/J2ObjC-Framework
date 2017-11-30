@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/security/InvalidParameterException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSecurityInvalidParameterException")
 #ifdef RESTRICT_JavaSecurityInvalidParameterException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangIllegalArgumentException 1
 #define INCLUDE_JavaLangIllegalArgumentException 1
-#include "java/lang/IllegalArgumentException.h"
+#include "../../java/lang/IllegalArgumentException.h"
 
 @class JavaLangThrowable;
 

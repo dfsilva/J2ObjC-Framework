@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/java/io/ObjectInput.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoObjectInput")
 #ifdef RESTRICT_JavaIoObjectInput
@@ -21,11 +21,11 @@
 
 #define RESTRICT_JavaIoDataInput 1
 #define INCLUDE_JavaIoDataInput 1
-#include "java/io/DataInput.h"
+#include "../../java/io/DataInput.h"
 
 #define RESTRICT_JavaLangAutoCloseable 1
 #define INCLUDE_JavaLangAutoCloseable 1
-#include "java/lang/AutoCloseable.h"
+#include "../../java/lang/AutoCloseable.h"
 
 @class IOSByteArray;
 

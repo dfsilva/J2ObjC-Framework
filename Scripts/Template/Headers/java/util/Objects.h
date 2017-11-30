@@ -25,10 +25,9 @@
 
 /*!
  @brief This class consists of <code>static</code> utility methods for operating
- on objects.
- These utilities include <code>null</code>-safe or <code>null</code>
+  on objects.These utilities include <code>null</code>-safe or <code>null</code>
  -tolerant methods for computing the hash code of an object,
- returning a string for an object, and comparing two objects.
+  returning a string for an object, and comparing two objects.
  @since 1.7
  */
 @interface JavaUtilObjects : NSObject
@@ -39,14 +38,14 @@
  @brief Returns 0 if the arguments are identical and <code>c.compare(a, b)</code>
   otherwise.
  Consequently, if both arguments are <code>null</code> 0
- is returned.
+  is returned. 
  <p>Note that if one of the arguments is <code>null</code>, a <code>NullPointerException</code>
   may or may not be thrown depending on
- what ordering policy, if any, the <code>Comparator</code>
- chooses to have for <code>null</code> values.
+  what ordering policy, if any, the <code>Comparator</code>
+  chooses to have for <code>null</code> values.
  @param a an object
  @param b an object to be compared with <code>a</code>
- @param c the <code>Comparator</code> to compare the first two arguments
+ @param c the <code>Comparator</code>  to compare the first two arguments
  @return 0 if the arguments are identical and <code>c.compare(a, b)</code>
   otherwise.
  - seealso: Comparable
@@ -58,60 +57,59 @@ withJavaUtilComparator:(id<JavaUtilComparator>)c;
 
 /*!
  @brief Returns <code>true</code> if the arguments are deeply equal to each other
- and <code>false</code> otherwise.
+  and <code>false</code> otherwise.
  Two <code>null</code> values are deeply equal.  If both arguments are
- arrays, the algorithm in <code>Arrays.deepEquals</code>
+  arrays, the algorithm in <code>Arrays.deepEquals</code>
   is used to determine equality.
- Otherwise, equality is determined by using the <code>equals</code>
+  Otherwise, equality is determined by using the <code>equals</code>
   method of the first argument.
  @param a an object
- @param b an object to be compared with <code>a</code> for deep equality
+ @param b an object to be compared with <code>a</code>  for deep equality
  @return <code>true</code> if the arguments are deeply equal to each other
- and <code>false</code> otherwise
- - seealso: Arrays#deepEquals(Object[],Object[])
- - seealso: Objects#equals(Object,Object)
+  and <code>false</code> otherwise
+ - seealso: Arrays#deepEquals(Object[], Object[])
+ - seealso: Objects#equals(Object, Object)
  */
 + (jboolean)deepEqualsWithId:(id)a
                       withId:(id)b;
 
 /*!
  @brief Returns <code>true</code> if the arguments are equal to each other
- and <code>false</code> otherwise.
+  and <code>false</code> otherwise.
  Consequently, if both arguments are <code>null</code>, <code>true</code>
- is returned and if exactly one argument is <code>null</code>, <code>false</code>
+  is returned and if exactly one argument is <code>null</code>, <code>false</code>
   is returned.  Otherwise, equality is determined by using
- the <code>equals</code> method of the first
- argument.
+  the <code>equals</code> method of the first
+  argument.
  @param a an object
- @param b an object to be compared with <code>a</code> for equality
+ @param b an object to be compared with <code>a</code>  for equality
  @return <code>true</code> if the arguments are equal to each other
- and <code>false</code> otherwise
+  and <code>false</code> otherwise
  - seealso: Object#equals(Object)
  */
 + (jboolean)equalsWithId:(id)a
                   withId:(id)b;
 
 /*!
- @brief Generates a hash code for a sequence of input values.
- The hash
- code is generated as if all the input values were placed into an
- array, and that array were hashed by calling <code>Arrays.hashCode(Object[])</code>
+ @brief Generates a hash code for a sequence of input values.The hash
+  code is generated as if all the input values were placed into an
+  array, and that array were hashed by calling <code>Arrays.hashCode(Object[])</code>
  .
  <p>This method is useful for implementing <code>Object.hashCode()</code>
   on objects containing multiple fields. For
- example, if an object that has three fields, <code>x</code>, <code>y</code>
- , and <code>z</code>, one could write:
- <blockquote>
-@code
+  example, if an object that has three fields, <code>x</code>, <code>y</code>
+ , and <code>z</code>, one could write: 
+ <blockquote>@code
 
-  &#064;Override public int hashCode() {
-     return Objects.hash(x, y, z);
-  }
+   &#064;Override public int hashCode() {
+      return Objects.hash(x, y, z);
+  } 
   
 @endcode</blockquote>
+  
  <b>Warning: When a single object reference is supplied, the returned
- value does not equal the hash code of that object reference.</b> This
- value can be computed by calling <code>hashCode(Object)</code>.
+  value does not equal the hash code of that object reference.</b> This
+  value can be computed by calling <code>hashCode(Object)</code>.
  @param values the values to be hashed
  @return a hash value of the sequence of input values
  - seealso: Arrays#hashCode(Object[])
@@ -121,21 +119,19 @@ withJavaUtilComparator:(id<JavaUtilComparator>)c;
 
 /*!
  @brief Returns the hash code of a non-<code>null</code> argument and 0 for
- a <code>null</code> argument.
+  a <code>null</code> argument.
  @param o an object
  @return the hash code of a non-<code>null</code> argument and 0 for
- a <code>null</code> argument
+  a <code>null</code> argument
  - seealso: Object#hashCode
  */
 + (jint)hashCodeWithId:(id)o;
 
 /*!
  @brief Returns <code>true</code> if the provided reference is <code>null</code> otherwise
- returns <code>false</code>.
-  This method exists to be used as a
- <code>java.util.function.Predicate</code>, <code>filter(Objects::isNull)</code>
+  returns <code>false</code>.
  @param obj a reference to be checked against <code>null</code>
- @return <code>true</code> if the provided reference is <code>null</code> otherwise
+ @return <code>true</code> if the provided reference is <code>null</code> otherwise 
  <code>false</code>
  - seealso: java.util.function.Predicate
  @since 1.8
@@ -144,75 +140,69 @@ withJavaUtilComparator:(id<JavaUtilComparator>)c;
 
 /*!
  @brief Returns <code>true</code> if the provided reference is non-<code>null</code>
- otherwise returns <code>false</code>.
-  This method exists to be used as a
- <code>java.util.function.Predicate</code>, <code>filter(Objects::nonNull)</code>
+  otherwise returns <code>false</code>.
  @param obj a reference to be checked against <code>null</code>
  @return <code>true</code> if the provided reference is non-<code>null</code>
- otherwise <code>false</code>
+  otherwise <code>false</code>
  - seealso: java.util.function.Predicate
  @since 1.8
  */
 + (jboolean)nonNullWithId:(id)obj;
 
 /*!
- @brief Checks that the specified object reference is not <code>null</code>.
- This
- method is designed primarily for doing parameter validation in methods
- and constructors, as demonstrated below:
- <blockquote>
-@code
+ @brief Checks that the specified object reference is not <code>null</code>.This
+  method is designed primarily for doing parameter validation in methods
+  and constructors, as demonstrated below: 
+ <blockquote>@code
 
   public Foo(Bar bar) {
-     this.bar = Objects.requireNonNull(bar);
-  }
+      this.bar = Objects.requireNonNull(bar);
+  } 
   
 @endcode</blockquote>
  @param obj the object reference to check for nullity
  @return <code>obj</code> if not <code>null</code>
- @throws NullPointerException if <code>obj</code> is <code>null</code>
+ @throw NullPointerExceptionif <code>obj</code> is <code>null</code>
  */
 + (id)requireNonNullWithId:(id)obj;
 
 /*!
  @brief Checks that the specified object reference is not <code>null</code> and
- throws a customized <code>NullPointerException</code> if it is.
- This method
- is designed primarily for doing parameter validation in methods and
- constructors with multiple parameters, as demonstrated below:
- <blockquote>
-@code
+  throws a customized <code>NullPointerException</code> if it is.This method
+  is designed primarily for doing parameter validation in methods and
+  constructors with multiple parameters, as demonstrated below: 
+ <blockquote>@code
 
   public Foo(Bar bar, Baz baz) {
-     this.bar = Objects.requireNonNull(bar, "bar must not be null");
-     this.baz = Objects.requireNonNull(baz, "baz must not be null");
-  }
+      this.bar = Objects.requireNonNull(bar, "bar must not be null");
+      this.baz = Objects.requireNonNull(baz, "baz must not be null");
+  } 
   
 @endcode</blockquote>
- @param obj     the object reference to check for nullity
+ @param obj the object reference to check for nullity
  @param message detail message to be used in the event that a <code>NullPointerException</code>
-  is thrown
+   is thrown
  @return <code>obj</code> if not <code>null</code>
- @throws NullPointerException if <code>obj</code> is <code>null</code>
+ @throw NullPointerExceptionif <code>obj</code> is <code>null</code>
  */
 + (id)requireNonNullWithId:(id)obj
               withNSString:(NSString *)message;
 
 /*!
  @brief Checks that the specified object reference is not <code>null</code> and
- throws a customized <code>NullPointerException</code> if it is.
- <p>Unlike the method <code>requireNonNull(Object,String)</code>,
- this method allows creation of the message to be deferred until
- after the null check is made. While this may confer a
- performance advantage in the non-null case, when deciding to
- call this method care should be taken that the costs of
- creating the message supplier are less than the cost of just
- creating the string message directly.
- @param obj     the object reference to check for nullity
- @param messageSupplier supplier of the detail message to be
- used in the event that a <code>NullPointerException</code> is thrown
+  throws a customized <code>NullPointerException</code> if it is.
+ <p>Unlike the method <code>String)</code>,
+  this method allows creation of the message to be deferred until
+  after the null check is made. While this may confer a
+  performance advantage in the non-null case, when deciding to
+  call this method care should be taken that the costs of
+  creating the message supplier are less than the cost of just
+  creating the string message directly.
+ @param obj the object reference to check for nullity
+ @param messageSupplier supplier of the detail message to be  used in the event that a 
+ <code>NullPointerException</code>  is thrown
  @return <code>obj</code> if not <code>null</code>
- @throws NullPointerException if <code>obj</code> is <code>null</code>
+ @throw NullPointerExceptionif <code>obj</code> is <code>null</code>
  @since 1.8
  */
 + (id)requireNonNullWithId:(id)obj
@@ -231,14 +221,14 @@ withJavaUtilFunctionSupplier:(id<JavaUtilFunctionSupplier>)messageSupplier;
 
 /*!
  @brief Returns the result of calling <code>toString</code> on the first
- argument if the first argument is not <code>null</code> and returns
- the second argument otherwise.
+  argument if the first argument is not <code>null</code> and returns
+  the second argument otherwise.
  @param o an object
- @param nullDefault string to return if the first argument is
+ @param nullDefault string to return if the first argument is         
  <code>null</code>
  @return the result of calling <code>toString</code> on the first
- argument if it is not <code>null</code> and the second argument
- otherwise.
+  argument if it is not <code>null</code> and the second argument
+  otherwise.
  - seealso: Objects#toString(Object)
  */
 + (NSString *)toStringWithId:(id)o

@@ -27,11 +27,10 @@
 @class JavaUtilLocale;
 
 /*!
- @brief A concrete implementation class for <code>Collation</code> for iOS.
- Although
- iOS uses ICU, its collation data is not available from any public APIs.
+ @brief A concrete implementation class for <code>Collation</code> for iOS.Although
+  iOS uses ICU, its collation data is not available from any public APIs.
  This class implements collation by invoking the NSString localized
- comparison methods.
+  comparison methods.
  @author Tom Ball
  */
 @interface JavaTextIOSCollator : JavaTextCollator
@@ -64,6 +63,10 @@
 #pragma mark Package-Private
 
 - (instancetype)initWithJavaUtilLocale:(JavaUtilLocale *)locale;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

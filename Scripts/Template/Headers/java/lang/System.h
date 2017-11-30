@@ -23,13 +23,13 @@
 @class JavaIoInputStream;
 @class JavaIoPrintStream;
 @class JavaLangSecurityManager;
+@class JavaLangThrowable;
 @class JavaUtilProperties;
 @protocol JavaUtilMap;
 
 /*!
- @brief Simple iOS version of java.lang.System.
- No code was shared, just its
- public API.
+ @brief Simple iOS version of java.lang.System.No code was shared, just its
+  public API.
  @author Tom Ball
  */
 @interface JavaLangSystem : NSObject
@@ -55,7 +55,7 @@
 /*!
  @brief Returns the <code>java.io.Console</code> associated with this VM, or null.
  Not all VMs will have an associated console. A console is typically only
- available for programs run from the command line.
+  available for programs run from the command line.
  @since 1.6
  */
 + (JavaIoConsole *)console;
@@ -78,9 +78,9 @@
                          withNSString:(NSString *)defaultValue;
 
 /*!
- @brief Returns null.
- Android does not use <code>SecurityManager</code>. This method
- is only provided for source compatibility.
+ @brief Returns null.Android does not use <code>SecurityManager</code>.
+ This method
+  is only provided for source compatibility.
  @return null
  */
 + (JavaLangSecurityManager *)getSecurityManager;
@@ -104,37 +104,31 @@
 + (void)loadLibraryWithNSString:(NSString *)libName;
 
 /*!
-  internal use only
  */
 + (void)logEWithNSString:(NSString *)message;
 
 /*!
-  internal use only
  */
 + (void)logEWithNSString:(NSString *)message
-         withNSException:(NSException *)th;
+   withJavaLangThrowable:(JavaLangThrowable *)th;
 
 /*!
-  internal use only
  */
 + (void)logIWithNSString:(NSString *)message;
 
 /*!
-  internal use only
  */
 + (void)logIWithNSString:(NSString *)message
-         withNSException:(NSException *)th;
+   withJavaLangThrowable:(JavaLangThrowable *)th;
 
 /*!
-  internal use only
  */
 + (void)logWWithNSString:(NSString *)message;
 
 /*!
-  internal use only
  */
 + (void)logWWithNSString:(NSString *)message
-         withNSException:(NSException *)th;
+   withJavaLangThrowable:(JavaLangThrowable *)th;
 
 + (jlong)nanoTime;
 
@@ -165,20 +159,26 @@
 
 J2OBJC_STATIC_INIT(JavaLangSystem)
 
-inline JavaIoInputStream *JavaLangSystem_get_in();
+inline JavaIoInputStream *JavaLangSystem_get_in(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT JavaIoInputStream *JavaLangSystem_in;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(JavaLangSystem, in, JavaIoInputStream *)
 
-inline JavaIoPrintStream *JavaLangSystem_get_out();
+inline JavaIoPrintStream *JavaLangSystem_get_out(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT JavaIoPrintStream *JavaLangSystem_out;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(JavaLangSystem, out, JavaIoPrintStream *)
 
-inline JavaIoPrintStream *JavaLangSystem_get_err();
+inline JavaIoPrintStream *JavaLangSystem_get_err(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
 FOUNDATION_EXPORT JavaIoPrintStream *JavaLangSystem_err;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(JavaLangSystem, err, JavaIoPrintStream *)
+
+FOUNDATION_EXPORT void JavaLangSystem_init(JavaLangSystem *self);
+
+FOUNDATION_EXPORT JavaLangSystem *new_JavaLangSystem_init(void) NS_RETURNS_RETAINED;
+
+FOUNDATION_EXPORT JavaLangSystem *create_JavaLangSystem_init(void);
 
 FOUNDATION_EXPORT void JavaLangSystem_setInWithJavaIoInputStream_(JavaIoInputStream *newIn);
 
@@ -186,17 +186,17 @@ FOUNDATION_EXPORT void JavaLangSystem_setOutWithJavaIoPrintStream_(JavaIoPrintSt
 
 FOUNDATION_EXPORT void JavaLangSystem_setErrWithJavaIoPrintStream_(JavaIoPrintStream *newErr);
 
-FOUNDATION_EXPORT jlong JavaLangSystem_currentTimeMillis();
+FOUNDATION_EXPORT jlong JavaLangSystem_currentTimeMillis(void);
 
 FOUNDATION_EXPORT jint JavaLangSystem_identityHashCodeWithId_(id anObject);
 
 FOUNDATION_EXPORT void JavaLangSystem_arraycopyWithId_withInt_withId_withInt_withInt_(id src, jint srcPos, id dest, jint destPos, jint length);
 
-FOUNDATION_EXPORT jlong JavaLangSystem_nanoTime();
+FOUNDATION_EXPORT jlong JavaLangSystem_nanoTime(void);
 
 FOUNDATION_EXPORT void JavaLangSystem_exitWithInt_(jint status);
 
-FOUNDATION_EXPORT JavaUtilProperties *JavaLangSystem_getProperties();
+FOUNDATION_EXPORT JavaUtilProperties *JavaLangSystem_getProperties(void);
 
 FOUNDATION_EXPORT NSString *JavaLangSystem_getPropertyWithNSString_(NSString *key);
 
@@ -210,41 +210,35 @@ FOUNDATION_EXPORT NSString *JavaLangSystem_clearPropertyWithNSString_(NSString *
 
 FOUNDATION_EXPORT NSString *JavaLangSystem_getenvWithNSString_(NSString *name);
 
-FOUNDATION_EXPORT id<JavaUtilMap> JavaLangSystem_getenv();
+FOUNDATION_EXPORT id<JavaUtilMap> JavaLangSystem_getenv(void);
 
-FOUNDATION_EXPORT JavaLangSecurityManager *JavaLangSystem_getSecurityManager();
+FOUNDATION_EXPORT JavaLangSecurityManager *JavaLangSystem_getSecurityManager(void);
 
-FOUNDATION_EXPORT NSString *JavaLangSystem_lineSeparator();
+FOUNDATION_EXPORT NSString *JavaLangSystem_lineSeparator(void);
 
 FOUNDATION_EXPORT void JavaLangSystem_load__WithNSString_(NSString *pathName);
 
 FOUNDATION_EXPORT void JavaLangSystem_loadLibraryWithNSString_(NSString *libName);
 
-FOUNDATION_EXPORT void JavaLangSystem_gc();
+FOUNDATION_EXPORT void JavaLangSystem_gc(void);
 
-FOUNDATION_EXPORT void JavaLangSystem_runFinalization();
+FOUNDATION_EXPORT void JavaLangSystem_runFinalization(void);
 
 FOUNDATION_EXPORT void JavaLangSystem_runFinalizersOnExitWithBoolean_(jboolean b);
 
-FOUNDATION_EXPORT JavaIoConsole *JavaLangSystem_console();
+FOUNDATION_EXPORT JavaIoConsole *JavaLangSystem_console(void);
 
 FOUNDATION_EXPORT void JavaLangSystem_logEWithNSString_(NSString *message);
 
-FOUNDATION_EXPORT void JavaLangSystem_logEWithNSString_withNSException_(NSString *message, NSException *th);
+FOUNDATION_EXPORT void JavaLangSystem_logEWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *th);
 
 FOUNDATION_EXPORT void JavaLangSystem_logIWithNSString_(NSString *message);
 
-FOUNDATION_EXPORT void JavaLangSystem_logIWithNSString_withNSException_(NSString *message, NSException *th);
+FOUNDATION_EXPORT void JavaLangSystem_logIWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *th);
 
 FOUNDATION_EXPORT void JavaLangSystem_logWWithNSString_(NSString *message);
 
-FOUNDATION_EXPORT void JavaLangSystem_logWWithNSString_withNSException_(NSString *message, NSException *th);
-
-FOUNDATION_EXPORT void JavaLangSystem_init(JavaLangSystem *self);
-
-FOUNDATION_EXPORT JavaLangSystem *new_JavaLangSystem_init() NS_RETURNS_RETAINED;
-
-FOUNDATION_EXPORT JavaLangSystem *create_JavaLangSystem_init();
+FOUNDATION_EXPORT void JavaLangSystem_logWWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *th);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangSystem)
 

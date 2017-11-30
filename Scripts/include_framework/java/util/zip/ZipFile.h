@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/zip/ZipFile.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilZipZipFile")
 #ifdef RESTRICT_JavaUtilZipZipFile
@@ -21,11 +21,11 @@
 
 #define RESTRICT_JavaUtilZipZipConstants 1
 #define INCLUDE_JavaUtilZipZipConstants 1
-#include "java/util/zip/ZipConstants.h"
+#include "../../../java/util/zip/ZipConstants.h"
 
 #define RESTRICT_JavaIoCloseable 1
 #define INCLUDE_JavaIoCloseable 1
-#include "java/io/Closeable.h"
+#include "../../../java/io/Closeable.h"
 
 @class JavaIoFile;
 @class JavaIoInputStream;

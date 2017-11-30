@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/javax/security/auth/callback/PasswordCallback.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxSecurityAuthCallbackPasswordCallback")
 #ifdef RESTRICT_JavaxSecurityAuthCallbackPasswordCallback
@@ -21,11 +21,11 @@
 
 #define RESTRICT_JavaxSecurityAuthCallbackCallback 1
 #define INCLUDE_JavaxSecurityAuthCallbackCallback 1
-#include "javax/security/auth/callback/Callback.h"
+#include "../../../../javax/security/auth/callback/Callback.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../../java/io/Serializable.h"
 
 @class IOSCharArray;
 

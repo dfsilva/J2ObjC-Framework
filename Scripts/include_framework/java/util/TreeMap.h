@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/TreeMap.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilTreeMap")
 #ifdef RESTRICT_JavaUtilTreeMap
@@ -69,15 +69,15 @@
 
 #define RESTRICT_JavaUtilAbstractMap 1
 #define INCLUDE_JavaUtilAbstractMap 1
-#include "java/util/AbstractMap.h"
+#include "../../java/util/AbstractMap.h"
 
 #define RESTRICT_JavaUtilNavigableMap 1
 #define INCLUDE_JavaUtilNavigableMap 1
-#include "java/util/NavigableMap.h"
+#include "../../java/util/NavigableMap.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../java/io/Serializable.h"
 
 @class JavaIoObjectInputStream;
 @class JavaUtilTreeMap_TreeMapEntry;
@@ -787,7 +787,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilTreeMap)
 
 #define RESTRICT_JavaUtilAbstractCollection 1
 #define INCLUDE_JavaUtilAbstractCollection 1
-#include "java/util/AbstractCollection.h"
+#include "../../java/util/AbstractCollection.h"
 
 @class JavaUtilTreeMap;
 @protocol JavaUtilIterator;
@@ -836,7 +836,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilTreeMap_Values)
 
 #define RESTRICT_JavaUtilAbstractSet 1
 #define INCLUDE_JavaUtilAbstractSet 1
-#include "java/util/AbstractSet.h"
+#include "../../java/util/AbstractSet.h"
 
 @class JavaUtilTreeMap;
 @protocol JavaUtilIterator;
@@ -885,11 +885,11 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilTreeMap_EntrySet)
 
 #define RESTRICT_JavaUtilAbstractSet 1
 #define INCLUDE_JavaUtilAbstractSet 1
-#include "java/util/AbstractSet.h"
+#include "../../java/util/AbstractSet.h"
 
 #define RESTRICT_JavaUtilNavigableSet 1
 #define INCLUDE_JavaUtilNavigableSet 1
-#include "java/util/NavigableSet.h"
+#include "../../java/util/NavigableSet.h"
 
 @protocol JavaUtilComparator;
 @protocol JavaUtilIterator;
@@ -982,7 +982,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilTreeMap_KeySet)
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
-#include "java/util/Iterator.h"
+#include "../../java/util/Iterator.h"
 
 @class JavaUtilTreeMap;
 @class JavaUtilTreeMap_TreeMapEntry;
@@ -1158,15 +1158,15 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilTreeMap_DescendingKeyIterator)
 
 #define RESTRICT_JavaUtilAbstractMap 1
 #define INCLUDE_JavaUtilAbstractMap 1
-#include "java/util/AbstractMap.h"
+#include "../../java/util/AbstractMap.h"
 
 #define RESTRICT_JavaUtilNavigableMap 1
 #define INCLUDE_JavaUtilNavigableMap 1
-#include "java/util/NavigableMap.h"
+#include "../../java/util/NavigableMap.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../java/io/Serializable.h"
 
 @class JavaUtilTreeMap;
 @class JavaUtilTreeMap_KeySet;
@@ -1361,7 +1361,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilTreeMap_NavigableSubMap)
 
 #define RESTRICT_JavaUtilAbstractSet 1
 #define INCLUDE_JavaUtilAbstractSet 1
-#include "java/util/AbstractSet.h"
+#include "../../java/util/AbstractSet.h"
 
 @class JavaUtilTreeMap_NavigableSubMap;
 
@@ -1396,7 +1396,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilTreeMap_NavigableSubMap_EntrySetView)
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
-#include "java/util/Iterator.h"
+#include "../../java/util/Iterator.h"
 
 @class JavaUtilTreeMap_NavigableSubMap;
 @class JavaUtilTreeMap_TreeMapEntry;
@@ -1520,7 +1520,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilTreeMap_NavigableSubMap_DescendingSubMapEntry
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../java/util/Spliterator.h"
 
 @class JavaUtilTreeMap_NavigableSubMap;
 @class JavaUtilTreeMap_TreeMapEntry;
@@ -1572,7 +1572,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilTreeMap_NavigableSubMap_SubMapKeyIterator)
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../java/util/Spliterator.h"
 
 @class JavaUtilTreeMap_NavigableSubMap;
 @class JavaUtilTreeMap_TreeMapEntry;
@@ -1842,7 +1842,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilTreeMap_DescendingSubMap_DescendingEntrySetVi
 
 #define RESTRICT_JavaUtilMap 1
 #define INCLUDE_JavaUtilMap_Entry 1
-#include "java/util/Map.h"
+#include "../../java/util/Map.h"
 
 /*!
  @brief Node in the Tree.Doubles as a means to pass key-value pairs back to
@@ -2001,7 +2001,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilTreeMap_TreeMapSpliterator)
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../java/util/Spliterator.h"
 
 @class JavaUtilTreeMap;
 @class JavaUtilTreeMap_TreeMapEntry;
@@ -2050,7 +2050,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilTreeMap_KeySpliterator)
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../java/util/Spliterator.h"
 
 @class JavaUtilTreeMap;
 @class JavaUtilTreeMap_TreeMapEntry;
@@ -2097,7 +2097,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilTreeMap_DescendingKeySpliterator)
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../java/util/Spliterator.h"
 
 @class JavaUtilTreeMap;
 @class JavaUtilTreeMap_TreeMapEntry;
@@ -2144,7 +2144,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilTreeMap_ValueSpliterator)
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../java/util/Spliterator.h"
 
 @class JavaUtilTreeMap;
 @class JavaUtilTreeMap_TreeMapEntry;

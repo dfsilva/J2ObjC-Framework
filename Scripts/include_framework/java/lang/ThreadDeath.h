@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/ThreadDeath.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangThreadDeath")
 #ifdef RESTRICT_JavaLangThreadDeath
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangError 1
 #define INCLUDE_JavaLangError 1
-#include "java/lang/Error.h"
+#include "../../java/lang/Error.h"
 
 @class JavaLangThrowable;
 

@@ -3,7 +3,7 @@
 //  source: android/frameworks/base/core/java/android/util/Base64DataException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_AndroidUtilBase64DataException")
 #ifdef RESTRICT_AndroidUtilBase64DataException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoIOException 1
 #define INCLUDE_JavaIoIOException 1
-#include "java/io/IOException.h"
+#include "../../java/io/IOException.h"
 
 @class JavaLangThrowable;
 

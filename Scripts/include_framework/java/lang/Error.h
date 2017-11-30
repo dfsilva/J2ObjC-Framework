@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/Error.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangError")
 #ifdef RESTRICT_JavaLangError
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangThrowable 1
 #define INCLUDE_JavaLangThrowable 1
-#include "java/lang/Throwable.h"
+#include "../../java/lang/Throwable.h"
 
 /*!
  @brief An <code>Error</code> is a subclass of <code>Throwable</code>

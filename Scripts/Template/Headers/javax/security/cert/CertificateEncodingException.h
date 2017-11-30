@@ -25,13 +25,13 @@
 
 /*!
  @brief The exception that is thrown when an error occurs while a <code>Certificate</code>
- is being encoded.
+  is being encoded.
  <p>
- Note: This package is provided only for compatibility reasons. It contains a
- simplified version of the java.security.cert package that was previously used
- by JSSE (Java SSL package). All applications that do not have to be
- compatible with older versions of JSSE (that is before Java SDK 1.5) should
- only use java.security.cert.
+  Note: This package is provided only for compatibility reasons. It contains a
+  simplified version of the java.security.cert package that was previously used
+  by JSSE (Java SSL package). All applications that do not have to be
+  compatible with older versions of JSSE (that is before Java SDK 1.5) should
+  only use java.security.cert.
  */
 @interface JavaxSecurityCertCertificateEncodingException : JavaxSecurityCertCertificateException
 
@@ -44,9 +44,8 @@
 
 /*!
  @brief Creates a new <code>CertificateEncodingException</code> with the specified
- message.
- @param msg
- the detail message for the exception.
+  message.
+ @param msg the detail message for the exception.
  */
 - (instancetype)initWithNSString:(NSString *)msg;
 
@@ -62,9 +61,9 @@ FOUNDATION_EXPORT JavaxSecurityCertCertificateEncodingException *create_JavaxSec
 
 FOUNDATION_EXPORT void JavaxSecurityCertCertificateEncodingException_init(JavaxSecurityCertCertificateEncodingException *self);
 
-FOUNDATION_EXPORT JavaxSecurityCertCertificateEncodingException *new_JavaxSecurityCertCertificateEncodingException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaxSecurityCertCertificateEncodingException *new_JavaxSecurityCertCertificateEncodingException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaxSecurityCertCertificateEncodingException *create_JavaxSecurityCertCertificateEncodingException_init();
+FOUNDATION_EXPORT JavaxSecurityCertCertificateEncodingException *create_JavaxSecurityCertCertificateEncodingException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaxSecurityCertCertificateEncodingException)
 

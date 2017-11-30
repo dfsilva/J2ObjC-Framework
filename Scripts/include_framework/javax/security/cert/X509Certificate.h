@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/javax/security/cert/X509Certificate.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaxSecurityCertX509Certificate")
 #ifdef RESTRICT_JavaxSecurityCertX509Certificate
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaxSecurityCertCertificate 1
 #define INCLUDE_JavaxSecurityCertCertificate 1
-#include "javax/security/cert/Certificate.h"
+#include "../../../javax/security/cert/Certificate.h"
 
 @class IOSByteArray;
 @class JavaIoInputStream;

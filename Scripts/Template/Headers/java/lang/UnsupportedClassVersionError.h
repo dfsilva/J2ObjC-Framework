@@ -25,8 +25,8 @@
 
 /*!
  @brief Thrown when the Java Virtual Machine attempts to read a class
- file and determines that the major and minor version numbers
- in the file are not supported.
+  file and determines that the major and minor version numbers
+  in the file are not supported.
  @since 1.2
  */
 @interface JavaLangUnsupportedClassVersionError : JavaLangClassFormatError
@@ -35,14 +35,14 @@
 
 /*!
  @brief Constructs a <code>UnsupportedClassVersionError</code>
- with no detail message.
+  with no detail message.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a <code>UnsupportedClassVersionError</code> with
- the specified detail message.
- @param s   the detail message.
+  the specified detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
@@ -52,9 +52,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangUnsupportedClassVersionError)
 
 FOUNDATION_EXPORT void JavaLangUnsupportedClassVersionError_init(JavaLangUnsupportedClassVersionError *self);
 
-FOUNDATION_EXPORT JavaLangUnsupportedClassVersionError *new_JavaLangUnsupportedClassVersionError_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangUnsupportedClassVersionError *new_JavaLangUnsupportedClassVersionError_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangUnsupportedClassVersionError *create_JavaLangUnsupportedClassVersionError_init();
+FOUNDATION_EXPORT JavaLangUnsupportedClassVersionError *create_JavaLangUnsupportedClassVersionError_init(void);
 
 FOUNDATION_EXPORT void JavaLangUnsupportedClassVersionError_initWithNSString_(JavaLangUnsupportedClassVersionError *self, NSString *s);
 

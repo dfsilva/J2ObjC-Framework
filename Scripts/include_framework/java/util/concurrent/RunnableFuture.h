@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/RunnableFuture.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentRunnableFuture")
 #ifdef RESTRICT_JavaUtilConcurrentRunnableFuture
@@ -21,11 +21,11 @@
 
 #define RESTRICT_JavaLangRunnable 1
 #define INCLUDE_JavaLangRunnable 1
-#include "java/lang/Runnable.h"
+#include "../../../java/lang/Runnable.h"
 
 #define RESTRICT_JavaUtilConcurrentFuture 1
 #define INCLUDE_JavaUtilConcurrentFuture 1
-#include "java/util/concurrent/Future.h"
+#include "../../../java/util/concurrent/Future.h"
 
 /*!
  @brief A <code>Future</code> that is <code>Runnable</code>.Successful execution of

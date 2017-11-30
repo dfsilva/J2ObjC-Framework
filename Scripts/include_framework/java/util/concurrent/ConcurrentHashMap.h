@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/ConcurrentHashMap.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentConcurrentHashMap")
 #ifdef RESTRICT_JavaUtilConcurrentConcurrentHashMap
@@ -156,15 +156,15 @@
 
 #define RESTRICT_JavaUtilAbstractMap 1
 #define INCLUDE_JavaUtilAbstractMap 1
-#include "java/util/AbstractMap.h"
+#include "../../../java/util/AbstractMap.h"
 
 #define RESTRICT_JavaUtilConcurrentConcurrentMap 1
 #define INCLUDE_JavaUtilConcurrentConcurrentMap 1
-#include "java/util/concurrent/ConcurrentMap.h"
+#include "../../../java/util/concurrent/ConcurrentMap.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 @class IOSClass;
 @class IOSObjectArray;
@@ -1499,7 +1499,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentHashMap)
 
 #define RESTRICT_JavaUtilMap 1
 #define INCLUDE_JavaUtilMap_Entry 1
-#include "java/util/Map.h"
+#include "../../../java/util/Map.h"
 
 /*!
  @brief Key-value entry.This class is never exported out as a
@@ -1572,11 +1572,11 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentHashMap_Node)
 
 #define RESTRICT_JavaUtilConcurrentLocksReentrantLock 1
 #define INCLUDE_JavaUtilConcurrentLocksReentrantLock 1
-#include "java/util/concurrent/locks/ReentrantLock.h"
+#include "../../../java/util/concurrent/locks/ReentrantLock.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 /*!
  @brief Stripped-down version of helper class used in previous version,
@@ -2106,11 +2106,11 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentHashMap_BaseIterator)
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
-#include "java/util/Iterator.h"
+#include "../../../java/util/Iterator.h"
 
 #define RESTRICT_JavaUtilEnumeration 1
 #define INCLUDE_JavaUtilEnumeration 1
-#include "java/util/Enumeration.h"
+#include "../../../java/util/Enumeration.h"
 
 @class IOSObjectArray;
 @class JavaUtilConcurrentConcurrentHashMap;
@@ -2151,11 +2151,11 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentHashMap_KeyIterator)
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
-#include "java/util/Iterator.h"
+#include "../../../java/util/Iterator.h"
 
 #define RESTRICT_JavaUtilEnumeration 1
 #define INCLUDE_JavaUtilEnumeration 1
-#include "java/util/Enumeration.h"
+#include "../../../java/util/Enumeration.h"
 
 @class IOSObjectArray;
 @class JavaUtilConcurrentConcurrentHashMap;
@@ -2196,7 +2196,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentHashMap_ValueIterator)
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
-#include "java/util/Iterator.h"
+#include "../../../java/util/Iterator.h"
 
 @class IOSObjectArray;
 @class JavaUtilConcurrentConcurrentHashMap;
@@ -2236,7 +2236,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentHashMap_EntryIterator)
 
 #define RESTRICT_JavaUtilMap 1
 #define INCLUDE_JavaUtilMap_Entry 1
-#include "java/util/Map.h"
+#include "../../../java/util/Map.h"
 
 @class JavaUtilConcurrentConcurrentHashMap;
 
@@ -2306,7 +2306,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentHashMap_MapEntry)
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../../java/util/Spliterator.h"
 
 @class IOSObjectArray;
 @protocol JavaUtilComparator;
@@ -2363,7 +2363,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentHashMap_KeySpliterator)
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../../java/util/Spliterator.h"
 
 @class IOSObjectArray;
 @protocol JavaUtilComparator;
@@ -2420,7 +2420,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentHashMap_ValueSpliterator)
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../../java/util/Spliterator.h"
 
 @class IOSObjectArray;
 @class JavaUtilConcurrentConcurrentHashMap;
@@ -2482,11 +2482,11 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentHashMap_EntrySpliterator)
 
 #define RESTRICT_JavaUtilCollection 1
 #define INCLUDE_JavaUtilCollection 1
-#include "java/util/Collection.h"
+#include "../../../java/util/Collection.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 @class IOSObjectArray;
 @class JavaUtilConcurrentConcurrentHashMap;
@@ -2577,11 +2577,11 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentHashMap_CollectionView)
 
 #define RESTRICT_JavaUtilSet 1
 #define INCLUDE_JavaUtilSet 1
-#include "java/util/Set.h"
+#include "../../../java/util/Set.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 @class JavaUtilConcurrentConcurrentHashMap;
 @protocol JavaUtilCollection;
@@ -2689,11 +2689,11 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentHashMap_KeySetView)
 
 #define RESTRICT_JavaUtilCollection 1
 #define INCLUDE_JavaUtilCollection 1
-#include "java/util/Collection.h"
+#include "../../../java/util/Collection.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 @class JavaUtilConcurrentConcurrentHashMap;
 @protocol JavaUtilFunctionConsumer;
@@ -2750,11 +2750,11 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentHashMap_ValuesView)
 
 #define RESTRICT_JavaUtilSet 1
 #define INCLUDE_JavaUtilSet 1
-#include "java/util/Set.h"
+#include "../../../java/util/Set.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 @class JavaUtilConcurrentConcurrentHashMap;
 @protocol JavaUtilCollection;
@@ -2820,7 +2820,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentConcurrentHashMap_EntrySetView)
 
 #define RESTRICT_JavaUtilConcurrentCountedCompleter 1
 #define INCLUDE_JavaUtilConcurrentCountedCompleter 1
-#include "java/util/concurrent/CountedCompleter.h"
+#include "../../../java/util/concurrent/CountedCompleter.h"
 
 @class IOSObjectArray;
 @class JavaUtilConcurrentConcurrentHashMap_Node;

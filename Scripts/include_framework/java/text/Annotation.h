@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/java/text/Annotation.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaTextAnnotation")
 #ifdef RESTRICT_JavaTextAnnotation

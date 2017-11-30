@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/nio/ChannelFactoryImpl.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNioChannelFactoryImpl")
 #ifdef RESTRICT_JavaNioChannelFactoryImpl
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaNioNioUtils 1
 #define INCLUDE_JavaNioNioUtils_ChannelFactory 1
-#include "java/nio/NioUtils.h"
+#include "../../java/nio/NioUtils.h"
 
 @class JavaIoFileDescriptor;
 @class JavaNioChannelsFileChannel;

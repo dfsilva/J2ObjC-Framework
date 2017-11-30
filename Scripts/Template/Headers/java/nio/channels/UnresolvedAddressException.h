@@ -23,9 +23,11 @@
 #define INCLUDE_JavaLangIllegalArgumentException 1
 #include "../../../java/lang/IllegalArgumentException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Unchecked exception thrown when an attempt is made to invoke a network
- operation upon an unresolved socket address.
+  operation upon an unresolved socket address.
  @since 1.4
  */
 @interface JavaNioChannelsUnresolvedAddressException : JavaLangIllegalArgumentException
@@ -37,15 +39,24 @@
  */
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsUnresolvedAddressException)
 
 FOUNDATION_EXPORT void JavaNioChannelsUnresolvedAddressException_init(JavaNioChannelsUnresolvedAddressException *self);
 
-FOUNDATION_EXPORT JavaNioChannelsUnresolvedAddressException *new_JavaNioChannelsUnresolvedAddressException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNioChannelsUnresolvedAddressException *new_JavaNioChannelsUnresolvedAddressException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNioChannelsUnresolvedAddressException *create_JavaNioChannelsUnresolvedAddressException_init();
+FOUNDATION_EXPORT JavaNioChannelsUnresolvedAddressException *create_JavaNioChannelsUnresolvedAddressException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsUnresolvedAddressException)
 

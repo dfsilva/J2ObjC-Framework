@@ -23,6 +23,8 @@
 #define INCLUDE_JavaSecurityGeneralSecurityException 1
 #include "../../../java/security/GeneralSecurityException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief CRL (Certificate Revocation List) Exception.
  @author Hemma Prafullchandra
@@ -32,47 +34,43 @@
 #pragma mark Public
 
 /*!
- @brief Constructs a CRLException with no detail message.
- A
- detail message is a String that describes this particular
- exception.
+ @brief Constructs a CRLException with no detail message.A
+  detail message is a String that describes this particular
+  exception.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a CRLException with the specified detail
- message.
- A detail message is a String that describes this
- particular exception.
+  message.A detail message is a String that describes this
+  particular exception.
  @param message the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)message;
 
 /*!
  @brief Creates a <code>CRLException</code> with the specified
- detail message and cause.
- @param message the detail message (which is saved for later retrieval
- by the <code>getMessage()</code> method).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+  detail message and cause.
+ @param message the detail message (which is saved for later retrieval         by the 
+ <code>getMessage()</code>  method).
+ @param cause the cause (which is saved for later retrieval by the         
+ <code>getCause()</code>  method).  (A <code>null</code>  value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.5
  */
 - (instancetype)initWithNSString:(NSString *)message
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Creates a <code>CRLException</code> with the specified cause
- and a detail message of <code>(cause==null ?
+  and a detail message of <code>(cause==null ?
  null : cause.toString())</code>
- (which typically contains the class and detail message of
+  (which typically contains the class and detail message of 
  <code>cause</code>).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+ @param cause the cause (which is saved for later retrieval by the         
+ <code>getCause()</code>  method).  (A <code>null</code>  value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.5
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
 
 @end
 
@@ -80,9 +78,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaSecurityCertCRLException)
 
 FOUNDATION_EXPORT void JavaSecurityCertCRLException_init(JavaSecurityCertCRLException *self);
 
-FOUNDATION_EXPORT JavaSecurityCertCRLException *new_JavaSecurityCertCRLException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityCertCRLException *new_JavaSecurityCertCRLException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityCertCRLException *create_JavaSecurityCertCRLException_init();
+FOUNDATION_EXPORT JavaSecurityCertCRLException *create_JavaSecurityCertCRLException_init(void);
 
 FOUNDATION_EXPORT void JavaSecurityCertCRLException_initWithNSString_(JavaSecurityCertCRLException *self, NSString *message);
 
@@ -90,17 +88,17 @@ FOUNDATION_EXPORT JavaSecurityCertCRLException *new_JavaSecurityCertCRLException
 
 FOUNDATION_EXPORT JavaSecurityCertCRLException *create_JavaSecurityCertCRLException_initWithNSString_(NSString *message);
 
-FOUNDATION_EXPORT void JavaSecurityCertCRLException_initWithNSString_withNSException_(JavaSecurityCertCRLException *self, NSString *message, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityCertCRLException_initWithNSString_withJavaLangThrowable_(JavaSecurityCertCRLException *self, NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityCertCRLException *new_JavaSecurityCertCRLException_initWithNSString_withNSException_(NSString *message, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityCertCRLException *new_JavaSecurityCertCRLException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityCertCRLException *create_JavaSecurityCertCRLException_initWithNSString_withNSException_(NSString *message, NSException *cause);
+FOUNDATION_EXPORT JavaSecurityCertCRLException *create_JavaSecurityCertCRLException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaSecurityCertCRLException_initWithNSException_(JavaSecurityCertCRLException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityCertCRLException_initWithJavaLangThrowable_(JavaSecurityCertCRLException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityCertCRLException *new_JavaSecurityCertCRLException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityCertCRLException *new_JavaSecurityCertCRLException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityCertCRLException *create_JavaSecurityCertCRLException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaSecurityCertCRLException *create_JavaSecurityCertCRLException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaSecurityCertCRLException)
 

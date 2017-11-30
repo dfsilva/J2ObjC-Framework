@@ -3,7 +3,7 @@
 //  source: android/frameworks/base/core/java/android/text/SpannableStringBuilder.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_AndroidTextSpannableStringBuilder")
 #ifdef RESTRICT_AndroidTextSpannableStringBuilder
@@ -21,23 +21,23 @@
 
 #define RESTRICT_JavaLangCharSequence 1
 #define INCLUDE_JavaLangCharSequence 1
-#include "java/lang/CharSequence.h"
+#include "../../java/lang/CharSequence.h"
 
 #define RESTRICT_AndroidTextGetChars 1
 #define INCLUDE_AndroidTextGetChars 1
-#include "android/text/GetChars.h"
+#include "../../android/text/GetChars.h"
 
 #define RESTRICT_AndroidTextSpannable 1
 #define INCLUDE_AndroidTextSpannable 1
-#include "android/text/Spannable.h"
+#include "../../android/text/Spannable.h"
 
 #define RESTRICT_AndroidTextEditable 1
 #define INCLUDE_AndroidTextEditable 1
-#include "android/text/Editable.h"
+#include "../../android/text/Editable.h"
 
 #define RESTRICT_JavaLangAppendable 1
 #define INCLUDE_JavaLangAppendable 1
-#include "java/lang/Appendable.h"
+#include "../../java/lang/Appendable.h"
 
 @class IOSCharArray;
 @class IOSClass;

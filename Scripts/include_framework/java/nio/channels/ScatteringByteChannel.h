@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/nio/channels/ScatteringByteChannel.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNioChannelsScatteringByteChannel")
 #ifdef RESTRICT_JavaNioChannelsScatteringByteChannel
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaNioChannelsReadableByteChannel 1
 #define INCLUDE_JavaNioChannelsReadableByteChannel 1
-#include "java/nio/channels/ReadableByteChannel.h"
+#include "../../../java/nio/channels/ReadableByteChannel.h"
 
 @class IOSObjectArray;
 

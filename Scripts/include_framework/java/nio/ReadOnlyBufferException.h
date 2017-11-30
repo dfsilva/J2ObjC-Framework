@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/nio/ReadOnlyBufferException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNioReadOnlyBufferException")
 #ifdef RESTRICT_JavaNioReadOnlyBufferException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangUnsupportedOperationException 1
 #define INCLUDE_JavaLangUnsupportedOperationException 1
-#include "java/lang/UnsupportedOperationException.h"
+#include "../../java/lang/UnsupportedOperationException.h"
 
 @class JavaLangThrowable;
 

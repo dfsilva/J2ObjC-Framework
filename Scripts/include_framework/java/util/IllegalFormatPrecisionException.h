@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/IllegalFormatPrecisionException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilIllegalFormatPrecisionException")
 #ifdef RESTRICT_JavaUtilIllegalFormatPrecisionException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilIllegalFormatException 1
 #define INCLUDE_JavaUtilIllegalFormatException 1
-#include "java/util/IllegalFormatException.h"
+#include "../../java/util/IllegalFormatException.h"
 
 /*!
  @brief Unchecked exception thrown when the precision is a negative value other than 

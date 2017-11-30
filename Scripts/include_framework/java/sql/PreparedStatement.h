@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/sql/PreparedStatement.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSqlPreparedStatement")
 #ifdef RESTRICT_JavaSqlPreparedStatement
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaSqlStatement 1
 #define INCLUDE_JavaSqlStatement 1
-#include "java/sql/Statement.h"
+#include "../../java/sql/Statement.h"
 
 @class IOSByteArray;
 @class JavaIoInputStream;

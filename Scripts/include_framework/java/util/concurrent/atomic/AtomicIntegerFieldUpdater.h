@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/atomic/AtomicIntegerFieldUpdater.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentAtomicAtomicIntegerFieldUpdater")
 #ifdef RESTRICT_JavaUtilConcurrentAtomicAtomicIntegerFieldUpdater

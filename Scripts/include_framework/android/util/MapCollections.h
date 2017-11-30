@@ -3,7 +3,7 @@
 //  source: android/frameworks/base/core/java/android/util/MapCollections.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_AndroidUtilMapCollections")
 #ifdef RESTRICT_AndroidUtilMapCollections
@@ -117,7 +117,7 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilMapCollections)
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
-#include "java/util/Iterator.h"
+#include "../../java/util/Iterator.h"
 
 @class AndroidUtilMapCollections;
 @protocol JavaUtilFunctionConsumer;
@@ -166,11 +166,11 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilMapCollections_ArrayIterator)
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
-#include "java/util/Iterator.h"
+#include "../../java/util/Iterator.h"
 
 #define RESTRICT_JavaUtilMap 1
 #define INCLUDE_JavaUtilMap_Entry 1
-#include "java/util/Map.h"
+#include "../../java/util/Map.h"
 
 @class AndroidUtilMapCollections;
 @protocol JavaUtilFunctionConsumer;
@@ -229,7 +229,7 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilMapCollections_MapIterator)
 
 #define RESTRICT_JavaUtilSet 1
 #define INCLUDE_JavaUtilSet 1
-#include "java/util/Set.h"
+#include "../../java/util/Set.h"
 
 @class AndroidUtilMapCollections;
 @class IOSObjectArray;
@@ -302,7 +302,7 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilMapCollections_EntrySet)
 
 #define RESTRICT_JavaUtilSet 1
 #define INCLUDE_JavaUtilSet 1
-#include "java/util/Set.h"
+#include "../../java/util/Set.h"
 
 @class AndroidUtilMapCollections;
 @class IOSObjectArray;
@@ -374,7 +374,7 @@ J2OBJC_TYPE_LITERAL_HEADER(AndroidUtilMapCollections_KeySet)
 
 #define RESTRICT_JavaUtilCollection 1
 #define INCLUDE_JavaUtilCollection 1
-#include "java/util/Collection.h"
+#include "../../java/util/Collection.h"
 
 @class AndroidUtilMapCollections;
 @class IOSObjectArray;

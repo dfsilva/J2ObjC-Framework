@@ -38,8 +38,8 @@
 
 /*!
  @brief Constructs an UnrecoverableKeyException with the specified detail
- message, which provides more information about why this exception
- has been thrown.
+  message, which provides more information about why this exception
+  has been thrown.
  @param msg the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)msg;
@@ -50,9 +50,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaSecurityUnrecoverableKeyException)
 
 FOUNDATION_EXPORT void JavaSecurityUnrecoverableKeyException_init(JavaSecurityUnrecoverableKeyException *self);
 
-FOUNDATION_EXPORT JavaSecurityUnrecoverableKeyException *new_JavaSecurityUnrecoverableKeyException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityUnrecoverableKeyException *new_JavaSecurityUnrecoverableKeyException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityUnrecoverableKeyException *create_JavaSecurityUnrecoverableKeyException_init();
+FOUNDATION_EXPORT JavaSecurityUnrecoverableKeyException *create_JavaSecurityUnrecoverableKeyException_init(void);
 
 FOUNDATION_EXPORT void JavaSecurityUnrecoverableKeyException_initWithNSString_(JavaSecurityUnrecoverableKeyException *self, NSString *msg);
 

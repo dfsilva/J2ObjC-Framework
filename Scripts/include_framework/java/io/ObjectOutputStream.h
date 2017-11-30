@@ -3,7 +3,7 @@
 //  source: android/libcore/luni/src/main/java/java/io/ObjectOutputStream.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoObjectOutputStream")
 #ifdef RESTRICT_JavaIoObjectOutputStream
@@ -21,15 +21,15 @@
 
 #define RESTRICT_JavaIoOutputStream 1
 #define INCLUDE_JavaIoOutputStream 1
-#include "java/io/OutputStream.h"
+#include "../../java/io/OutputStream.h"
 
 #define RESTRICT_JavaIoObjectOutput 1
 #define INCLUDE_JavaIoObjectOutput 1
-#include "java/io/ObjectOutput.h"
+#include "../../java/io/ObjectOutput.h"
 
 #define RESTRICT_JavaIoObjectStreamConstants 1
 #define INCLUDE_JavaIoObjectStreamConstants 1
-#include "java/io/ObjectStreamConstants.h"
+#include "../../java/io/ObjectStreamConstants.h"
 
 @class IOSByteArray;
 @class IOSClass;

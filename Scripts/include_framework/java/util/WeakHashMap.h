@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/WeakHashMap.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilWeakHashMap")
 #ifdef RESTRICT_JavaUtilWeakHashMap
@@ -30,11 +30,11 @@
 
 #define RESTRICT_JavaUtilAbstractMap 1
 #define INCLUDE_JavaUtilAbstractMap 1
-#include "java/util/AbstractMap.h"
+#include "../../java/util/AbstractMap.h"
 
 #define RESTRICT_JavaUtilMap 1
 #define INCLUDE_JavaUtilMap 1
-#include "java/util/Map.h"
+#include "../../java/util/Map.h"
 
 @class IOSObjectArray;
 @class JavaUtilWeakHashMap_Entry;
@@ -410,11 +410,11 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilWeakHashMap)
 
 #define RESTRICT_JavaLangRefWeakReference 1
 #define INCLUDE_JavaLangRefWeakReference 1
-#include "java/lang/ref/WeakReference.h"
+#include "../../java/lang/ref/WeakReference.h"
 
 #define RESTRICT_JavaUtilMap 1
 #define INCLUDE_JavaUtilMap_Entry 1
-#include "java/util/Map.h"
+#include "../../java/util/Map.h"
 
 @class JavaLangRefReferenceQueue;
 
@@ -531,7 +531,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilWeakHashMap_WeakHashMapSpliterator)
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../java/util/Spliterator.h"
 
 @class JavaUtilWeakHashMap;
 @protocol JavaUtilComparator;
@@ -576,7 +576,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilWeakHashMap_KeySpliterator)
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../java/util/Spliterator.h"
 
 @class JavaUtilWeakHashMap;
 @protocol JavaUtilComparator;
@@ -621,7 +621,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilWeakHashMap_ValueSpliterator)
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../java/util/Spliterator.h"
 
 @class JavaUtilWeakHashMap;
 @protocol JavaUtilComparator;

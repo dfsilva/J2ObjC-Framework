@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/ForkJoinPool.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentForkJoinPool")
 #ifdef RESTRICT_JavaUtilConcurrentForkJoinPool
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilConcurrentAbstractExecutorService 1
 #define INCLUDE_JavaUtilConcurrentAbstractExecutorService 1
-#include "java/util/concurrent/AbstractExecutorService.h"
+#include "../../../java/util/concurrent/AbstractExecutorService.h"
 
 @class IOSObjectArray;
 @class JavaLangRuntimePermission;
@@ -942,7 +942,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentForkJoinPool_ForkJoinWorkerThreadFa
 
 #define RESTRICT_JavaUtilConcurrentLocksReentrantLock 1
 #define INCLUDE_JavaUtilConcurrentLocksReentrantLock 1
-#include "java/util/concurrent/locks/ReentrantLock.h"
+#include "../../../java/util/concurrent/locks/ReentrantLock.h"
 
 /*!
  @brief Additional fields and lock created upon initialization.

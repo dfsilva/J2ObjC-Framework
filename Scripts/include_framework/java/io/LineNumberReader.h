@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/LineNumberReader.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoLineNumberReader")
 #ifdef RESTRICT_JavaIoLineNumberReader
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoBufferedReader 1
 #define INCLUDE_JavaIoBufferedReader 1
-#include "java/io/BufferedReader.h"
+#include "../../java/io/BufferedReader.h"
 
 @class IOSCharArray;
 @class JavaIoReader;

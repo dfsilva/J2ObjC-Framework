@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/org/xml/sax/XMLFilter.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_OrgXmlSaxXMLFilter")
 #ifdef RESTRICT_OrgXmlSaxXMLFilter
@@ -21,7 +21,7 @@
 
 #define RESTRICT_OrgXmlSaxXMLReader 1
 #define INCLUDE_OrgXmlSaxXMLReader 1
-#include "org/xml/sax/XMLReader.h"
+#include "../../../org/xml/sax/XMLReader.h"
 
 /*!
  @brief Interface for an XML filter.

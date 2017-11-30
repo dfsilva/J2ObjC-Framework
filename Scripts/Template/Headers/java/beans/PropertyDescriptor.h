@@ -29,7 +29,7 @@
 /*!
  @brief Describes one Java Bean property.
  NOTE: PropertyEditor support is not available in j2objc, since it depends
- on core AWT classes.
+  on core AWT classes.
  */
 @interface JavaBeansPropertyDescriptor : JavaBeansFeatureDescriptor {
  @public
@@ -83,6 +83,10 @@
 
 - (void)setWriteMethodWithIOSClass:(IOSClass *)beanClass
                       withNSString:(NSString *)setterName;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

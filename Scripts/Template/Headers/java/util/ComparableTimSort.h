@@ -23,13 +23,13 @@
 
 /*!
  @brief This is a near duplicate of <code>TimSort</code>, modified for use with
- arrays of objects that implement <code>Comparable</code>, instead of using
- explicit comparators.
+  arrays of objects that implement <code>Comparable</code>, instead of using
+  explicit comparators.
  <p>If you are using an optimizing VM, you may find that ComparableTimSort
- offers no performance benefit over TimSort in conjunction with a
- comparator that simply returns <code>((Comparable)first).compareTo(Second)</code>.
- If this is the case, you are better off deleting ComparableTimSort to
- eliminate the code duplication.  (See Arrays.java for details.)
+  offers no performance benefit over TimSort in conjunction with a
+  comparator that simply returns <code>((Comparable)first).compareTo(Second)</code>.
+  If this is the case, you are better off deleting ComparableTimSort to
+  eliminate the code duplication.  (See Arrays.java for details.)
  @author Josh Bloch
  */
 @interface JavaUtilComparableTimSort : NSObject
@@ -38,11 +38,10 @@
 
 /*!
  @brief Sorts the given range, using the given workspace array slice
- for temp storage when possible.
- This method is designed to be
- invoked from public methods (in class Arrays) after performing
- any necessary array bounds checks and expanding parameters into
- the required forms.
+  for temp storage when possible.This method is designed to be
+  invoked from public methods (in class Arrays) after performing
+  any necessary array bounds checks and expanding parameters into
+  the required forms.
  @param a the array to be sorted
  @param lo the index of the first element, inclusive, to be sorted
  @param hi the index of the last element, exclusive, to be sorted
@@ -57,6 +56,10 @@
             withNSObjectArray:(IOSObjectArray *)work
                       withInt:(jint)workBase
                       withInt:(jint)workLen;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

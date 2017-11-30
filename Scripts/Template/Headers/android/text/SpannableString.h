@@ -37,7 +37,7 @@
 
 /*!
  @brief This is the class for text whose content is immutable but to which
- markup objects can be attached and detached.
+  markup objects can be attached and detached.
  For mutable text, see <code>SpannableStringBuilder</code>.
  */
 @interface AndroidTextSpannableString : AndroidTextSpannableStringInternal < JavaLangCharSequence, AndroidTextGetChars, AndroidTextSpannable >

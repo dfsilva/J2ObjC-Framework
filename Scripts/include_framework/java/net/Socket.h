@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/net/Socket.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNetSocket")
 #ifdef RESTRICT_JavaNetSocket
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoCloseable 1
 #define INCLUDE_JavaIoCloseable 1
-#include "java/io/Closeable.h"
+#include "../../java/io/Closeable.h"
 
 @class JavaIoFileDescriptor;
 @class JavaIoInputStream;

@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/LinkedHashMap.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilLinkedHashMap")
 #ifdef RESTRICT_JavaUtilLinkedHashMap
@@ -21,11 +21,11 @@
 
 #define RESTRICT_JavaUtilHashMap 1
 #define INCLUDE_JavaUtilHashMap 1
-#include "java/util/HashMap.h"
+#include "../../java/util/HashMap.h"
 
 #define RESTRICT_JavaUtilMap 1
 #define INCLUDE_JavaUtilMap 1
-#include "java/util/Map.h"
+#include "../../java/util/Map.h"
 
 @class IOSObjectArray;
 @protocol JavaUtilFunctionBiConsumer;

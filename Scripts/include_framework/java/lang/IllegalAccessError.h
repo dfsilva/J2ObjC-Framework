@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/IllegalAccessError.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangIllegalAccessError")
 #ifdef RESTRICT_JavaLangIllegalAccessError
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangIncompatibleClassChangeError 1
 #define INCLUDE_JavaLangIncompatibleClassChangeError 1
-#include "java/lang/IncompatibleClassChangeError.h"
+#include "../../java/lang/IncompatibleClassChangeError.h"
 
 /*!
  @brief Thrown if an application attempts to access or modify a field, or

@@ -26,9 +26,8 @@
 @class IOSClass;
 
 /*!
- @brief javax.annotation.PostConstruct annotation.
- No code was referenced,
- created using just its public API.
+ @brief javax.annotation.PostConstruct annotation.No code was referenced,
+  created using just its public API.
  */
 @protocol JavaxAnnotationPostConstruct < JavaLangAnnotationAnnotation >
 
@@ -40,7 +39,7 @@
 
 J2OBJC_EMPTY_STATIC_INIT(JavaxAnnotationPostConstruct)
 
-FOUNDATION_EXPORT id<JavaxAnnotationPostConstruct> create_JavaxAnnotationPostConstruct();
+FOUNDATION_EXPORT id<JavaxAnnotationPostConstruct> create_JavaxAnnotationPostConstruct(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaxAnnotationPostConstruct)
 

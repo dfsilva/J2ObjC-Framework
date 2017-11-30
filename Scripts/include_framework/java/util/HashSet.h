@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/HashSet.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilHashSet")
 #ifdef RESTRICT_JavaUtilHashSet
@@ -21,15 +21,15 @@
 
 #define RESTRICT_JavaUtilAbstractSet 1
 #define INCLUDE_JavaUtilAbstractSet 1
-#include "java/util/AbstractSet.h"
+#include "../../java/util/AbstractSet.h"
 
 #define RESTRICT_JavaUtilSet 1
 #define INCLUDE_JavaUtilSet 1
-#include "java/util/Set.h"
+#include "../../java/util/Set.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../java/io/Serializable.h"
 
 @protocol JavaUtilCollection;
 @protocol JavaUtilIterator;

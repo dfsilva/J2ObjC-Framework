@@ -23,10 +23,12 @@
 #define INCLUDE_JavaLangIllegalArgumentException 1
 #include "../../../java/lang/IllegalArgumentException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Unchecked exception thrown when an attempt is made to register a channel
- with a selector that was not created by the provider that created the
- channel.
+  with a selector that was not created by the provider that created the
+  channel.
  @since 1.4
  */
 @interface JavaNioChannelsIllegalSelectorException : JavaLangIllegalArgumentException
@@ -38,15 +40,24 @@
  */
 - (instancetype)init;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaNioChannelsIllegalSelectorException)
 
 FOUNDATION_EXPORT void JavaNioChannelsIllegalSelectorException_init(JavaNioChannelsIllegalSelectorException *self);
 
-FOUNDATION_EXPORT JavaNioChannelsIllegalSelectorException *new_JavaNioChannelsIllegalSelectorException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaNioChannelsIllegalSelectorException *new_JavaNioChannelsIllegalSelectorException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaNioChannelsIllegalSelectorException *create_JavaNioChannelsIllegalSelectorException_init();
+FOUNDATION_EXPORT JavaNioChannelsIllegalSelectorException *create_JavaNioChannelsIllegalSelectorException_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaNioChannelsIllegalSelectorException)
 

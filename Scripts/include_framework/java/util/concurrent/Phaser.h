@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/Phaser.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentPhaser")
 #ifdef RESTRICT_JavaUtilConcurrentPhaser
@@ -576,7 +576,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentPhaser)
 
 #define RESTRICT_JavaUtilConcurrentForkJoinPool 1
 #define INCLUDE_JavaUtilConcurrentForkJoinPool_ManagedBlocker 1
-#include "java/util/concurrent/ForkJoinPool.h"
+#include "../../../java/util/concurrent/ForkJoinPool.h"
 
 @class JavaLangThread;
 @class JavaUtilConcurrentPhaser;

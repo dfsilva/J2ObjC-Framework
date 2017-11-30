@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/StringBufferInputStream.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoStringBufferInputStream")
 #ifdef RESTRICT_JavaIoStringBufferInputStream
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoInputStream 1
 #define INCLUDE_JavaIoInputStream 1
-#include "java/io/InputStream.h"
+#include "../../java/io/InputStream.h"
 
 @class IOSByteArray;
 

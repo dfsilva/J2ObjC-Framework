@@ -26,7 +26,7 @@
 /*!
  @brief Unchecked exception thrown when the format width is required.
  <p> Unless otherwise specified, passing a <tt>null</tt> argument to any
- method or constructor in this class will cause a <code>NullPointerException</code>
+  method or constructor in this class will cause a <code>NullPointerException</code>
   to be thrown.
  @since 1.5
  */
@@ -36,9 +36,8 @@
 
 /*!
  @brief Constructs an instance of this class with the specified format
- specifier.
- @param s
- The format specifier which does not have a width
+  specifier.
+ @param s The format specifier which does not have a width
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
@@ -49,6 +48,10 @@
 - (NSString *)getFormatSpecifier;
 
 - (NSString *)getMessage;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

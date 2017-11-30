@@ -25,13 +25,13 @@
 
 /*!
  @brief Thrown if the Java Virtual Machine or a <code>ClassLoader</code> instance
- tries to load in the definition of a class (as part of a normal method call
- or as part of creating a new instance using the <code>new</code> expression)
- and no definition of the class could be found.
+  tries to load in the definition of a class (as part of a normal method call
+  or as part of creating a new instance using the <code>new</code> expression)
+  and no definition of the class could be found.
  <p>
- The searched-for class definition existed when the currently
- executing class was compiled, but the definition can no longer be
- found.
+  The searched-for class definition existed when the currently
+  executing class was compiled, but the definition can no longer be
+  found.
  @author unascribed
  @since JDK1.0
  */
@@ -46,8 +46,8 @@
 
 /*!
  @brief Constructs a <code>NoClassDefFoundError</code> with the specified
- detail message.
- @param s   the detail message.
+  detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
@@ -57,9 +57,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangNoClassDefFoundError)
 
 FOUNDATION_EXPORT void JavaLangNoClassDefFoundError_init(JavaLangNoClassDefFoundError *self);
 
-FOUNDATION_EXPORT JavaLangNoClassDefFoundError *new_JavaLangNoClassDefFoundError_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangNoClassDefFoundError *new_JavaLangNoClassDefFoundError_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangNoClassDefFoundError *create_JavaLangNoClassDefFoundError_init();
+FOUNDATION_EXPORT JavaLangNoClassDefFoundError *create_JavaLangNoClassDefFoundError_init(void);
 
 FOUNDATION_EXPORT void JavaLangNoClassDefFoundError_initWithNSString_(JavaLangNoClassDefFoundError *self, NSString *s);
 

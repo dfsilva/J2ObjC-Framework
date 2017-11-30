@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/net/MulticastSocket.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNetMulticastSocket")
 #ifdef RESTRICT_JavaNetMulticastSocket
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaNetDatagramSocket 1
 #define INCLUDE_JavaNetDatagramSocket 1
-#include "java/net/DatagramSocket.h"
+#include "../../java/net/DatagramSocket.h"
 
 @class JavaNetDatagramPacket;
 @class JavaNetDatagramSocketImpl;

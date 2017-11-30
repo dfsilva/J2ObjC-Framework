@@ -23,8 +23,10 @@
 #define INCLUDE_JavaLangIllegalArgumentException 1
 #include "../../../java/lang/IllegalArgumentException.h"
 
+@class JavaLangThrowable;
+
 /*!
- @brief Unchecked exception thrown when a string that is not a
+ @brief Unchecked exception thrown when a string that is not a 
  <a href=Charset.html#names>legal charset name</a> is used as such.
  @since 1.4
  */
@@ -35,8 +37,7 @@
 /*!
  @brief Constructs an instance of this class.
  </p>
- @param charsetName
- The illegal charset name
+ @param charsetName The illegal charset name
  */
 - (instancetype)initWithNSString:(NSString *)charsetName;
 
@@ -46,6 +47,15 @@
  @return The illegal charset name
  */
 - (NSString *)getCharsetName;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 

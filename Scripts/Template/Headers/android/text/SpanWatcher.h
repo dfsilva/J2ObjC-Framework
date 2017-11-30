@@ -27,14 +27,14 @@
 
 /*!
  @brief When an object of this type is attached to a Spannable, its methods
- will be called to notify it that other markup objects have been
- added, changed, or removed.
+  will be called to notify it that other markup objects have been
+  added, changed, or removed.
  */
 @protocol AndroidTextSpanWatcher < AndroidTextNoCopySpan, JavaObject >
 
 /*!
  @brief This method is called to notify you that the specified object
- has been attached to the specified range of the text.
+  has been attached to the specified range of the text.
  */
 - (void)onSpanAddedWithAndroidTextSpannable:(id<AndroidTextSpannable>)text
                                      withId:(id)what
@@ -43,7 +43,7 @@
 
 /*!
  @brief This method is called to notify you that the specified object
- has been detached from the specified range of the text.
+  has been detached from the specified range of the text.
  */
 - (void)onSpanRemovedWithAndroidTextSpannable:(id<AndroidTextSpannable>)text
                                        withId:(id)what
@@ -52,8 +52,8 @@
 
 /*!
  @brief This method is called to notify you that the specified object
- has been relocated from the range <code>ostart&hellip;oend</code>
- to the new range <code>nstart&hellip;nend</code> of the text.
+  has been relocated from the range <code>ostart&hellip;oend</code>
+  to the new range <code>nstart&hellip;nend</code> of the text.
  */
 - (void)onSpanChangedWithAndroidTextSpannable:(id<AndroidTextSpannable>)text
                                        withId:(id)what

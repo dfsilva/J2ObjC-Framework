@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/nio/channels/spi/AbstractInterruptibleChannel.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaNioChannelsSpiAbstractInterruptibleChannel")
 #ifdef RESTRICT_JavaNioChannelsSpiAbstractInterruptibleChannel
@@ -21,11 +21,11 @@
 
 #define RESTRICT_JavaNioChannelsChannel 1
 #define INCLUDE_JavaNioChannelsChannel 1
-#include "java/nio/channels/Channel.h"
+#include "../../../../java/nio/channels/Channel.h"
 
 #define RESTRICT_JavaNioChannelsInterruptibleChannel 1
 #define INCLUDE_JavaNioChannelsInterruptibleChannel 1
-#include "java/nio/channels/InterruptibleChannel.h"
+#include "../../../../java/nio/channels/InterruptibleChannel.h"
 
 @protocol SunNioChInterruptible;
 

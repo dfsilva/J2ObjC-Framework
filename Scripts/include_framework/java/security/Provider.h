@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/security/Provider.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSecurityProvider")
 #ifdef RESTRICT_JavaSecurityProvider
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilProperties 1
 #define INCLUDE_JavaUtilProperties 1
-#include "java/util/Properties.h"
+#include "../../java/util/Properties.h"
 
 @class JavaIoInputStream;
 @class JavaSecurityProvider_Service;

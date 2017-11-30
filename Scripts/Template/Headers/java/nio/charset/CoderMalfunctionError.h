@@ -24,12 +24,13 @@
 #include "../../../java/lang/Error.h"
 
 @class JavaLangException;
+@class JavaLangThrowable;
 
 /*!
  @brief Error thrown when the <code>decodeLoop</code> method of
- a <code>CharsetDecoder</code>, or the <code>encodeLoop</code>
+  a <code>CharsetDecoder</code>, or the <code>encodeLoop</code>
   method of a <code>CharsetEncoder</code>, throws an unexpected
- exception.
+  exception.
  @since 1.4
  */
 @interface JavaNioCharsetCoderMalfunctionError : JavaLangError
@@ -38,10 +39,25 @@
 
 /*!
  @brief Initializes an instance of this class.
- @param cause
- The unexpected exception that was thrown
+ @param cause The unexpected exception that was thrown
  */
 - (instancetype)initWithJavaLangException:(JavaLangException *)cause;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1
+                     withBoolean:(jboolean)arg2
+                     withBoolean:(jboolean)arg3 NS_UNAVAILABLE;
 
 @end
 

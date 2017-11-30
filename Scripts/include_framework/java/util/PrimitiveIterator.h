@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/PrimitiveIterator.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilPrimitiveIterator")
 #ifdef RESTRICT_JavaUtilPrimitiveIterator
@@ -30,7 +30,7 @@
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
-#include "java/util/Iterator.h"
+#include "../../java/util/Iterator.h"
 
 /*!
  @brief A base type for primitive specializations of <code>Iterator</code>.Specialized

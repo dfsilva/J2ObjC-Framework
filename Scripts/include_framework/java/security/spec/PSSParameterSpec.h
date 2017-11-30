@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/security/spec/PSSParameterSpec.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSecuritySpecPSSParameterSpec")
 #ifdef RESTRICT_JavaSecuritySpecPSSParameterSpec
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaSecuritySpecAlgorithmParameterSpec 1
 #define INCLUDE_JavaSecuritySpecAlgorithmParameterSpec 1
-#include "java/security/spec/AlgorithmParameterSpec.h"
+#include "../../../java/security/spec/AlgorithmParameterSpec.h"
 
 /*!
  @brief This class specifies a parameter spec for RSA-PSS signature scheme,

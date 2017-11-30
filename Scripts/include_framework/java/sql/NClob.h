@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/sql/NClob.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSqlNClob")
 #ifdef RESTRICT_JavaSqlNClob
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaSqlClob 1
 #define INCLUDE_JavaSqlClob 1
-#include "java/sql/Clob.h"
+#include "../../java/sql/Clob.h"
 
 /*!
  @brief The mapping in the Java<sup><font size=-2>TM</font></sup> programming language

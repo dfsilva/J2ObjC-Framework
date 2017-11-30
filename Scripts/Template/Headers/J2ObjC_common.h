@@ -64,22 +64,11 @@
  #define J2OBJC_DISABLE_ARRAY_TYPE_CHECKS 1
 #endif
 
-// An empty struct type to declare the capture state in LambdaBase.
-// Actual capturing lambdas will be allocated with extra bytes to
-// accommodate their captures.
-typedef struct LambdaCaptures {
-} LambdaCaptures;
-// A base type for all lambdas to inherit.
-@interface LambdaBase : NSObject {
-  @public
-  LambdaCaptures captures_;
-}
-@end
-
 CF_EXTERN_C_BEGIN
 
-void JreThrowNullPointerException() __attribute__((noreturn));
-void JreThrowClassCastException() __attribute__((noreturn));
+id JreThrowNullPointerException() __attribute__((noreturn));
+void JreThrowClassCastException(id p, Class cls) __attribute__((noreturn));
+void JreThrowClassCastExceptionWithIOSClass(id p, IOSClass *cls) __attribute__((noreturn));
 
 id JreStrongAssign(__strong id *pIvar, id value);
 id JreStrongAssignAndConsume(__strong id *pIvar, NS_RELEASES_ARGUMENT id value);
@@ -87,7 +76,6 @@ id JreStrongAssignAndConsume(__strong id *pIvar, NS_RELEASES_ARGUMENT id value);
 id JreLoadVolatileId(volatile_id *pVar);
 id JreAssignVolatileId(volatile_id *pVar, id value);
 id JreVolatileStrongAssign(volatile_id *pIvar, id value);
-id JreVolatileStrongAssignAndConsume(volatile_id *pIvar, NS_RELEASES_ARGUMENT id value);
 jboolean JreCompareAndSwapVolatileStrongId(volatile_id *pVar, id expected, id newValue);
 id JreExchangeVolatileStrongId(volatile_id *pVar, id newValue);
 void JreCloneVolatile(volatile_id *pVar, volatile_id *pOther);
@@ -101,32 +89,32 @@ void JreVolatileRetainedWithRelease(id parent, volatile_id *pVar);
 
 NSString *JreStrcat(const char *types, ...);
 
-#if defined(J2OBJC_COUNT_NIL_CHK) && !defined(J2OBJC_DISABLE_NIL_CHECKS)
-id nil_chk(id __unsafe_unretained p);
-void JrePrintNilChkCount();
-void JrePrintNilChkCountAtExit();
-
-#else
-__attribute__((always_inline)) inline id nil_chk(id __unsafe_unretained p) {
-#if !defined(J2OBJC_DISABLE_NIL_CHECKS)
-  if (__builtin_expect(!p, 0)) {
-    JreThrowNullPointerException();
-  }
-#endif
-  return p;
-}
-
-__attribute__((always_inline)) inline void JrePrintNilChkCount() {}
-__attribute__((always_inline)) inline void JrePrintNilChkCountAtExit() {}
-#endif
-
 CF_EXTERN_C_END
+
+/*!
+ * The nil_chk macro is used wherever a Java object is dereferenced and needs to
+ * be checked for null. A macro is used instead of an inline function because it
+ * allows the line number of the dereference to be derived from the stack frame.
+ *
+ * @param p The object to check for nil.
+ */
+#ifdef J2OBJC_DISABLE_NIL_CHECKS
+#define nil_chk(p) p
+#else
+#define nil_chk(p) (p ?: JreThrowNullPointerException())
+#endif
 
 #if !__has_feature(objc_arc)
 __attribute__((always_inline)) inline id JreAutoreleasedAssign(
     id *pIvar, NS_RELEASES_ARGUMENT id value) {
   [*pIvar autorelease];
   return *pIvar = value;
+}
+#endif
+
+#if !__has_feature(objc_arc)
+__attribute__((always_inline)) inline id JreRetainedLocalValue(id value) {
+  return [[value retain] autorelease];
 }
 #endif
 
@@ -207,7 +195,7 @@ J2OBJC_VOLATILE_ACCESS_DEFN(Double, jdouble)
  * @param TYPE The name of the type to declare the accessor for.
  */
 #define J2OBJC_TYPE_LITERAL_HEADER(TYPE) \
-  FOUNDATION_EXPORT IOSClass *TYPE##_class_();
+  FOUNDATION_EXPORT IOSClass *TYPE##_class_(void);
 
 /*!
  * Defines the type literal accessor for a class or enum type. This macro should

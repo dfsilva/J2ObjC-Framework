@@ -19,6 +19,11 @@
 #pragma clang diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (JavaSecurityCertCertPathValidatorException_) && (INCLUDE_ALL_JavaSecurityCertCertPathValidatorException || defined(INCLUDE_JavaSecurityCertCertPathValidatorException))
 #define JavaSecurityCertCertPathValidatorException_
 
@@ -26,31 +31,32 @@
 #define INCLUDE_JavaSecurityGeneralSecurityException 1
 #include "../../../java/security/GeneralSecurityException.h"
 
+@class JavaLangThrowable;
 @class JavaSecurityCertCertPath;
 @protocol JavaSecurityCertCertPathValidatorException_Reason;
 
 /*!
  @brief An exception indicating one of a variety of problems encountered when
- validating a certification path.
+  validating a certification path.
  <p>
- A <code>CertPathValidatorException</code> provides support for wrapping
- exceptions. The <code>getCause</code> method returns the throwable,
- if any, that caused this exception to be thrown.
+  A <code>CertPathValidatorException</code> provides support for wrapping
+  exceptions. The <code>getCause</code> method returns the throwable,
+  if any, that caused this exception to be thrown. 
  <p>
- A <code>CertPathValidatorException</code> may also include the
- certification path that was being validated when the exception was thrown,
- the index of the certificate in the certification path that caused the
- exception to be thrown, and the reason that caused the failure. Use the
- <code>getCertPath</code>, <code>getIndex</code>, and
- <code>getReason</code> methods to retrieve this information.
+  A <code>CertPathValidatorException</code> may also include the
+  certification path that was being validated when the exception was thrown,
+  the index of the certificate in the certification path that caused the
+  exception to be thrown, and the reason that caused the failure. Use the 
+ <code>getCertPath</code>, <code>getIndex</code>, and 
+ <code>getReason</code> methods to retrieve this information. 
  <p>
- <b>Concurrent Access</b>
- <p>
- Unless otherwise specified, the methods defined in this class are not
- thread-safe. Multiple threads that need to access a single
- object concurrently should synchronize amongst themselves and
- provide the necessary locking. Multiple threads each manipulating
- separate objects need not synchronize.
+  <b>Concurrent Access</b>
+  <p>
+  Unless otherwise specified, the methods defined in this class are not
+  thread-safe. Multiple threads that need to access a single
+  object concurrently should synchronize amongst themselves and
+  provide the necessary locking. Multiple threads each manipulating
+  separate objects need not synchronize.
  - seealso: CertPathValidator
  @since 1.4
  @author Yassir Elley
@@ -61,117 +67,111 @@
 
 /*!
  @brief Creates a <code>CertPathValidatorException</code> with
- no detail message.
+  no detail message.
  */
 - (instancetype)init;
 
 /*!
  @brief Creates a <code>CertPathValidatorException</code> with the given
- detail message.
- A detail message is a <code>String</code> that
- describes this particular exception.
+  detail message.A detail message is a <code>String</code> that
+  describes this particular exception.
  @param msg the detail message
  */
 - (instancetype)initWithNSString:(NSString *)msg;
 
 /*!
  @brief Creates a <code>CertPathValidatorException</code> with the specified
- detail message and cause.
+  detail message and cause.
  @param msg the detail message
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method). (A <code>null</code> value is
- permitted, and indicates that the cause is nonexistent or unknown.)
+ @param cause the cause (which is saved for later retrieval by the  
+ <code>getCause()</code>  method). (A <code>null</code>  value is  permitted, and indicates that the cause is nonexistent or unknown.)
  */
 - (instancetype)initWithNSString:(NSString *)msg
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Creates a <code>CertPathValidatorException</code> with the specified
- detail message, cause, certification path, and index.
- @param msg the detail message (or <code>null</code> if none)
- @param cause the cause (or <code>null</code> if none)
- @param certPath the certification path that was in the process of
- being validated when the error was encountered
- @param index the index of the certificate in the certification path
- that caused the error (or -1 if not applicable). Note that
- the list of certificates in a <code>CertPath</code> is zero based.
- @throws IndexOutOfBoundsException if the index is out of range
+  detail message, cause, certification path, and index.
+ @param msg the detail message (or <code>null</code>  if none)
+ @param cause the cause (or <code>null</code>  if none)
+ @param certPath the certification path that was in the process of  being validated when the error was encountered
+ @param index the index of the certificate in the certification path  that caused the error (or -1 if not applicable). Note that
+   the list of certificates in a 
+ <code>CertPath</code>  is zero based.
+ @throw IndexOutOfBoundsExceptionif the index is out of range 
  <code>(index < -1 || (certPath != null && index >=
- certPath.getCertificates().size())</code>
- @throws IllegalArgumentException if <code>certPath</code> is
+  certPath.getCertificates().size())</code>
+ @throw IllegalArgumentExceptionif <code>certPath</code> is 
  <code>null</code> and <code>index</code> is not -1
  */
 - (instancetype)initWithNSString:(NSString *)msg
-                 withNSException:(NSException *)cause
+           withJavaLangThrowable:(JavaLangThrowable *)cause
     withJavaSecurityCertCertPath:(JavaSecurityCertCertPath *)certPath
                          withInt:(jint)index;
 
 /*!
  @brief Creates a <code>CertPathValidatorException</code> with the specified
- detail message, cause, certification path, index, and reason.
- @param msg the detail message (or <code>null</code> if none)
- @param cause the cause (or <code>null</code> if none)
- @param certPath the certification path that was in the process of
- being validated when the error was encountered
- @param index the index of the certificate in the certification path
- that caused the error (or -1 if not applicable). Note that
- the list of certificates in a <code>CertPath</code> is zero based.
+  detail message, cause, certification path, index, and reason.
+ @param msg the detail message (or <code>null</code>  if none)
+ @param cause the cause (or <code>null</code>  if none)
+ @param certPath the certification path that was in the process of  being validated when the error was encountered
+ @param index the index of the certificate in the certification path  that caused the error (or -1 if not applicable). Note that
+   the list of certificates in a 
+ <code>CertPath</code>  is zero based.
  @param reason the reason the validation failed
- @throws IndexOutOfBoundsException if the index is out of range
+ @throw IndexOutOfBoundsExceptionif the index is out of range 
  <code>(index < -1 || (certPath != null && index >=
- certPath.getCertificates().size())</code>
- @throws IllegalArgumentException if <code>certPath</code> is
+  certPath.getCertificates().size())</code>
+ @throw IllegalArgumentExceptionif <code>certPath</code> is 
  <code>null</code> and <code>index</code> is not -1
- @throws NullPointerException if <code>reason</code> is <code>null</code>
+ @throw NullPointerExceptionif <code>reason</code> is <code>null</code>
  @since 1.7
  */
 - (instancetype)initWithNSString:(NSString *)msg
-                 withNSException:(NSException *)cause
+           withJavaLangThrowable:(JavaLangThrowable *)cause
     withJavaSecurityCertCertPath:(JavaSecurityCertCertPath *)certPath
                          withInt:(jint)index
 withJavaSecurityCertCertPathValidatorException_Reason:(id<JavaSecurityCertCertPathValidatorException_Reason>)reason;
 
 /*!
  @brief Creates a <code>CertPathValidatorException</code> that wraps the
- specified throwable.
- This allows any exception to be converted into a
+  specified throwable.This allows any exception to be converted into a 
  <code>CertPathValidatorException</code>, while retaining information
- about the wrapped exception, which may be useful for debugging. The
- detail message is set to (<code>cause==null ? null : cause.toString()</code>)
- (which typically contains the class and detail message of
- cause).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method). (A <code>null</code> value is
- permitted, and indicates that the cause is nonexistent or unknown.)
+  about the wrapped exception, which may be useful for debugging.
+ The
+  detail message is set to (<code>cause==null ? null : cause.toString()</code>)
+  (which typically contains the class and detail message of
+  cause).
+ @param cause the cause (which is saved for later retrieval by the  
+ <code>getCause()</code>  method). (A <code>null</code>  value is  permitted, and indicates that the cause is nonexistent or unknown.)
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Returns the certification path that was being validated when
- the exception was thrown.
+  the exception was thrown.
  @return the <code>CertPath</code> that was being validated when
- the exception was thrown (or <code>null</code> if not specified)
+  the exception was thrown (or <code>null</code> if not specified)
  */
 - (JavaSecurityCertCertPath *)getCertPath;
 
 /*!
  @brief Returns the index of the certificate in the certification path
- that caused the exception to be thrown.
- Note that the list of
- certificates in a <code>CertPath</code> is zero based. If no
- index has been set, -1 is returned.
+  that caused the exception to be thrown.Note that the list of
+  certificates in a <code>CertPath</code> is zero based.
+ If no
+  index has been set, -1 is returned.
  @return the index that has been set, or -1 if none has been set
  */
 - (jint)getIndex;
 
 /*!
- @brief Returns the reason that the validation failed.
- The reason is
- associated with the index of the certificate returned by
+ @brief Returns the reason that the validation failed.The reason is
+  associated with the index of the certificate returned by 
  <code>getIndex</code>.
  @return the reason that the validation failed, or
- <code>BasicReason.UNSPECIFIED</code> if a reason has not been
- specified
+     <code>BasicReason.UNSPECIFIED</code> if a reason has not been
+     specified
  @since 1.7
  */
 - (id<JavaSecurityCertCertPathValidatorException_Reason>)getReason;
@@ -182,9 +182,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaSecurityCertCertPathValidatorException)
 
 FOUNDATION_EXPORT void JavaSecurityCertCertPathValidatorException_init(JavaSecurityCertCertPathValidatorException *self);
 
-FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *new_JavaSecurityCertCertPathValidatorException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *new_JavaSecurityCertCertPathValidatorException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *create_JavaSecurityCertCertPathValidatorException_init();
+FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *create_JavaSecurityCertCertPathValidatorException_init(void);
 
 FOUNDATION_EXPORT void JavaSecurityCertCertPathValidatorException_initWithNSString_(JavaSecurityCertCertPathValidatorException *self, NSString *msg);
 
@@ -192,29 +192,29 @@ FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *new_JavaSecurityCe
 
 FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *create_JavaSecurityCertCertPathValidatorException_initWithNSString_(NSString *msg);
 
-FOUNDATION_EXPORT void JavaSecurityCertCertPathValidatorException_initWithNSException_(JavaSecurityCertCertPathValidatorException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityCertCertPathValidatorException_initWithJavaLangThrowable_(JavaSecurityCertCertPathValidatorException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *new_JavaSecurityCertCertPathValidatorException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *new_JavaSecurityCertCertPathValidatorException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *create_JavaSecurityCertCertPathValidatorException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *create_JavaSecurityCertCertPathValidatorException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaSecurityCertCertPathValidatorException_initWithNSString_withNSException_(JavaSecurityCertCertPathValidatorException *self, NSString *msg, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityCertCertPathValidatorException_initWithNSString_withJavaLangThrowable_(JavaSecurityCertCertPathValidatorException *self, NSString *msg, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *new_JavaSecurityCertCertPathValidatorException_initWithNSString_withNSException_(NSString *msg, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *new_JavaSecurityCertCertPathValidatorException_initWithNSString_withJavaLangThrowable_(NSString *msg, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *create_JavaSecurityCertCertPathValidatorException_initWithNSString_withNSException_(NSString *msg, NSException *cause);
+FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *create_JavaSecurityCertCertPathValidatorException_initWithNSString_withJavaLangThrowable_(NSString *msg, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaSecurityCertCertPathValidatorException_initWithNSString_withNSException_withJavaSecurityCertCertPath_withInt_(JavaSecurityCertCertPathValidatorException *self, NSString *msg, NSException *cause, JavaSecurityCertCertPath *certPath, jint index);
+FOUNDATION_EXPORT void JavaSecurityCertCertPathValidatorException_initWithNSString_withJavaLangThrowable_withJavaSecurityCertCertPath_withInt_(JavaSecurityCertCertPathValidatorException *self, NSString *msg, JavaLangThrowable *cause, JavaSecurityCertCertPath *certPath, jint index);
 
-FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *new_JavaSecurityCertCertPathValidatorException_initWithNSString_withNSException_withJavaSecurityCertCertPath_withInt_(NSString *msg, NSException *cause, JavaSecurityCertCertPath *certPath, jint index) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *new_JavaSecurityCertCertPathValidatorException_initWithNSString_withJavaLangThrowable_withJavaSecurityCertCertPath_withInt_(NSString *msg, JavaLangThrowable *cause, JavaSecurityCertCertPath *certPath, jint index) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *create_JavaSecurityCertCertPathValidatorException_initWithNSString_withNSException_withJavaSecurityCertCertPath_withInt_(NSString *msg, NSException *cause, JavaSecurityCertCertPath *certPath, jint index);
+FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *create_JavaSecurityCertCertPathValidatorException_initWithNSString_withJavaLangThrowable_withJavaSecurityCertCertPath_withInt_(NSString *msg, JavaLangThrowable *cause, JavaSecurityCertCertPath *certPath, jint index);
 
-FOUNDATION_EXPORT void JavaSecurityCertCertPathValidatorException_initWithNSString_withNSException_withJavaSecurityCertCertPath_withInt_withJavaSecurityCertCertPathValidatorException_Reason_(JavaSecurityCertCertPathValidatorException *self, NSString *msg, NSException *cause, JavaSecurityCertCertPath *certPath, jint index, id<JavaSecurityCertCertPathValidatorException_Reason> reason);
+FOUNDATION_EXPORT void JavaSecurityCertCertPathValidatorException_initWithNSString_withJavaLangThrowable_withJavaSecurityCertCertPath_withInt_withJavaSecurityCertCertPathValidatorException_Reason_(JavaSecurityCertCertPathValidatorException *self, NSString *msg, JavaLangThrowable *cause, JavaSecurityCertCertPath *certPath, jint index, id<JavaSecurityCertCertPathValidatorException_Reason> reason);
 
-FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *new_JavaSecurityCertCertPathValidatorException_initWithNSString_withNSException_withJavaSecurityCertCertPath_withInt_withJavaSecurityCertCertPathValidatorException_Reason_(NSString *msg, NSException *cause, JavaSecurityCertCertPath *certPath, jint index, id<JavaSecurityCertCertPathValidatorException_Reason> reason) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *new_JavaSecurityCertCertPathValidatorException_initWithNSString_withJavaLangThrowable_withJavaSecurityCertCertPath_withInt_withJavaSecurityCertCertPathValidatorException_Reason_(NSString *msg, JavaLangThrowable *cause, JavaSecurityCertCertPath *certPath, jint index, id<JavaSecurityCertCertPathValidatorException_Reason> reason) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *create_JavaSecurityCertCertPathValidatorException_initWithNSString_withNSException_withJavaSecurityCertCertPath_withInt_withJavaSecurityCertCertPathValidatorException_Reason_(NSString *msg, NSException *cause, JavaSecurityCertCertPath *certPath, jint index, id<JavaSecurityCertCertPathValidatorException_Reason> reason);
+FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException *create_JavaSecurityCertCertPathValidatorException_initWithNSString_withJavaLangThrowable_withJavaSecurityCertCertPath_withInt_withJavaSecurityCertCertPathValidatorException_Reason_(NSString *msg, JavaLangThrowable *cause, JavaSecurityCertCertPath *certPath, jint index, id<JavaSecurityCertCertPathValidatorException_Reason> reason);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaSecurityCertCertPathValidatorException)
 
@@ -262,10 +262,10 @@ typedef NS_ENUM(NSUInteger, JavaSecurityCertCertPathValidatorException_BasicReas
 
 /*!
  @brief The BasicReason enumerates the potential reasons that a certification
- path of any type may be invalid.
+  path of any type may be invalid.
  @since 1.7
  */
-@interface JavaSecurityCertCertPathValidatorException_BasicReason : JavaLangEnum < NSCopying, JavaSecurityCertCertPathValidatorException_Reason >
+@interface JavaSecurityCertCertPathValidatorException_BasicReason : JavaLangEnum < JavaSecurityCertCertPathValidatorException_Reason >
 
 + (JavaSecurityCertCertPathValidatorException_BasicReason * __nonnull)UNSPECIFIED;
 
@@ -289,7 +289,6 @@ typedef NS_ENUM(NSUInteger, JavaSecurityCertCertPathValidatorException_BasicReas
 
 #pragma mark Package-Private
 
-- (id)copyWithZone:(NSZone *)zone;
 - (JavaSecurityCertCertPathValidatorException_BasicReason_Enum)toNSEnum;
 
 @end
@@ -302,46 +301,46 @@ FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException_BasicReason *JavaSe
 /*!
  @brief Unspecified reason.
  */
-inline JavaSecurityCertCertPathValidatorException_BasicReason *JavaSecurityCertCertPathValidatorException_BasicReason_get_UNSPECIFIED();
+inline JavaSecurityCertCertPathValidatorException_BasicReason *JavaSecurityCertCertPathValidatorException_BasicReason_get_UNSPECIFIED(void);
 J2OBJC_ENUM_CONSTANT(JavaSecurityCertCertPathValidatorException_BasicReason, UNSPECIFIED)
 
 /*!
  @brief The certificate is expired.
  */
-inline JavaSecurityCertCertPathValidatorException_BasicReason *JavaSecurityCertCertPathValidatorException_BasicReason_get_EXPIRED();
+inline JavaSecurityCertCertPathValidatorException_BasicReason *JavaSecurityCertCertPathValidatorException_BasicReason_get_EXPIRED(void);
 J2OBJC_ENUM_CONSTANT(JavaSecurityCertCertPathValidatorException_BasicReason, EXPIRED)
 
 /*!
  @brief The certificate is not yet valid.
  */
-inline JavaSecurityCertCertPathValidatorException_BasicReason *JavaSecurityCertCertPathValidatorException_BasicReason_get_NOT_YET_VALID();
+inline JavaSecurityCertCertPathValidatorException_BasicReason *JavaSecurityCertCertPathValidatorException_BasicReason_get_NOT_YET_VALID(void);
 J2OBJC_ENUM_CONSTANT(JavaSecurityCertCertPathValidatorException_BasicReason, NOT_YET_VALID)
 
 /*!
  @brief The certificate is revoked.
  */
-inline JavaSecurityCertCertPathValidatorException_BasicReason *JavaSecurityCertCertPathValidatorException_BasicReason_get_REVOKED();
+inline JavaSecurityCertCertPathValidatorException_BasicReason *JavaSecurityCertCertPathValidatorException_BasicReason_get_REVOKED(void);
 J2OBJC_ENUM_CONSTANT(JavaSecurityCertCertPathValidatorException_BasicReason, REVOKED)
 
 /*!
  @brief The revocation status of the certificate could not be determined.
  */
-inline JavaSecurityCertCertPathValidatorException_BasicReason *JavaSecurityCertCertPathValidatorException_BasicReason_get_UNDETERMINED_REVOCATION_STATUS();
+inline JavaSecurityCertCertPathValidatorException_BasicReason *JavaSecurityCertCertPathValidatorException_BasicReason_get_UNDETERMINED_REVOCATION_STATUS(void);
 J2OBJC_ENUM_CONSTANT(JavaSecurityCertCertPathValidatorException_BasicReason, UNDETERMINED_REVOCATION_STATUS)
 
 /*!
  @brief The signature is invalid.
  */
-inline JavaSecurityCertCertPathValidatorException_BasicReason *JavaSecurityCertCertPathValidatorException_BasicReason_get_INVALID_SIGNATURE();
+inline JavaSecurityCertCertPathValidatorException_BasicReason *JavaSecurityCertCertPathValidatorException_BasicReason_get_INVALID_SIGNATURE(void);
 J2OBJC_ENUM_CONSTANT(JavaSecurityCertCertPathValidatorException_BasicReason, INVALID_SIGNATURE)
 
 /*!
  @brief The public key or the signature algorithm has been constrained.
  */
-inline JavaSecurityCertCertPathValidatorException_BasicReason *JavaSecurityCertCertPathValidatorException_BasicReason_get_ALGORITHM_CONSTRAINED();
+inline JavaSecurityCertCertPathValidatorException_BasicReason *JavaSecurityCertCertPathValidatorException_BasicReason_get_ALGORITHM_CONSTRAINED(void);
 J2OBJC_ENUM_CONSTANT(JavaSecurityCertCertPathValidatorException_BasicReason, ALGORITHM_CONSTRAINED)
 
-FOUNDATION_EXPORT IOSObjectArray *JavaSecurityCertCertPathValidatorException_BasicReason_values();
+FOUNDATION_EXPORT IOSObjectArray *JavaSecurityCertCertPathValidatorException_BasicReason_values(void);
 
 FOUNDATION_EXPORT JavaSecurityCertCertPathValidatorException_BasicReason *JavaSecurityCertCertPathValidatorException_BasicReason_valueOfWithNSString_(NSString *name);
 
@@ -351,6 +350,10 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaSecurityCertCertPathValidatorException_BasicReaso
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 
 #pragma clang diagnostic pop
 #pragma pop_macro("INCLUDE_ALL_JavaSecurityCertCertPathValidatorException")

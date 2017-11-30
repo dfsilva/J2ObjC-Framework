@@ -21,11 +21,11 @@
 
 /*!
  @brief The Modifier class provides <code>static</code> methods and
- constants to decode class and member access modifiers.
- The sets of
- modifiers are represented as integers with distinct bit positions
- representing different modifiers.  The values for the constants
- representing the modifiers are taken from the tables in sections 4.1, 4.4, 4.5, and 4.7 of
+  constants to decode class and member access modifiers.The sets of
+  modifiers are represented as integers with distinct bit positions
+  representing different modifiers.
+ The values for the constants
+  representing the modifiers are taken from the tables in sections 4.1, 4.4, 4.5, and 4.7 of 
  <cite>The Java&trade; Virtual Machine Specification</cite>.
  - seealso: Class#getModifiers()
  - seealso: Member#getModifiers()
@@ -82,49 +82,45 @@
 
 /*!
  @brief Return an <code>int</code> value OR-ing together the source language
- modifiers that can be applied to a class.
+  modifiers that can be applied to a class.
  @return an <code>int</code> value OR-ing together the source language
- modifiers that can be applied to a class.
-  8.1.1 Class Modifiers
+  modifiers that can be applied to a class.
  @since 1.7
  */
 + (jint)classModifiers;
 
 /*!
  @brief Return an <code>int</code> value OR-ing together the source language
- modifiers that can be applied to a constructor.
+  modifiers that can be applied to a constructor.
  @return an <code>int</code> value OR-ing together the source language
- modifiers that can be applied to a constructor.
-  8.8.3 Constructor Modifiers
+  modifiers that can be applied to a constructor.
  @since 1.7
  */
 + (jint)constructorModifiers;
 
 /*!
  @brief Return an <code>int</code> value OR-ing together the source language
- modifiers that can be applied to a field.
+  modifiers that can be applied to a field.
  @return an <code>int</code> value OR-ing together the source language
- modifiers that can be applied to a field.
-  8.3.1 Field Modifiers
+  modifiers that can be applied to a field.
  @since 1.7
  */
 + (jint)fieldModifiers;
 
 /*!
  @brief Return an <code>int</code> value OR-ing together the source language
- modifiers that can be applied to an interface.
+  modifiers that can be applied to an interface.
  @return an <code>int</code> value OR-ing together the source language
- modifiers that can be applied to an interface.
-  9.1.1 Interface Modifiers
+  modifiers that can be applied to an interface.
  @since 1.7
  */
 + (jint)interfaceModifiers;
 
 /*!
- @brief Return <code>true</code> if the integer argument includes the
+ @brief Return <code>true</code> if the integer argument includes the 
  <code>abstract</code> modifier, <code>false</code> otherwise.
  @param mod a set of modifiers
- @return <code>true</code> if <code>mod</code> includes the
+ @return <code>true</code> if <code>mod</code> includes the 
  <code>abstract</code> modifier; <code>false</code> otherwise.
  */
 + (jboolean)isAbstractWithInt:(jint)mod;
@@ -135,156 +131,152 @@
 + (jboolean)isConstructorWithInt:(jint)modifiers;
 
 /*!
- @brief Return <code>true</code> if the integer argument includes the
+ @brief Return <code>true</code> if the integer argument includes the 
  <code>final</code> modifier, <code>false</code> otherwise.
  @param mod a set of modifiers
- @return <code>true</code> if <code>mod</code> includes the
+ @return <code>true</code> if <code>mod</code> includes the 
  <code>final</code> modifier; <code>false</code> otherwise.
  */
 + (jboolean)isFinalWithInt:(jint)mod;
 
 /*!
- @brief Return <code>true</code> if the integer argument includes the
+ @brief Return <code>true</code> if the integer argument includes the 
  <code>interface</code> modifier, <code>false</code> otherwise.
  @param mod a set of modifiers
- @return <code>true</code> if <code>mod</code> includes the
+ @return <code>true</code> if <code>mod</code> includes the 
  <code>interface</code> modifier; <code>false</code> otherwise.
  */
 + (jboolean)isInterfaceWithInt:(jint)mod;
 
 /*!
- @brief Return <code>true</code> if the integer argument includes the
+ @brief Return <code>true</code> if the integer argument includes the 
  <code>native</code> modifier, <code>false</code> otherwise.
  @param mod a set of modifiers
- @return <code>true</code> if <code>mod</code> includes the
+ @return <code>true</code> if <code>mod</code> includes the 
  <code>native</code> modifier; <code>false</code> otherwise.
  */
 + (jboolean)isNativeWithInt:(jint)mod;
 
 /*!
- @brief Return <code>true</code> if the integer argument includes the
+ @brief Return <code>true</code> if the integer argument includes the 
  <code>private</code> modifier, <code>false</code> otherwise.
  @param mod a set of modifiers
- @return <code>true</code> if <code>mod</code> includes the
+ @return <code>true</code> if <code>mod</code> includes the 
  <code>private</code> modifier; <code>false</code> otherwise.
  */
 + (jboolean)isPrivateWithInt:(jint)mod;
 
 /*!
- @brief Return <code>true</code> if the integer argument includes the
+ @brief Return <code>true</code> if the integer argument includes the 
  <code>protected</code> modifier, <code>false</code> otherwise.
  @param mod a set of modifiers
- @return <code>true</code> if <code>mod</code> includes the
+ @return <code>true</code> if <code>mod</code> includes the 
  <code>protected</code> modifier; <code>false</code> otherwise.
  */
 + (jboolean)isProtectedWithInt:(jint)mod;
 
 /*!
- @brief Return <code>true</code> if the integer argument includes the
+ @brief Return <code>true</code> if the integer argument includes the 
  <code>public</code> modifier, <code>false</code> otherwise.
  @param mod a set of modifiers
- @return <code>true</code> if <code>mod</code> includes the
+ @return <code>true</code> if <code>mod</code> includes the 
  <code>public</code> modifier; <code>false</code> otherwise.
  */
 + (jboolean)isPublicWithInt:(jint)mod;
 
 /*!
- @brief Return <code>true</code> if the integer argument includes the
+ @brief Return <code>true</code> if the integer argument includes the 
  <code>static</code> modifier, <code>false</code> otherwise.
  @param mod a set of modifiers
- @return <code>true</code> if <code>mod</code> includes the
+ @return <code>true</code> if <code>mod</code> includes the 
  <code>static</code> modifier; <code>false</code> otherwise.
  */
 + (jboolean)isStaticWithInt:(jint)mod;
 
 /*!
- @brief Return <code>true</code> if the integer argument includes the
+ @brief Return <code>true</code> if the integer argument includes the 
  <code>strictfp</code> modifier, <code>false</code> otherwise.
  @param mod a set of modifiers
- @return <code>true</code> if <code>mod</code> includes the
+ @return <code>true</code> if <code>mod</code> includes the 
  <code>strictfp</code> modifier; <code>false</code> otherwise.
  */
 + (jboolean)isStrictWithInt:(jint)mod;
 
 /*!
- @brief Return <code>true</code> if the integer argument includes the
+ @brief Return <code>true</code> if the integer argument includes the 
  <code>synchronized</code> modifier, <code>false</code> otherwise.
  @param mod a set of modifiers
- @return <code>true</code> if <code>mod</code> includes the
+ @return <code>true</code> if <code>mod</code> includes the 
  <code>synchronized</code> modifier; <code>false</code> otherwise.
  */
 + (jboolean)isSynchronizedWithInt:(jint)mod;
 
 /*!
- @brief Return <code>true</code> if the integer argument includes the
+ @brief Return <code>true</code> if the integer argument includes the 
  <code>transient</code> modifier, <code>false</code> otherwise.
  @param mod a set of modifiers
- @return <code>true</code> if <code>mod</code> includes the
+ @return <code>true</code> if <code>mod</code> includes the 
  <code>transient</code> modifier; <code>false</code> otherwise.
  */
 + (jboolean)isTransientWithInt:(jint)mod;
 
 /*!
- @brief Return <code>true</code> if the integer argument includes the
+ @brief Return <code>true</code> if the integer argument includes the 
  <code>volatile</code> modifier, <code>false</code> otherwise.
  @param mod a set of modifiers
- @return <code>true</code> if <code>mod</code> includes the
+ @return <code>true</code> if <code>mod</code> includes the 
  <code>volatile</code> modifier; <code>false</code> otherwise.
  */
 + (jboolean)isVolatileWithInt:(jint)mod;
 
 /*!
  @brief Return an <code>int</code> value OR-ing together the source language
- modifiers that can be applied to a method.
+  modifiers that can be applied to a method.
  @return an <code>int</code> value OR-ing together the source language
- modifiers that can be applied to a method.
-  8.4.3 Method Modifiers
+  modifiers that can be applied to a method.
  @since 1.7
  */
 + (jint)methodModifiers;
 
 /*!
  @brief Return an <code>int</code> value OR-ing together the source language
- modifiers that can be applied to a parameter.
+  modifiers that can be applied to a parameter.
  @return an <code>int</code> value OR-ing together the source language
- modifiers that can be applied to a parameter.
-  8.4.1 Formal Parameters
+  modifiers that can be applied to a parameter.
  @since 1.8
  */
 + (jint)parameterModifiers;
 
 /*!
  @brief Return a string describing the access modifier flags in
- the specified modifier.
- For example:
- <blockquote>
-@code
+  the specified modifier.For example: 
+ <blockquote>@code
 
-    public final synchronized strictfp
+     public final synchronized strictfp 
   
 @endcode</blockquote>
- The modifier names are returned in an order consistent with the
- suggested modifier orderings given in sections 8.1.1, 8.3.1, 8.4.3, 8.8.3, and 9.1.1 of
+  The modifier names are returned in an order consistent with the
+  suggested modifier orderings given in sections 8.1.1, 8.3.1, 8.4.3, 8.8.3, and 9.1.1 of 
  <cite>The Java&trade; Language Specification</cite>.
- The full modifier ordering used by this method is:
+ The full modifier ordering used by this method is: 
  <blockquote> <code>public protected private abstract static final transient
- volatile synchronized native strictfp
- interface</code>
+  volatile synchronized native strictfp
+  interface</code>
   </blockquote>
- The <code>interface</code> modifier discussed in this class is
- not a true modifier in the Java language and it appears after
- all other modifiers listed by this method.  This method may
- return a string of modifiers that are not valid modifiers of a
- Java entity; in other words, no checking is done on the
- possible validity of the combination of modifiers represented
- by the input.
- Note that to perform such checking for a known kind of entity,
- such as a constructor or method, first AND the argument of
- <code>toString</code> with the appropriate mask from a method like
+  The <code>interface</code> modifier discussed in this class is
+  not a true modifier in the Java language and it appears after
+  all other modifiers listed by this method.  This method may
+  return a string of modifiers that are not valid modifiers of a
+  Java entity; in other words, no checking is done on the
+  possible validity of the combination of modifiers represented
+  by the input.
+  Note that to perform such checking for a known kind of entity,
+  such as a constructor or method, first AND the argument of 
+ <code>toString</code> with the appropriate mask from a method like 
  <code>constructorModifiers</code> or <code>methodModifiers</code>.
  @param mod a set of modifiers
  @return a string representation of the set of modifiers
- represented by <code>mod</code>
+  represented by <code>mod</code>
  */
 + (NSString *)toStringWithInt:(jint)mod;
 
@@ -300,148 +292,154 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangReflectModifier)
 
 /*!
  @brief The <code>int</code> value representing the <code>public</code>
- modifier.
+  modifier.
  */
-inline jint JavaLangReflectModifier_get_PUBLIC();
+inline jint JavaLangReflectModifier_get_PUBLIC(void);
 #define JavaLangReflectModifier_PUBLIC 1
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, PUBLIC, jint)
 
 /*!
  @brief The <code>int</code> value representing the <code>private</code>
- modifier.
+  modifier.
  */
-inline jint JavaLangReflectModifier_get_PRIVATE();
+inline jint JavaLangReflectModifier_get_PRIVATE(void);
 #define JavaLangReflectModifier_PRIVATE 2
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, PRIVATE, jint)
 
 /*!
  @brief The <code>int</code> value representing the <code>protected</code>
- modifier.
+  modifier.
  */
-inline jint JavaLangReflectModifier_get_PROTECTED();
+inline jint JavaLangReflectModifier_get_PROTECTED(void);
 #define JavaLangReflectModifier_PROTECTED 4
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, PROTECTED, jint)
 
 /*!
  @brief The <code>int</code> value representing the <code>static</code>
- modifier.
+  modifier.
  */
-inline jint JavaLangReflectModifier_get_STATIC();
+inline jint JavaLangReflectModifier_get_STATIC(void);
 #define JavaLangReflectModifier_STATIC 8
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, STATIC, jint)
 
 /*!
  @brief The <code>int</code> value representing the <code>final</code>
- modifier.
+  modifier.
  */
-inline jint JavaLangReflectModifier_get_FINAL();
+inline jint JavaLangReflectModifier_get_FINAL(void);
 #define JavaLangReflectModifier_FINAL 16
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, FINAL, jint)
 
 /*!
  @brief The <code>int</code> value representing the <code>synchronized</code>
- modifier.
+  modifier.
  */
-inline jint JavaLangReflectModifier_get_SYNCHRONIZED();
+inline jint JavaLangReflectModifier_get_SYNCHRONIZED(void);
 #define JavaLangReflectModifier_SYNCHRONIZED 32
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, SYNCHRONIZED, jint)
 
 /*!
  @brief The <code>int</code> value representing the <code>volatile</code>
- modifier.
+  modifier.
  */
-inline jint JavaLangReflectModifier_get_VOLATILE();
+inline jint JavaLangReflectModifier_get_VOLATILE(void);
 #define JavaLangReflectModifier_VOLATILE 64
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, VOLATILE, jint)
 
 /*!
  @brief The <code>int</code> value representing the <code>transient</code>
- modifier.
+  modifier.
  */
-inline jint JavaLangReflectModifier_get_TRANSIENT();
+inline jint JavaLangReflectModifier_get_TRANSIENT(void);
 #define JavaLangReflectModifier_TRANSIENT 128
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, TRANSIENT, jint)
 
 /*!
  @brief The <code>int</code> value representing the <code>native</code>
- modifier.
+  modifier.
  */
-inline jint JavaLangReflectModifier_get_NATIVE();
+inline jint JavaLangReflectModifier_get_NATIVE(void);
 #define JavaLangReflectModifier_NATIVE 256
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, NATIVE, jint)
 
 /*!
  @brief The <code>int</code> value representing the <code>interface</code>
- modifier.
+  modifier.
  */
-inline jint JavaLangReflectModifier_get_INTERFACE();
+inline jint JavaLangReflectModifier_get_INTERFACE(void);
 #define JavaLangReflectModifier_INTERFACE 512
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, INTERFACE, jint)
 
 /*!
  @brief The <code>int</code> value representing the <code>abstract</code>
- modifier.
+  modifier.
  */
-inline jint JavaLangReflectModifier_get_ABSTRACT();
+inline jint JavaLangReflectModifier_get_ABSTRACT(void);
 #define JavaLangReflectModifier_ABSTRACT 1024
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, ABSTRACT, jint)
 
 /*!
  @brief The <code>int</code> value representing the <code>strictfp</code>
- modifier.
+  modifier.
  */
-inline jint JavaLangReflectModifier_get_STRICT();
+inline jint JavaLangReflectModifier_get_STRICT(void);
 #define JavaLangReflectModifier_STRICT 2048
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, STRICT, jint)
 
-inline jint JavaLangReflectModifier_get_BRIDGE();
+inline jint JavaLangReflectModifier_get_BRIDGE(void);
 #define JavaLangReflectModifier_BRIDGE 64
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, BRIDGE, jint)
 
-inline jint JavaLangReflectModifier_get_VARARGS();
+inline jint JavaLangReflectModifier_get_VARARGS(void);
 #define JavaLangReflectModifier_VARARGS 128
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, VARARGS, jint)
 
 /*!
  */
-inline jint JavaLangReflectModifier_get_SYNTHETIC();
+inline jint JavaLangReflectModifier_get_SYNTHETIC(void);
 #define JavaLangReflectModifier_SYNTHETIC 4096
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, SYNTHETIC, jint)
 
-inline jint JavaLangReflectModifier_get_ANNOTATION();
+inline jint JavaLangReflectModifier_get_ANNOTATION(void);
 #define JavaLangReflectModifier_ANNOTATION 8192
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, ANNOTATION, jint)
 
-inline jint JavaLangReflectModifier_get_ENUM();
+inline jint JavaLangReflectModifier_get_ENUM(void);
 #define JavaLangReflectModifier_ENUM 16384
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, ENUM, jint)
 
-inline jint JavaLangReflectModifier_get_MANDATED();
+inline jint JavaLangReflectModifier_get_MANDATED(void);
 #define JavaLangReflectModifier_MANDATED 32768
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, MANDATED, jint)
 
 /*!
  @brief Dex addition to mark instance constructors and static class
- initializer methods.
+  initializer methods.
  */
-inline jint JavaLangReflectModifier_get_CONSTRUCTOR();
+inline jint JavaLangReflectModifier_get_CONSTRUCTOR(void);
 #define JavaLangReflectModifier_CONSTRUCTOR 65536
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, CONSTRUCTOR, jint)
 
 /*!
  @brief Default methods are marked with a synthetic access flag
- to speed up class loading and invocation target lookup.
+  to speed up class loading and invocation target lookup.
  Implies INTERFACE, not-ABSTRACT, and not-STATIC.
  */
-inline jint JavaLangReflectModifier_get_DEFAULT();
+inline jint JavaLangReflectModifier_get_DEFAULT(void);
 #define JavaLangReflectModifier_DEFAULT 4194304
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, DEFAULT, jint)
 
 /*!
  */
-inline jint JavaLangReflectModifier_get_ACCESS_MODIFIERS();
+inline jint JavaLangReflectModifier_get_ACCESS_MODIFIERS(void);
 #define JavaLangReflectModifier_ACCESS_MODIFIERS 7
 J2OBJC_STATIC_FIELD_CONSTANT(JavaLangReflectModifier, ACCESS_MODIFIERS, jint)
+
+FOUNDATION_EXPORT void JavaLangReflectModifier_init(JavaLangReflectModifier *self);
+
+FOUNDATION_EXPORT JavaLangReflectModifier *new_JavaLangReflectModifier_init(void) NS_RETURNS_RETAINED;
+
+FOUNDATION_EXPORT JavaLangReflectModifier *create_JavaLangReflectModifier_init(void);
 
 FOUNDATION_EXPORT jboolean JavaLangReflectModifier_isPublicWithInt_(jint mod);
 
@@ -475,23 +473,17 @@ FOUNDATION_EXPORT jboolean JavaLangReflectModifier_isSyntheticWithInt_(jint mod)
 
 FOUNDATION_EXPORT jboolean JavaLangReflectModifier_isMandatedWithInt_(jint mod);
 
-FOUNDATION_EXPORT jint JavaLangReflectModifier_classModifiers();
+FOUNDATION_EXPORT jint JavaLangReflectModifier_classModifiers(void);
 
-FOUNDATION_EXPORT jint JavaLangReflectModifier_interfaceModifiers();
+FOUNDATION_EXPORT jint JavaLangReflectModifier_interfaceModifiers(void);
 
-FOUNDATION_EXPORT jint JavaLangReflectModifier_constructorModifiers();
+FOUNDATION_EXPORT jint JavaLangReflectModifier_constructorModifiers(void);
 
-FOUNDATION_EXPORT jint JavaLangReflectModifier_methodModifiers();
+FOUNDATION_EXPORT jint JavaLangReflectModifier_methodModifiers(void);
 
-FOUNDATION_EXPORT jint JavaLangReflectModifier_fieldModifiers();
+FOUNDATION_EXPORT jint JavaLangReflectModifier_fieldModifiers(void);
 
-FOUNDATION_EXPORT jint JavaLangReflectModifier_parameterModifiers();
-
-FOUNDATION_EXPORT void JavaLangReflectModifier_init(JavaLangReflectModifier *self);
-
-FOUNDATION_EXPORT JavaLangReflectModifier *new_JavaLangReflectModifier_init() NS_RETURNS_RETAINED;
-
-FOUNDATION_EXPORT JavaLangReflectModifier *create_JavaLangReflectModifier_init();
+FOUNDATION_EXPORT jint JavaLangReflectModifier_parameterModifiers(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaLangReflectModifier)
 

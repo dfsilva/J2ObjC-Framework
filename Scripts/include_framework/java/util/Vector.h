@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/util/Vector.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilVector")
 #ifdef RESTRICT_JavaUtilVector
@@ -24,19 +24,19 @@
 
 #define RESTRICT_JavaUtilAbstractList 1
 #define INCLUDE_JavaUtilAbstractList 1
-#include "java/util/AbstractList.h"
+#include "../../java/util/AbstractList.h"
 
 #define RESTRICT_JavaUtilList 1
 #define INCLUDE_JavaUtilList 1
-#include "java/util/List.h"
+#include "../../java/util/List.h"
 
 #define RESTRICT_JavaUtilRandomAccess 1
 #define INCLUDE_JavaUtilRandomAccess 1
-#include "java/util/RandomAccess.h"
+#include "../../java/util/RandomAccess.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../java/io/Serializable.h"
 
 @class IOSObjectArray;
 @protocol JavaUtilCollection;
@@ -797,7 +797,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilVector)
 
 #define RESTRICT_JavaUtilIterator 1
 #define INCLUDE_JavaUtilIterator 1
-#include "java/util/Iterator.h"
+#include "../../java/util/Iterator.h"
 
 @protocol JavaUtilFunctionConsumer;
 
@@ -839,7 +839,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilVector_Itr)
 
 #define RESTRICT_JavaUtilListIterator 1
 #define INCLUDE_JavaUtilListIterator 1
-#include "java/util/ListIterator.h"
+#include "../../java/util/ListIterator.h"
 
 @class JavaUtilVector;
 
@@ -886,7 +886,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilVector_ListItr)
 
 #define RESTRICT_JavaUtilSpliterator 1
 #define INCLUDE_JavaUtilSpliterator 1
-#include "java/util/Spliterator.h"
+#include "../../java/util/Spliterator.h"
 
 @class IOSObjectArray;
 @class JavaUtilVector;

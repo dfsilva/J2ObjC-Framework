@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/io/InvalidClassException.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaIoInvalidClassException")
 #ifdef RESTRICT_JavaIoInvalidClassException
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaIoObjectStreamException 1
 #define INCLUDE_JavaIoObjectStreamException 1
-#include "java/io/ObjectStreamException.h"
+#include "../../java/io/ObjectStreamException.h"
 
 /*!
  @brief Thrown when the Serialization runtime detects one of the following

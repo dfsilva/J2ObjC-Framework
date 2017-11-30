@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/InheritableThreadLocal.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangInheritableThreadLocal")
 #ifdef RESTRICT_JavaLangInheritableThreadLocal
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangThreadLocal 1
 #define INCLUDE_JavaLangThreadLocal 1
-#include "java/lang/ThreadLocal.h"
+#include "../../java/lang/ThreadLocal.h"
 
 @class JavaLangThread;
 @class JavaLangThreadLocal_ThreadLocalMap;

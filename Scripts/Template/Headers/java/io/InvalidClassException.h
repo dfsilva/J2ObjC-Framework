@@ -25,12 +25,12 @@
 
 /*!
  @brief Thrown when the Serialization runtime detects one of the following
- problems with a Class.
+  problems with a Class.
  <UL>
- <LI> The serial version of the class does not match that of the class
- descriptor read from the stream
- <LI> The class contains unknown datatypes
- <LI> The class does not have an accessible no-arg constructor
+  <LI> The serial version of the class does not match that of the class
+       descriptor read from the stream 
+ <LI> The class contains unknown datatypes 
+ <LI> The class does not have an accessible no-arg constructor 
  </UL>
  @author unascribed
  @since JDK1.1
@@ -39,7 +39,6 @@
  @public
   /*!
    @brief Name of the invalid class.
-    Name of the invalid class.
    */
   NSString *classname_;
 }
@@ -48,14 +47,14 @@
 
 /*!
  @brief Report an InvalidClassException for the reason specified.
- @param reason  String describing the reason for the exception.
+ @param reason String describing the reason for the exception.
  */
 - (instancetype)initWithNSString:(NSString *)reason;
 
 /*!
  @brief Constructs an InvalidClassException object.
- @param cname   a String naming the invalid class.
- @param reason  a String describing the reason for the exception.
+ @param cname a String naming the invalid class.
+ @param reason a String describing the reason for the exception.
  */
 - (instancetype)initWithNSString:(NSString *)cname
                     withNSString:(NSString *)reason;
@@ -64,6 +63,10 @@
  @brief Produce the message and include the classname, if present.
  */
 - (NSString *)getMessage;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

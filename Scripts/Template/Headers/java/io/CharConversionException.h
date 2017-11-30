@@ -23,6 +23,8 @@
 #define INCLUDE_JavaIoIOException 1
 #include "../../java/io/IOException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Base class for character conversion exceptions.
  @author Asmus Freytag
@@ -43,15 +45,22 @@
  */
 - (instancetype)initWithNSString:(NSString *)s;
 
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)arg0 NS_UNAVAILABLE;
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(JavaIoCharConversionException)
 
 FOUNDATION_EXPORT void JavaIoCharConversionException_init(JavaIoCharConversionException *self);
 
-FOUNDATION_EXPORT JavaIoCharConversionException *new_JavaIoCharConversionException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaIoCharConversionException *new_JavaIoCharConversionException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaIoCharConversionException *create_JavaIoCharConversionException_init();
+FOUNDATION_EXPORT JavaIoCharConversionException *create_JavaIoCharConversionException_init(void);
 
 FOUNDATION_EXPORT void JavaIoCharConversionException_initWithNSString_(JavaIoCharConversionException *self, NSString *s);
 

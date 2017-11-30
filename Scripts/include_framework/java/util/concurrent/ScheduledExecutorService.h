@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/ScheduledExecutorService.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentScheduledExecutorService")
 #ifdef RESTRICT_JavaUtilConcurrentScheduledExecutorService
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaUtilConcurrentExecutorService 1
 #define INCLUDE_JavaUtilConcurrentExecutorService 1
-#include "java/util/concurrent/ExecutorService.h"
+#include "../../../java/util/concurrent/ExecutorService.h"
 
 @class JavaUtilConcurrentTimeUnit;
 @protocol JavaLangRunnable;

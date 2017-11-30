@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/reflect/GenericArrayType.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangReflectGenericArrayType")
 #ifdef RESTRICT_JavaLangReflectGenericArrayType
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangReflectType 1
 #define INCLUDE_JavaLangReflectType 1
-#include "java/lang/reflect/Type.h"
+#include "../../../java/lang/reflect/Type.h"
 
 /*!
  @brief <code>GenericArrayType</code> represents an array type whose component

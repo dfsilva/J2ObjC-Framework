@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/lang/ClassCircularityError.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaLangClassCircularityError")
 #ifdef RESTRICT_JavaLangClassCircularityError
@@ -21,7 +21,7 @@
 
 #define RESTRICT_JavaLangLinkageError 1
 #define INCLUDE_JavaLangLinkageError 1
-#include "java/lang/LinkageError.h"
+#include "../../java/lang/LinkageError.h"
 
 @class JavaLangThrowable;
 

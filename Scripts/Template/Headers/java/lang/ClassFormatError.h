@@ -23,10 +23,12 @@
 #define INCLUDE_JavaLangLinkageError 1
 #include "../../java/lang/LinkageError.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief Thrown when the Java Virtual Machine attempts to read a class
- file and determines that the file is malformed or otherwise cannot
- be interpreted as a class file.
+  file and determines that the file is malformed or otherwise cannot
+  be interpreted as a class file.
  @author unascribed
  @since JDK1.0
  */
@@ -41,10 +43,15 @@
 
 /*!
  @brief Constructs a <code>ClassFormatError</code> with the specified
- detail message.
- @param s   the detail message.
+  detail message.
+ @param s the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)s;
+
+// Disallowed inherited constructors, do not use.
+
+- (instancetype)initWithNSString:(NSString *)arg0
+           withJavaLangThrowable:(JavaLangThrowable *)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -52,9 +59,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaLangClassFormatError)
 
 FOUNDATION_EXPORT void JavaLangClassFormatError_init(JavaLangClassFormatError *self);
 
-FOUNDATION_EXPORT JavaLangClassFormatError *new_JavaLangClassFormatError_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaLangClassFormatError *new_JavaLangClassFormatError_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaLangClassFormatError *create_JavaLangClassFormatError_init();
+FOUNDATION_EXPORT JavaLangClassFormatError *create_JavaLangClassFormatError_init(void);
 
 FOUNDATION_EXPORT void JavaLangClassFormatError_initWithNSString_(JavaLangClassFormatError *self, NSString *s);
 

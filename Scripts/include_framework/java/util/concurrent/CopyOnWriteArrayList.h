@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/luni/src/main/java/java/util/concurrent/CopyOnWriteArrayList.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaUtilConcurrentCopyOnWriteArrayList")
 #ifdef RESTRICT_JavaUtilConcurrentCopyOnWriteArrayList
@@ -21,15 +21,15 @@
 
 #define RESTRICT_JavaUtilList 1
 #define INCLUDE_JavaUtilList 1
-#include "java/util/List.h"
+#include "../../../java/util/List.h"
 
 #define RESTRICT_JavaUtilRandomAccess 1
 #define INCLUDE_JavaUtilRandomAccess 1
-#include "java/util/RandomAccess.h"
+#include "../../../java/util/RandomAccess.h"
 
 #define RESTRICT_JavaIoSerializable 1
 #define INCLUDE_JavaIoSerializable 1
-#include "java/io/Serializable.h"
+#include "../../../java/io/Serializable.h"
 
 @class IOSObjectArray;
 @protocol JavaUtilCollection;
@@ -253,7 +253,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentCopyOnWriteArrayList)
 
 #define RESTRICT_JavaUtilAbstractList 1
 #define INCLUDE_JavaUtilAbstractList 1
-#include "java/util/AbstractList.h"
+#include "../../../java/util/AbstractList.h"
 
 @class IOSObjectArray;
 @class JavaUtilConcurrentCopyOnWriteArrayList;
@@ -408,7 +408,7 @@ J2OBJC_TYPE_LITERAL_HEADER(JavaUtilConcurrentCopyOnWriteArrayList_Slice)
 
 #define RESTRICT_JavaUtilListIterator 1
 #define INCLUDE_JavaUtilListIterator 1
-#include "java/util/ListIterator.h"
+#include "../../../java/util/ListIterator.h"
 
 @class IOSObjectArray;
 @protocol JavaUtilFunctionConsumer;

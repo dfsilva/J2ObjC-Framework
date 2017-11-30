@@ -3,7 +3,7 @@
 //  source: android/platform/libcore/ojluni/src/main/java/java/security/interfaces/ECPublicKey.java
 //
 
-#include "J2ObjC_header.h"
+#include "../../../J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_JavaSecurityInterfacesECPublicKey")
 #ifdef RESTRICT_JavaSecurityInterfacesECPublicKey
@@ -21,11 +21,11 @@
 
 #define RESTRICT_JavaSecurityPublicKey 1
 #define INCLUDE_JavaSecurityPublicKey 1
-#include "java/security/PublicKey.h"
+#include "../../../java/security/PublicKey.h"
 
 #define RESTRICT_JavaSecurityInterfacesECKey 1
 #define INCLUDE_JavaSecurityInterfacesECKey 1
-#include "java/security/interfaces/ECKey.h"
+#include "../../../java/security/interfaces/ECKey.h"
 
 @class JavaSecuritySpecECPoint;
 

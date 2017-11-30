@@ -26,17 +26,16 @@
 /*!
  @brief A <code>Closeable</code> is a source or destination of data that can be closed.
  The close method is invoked to release resources that the object is
- holding (such as open files).
+  holding (such as open files).
  @since 1.5
  */
 @protocol JavaIoCloseable < JavaLangAutoCloseable, JavaObject >
 
 /*!
  @brief Closes this stream and releases any system resources associated
- with it.
- If the stream is already closed then invoking this
- method has no effect.
- @throws IOException if an I/O error occurs
+  with it.If the stream is already closed then invoking this
+  method has no effect.
+ @throw IOExceptionif an I/O error occurs
  */
 - (void)close;
 

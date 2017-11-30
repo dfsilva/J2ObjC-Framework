@@ -23,10 +23,11 @@
 #define INCLUDE_JavaSecurityCertCertificateException 1
 #include "../../../java/security/cert/CertificateException.h"
 
+@class JavaLangThrowable;
+
 /*!
- @brief Certificate Encoding Exception.
- This is thrown whenever an error
- occurs while attempting to encode a certificate.
+ @brief Certificate Encoding Exception.This is thrown whenever an error
+  occurs while attempting to encode a certificate.
  @author Hemma Prafullchandra
  */
 @interface JavaSecurityCertCertificateEncodingException : JavaSecurityCertCertificateException
@@ -34,48 +35,44 @@
 #pragma mark Public
 
 /*!
- @brief Constructs a CertificateEncodingException with no detail message.
- A
- detail message is a String that describes this particular
- exception.
+ @brief Constructs a CertificateEncodingException with no detail message.A
+  detail message is a String that describes this particular
+  exception.
  */
 - (instancetype)init;
 
 /*!
  @brief Constructs a CertificateEncodingException with the specified detail
- message.
- A detail message is a String that describes this
- particular exception.
+  message.A detail message is a String that describes this
+  particular exception.
  @param message the detail message.
  */
 - (instancetype)initWithNSString:(NSString *)message;
 
 /*!
  @brief Creates a <code>CertificateEncodingException</code> with the specified
- detail message and cause.
- @param message the detail message (which is saved for later retrieval
- by the <code>getMessage()</code> method).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+  detail message and cause.
+ @param message the detail message (which is saved for later retrieval         by the 
+ <code>getMessage()</code>  method).
+ @param cause the cause (which is saved for later retrieval by the         
+ <code>getCause()</code>  method).  (A <code>null</code>  value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.5
  */
 - (instancetype)initWithNSString:(NSString *)message
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Creates a <code>CertificateEncodingException</code>
- with the specified cause and a detail message of
+  with the specified cause and a detail message of 
  <code>(cause==null ?
  null : cause.toString())</code>
- (which typically contains the class and detail message of
+  (which typically contains the class and detail message of 
  <code>cause</code>).
- @param cause the cause (which is saved for later retrieval by the
- <code>getCause()</code> method).  (A <code>null</code> value is permitted,
- and indicates that the cause is nonexistent or unknown.)
+ @param cause the cause (which is saved for later retrieval by the         
+ <code>getCause()</code>  method).  (A <code>null</code>  value is permitted,         and indicates that the cause is nonexistent or unknown.)
  @since 1.5
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
 
 @end
 
@@ -83,9 +80,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaSecurityCertCertificateEncodingException)
 
 FOUNDATION_EXPORT void JavaSecurityCertCertificateEncodingException_init(JavaSecurityCertCertificateEncodingException *self);
 
-FOUNDATION_EXPORT JavaSecurityCertCertificateEncodingException *new_JavaSecurityCertCertificateEncodingException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityCertCertificateEncodingException *new_JavaSecurityCertCertificateEncodingException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityCertCertificateEncodingException *create_JavaSecurityCertCertificateEncodingException_init();
+FOUNDATION_EXPORT JavaSecurityCertCertificateEncodingException *create_JavaSecurityCertCertificateEncodingException_init(void);
 
 FOUNDATION_EXPORT void JavaSecurityCertCertificateEncodingException_initWithNSString_(JavaSecurityCertCertificateEncodingException *self, NSString *message);
 
@@ -93,17 +90,17 @@ FOUNDATION_EXPORT JavaSecurityCertCertificateEncodingException *new_JavaSecurity
 
 FOUNDATION_EXPORT JavaSecurityCertCertificateEncodingException *create_JavaSecurityCertCertificateEncodingException_initWithNSString_(NSString *message);
 
-FOUNDATION_EXPORT void JavaSecurityCertCertificateEncodingException_initWithNSString_withNSException_(JavaSecurityCertCertificateEncodingException *self, NSString *message, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityCertCertificateEncodingException_initWithNSString_withJavaLangThrowable_(JavaSecurityCertCertificateEncodingException *self, NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityCertCertificateEncodingException *new_JavaSecurityCertCertificateEncodingException_initWithNSString_withNSException_(NSString *message, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityCertCertificateEncodingException *new_JavaSecurityCertCertificateEncodingException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityCertCertificateEncodingException *create_JavaSecurityCertCertificateEncodingException_initWithNSString_withNSException_(NSString *message, NSException *cause);
+FOUNDATION_EXPORT JavaSecurityCertCertificateEncodingException *create_JavaSecurityCertCertificateEncodingException_initWithNSString_withJavaLangThrowable_(NSString *message, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaSecurityCertCertificateEncodingException_initWithNSException_(JavaSecurityCertCertificateEncodingException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaSecurityCertCertificateEncodingException_initWithJavaLangThrowable_(JavaSecurityCertCertificateEncodingException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSecurityCertCertificateEncodingException *new_JavaSecurityCertCertificateEncodingException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSecurityCertCertificateEncodingException *new_JavaSecurityCertCertificateEncodingException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSecurityCertCertificateEncodingException *create_JavaSecurityCertCertificateEncodingException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaSecurityCertCertificateEncodingException *create_JavaSecurityCertCertificateEncodingException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaSecurityCertCertificateEncodingException)
 

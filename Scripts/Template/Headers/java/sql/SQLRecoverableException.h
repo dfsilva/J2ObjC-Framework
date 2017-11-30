@@ -23,14 +23,15 @@
 #define INCLUDE_JavaSqlSQLException 1
 #include "../../java/sql/SQLException.h"
 
+@class JavaLangThrowable;
+
 /*!
  @brief The subclass of <code>SQLException</code> thrown in situations where a
- previously failed operation might be able to succeed if the application performs
- some recovery steps and retries the entire transaction or in the case of a
- distributed transaction, the transaction branch.
- At a minimum,
- the recovery operation must include closing the current connection and getting
- a new connection.
+  previously failed operation might be able to succeed if the application performs
+   some recovery steps and retries the entire transaction or in the case of a
+  distributed transaction, the transaction branch.At a minimum,
+  the recovery operation must include closing the current connection and getting
+  a new connection.
  <p>
  @since 1.6
  */
@@ -41,10 +42,10 @@
 /*!
  @brief Constructs a <code>SQLRecoverableException</code> object.
  The <code>reason</code>, <code>SQLState</code> are initialized
- to <code>null</code> and the vendor code is initialized to 0.
- The <code>cause</code> is not initialized, and may subsequently be
- initialized by a call to the
- <code>Throwable.initCause(java.lang.Throwable)</code> method.
+  to <code>null</code> and the vendor code is initialized to 0.
+  The <code>cause</code> is not initialized, and may subsequently be
+  initialized by a call to the 
+ <code>Throwable.initCause(java.lang.Throwable)</code> method. 
  <p>
  @since 1.6
  */
@@ -52,13 +53,12 @@
 
 /*!
  @brief Constructs a <code>SQLRecoverableException</code> object
- with a given <code>reason</code>.
- The <code>SQLState</code>
- is initialized to <code>null</code> and the vender code is initialized
- to 0.
+   with a given <code>reason</code>.The <code>SQLState</code>
+  is initialized to <code>null</code> and the vender code is initialized
+  to 0.
  The <code>cause</code> is not initialized, and may subsequently be
- initialized by a call to the
- <code>Throwable.initCause(java.lang.Throwable)</code> method.
+  initialized by a call to the 
+ <code>Throwable.initCause(java.lang.Throwable)</code> method. 
  <p>
  @param reason a description of the exception
  @since 1.6
@@ -67,11 +67,11 @@
 
 /*!
  @brief Constructs a <code>SQLRecoverableException</code> object
- with a given <code>reason</code> and <code>SQLState</code>.
+  with a given <code>reason</code> and <code>SQLState</code>.
  The <code>cause</code> is not initialized, and may subsequently be
- initialized by a call to the
+  initialized by a call to the 
  <code>Throwable.initCause(java.lang.Throwable)</code> method. The vendor code
- is initialized to 0.
+  is initialized to 0. 
  <p>
  @param reason a description of the exception
  @param SQLState an XOPEN or SQL:2003 code identifying the exception
@@ -82,11 +82,11 @@
 
 /*!
  @brief Constructs a <code>SQLRecoverableException</code> object
- with a given <code>reason</code>, <code>SQLState</code>  and
+   with a given <code>reason</code>, <code>SQLState</code>  and 
  <code>vendorCode</code>.
  The <code>cause</code> is not initialized, and may subsequently be
- initialized by a call to the
- <code>Throwable.initCause(java.lang.Throwable)</code> method.
+  initialized by a call to the 
+ <code>Throwable.initCause(java.lang.Throwable)</code> method. 
  <p>
  @param reason a description of the exception
  @param SQLState an XOPEN or SQL:2003 code identifying the exception
@@ -99,67 +99,67 @@
 
 /*!
  @brief Constructs a <code>SQLRecoverableException</code> object
- with a given
+  with a given 
  <code>reason</code>, <code>SQLState</code>, <code>vendorCode</code>
- and  <code>cause</code>.
+  and  <code>cause</code>.
  <p>
  @param reason a description of the exception
  @param SQLState an XOPEN or SQL:2003 code identifying the exception
  @param vendorCode a database vendor-specific exception code
- @param cause the underlying reason for this <code>SQLException</code> (which is saved for later retrieval by the <code>getCause()</code> method); may be null indicating
- the cause is non-existent or unknown.
+ @param cause the underlying reason for this  <code> SQLException </code>  (which is saved for later retrieval by the  <code> getCause() </code>  method); may be null indicating
+       the cause is non-existent or unknown.
  @since 1.6
  */
 - (instancetype)initWithNSString:(NSString *)reason
                     withNSString:(NSString *)SQLState
                          withInt:(jint)vendorCode
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Constructs a <code>SQLRecoverableException</code> object
- with a given
+  with a given 
  <code>reason</code>, <code>SQLState</code> and  <code>cause</code>.
- The vendor code is initialized to 0.
+ The vendor code is initialized to 0. 
  <p>
  @param reason a description of the exception.
  @param SQLState an XOPEN or SQL:2003 code identifying the exception
- @param cause the underlying reason for this <code>SQLException</code> (which is saved for later retrieval by the <code>getCause()</code> method); may be null indicating
- the cause is non-existent or unknown.
+ @param cause the underlying reason for this  <code> SQLException </code>  (which is saved for later retrieval by the  <code> getCause() </code>  method); may be null indicating
+       the cause is non-existent or unknown.
  @since 1.6
  */
 - (instancetype)initWithNSString:(NSString *)reason
                     withNSString:(NSString *)SQLState
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Constructs a <code>SQLRecoverableException</code> object
- with a given
+  with a given 
  <code>reason</code> and  <code>cause</code>.
  The <code>SQLState</code> is  initialized to <code>null</code>
- and the vendor code is initialized to 0.
+  and the vendor code is initialized to 0. 
  <p>
  @param reason a description of the exception.
- @param cause the underlying reason for this <code>SQLException</code> (which is saved for later retrieval by the <code>getCause()</code> method); may be null indicating
- the cause is non-existent or unknown.
+ @param cause the underlying reason for this  <code> SQLException </code>  (which is saved for later retrieval by the  <code> getCause() </code>  method); may be null indicating
+       the cause is non-existent or unknown.
  @since 1.6
  */
 - (instancetype)initWithNSString:(NSString *)reason
-                 withNSException:(NSException *)cause;
+           withJavaLangThrowable:(JavaLangThrowable *)cause;
 
 /*!
  @brief Constructs a <code>SQLRecoverableException</code> object
- with a given  <code>cause</code>.
+  with a given  <code>cause</code>.
  The <code>SQLState</code> is initialized
- to <code>null</code> and the vendor code is initialized to 0.
- The <code>reason</code>  is initialized to <code>null</code> if
- <code>cause==null</code> or to <code>cause.toString()</code> if
+  to <code>null</code> and the vendor code is initialized to 0.
+  The <code>reason</code>  is initialized to <code>null</code> if 
+ <code>cause==null</code> or to <code>cause.toString()</code> if 
  <code>cause!=null</code>.
- <p>
- @param cause the underlying reason for this <code>SQLException</code> (which is saved for later retrieval by the <code>getCause()</code> method); may be null indicating
- the cause is non-existent or unknown.
+  <p>
+ @param cause the underlying reason for this  <code> SQLException </code>  (which is saved for later retrieval by the  <code> getCause() </code>  method); may be null indicating
+       the cause is non-existent or unknown.
  @since 1.6
  */
-- (instancetype)initWithNSException:(NSException *)cause;
+- (instancetype)initWithJavaLangThrowable:(JavaLangThrowable *)cause;
 
 #pragma mark Package-Private
 
@@ -169,9 +169,9 @@ J2OBJC_EMPTY_STATIC_INIT(JavaSqlSQLRecoverableException)
 
 FOUNDATION_EXPORT void JavaSqlSQLRecoverableException_init(JavaSqlSQLRecoverableException *self);
 
-FOUNDATION_EXPORT JavaSqlSQLRecoverableException *new_JavaSqlSQLRecoverableException_init() NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSqlSQLRecoverableException *new_JavaSqlSQLRecoverableException_init(void) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSqlSQLRecoverableException *create_JavaSqlSQLRecoverableException_init();
+FOUNDATION_EXPORT JavaSqlSQLRecoverableException *create_JavaSqlSQLRecoverableException_init(void);
 
 FOUNDATION_EXPORT void JavaSqlSQLRecoverableException_initWithNSString_(JavaSqlSQLRecoverableException *self, NSString *reason);
 
@@ -191,29 +191,29 @@ FOUNDATION_EXPORT JavaSqlSQLRecoverableException *new_JavaSqlSQLRecoverableExcep
 
 FOUNDATION_EXPORT JavaSqlSQLRecoverableException *create_JavaSqlSQLRecoverableException_initWithNSString_withNSString_withInt_(NSString *reason, NSString *SQLState, jint vendorCode);
 
-FOUNDATION_EXPORT void JavaSqlSQLRecoverableException_initWithNSException_(JavaSqlSQLRecoverableException *self, NSException *cause);
+FOUNDATION_EXPORT void JavaSqlSQLRecoverableException_initWithJavaLangThrowable_(JavaSqlSQLRecoverableException *self, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSqlSQLRecoverableException *new_JavaSqlSQLRecoverableException_initWithNSException_(NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSqlSQLRecoverableException *new_JavaSqlSQLRecoverableException_initWithJavaLangThrowable_(JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSqlSQLRecoverableException *create_JavaSqlSQLRecoverableException_initWithNSException_(NSException *cause);
+FOUNDATION_EXPORT JavaSqlSQLRecoverableException *create_JavaSqlSQLRecoverableException_initWithJavaLangThrowable_(JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaSqlSQLRecoverableException_initWithNSString_withNSException_(JavaSqlSQLRecoverableException *self, NSString *reason, NSException *cause);
+FOUNDATION_EXPORT void JavaSqlSQLRecoverableException_initWithNSString_withJavaLangThrowable_(JavaSqlSQLRecoverableException *self, NSString *reason, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSqlSQLRecoverableException *new_JavaSqlSQLRecoverableException_initWithNSString_withNSException_(NSString *reason, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSqlSQLRecoverableException *new_JavaSqlSQLRecoverableException_initWithNSString_withJavaLangThrowable_(NSString *reason, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSqlSQLRecoverableException *create_JavaSqlSQLRecoverableException_initWithNSString_withNSException_(NSString *reason, NSException *cause);
+FOUNDATION_EXPORT JavaSqlSQLRecoverableException *create_JavaSqlSQLRecoverableException_initWithNSString_withJavaLangThrowable_(NSString *reason, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaSqlSQLRecoverableException_initWithNSString_withNSString_withNSException_(JavaSqlSQLRecoverableException *self, NSString *reason, NSString *SQLState, NSException *cause);
+FOUNDATION_EXPORT void JavaSqlSQLRecoverableException_initWithNSString_withNSString_withJavaLangThrowable_(JavaSqlSQLRecoverableException *self, NSString *reason, NSString *SQLState, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSqlSQLRecoverableException *new_JavaSqlSQLRecoverableException_initWithNSString_withNSString_withNSException_(NSString *reason, NSString *SQLState, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSqlSQLRecoverableException *new_JavaSqlSQLRecoverableException_initWithNSString_withNSString_withJavaLangThrowable_(NSString *reason, NSString *SQLState, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSqlSQLRecoverableException *create_JavaSqlSQLRecoverableException_initWithNSString_withNSString_withNSException_(NSString *reason, NSString *SQLState, NSException *cause);
+FOUNDATION_EXPORT JavaSqlSQLRecoverableException *create_JavaSqlSQLRecoverableException_initWithNSString_withNSString_withJavaLangThrowable_(NSString *reason, NSString *SQLState, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT void JavaSqlSQLRecoverableException_initWithNSString_withNSString_withInt_withNSException_(JavaSqlSQLRecoverableException *self, NSString *reason, NSString *SQLState, jint vendorCode, NSException *cause);
+FOUNDATION_EXPORT void JavaSqlSQLRecoverableException_initWithNSString_withNSString_withInt_withJavaLangThrowable_(JavaSqlSQLRecoverableException *self, NSString *reason, NSString *SQLState, jint vendorCode, JavaLangThrowable *cause);
 
-FOUNDATION_EXPORT JavaSqlSQLRecoverableException *new_JavaSqlSQLRecoverableException_initWithNSString_withNSString_withInt_withNSException_(NSString *reason, NSString *SQLState, jint vendorCode, NSException *cause) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT JavaSqlSQLRecoverableException *new_JavaSqlSQLRecoverableException_initWithNSString_withNSString_withInt_withJavaLangThrowable_(NSString *reason, NSString *SQLState, jint vendorCode, JavaLangThrowable *cause) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT JavaSqlSQLRecoverableException *create_JavaSqlSQLRecoverableException_initWithNSString_withNSString_withInt_withNSException_(NSString *reason, NSString *SQLState, jint vendorCode, NSException *cause);
+FOUNDATION_EXPORT JavaSqlSQLRecoverableException *create_JavaSqlSQLRecoverableException_initWithNSString_withNSString_withInt_withJavaLangThrowable_(NSString *reason, NSString *SQLState, jint vendorCode, JavaLangThrowable *cause);
 
 J2OBJC_TYPE_LITERAL_HEADER(JavaSqlSQLRecoverableException)
 
