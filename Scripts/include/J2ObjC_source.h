@@ -36,11 +36,11 @@
 #undef I
 
 __attribute__ ((unused)) static inline id cast_chk(id __unsafe_unretained p, Class clazz) {
-#if !defined(J2OBJC_DISABLE_CAST_CHECKS)
-  if (__builtin_expect(p && ![p isKindOfClass:clazz], 0)) {
-    JreThrowClassCastException(p, clazz);
-  }
-#endif
+// #if !defined(J2OBJC_DISABLE_CAST_CHECKS)
+//   if (__builtin_expect(p && ![p isKindOfClass:clazz], 0)) {
+//     JreThrowClassCastException(p, clazz);
+//   }
+// #endif
   return p;
 }
 
